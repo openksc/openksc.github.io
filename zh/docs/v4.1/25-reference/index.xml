@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>参考 on</title><link>https://openksc.github.io/zh/docs/v4.1/25-reference/</link><description>Recent content in 参考 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/25-reference/index.xml" rel="self" type="application/rss+xml"/><item><title>术语表</title><link>https://openksc.github.io/zh/docs/v4.1/25-reference/glossary-final/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/25-reference/glossary-final/</guid><description>&lt;div class="sect1">
+&lt;h2 id="_通用术语">通用术语&lt;/h2>
+&lt;div class="sectionbody">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">术语&lt;/th>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群（Cluster）&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群是一组相互独立的计算机或服务器组成的一个较大的计算机服务系统。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>节点（Node）&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>节点是组成集群的每一台工作机器，可以是虚拟机也可以是物理机。每个节点都可以独立运行和处理任务。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>企业空间（Workspace）&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>企业空间是用来管理项目和组织成员的基本逻辑单元，是 KubeSphere 多租户系统的基础。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>企业空间成员&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>邀请至企业空间中工作的用户，拥有特定的权限。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>项目&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>KubeSphere 中的项目对应 Kubernetes 中的命名空间。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>多集群项目&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>工作负载部署在多个集群上的项目。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>项目成员&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>邀请至项目中工作的用户，拥有特定的权限。&lt;/p>
+&lt;/div></description></item></channel></rss>

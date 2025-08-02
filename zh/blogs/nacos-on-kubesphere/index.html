@@ -1,0 +1,585 @@
+<!doctype html><html lang=en-US><head><meta charset=utf-8><title>在 KubeSphere 中快速安装部署 Nacos</title><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="本文详细介绍了 Nacos 集群模式在基于 KubeSphere 部署的 K8s 集群上的安装部署方法。同时，介绍了 MySQL 在 K8s 上的安装部署方法。"><meta name=keywords content="Kubernetes,KubeSphere,Nacos"><meta property="og:type" content="article"><meta property="og:title" content="在 KubeSphere 中快速安装部署 Nacos "><meta property="og:description" content="本文详细介绍了 Nacos 集群模式在基于 KubeSphere 部署的 K8s 集群上的安装部署方法。同时，介绍了 MySQL 在 K8s 上的安装部署方法。"><meta property="og:image" content="https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-nacos-cover.png"><meta property="og:url" content="https://openksc.github.io/zh/blogs/nacos-on-kubesphere/"><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@KubeSphere"><meta property="twitter:image" content="https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-nacos-cover.png"><meta name=docsearch:language content="zh-CN"><meta name=docsearch:version content><link rel=canonical href=https://kubesphere.io/zh/blogs/nacos-on-kubesphere/><link rel="shortcut icon" href=/images/favicons/favicon.ico><link rel=apple-touch-icon href=/images/favicons/apple-touch-icon.png sizes=180x180><link rel=icon type=image/png href=/images/favicons/favicon-16x16.png sizes=16x16><link rel=icon type=image/png href=/images/favicons/favicon-32x32.png sizes=32x32><link rel=icon type=image/svg+xml href=/images/favicons/favicon.svg><link rel=icon type=image/png href=/images/favicons/favicon.png><link rel=manifest href=/images/favicons/site.webmanifest><link rel=mask-icon href=/images/favicons/safari-pinned-tab.svg color=#00ad6e><meta name=msapplication-config content='/images/favicons/browserconfig.xml'><meta name=msapplication-TileColor content="#ffffff"><meta name=theme-color content="#ffffff"><link rel=stylesheet href=/fonts/Roboto/stylesheet.css><link rel=stylesheet href=/fonts/ProximaNova/stylesheet.css><link rel=stylesheet href=/css/jquery.modal.min.css><link rel=stylesheet href=/css/viewer.min.css><link rel=stylesheet href=/swiper/swiper-bundle.min.css><link rel=stylesheet href=/scss/common.min.0c3fdcc05ec210321169846714f74b11c4a1baf09a1833fa9273b2347c81e636.css><script src=/js/jquery-3.7.1.min.js></script><script src=/js/viewer.min.js></script><script src=/js/jquery.modal.min.js></script><script src=/swiper/swiper-bundle.min.js></script><script>var _hmt=_hmt||[];(function(){var e,t=document.createElement("script");t.src="https://hm.baidu.com/hm.js?0888981f1fa45d241b1fb6962da2963e",e=document.getElementsByTagName("script")[0],e.parentNode.insertBefore(t,e)})()</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-YYCVN36HT5"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-YYCVN36HT5")</script><script type=text/javascript>!function(e,t,n,s,o){e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},n=t.createElement("script"),tag=t.getElementsByTagName("script")[0],n.async=1,n.src=("https:"==document.location.protocol?"https://":"http://")+s,tag.parentNode.insertBefore(n,tag)}(window,document,"script","assets.giocdn.com/2.1/gio.js","gio"),gio("init","8a24ae300cbf8b8c",{}),gio("send")</script><link rel=stylesheet href=/scss/content.min.f73b326fbf8c5bd331900b0de21c7dde608a4926f482f6465f9ae1d9049b83ad.css><link rel=stylesheet href=/scss/markdown.min.db47186481122431dffae72d17dbbd51f90b66f022cc163458645709924e4eac.css></head><body><header class=navigation><div class=join-div><div class=content>🚀 KubeSphere v4.1.3 发布，多项优化与改进，欢迎体验！<a href=/zh/docs/v4.1/20-release-notes/release-v413/ target=_blank rel="noopener noreferrer">请查看 Release notes →</a>
+<img id=close-join src=/images/header/close.svg alt=close></div></div><div class=common-layout><div class=header-container><a href=/zh/ aria-label=logo><img src=/images/header/logo.svg alt class=logo></a><ul class=nav><li class=menu-li><span class=menu-span>应用场景</span><ul class="dropdown-menu menu-2"><li><a href=/zh/devops/>拥抱一站式 DevOps 工作流</a></li><li><a href=/zh/service-mesh/>在 Kubernetes 运行微服务</a></li><li><a href=/zh/observability/>构建丰富的云原生可观测性</a></li></ul></li><li class=menu-li><span class=menu-span>资源</span><ul class="dropdown-menu menu-3"><li><a href=/zh/projects/>开源项目</a></li><li><a href=/zh/conferences/>开源峰会</a></li><li><a href=/zh/blogs/>技术博客</a></li><li><a href=/zh/videos/>视频资源</a></li><li><a href=/zh/learn/>云原生实战</a></li></ul></li><li class=menu-li><span class=menu-span>文档中心</span><ul class="dropdown-menu menu-4"><li><a href=/zh/docs/v4.1>v4.1 <img src=/images/header/star.svg alt=star></a></li><li><a href=/zh/docs/v3.4>v3.4</a></li><li><a href=/zh/docs/v3.3>v3.3</a></li><li><a href=https://dev-guide.kubesphere.io/extension-dev-guide/zh/ target=_blank rel="noopener noreferrer">扩展组件开发</a></li><li><a href=https://kube.design/ target=_blank rel="noopener noreferrer">Kube Design</a></li></ul></li><li class=menu-li><span class=menu-span>开源社区</span><ul class="dropdown-menu menu-5"><li><a href=/zh/contribution/>参与贡献</a></li><li><a href=/zh/live/>社区活动</a></li><li><a href=/zh/case/>案例学习</a></li><li><a href=/zh/partner/>合作伙伴</a></li><li><a href=/zh/user-group/>用户委员会</a></li><li><a href=/zh/news/>动态</a></li><li><a href=https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md target=_blank rel="noopener noreferrer">版本计划</a></li><li><a href=https://www.kubesphere.io/zh/ target=_blank rel="noopener noreferrer">中国站</a></li><li><a href=https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2025 target=_blank rel="noopener noreferrer">开源之夏 2025</a></li></ul></li><li><a data-docs=用户论坛 href=https://ask.kubesphere.io/forum target=_blank rel="noopener noreferrer">用户论坛</a></li><li><a data-docs=认证 href=https://kubesphere.cloud/certification/ target=_blank rel="noopener noreferrer">认证</a></li></ul><div class=right-menu><ul><li class=language-menu><div><img src=/images/header/black.svg alt>
+<span>简体中文</span></div><ul class=dropdown-menu><li onclick='handleLangClick("zh","/zh/blogs/nacos-on-kubesphere/")'>简体中文</li></ul></li><li class=github-li><div class=github-star><a class=star-btn href=https://github.com/kubesphere/kubesphere rel="noopener noreferrer" target=_blank><span class=star-img></span>&nbsp;<span>Star</span>
+</a><a class=social-count href=https://github.com/kubesphere/kubesphere/stargazers rel="noopener noreferrer" target=_blank></a></div></li><li class=menu-icon><img src=/images/header/menu.svg alt></li></ul></div></div></div><div id=modal-for-menu class=modal><ul class=nav><li data-check=0 class=menu-li><span class=menu-span>应用场景</span><ul class=dropdown-menu><li><a href=/zh/devops/>拥抱一站式 DevOps 工作流</a></li><li><a href=/zh/service-mesh/>在 Kubernetes 运行微服务</a></li><li><a href=/zh/observability/>构建丰富的云原生可观测性</a></li></ul></li><li data-check=0 class=menu-li><span class=menu-span>资源</span><ul class=dropdown-menu><li><a href=/zh/projects/>开源项目</a></li><li><a href=/zh/conferences/>开源峰会</a></li><li><a href=/zh/blogs/>技术博客</a></li><li><a href=/zh/videos/>视频资源</a></li><li><a href=/zh/learn/>云原生实战</a></li></ul></li><li data-check=0 class=menu-li><span class=menu-span>文档中心</span><ul class=dropdown-menu><li><a href=/zh/docs/v4.1>v4.1 <img src=/images/header/star.svg alt=star></a></li><li><a href=/zh/docs/v3.4>v3.4</a></li><li><a href=/zh/docs/v3.3>v3.3</a></li><li><a href=https://dev-guide.kubesphere.io/extension-dev-guide/zh/>扩展组件开发</a></li><li><a href=https://kube.design/>Kube Design</a></li></ul></li><li data-check=0 class=menu-li><span class=menu-span>开源社区</span><ul class=dropdown-menu><li><a href=/zh/contribution/>参与贡献</a></li><li><a href=/zh/live/>社区活动</a></li><li><a href=/zh/case/>案例学习</a></li><li><a href=/zh/partner/>合作伙伴</a></li><li><a href=/zh/user-group/>用户委员会</a></li><li><a href=/zh/news/>动态</a></li><li><a href=https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md>版本计划</a></li><li><a href=https://www.kubesphere.io/zh/>中国站</a></li><li><a href=https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2025>开源之夏 2025</a></li></ul></li><li><a data-docs=用户论坛 href=https://ask.kubesphere.io/forum>用户论坛</a></li><li><a data-docs=认证 href=https://kubesphere.cloud/certification/>认证</a></li></ul><div class=link-div><a href=https://join.slack.com/t/kubesphere/shared_invite/zt-2b4t6rdb4-ico_4UJzCln_S2c1pcrIpQ target=_blank rel="noopener noreferrer" aria-label=slack><img src=/images/header/slack-hover.svg alt>
+</a><a href=https://x.com/KubeSphere target=_blank rel="noopener noreferrer" aria-label=twitter><img src=/images/header/twitter-hover.svg alt>
+</a><a href=https://github.com/kubesphere/kubesphere target=_blank rel="noopener noreferrer" aria-label=github><img src=/images/header/github-hover.svg alt></a></div></div></header><script>var bindNavMouseEvent,bindScrollChangeHeader,bindClickShowMenu,bindClickModalLi,bindClickClose,language,handleLangClick,githubApiLink="https://api.github.com/repos/kubesphere/kubesphere",getStar=function(){$(".social-count").hide(),$.getJSON(githubApiLink,function(e){$(".social-count").show().html(e.stargazers_count)})};getStar(),bindNavMouseEvent=function(e,t){t||(t=$(e));var n=!1;t.mouseenter(function(){if(n)return!1;n=!0,$(this).find(".dropdown-menu").fadeIn(200,function(){n=!1})}),t.mouseleave(function(){$(this).find(".dropdown-menu").fadeOut(200)})},bindScrollChangeHeader=function(){var t=100,e=$("header");window.addEventListener("scroll",function(){var t=window.scrollY;t>0?e.addClass("navigationScroll"):e.removeClass("navigationScroll")})},bindClickShowMenu=function(){$(".menu-icon").click(function(){$("#modal-for-menu").modal()})},bindClickModalLi=function(){$(".modal .menu-li").click(function(){var e=$(this).data("check");e===0?($(this).data("check",1),$(this).find(".dropdown-menu").slideDown(200)):($(this).data("check",0),$(this).find(".dropdown-menu").slideUp(200)),$(this).find(".menu-span").toggleClass("up")})},bindClickClose=function(){$("#close-join").click(function(){$(".navigation .join-div").hide(),$(".main-section").removeClass("padding")})},language="zh",bindClickClose(),bindScrollChangeHeader(),$(".header-container .menu-li").each(function(){bindNavMouseEvent("",$(this))}),bindNavMouseEvent(".header-container .language-menu"),bindNavMouseEvent(".header-container .btn-li"),bindClickShowMenu(),bindClickModalLi(),handleLangClick=function(e,t){try{localStorage.setItem("lang",e)}catch{}location.href=t}</script><section class=main-section><div class=common-layout><div class=breadcrumb><span><a href=/zh/blogs/>技术博客</a> > </span><span>在 KubeSphere 中快速安装部署 Nacos</span></div><div class='main-div middle-div'><div class=author>老 Z</div><span class=date>发布于：2023-04-06</span>&nbsp;&nbsp;&nbsp;
+<span style=font-size:14px;color:#919aa3 id=busuanzi_container_page_pv>本文总阅读量：<span id=busuanzi_value_page_pv></span></span><h1>在 KubeSphere 中快速安装部署 Nacos</h1><div class=share-1><div class=share><a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fnacos-on-kubesphere%2f&text=%e5%9c%a8%20KubeSphere%20%e4%b8%ad%e5%bf%ab%e9%80%9f%e5%ae%89%e8%a3%85%e9%83%a8%e7%bd%b2%20Nacos%20" target=_blank rel="noopener noreferrer"><img src=/images/share/Twitter.svg alt="twitter icon">
+</a><a href="https://reddit.com/submit?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fnacos-on-kubesphere%2f&title=%e5%9c%a8%20KubeSphere%20%e4%b8%ad%e5%bf%ab%e9%80%9f%e5%ae%89%e8%a3%85%e9%83%a8%e7%bd%b2%20Nacos%20" target=_blank rel="noopener noreferrer"><img src=/images/share/Reddit.svg alt="reddit icon">
+</a><a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fnacos-on-kubesphere%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Facebook.svg alt="facebook icon">
+</a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fnacos-on-kubesphere%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Linkedin.svg alt="linkedin icon">
+</a><a href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fnacos-on-kubesphere%2f&t=%e5%9c%a8%20KubeSphere%20%e4%b8%ad%e5%bf%ab%e9%80%9f%e5%ae%89%e8%a3%85%e9%83%a8%e7%bd%b2%20Nacos%20" target=_blank rel="noopener noreferrer"><img src=/images/share/HackerNews.svg alt="hackernews icon"></a></div></div><div class=content><div class=md-body><blockquote><p>作者：老 Z，运维架构师，云原生爱好者，目前专注于云原生运维，云原生领域技术栈涉及 Kubernetes、KubeSphere、DevOps、OpenStack、Ansible 等。</p></blockquote><h2 id=简介>简介</h2><p>Nacos 集群如何在 K8s 集群上部署？Nacos 依赖的 MySQL 数据库如何在 K8S 集群上部署？GitOps 在 K8s 集群上是一种什么体验？本文将带你全面了解上述问题。</p><blockquote><p><strong>演示服务器配置</strong></p></blockquote><table><thead><tr><th style=text-align:center>主机名</th><th style=text-align:center>IP</th><th style=text-align:center>CPU</th><th style=text-align:center>内存</th><th style=text-align:center>系统盘</th><th style=text-align:center>数据盘</th><th style=text-align:center>用途</th></tr></thead><tbody><tr><td style=text-align:center>zdeops-master</td><td style=text-align:center>192.168.9.9</td><td style=text-align:center>2</td><td style=text-align:center>4</td><td style=text-align:center>40</td><td style=text-align:center>200</td><td style=text-align:center>Ansible 运维控制节点</td></tr><tr><td style=text-align:center>ks-k8s-master-0</td><td style=text-align:center>192.168.9.91</td><td style=text-align:center>4</td><td style=text-align:center>16</td><td style=text-align:center>40</td><td style=text-align:center>200+200</td><td style=text-align:center>KubeSphere/k8s-master/k8s-worker/Ceph</td></tr><tr><td style=text-align:center>ks-k8s-master-1</td><td style=text-align:center>192.168.9.92</td><td style=text-align:center>4</td><td style=text-align:center>16</td><td style=text-align:center>40</td><td style=text-align:center>200+200</td><td style=text-align:center>KubeSphere/k8s-master/k8s-worker/Ceph</td></tr><tr><td style=text-align:center>ks-k8s-master-2</td><td style=text-align:center>192.168.9.93</td><td style=text-align:center>4</td><td style=text-align:center>16</td><td style=text-align:center>40</td><td style=text-align:center>200+200</td><td style=text-align:center>KubeSphere/k8s-master/k8s-worker/Ceph</td></tr><tr><td style=text-align:center>glusterfs-node-0</td><td style=text-align:center>192.168.9.95</td><td style=text-align:center>2</td><td style=text-align:center>8</td><td style=text-align:center>40</td><td style=text-align:center>200</td><td style=text-align:center>GlusterFS</td></tr><tr><td style=text-align:center>glusterfs-node-1</td><td style=text-align:center>192.168.9.96</td><td style=text-align:center>2</td><td style=text-align:center>8</td><td style=text-align:center>40</td><td style=text-align:center>200</td><td style=text-align:center>GlusterFS</td></tr><tr><td style=text-align:center>glusterfs-node-2</td><td style=text-align:center>192.168.9.97</td><td style=text-align:center>2</td><td style=text-align:center>8</td><td style=text-align:center>40</td><td style=text-align:center>200</td><td style=text-align:center>GlusterFS</td></tr><tr><td style=text-align:center>harbor</td><td style=text-align:center>192.168.9.89</td><td style=text-align:center>2</td><td style=text-align:center>8</td><td style=text-align:center>40</td><td style=text-align:center>200</td><td style=text-align:center>Harbor</td></tr><tr><td style=text-align:center>合计</td><td style=text-align:center>8</td><td style=text-align:center>22</td><td style=text-align:center>84</td><td style=text-align:center>320</td><td style=text-align:center>2200</td><td style=text-align:center></td></tr></tbody></table><blockquote><p><strong>演示环境涉及软件版本信息</strong></p></blockquote><ul><li>操作系统：<strong>CentOS-7.9-x86_64</strong></li><li>Ansible：<strong>2.8.20</strong></li><li>Harbor：<strong>2.5.1</strong></li><li>Nacos：<strong>v2.1.0</strong></li><li>MySQL：<strong>5.7.38</strong></li></ul><h2 id=前提条件>前提条件</h2><h3 id=准备离线镜像>准备离线镜像</h3><p>此过程为可选项，离线内网环境可用，如果是直连互联网的场景，可以直接使用互联网的镜像。</p><p>在一台能同时访问互联网和内网 Harbor 仓库的服务器上进行下面的操作。</p><ul><li>下载镜像</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>docker pull mysql:5.7.38
+</span></span><span style=display:flex><span>docker pull nacos/nacos-peer-finder-plugin:1.1
+</span></span><span style=display:flex><span>docker pull nacos/nacos-server:v2.1.0
+</span></span></code></pre></div><ul><li>重新打 tag</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>docker tag mysql:5.7.38 registry.zdevops.com.cn/library/mysql:5.7.38
+</span></span><span style=display:flex><span>docker tag nacos/nacos-peer-finder-plugin:1.1 registry.zdevops.com.cn/nacos/nacos-peer-finder-plugin:1.1
+</span></span><span style=display:flex><span>docker tag nacos/nacos-server:v2.1.0 registry.zdevops.com.cn/nacos/nacos-server:v2.1.0
+</span></span></code></pre></div><ul><li>推送到私有镜像仓库</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 需要提前在镜像仓库中创建 Harbor 项目</span>
+</span></span><span style=display:flex><span>docker push registry.zdevops.com.cn/library/mysql:5.7.38
+</span></span><span style=display:flex><span>docker push registry.zdevops.com.cn/nacos/nacos-peer-finder-plugin:1.1
+</span></span><span style=display:flex><span>docker push registry.zdevops.com.cn/nacos/nacos-server:v2.1.0
+</span></span></code></pre></div><ul><li>清理临时镜像</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>docker rmi mysql:5.7.38
+</span></span><span style=display:flex><span>docker rmi nacos/nacos-peer-finder-plugin:1.1
+</span></span><span style=display:flex><span>docker rmi nacos/nacos-server:v2.1.0
+</span></span><span style=display:flex><span>docker rmi registry.zdevops.com.cn/library/mysql:5.7.38
+</span></span><span style=display:flex><span>docker rmi registry.zdevops.com.cn/nacos/nacos-peer-finder-plugin:1.1
+</span></span><span style=display:flex><span>docker rmi registry.zdevops.com.cn/nacos/nacos-server:v2.1.0
+</span></span></code></pre></div><h3 id=准备-nacos-部署资源>准备 Nacos 部署资源</h3><ul><li>官方资源配置清单</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 拉取官方的配置清单，各位参考着进行修改，本文不涉及修改过程</span>
+</span></span><span style=display:flex><span>git clone https://github.com/nacos-group/nacos-k8s.git
+</span></span></code></pre></div><ul><li>初始化数据库文件</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>wget https://raw.githubusercontent.com/alibaba/nacos/develop/distribution/conf/nacos-mysql.sql
+</span></span></code></pre></div><h2 id=部署-mysql>部署 MySQL</h2><p>Nacos 需要使用 MySQL 存储配置数据，由于使用量不大，没有考虑高可用部署，直接在 K8s 上部署。也可以采用已有的 MySQL 数据库。</p><h3 id=资源配置清单>资源配置清单</h3><ul><li>mysql-cm.yaml</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ConfigMap</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>nacos-mysql-config</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>zdevops</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>data</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>custom.cnf</span>: |-<span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    [mysqld]
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    #performance setttings
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    lock_wait_timeout = 3600
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    open_files_limit    = 65535
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    back_log = 1024
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    max_connections = 1024
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    max_connect_errors = 1000000
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    table_open_cache = 1024
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    table_definition_cache = 1024
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    thread_stack = 512K
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    sort_buffer_size = 4M
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    join_buffer_size = 4M
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    read_buffer_size = 8M
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    read_rnd_buffer_size = 4M
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    bulk_insert_buffer_size = 64M
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    thread_cache_size = 768
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    interactive_timeout = 600
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    wait_timeout = 600
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    tmp_table_size = 32M
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    max_heap_table_size = 32M</span>
+</span></span></code></pre></div><ul><li>mysql-secret.yaml</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Secret</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>nacos-mysql-secret</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>zdevops</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>data</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>MYSQL_ROOT_PASSWORD</span>: <span style=color:#ae81ff>UEA4OHcwcmQ=</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>MYSQL_PASSWORD</span>: <span style=color:#ae81ff>UEA4OHcwcmQ=</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>type</span>: <span style=color:#ae81ff>Opaque</span>
+</span></span></code></pre></div><p><strong>MYSQL_ROOT_PASSWORD</strong> 和 <strong>MYSQL_PASSWORD</strong> 是 MySQL 中 root 和 nacos 用户的密码。</p><p>密码需要使用 <code>echo -n "P@88w0rd" | base64</code> 加密的方式。</p><ul><li>mysql-sts.yaml</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>StatefulSet</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>apps/v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>nacos-mysql</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>zdevops</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app</span>: <span style=color:#ae81ff>nacos-mysql</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>selector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>app</span>: <span style=color:#ae81ff>nacos-mysql</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>template</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>app</span>: <span style=color:#ae81ff>nacos-mysql</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>volumes</span>:
+</span></span><span style=display:flex><span>        - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>host-time</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>hostPath</span>:
+</span></span><span style=display:flex><span>            <span style=color:#f92672>path</span>: <span style=color:#ae81ff>/etc/localtime</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>type</span>: <span style=color:#e6db74>&#39;&#39;</span>
+</span></span><span style=display:flex><span>        - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>config</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>configMap</span>:
+</span></span><span style=display:flex><span>            <span style=color:#f92672>name</span>: <span style=color:#ae81ff>nacos-mysql-config</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>items</span>:
+</span></span><span style=display:flex><span>              - <span style=color:#f92672>key</span>: <span style=color:#ae81ff>custom.cnf</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>path</span>: <span style=color:#ae81ff>custom.cnf</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>defaultMode</span>: <span style=color:#ae81ff>420</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>containers</span>:
+</span></span><span style=display:flex><span>        - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>nacos-mysql</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>image</span>: <span style=color:#e6db74>&#39;registry.zdevops.com.cn/library/mysql:5.7.38&#39;</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>ports</span>:
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>tcp-3306</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>containerPort</span>: <span style=color:#ae81ff>3306</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>protocol</span>: <span style=color:#ae81ff>TCP</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>env</span>:
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>MYSQL_ROOT_PASSWORD</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>valueFrom</span>:
+</span></span><span style=display:flex><span>                <span style=color:#f92672>secretKeyRef</span>:
+</span></span><span style=display:flex><span>                  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>nacos-mysql-secret</span>
+</span></span><span style=display:flex><span>                  <span style=color:#f92672>key</span>: <span style=color:#ae81ff>MYSQL_ROOT_PASSWORD</span>
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>MYSQL_PASSWORD</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>valueFrom</span>:
+</span></span><span style=display:flex><span>                <span style=color:#f92672>secretKeyRef</span>:
+</span></span><span style=display:flex><span>                  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>nacos-mysql-secret</span>
+</span></span><span style=display:flex><span>                  <span style=color:#f92672>key</span>: <span style=color:#ae81ff>MYSQL_PASSWORD</span>
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>MYSQL_DATABASE</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>value</span>: <span style=color:#e6db74>&#34;nacos&#34;</span>
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>MYSQL_USER</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>value</span>: <span style=color:#e6db74>&#34;nacos&#34;</span> 
+</span></span><span style=display:flex><span>          <span style=color:#f92672>resources</span>:
+</span></span><span style=display:flex><span>            <span style=color:#f92672>limits</span>:
+</span></span><span style=display:flex><span>              <span style=color:#f92672>cpu</span>: <span style=color:#e6db74>&#39;2&#39;</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>memory</span>: <span style=color:#ae81ff>4000Mi</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>requests</span>:
+</span></span><span style=display:flex><span>              <span style=color:#f92672>cpu</span>: <span style=color:#ae81ff>100m</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>memory</span>: <span style=color:#ae81ff>500Mi</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>volumeMounts</span>:
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>host-time</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>mountPath</span>: <span style=color:#ae81ff>/etc/localtime</span>
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>data</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>mountPath</span>: <span style=color:#ae81ff>/var/lib/mysql</span>
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>config</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>mountPath</span>: <span style=color:#ae81ff>/etc/mysql/conf.d/custom.cnf</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>subPath</span>: <span style=color:#ae81ff>custom.cnf</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>volumeClaimTemplates</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>name</span>: <span style=color:#ae81ff>data</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>zdevops</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>accessModes</span>:
+</span></span><span style=display:flex><span>          - <span style=color:#ae81ff>ReadWriteOnce</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>resources</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>requests</span>:
+</span></span><span style=display:flex><span>            <span style=color:#f92672>storage</span>: <span style=color:#ae81ff>5Gi</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>storageClassName</span>: <span style=color:#ae81ff>glusterfs</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>serviceName</span>: <span style=color:#ae81ff>mysql-headless</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Service</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>nacos-mysql-headless</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>zdevops</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app</span>: <span style=color:#ae81ff>nacos-mysql</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>ports</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>tcp-3306</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>protocol</span>: <span style=color:#ae81ff>TCP</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>port</span>: <span style=color:#ae81ff>3306</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>targetPort</span>: <span style=color:#ae81ff>3306</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>selector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app</span>: <span style=color:#ae81ff>nacos-mysql</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>clusterIP</span>: <span style=color:#ae81ff>None</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>type</span>: <span style=color:#ae81ff>ClusterIP</span>
+</span></span></code></pre></div><p><strong>MYSQL_DATABASE</strong> 和 <strong>MYSQL_USER</strong> 是 MySQL 初始化时创建的 Nacos 数据库名称和 Nacos 用户名称。</p><ul><li>mysql-external.yaml</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Service</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>nacos-mysql-external</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>zdevops</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app</span>: <span style=color:#ae81ff>nacos-mysql-external</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>ports</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>tcp-mysql-external</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>protocol</span>: <span style=color:#ae81ff>TCP</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>port</span>: <span style=color:#ae81ff>3306</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>targetPort</span>: <span style=color:#ae81ff>3306</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>nodePort</span>: <span style=color:#ae81ff>31006</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>selector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app</span>: <span style=color:#ae81ff>nacos-mysql</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>type</span>: <span style=color:#ae81ff>NodePort</span>
+</span></span></code></pre></div><h3 id=gitops>GitOps</h3><p><strong>在运维开发服务器上操作：</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 创建新分支</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># git checkout -b main-nacos-062401 main</span>
+</span></span><span style=display:flex><span>Switched to a new branch <span style=color:#e6db74>&#39;main-nacos-062401&#39;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 在已有代码仓库创建 nacos 目录</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># mkdir nacos</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 编辑资源配置清单</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># vi nacos/mysql-cm.yaml</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># vi nacos/mysql-secret.yaml</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># vi nacos/mysql-sts.yaml</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># vi nacos/mysql-external.yaml</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 提交 Git</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># git add nacos</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># git commit -am &#39;添加 nacos mysql部署资源配置清单&#39;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 分支合并</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># git checkout main</span>
+</span></span><span style=display:flex><span>Switched to branch <span style=color:#e6db74>&#39;main&#39;</span>
+</span></span><span style=display:flex><span>Your branch is up to date with <span style=color:#e6db74>&#39;origin/main&#39;</span>.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># git merge main-nacos-062401</span>
+</span></span><span style=display:flex><span>Updating e60e3e3..2d51a5a
+</span></span><span style=display:flex><span>Fast-forward
+</span></span><span style=display:flex><span> nacos/mysql-cm.yaml       | <span style=color:#ae81ff>27</span> +++++++++++++++++++++++
+</span></span><span style=display:flex><span> nacos/mysql-external.yaml | <span style=color:#ae81ff>17</span> ++++++++++++++
+</span></span><span style=display:flex><span> nacos/mysql-secret.yaml   |  <span style=color:#ae81ff>9</span> ++++++++
+</span></span><span style=display:flex><span> nacos/mysql-sts.yaml      | <span style=color:#ae81ff>98</span> +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+</span></span><span style=display:flex><span> nodeport.md               |  <span style=color:#ae81ff>2</span> +-
+</span></span><span style=display:flex><span> <span style=color:#ae81ff>5</span> files changed, <span style=color:#ae81ff>152</span> insertions<span style=color:#f92672>(</span>+<span style=color:#f92672>)</span>, <span style=color:#ae81ff>1</span> deletion<span style=color:#f92672>(</span>-<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span> create mode <span style=color:#ae81ff>100644</span> nacos/mysql-cm.yaml
+</span></span><span style=display:flex><span> create mode <span style=color:#ae81ff>100644</span> nacos/mysql-external.yaml
+</span></span><span style=display:flex><span> create mode <span style=color:#ae81ff>100644</span> nacos/mysql-secret.yaml
+</span></span><span style=display:flex><span> create mode <span style=color:#ae81ff>100644</span> nacos/mysql-sts.yaml
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span> <span style=color:#75715e># 删除临时分支</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># git branch -d  main-nacos-062401</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> <span style=color:#75715e># 推送到远程仓库 </span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># git push</span>
+</span></span></code></pre></div><h3 id=部署资源>部署资源</h3><p><strong>在运维管理服务器上操作：</strong></p><ul><li>更新镜像仓库代码</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># git pull</span>
+</span></span></code></pre></div><ul><li>部署资源</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># kubectl apply -f nacos/mysql-cm.yaml</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># kubectl apply -f nacos/mysql-secret.yaml</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># kubectl apply -f nacos/mysql-sts.yaml</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># kubectl apply -f nacos/mysql-external.yaml</span>
+</span></span></code></pre></div><h3 id=验证>验证</h3><ul><li>查看资源状态</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># kubectl get cm,secrets,pvc,sts,pods -n zdevops -o wide</span>
+</span></span><span style=display:flex><span>NAME                             DATA   AGE
+</span></span><span style=display:flex><span>configmap/nacos-mysql-config     <span style=color:#ae81ff>1</span>      3h10m
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>NAME                           TYPE                                  DATA   AGE
+</span></span><span style=display:flex><span>secret/nacos-mysql-secret      Opaque                                <span style=color:#ae81ff>2</span>      3h10m
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>NAME                                       STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE     VOLUMEMODE
+</span></span><span style=display:flex><span>persistentvolumeclaim/data-nacos-mysql-0   Bound    pvc-13bec5c5-33e2-46df-bcdc-dc216c17f88a   5Gi        RWO            glusterfs      3h10m   Filesystem
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>NAME                           READY   AGE     CONTAINERS    IMAGES
+</span></span><span style=display:flex><span>statefulset.apps/nacos-mysql   1/1     3h10m   nacos-mysql   registry.zdevops.com.cn/library/mysql:5.7.38
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>NAME                READY   STATUS    RESTARTS   AGE   IP               NODE              NOMINATED NODE   READINESS GATES
+</span></span><span style=display:flex><span>pod/nacos-mysql-0   1/1     Running   <span style=color:#ae81ff>0</span>          32m   10.233.116.189   ks-k8s-master-2   &lt;none&gt;           &lt;none&gt;
+</span></span></code></pre></div><ul><li>MySQL 登录验证</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 进入 MySQL POD</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># kubectl exec -it nacos-mysql-0 -n zdevops -- /bin/bash</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 在 MySQL POD 内部以 root 用户连接 MySQL 服务器，并列出数据库</span>
+</span></span><span style=display:flex><span>root@nacos-mysql-0:/# mysql -u root -pP@88w0rd
+</span></span><span style=display:flex><span>mysql: <span style=color:#f92672>[</span>Warning<span style=color:#f92672>]</span> Using a password on the command line interface can be insecure.
+</span></span><span style=display:flex><span>Welcome to the MySQL monitor.  Commands end with ; or <span style=color:#ae81ff>\g</span>.
+</span></span><span style=display:flex><span>Your MySQL connection id is <span style=color:#ae81ff>4</span>
+</span></span><span style=display:flex><span>Server version: 5.7.38 MySQL Community Server <span style=color:#f92672>(</span>GPL<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Copyright <span style=color:#f92672>(</span>c<span style=color:#f92672>)</span> 2000, 2022, Oracle and/or its affiliates.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Oracle is a registered trademark of Oracle Corporation and/or its
+</span></span><span style=display:flex><span>affiliates. Other names may be trademarks of their respective
+</span></span><span style=display:flex><span>owners.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Type <span style=color:#e6db74>&#39;help;&#39;</span> or <span style=color:#e6db74>&#39;\h&#39;</span> <span style=color:#66d9ef>for</span> help. Type <span style=color:#e6db74>&#39;\c&#39;</span> to clear the current input statement.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>mysql&gt; show databases;
+</span></span><span style=display:flex><span>+--------------------+
+</span></span><span style=display:flex><span>| Database           |
+</span></span><span style=display:flex><span>+--------------------+
+</span></span><span style=display:flex><span>| information_schema |
+</span></span><span style=display:flex><span>| mysql              |
+</span></span><span style=display:flex><span>| nacos              |
+</span></span><span style=display:flex><span>| performance_schema |
+</span></span><span style=display:flex><span>| sys                |
+</span></span><span style=display:flex><span>+--------------------+
+</span></span><span style=display:flex><span><span style=color:#ae81ff>5</span> rows in set <span style=color:#f92672>(</span>0.01 sec<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>mysql&gt; quit
+</span></span><span style=display:flex><span>Bye
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 在 MySQL POD 内部以 nacos 用户连接 MySQL 服务器，并列出数据库</span>
+</span></span><span style=display:flex><span>root@nacos-mysql-0:/# mysql -u nacos -pP@88w0rd
+</span></span><span style=display:flex><span>mysql: <span style=color:#f92672>[</span>Warning<span style=color:#f92672>]</span> Using a password on the command line interface can be insecure.
+</span></span><span style=display:flex><span>Welcome to the MySQL monitor.  Commands end with ; or <span style=color:#ae81ff>\g</span>.
+</span></span><span style=display:flex><span>Your MySQL connection id is <span style=color:#ae81ff>5</span>
+</span></span><span style=display:flex><span>Server version: 5.7.38 MySQL Community Server <span style=color:#f92672>(</span>GPL<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Copyright <span style=color:#f92672>(</span>c<span style=color:#f92672>)</span> 2000, 2022, Oracle and/or its affiliates.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Oracle is a registered trademark of Oracle Corporation and/or its
+</span></span><span style=display:flex><span>affiliates. Other names may be trademarks of their respective
+</span></span><span style=display:flex><span>owners.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Type <span style=color:#e6db74>&#39;help;&#39;</span> or <span style=color:#e6db74>&#39;\h&#39;</span> <span style=color:#66d9ef>for</span> help. Type <span style=color:#e6db74>&#39;\c&#39;</span> to clear the current input statement.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>mysql&gt; show databases;
+</span></span><span style=display:flex><span>+--------------------+
+</span></span><span style=display:flex><span>| Database           |
+</span></span><span style=display:flex><span>+--------------------+
+</span></span><span style=display:flex><span>| information_schema |
+</span></span><span style=display:flex><span>| nacos              |
+</span></span><span style=display:flex><span>+--------------------+
+</span></span><span style=display:flex><span><span style=color:#ae81ff>2</span> rows in set <span style=color:#f92672>(</span>0.00 sec<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>mysql&gt; quit
+</span></span><span style=display:flex><span>Bye
+</span></span></code></pre></div><h3 id=导入-nacos-初始化数据>导入 Nacos 初始化数据</h3><p>本文采用将 SQL 文件复制到容器内部执行的方式导入数据。实际使用中，可以直接在集群外部使用 MySQL 客户端连接 MySQL 的 NodePort 管理数据库并导入数据。</p><ul><li>获取初始化数据库文件</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 官方</span>
+</span></span><span style=display:flex><span>wget https://raw.githubusercontent.com/alibaba/nacos/develop/distribution/conf/nacos-mysql.sql
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Gitee备用</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># wget https://gitee.com/zdevops/k8s-yaml/raw/main/nacos/nacos-mysql.sql</span>
+</span></span></code></pre></div><ul><li>将 SQL 文件复制到 MySQL 容器内部</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 拷贝文件</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># cd nacos</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master nacos<span style=color:#f92672>]</span><span style=color:#75715e># kubectl cp nacos-mysql.sql -n zdevops nacos-mysql-0:home/</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 确认文件成功拷贝</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master nacos<span style=color:#f92672>]</span><span style=color:#75715e># kubectl exec -it nacos-mysql-0 -n zdevops -- ls /home</span>
+</span></span></code></pre></div><ul><li>登录容器内部，导入数据</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 进入 MySQL POD</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># kubectl exec -it nacos-mysql-0 -n zdevops -- /bin/bash</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 导入数据， 需要输入 nacos 用户的密码</span>
+</span></span><span style=display:flex><span>root@nacos-mysql-0:/# mysql -u nacos -p nacos &lt; /home/nacos-mysql.sql 
+</span></span><span style=display:flex><span>Enter password: 
+</span></span></code></pre></div><h2 id=集群模式-nacos-部署>集群模式 Nacos 部署</h2><h3 id=资源配置清单-1>资源配置清单</h3><ul><li>nacos-cm.yaml</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>---
+</span></span><span style=display:flex><span>apiVersion: v1
+</span></span><span style=display:flex><span>kind: ConfigMap
+</span></span><span style=display:flex><span>metadata:
+</span></span><span style=display:flex><span>  name: nacos-config
+</span></span><span style=display:flex><span>  namespace: zdevops
+</span></span><span style=display:flex><span>data:
+</span></span><span style=display:flex><span>  mysql.host: <span style=color:#e6db74>&#34;nacos-mysql-external.zdevops&#34;</span>
+</span></span><span style=display:flex><span>  mysql.db.name: <span style=color:#e6db74>&#34;nacos&#34;</span>
+</span></span><span style=display:flex><span>  mysql.port: <span style=color:#e6db74>&#34;3306&#34;</span>
+</span></span><span style=display:flex><span>  mysql.user: <span style=color:#e6db74>&#34;nacos&#34;</span>
+</span></span><span style=display:flex><span>  mysql.password: <span style=color:#e6db74>&#34;P@88w0rd&#34;</span>
+</span></span></code></pre></div><ul><li>nacos-sts.yaml</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>apps/v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>StatefulSet</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>nacos</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>zdevops</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>serviceName</span>: <span style=color:#ae81ff>nacos-headless</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>template</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>app</span>: <span style=color:#ae81ff>nacos</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>annotations</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>pod.alpha.kubernetes.io/initialized</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>affinity</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>podAntiAffinity</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>requiredDuringSchedulingIgnoredDuringExecution</span>:
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>labelSelector</span>:
+</span></span><span style=display:flex><span>                <span style=color:#f92672>matchExpressions</span>:
+</span></span><span style=display:flex><span>                  - <span style=color:#f92672>key</span>: <span style=color:#e6db74>&#34;app&#34;</span>
+</span></span><span style=display:flex><span>                    <span style=color:#f92672>operator</span>: <span style=color:#ae81ff>In</span>
+</span></span><span style=display:flex><span>                    <span style=color:#f92672>values</span>:
+</span></span><span style=display:flex><span>                      - <span style=color:#ae81ff>nacos</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>topologyKey</span>: <span style=color:#e6db74>&#34;kubernetes.io/hostname&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>initContainers</span>:
+</span></span><span style=display:flex><span>        - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>peer-finder-plugin-install</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>image</span>: <span style=color:#ae81ff>registry.zdevops.com.cn/nacos/nacos-peer-finder-plugin:1.1</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>imagePullPolicy</span>: <span style=color:#ae81ff>Always</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>volumeMounts</span>:
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>mountPath</span>: <span style=color:#ae81ff>/home/nacos/plugins/peer-finder</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>name</span>: <span style=color:#ae81ff>data</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>subPath</span>: <span style=color:#ae81ff>peer-finder</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>containers</span>:
+</span></span><span style=display:flex><span>        - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>nacos</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>imagePullPolicy</span>: <span style=color:#ae81ff>Always</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>image</span>: <span style=color:#ae81ff>registry.zdevops.com.cn/nacos/nacos-server:v2.1.0</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>resources</span>:
+</span></span><span style=display:flex><span>            <span style=color:#f92672>limits</span>:
+</span></span><span style=display:flex><span>              <span style=color:#f92672>cpu</span>: <span style=color:#e6db74>&#39;2&#39;</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>memory</span>: <span style=color:#ae81ff>4Gi</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>requests</span>:
+</span></span><span style=display:flex><span>              <span style=color:#f92672>cpu</span>: <span style=color:#e6db74>&#34;100m&#34;</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>memory</span>: <span style=color:#e6db74>&#34;1Gi&#34;</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>ports</span>:
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>containerPort</span>: <span style=color:#ae81ff>8848</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>name</span>: <span style=color:#ae81ff>client-port</span>
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>containerPort</span>: <span style=color:#ae81ff>9848</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>name</span>: <span style=color:#ae81ff>client-rpc</span>
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>containerPort</span>: <span style=color:#ae81ff>9849</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>name</span>: <span style=color:#ae81ff>raft-rpc</span>
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>containerPort</span>: <span style=color:#ae81ff>7848</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>name</span>: <span style=color:#ae81ff>old-raft-rpc</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>env</span>:
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>NACOS_REPLICAS</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>value</span>: <span style=color:#e6db74>&#34;3&#34;</span>
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>SERVICE_NAME</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>value</span>: <span style=color:#e6db74>&#34;nacos-headless&#34;</span>
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>DOMAIN_NAME</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>value</span>: <span style=color:#e6db74>&#34;cluster.local&#34;</span>
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>POD_NAMESPACE</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>valueFrom</span>:
+</span></span><span style=display:flex><span>                <span style=color:#f92672>fieldRef</span>:
+</span></span><span style=display:flex><span>                  <span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span>                  <span style=color:#f92672>fieldPath</span>: <span style=color:#ae81ff>metadata.namespace</span>
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>MYSQL_SERVICE_HOST</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>valueFrom</span>:
+</span></span><span style=display:flex><span>                <span style=color:#f92672>configMapKeyRef</span>:
+</span></span><span style=display:flex><span>                  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>nacos-config</span>
+</span></span><span style=display:flex><span>                  <span style=color:#f92672>key</span>: <span style=color:#ae81ff>mysql.host</span>
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>MYSQL_SERVICE_DB_NAME</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>valueFrom</span>:
+</span></span><span style=display:flex><span>                <span style=color:#f92672>configMapKeyRef</span>:
+</span></span><span style=display:flex><span>                  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>nacos-config</span>
+</span></span><span style=display:flex><span>                  <span style=color:#f92672>key</span>: <span style=color:#ae81ff>mysql.db.name</span>
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>MYSQL_SERVICE_PORT</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>valueFrom</span>:
+</span></span><span style=display:flex><span>                <span style=color:#f92672>configMapKeyRef</span>:
+</span></span><span style=display:flex><span>                  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>nacos-config</span>
+</span></span><span style=display:flex><span>                  <span style=color:#f92672>key</span>: <span style=color:#ae81ff>mysql.port</span>
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>MYSQL_SERVICE_USER</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>valueFrom</span>:
+</span></span><span style=display:flex><span>                <span style=color:#f92672>configMapKeyRef</span>:
+</span></span><span style=display:flex><span>                  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>nacos-config</span>
+</span></span><span style=display:flex><span>                  <span style=color:#f92672>key</span>: <span style=color:#ae81ff>mysql.user</span>
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>MYSQL_SERVICE_PASSWORD</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>valueFrom</span>:
+</span></span><span style=display:flex><span>                <span style=color:#f92672>configMapKeyRef</span>:
+</span></span><span style=display:flex><span>                  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>nacos-config</span>
+</span></span><span style=display:flex><span>                  <span style=color:#f92672>key</span>: <span style=color:#ae81ff>mysql.password</span>
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>NACOS_SERVER_PORT</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>value</span>: <span style=color:#e6db74>&#34;8848&#34;</span>
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>NACOS_APPLICATION_PORT</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>value</span>: <span style=color:#e6db74>&#34;8848&#34;</span>
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>PREFER_HOST_MODE</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>value</span>: <span style=color:#e6db74>&#34;hostname&#34;</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>volumeMounts</span>:
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>data</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>mountPath</span>: <span style=color:#ae81ff>/home/nacos/plugins/peer-finder</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>subPath</span>: <span style=color:#ae81ff>peer-finder</span>
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>data</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>mountPath</span>: <span style=color:#ae81ff>/home/nacos/data</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>subPath</span>: <span style=color:#ae81ff>data</span>
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>data</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>mountPath</span>: <span style=color:#ae81ff>/home/nacos/logs</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>subPath</span>: <span style=color:#ae81ff>logs</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>volumeClaimTemplates</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>name</span>: <span style=color:#ae81ff>data</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>zdevops</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>accessModes</span>: [ <span style=color:#e6db74>&#34;ReadWriteMany&#34;</span> ]
+</span></span><span style=display:flex><span>        <span style=color:#f92672>storageClassName</span>: <span style=color:#e6db74>&#34;glusterfs&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>resources</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>requests</span>:
+</span></span><span style=display:flex><span>            <span style=color:#f92672>storage</span>: <span style=color:#ae81ff>5Gi</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>selector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>app</span>: <span style=color:#ae81ff>nacos</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Service</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>nacos-headless</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>zdevops</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app</span>: <span style=color:#ae81ff>nacos</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>annotations</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>service.alpha.kubernetes.io/tolerate-unready-endpoints</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>ports</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>port</span>: <span style=color:#ae81ff>8848</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>name</span>: <span style=color:#ae81ff>server</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>targetPort</span>: <span style=color:#ae81ff>8848</span>
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>port</span>: <span style=color:#ae81ff>9848</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>name</span>: <span style=color:#ae81ff>client-rpc</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>targetPort</span>: <span style=color:#ae81ff>9848</span>
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>port</span>: <span style=color:#ae81ff>9849</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>name</span>: <span style=color:#ae81ff>raft-rpc</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>targetPort</span>: <span style=color:#ae81ff>9849</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>## 兼容1.4.x版本的选举端口</span>
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>port</span>: <span style=color:#ae81ff>7848</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>name</span>: <span style=color:#ae81ff>old-raft-rpc</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>targetPort</span>: <span style=color:#ae81ff>7848</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>clusterIP</span>: <span style=color:#ae81ff>None</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>selector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app</span>: <span style=color:#ae81ff>nacos</span>
+</span></span></code></pre></div><p><strong>DOMAIN_NAME</strong> 要改成实际的 K8s 的集群域名。</p><ul><li>nacos-external.yaml</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Service</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>nacos-external</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>zdevops</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app</span>: <span style=color:#ae81ff>external</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>type</span>: <span style=color:#ae81ff>NodePort</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>ports</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>tcp-nacos-external</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>protocol</span>: <span style=color:#ae81ff>TCP</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>port</span>: <span style=color:#ae81ff>8848</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>targetPort</span>: <span style=color:#ae81ff>8848</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>nodePort</span>: <span style=color:#ae81ff>31848</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>selector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app</span>: <span style=color:#ae81ff>nacos</span>
+</span></span></code></pre></div><h3 id=gitops-1>GitOps</h3><p><strong>在运维开发服务器上操作：</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 创建新分支</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># git checkout -b main-nacos-062402 main</span>
+</span></span><span style=display:flex><span>Switched to a new branch <span style=color:#e6db74>&#39;main-nacos-062402&#39;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 编辑资源配置清单</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># vi nacos/nacos-cm.yaml</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># vi nacos/nacos-sts.yaml</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># vi nacos/nacos-external.yaml</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 提交 Git</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># git add nacos</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># git commit -am &#39;添加nacos部署资源配置清单&#39;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 分支合并</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># git checkout main</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># git merge main-nacos-062402</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 删除临时分支</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># git branch -d  main-nacos-062402</span>
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span> <span style=color:#75715e># 推送到远程仓库 </span>
+</span></span><span style=display:flex><span> <span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># git push</span>
+</span></span></code></pre></div><h3 id=部署资源-1>部署资源</h3><p><strong>在运维管理服务器上操作</strong></p><ul><li>更新镜像仓库代码</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># git pull</span>
+</span></span></code></pre></div><ul><li>部署资源</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># kubectl apply -f nacos/nacos-cm.yaml</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># kubectl apply -f nacos/nacos-sts.yaml</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># kubectl apply -f nacos/nacos-external.yaml</span>
+</span></span></code></pre></div><h3 id=验证-1>验证</h3><ul><li>资源验证</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># sts</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># kubectl get sts -n zdevops -o wide</span>
+</span></span><span style=display:flex><span>NAME          READY   AGE     CONTAINERS    IMAGES
+</span></span><span style=display:flex><span>nacos         3/3     3h13m   nacos         registry.zdevops.com.cn/nacos/nacos-server:v2.1.0
+</span></span><span style=display:flex><span>nacos-mysql   1/1     26h     nacos-mysql   registry.zdevops.com.cn/library/mysql:5.7.38
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># pods</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># kubectl get pods -n zdevops -o wide</span>
+</span></span><span style=display:flex><span>NAME            READY   STATUS    RESTARTS   AGE     IP               NODE              NOMINATED NODE   READINESS GATES
+</span></span><span style=display:flex><span>nacos-0         1/1     Running   <span style=color:#ae81ff>0</span>          3h12m   10.233.116.220   ks-k8s-master-2   &lt;none&gt;           &lt;none&gt;
+</span></span><span style=display:flex><span>nacos-1         1/1     Running   <span style=color:#ae81ff>0</span>          3h12m   10.233.117.101   ks-k8s-master-0   &lt;none&gt;           &lt;none&gt;
+</span></span><span style=display:flex><span>nacos-2         1/1     Running   <span style=color:#ae81ff>0</span>          3h12m   10.233.87.14     ks-k8s-master-1   &lt;none&gt;           &lt;none&gt;
+</span></span><span style=display:flex><span>nacos-mysql-0   1/1     Running   <span style=color:#ae81ff>0</span>          23h     10.233.116.189   ks-k8s-master-2   &lt;none&gt;           &lt;none&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># svc</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>root@zdevops-master k8s-yaml<span style=color:#f92672>]</span><span style=color:#75715e># kubectl get svc -n zdevops -o wide</span>
+</span></span><span style=display:flex><span>NAME                                                     TYPE        CLUSTER-IP      EXTERNAL-IP   PORT<span style=color:#f92672>(</span>S<span style=color:#f92672>)</span>                               AGE     SELECTOR
+</span></span><span style=display:flex><span>glusterfs-dynamic-13bec5c5-33e2-46df-bcdc-dc216c17f88a   ClusterIP   10.233.48.177   &lt;none&gt;        1/TCP                                 26h     &lt;none&gt;
+</span></span><span style=display:flex><span>glusterfs-dynamic-39795af9-8307-408c-ba2a-d0648f658f1b   ClusterIP   10.233.31.22    &lt;none&gt;        1/TCP                                 3h12m   &lt;none&gt;
+</span></span><span style=display:flex><span>glusterfs-dynamic-cc4be907-9ef3-4a69-92d7-1875f7051e36   ClusterIP   10.233.34.82    &lt;none&gt;        1/TCP                                 3h12m   &lt;none&gt;
+</span></span><span style=display:flex><span>glusterfs-dynamic-e73324a8-3f97-4697-a7dc-67576863f21a   ClusterIP   10.233.27.2     &lt;none&gt;        1/TCP                                 3h12m   &lt;none&gt;
+</span></span><span style=display:flex><span>nacos-external                                           NodePort    10.233.63.221   &lt;none&gt;        8848:30848/TCP                        3h12m   app<span style=color:#f92672>=</span>nacos
+</span></span><span style=display:flex><span>nacos-headless                                           ClusterIP   None            &lt;none&gt;        8848/TCP,9848/TCP,9849/TCP,7848/TCP   3h12m   app<span style=color:#f92672>=</span>nacos
+</span></span><span style=display:flex><span>nacos-mysql-external                                     NodePort    10.233.12.228   &lt;none&gt;        3306:31006/TCP                        23h     app<span style=color:#f92672>=</span>nacos-mysql
+</span></span><span style=display:flex><span>nacos-mysql-headless                                     ClusterIP   None            &lt;none&gt;        3306/TCP                              26h     app<span style=color:#f92672>=</span>nacos-mysql
+</span></span></code></pre></div><ul><li>登录 Nacos 管理控制台</li></ul><p>在浏览器中输入 <strong>http:// 任意节点 IP:30848</strong>，输入默认的用户名和密码，<strong>nacos</strong>。</p><p><img src=https://znotes-1258881081.cos.ap-beijing.myqcloud.com/k8s-on-kubesphere/kubesphere-nacos-0.png alt=kubesphere-nacos-0></p><p><img src=https://znotes-1258881081.cos.ap-beijing.myqcloud.com/k8s-on-kubesphere/kubesphere-nacos-1.png alt=kubesphere-nacos-1></p><p><img src=https://znotes-1258881081.cos.ap-beijing.myqcloud.com/k8s-on-kubesphere/kubesphere-nacos-2.png alt=kubesphere-nacos-2></p><h3 id=初始化配置>初始化配置</h3><ul><li>修改默认密码</li></ul><p><img src=https://znotes-1258881081.cos.ap-beijing.myqcloud.com/k8s-on-kubesphere/kubesphere-nacos-3.png alt=kubesphere-nacos-3></p><p><img src=https://znotes-1258881081.cos.ap-beijing.myqcloud.com/k8s-on-kubesphere/kubesphere-nacos-4.png alt=kubesphere-nacos-4></p><ul><li>后续配置</li></ul><h2 id=总结>总结</h2><p>本文详细介绍了 Nacos 集群模式在基于 KubeSphere 部署的 K8s 集群上的安装部署方法。同时，介绍了 MySQL 在 K8s 上的安装部署方法。</p><p>本文的配置方案可直接用于开发测试环境，对于生产环境也有一定的借鉴意义。</p></div></div><div class=share-2><div class=share><a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fnacos-on-kubesphere%2f&text=%e5%9c%a8%20KubeSphere%20%e4%b8%ad%e5%bf%ab%e9%80%9f%e5%ae%89%e8%a3%85%e9%83%a8%e7%bd%b2%20Nacos%20" target=_blank rel="noopener noreferrer"><img src=/images/share/Twitter.svg alt="twitter icon">
+</a><a href="https://reddit.com/submit?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fnacos-on-kubesphere%2f&title=%e5%9c%a8%20KubeSphere%20%e4%b8%ad%e5%bf%ab%e9%80%9f%e5%ae%89%e8%a3%85%e9%83%a8%e7%bd%b2%20Nacos%20" target=_blank rel="noopener noreferrer"><img src=/images/share/Reddit.svg alt="reddit icon">
+</a><a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fnacos-on-kubesphere%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Facebook.svg alt="facebook icon">
+</a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fnacos-on-kubesphere%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Linkedin.svg alt="linkedin icon">
+</a><a href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fnacos-on-kubesphere%2f&t=%e5%9c%a8%20KubeSphere%20%e4%b8%ad%e5%bf%ab%e9%80%9f%e5%ae%89%e8%a3%85%e9%83%a8%e7%bd%b2%20Nacos%20" target=_blank rel="noopener noreferrer"><img src=/images/share/HackerNews.svg alt="hackernews icon"></a></div></div></div><div class=aside><div class=inner-div><div class=title>目录</div><div class=tabs><nav id=TableOfContents><ul><li><a href=#简介>简介</a></li><li><a href=#前提条件>前提条件</a><ul><li><a href=#准备离线镜像>准备离线镜像</a></li><li><a href=#准备-nacos-部署资源>准备 Nacos 部署资源</a></li></ul></li><li><a href=#部署-mysql>部署 MySQL</a><ul><li><a href=#资源配置清单>资源配置清单</a></li><li><a href=#gitops>GitOps</a></li><li><a href=#部署资源>部署资源</a></li><li><a href=#验证>验证</a></li><li><a href=#导入-nacos-初始化数据>导入 Nacos 初始化数据</a></li></ul></li><li><a href=#集群模式-nacos-部署>集群模式 Nacos 部署</a><ul><li><a href=#资源配置清单-1>资源配置清单</a></li><li><a href=#gitops-1>GitOps</a></li><li><a href=#部署资源-1>部署资源</a></li><li><a href=#验证-1>验证</a></li><li><a href=#初始化配置>初始化配置</a></li></ul></li><li><a href=#总结>总结</a></li></ul></nav></div></div></div></div></section><div class=SubscribeForm><div class=innerBox><img class=close src=/images/home/close.svg alt=close><p class=description>通过邮件接收 KubeSphere 最新的技术博客与产品更新的通知</p><div id=blog_formAddress data-actionaddress="https://www.sendcloud.net/v3/api/subInvite/subscription?invitecode=1dc5a4fb-894c-4470-b01d-ca7fa9d47a46" data-usesendcloud=true data-lang=zh><input name=EMAIL id=email-input-blog type=text placeholder>
+<button id=email-submit-blog>订阅</button>
+<span id=message_blog data-message1=请提供您的邮箱 data-message2=请输入有效的邮箱地址! data-message3=邮箱地址已经存在 style=color:red></span><span id=message1_blog style=color:#00a971 data-success=订阅成功啦，我们保证不会给你发垃圾邮件的啦></span></div></div></div><footer><div class=footer><div class="footer-main common-layout"><div class=up-main><div class=left-div><img src=/images/logo.svg alt class=foot-logo><p>通过邮件接收 KubeSphere 最新的技术博客与产品更新的通知</p><div id=formAddress data-actionaddress="https://www.sendcloud.net/v3/api/subInvite/subscription?invitecode=1dc5a4fb-894c-4470-b01d-ca7fa9d47a46" data-usesendcloud=true data-lang=zh><input name=EMAIL id=email-input type=text placeholder=请输入您的邮箱地址>
+<button id=email-submit>订阅</button></div><span id=message data-message1=请提供您的邮箱 data-message2=请输入有效的邮箱地址! data-message3=邮箱地址已经存在></span><span id=message1 style=color:#00a971 data-success=订阅成功啦，我们保证不会给你发垃圾邮件的啦></span><script>var bindSubmit=function(){var e=$("#email-input");$("#email-submit").click(function(t){t.stopPropagation();var s,o,n=e.val(),i=$("#message").data("message1"),a=$("#message").data("message2"),r=$("#message").data("message3"),c=$("#message1").data("success");if(n)if(validateEmail(n)){if(s=$("#formAddress").data("usesendcloud"),!s)return;o=$("#formAddress").data("actionaddress"),$.post({type:"post",url:o,data:{email:$("#email-input").val().toString()},success:function(){showSuccessMessage(c),setTimeout(function(){$("#email-input").val("")},1e3)},error:function(){showMessage(r)}})}else t.preventDefault(),showMessage(a);else t.preventDefault(),showMessage(i)})},validateEmail=function(e){var t=/^[A-Za-z0-9]+([_.][A-Za-z0-9]+)*@([A-Za-z0-9-]+\.)+[A-Za-z]{2,6}$/;return t.test(e)},showMessage=function(e){$("#message").html(e).show()},showSuccessMessage=function(e){$("#message1").html(e).show()},bindHideMessage=function(){$(window).click(function(){$("#message").hide(),$("#message1").hide()})},bindClose=function(){$(".formBox .close").click(function(e){e.stopPropagation(),$(".formBox").fadeOut()})};bindSubmit(),bindClose(),bindHideMessage()</script><span id=message data-message1=请提供您的邮箱 data-message2=请输入有效的邮箱地址!></span></div><div class=right-div><ul class=common-flex-layout><li class=nowrap-li><div class=h3>应用场景</div><a href=/zh/devops/>拥抱一站式 DevOps</a>
+<a href=/zh/service-mesh/>在 K8s 运行微服务</a>
+<a href=/zh/observability/>构建云原生可观测性</a>
+<a href=https://github.com/kubesphere/kubekey target=_blank rel="noopener noreferrer">K8s 一键部署与运维</a>
+<a href=https://github.com/OpenFunction/OpenFunction target=_blank rel="noopener noreferrer">构建 FaaS 平台与 Serverless 架构</a>
+<a href=https://github.com/openpitrix/openpitrix target=_blank rel="noopener noreferrer">多云应用管理平台</a></li><li class=nowrap-li><div class=h3>资源</div><a href=/zh/projects/>开源项目</a>
+<a href=/zh/blogs/>技术博客</a>
+<a href=/zh/conferences/>开源峰会</a>
+<a href=/zh/videos/>视频资源</a>
+<a href=/zh/learn/>云原生实战</a></li><li class=nowrap-li><div class=h3>文档中心</div><a href=/zh/docs/v4.1/01-intro/01-introduction/>产品介绍</a>
+<a href=/zh/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere/>如何安装</a>
+<a href=/zh/docs/v4.1/02-quickstart/>快速入门</a>
+<a href=/zh/docs/v3.4/reference/api-docs/>API 文档</a></li><li class=nowrap-li><div class=h3>开源社区</div><a href=/zh/contribution/>参与贡献</a>
+<a href=/zh/live/>社区活动</a>
+<a href=/zh/case/>案例学习</a>
+<a href=/zh/partner/>合作伙伴</a>
+<a href=/zh/user-group/>用户委员会</a>
+<a href=https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md target=_blank rel="noopener noreferrer">版本计划</a>
+<a href=https://kubesphere.com.cn/ target=_blank rel="noopener noreferrer">中国站</a>
+<a href=https://ask.kubesphere.io/forum target=_blank rel="noopener noreferrer">中文论坛</a>
+<a href=https://kubesphere.io target=_blank rel="noopener noreferrer">全球站</a></li><li class=nowrap-li><div class=h3>产品与服务</div><a href=https://aws.amazon.com/cn/quickstart/architecture/qingcloud-kubesphere/ target=_blank rel="noopener noreferrer">KubeSphere on AWS</a>
+<a href=https://market.azure.cn/marketplace/apps/qingcloud.kubesphere target=_blank rel="noopener noreferrer">KubeSphere on Azure</a>
+<a href=https://marketplace.digitalocean.com/apps/kubesphere target=_blank rel="noopener noreferrer">KubeSphere on DigitalOcean</a>
+<a href=https://www.qingcloud.com/products/kubesphereqke target=_blank rel="noopener noreferrer">KubeSphere on QingCloud(QKE)</a>
+<a href=https://kubesphere.com.cn/kse/ target=_blank rel="noopener noreferrer">KubeSphere 企业版</a>
+<a href=https://kubesphere.cloud/ksv/ target=_blank rel="noopener noreferrer">KubeSphere 虚拟化平台</a>
+<a href=https://kubesphere.com.cn/marketplace/ target=_blank rel="noopener noreferrer">云原生扩展组件市场</a>
+<a href=https://kubesphere.cloud target=_blank rel="noopener noreferrer">云原生应用服务平台</a>
+<a href=https://m.qingcloud.com/p/aec50 target=_blank rel="noopener noreferrer">了解商业产品与咨询合作</a></li></ul></div></div><div class=down-main><div class=img-div><a class=wechat href=javascript:void(0); aria-label=wechat><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28"><defs><path id="a" d="M0 0h15.673v12.156H0z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="13" cy="13" r="13" stroke="#B6C2CD"/><g transform="translate(5 7)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="currentColor" d="M15.673 7.898c0-2.061-2.173-3.74-4.619-3.74-2.59.0-4.625 1.679-4.625 3.74.0 2.066 2.035 3.738 4.625 3.738.542.0 1.09-.13 1.632-.256l1.493.776-.408-1.29c1.09-.776 1.902-1.81 1.902-2.968zm-6.119-.645c-.27.0-.541-.257-.541-.514.0-.256.27-.514.541-.514.41.0.681.258.681.514.0.257-.271.514-.681.514zm2.994.0c-.27.0-.541-.257-.541-.514.0-.256.27-.514.54-.514.41.0.681.258.681.514.0.257-.277.514-.68.514z" mask="url(#b)"/><path fill="currentColor" d="M10.602 3.674c.177.0.356.011.533.029C10.657 1.576 8.27.0 5.543.0 2.498.0.0 1.974.0 4.485c0 1.45.829 2.64 2.216 3.564l-.552 1.588 1.94-.929c.693.129 1.251.263 1.94.263.17.0.343-.005.515-.022a3.68 3.68.0 01-.172-1.104c0-2.302 2.081-4.171 4.715-4.171zM7.618 2.243c.417.0.693.263.693.66s-.276.66-.693.66c-.418.0-.835-.263-.835-.66.006-.398.423-.66.835-.66zm-3.88 1.319c-.417.0-.834-.263-.834-.66s.417-.66.834-.66c.418.0.695.263.695.66.0.392-.277.66-.695.66z" mask="url(#b)"/></g></g></svg><div class=hide-div><img src=/images/home/wechat.svg alt></div></a><a class=facebook-a href=https://www.facebook.com/kubesphere target=_blank aria-label=facebook></a><a class=twitter-a href=https://x.com/KubeSphere target=_blank aria-label=twitter rel="noopener noreferrer"></a><a class=linkedin-a href=https://www.linkedin.com/company/kubesphere/ target=_blank aria-label=linkedin rel="noopener noreferrer"></a><a class=bilibili-a href=https://space.bilibili.com/438908638 target=_blank aria-label=bilibili rel="noopener noreferrer"></a><a class=slack-a href=https://join.slack.com/t/kubesphere/shared_invite/zt-2b4t6rdb4-ico_4UJzCln_S2c1pcrIpQ target=_blank aria-label=slack rel="noopener noreferrer"></a><a class=github-a href=https://github.com/kubesphere/kubesphere target=_blank aria-label=github rel="noopener noreferrer"></a><a class=medium-a href=https://itnext.io/@kubesphere target=_blank aria-label=medium rel="noopener noreferrer"></a></div><p class=p1></p><p class=case><a href=http://www.beian.miit.gov.cn/ target=_blank rel="noopener noreferrer"><span>京ICP备13019086号</span>
+</a><a target=_blank rel="noopener noreferrer" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502041003"><img src=/images/footer/case-icon.png alt=备案图标>
+<span>京公网安备 11010502041003号</span></a></p></div></div></div><div class=cookie><div class=common-layout><p>您的隐私对我们很重要。我们使用Cookie来记住订阅详细信息，优化网站功能并交付根据您的兴趣量身定制的内容。要了解更多信息，请参阅我们的<a href=/zh/privacy>隐私政策</a>.</p><button>
+接受并继续</button></div></div></footer><script>var lazyLoad=function(e,t){for(var n,o,i,s=0;s<t;s++){if(n=e.eq(s),o=n.attr("data-loaded"),o)continue;n.offset().top<parseInt($(window).height())+parseInt($(window).scrollTop())&&(i=n.attr("src"),n.attr("src",i),n.attr("data-loaded",!0))}},bindLayLoad=function(){var e=$("img"),t=e.length;lazyLoad(e,t),$(window).scroll(function(){lazyLoad(e,t)})},bindAddPadding=function(){var e=$("#close-join");e.length>0&&$(".main-section").addClass("padding")},docCookies={getItem:function(e){return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*"+encodeURIComponent(e).replace(/[-.+*]/g,"\\$&")+"\\s*\\=\\s*([^;]*).*$)|^.*$"),"$1"))||null},setItem:function(e,t){return!!e&&!/^(?:expires|max-age|path|domain|secure)$/i.test(e)&&(document.cookie=encodeURIComponent(e)+"="+encodeURIComponent(t),!0)}},bindHideCookie=function(){var t=docCookies.getItem("hasAuth"),e=$(".cookie");t?e.hide():e.show(),e.find("button").on("click",function(){docCookies.setItem("hasAuth","1"),e.hide()})};bindAddPadding(),bindHideCookie()</script><script type=text/javascript src=/js/aside.2d6977c0f16aef4ed3e886dd66675ce74bd0efcd467c2b2bcdb30b92d5e7c7c0e5c6e0c9d8f09a883c22f58df9e6b0b6347fcdd3c9a920b7faba6d7f91a201c3.js integrity="sha512-LWl3wPFq707T6IbdZmdc50vQ781GfCsrzbMLktXnx8DlxuDJ2PCaiDwi9Y355rC2NH/N08mpILf6um1/kaIBww=="></script><script type=text/javascript src=/js/markdown-tab.17f9f46b021adebc7250ce1b07134a577b307e7a436daa4aaf388f218e8463966f53770b26a64817c06c168738a887672d47fb4c29615adfc446e11d09a344cf.js integrity="sha512-F/n0awIa3rxyUM4bBxNKV3swfnpDbapKrziPIY6EY5ZvU3cLJqZIF8BsFoc4qIdnLUf7TClhWt/ERuEdCaNEzw=="></script><script>let forbidForm=!1;var viewer=new Viewer(document.querySelector(".md-body"),{url:"src"}),blogBindSubmit=function(){var e=$("#email-input-blog");$("#email-submit-blog").click(function(t){t.stopPropagation();var s,o,n=e.val(),i=$("#message_blog").data("message1"),a=$("#message_blog").data("message2"),r=$("#message_blog").data("message3"),c=$("#message1_blog").data("success");if(n)if(validateEmail(n)){if(s=$("#blog_formAddress").data("usesendcloud"),!s)return;o=$("#blog_formAddress").data("actionaddress"),$.post({type:"post",url:o,data:{email:n.toString()},success:function(){showSuccessMessage_blog(c),setTimeout(function(){window.onscroll="",$(".SubscribeForm").hide(),$("#email-input-blog").val("")},5e3)},error:function(){showMessage_blog(r)}})}else t.preventDefault(),$("#message_blog").html(a).show();else t.preventDefault(),$("#message_blog").html(i).show()})},validateEmail=function(e){var t=/^[A-Za-z0-9]+([_.][A-Za-z0-9]+)*@([A-Za-z0-9-]+\.)+[A-Za-z]{2,6}$/;return t.test(e)},bindHideMessageBlog=function(){$(window).click(function(){$("#message_blog").hide()})},bindCloseBlog=function(){$(".SubscribeForm .close").click(function(e){e.stopPropagation(),$(".SubscribeForm").fadeOut(),window.onscroll=""})},showMessage_blog=function(e){$("#message_blog").html(e).show()},showSuccessMessage_blog=function(e){$("#message1_blog").html(e).show()};window.onscroll=()=>{var e=document.documentElement.scrollTop||document.body.scrollTop,t=document.documentElement.clientHeight||document.body.clientHeight,n=document.documentElement.scrollHeight||document.body.scrollHeight;forbidForm&&(window.onscroll=""),e+t>n-710?$(".SubscribeForm").hide():$(".SubscribeForm").show()},blogBindSubmit(),bindCloseBlog(),bindHideMessageBlog()</script><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script></body></html>

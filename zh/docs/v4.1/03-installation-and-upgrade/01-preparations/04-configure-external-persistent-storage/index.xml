@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>配置外部持久化存储 on</title><link>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/</link><description>Recent content in 配置外部持久化存储 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/index.xml" rel="self" type="application/rss+xml"/><item><title>配置云上存储设备</title><link>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/01-configure-storage-devices-on-cloud/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/01-configure-storage-devices-on-cloud/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何在生产环境中为 KubeSphere 配置云上存储设备。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>您可以在云环境中创建 API 密钥，并设置 KubeSphere 使用 API 密钥通过容器存储接口（CSI）与云环境对接。用户在 KubeSphere 平台上创建卷并将卷挂载到容器组时，KubeSphere 将自动在云环境中创建存储设备供容器组使用。以下以青云QingCloud 为例介绍具体操作。有关其他云环境中的操作，请参阅云环境的用户指南或联系您的云服务提供商。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>您需要获取一个青云QingCloud 帐户，并确保帐户余额可以创建所需的存储设备。有关更多信息，请访问&lt;a href="https://www.qingcloud.com/">青云QingCloud 官网&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>登录&lt;a href="https://www.qingcloud.com/">青云QingCloud&lt;/a> 控制台，点击页面右上角的用户名，然后在下拉列表中选择 &lt;strong>API 密钥&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在 &lt;strong>API 密钥&lt;/strong>页面，点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>创建API密钥&lt;/strong>对话框，设置密钥的名称，然后点击&lt;strong>提交&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框将私钥文件下载到本地。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">警告&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>KubeSphere 将使用该私钥与云上的存储设备对接。请妥善保存该私钥文件以避免用户数据泄露。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在 API 密钥列表中获取 API 密钥的 ID。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>登录用于执行 KubeSphere 安装操作的集群节点，执行以下命令创建存储插件配置文件：&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-shell" data-lang="shell">vi csi-qingcloud.yaml&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>将以下信息添加到配置文件中，并保存文件供后续安装 KubeSphere 时使用：&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-yaml" data-lang="yaml">config:
+ qy_access_key_id: &amp;#34;&amp;lt;key ID&amp;gt;&amp;#34;
+ qy_secret_access_key: &amp;#34;&amp;lt;access key&amp;gt;&amp;#34;
+ zone: &amp;#34;&amp;lt;zone ID&amp;gt;&amp;#34;
+sc:
+ isDefaultClass: true&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>将以下参数替换为实际值：&lt;/p>
+&lt;/div></description></item><item><title>配置 NeonSAN CSI</title><link>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/04-configure-neosan-csi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/04-configure-neosan-csi/</guid><description>&lt;div class="paragraph">
+&lt;p>NeonSAN 是青云的一款企业级分布式块存储系统，NeonSAN CSI 是 NeonSAN 团队面向 Kubernetes 提供的存储插件，具有在 Kubernetes 平台上动态创建持久存储卷的能力。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>本节介绍如何在生产环境中为 KubeSphere 集群配置 NeonSAN CSI。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>您已经成功部署 NeonSAN v2.2.0 及以上版本，且容器集群的每个节点都已安装 QBD 与 NeonSAN 连通。具体操作请咨询 KubeSphere 技术支持人员。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您已经安装 Kubernetes v1.16 及其以上版本。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您已经在容器集群的 master 节点安装了 Helm。本节以 Helm 3 为例。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="sect2">
+&lt;h3 id="_在线安装_neonsan_csi">在线安装 NeonSAN CSI&lt;/h3>
+&lt;div class="paragraph">
+&lt;p>在线安装适用于容器集群能够访问外网的情况。&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>执行以下命令添加 Helm 仓库，如 &lt;a href="https://charts.kubesphere.io/test。" class="bare">https://charts.kubesphere.io/test。&lt;/a>&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-shell" data-lang="shell">$ helm repo add ks-test https://charts.kubesphere.io/test
+&amp;#34;ks-test&amp;#34; has been added to your repositories&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>执行以下命令查看仓库是否添加成功。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-shell" data-lang="shell">$ helm repo list
+NAME        URL
+ks-test     https://charts.kubesphere.io/test&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>执行以下命令更新仓库的 Chart 列表。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-shell" data-lang="shell">$ helm repo update&lt;/code>&lt;/pre>
+&lt;/div></description></item><item><title>配置 NFS</title><link>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/05-configure-nfs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/05-configure-nfs/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何在生产环境中为 KubeSphere 集群配置网络文件系统（NFS）。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>NFS 与部分应用不兼容（例如 Prometheus），可能会导致容器组创建失败。如果确实需要在生产环境中使用 NFS，请确保您了解相关风险或咨询 KubeSphere 技术支持 &lt;a href="mailto:support@kubesphere.cloud">support@kubesphere.cloud&lt;/a>。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_搭建_nfs_服务端">搭建 NFS 服务端&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>为 KubeSphere 配置 NFS 前，您需要先搭建 NFS 服务端。如果您已经有可用的 NFS 服务端，您可以跳过此步骤。以下以 Ubuntu 操作系统安装操作 NFS Kernel Server 为例介绍如何搭建 NFS 服务端。有关其他 NFS 服务端和其他操作系统的具体操作，请参阅 NFS 服务端和操作系统的用户指南。&lt;/p>
+&lt;/div>
+&lt;div class="sect2">
+&lt;h3 id="_前提条件">前提条件&lt;/h3>
+&lt;div class="paragraph">
+&lt;p>您需要准备一台 Linux 服务器（以下以 Ubuntu 操作系统为例），该服务器必须与 KubeSphere 集群节点网络连通。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect2">
+&lt;h3 id="_操作步骤">操作步骤&lt;/h3>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>登录用于搭建 NFS 服务端的服务器，执行以下命令指安装 NFS Kernel Server：&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-shell" data-lang="shell">sudo apt update&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-shell" data-lang="shell">sudo apt install nfs-kernel-server&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>执行以下命令创建供 KubeSphere 使用的目录（将 &amp;lt;directory&amp;gt; 替换为实际的目录路径，例如 &lt;strong>/mnt/demo&lt;/strong>）：&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-shell" data-lang="shell">sudo mkdir -p &amp;lt;directory&amp;gt;&lt;/code>&lt;/pre>
+&lt;/div></description></item><item><title>配置开源存储系统</title><link>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/07-configure-opensource-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/07-configure-opensource-storage/</guid><description>&lt;div class="paragraph">
+&lt;p>KubeSphere 支持众多第三方开源存储系统，&lt;strong>包括但不限于&lt;/strong>：&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/ceph/ceph-csi">Ceph CSI&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://docs.gluster.org/en/latest/">GlusterFS&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://openebs.io/">OpenEBS&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://longhorn.io/">Longhorn&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>KubeSphere 不提供第三方开源存储系统的安装包，请到存储系统的官方网站下载安装。&lt;/p>
+&lt;/div></description></item></channel></rss>

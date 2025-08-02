@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>安全说明 on</title><link>https://openksc.github.io/zh/docs/v4.1/21-security/</link><description>Recent content in 安全说明 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/21-security/index.xml" rel="self" type="application/rss+xml"/><item><title>安全策略</title><link>https://openksc.github.io/zh/docs/v4.1/21-security/01-security-policy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/21-security/01-security-policy/</guid><description>&lt;div class="sect1">
+&lt;h2 id="_支持的版本">支持的版本&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>我方遵循&lt;strong>生命周期结束（EOL）&lt;/strong> 政策，为 KubeSphere 各版本提供安全补丁和错误修复支持。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>我们会定期发布补丁版本，以解决所支持 KubeSphere 版本中的安全漏洞和重要错误。每个版本的支持期限由其 &lt;strong>EOL 日期&lt;/strong>决定，而不是基于支持的次要版本数量。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>当前支持计划如下：&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">KubeSphere 版本&lt;/th>
+&lt;th class="tableblock halign-left valign-top">生命周期结束 (EOL) 日期&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>&lt;strong>KubeSphere v4.2&lt;/strong>&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>待定&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>&lt;strong>KubeSphere v4.1&lt;/strong>&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>2027 年 9 月 12 日&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>&lt;strong>KubeSphere v3.4&lt;/strong>&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>2025 年 12 月 25 日&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>&lt;strong>KubeSphere v3.3 及更早版本&lt;/strong>&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>2025 年 10 月 31 日&lt;/p>
+&lt;/div></description></item><item><title>KubeSphere 网关组件（ingress-nginx）安全漏洞公告</title><link>https://openksc.github.io/zh/docs/v4.1/21-security/02-vulnerability-advisory/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/21-security/02-vulnerability-advisory/</guid><description>&lt;div class="sect1">
+&lt;h2 id="_漏洞概述">漏洞概述&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>&lt;strong>影响版本&lt;/strong>&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere &amp;amp; KubeSphere 企业版 v3.x 所有版本&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>KubeSphere &amp;amp; KubeSphere 企业版 v4.1.x 所有版本&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;strong>漏洞等级&lt;/strong>：严重&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;strong>漏洞类型&lt;/strong>：权限提升、信息泄露、安全绕过、目录遍历&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;strong>漏洞一览表：&lt;/strong>&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 14.2857%;"/>
+&lt;col style="width: 14.2857%;"/>
+&lt;col style="width: 14.2857%;"/>
+&lt;col style="width: 42.8571%;"/>
+&lt;col style="width: 14.2858%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">漏洞编号&lt;/th>
+&lt;th class="tableblock halign-left valign-top">类型&lt;/th>
+&lt;th class="tableblock halign-left valign-top">CVSS 评分&lt;/th>
+&lt;th class="tableblock halign-left valign-top">简述&lt;/th>
+&lt;th class="tableblock halign-left valign-top">详细信息&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CVE-2025-1097&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>配置注入&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>8.8（高危）&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>通过 &lt;code>auth-tls-match-cn&lt;/code> 注解注入恶意配置，可导致任意代码执行和信息泄露&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>&lt;a href="https://github.com/kubernetes/kubernetes/issues/131007">官方链接&lt;/a>&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CVE-2025-24514&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>配置注入&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>8.8（高危）&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>通过 &lt;code>auth-url&lt;/code> 注解注入恶意配置，可导致任意代码执行和信息泄露&lt;/p>
+&lt;/div></description></item></channel></rss>

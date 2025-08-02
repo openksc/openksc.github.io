@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>KubeEdge on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/17-kubeedge/</link><description>Recent content in KubeEdge on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/17-kubeedge/index.xml" rel="self" type="application/rss+xml"/><item><title>添加边缘节点</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/17-kubeedge/01-add-an-edge-node/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/17-kubeedge/01-add-an-edge-node/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何添加边缘节点。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个集群并在集群中具有&lt;strong>节点管理&lt;/strong>权限。有关更多信息，请参阅“集群成员”和“集群角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeEdge&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>待添加的边缘节点需要能够访问 KubeSphere 集群主节点的 &lt;strong>30000&lt;/strong>、&lt;strong>30001&lt;/strong>、&lt;strong>30002&lt;/strong>、&lt;strong>30004&lt;/strong> 端口。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>待添加的边缘节点已安装 Docker、containerd、CRI-O 或 Virtlet 作为容器运行时。KubeEdge 边缘节点默认使用 containerd 作为运行时。有关更多信息，请参阅 &lt;a href="https://docs.kubeedge.io/zh/docs/">KubeEdge 官方文档&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已获取待添加的边缘节点的 SSH 登录信息。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_配置边缘节点">配置边缘节点&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>执行以下步骤在边缘节点上配置 &lt;a href="https://kubeedge.io/zh/docs/advanced/edgemesh/">EdgeMesh&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>执行以下命令编辑 &lt;strong>/etc/nsswitch.conf&lt;/strong> 文件：&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">vi /etc/nsswitch.conf&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在 &lt;strong>/etc/nsswitch.conf&lt;/strong> 文件中添加以下内容，然后保存文件：&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">hosts:          dns files mdns4_minimal [NOTFOUND=return]&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>执行以下命令在边缘节点上启用 IP 转发：&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">sudo echo &amp;#34;net.ipv4.ip_forward = 1&amp;#34; &amp;gt;&amp;gt; /etc/sysctl.conf&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>执行以下命令验证配置结果：&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">sudo sysctl -p | grep ip_forward&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>如果显示以下信息，则表明配置成功：&lt;/p>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">net.ipv4.ip_forward = 1&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_添加边缘节点">添加边缘节点&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>节点管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>节点 &amp;gt; 边缘节点&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右侧点击&lt;strong>添加&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>添加边缘节点&lt;/strong>对话框，设置边缘节点的参数。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>名称&lt;/p>
+&lt;/div></description></item><item><title>查看边缘节点列表</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/17-kubeedge/02-view-an-edge-node-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/17-kubeedge/02-view-an-edge-node-list/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看边缘节点列表。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个集群并在集群中具有&lt;strong>节点查看&lt;/strong>权限。有关更多信息，请参阅“集群成员”和“集群角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeEdge&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>节点查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>节点 &amp;gt; 边缘节点&lt;/strong>打开节点列表。&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>节点列表提供以下信息：&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>名称&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>各节点的主机名称和在子网内部的 IP 地址。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>状态&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>各节点的运行状态。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>运行中&lt;/strong>：节点运行正常。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>无法调度&lt;/strong>：节点被用户手动设置为不可调度。如果节点处在此状态，容器组将不能被调度到该节点。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>如果节点上存在污点，&lt;strong>状态&lt;/strong>列还将显示节点上污点的数量。将光标悬停在污点数字上查看污点的具体信息。有关更多信息，请参阅&lt;a href="../../../07-cluster-management/03-nodes/05-edit-node-taints/">设置节点污点&lt;/a>。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>角色&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>各节点在集群中的角色，取值为&lt;strong>代理/边缘节点&lt;/strong>。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在列表上方点击搜索框并设置搜索条件，可按名称、状态或角色搜索节点。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>在列表右上角点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/refresh-light.svg" alt="refresh" width="18" height="18"/>&lt;/span>可刷新列表信息。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>在列表右上角点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/cogwheel.svg" alt="cogwheel" width="18" height="18"/>&lt;/span>可定制列表中显示的信息。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>删除边缘节点</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/17-kubeedge/03-delete-an-edge-node/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/17-kubeedge/03-delete-an-edge-node/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何删除边缘节点。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个集群并在集群中具有&lt;strong>节点管理&lt;/strong>权限。有关更多信息，请参阅“集群成员”和“集群角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeEdge&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已获取 KubeSphere 集群主节点和边缘节点的 SSH 登录信息。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>登录边缘节点并执行以下命令删除边缘节点中的配置：&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash"> ./keadm reset&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">apt remove mosquitto&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">rm -rf /var/lib/kubeedge /var/lib/edged /etc/kubeedge/ca /etc/kubeedge/certs&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>登录 KubeSphere 集群主节点并执行以下命令删除边缘节点。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">kubectl delete node &amp;lt;edgenode-name&amp;gt;&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在 KubeSphere 集群主节点执行以下命令检查当前的节点：&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">kubectl get node&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>如果命令回显中没有显示需要删除的边缘节点，则表明边缘节点删除成功。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>多集群管理 on</title><link>https://openksc.github.io/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/</link><description>Recent content in 多集群管理 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/index.xml" rel="self" type="application/rss+xml"/><item><title>查看集群列表</title><link>https://openksc.github.io/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/02-view-a-cluster-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/02-view-a-cluster-list/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看集群列表。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>您需要在 KubeSphere 平台具有&lt;strong>集群查看&lt;/strong>权限。有关更多信息，请参阅“平台角色”。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>集群查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>集群管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>集群列表提供以下信息：&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>名称、标识和描述&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群的名称、标识和描述信息。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>节点数量&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群中服务器节点的数量。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Kubernetes 版本&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群中运行的 Kubernetes 版本。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>提供商&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群环境的提供商。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>标签&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群的标签，用于对集群进行分类管理。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>创建时间&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群加入 KubeSphere Web 控制台的时间。&lt;/p>
+&lt;/div></description></item><item><title>编辑集群信息</title><link>https://openksc.github.io/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/03-edit-cluster-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/03-edit-cluster-information/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍编辑集群信息。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>您可以编辑集群的标识、提供商和描述。KubeSphere 不支持编辑已添加集群的名称。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>您需要在 KubeSphere 平台具有&lt;strong>集群管理&lt;/strong>权限。有关更多信息，请参阅“平台角色”。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>集群管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>集群管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在需要操作的集群右侧点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，然后在下拉列表中选择&lt;strong>编辑信息&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>编辑信息&lt;/strong>对话框，设置集群的标识、提供商和描述，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>标识&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群的用途标识。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>提供商&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群的提供商。在下拉列表中选择提供商。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>描述&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群的描述信息。描述可包含任意字符，最长 256 个字符。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>添加集群标签</title><link>https://openksc.github.io/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/04-add-cluster-tags/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/04-add-cluster-tags/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何添加集群标签。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>您可以使用标签对集群进行分类管理。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要在 KubeSphere 平台具有&lt;strong>集群管理&lt;/strong>权限。有关更多信息，请参阅“平台角色”。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您需要提前创建集群标签。有关更多信息，请参阅&lt;a href="../../02-cluster-tags/01-create-a-cluster-tag/">创建集群标签&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_对单个集群添加标签">对单个集群添加标签&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>集群管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>集群管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在需要操作的集群右侧点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，然后在下拉列表中选择&lt;strong>添加标签&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>添加标签&lt;/strong>对话框，选择标签的键和值，点击&lt;strong>添加&lt;/strong>，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>标签添加后，您可以集群列表上方点击搜索框按标签搜索集群。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_对多个集群添加标签">对多个集群添加标签&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>集群管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>集群管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在集群列表右上角点击&lt;strong>批量管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>选择需要添加标签的集群左侧的复选框，然后在列表上方点击&lt;strong>添加标签&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>添加标签&lt;/strong>对话框，选择标签的键和值，点击&lt;strong>添加&lt;/strong>，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>标签添加后，您可以集群列表上方点击搜索框按标签搜索集群。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>编辑集群配置</title><link>https://openksc.github.io/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/05-edit-cluster-configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/05-edit-cluster-configuration/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何编辑成员集群的集群配置，即调整 ks-agent 配置参数。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>除了在添加成员集群时进行集群配置外，成员集群被添加后，也可以编辑集群配置。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>您需要在 KubeSphere 平台具有&lt;strong>集群管理&lt;/strong>权限。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>集群管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>集群管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在需要操作的集群右侧点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，然后在下拉列表中选择&lt;strong>编辑配置&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>编辑配置&lt;/strong>对话框输入 ks-agent 的信息，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>更新 kubeconfig</title><link>https://openksc.github.io/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/07-update-kubeconfig/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/07-update-kubeconfig/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何更新成员集群 kubeconfig 信息。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>在 KubeSphere 平台添加成员集群后，如果成员集群的访问信息发生变化，您需要更新成员集群的 kubeconfig 信息。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>KubeSphere 仅支持编辑通过直接连接添加的集群的 kubeconfig 信息，不支持编辑通过代理连接添加的集群的 kubeconfig 信息。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>您需要在 KubeSphere 平台具有&lt;strong>集群管理&lt;/strong>权限。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>集群管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>集群管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在需要操作的集群右侧点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，然后在下拉列表中选择&lt;strong>更新 kubeconfig&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>更新 kubeconfig&lt;/strong> 对话框输入 kubeconfig 信息，然后点击&lt;strong>更新&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon tip">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">提示&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>您可以点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/upload-dark-white.svg" alt="upload-dark-white" width="18" height="18"/>&lt;/span>从本地上传 kubeconfig 配置文件。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="paragraph">
+&lt;p>主集群的 KubeSphere Web 控制台将使用新的 kubeconfig 信息连接成员集群。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>移除成员集群</title><link>https://openksc.github.io/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/09-remove-a-member-cluster/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/09-remove-a-member-cluster/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何移除成员集群。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>主集群无法移除。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>成员集群移除后，KubeSphere 将无法管理该集群。集群中原有的 Kubernetes 资源将不会被删除。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">警告&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群被移除后，集群中原有的多集群配置数据不会被自动清除，卸载 KubeSphere 或删除关联资源时可能会导致用户数据丢失。请务必在被移除的集群上执行&lt;a href="#_清理多集群配置数据">清理多集群配置数据&lt;/a>步骤。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>您需要在主集群和需要移除的成员集群都具有 &lt;strong>platform-admin&lt;/strong> 角色。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_通过_web_控制台移除集群">通过 Web 控制台移除集群&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有 &lt;strong>platform-admin&lt;/strong> 角色的用户登录主集群的 Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>集群管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在需要操作的集群右侧点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，然后在下拉列表中选择&lt;strong>移除集群&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>移除集群&lt;/strong>对话框，确认需要移除的集群的信息，将滑块拖动到右侧，输入需要移除的集群的名称，根据需要选择或取消选择&lt;strong>删除集群中的所有通知配置数据&lt;/strong>，然后点击&lt;strong>移除&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>在多集群系统中，主集群上的通知渠道、静默规则、通知语言等配置数据会自动同步到成员集群。如果移除集群时未选择&lt;strong>删除集群中的所有通知配置数据&lt;/strong>，集群被移除后仍将按照原有的配置发送通知。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_通过命令行移除集群">通过命令行移除集群&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>某些情况下可能无法从 Web 控制台移除成员集群。例如，成员集群的凭证存在错误。在此情况下，您可以执行以下步骤通过命令行移除不健康的成员集群：&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有 &lt;strong>platform-admin&lt;/strong> 角色的用户登录主集群的 Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>将光标悬停在页面右下角的&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/hammer.svg" alt="hammer" width="18" height="18"/>&lt;/span>图标，然后在菜单中选择 &lt;strong>kubectl&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在 &lt;strong>kubectl&lt;/strong> 对话框，执行以下命令移除成员集群（将 &amp;lt;cluster name&amp;gt; 替换为成员集群的名称）：&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">kubectl delete cluster &amp;lt;cluster name&amp;gt;&lt;/code>&lt;/pre>
+&lt;/div></description></item><item><title>纳管成员集群到其他 host 集群</title><link>https://openksc.github.io/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/11-add-a-removed-member-cluster/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/11-add-a-removed-member-cluster/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何将被移除的成员集群重新纳管到其他 host 集群。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_集群正常状态解绑">集群正常状态解绑&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>若成员集群在正常状态下被移除，无需额外操作，成员集群可以直接被其它 host 集群纳管，详细步骤请参阅&lt;a href="../01-add-a-member-cluster">添加成员集群&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_集群异常状态解绑">集群异常状态解绑&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>若成员集群在异常状态下被移除，在成员集群上执行下面的命令来清除集群的纳管信息，之后集群可以正常被其它 host 集群纳管。&lt;/p>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">kubectl patch ns kubesphere-system --type merge -p &amp;#39;{&amp;#34;metadata&amp;#34;:{&amp;#34;annotations&amp;#34;: null}}&amp;#39;&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_清理多集群配置数据">清理多集群配置数据&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>集群被解绑后，集群中原有的资源和多集群配置数据不会被自动清除。如果被解绑集群存在企业空间相关配置，执行以下命令手动清理被移除集群中的配置数据后再进行纳管。&lt;/p>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">for ns in $(kubectl get ns --field-selector status.phase!=Terminating -o jsonpath=&amp;#39;{.items[*].metadata.name}&amp;#39;); do kubectl label ns $ns kubesphere.io/workspace- &amp;amp;&amp;amp; kubectl patch ns $ns --type merge -p &amp;#39;{&amp;#34;metadata&amp;#34;:{&amp;#34;ownerReferences&amp;#34;:[]}}&amp;#39;; done&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

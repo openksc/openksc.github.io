@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Configure External Persistent Storage on</title><link>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/</link><description>Recent content in Configure External Persistent Storage on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/index.xml" rel="self" type="application/rss+xml"/><item><title>Configure Cloud Storage Devices</title><link>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/01-configure-storage-devices-on-cloud/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/01-configure-storage-devices-on-cloud/</guid><description>&lt;div class="paragraph">
+&lt;p>This section provides instructions on how to configure cloud storage devices for KubeSphere in a production environment.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>To configure cloud storage devices, create an API key in the cloud environment and set up KubeSphere using the API key to integrate with the cloud environment through the Container Storage Interface (CSI). When users create volumes in KubeSphere and mount them to pods, KubeSphere will automatically create storage devices in the cloud environment for pods to use. The following steps outline the specific operations using QingCloud as an example. For instructions related to other cloud environments, please refer to the user guide of the respective cloud environment or contact your cloud service provider.&lt;/p>
+&lt;/div></description></item><item><title>Configure NeonSAN CSI</title><link>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/04-configure-neosan-csi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/04-configure-neosan-csi/</guid><description>&lt;div class="paragraph">
+&lt;p>NeonSAN is an enterprise-grade distributed block storage system developed by QingCloud. NeonSAN CSI is a storage plugin provided by the NeonSAN team for Kubernetes, which enables dynamic provisioning of persistent storage volumes on the Kubernetes platform.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This section explains how to configure NeonSAN CSI for KubeSphere
+clusters in a production environment.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>NeonSAN v2.2.0 or above has been successfully deployed, and each node in the container cluster is connected to NeonSAN by the installed QBD. For specific operations, please consult KubeSphere technical support.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Kubernetes v1.16 or above has been installed.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Helm has been installed on the master node of the container cluster. Helm 3 is used as an example in this section.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Configure NFS</title><link>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/05-configure-nfs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/05-configure-nfs/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to configure Network File System (NFS) for the KubeSphere cluster in a production environment.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>NFS is incompatible with some applications (such as Prometheus), which may cause pod creation failure. If you do need to use NFS in a production environment, make sure you understand the risks or consult KubeSphere technical support at &lt;a href="mailto:support@kubesphere.cloud">support@kubesphere.cloud&lt;/a>.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_build_nfs_server">Build NFS Server&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Before configuring NFS for KubeSphere, you need to set up an NFS server first. If you already have an NFS server available, you can skip this step. The following uses the Ubuntu operating system and NFS Kernel Server as an example to introduce how to build an NFS server. For specific operations on other NFS servers and other operating systems, see the user guides for the NFS servers and operating systems.&lt;/p>
+&lt;/div></description></item><item><title>Configure Open-Source Storage Systems</title><link>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/07-configure-opensource-storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/07-configure-opensource-storage/</guid><description>&lt;div class="paragraph">
+&lt;p>KubeSphere supports many third-party open-source storage systems, &lt;strong>including but not limited to&lt;/strong>:&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/ceph/ceph-csi">Ceph CSI&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://docs.gluster.org/en/latest/">GlusterFS&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://openebs.io/">OpenEBS&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://longhorn.io/">Longhorn&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>KubeSphere does not provide installation packages for third-party open-source storage systems. Please download and install them from the official websites of the storage systems.&lt;/p>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>项目配额 on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/04-kubefed/06-project-settings/02-project-quotas/</link><description>Recent content in 项目配额 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/04-kubefed/06-project-settings/02-project-quotas/index.xml" rel="self" type="application/rss+xml"/><item><title>查看项目配额</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/04-kubefed/06-project-settings/02-project-quotas/01-view-project-quotas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/04-kubefed/06-project-settings/02-project-quotas/01-view-project-quotas/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看项目配额。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用&lt;strong>联邦集群应用管理&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+您需要加入一个联邦项目并在对应企业空间中具有&lt;strong>联邦项目查看&lt;/strong>权限。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>联邦项目查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的联邦项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>项目设置 &amp;gt; 项目配额&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>&lt;strong>项目配额&lt;/strong>页面提供以下资源信息：&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CPU 上限&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>项目中所有容器 CPU 上限总和的最大值，单位为核。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>内存上限&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>项目中所有容器内存上限总和的最大值，单位为 MiB。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>容器组&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>项目中当前已创建的容器组数量，以及可以创建的容器组数量上限。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>持久卷声明限制&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>项目中当前已创建的持久卷声明容量，以及可以创建的持久卷声明的容量上限。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>持久卷声明&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>项目中当前已创建的持久卷声明数量，以及可以创建的持久卷声明的数量上限。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>部署&lt;/p>
+&lt;/div></description></item><item><title>编辑项目配额</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/04-kubefed/06-project-settings/02-project-quotas/02-edit-project-quotas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/04-kubefed/06-project-settings/02-project-quotas/02-edit-project-quotas/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何编辑项目配额。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用&lt;strong>联邦集群应用管理&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+您需要加入一个联邦项目并在对应企业空间中具有&lt;strong>联邦项目管理&lt;/strong>权限。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>联邦项目管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的联邦项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>项目设置 &amp;gt; 项目配额&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>项目配额&lt;/strong>页面，点击右上角的&lt;strong>编辑配额&lt;/strong>，进入配额编辑页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>编辑项目配额&lt;/strong>对话框，设置项目资源预留和资源上限。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CPU 预留&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>项目中所有容器 CPU 预留总和的最大值，单位为核。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CPU 上限&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>项目中所有容器 CPU 上限总和的最大值，单位为核。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>内存预留&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>项目中所有容器内存预留总和的最大值，单位为 GiB。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>内存上限&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>项目中所有容器内存上限总和的最大值，单位为 GiB。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>GPU 类型&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>项目中容器所能使用的 GPU 类型。目前仅支持设置 NVIDIA GPU。&lt;/p>
+&lt;/div></description></item></channel></rss>

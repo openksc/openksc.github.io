@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>平台角色 on</title><link>https://openksc.github.io/zh/docs/v4.1/05-users-and-roles/02-platform-roles/</link><description>Recent content in 平台角色 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/05-users-and-roles/02-platform-roles/index.xml" rel="self" type="application/rss+xml"/><item><title>创建平台角色</title><link>https://openksc.github.io/zh/docs/v4.1/05-users-and-roles/02-platform-roles/01-create-a-platform-role/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/05-users-and-roles/02-platform-roles/01-create-a-platform-role/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何创建平台角色。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>KubeSphere 平台提供以下预置平台角色，您也可以创建角色以自定义角色权限。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>platform-admin&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>平台管理员，在 KubeSphere 平台具有所有权限，包括平台角色管理、用户管理、平台设置管理、安装和卸载扩展组件等。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>platform-regular&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>平台普通用户，在平台级别只有应用查看权限。该角色一般授予不需要其他平台权限的企业空间成员。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>platform-self-provisioner&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>创建企业空间并成为所创建的企业空间的管理员。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>您需要在 KubeSphere 平台具有 &lt;strong>platform-admin&lt;/strong> 角色。有关更多信息，请参阅&lt;a href="../../01-users/">用户&lt;/a>和&lt;a href="../../02-platform-roles/">平台角色&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有 &lt;strong>platform-admin&lt;/strong> 角色的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>用户和角色管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>平台角色&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>创建平台角色&lt;/strong>对话框，设置平台角色的名称、别名和描述，然后点击&lt;strong>编辑权限&lt;/strong>。&lt;/p>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>名称&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>平台角色的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 63 个字符。&lt;/p>
+&lt;/div></description></item><item><title>查看平台角色列表</title><link>https://openksc.github.io/zh/docs/v4.1/05-users-and-roles/02-platform-roles/02-view-a-platform-role-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/05-users-and-roles/02-platform-roles/02-view-a-platform-role-list/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看平台角色列表。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>您需要在 KubeSphere 平台具有&lt;strong>角色查看&lt;/strong>权限。有关更多信息，请参阅&lt;a href="../../01-users/">用户&lt;/a>和&lt;a href="../../02-platform-roles/">平台角色&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>角色查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>用户和角色管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>平台角色&lt;/strong>。&lt;/p>
+&lt;div class="paragraph">
+&lt;p>平台角色列表提供角色的名称、描述和创建时间。&lt;/p>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>查看平台角色详情</title><link>https://openksc.github.io/zh/docs/v4.1/05-users-and-roles/02-platform-roles/03-view-platform-role-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/05-users-and-roles/02-platform-roles/03-view-platform-role-details/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看平台角色详情。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>您需要在 KubeSphere 平台具有&lt;strong>角色查看&lt;/strong>权限。有关更多信息，请参阅&lt;a href="../../01-users/">用户&lt;/a>和&lt;a href="../../02-platform-roles/">平台角色&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>角色查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>用户和角色管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>平台角色&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在平台角色列表点击一个平台角色的名称打开其详情页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在平台角色详情页面的&lt;strong>权限&lt;/strong>页签，查看当前角色拥有的权限。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在平台角色详情页面点击&lt;strong>授权用户&lt;/strong>页签，查看具有当前平台角色的用户。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>用户名&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>获得授权的用户的名称。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>状态&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>获得授权的用户当前的状态。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>活跃&lt;/strong>：用户当前状态正常。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>等待中&lt;/strong>：系统正在创建用户。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>已禁用&lt;/strong>：用户被平台管理员禁用，无法登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>限制登录&lt;/strong>：用户在 10 分钟内连续 10 次登录失败，在 10 分钟内被禁止登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>最近登录&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>获得授权的用户最近一次登录 KubeSphere Web 控制台的时间。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>编辑平台角色信息</title><link>https://openksc.github.io/zh/docs/v4.1/05-users-and-roles/02-platform-roles/04-edit-platform-role-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/05-users-and-roles/02-platform-roles/04-edit-platform-role-information/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何编辑平台角色信息。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>您可以编辑由用户创建的平台角色的别名和描述。KubeSphere 不支持编辑预置的平台角色，同时不支持编辑平台角色的名称。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>您需要在 KubeSphere 平台具有&lt;strong>角色管理&lt;/strong>权限。有关更多信息，请参阅&lt;a href="../../01-users/">用户&lt;/a>和&lt;a href="../../02-platform-roles/">平台角色&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>角色管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>用户和角色管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>平台角色&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在需要操作的平台角色右侧点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，然后在下拉列表中选择&lt;strong>编辑信息&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>编辑信息&lt;/strong>对话框，设置平台角色的别名和描述，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>别名&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>平台角色的别名。不同企业空间角色的别名可以相同。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>描述&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>平台角色的描述信息。描述可包含任意字符，最长 256 个字符。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>编辑平台角色权限</title><link>https://openksc.github.io/zh/docs/v4.1/05-users-and-roles/02-platform-roles/05-edit-permissions-of-a-platform-role/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/05-users-and-roles/02-platform-roles/05-edit-permissions-of-a-platform-role/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何编辑平台角色权限。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>您只能编辑用户创建的平台角色权限。预置平台角色的权限无法编辑。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>您需要在 KubeSphere 平台具有&lt;strong>角色管理&lt;/strong>权限。有关更多信息，请参阅&lt;a href="../../01-users/">用户&lt;/a>和&lt;a href="../../02-platform-roles/">平台角色&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>角色管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>用户和角色管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>平台角色&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在需要操作的平台角色右侧点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，然后在下拉列表中选择&lt;strong>编辑权限&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>编辑权限&lt;/strong>对话框，设置平台角色的权限，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>平台角色可设置的权限如下：&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>企业空间&lt;/p>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">权限&lt;/th>
+&lt;th class="tableblock halign-left valign-top">允许操作&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>企业空间创建&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>创建企业空间。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>企业空间管理&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>管理所有企业空间和企业空间下的资源。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>企业空间查看&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>查看所有企业空间和企业空间下的资源。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/li>
+&lt;li>
+&lt;p>集群管理&lt;/p>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">权限&lt;/th>
+&lt;th class="tableblock halign-left valign-top">允许操作&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群管理&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>创建集群、删除集群和管理集群中的所有资源。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群查看&lt;/p>
+&lt;/div></description></item><item><title>删除平台角色</title><link>https://openksc.github.io/zh/docs/v4.1/05-users-and-roles/02-platform-roles/06-delete-platform-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/05-users-and-roles/02-platform-roles/06-delete-platform-roles/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何删除平台角色。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>您可以删除用户创建的平台角色。预置平台角色无法删除。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>您需要在 KubeSphere 平台具有&lt;strong>角色管理&lt;/strong>权限。有关更多信息，请参阅&lt;a href="../../01-users/">用户&lt;/a>和&lt;a href="../../02-platform-roles/">平台角色&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果需要删除的平台角色已经分配给用户，您需要删除用户或修改其角色。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>角色管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>用户和角色管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>平台角色&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在需要删除的平台角色右侧点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，然后在下拉列表中选择&lt;strong>删除&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>删除角色&lt;/strong>对话框点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

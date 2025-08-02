@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Workspace Members on</title><link>https://openksc.github.io/docs/v4.1/08-workspace-management/06-workspace-settings/03-workspace-members/</link><description>Recent content in Workspace Members on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/08-workspace-management/06-workspace-settings/03-workspace-members/index.xml" rel="self" type="application/rss+xml"/><item><title>Invite Users to Join Workspaces</title><link>https://openksc.github.io/docs/v4.1/08-workspace-management/06-workspace-settings/03-workspace-members/01-invite-a-user-to-a-workspace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/08-workspace-management/06-workspace-settings/03-workspace-members/01-invite-a-user-to-a-workspace/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to invite users to join a workspace.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a workspace and have the &lt;strong>Member Management&lt;/strong> permission within the workspace. For more information, refer to &amp;#34;Workspace Members&amp;#34; and &amp;#34;Workspace Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Member Management&lt;/strong> permission, and access your workspace.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Workspace Settings &amp;gt; Workspace Members&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Invite&lt;/strong> on the right side of the page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Invite Member&lt;/strong> dialog, click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/add-dark.svg" alt="add-dark" width="18" height="18"/>&lt;/span> next to the user you want to invite. Select the role of the user in the workspace from the dropdown list, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>KubeSphere provides the following preset workspace roles:&lt;/p>
+&lt;/div></description></item><item><title>View Workspace Member List</title><link>https://openksc.github.io/docs/v4.1/08-workspace-management/06-workspace-settings/03-workspace-members/02-view-a-workspace-member-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/08-workspace-management/06-workspace-settings/03-workspace-members/02-view-a-workspace-member-list/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to view the workspace member list.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a workspace and have the &lt;strong>Member Viewing&lt;/strong> permission within the workspace. For more information, refer to &amp;#34;Workspace Members&amp;#34; and &amp;#34;Workspace Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Member Viewing&lt;/strong> permission, and access your workspace.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Workspace Settings &amp;gt; Workspace Members&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The workspace member list provides the following information:&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Name&lt;/p>
+&lt;/div></description></item><item><title>View Workspace Member Details</title><link>https://openksc.github.io/docs/v4.1/08-workspace-management/06-workspace-settings/03-workspace-members/03-view-workspace-member-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/08-workspace-management/06-workspace-settings/03-workspace-members/03-view-workspace-member-details/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to view workspace member details.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a workspace and have the &lt;strong>Member Viewing&lt;/strong> permission within the workspace. For more information, refer to &amp;#34;Workspace Members&amp;#34; and &amp;#34;Workspace Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Member Viewing&lt;/strong> permission, and access your workspace.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Workspace Settings &amp;gt; Workspace Members&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the name of a workspace member in the list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Attributes&lt;/strong> section on the left side of the workspace member details page, view the resource attributes of the workspace member.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Workspace&lt;/p>
+&lt;/div></description></item><item><title>Change Workspace Member Roles</title><link>https://openksc.github.io/docs/v4.1/08-workspace-management/06-workspace-settings/03-workspace-members/04-change-the-role-of-a-workspace-member/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/08-workspace-management/06-workspace-settings/03-workspace-members/04-change-the-role-of-a-workspace-member/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to change the role of a workspace member.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a workspace and have the &lt;strong>Member Management&lt;/strong> permission within the workspace. For more information, refer to &amp;#34;Workspace Members&amp;#34; and &amp;#34;Workspace Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Member Management&lt;/strong> permission, and access your workspace.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Workspace Settings &amp;gt; Workspace Members&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the right side of the workspace member you want to edit, click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>, then select &lt;strong>Change Role&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Change Role&lt;/strong> dialog, set the role for the workspace member from the dropdown list, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>KubeSphere provides the following preset workspace roles:&lt;/p>
+&lt;/div></description></item><item><title>Remove Workspace Members</title><link>https://openksc.github.io/docs/v4.1/08-workspace-management/06-workspace-settings/03-workspace-members/05-remove-a-workspace-member/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/08-workspace-management/06-workspace-settings/03-workspace-members/05-remove-a-workspace-member/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to remove a workspace member.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Once a user is removed from the workspace, they will lose the permissions provided by the workspace role. If the user has joined projects in the workspace, they will also be removed from those projects.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a workspace and have the &lt;strong>Member Management&lt;/strong> permission within the workspace. For more information, refer to &amp;#34;Workspace Members&amp;#34; and &amp;#34;Workspace Roles&amp;#34;.&lt;/p>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DevOps on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/</link><description>Recent content in DevOps on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/index.xml" rel="self" type="application/rss+xml"/><item><title>概述</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/01-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/01-overview/</guid><description>&lt;div class="paragraph">
+&lt;p>DevOps 提供一系列持续集成 (CI) 和持续交付 (CD) 工具，可以使 IT 和软件开发团队之间的流程实现自动化。在 CI/CD 工作流中，每次集成都通过自动化构建来验证，包括编码、发布和测试，从而帮助开发者提前发现集成错误，团队也可以快速、安全、可靠地将内部软件交付到生产环境。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>不过，传统的 Jenkins Controller-Agent 架构（即多个 Agent 为一个 Controller 工作）有以下不足。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>如果 Controller 宕机，整个 CI/CD 流水线会崩溃。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>资源分配不均衡，一些 Agent 的流水线任务 (Job) 出现排队等待，而其他 Agent 处于空闲状态。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>不同的 Agent 可能配置环境不同，并需要使用不同的编码语言。这种差异会给管理和维护带来不便。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>DevOps 组件支持源代码管理工具，例如 GitHub、Git 和 Bitbucket，支持通过图形编辑面板 (Jenkinsfile out of SCM) 构建 CI/CD 流水线，或者从代码仓库 (Jenkinsfile in SCM) 创建基于 Jenkinsfile 的流水线。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_功能">功能&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>DevOps 组件提供以下功能：&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>独立的 DevOps 项目，提供访问可控的 CI/CD 流水线。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>开箱即用的 DevOps 功能，无需复杂的 Jenkins 配置。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="../03-how-to-use/02-pipelines/02-create-a-pipeline-using-jenkinsfile/">基于 Jenkinsfile 的流水线&lt;/a>，提供一致的用户体验，支持多个代码仓库。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="../03-how-to-use/02-pipelines/01-create-a-pipeline-using-graphical-editing-panel/">图形编辑面板&lt;/a>，用于创建流水线，学习成本低。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>强大的工具集成机制，例如 &lt;a href="../04-how-to-integrate/01-sonarqube/">SonarQube&lt;/a>，用于代码质量检查。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>基于 ArgoCD 的持续交付能力，自动化部署到多集群环境。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

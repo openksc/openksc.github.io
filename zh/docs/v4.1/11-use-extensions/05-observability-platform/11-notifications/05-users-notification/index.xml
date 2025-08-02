@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>用户通知设置 on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/</link><description>Recent content in 用户通知设置 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/index.xml" rel="self" type="application/rss+xml"/><item><title>设置邮件通知</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/01-set-email-notification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/01-set-email-notification/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何设置邮件通知。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>WhizardTelemetry 通知&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右上角点击当前用户名，然后在下拉列表中选择&lt;strong>通知设置&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>通知设置&lt;/strong>页面的&lt;strong>邮箱&lt;/strong>页签，设置邮件通知参数，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>接收设置&lt;/p>
+&lt;div class="paragraph">
+&lt;p>输入邮箱地址，点击&lt;strong>添加&lt;/strong>可设置多个通知接收人。&lt;/p>
+&lt;/div>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>过滤条件&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>KubeSphere 发送的通知以键值对的形式呈现。当此处填写的&lt;strong>键&lt;/strong>和&lt;strong>值&lt;/strong>与规则组告警规则的标签设置中的&lt;strong>键&lt;/strong>和&lt;strong>值&lt;/strong>一致时，就可以通过标签过滤，发送标签符合特定条件的告警通知。点击&lt;strong>添加&lt;/strong>可设置多个条件。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>键&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>通知内容中的键。点击下拉列表可选择预设的键，在下拉列表中可以输入自定义的键。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>操作符&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>筛选条件的操作符。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>包含&lt;/strong>：键对应的值包含特定的字符串。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>不包含&lt;/strong>：键对应的值不包含特定的字符串。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>存在&lt;/strong>：通知内容中存在特定的键。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>不存在&lt;/strong>：通知内容中不存在特定的键。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>正则匹配&lt;/strong>：通过正则表达式来筛选符合条件的通知。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>值&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>键对应的值必须包含的字符串。按 &lt;strong>Enter&lt;/strong> 可设置多个字符串，键对应的值包含其中一个字条串即满足条件。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>点击&lt;strong>发送测试信息&lt;/strong>以确认通知渠道工作正常。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>点击上方的&lt;strong>通知已禁用&lt;/strong>开关，启用邮箱通知。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>设置飞书通知</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/02-set-feishu-notification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/02-set-feishu-notification/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何设置飞书通知。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>飞书通知功能支持通过以下两种方式向用户发送通知：&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>会话设置&lt;/strong>：使用飞书应用向特定用户或部门发送通知。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>群机器人设置&lt;/strong>：使用飞书机器人向特定群聊发送通知。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>WhizardTelemetry 通知&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您需要提前从飞书平台获取应用或群机器人的访问参数。有关更多信息，请参阅&lt;a href="https://open.feishu.cn/document/ukTMukTMukTM/uITNz4iM1MjLyUzM">飞书开发者文档&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右上角点击当前用户名，然后在下拉列表中选择&lt;strong>通知设置&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>通知设置&lt;/strong>页面的&lt;strong>飞书&lt;/strong>页签，设置飞书通知参数，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>会话设置&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>会话 ID&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>接收通知的会话的 User ID 或 Department ID。点击&lt;strong>添加&lt;/strong>可设置多个会话 ID。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>群机器人设置&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Webhook URL&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>群机器人的 Webhook URL。KubeSphere 将向该 URL 发送通知。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Secret&lt;/p>
+&lt;/div></description></item><item><title>设置钉钉通知</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/03-set-dingtalk-notification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/03-set-dingtalk-notification/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何设置钉钉通知。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>钉钉通知功能支持通过以下两种方式向用户发送通知：&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>会话设置&lt;/strong>：使用钉钉应用向特定用户或部门发送通知。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>群机器人设置&lt;/strong>：使用钉钉机器人向特定群聊发送通知。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>WhizardTelemetry 通知&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您需要提前从钉钉平台获取应用或群机器人的访问参数。有关更多信息，请参阅&lt;a href="https://open.dingtalk.com/document/orgapp-server/how-to-call-apis">钉钉开发者文档&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右上角点击当前用户名，然后在下拉列表中选择&lt;strong>通知设置&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>通知设置&lt;/strong>页面的&lt;strong>钉钉&lt;/strong>页签，设置钉钉通知参数，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>会话设置&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Chat ID&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>接收通知的 Chat ID。点击&lt;strong>添加&lt;/strong>可设置多个 Chat ID。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>群机器人设置&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Webhook URL&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>群机器人的 Webhook URL。KubeSphere 将向该 URL 发送通知。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Secret&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>群机器人的访问密钥。&lt;/p>
+&lt;/div></description></item><item><title>设置企业微信通知</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/04-set-wecom-notification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/04-set-wecom-notification/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何设置企业微信通知。配置后，可通过企业微信会话或群机器人接收通知消息。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>WhizardTelemetry 通知&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您需要提前从企业微信平台获取应用访问参数。有关更多信息，请参阅&lt;a href="https://developer.work.weixin.qq.com/document/path/90664">企业微信开发者文档&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右上角点击当前用户名，然后在下拉列表中选择&lt;strong>通知设置&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>通知设置&lt;/strong>页面的&lt;strong>企业微信&lt;/strong>页签，设置企业微信通知参数，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>会话设置 &amp;gt; 接收设置&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>设置接收通知的 User ID、Department ID 或 Tag ID。点击&lt;strong>添加&lt;/strong>可设置多个 ID。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>群机器人设置 &amp;gt; 群机器人设置&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>Webhook URL: 企业微信群机器人的 webhook 地址。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>群机器人设置 &amp;gt; 接收设置&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>设置接收通知的 User ID 或 用户手机号。点击&lt;strong>添加&lt;/strong>可设置多个 ID 和手机号。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>过滤条件&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>KubeSphere 发送的通知以键值对的形式呈现。当此处填写的&lt;strong>键&lt;/strong>和&lt;strong>值&lt;/strong>与规则组告警规则的标签设置中的&lt;strong>键&lt;/strong>和&lt;strong>值&lt;/strong>一致时，就可以通过标签过滤，发送标签符合特定条件的告警通知。点击&lt;strong>添加&lt;/strong>可设置多个条件。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>键&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>通知内容中的键。点击下拉列表可选择预设的键，在下拉列表中可以输入自定义的键。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>操作符&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>筛选条件的操作符。&lt;/p>
+&lt;/div></description></item><item><title>设置 Slack 通知</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/05-set-slack-notification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/05-set-slack-notification/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何设置 Slack 通知。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>WhizardTelemetry 通知&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您需要提前从 Slack 平台获取应用访问参数。有关更多信息，请参阅 &lt;a href="https://api.slack.com/messaging/webhooks#create_a_webhook">Slack 开发者文档&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右上角点击当前用户名，然后在下拉列表中选择&lt;strong>通知设置&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>通知设置&lt;/strong>页面的 &lt;strong>Slack&lt;/strong> 页签，设置 Slack 通知参数，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Slack 频道设置&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>设置接收通知的 Slack 频道。点击&lt;strong>添加&lt;/strong>可设置多个 Slack 频道。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>过滤条件&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>KubeSphere 发送的通知以键值对的形式呈现。当此处填写的&lt;strong>键&lt;/strong>和&lt;strong>值&lt;/strong>与规则组告警规则的标签设置中的&lt;strong>键&lt;/strong>和&lt;strong>值&lt;/strong>一致时，就可以通过标签过滤，发送标签符合特定条件的告警通知。点击&lt;strong>添加&lt;/strong>可设置多个条件。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>键&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>通知内容中的键。点击下拉列表可选择预设的键，在下拉列表中可以输入自定义的键。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>操作符&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>筛选条件的操作符。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>包含&lt;/strong>：键对应的值包含特定的字符串。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>不包含&lt;/strong>：键对应的值不包含特定的字符串。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>存在&lt;/strong>：通知内容中存在特定的键。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>不存在&lt;/strong>：通知内容中不存在特定的键。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>正则匹配&lt;/strong>：通过正则表达式来筛选符合条件的通知。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>值&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>键对应的值必须包含的字符串。按 &lt;strong>Enter&lt;/strong> 可设置多个字符串，键对应的值包含其中一个字条串即满足条件。&lt;/p>
+&lt;/div></description></item><item><title>设置 Webhook 通知</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/06-set-webhook-notification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/06-set-webhook-notification/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何设置 Webhook 通知。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>WhizardTelemetry 通知&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您需要提前获取 Webhook 的访问参数。有关更多信息，请联系您的 Webhook 管理员。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右上角点击当前用户名，然后在下拉列表中选择&lt;strong>通知设置&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>通知设置&lt;/strong>页面的 &lt;strong>Webhook&lt;/strong> 页签，设置 Webhook 通知参数，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>服务器设置&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Webhook URL&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Webhook 的访问 URL。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>认证类型&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Webhook 的认证类型。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>无需认证&lt;/strong>：不需要进行认证。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Bearer 令牌&lt;/strong>：使用 URL Bearer 令牌进行认证。如果选择此类型，您需要进一步设置用于认证的令牌。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>基础认证&lt;/strong>：使用用户名和密码进行认证。如果选择此类型，您需要进一步设置用于认证的用户名和密码。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>跳过 TLS 验证（不安全）&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>调用 Webhook 时是否跳过 TLS 验证。&lt;/p>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Project Quotas on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/04-kubefed/06-project-settings/02-project-quotas/</link><description>Recent content in Project Quotas on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/04-kubefed/06-project-settings/02-project-quotas/index.xml" rel="self" type="application/rss+xml"/><item><title>View Project Quotas</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/04-kubefed/06-project-settings/02-project-quotas/01-view-project-quotas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/04-kubefed/06-project-settings/02-project-quotas/01-view-project-quotas/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to view project quotas.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Application Management for Cluster Federation&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a multi-cluster project and have the &lt;strong>Federated Project Viewing&lt;/strong> permission within the project.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Federated Project Viewing&lt;/strong> permission, and access your multi-cluster project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Project Settings &amp;gt; Project Quotas&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>The &lt;strong>Project Quotas&lt;/strong> page provides the following resource information:&lt;/p>
+&lt;/div></description></item><item><title>Edit Project Quotas</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/04-kubefed/06-project-settings/02-project-quotas/02-edit-project-quotas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/04-kubefed/06-project-settings/02-project-quotas/02-edit-project-quotas/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to edit project quotas.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Application Management for Cluster Federation&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a multi-cluster project and have the &lt;strong>Federated Project Management&lt;/strong> permission within the project.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Federated Project Management&lt;/strong> permission, and access your multi-cluster project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Project Settings &amp;gt; Project Quotas&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Project Quotas&lt;/strong> page, click &lt;strong>Edit Quotas&lt;/strong> in the top-right corner to enter the quota editing page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Edit Project Quotas&lt;/strong> dialog, set the resource requests and resource limits.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CPU Requests&lt;/p>
+&lt;/div></description></item></channel></rss>

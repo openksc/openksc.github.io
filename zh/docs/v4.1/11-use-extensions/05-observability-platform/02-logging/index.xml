@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>WhizardTelemetry 日志 on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/</link><description>Recent content in WhizardTelemetry 日志 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/index.xml" rel="self" type="application/rss+xml"/><item><title>配置日志管理</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/01-config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/01-config/</guid><description>&lt;div class="paragraph">
+&lt;p>WhizardTelemetry 日志支持通过配置扩展组件实现收集指定日志、按项目创建日志索引等功能。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>更多配置信息，请参阅扩展中心 “WhizardTelemetry 日志”扩展组件的详情页说明。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_收集指定日志">收集指定日志&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>WhizardTelemetry 日志支持设置过滤条件，以收集包含或排除指定 namespace 的日志，可减少日志数量。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>在 WhizardTelemetry 日志的扩展组件配置中，编辑如下参数：&lt;/p>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-yaml" data-lang="yaml">vector-logging:
+ filter:
+ extraLabelSelector: &amp;#34;app.kubernetes.io/name!=kube-events-exporter&amp;#34;
+ extraNamespaceLabelSelector: &amp;#34;&amp;#34;
+ # When includeNamespaces and excludeNamespaces are set at the same time, only excludeNamespaces will take effect.
+ includeNamespaces: []
+ excludeNamespaces: []&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>extraLabelSelector：只收集带此标签的 pod 的日志。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>extraNamespaceLabelSelector：只收集带此标签的 namespace 下的 pod 日志。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>includeNamespaces：只收集指定 namespace 下的 pod 日志。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>excludeNamespaces：不收集指定 namespace 下的 pod 日志。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_按照_namespace_创建日志索引">按照 namespace 创建日志索引&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>WhizardTelemetry 日志支持为每个项目（namespace）创建一个索引，既可确定某个 namespace 的日志占用空间，方便整改业务，又便于进行日志分析。&lt;/p>
+&lt;/div></description></item><item><title>使用容器日志查询工具</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/03-use-log-query-tools/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/03-use-log-query-tools/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查询容器日志。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>容器日志：从容器标准输出获取的日志。容器日志的内容由容器中运行的应用程序决定。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>您需要获得平台、集群、企业空间或项目的资源查看权限，以查看特定范围的日志。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>WhizardTelemetry 日志&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有相关资源查看权限的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>将光标悬停在页面右下角的&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/hammer.svg" alt="hammer" width="18" height="18"/>&lt;/span>图标，然后在菜单中选择&lt;strong>容器日志查询&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框，设置搜索条件查询日志。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>如果有多个集群，点击&lt;strong>集群&lt;/strong>下拉列表可查询特定集群中的日志。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击搜索框，设置搜索条件，然后按 &lt;strong>Enter&lt;/strong> 可查看符合特定条件的日志。您可以同时设置多个搜索条件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在查询结果页面可查看日志的时间分布图，点击柱状图，切换到该时间段的日志列表。点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/start-dark.svg" alt="start-dark" width="18" height="18"/>&lt;/span>/&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/stop-dark-white.svg" alt="stop-dark-white" width="18" height="18"/>&lt;/span>可开启/停止实时数据刷新，点击&lt;strong>日志导出&lt;/strong>下拉列表可选择正序或倒序导出容器日志，点击&lt;strong>刷新频率&lt;/strong>的时间可选择数据的刷新频率。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在查询结果列表右上角点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/cogwheel.svg" alt="cogwheel" width="18" height="18"/>&lt;/span>可定制列表中显示的信息。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击查询结果中的日志条目，查看日志的详细信息。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_查询_calico_日志">查询 Calico 日志&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>“WhizardTelemetry 日志”扩展组件默认收集 Calico 的日志，包含 Calico pod ip 的分配和释放信息，可限定查询条件查询 Calico 日志。&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>将光标悬停在页面右下角的&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/hammer.svg" alt="hammer" width="18" height="18"/>&lt;/span>图标，然后在菜单中选择&lt;strong>容器日志查询&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框，设置搜索条件查询 Calico 日志。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>namespace: &lt;code>kube-system&lt;/code>&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>pod: &lt;code>&amp;lt;node name&amp;gt;&lt;/code>&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>container: &lt;code>calico-cni&lt;/code>&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

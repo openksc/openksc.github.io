@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>企业空间网关 on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/02-workspace-gateway/</link><description>Recent content in 企业空间网关 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/02-workspace-gateway/index.xml" rel="self" type="application/rss+xml"/><item><title>启用企业空间网关</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/02-workspace-gateway/01-enable-workspace-gateway/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/02-workspace-gateway/01-enable-workspace-gateway/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何启用企业空间网关。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 网关&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个企业空间并在企业空间中具有&lt;strong>企业空间网关管理&lt;/strong>权限。有关更多信息，请参阅“企业空间成员”和“企业空间角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>企业空间网关管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>企业空间设置 &amp;gt; 网关设置&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右侧的&lt;strong>网关设置&lt;/strong>页面，点击&lt;strong>启用网关&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>不支持在企业空间的&lt;strong>网关设置&lt;/strong>页面启用项目网关。如果您需要启用项目网关，请前往对应的项目。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的&lt;strong>启用网关&lt;/strong>对话框，设置网关的参数，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Nginx Ingress 版本&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Nginx Ingress 的版本。KubeSphere 网关扩展组件基于 Nginx Ingress 提供网关管理功能。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>IngressClassName&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>IngressClass 的名称。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>容器组副本数量&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>期望的容器组副本数量。&lt;/p>
+&lt;/div></description></item><item><title>查看企业空间网关信息</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/02-workspace-gateway/02-view-workspace-gateway-info/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/02-workspace-gateway/02-view-workspace-gateway-info/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看企业空间网关信息。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>如果已启用集群网关，在企业空间的网关设置页面也可以查看集群网关的信息。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 网关&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个企业空间并在企业空间中具有&lt;strong>企业空间网关查看&lt;/strong>权限。有关更多信息，请参阅“企业空间成员”和“企业空间角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>企业空间网关查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>企业空间设置 &amp;gt; 网关设置&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>&lt;strong>网关设置&lt;/strong>页面提供以下信息：&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>类型&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>网关的类型。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>创建者&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>启用网关的用户。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>创建时间&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>网关的启用时间。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>访问模式&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>网关服务的外部访问模式。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>NodePort&lt;/strong>：系统将节点的端口映射到服务端口，可通过节点的 IP 地址和节点端口访问服务。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>LoadBalancer&lt;/strong>：系统在 NodePort 服务的基础上为服务分配一个外部 IP 地址，并将外部 IP 地址与一个外部负载均衡器绑定。外部负载均衡器监听服务对应的节点端口，从而可以通过外部 IP 地址访问服务。为实现上述功能，LoadBalancer 类型的服务需要负载均衡器插件和基础设施环境提供支持，并且需要设置相关注解。有关更多信息，请联系您的基础设施环境提供商。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>查看企业空间网关详情</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/02-workspace-gateway/03-view-workspace-gateway-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/02-workspace-gateway/03-view-workspace-gateway-details/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看企业空间网关详情。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 网关&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个企业空间并在企业空间中具有&lt;strong>企业空间网关查看&lt;/strong>权限。有关更多信息，请参阅“企业空间成员”和“企业空间角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>企业空间网关查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>企业空间设置 &amp;gt; 网关设置&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右侧选择&lt;strong>管理 &amp;gt; 查看详情&lt;/strong>打开网关详情页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在网关详情页面左侧的&lt;strong>属性&lt;/strong>区域查看网关的资源属性。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>网关所属的集群。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>创建时间&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>网关的创建时间。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>更新时间&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>网关的更新时间&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>创建者&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>启用网关的用户。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在网关详情页面右侧点击&lt;strong>配置选项&lt;/strong>查看网关的配置选项。KubeSphere 的网关功能底层基于 Nginx Ingress Controller 实现，有关网关配置选项的更多信息，请参阅 &lt;a href="https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/">Nginx Ingress Controller 官方文档&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右侧的&lt;strong>监控&lt;/strong>页签查看网关的请求数据。&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>如需使用网关监控功能，KubeSphere 平台需要安装并启用 &lt;strong>WhizardTelemetry 监控&lt;/strong>扩展组件。&lt;/p>
+&lt;/div></description></item><item><title>编辑企业空间网关设置</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/02-workspace-gateway/04-edit-workspace-gateway-settings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/02-workspace-gateway/04-edit-workspace-gateway-settings/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何编辑企业空间网关设置。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 网关&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个企业空间并在企业空间中具有&lt;strong>企业空间网关管理&lt;/strong>权限。有关更多信息，请参阅“企业空间成员”和“企业空间角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>企业空间网关管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>企业空间设置 &amp;gt; 网关设置&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右侧选择&lt;strong>管理 &amp;gt; 编辑&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框，修改网关的参数，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>IngressClassName&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>IngressClass 的名称。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>容器组副本数量&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>期望的容器组副本数量。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>访问模式&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>网关服务的外部访问模式。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>NodePort&lt;/strong>：系统将节点的端口映射到服务端口，可通过节点的 IP 地址和节点端口访问服务。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>LoadBalancer&lt;/strong>：系统在 NodePort 服务的基础上为服务分配一个外部 IP 地址，并将外部 IP 地址与一个外部负载均衡器绑定。外部负载均衡器监听服务对应的节点端口，从而可以通过外部 IP 地址访问服务。为实现上述功能，LoadBalancer 类型的服务需要负载均衡器插件和基础设施环境提供支持，并且需要设置相关注解。有关更多信息，请联系您的基础设施环境提供商。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>链路追踪&lt;/p>
+&lt;/div></description></item><item><title>禁用企业空间网关</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/02-workspace-gateway/05-disable-workspace-gateway/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/02-workspace-gateway/05-disable-workspace-gateway/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何禁用企业空间网关。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">警告&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>网关禁用后客户端将无法访问由网关反向代理的服务，相关业务可能会中断，请谨慎执行此操作。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 网关&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个企业空间并在企业空间中具有&lt;strong>企业空间网关管理&lt;/strong>权限。有关更多信息，请参阅“企业空间成员”和“企业空间角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>企业空间网关管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>企业空间设置 &amp;gt; 网关设置&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右侧选择&lt;strong>管理 &amp;gt; 禁用&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

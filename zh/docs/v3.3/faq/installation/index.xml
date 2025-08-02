@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>安装 on</title><link>https://openksc.github.io/zh/docs/v3.3/faq/installation/</link><description>Recent content in 安装 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v3.3/faq/installation/index.xml" rel="self" type="application/rss+xml"/><item><title>为安装配置加速器</title><link>https://openksc.github.io/zh/docs/v3.3/faq/installation/configure-booster/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/faq/installation/configure-booster/</guid><description>&lt;p>如果您无法从 &lt;code>dockerhub.io&lt;/code> 下载镜像，强烈建议您预先配置仓库的镜像地址（即加速器）以加快下载速度。您可以参考&lt;a href="https://docs.docker.com/registry/recipes/mirror/#configure-the-docker-daemon" target="_blank" rel="noopener noreferrer"> Docker 官方文档&lt;/a>，或执行以下步骤。&lt;/p>
+&lt;h2 id="获取加速器地址">获取加速器地址&lt;/h2>
+&lt;p>您需要获取仓库的一个镜像地址以配置加速器。您可以参考如何&lt;a href="https://help.aliyun.com/document_detail/60750.html" target="_blank" rel="noopener noreferrer">从阿里云获取加速器地址&lt;/a>。&lt;/p>
+&lt;h2 id="配置仓库镜像地址">配置仓库镜像地址&lt;/h2>
+&lt;p>您可以直接配置 Docker 守护程序，也可以使用 KubeKey 进行配置。&lt;/p>
+&lt;h3 id="配置-docker-守护程序">配置 Docker 守护程序&lt;/h3>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>采用此方法，您需要预先安装 Docker。&lt;/div>
+&lt;/div>
+&lt;ol>
+&lt;li>
+&lt;p>执行如下命令：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo mkdir -p /etc/docker
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo vi /etc/docker/daemon.json
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>在文件中添加 &lt;code>registry-mirrors&lt;/code> 键值对。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;registry-mirrors&amp;#34;&lt;/span>: [&lt;span style="color:#e6db74">&amp;#34;https://&amp;lt;my-docker-mirror-host&amp;gt;&amp;#34;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>请将命令中的地址替换成您实际的加速器地址。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>执行如下命令保存文件并重新加载 Docker，以使修改生效。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo systemctl daemon-reload
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo systemctl restart docker
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h3 id="使用-kubekey-配置仓库镜像地址">使用 KubeKey 配置仓库镜像地址&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>在安装前用 KubeKey 创建 &lt;code>config-sample.yaml&lt;/code> 文件，并定位到文件中的 &lt;code>registry&lt;/code> 位置。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">registry&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">registryMirrors&lt;/span>: []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">insecureRegistries&lt;/span>: []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">privateRegistry&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p></description></item><item><title>启用或禁用 KubeSphere 中的 Telemetry</title><link>https://openksc.github.io/zh/docs/v3.3/faq/installation/telemetry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/faq/installation/telemetry/</guid><description>&lt;p>Telemetry 收集已安装 KubeSphere 集群的大小、KubeSphere 和 Kubernetes 版本、已启用的组件、集群运行时间、错误日志等汇总信息。KubeSphere 保证该信息仅由 KubeSphere 社区用于改进产品，并且不与任何第三方分享该信息。&lt;/p>
+&lt;h2 id="信息收集范围">信息收集范围&lt;/h2>
+&lt;ul>
+&lt;li>外部网络 IP 地址&lt;/li>
+&lt;li>下载日期&lt;/li>
+&lt;li>Kubernetes 版本&lt;/li>
+&lt;li>KubeSphere 版本&lt;/li>
+&lt;li>Kubernetes 集群大小&lt;/li>
+&lt;li>操作系统类型&lt;/li>
+&lt;li>安装器错误日志&lt;/li>
+&lt;li>启用的组件&lt;/li>
+&lt;li>Kubernetes 集群运行时间&lt;/li>
+&lt;li>KubeSphere 集群运行时间&lt;/li>
+&lt;li>集群 ID&lt;/li>
+&lt;li>机器 ID&lt;/li>
+&lt;/ul>
+&lt;h2 id="禁用-telemetry">禁用 Telemetry&lt;/h2>
+&lt;p>在安装 KubeSphere 时 Telemetry 默认启用。同时，您也可以在安装前或安装后禁用 Telemetry。&lt;/p>
+&lt;h3 id="安装前禁用-telemetry">安装前禁用 Telemetry&lt;/h3>
+&lt;p>在现有 Kubernetes 集群上安装 KubeSphere 时，您需要下载 &lt;a href="https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml" target="_blank" rel="noopener noreferrer">cluster-configuration.yaml&lt;/a> 文件用于配置集群。如需禁用 Telemetry，请勿直接执行 &lt;code>kubectl apply -f&lt;/code> 命令应用该文件。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>如果在 Linux 上安装 KubeSphere，请直接参考&lt;a href="../telemetry/#%e5%ae%89%e8%a3%85%e5%90%8e%e7%a6%81%e7%94%a8-telemetry">安装后禁用 Telemetry&lt;/a>。&lt;/div>
+&lt;/div>
+&lt;ol>
+&lt;li>
+&lt;p>下载 &lt;a href="https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml" target="_blank" rel="noopener noreferrer">cluster-configuration.yaml&lt;/a> 文件并编辑。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vi cluster-configuration.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>在 &lt;code>cluster-configuration.yaml&lt;/code> 文件末尾添加 &lt;code>telemetry_enabled: false&lt;/code> 字段。&lt;/p></description></item><item><title>使用 KubeKey 通过 YAML 安装插件</title><link>https://openksc.github.io/zh/docs/v3.3/faq/installation/install-addon-through-yaml-using-kubekey/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/faq/installation/install-addon-through-yaml-using-kubekey/</guid><description>&lt;p>当您使用 KubeKey 安装插件时，需要在配置文件（默认为 &lt;code>config-sample.yaml&lt;/code>）的 &lt;code>addons&lt;/code> 字段下添加插件信息（Chart 或 YAML）。如果所提供的插件以 YAML 格式安装，在某些情况下，安装时可能会报如下错误信息：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Error from server: failed to create typed patch object: xxx: element 0: associative list with keys has an element that omits key field &lt;span style="color:#e6db74">&amp;#34;protocol&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这是一个 &lt;a href="https://github.com/kubernetes-sigs/structured-merge-diff/issues/130" target="_blank" rel="noopener noreferrer">Kubernetes 本身的已知问题&lt;/a>，由 &lt;code>--server-side&lt;/code> 标志导致。若要解决该问题，请在部署完 KubeSphere 之后再应用该 YAML 文件，而非在配置文件中添加插件信息通过 KubeKey 安装。例如：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl apply -f xxx.yaml &lt;span style="color:#75715e"># 请替换为您自己的 YAML 文件。&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>SSH 连接故障</title><link>https://openksc.github.io/zh/docs/v3.3/faq/installation/ssh-connection-failure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/faq/installation/ssh-connection-failure/</guid><description>&lt;p>使用 KubeKey 设置集群时，将创建一个包含必要主机信息的配置文件。以下是 &lt;code>hosts&lt;/code> 字段的示例：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>spec:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> hosts:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">{&lt;/span>name: master, address: 192.168.0.2, internalAddress: 192.168.0.2, user: ubuntu, password: Testing123&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">{&lt;/span>name: node1, address: 192.168.0.3, internalAddress: 192.168.0.3, user: ubuntu, password: Testing123&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">{&lt;/span>name: node2, address: 192.168.0.4, internalAddress: 192.168.0.4, user: ubuntu, password: Testing123&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>在您开始使用 &lt;code>./kk&lt;/code> 命令创建集群之前，建议使用 SSH 测试任务机与其他实例之间的连接情况。&lt;/p>
+&lt;h2 id="可能出现的错误信息">可能出现的错误信息&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Failed to connect to xx.xxx.xx.xxx: could not establish connection to xx.xxx.xx.xxx:xx: ssh: handshake failed: ssh: unable to authenticate , attempted methods &lt;span style="color:#f92672">[&lt;/span>none&lt;span style="color:#f92672">]&lt;/span>, no supported methods remain node&lt;span style="color:#f92672">=&lt;/span>xx.xxx.xx.xxx
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果出现了以上错误信息，请确保：&lt;/p></description></item></channel></rss>

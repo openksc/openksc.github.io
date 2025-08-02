@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>集群状态 on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/03-cluster-status/</link><description>Recent content in 集群状态 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/03-cluster-status/index.xml" rel="self" type="application/rss+xml"/><item><title>查看集群状态概览</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/03-cluster-status/01-view-cluster-status-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/03-cluster-status/01-view-cluster-status-overview/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看集群状态概览。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个集群并在集群中具有&lt;strong>监控查看&lt;/strong>权限。有关更多信息，请参阅“集群成员”和“集群角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>WhizardTelemetry 监控&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>监控查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>监控告警 &amp;gt; 集群状态&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>集群状态&lt;/strong>页面的&lt;strong>概览&lt;/strong>区域查看集群节点、集群资源、etcd 和服务组件的状态。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群节点状态&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群的节点总数和正常节点数量。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群资源用量&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群的 CPU、内存、磁盘资源的总数和已使用量，以及集群可创建容器组总数和已创建容器组数量。默认情况下每个正常集群节点最多可创建 110 个容器组。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>etcd 监控&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>etcd 数据库的服务状态、Raft 提议数量、数据库大小和客户端流量。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>服务状态&lt;/strong>：显示 etcd 集群的 Leader 节点、每个节点的 IP 地址和 1 小时内 Leader 变更次数。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Raft 提议&lt;/strong>：显示 Raft 提议的每秒提交次数、应用次数、失败次数和排队提议数量。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>数据库大小&lt;/strong>：etcd 数据库大小随时间的变化。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>客户端流量&lt;/strong>：发送给 gRPC 客户端和从 gRPC 客户端接收的数据流量。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>查看物理资源状态</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/03-cluster-status/02-view-physical-resource-status/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/03-cluster-status/02-view-physical-resource-status/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看物理资源状态。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个集群并在集群中具有&lt;strong>监控查看&lt;/strong>权限。有关更多信息，请参阅“集群成员”和“集群角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>WhizardTelemetry 监控&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>监控查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>监控告警 &amp;gt; 集群状态&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>集群状态&lt;/strong>页面，点击&lt;strong>物理资源监控&lt;/strong>查看集群物理资源的使用情况。&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>物理资源监控&lt;/strong>页签提供以下信息：&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CPU 用量&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>显示指定时间范围内的集群 CPU 使用量百分比。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CPU 平均负载&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>显示指定时间范围内的集群 CPU 平均负载。CPU 平均负载是一个无量纲值，表示单位时间内 CPU 的平均活跃进程数。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>内存用量&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>显示指定时间范围内的集群内存使用量百分比。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>磁盘用量&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>显示指定时间范围内的集群磁盘使用量。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Inode 用量&lt;/p>
+&lt;/div></description></item><item><title>查看 etcd 数据库状态</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/03-cluster-status/03-view-etcd-status/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/03-cluster-status/03-view-etcd-status/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看 etcd 数据库状态。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>查看 etcd 监控信息需要提前启用 etcd 监控。有关更多信息，请参阅扩展中心 &lt;strong>WhizardTelemetry 监控&lt;/strong>扩展组件的详情页说明。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个集群并在集群中具有&lt;strong>监控查看&lt;/strong>权限。有关更多信息，请参阅“集群成员”和“集群角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>WhizardTelemetry 监控&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>监控查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>监控告警 &amp;gt; 集群状态&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>集群状态&lt;/strong>页面，点击 &lt;strong>etcd 监控&lt;/strong>页签查看 etcd 数据库的运行状态。&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>etcd 监控&lt;/strong>页签提供以下信息：&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>服务状态&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>显示 etcd 集群的 Leader 节点、每个节点的 IP 地址和 1 小时内 Leader 变更次数。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>数据库大小&lt;/p>
+&lt;/div></description></item><item><title>查看 Kubernetes API 服务器状态</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/03-cluster-status/04-view-api-server-status/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/03-cluster-status/04-view-api-server-status/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看 Kubernetes API 服务器状态。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个集群并在集群中具有&lt;strong>监控查看&lt;/strong>权限。有关更多信息，请参阅“集群成员”和“集群角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>WhizardTelemetry 监控&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>监控查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>监控告警 &amp;gt; 集群状态&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>集群状态&lt;/strong>页面，点击 &lt;strong>API Server 监控&lt;/strong>页签查看 API 服务器的运行状态。&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>API Server 监控&lt;/strong>页签提供以下信息：&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">指标&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>请求延迟&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>指定时间范围内 API 服务器的请求延迟。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>每秒请求次数&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>指定时间范围内 API 服务器每秒接受的请求数。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>在右上角点击 &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/timed-task.svg" alt="timed-task" width="18" height="18"/>&lt;/span> 可设置数据的时间范围。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>在右上角点击 &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/start-dark.svg" alt="start" width="18" height="18"/>&lt;/span>/&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/pause.svg" alt="pause" width="18" height="18"/>&lt;/span> 可开启/停止实时数据刷新。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>在右上角点击 &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/refresh-dark.svg" alt="refresh" width="18" height="18"/>&lt;/span> 可手动刷新数据。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>查看调度器状态</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/03-cluster-status/05-view-scheduler-monitoring-data/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/03-cluster-status/05-view-scheduler-monitoring-data/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看调度器状态。调度器根据容器组的资源需求、节点可用资源和其他约束条件决定容器组运行在哪些节点上。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个集群并在集群中具有&lt;strong>监控查看&lt;/strong>权限。有关更多信息，请参阅“集群成员”和“集群角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>WhizardTelemetry 监控&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>监控查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>监控告警 &amp;gt; 集群状态&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>集群状态&lt;/strong>页面，点击&lt;strong>调度器监控&lt;/strong>页签查看调度器的运行状态。&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>调度器监控&lt;/strong>页签提供以下信息：&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">指标&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>调度次数&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>指定时间范围内的容器组调度成功、错误和失败累计次数。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>调度速率&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>指定时间范围内的容器组每秒调度成功、错误和失败次数。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>调度延迟&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>指定时间范围内容器组调度延迟的 99% 分位数、90% 分位数、中位数和平均值。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>在右上角点击 &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/timed-task.svg" alt="timed-task" width="18" height="18"/>&lt;/span> 可设置数据的时间范围。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>在右上角点击 &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/start-dark.svg" alt="start" width="18" height="18"/>&lt;/span>/&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/pause.svg" alt="pause" width="18" height="18"/>&lt;/span> 可开启/停止实时数据刷新。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>在右上角点击 &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/refresh-dark.svg" alt="refresh" width="18" height="18"/>&lt;/span> 可手动刷新数据。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>查看节点资源用量排行</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/03-cluster-status/06-view-nodes-ranked-by-resource-usage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/03-cluster-status/06-view-nodes-ranked-by-resource-usage/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何按照特定资源的用量对节点进行排序。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个集群并在集群中具有&lt;strong>监控查看&lt;/strong>权限。有关更多信息，请参阅“集群成员”和“集群角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>WhizardTelemetry 监控&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>监控查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>监控告警 &amp;gt; 集群状态&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>集群状态&lt;/strong>页面，点击&lt;strong>资源用量排行&lt;/strong>页签查看各节点的资源使用情况。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>在左上角点击下拉列表可选择按照 CPU 用量、CPU 平均负载、内存用量、磁盘用量、Inode 用量或容器组用量对节点进行排序。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>在列表左上角点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/sort-ascending.svg" alt="sort-ascending" width="18" height="18"/>&lt;/span>/&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/sort-descending.svg" alt="sort-descending" width="18" height="18"/>&lt;/span>可按升序/降序排序。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>在列表右上角点击&lt;strong>导出&lt;/strong>可下载 JSON 格式的资源用量数据。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

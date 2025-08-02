@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Grafana Loki for WhizardTelemetry on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/17-loki/</link><description>Recent content in Grafana Loki for WhizardTelemetry on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/17-loki/index.xml" rel="self" type="application/rss+xml"/><item><title>Visualize Data in Loki</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/17-loki/01-display-loki-data/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/17-loki/01-display-loki-data/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to visualize logs, audits, events, and notification history data of KubeSphere stored in Loki in the Grafana console.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>WhizardTelemetry Platform Service&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>A Grafana console has been deployed via the &amp;#34;Grafana for WhizardTelemetry&amp;#34; extension or other methods.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Install Grafana Loki for WhizardTelemetry.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Application Workloads &amp;gt; Services&lt;/strong> page of the cluster, find &lt;code>loki-agent-gateway&lt;/code>, &lt;strong>Edit External Access&lt;/strong>, and enable NodePort.&lt;/p>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Depending on your network environment, you may need to configure traffic forwarding rules and allow this NodePort in the firewall.&lt;/p>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>集群可见性 on</title><link>https://openksc.github.io/zh/docs/v4.1/07-cluster-management/09-cluster-settings/02-cluster-visibility/</link><description>Recent content in 集群可见性 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/07-cluster-management/09-cluster-settings/02-cluster-visibility/index.xml" rel="self" type="application/rss+xml"/><item><title>查看集群可见性</title><link>https://openksc.github.io/zh/docs/v4.1/07-cluster-management/09-cluster-settings/02-cluster-visibility/01-view-cluster-visibility/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/07-cluster-management/09-cluster-settings/02-cluster-visibility/01-view-cluster-visibility/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看集群已授权给哪些企业空间。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>您需要加入一个集群并在集群中具有&lt;strong>集群设置查看&lt;/strong>权限。有关更多信息，请参阅“集群成员”和“集群角色”。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>集群设置查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>集群设置 &amp;gt; 集群可见性&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群可见性&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群是否对所有企业空间可见。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>企业空间&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>已获得授权的企业空间。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>管理员&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>企业空间的管理员。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>授权时间&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>企业空间获得授权的时间。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>编辑集群可见性</title><link>https://openksc.github.io/zh/docs/v4.1/07-cluster-management/09-cluster-settings/02-cluster-visibility/02-edit-cluster-visibility/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/07-cluster-management/09-cluster-settings/02-cluster-visibility/02-edit-cluster-visibility/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何编辑集群可见性。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>您需要加入一个集群并在集群中具有&lt;strong>集群设置管理&lt;/strong>权限。有关更多信息，请参阅“集群成员”和“集群角色”。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>集群设置管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>集群设置 &amp;gt; 集群可见性&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右侧点击&lt;strong>编辑可见性&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>编辑可见性&lt;/strong>对话框对企业空间进行授权或取消授权，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>点击&lt;strong>未授权&lt;/strong>列表中的企业空间可将集群授权给企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>已授权&lt;/strong>列表中的企业空间可取消对企业空间的授权。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>打开&lt;strong>设置为公开集群&lt;/strong>开关可将集群授权给 KubeSphere 平台上的所有企业空间。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">警告&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>请尽可能避免将主集群授权给企业空间，主集群负载过高会导致多集群系统稳定性下降。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>移除集群对企业空间的授权后，企业空间在当前集群中的所有资源将被删除。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

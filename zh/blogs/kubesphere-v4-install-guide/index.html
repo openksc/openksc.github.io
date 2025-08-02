@@ -1,0 +1,274 @@
+<!doctype html><html lang=en-US><head><meta charset=utf-8><title>KubeSphere v4 安装指南</title><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="KubeSphere 是在 Kubernetes 之上构建的以应用为中心的多租户容器平台，提供全栈的 IT 自动化运维的能力，简化企业的 DevOps 工作流。KubeSphere 提供了运维友好的向导式操作界面，帮助企业快速构建一个强大和功能丰富的容器云平台。"><meta name=keywords content="KubeSphere,Kubernetes,容器平台,DevOps,混合云"><meta property="og:type" content="article"><meta property="og:title" content="KubeSphere v4 安装指南"><meta property="og:description" content="KubeSphere 是在 Kubernetes 之上构建的以应用为中心的多租户容器平台，提供全栈的 IT 自动化运维的能力，简化企业的 DevOps 工作流。KubeSphere 提供了运维友好的向导式操作界面，帮助企业快速构建一个强大和功能丰富的容器云平台。"><meta property="og:image" content="https://pek3b.qingstor.com/kubesphere-community/images/ks-v4-guide-cover.png"><meta property="og:url" content="https://openksc.github.io/zh/blogs/kubesphere-v4-install-guide/"><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@KubeSphere"><meta property="twitter:image" content="https://pek3b.qingstor.com/kubesphere-community/images/ks-v4-guide-cover.png"><meta name=docsearch:language content="zh-CN"><meta name=docsearch:version content><link rel=canonical href=https://kubesphere.io/zh/blogs/kubesphere-v4-install-guide/><link rel="shortcut icon" href=/images/favicons/favicon.ico><link rel=apple-touch-icon href=/images/favicons/apple-touch-icon.png sizes=180x180><link rel=icon type=image/png href=/images/favicons/favicon-16x16.png sizes=16x16><link rel=icon type=image/png href=/images/favicons/favicon-32x32.png sizes=32x32><link rel=icon type=image/svg+xml href=/images/favicons/favicon.svg><link rel=icon type=image/png href=/images/favicons/favicon.png><link rel=manifest href=/images/favicons/site.webmanifest><link rel=mask-icon href=/images/favicons/safari-pinned-tab.svg color=#00ad6e><meta name=msapplication-config content='/images/favicons/browserconfig.xml'><meta name=msapplication-TileColor content="#ffffff"><meta name=theme-color content="#ffffff"><link rel=stylesheet href=/fonts/Roboto/stylesheet.css><link rel=stylesheet href=/fonts/ProximaNova/stylesheet.css><link rel=stylesheet href=/css/jquery.modal.min.css><link rel=stylesheet href=/css/viewer.min.css><link rel=stylesheet href=/swiper/swiper-bundle.min.css><link rel=stylesheet href=/scss/common.min.0c3fdcc05ec210321169846714f74b11c4a1baf09a1833fa9273b2347c81e636.css><script src=/js/jquery-3.7.1.min.js></script><script src=/js/viewer.min.js></script><script src=/js/jquery.modal.min.js></script><script src=/swiper/swiper-bundle.min.js></script><script>var _hmt=_hmt||[];(function(){var e,t=document.createElement("script");t.src="https://hm.baidu.com/hm.js?0888981f1fa45d241b1fb6962da2963e",e=document.getElementsByTagName("script")[0],e.parentNode.insertBefore(t,e)})()</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-YYCVN36HT5"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-YYCVN36HT5")</script><script type=text/javascript>!function(e,t,n,s,o){e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},n=t.createElement("script"),tag=t.getElementsByTagName("script")[0],n.async=1,n.src=("https:"==document.location.protocol?"https://":"http://")+s,tag.parentNode.insertBefore(n,tag)}(window,document,"script","assets.giocdn.com/2.1/gio.js","gio"),gio("init","8a24ae300cbf8b8c",{}),gio("send")</script><link rel=stylesheet href=/scss/content.min.f73b326fbf8c5bd331900b0de21c7dde608a4926f482f6465f9ae1d9049b83ad.css><link rel=stylesheet href=/scss/markdown.min.db47186481122431dffae72d17dbbd51f90b66f022cc163458645709924e4eac.css></head><body><header class=navigation><div class=join-div><div class=content>🚀 KubeSphere v4.1.3 发布，多项优化与改进，欢迎体验！<a href=/zh/docs/v4.1/20-release-notes/release-v413/ target=_blank rel="noopener noreferrer">请查看 Release notes →</a>
+<img id=close-join src=/images/header/close.svg alt=close></div></div><div class=common-layout><div class=header-container><a href=/zh/ aria-label=logo><img src=/images/header/logo.svg alt class=logo></a><ul class=nav><li class=menu-li><span class=menu-span>应用场景</span><ul class="dropdown-menu menu-2"><li><a href=/zh/devops/>拥抱一站式 DevOps 工作流</a></li><li><a href=/zh/service-mesh/>在 Kubernetes 运行微服务</a></li><li><a href=/zh/observability/>构建丰富的云原生可观测性</a></li></ul></li><li class=menu-li><span class=menu-span>资源</span><ul class="dropdown-menu menu-3"><li><a href=/zh/projects/>开源项目</a></li><li><a href=/zh/conferences/>开源峰会</a></li><li><a href=/zh/blogs/>技术博客</a></li><li><a href=/zh/videos/>视频资源</a></li><li><a href=/zh/learn/>云原生实战</a></li></ul></li><li class=menu-li><span class=menu-span>文档中心</span><ul class="dropdown-menu menu-4"><li><a href=/zh/docs/v4.1>v4.1 <img src=/images/header/star.svg alt=star></a></li><li><a href=/zh/docs/v3.4>v3.4</a></li><li><a href=/zh/docs/v3.3>v3.3</a></li><li><a href=https://dev-guide.kubesphere.io/extension-dev-guide/zh/ target=_blank rel="noopener noreferrer">扩展组件开发</a></li><li><a href=https://kube.design/ target=_blank rel="noopener noreferrer">Kube Design</a></li></ul></li><li class=menu-li><span class=menu-span>开源社区</span><ul class="dropdown-menu menu-5"><li><a href=/zh/contribution/>参与贡献</a></li><li><a href=/zh/live/>社区活动</a></li><li><a href=/zh/case/>案例学习</a></li><li><a href=/zh/partner/>合作伙伴</a></li><li><a href=/zh/user-group/>用户委员会</a></li><li><a href=/zh/news/>动态</a></li><li><a href=https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md target=_blank rel="noopener noreferrer">版本计划</a></li><li><a href=https://www.kubesphere.io/zh/ target=_blank rel="noopener noreferrer">中国站</a></li><li><a href=https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2025 target=_blank rel="noopener noreferrer">开源之夏 2025</a></li></ul></li><li><a data-docs=用户论坛 href=https://ask.kubesphere.io/forum target=_blank rel="noopener noreferrer">用户论坛</a></li><li><a data-docs=认证 href=https://kubesphere.cloud/certification/ target=_blank rel="noopener noreferrer">认证</a></li></ul><div class=right-menu><ul><li class=language-menu><div><img src=/images/header/black.svg alt>
+<span>简体中文</span></div><ul class=dropdown-menu><li onclick='handleLangClick("zh","/zh/blogs/kubesphere-v4-install-guide/")'>简体中文</li></ul></li><li class=github-li><div class=github-star><a class=star-btn href=https://github.com/kubesphere/kubesphere rel="noopener noreferrer" target=_blank><span class=star-img></span>&nbsp;<span>Star</span>
+</a><a class=social-count href=https://github.com/kubesphere/kubesphere/stargazers rel="noopener noreferrer" target=_blank></a></div></li><li class=menu-icon><img src=/images/header/menu.svg alt></li></ul></div></div></div><div id=modal-for-menu class=modal><ul class=nav><li data-check=0 class=menu-li><span class=menu-span>应用场景</span><ul class=dropdown-menu><li><a href=/zh/devops/>拥抱一站式 DevOps 工作流</a></li><li><a href=/zh/service-mesh/>在 Kubernetes 运行微服务</a></li><li><a href=/zh/observability/>构建丰富的云原生可观测性</a></li></ul></li><li data-check=0 class=menu-li><span class=menu-span>资源</span><ul class=dropdown-menu><li><a href=/zh/projects/>开源项目</a></li><li><a href=/zh/conferences/>开源峰会</a></li><li><a href=/zh/blogs/>技术博客</a></li><li><a href=/zh/videos/>视频资源</a></li><li><a href=/zh/learn/>云原生实战</a></li></ul></li><li data-check=0 class=menu-li><span class=menu-span>文档中心</span><ul class=dropdown-menu><li><a href=/zh/docs/v4.1>v4.1 <img src=/images/header/star.svg alt=star></a></li><li><a href=/zh/docs/v3.4>v3.4</a></li><li><a href=/zh/docs/v3.3>v3.3</a></li><li><a href=https://dev-guide.kubesphere.io/extension-dev-guide/zh/>扩展组件开发</a></li><li><a href=https://kube.design/>Kube Design</a></li></ul></li><li data-check=0 class=menu-li><span class=menu-span>开源社区</span><ul class=dropdown-menu><li><a href=/zh/contribution/>参与贡献</a></li><li><a href=/zh/live/>社区活动</a></li><li><a href=/zh/case/>案例学习</a></li><li><a href=/zh/partner/>合作伙伴</a></li><li><a href=/zh/user-group/>用户委员会</a></li><li><a href=/zh/news/>动态</a></li><li><a href=https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md>版本计划</a></li><li><a href=https://www.kubesphere.io/zh/>中国站</a></li><li><a href=https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2025>开源之夏 2025</a></li></ul></li><li><a data-docs=用户论坛 href=https://ask.kubesphere.io/forum>用户论坛</a></li><li><a data-docs=认证 href=https://kubesphere.cloud/certification/>认证</a></li></ul><div class=link-div><a href=https://join.slack.com/t/kubesphere/shared_invite/zt-2b4t6rdb4-ico_4UJzCln_S2c1pcrIpQ target=_blank rel="noopener noreferrer" aria-label=slack><img src=/images/header/slack-hover.svg alt>
+</a><a href=https://x.com/KubeSphere target=_blank rel="noopener noreferrer" aria-label=twitter><img src=/images/header/twitter-hover.svg alt>
+</a><a href=https://github.com/kubesphere/kubesphere target=_blank rel="noopener noreferrer" aria-label=github><img src=/images/header/github-hover.svg alt></a></div></div></header><script>var bindNavMouseEvent,bindScrollChangeHeader,bindClickShowMenu,bindClickModalLi,bindClickClose,language,handleLangClick,githubApiLink="https://api.github.com/repos/kubesphere/kubesphere",getStar=function(){$(".social-count").hide(),$.getJSON(githubApiLink,function(e){$(".social-count").show().html(e.stargazers_count)})};getStar(),bindNavMouseEvent=function(e,t){t||(t=$(e));var n=!1;t.mouseenter(function(){if(n)return!1;n=!0,$(this).find(".dropdown-menu").fadeIn(200,function(){n=!1})}),t.mouseleave(function(){$(this).find(".dropdown-menu").fadeOut(200)})},bindScrollChangeHeader=function(){var t=100,e=$("header");window.addEventListener("scroll",function(){var t=window.scrollY;t>0?e.addClass("navigationScroll"):e.removeClass("navigationScroll")})},bindClickShowMenu=function(){$(".menu-icon").click(function(){$("#modal-for-menu").modal()})},bindClickModalLi=function(){$(".modal .menu-li").click(function(){var e=$(this).data("check");e===0?($(this).data("check",1),$(this).find(".dropdown-menu").slideDown(200)):($(this).data("check",0),$(this).find(".dropdown-menu").slideUp(200)),$(this).find(".menu-span").toggleClass("up")})},bindClickClose=function(){$("#close-join").click(function(){$(".navigation .join-div").hide(),$(".main-section").removeClass("padding")})},language="zh",bindClickClose(),bindScrollChangeHeader(),$(".header-container .menu-li").each(function(){bindNavMouseEvent("",$(this))}),bindNavMouseEvent(".header-container .language-menu"),bindNavMouseEvent(".header-container .btn-li"),bindClickShowMenu(),bindClickModalLi(),handleLangClick=function(e,t){try{localStorage.setItem("lang",e)}catch{}location.href=t}</script><section class=main-section><div class=common-layout><div class=breadcrumb><span><a href=/zh/blogs/>技术博客</a> > </span><span>KubeSphere v4 安装指南</span></div><div class='main-div middle-div'><div class=author>Cauchy</div><span class=date>发布于：2024-10-16</span>&nbsp;&nbsp;&nbsp;
+<span style=font-size:14px;color:#919aa3 id=busuanzi_container_page_pv>本文总阅读量：<span id=busuanzi_value_page_pv></span></span><h1>KubeSphere v4 安装指南</h1><div class=share-1><div class=share><a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fkubesphere-v4-install-guide%2f&text=KubeSphere%20v4%20%e5%ae%89%e8%a3%85%e6%8c%87%e5%8d%97" target=_blank rel="noopener noreferrer"><img src=/images/share/Twitter.svg alt="twitter icon">
+</a><a href="https://reddit.com/submit?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fkubesphere-v4-install-guide%2f&title=KubeSphere%20v4%20%e5%ae%89%e8%a3%85%e6%8c%87%e5%8d%97" target=_blank rel="noopener noreferrer"><img src=/images/share/Reddit.svg alt="reddit icon">
+</a><a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fkubesphere-v4-install-guide%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Facebook.svg alt="facebook icon">
+</a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fkubesphere-v4-install-guide%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Linkedin.svg alt="linkedin icon">
+</a><a href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fkubesphere-v4-install-guide%2f&t=KubeSphere%20v4%20%e5%ae%89%e8%a3%85%e6%8c%87%e5%8d%97" target=_blank rel="noopener noreferrer"><img src=/images/share/HackerNews.svg alt="hackernews icon"></a></div></div><div class=content><div class=md-body><p>日前，KubeSphere v4 发布，相较于之前的版本，新版本在架构上有了颠覆性的变化。为了让社区的各位小伙伴能够丝滑的从旧版本过渡到新版本，我们特别推出本篇安装指南文章，以供参考。</p><p>关于 KubeSphere v4 的介绍，请阅读本文：<a href=https://kubesphere.io/zh/news/kubesphere-v4-ga-announcement/ target=_blank rel="noopener noreferrer">KubeSphere v4 开源并发布全新可插拔架构 LuBan</a>。</p><blockquote><p>需要注意的是，目前不支持从 KubeSphere 3.4.1 版本直接升级到 v4 版本，需要先卸载原来的版本，再安装 v4 版本。</p></blockquote><h2 id=卸载-kubesphere-341>卸载 KubeSphere 3.4.1</h2><blockquote><p>注意：</p><ul><li>本文仅适用于测试环境，请不要直接在生产环境操作。</li><li>如果需要在生产环境操作，请先在测试环境验证通过后再进行。</li><li>卸载为高风险操作，执行该操作前，请明确您知道自己将要做什么。</li><li>该操作会导致 KubeSphere 平台自身无法使用，但不会影响 KubeSphere 之外即 K8s 集群中运行的工作负载。</li><li>该操作会删除 KubeSphere 所有的组件及相关数据，您可以在此之前对数据进行备份。</li><li>您可以自主选择数据迁移工具，或等待社区的数据迁移方案，社区的迁移方案计划通过脚本帮助您备份平台账户、权限及相关的数据，在新版本安装好后，可将备份数据进行导入。</li><li>如果您期望全面的数据迁移和升级，我们建议您可以考虑 <a href="https://m.qingcloud.com/page/23555798970015596/4c97b2026cb84249be20d94e71b647cf?cl_track=aec50" target=_blank rel="noopener noreferrer">KubeSphere 企业版</a>。</li><li><strong>社区郑重提醒您，务必谨慎操作。</strong></li></ul></blockquote><h3 id=解绑集群>解绑集群</h3><p>如果开启了多集群，请务必在卸载前将集群进行解绑。卸载 Host 集群前，请确保已经没有 Member 集群被当前集群纳管，且角色和账户等信息也会被删除。</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/ks-v4-install-guide-1.png alt></p><h3 id=卸载-kubesphere-341-1>卸载 KubeSphere 3.4.1</h3><p>针对待卸载集群执行该脚本。</p><p><strong>注意：</strong></p><ol><li>执行该脚本前请确保当前集群已从 Host 集群中解绑。</li><li>请确认即将操作的集群是将要被卸载的集群。</li><li>执行该脚本后会将集群中的 Prometheus 以及 Elasticsearch 删除，存量监控和日志数据不会被保留。</li><li>执行该脚本后，集群中项目网关仍可继续使用，但纳管至 KubeSphere 4.1.2 后需将网关切换到新版本网关，切换过程存需删除老版本网关，切换为新版本网关。</li></ol><h4 id=卸载-devops-组件>卸载 DevOps 组件</h4><pre tabindex=0><code>helm del -n argocd devops
+helm del -n kubesphere-devops-system devops
+</code></pre><h4 id=卸载-servicemesh-组件>卸载 ServiceMesh 组件</h4><pre tabindex=0><code>kubectl -n istio-system delete jaeger jaeger
+kubectl -n istio-system delete kiali kiali
+
+helm del -n istio-system kiali-operator
+helm del -n istio-system jaeger-operator
+
+# 下载 istioctl
+wget https://github.com/istio/istio/releases/download/1.15.6/istioctl-1.15.6-linux-amd64.tar.gz
+tar -zxvf istioctl-1.15.6-linux-amd64.tar.gz
+./istioctl uninstall --purge
+</code></pre><h4 id=卸载-ks-core监控及日志相关组件>卸载 ks-core、监控及日志相关组件</h4><pre tabindex=0><code>#！/bin/bash
+############################################################################################################
+# 该脚本用于卸载集群中的 KubeSphere v3.4.1
+#
+# 注意： 如果为多集群环境，执行该脚本前请确保当前集群已从 host 集群中解绑
+############################################################################################################
+
+set -x
+
+# 清除集群所有 namespace 中的 workspace 标签
+kubectl get ns -l kubesphere.io/workspace -o name | xargs -I {} bash -c &#34;kubectl label {} kubesphere.io/workspace- &amp;&amp; kubectl patch {} -p &#39;{\&#34;metadata\&#34;:{\&#34;ownerReferences\&#34;:[]}}&#39; --type=merge&#34;
+
+# # 清除集群所有 namespace 中的 kubefed 标签
+kubectl get ns -l kubefed.io/managed -o name | xargs -I {} bash -c &#34;kubectl label {} kubefed.io/managed- &amp;&amp; kubectl patch {} -p &#39;{\&#34;metadata\&#34;:{\&#34;ownerReferences\&#34;:[]}}&#39; --type=merge&#34;
+
+# 清除集群中的 workspace 以及 workspacetemplate 资源
+kubectl get workspacetemplate -A -o name | xargs -I {} kubectl patch {} -p &#39;{&#34;metadata&#34;:{&#34;ownerReferences&#34;:[]}}&#39; --type=merge
+kubectl get workspace -A -o name | xargs -I {} kubectl patch {} -p &#39;{&#34;metadata&#34;:{&#34;ownerReferences&#34;:[]}}&#39; --type=merge
+
+kubectl get workspacetemplate -A -o name | xargs -I {} kubectl delete {}
+kubectl get workspace -A -o name | xargs -I {} kubectl delete {}
+
+# 删除 clusterroles
+delete_cluster_roles() {
+  for role in `kubectl get clusterrole -l iam.kubesphere.io/role-template -o jsonpath=&#34;{.items[*].metadata.name}&#34;`
+  do
+    kubectl delete clusterrole $role 2&gt;/dev/null
+  done
+}
+
+delete_cluster_roles
+
+# 删除 clusterrolebindings
+delete_cluster_role_bindings() {
+  for rolebinding in `kubectl get clusterrolebindings -l iam.kubesphere.io/role-template -o jsonpath=&#34;{.items[*].metadata.name}&#34;`
+  do
+    kubectl delete clusterrolebindings $rolebinding 2&gt;/dev/null
+  done
+}
+delete_cluster_role_bindings
+
+# 删除 validatingwebhookconfigurations
+for webhook in ks-events-admission-validate users.iam.kubesphere.io network.kubesphere.io validating-webhook-configuration resourcesquotas.quota.kubesphere.io
+do
+  kubectl delete validatingwebhookconfigurations.admissionregistration.k8s.io $webhook 2&gt;/dev/null
+done
+
+# 删除 mutatingwebhookconfigurations
+for webhook in ks-events-admission-mutate logsidecar-injector-admission-mutate mutating-webhook-configuration
+do
+  kubectl delete mutatingwebhookconfigurations.admissionregistration.k8s.io $webhook 2&gt;/dev/null
+done
+
+# 删除 users
+for user in `kubectl get users -o jsonpath=&#34;{.items[*].metadata.name}&#34;`
+do
+  kubectl patch user $user -p &#39;{&#34;metadata&#34;:{&#34;finalizers&#34;:null}}&#39; --type=merge
+done
+kubectl delete users --all 2&gt;/dev/null
+
+# 删除 iam 资源
+for resource_type in `echo globalrolebinding loginrecord rolebase workspacerole globalrole workspacerolebinding`; do
+  for resource_name in `kubectl get ${resource_type}.iam.kubesphere.io -o jsonpath=&#34;{.items[*].metadata.name}&#34;`; do
+    kubectl patch ${resource_type}.iam.kubesphere.io ${resource_name} -p &#39;{&#34;metadata&#34;:{&#34;finalizers&#34;:null}}&#39; --type=merge
+  done
+  kubectl delete ${resource_type}.iam.kubesphere.io --all 2&gt;/dev/null
+done
+
+# 卸载 ks-core
+helm del -n kubesphere-system ks-core
+helm del -n kubesphere-system ks-redis &amp;&gt; /dev/null || true
+kubectl delete pvc -n kubesphere-system -l app=redis-ha --ignore-not-found || true
+kubectl delete deploy -n kubesphere-system -l app.kubernetes.io/managed-by!=Helm --field-selector metadata.name=redis --ignore-not-found || true
+kubectl delete svc -n kubesphere-system -l app.kubernetes.io/managed-by!=Helm --field-selector metadata.name=redis --ignore-not-found || true
+kubectl delete secret -n kubesphere-system -l app.kubernetes.io/managed-by!=Helm --field-selector metadata.name=redis-secret --ignore-not-found || true
+kubectl delete cm -n kubesphere-system -l app.kubernetes.io/managed-by!=Helm --field-selector metadata.name=redis-configmap --ignore-not-found || true
+kubectl delete pvc -n kubesphere-system -l app.kubernetes.io/managed-by!=Helm --field-selector metadata.name=redis-pvc --ignore-not-found || true
+kubectl delete deploy -n kubesphere-system --all --ignore-not-found
+kubectl delete svc -n kubesphere-system --all --ignore-not-found
+kubectl delete cm -n kubesphere-system --all --ignore-not-found
+kubectl delete secret -n kubesphere-system --all --ignore-not-found
+kubectl delete sa -n kubesphere-system --all --ignore-not-found
+
+# 删除 Gateway 资源
+for gateway in `kubectl -n kubesphere-controls-system get gateways.gateway.kubesphere.io -o jsonpath=&#34;{.items[*].metadata.name}&#34;`
+do
+  kubectl -n kubesphere-controls-system patch gateways.gateway.kubesphere.io $gateway -p &#39;{&#34;metadata&#34;:{&#34;finalizers&#34;:null}}&#39; --type=merge
+done
+kubectl -n kubesphere-controls-system delete gateways.gateway.kubesphere.io --all 2&gt;/dev/null
+
+# 删除crd
+kubectl delete crd globalrolebindings.iam.kubesphere.io
+kubectl delete crd globalroles.iam.kubesphere.io
+kubectl delete crd users.iam.kubesphere.io
+kubectl delete crd workspacerolebindings.iam.kubesphere.io
+kubectl delete crd workspaceroles.iam.kubesphere.io 
+kubectl delete crd workspaces.tenant.kubesphere.io
+kubectl delete crd workspacetemplates.tenant.kubesphere.io
+kubectl delete crd gateways.gateway.kubesphere.io
+
+## 卸载 监控组件
+# 删除 Prometheus/ALertmanager/ThanosRuler
+kubectl -n kubesphere-monitoring-system delete Prometheus  k8s --ignore-not-found
+kubectl -n kubesphere-monitoring-system delete secret additional-scrape-configs --ignore-not-found
+kubectl -n kubesphere-monitoring-system delete serviceaccount prometheus-k8s --ignore-not-found
+kubectl -n kubesphere-monitoring-system delete service prometheus-k8s --ignore-not-found
+kubectl -n kubesphere-monitoring-system delete role prometheus-k8s-config --ignore-not-found
+kubectl -n kubesphere-monitoring-system delete rolebinging prometheus-k8s-config --ignore-not-found
+
+kubectl -n kubesphere-monitoring-system delete Alertmanager main --ignore-not-found
+kubectl -n kubesphere-monitoring-system delete secret alertmanager-main --ignore-not-found
+kubectl -n kubesphere-monitoring-system delete service alertmanager-main --ignore-not-found
+
+kubectl -n kubesphere-monitoring-system delete ThanosRuler kubesphere --ignore-not-found
+
+# 删除 ServiceMonitor/PrometheusRules
+kubectl -n kubesphere-monitoring-system delete ServiceMonitor alertmanager coredns etcd ks-apiserver  kube-apiserver kube-controller-manager kube-proxy kube-scheduler kube-state-metrics kubelet node-exporter  prometheus prometheus-operator  s2i-operator  thanosruler --ignore-not-found
+kubectl -n kubesphere-monitoring-system delete PrometheusRule kubesphere-rules prometheus-k8s-coredns-rules prometheus-k8s-etcd-rules prometheus-k8s-rules --ignore-not-found
+
+# 删除 prometheus-operator
+kubectl -n kubesphere-monitoring-system delete deployment prometheus-operator --ignore-not-found
+kubectl -n kubesphere-monitoring-system delete service  prometheus-operator --ignore-not-found
+kubectl -n kubesphere-monitoring-system delete serviceaccount prometheus-operator --ignore-not-found
+
+# 删除 kube-state-metrics/node-exporter
+kubectl -n kubesphere-monitoring-system delete deployment kube-state-metrics --ignore-not-found
+kubectl -n kubesphere-monitoring-system delete service  kube-state-metrics --ignore-not-found
+kubectl -n kubesphere-monitoring-system delete serviceaccount  kube-state-metrics --ignore-not-found
+
+kubectl -n kubesphere-monitoring-system delete daemonset node-exporter --ignore-not-found
+kubectl -n kubesphere-monitoring-system delete service node-exporter --ignore-not-found
+kubectl -n kubesphere-monitoring-system delete serviceaccount node-exporter --ignore-not-found
+
+# 删除 Clusterrole/ClusterRoleBinding
+kubectl delete clusterrole kubesphere-prometheus-k8s kubesphere-kube-state-metrics kubesphere-node-exporter kubesphere-prometheus-operator
+kubectl delete clusterrolebinding kubesphere-prometheus-k8s kubesphere-kube-state-metrics kubesphere-node-exporter kubesphere-prometheus-operator
+
+# 删除 notification-manager
+helm delete notification-manager -n kubesphere-monitoring-system
+
+# 清理 kubesphere-monitoring-system
+kubectl delete deploy -n kubesphere-monitoring-system --all --ignore-not-found
+
+# 删除监控 crd
+kubectl delete crd alertmanagerconfigs.monitoring.coreos.com
+kubectl delete crd alertmanagers.monitoring.coreos.com
+kubectl delete crd podmonitors.monitoring.coreos.com
+kubectl delete crd probes.monitoring.coreos.com
+kubectl delete crd prometheusagents.monitoring.coreos.com
+kubectl delete crd prometheuses.monitoring.coreos.com
+kubectl delete crd prometheusrules.monitoring.coreos.com
+kubectl delete crd scrapeconfigs.monitoring.coreos.com
+kubectl delete crd servicemonitors.monitoring.coreos.com
+kubectl delete crd thanosrulers.monitoring.coreos.com
+kubectl delete crd clusterdashboards.monitoring.kubesphere.io
+kubectl delete crd dashboards.monitoring.kubesphere.io
+
+# 删除 metrics-server
+kubectl delete apiservice v1beta1.metrics.k8s.io
+kubectl -n kube-system delete deploy metrics-server
+kubectl -n kube-system delete service metrics-server
+kubectl delete ClusterRoleBinding system:metrics-server
+kubectl delete ClusterRoleBinding metrics-server:system:auth-delegator
+kubectl -n kube-system delete RoleBinding  metrics-server-auth-reader
+kubectl delete ClusterRole system:metrics-server
+kubectl delete ClusterRole system:aggregated-metrics-reader
+kubectl -n kube-system delete ServiceAccount ServiceAccount
+
+## 卸载 日志组件
+# 删除 fluent-bit
+kubectl -n kubesphere-logging-system delete fluentbitconfigs fluent-bit-config --ignore-not-found
+kubectl -n kubesphere-logging-system patch fluentbit fluent-bit -p &#39;{&#34;metadata&#34;:{&#34;finalizers&#34;:null}}&#39; --type=merge
+kubectl -n kubesphere-logging-system delete fluentbit fluent-bit --ignore-not-found
+
+# 删除 ks-logging
+helm del -n kubesphere-logging-system logsidecar-injector &amp;&gt; /dev/null || true
+
+# 删除 ks-events
+helm del -n kubesphere-logging-system ks-events &amp;&gt; /dev/null || true
+
+# 删除 kube-auditing
+helm del -n kubesphere-logging-system kube-auditing &amp;&gt; /dev/null || true
+
+# 删除 es 
+helm del -n kubesphere-logging-system elasticsearch-logging &amp;&gt; /dev/null || true
+helm del -n kubesphere-logging-system elasticsearch-logging-curator &amp;&gt; /dev/null || true
+
+# 删除 opensearch
+helm del -n kubesphere-logging-system opensearch-master &amp;&gt; /dev/null || true
+helm del -n kubesphere-logging-system opensearch-data &amp;&gt; /dev/null || true
+helm del -n kubesphere-logging-system opensearch-logging-curator &amp;&gt; /dev/null || true
+
+# 清理 kubesphere-logging-system
+kubectl delete deploy -n kubesphere-logging-system --all --ignore-not-found
+</code></pre><h4 id=检查-namespace-标签>检查 Namespace 标签</h4><p>确认所有 Namespace 不包含 <code>kubesphere.io/workspace</code> 标签。</p><pre tabindex=0><code>kubectl get ns --show-labels
+</code></pre><h4 id=卸载-kubefedhost-集群>卸载 Kubefed（Host 集群）</h4><pre tabindex=0><code>helm del -n kube-federation-system kubefed
+</code></pre><h2 id=安装-kubesphere-412>安装 KubeSphere 4.1.2</h2><h3 id=升级-crd>升级 CRD</h3><pre tabindex=0><code># 下载 ks-core chart 包
+# 如果无法访问 charts.kubesphere.io, 可将 charts.kubesphere.io 替换为 charts.kubesphere.com.cn 
+helm fetch https://charts.kubesphere.io/main/ks-core-1.1.3.tgz --untar
+
+
+# 更新 crds 
+kubectl apply -f ks-core/charts/ks-crds/crds/
+</code></pre><h3 id=host-集群安装-ks-core>Host 集群安装 ks-core</h3><p>自 KubeSphere v4.1 开始，仅需在 Host 集群部署 ks-core 即可，Member 集群通过页面添加（切勿在 Member 集群再次部署 ks-core）。</p><pre tabindex=0><code># 该命令仅需在 host 集群上执行
+# 如果访问 dockerhub 受限，在以下命令中添加 
+# --set global.imageRegistry=swr.cn-southwest-2.myhuaweicloud.com/ks 
+# --set extension.imageRegistry=swr.cn-southwest-2.myhuaweicloud.com/ks 
+# 如果无法访问 charts.kubesphere.io, 可将 charts.kubesphere.io 替换为 charts.kubesphere.com.cn
+
+helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.3.tgz --debug --wait
+</code></pre><h3 id=添加-member-集群>添加 Member 集群</h3><p>Host 集群部署好之后，进入工作台点击<strong>集群管理</strong>：</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/ks-v4-install-guide-2.png alt></p><p>点击<strong>添加集群</strong>：</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/ks-v4-install-guide-3.png alt></p><p>填写集群信息，并点击<strong>下一步</strong>：</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/ks-v4-install-guide-4.png alt></p><p>填写 Member 集群 Kubeconfig：</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/ks-v4-install-guide-5.png alt></p><p>填写集群配置：</p><pre tabindex=0><code># 如果访问 dockerhub 受限，此处可填，如果能够正常访问 dockerhub，可跳过该步骤。
+global:
+  imageRegistry: swr.cn-southwest-2.myhuaweicloud.com/ks
+</code></pre><p><img src=http://pek3b.qingstor.com/kubesphere-community/images/ks-v4-install-guide-6.png alt></p><p>点击创建后等待 Member 集群上的 ks-agent 创建成功。</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/ks-v4-install-guide-7.png alt></p><h3 id=gateway-迁移>Gateway 迁移</h3><h4 id=安装-gateway-组件>安装 Gateway 组件</h4><p>安装 KubeSphere 网关扩展组件，并为需要使用网关的集群安装 Gateway 扩展组件 Agent。</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/ks-v4-install-guide-8.png alt></p><h4 id=将使用了项目网关的项目加入目标企业空间>将使用了项目网关的项目加入目标企业空间</h4><p>执行卸载脚本时，会删除项目的企业空间关联关系，需将使用了项目网关的项目重新加入新的目标企业空间中。</p><h4 id=迁移项目网关到新版本>迁移项目网关到新版本</h4><p><strong>注意：该步骤会导致项目网关中断，需提前考虑业务影响。</strong></p><h5 id=删除待迁移项目网关>删除待迁移项目网关</h5><p>如需保证访问端口不变，删除前务必记录对应网关的 Nodeport 信息或者 LoadBalancer 信息，以便在新创建网关时保留原有配置。</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/ks-v4-install-guide-9.png alt></p><h5 id=新建项目网关>新建项目网关</h5><p>通过企业空间进入到项目的项目设置中的网关设置。</p><p>以保留原有网关的 Nodeport 为例：</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/ks-v4-install-guide-10.png alt></p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/ks-v4-install-guide-11.png alt></p><p>点击确定。</p><h5 id=关联应用路由至新建网关>关联应用路由至新建网关</h5><p>待新的项目网关创建成功后，在网关页面中点击管理->编辑，复制其中的 IngressClassName。</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/ks-v4-install-guide-12.png alt></p><p>针对当前项目下的应用路由，点击编辑 YAML。</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/ks-v4-install-guide-13.png alt></p><p>Spec 添加 ingressClassName: xxx，保存。</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/ks-v4-install-guide-14.png alt></p><h2 id=总结>总结</h2><p>以上就是 KubeSphere v4 安装的完整步骤，供大家参考。如果您在安装过程中出现问题，可去论坛搜索是否有解答，如没有，可在论坛提问： <a href=https://ask.kubesphere.io/forum/ target=_blank rel="noopener noreferrer">https://ask.kubesphere.io/forum/</a>。</p></div></div><div class=share-2><div class=share><a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fkubesphere-v4-install-guide%2f&text=KubeSphere%20v4%20%e5%ae%89%e8%a3%85%e6%8c%87%e5%8d%97" target=_blank rel="noopener noreferrer"><img src=/images/share/Twitter.svg alt="twitter icon">
+</a><a href="https://reddit.com/submit?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fkubesphere-v4-install-guide%2f&title=KubeSphere%20v4%20%e5%ae%89%e8%a3%85%e6%8c%87%e5%8d%97" target=_blank rel="noopener noreferrer"><img src=/images/share/Reddit.svg alt="reddit icon">
+</a><a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fkubesphere-v4-install-guide%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Facebook.svg alt="facebook icon">
+</a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fkubesphere-v4-install-guide%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Linkedin.svg alt="linkedin icon">
+</a><a href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fkubesphere-v4-install-guide%2f&t=KubeSphere%20v4%20%e5%ae%89%e8%a3%85%e6%8c%87%e5%8d%97" target=_blank rel="noopener noreferrer"><img src=/images/share/HackerNews.svg alt="hackernews icon"></a></div></div></div><div class=aside><div class=inner-div><div class=title>目录</div><div class=tabs><nav id=TableOfContents><ul><li><a href=#卸载-kubesphere-341>卸载 KubeSphere 3.4.1</a><ul><li><a href=#解绑集群>解绑集群</a></li><li><a href=#卸载-kubesphere-341-1>卸载 KubeSphere 3.4.1</a></li></ul></li><li><a href=#安装-kubesphere-412>安装 KubeSphere 4.1.2</a><ul><li><a href=#升级-crd>升级 CRD</a></li><li><a href=#host-集群安装-ks-core>Host 集群安装 ks-core</a></li><li><a href=#添加-member-集群>添加 Member 集群</a></li><li><a href=#gateway-迁移>Gateway 迁移</a></li></ul></li><li><a href=#总结>总结</a></li></ul></nav></div></div></div></div></section><div class=SubscribeForm><div class=innerBox><img class=close src=/images/home/close.svg alt=close><p class=description>通过邮件接收 KubeSphere 最新的技术博客与产品更新的通知</p><div id=blog_formAddress data-actionaddress="https://www.sendcloud.net/v3/api/subInvite/subscription?invitecode=1dc5a4fb-894c-4470-b01d-ca7fa9d47a46" data-usesendcloud=true data-lang=zh><input name=EMAIL id=email-input-blog type=text placeholder>
+<button id=email-submit-blog>订阅</button>
+<span id=message_blog data-message1=请提供您的邮箱 data-message2=请输入有效的邮箱地址! data-message3=邮箱地址已经存在 style=color:red></span><span id=message1_blog style=color:#00a971 data-success=订阅成功啦，我们保证不会给你发垃圾邮件的啦></span></div></div></div><footer><div class=footer><div class="footer-main common-layout"><div class=up-main><div class=left-div><img src=/images/logo.svg alt class=foot-logo><p>通过邮件接收 KubeSphere 最新的技术博客与产品更新的通知</p><div id=formAddress data-actionaddress="https://www.sendcloud.net/v3/api/subInvite/subscription?invitecode=1dc5a4fb-894c-4470-b01d-ca7fa9d47a46" data-usesendcloud=true data-lang=zh><input name=EMAIL id=email-input type=text placeholder=请输入您的邮箱地址>
+<button id=email-submit>订阅</button></div><span id=message data-message1=请提供您的邮箱 data-message2=请输入有效的邮箱地址! data-message3=邮箱地址已经存在></span><span id=message1 style=color:#00a971 data-success=订阅成功啦，我们保证不会给你发垃圾邮件的啦></span><script>var bindSubmit=function(){var e=$("#email-input");$("#email-submit").click(function(t){t.stopPropagation();var s,o,n=e.val(),i=$("#message").data("message1"),a=$("#message").data("message2"),r=$("#message").data("message3"),c=$("#message1").data("success");if(n)if(validateEmail(n)){if(s=$("#formAddress").data("usesendcloud"),!s)return;o=$("#formAddress").data("actionaddress"),$.post({type:"post",url:o,data:{email:$("#email-input").val().toString()},success:function(){showSuccessMessage(c),setTimeout(function(){$("#email-input").val("")},1e3)},error:function(){showMessage(r)}})}else t.preventDefault(),showMessage(a);else t.preventDefault(),showMessage(i)})},validateEmail=function(e){var t=/^[A-Za-z0-9]+([_.][A-Za-z0-9]+)*@([A-Za-z0-9-]+\.)+[A-Za-z]{2,6}$/;return t.test(e)},showMessage=function(e){$("#message").html(e).show()},showSuccessMessage=function(e){$("#message1").html(e).show()},bindHideMessage=function(){$(window).click(function(){$("#message").hide(),$("#message1").hide()})},bindClose=function(){$(".formBox .close").click(function(e){e.stopPropagation(),$(".formBox").fadeOut()})};bindSubmit(),bindClose(),bindHideMessage()</script><span id=message data-message1=请提供您的邮箱 data-message2=请输入有效的邮箱地址!></span></div><div class=right-div><ul class=common-flex-layout><li class=nowrap-li><div class=h3>应用场景</div><a href=/zh/devops/>拥抱一站式 DevOps</a>
+<a href=/zh/service-mesh/>在 K8s 运行微服务</a>
+<a href=/zh/observability/>构建云原生可观测性</a>
+<a href=https://github.com/kubesphere/kubekey target=_blank rel="noopener noreferrer">K8s 一键部署与运维</a>
+<a href=https://github.com/OpenFunction/OpenFunction target=_blank rel="noopener noreferrer">构建 FaaS 平台与 Serverless 架构</a>
+<a href=https://github.com/openpitrix/openpitrix target=_blank rel="noopener noreferrer">多云应用管理平台</a></li><li class=nowrap-li><div class=h3>资源</div><a href=/zh/projects/>开源项目</a>
+<a href=/zh/blogs/>技术博客</a>
+<a href=/zh/conferences/>开源峰会</a>
+<a href=/zh/videos/>视频资源</a>
+<a href=/zh/learn/>云原生实战</a></li><li class=nowrap-li><div class=h3>文档中心</div><a href=/zh/docs/v4.1/01-intro/01-introduction/>产品介绍</a>
+<a href=/zh/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere/>如何安装</a>
+<a href=/zh/docs/v4.1/02-quickstart/>快速入门</a>
+<a href=/zh/docs/v3.4/reference/api-docs/>API 文档</a></li><li class=nowrap-li><div class=h3>开源社区</div><a href=/zh/contribution/>参与贡献</a>
+<a href=/zh/live/>社区活动</a>
+<a href=/zh/case/>案例学习</a>
+<a href=/zh/partner/>合作伙伴</a>
+<a href=/zh/user-group/>用户委员会</a>
+<a href=https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md target=_blank rel="noopener noreferrer">版本计划</a>
+<a href=https://kubesphere.com.cn/ target=_blank rel="noopener noreferrer">中国站</a>
+<a href=https://ask.kubesphere.io/forum target=_blank rel="noopener noreferrer">中文论坛</a>
+<a href=https://kubesphere.io target=_blank rel="noopener noreferrer">全球站</a></li><li class=nowrap-li><div class=h3>产品与服务</div><a href=https://aws.amazon.com/cn/quickstart/architecture/qingcloud-kubesphere/ target=_blank rel="noopener noreferrer">KubeSphere on AWS</a>
+<a href=https://market.azure.cn/marketplace/apps/qingcloud.kubesphere target=_blank rel="noopener noreferrer">KubeSphere on Azure</a>
+<a href=https://marketplace.digitalocean.com/apps/kubesphere target=_blank rel="noopener noreferrer">KubeSphere on DigitalOcean</a>
+<a href=https://www.qingcloud.com/products/kubesphereqke target=_blank rel="noopener noreferrer">KubeSphere on QingCloud(QKE)</a>
+<a href=https://kubesphere.com.cn/kse/ target=_blank rel="noopener noreferrer">KubeSphere 企业版</a>
+<a href=https://kubesphere.cloud/ksv/ target=_blank rel="noopener noreferrer">KubeSphere 虚拟化平台</a>
+<a href=https://kubesphere.com.cn/marketplace/ target=_blank rel="noopener noreferrer">云原生扩展组件市场</a>
+<a href=https://kubesphere.cloud target=_blank rel="noopener noreferrer">云原生应用服务平台</a>
+<a href=https://m.qingcloud.com/p/aec50 target=_blank rel="noopener noreferrer">了解商业产品与咨询合作</a></li></ul></div></div><div class=down-main><div class=img-div><a class=wechat href=javascript:void(0); aria-label=wechat><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28"><defs><path id="a" d="M0 0h15.673v12.156H0z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="13" cy="13" r="13" stroke="#B6C2CD"/><g transform="translate(5 7)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="currentColor" d="M15.673 7.898c0-2.061-2.173-3.74-4.619-3.74-2.59.0-4.625 1.679-4.625 3.74.0 2.066 2.035 3.738 4.625 3.738.542.0 1.09-.13 1.632-.256l1.493.776-.408-1.29c1.09-.776 1.902-1.81 1.902-2.968zm-6.119-.645c-.27.0-.541-.257-.541-.514.0-.256.27-.514.541-.514.41.0.681.258.681.514.0.257-.271.514-.681.514zm2.994.0c-.27.0-.541-.257-.541-.514.0-.256.27-.514.54-.514.41.0.681.258.681.514.0.257-.277.514-.68.514z" mask="url(#b)"/><path fill="currentColor" d="M10.602 3.674c.177.0.356.011.533.029C10.657 1.576 8.27.0 5.543.0 2.498.0.0 1.974.0 4.485c0 1.45.829 2.64 2.216 3.564l-.552 1.588 1.94-.929c.693.129 1.251.263 1.94.263.17.0.343-.005.515-.022a3.68 3.68.0 01-.172-1.104c0-2.302 2.081-4.171 4.715-4.171zM7.618 2.243c.417.0.693.263.693.66s-.276.66-.693.66c-.418.0-.835-.263-.835-.66.006-.398.423-.66.835-.66zm-3.88 1.319c-.417.0-.834-.263-.834-.66s.417-.66.834-.66c.418.0.695.263.695.66.0.392-.277.66-.695.66z" mask="url(#b)"/></g></g></svg><div class=hide-div><img src=/images/home/wechat.svg alt></div></a><a class=facebook-a href=https://www.facebook.com/kubesphere target=_blank aria-label=facebook></a><a class=twitter-a href=https://x.com/KubeSphere target=_blank aria-label=twitter rel="noopener noreferrer"></a><a class=linkedin-a href=https://www.linkedin.com/company/kubesphere/ target=_blank aria-label=linkedin rel="noopener noreferrer"></a><a class=bilibili-a href=https://space.bilibili.com/438908638 target=_blank aria-label=bilibili rel="noopener noreferrer"></a><a class=slack-a href=https://join.slack.com/t/kubesphere/shared_invite/zt-2b4t6rdb4-ico_4UJzCln_S2c1pcrIpQ target=_blank aria-label=slack rel="noopener noreferrer"></a><a class=github-a href=https://github.com/kubesphere/kubesphere target=_blank aria-label=github rel="noopener noreferrer"></a><a class=medium-a href=https://itnext.io/@kubesphere target=_blank aria-label=medium rel="noopener noreferrer"></a></div><p class=p1></p><p class=case><a href=http://www.beian.miit.gov.cn/ target=_blank rel="noopener noreferrer"><span>京ICP备13019086号</span>
+</a><a target=_blank rel="noopener noreferrer" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502041003"><img src=/images/footer/case-icon.png alt=备案图标>
+<span>京公网安备 11010502041003号</span></a></p></div></div></div><div class=cookie><div class=common-layout><p>您的隐私对我们很重要。我们使用Cookie来记住订阅详细信息，优化网站功能并交付根据您的兴趣量身定制的内容。要了解更多信息，请参阅我们的<a href=/zh/privacy>隐私政策</a>.</p><button>
+接受并继续</button></div></div></footer><script>var lazyLoad=function(e,t){for(var n,o,i,s=0;s<t;s++){if(n=e.eq(s),o=n.attr("data-loaded"),o)continue;n.offset().top<parseInt($(window).height())+parseInt($(window).scrollTop())&&(i=n.attr("src"),n.attr("src",i),n.attr("data-loaded",!0))}},bindLayLoad=function(){var e=$("img"),t=e.length;lazyLoad(e,t),$(window).scroll(function(){lazyLoad(e,t)})},bindAddPadding=function(){var e=$("#close-join");e.length>0&&$(".main-section").addClass("padding")},docCookies={getItem:function(e){return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*"+encodeURIComponent(e).replace(/[-.+*]/g,"\\$&")+"\\s*\\=\\s*([^;]*).*$)|^.*$"),"$1"))||null},setItem:function(e,t){return!!e&&!/^(?:expires|max-age|path|domain|secure)$/i.test(e)&&(document.cookie=encodeURIComponent(e)+"="+encodeURIComponent(t),!0)}},bindHideCookie=function(){var t=docCookies.getItem("hasAuth"),e=$(".cookie");t?e.hide():e.show(),e.find("button").on("click",function(){docCookies.setItem("hasAuth","1"),e.hide()})};bindAddPadding(),bindHideCookie()</script><script type=text/javascript src=/js/aside.2d6977c0f16aef4ed3e886dd66675ce74bd0efcd467c2b2bcdb30b92d5e7c7c0e5c6e0c9d8f09a883c22f58df9e6b0b6347fcdd3c9a920b7faba6d7f91a201c3.js integrity="sha512-LWl3wPFq707T6IbdZmdc50vQ781GfCsrzbMLktXnx8DlxuDJ2PCaiDwi9Y355rC2NH/N08mpILf6um1/kaIBww=="></script><script type=text/javascript src=/js/markdown-tab.17f9f46b021adebc7250ce1b07134a577b307e7a436daa4aaf388f218e8463966f53770b26a64817c06c168738a887672d47fb4c29615adfc446e11d09a344cf.js integrity="sha512-F/n0awIa3rxyUM4bBxNKV3swfnpDbapKrziPIY6EY5ZvU3cLJqZIF8BsFoc4qIdnLUf7TClhWt/ERuEdCaNEzw=="></script><script>let forbidForm=!1;var viewer=new Viewer(document.querySelector(".md-body"),{url:"src"}),blogBindSubmit=function(){var e=$("#email-input-blog");$("#email-submit-blog").click(function(t){t.stopPropagation();var s,o,n=e.val(),i=$("#message_blog").data("message1"),a=$("#message_blog").data("message2"),r=$("#message_blog").data("message3"),c=$("#message1_blog").data("success");if(n)if(validateEmail(n)){if(s=$("#blog_formAddress").data("usesendcloud"),!s)return;o=$("#blog_formAddress").data("actionaddress"),$.post({type:"post",url:o,data:{email:n.toString()},success:function(){showSuccessMessage_blog(c),setTimeout(function(){window.onscroll="",$(".SubscribeForm").hide(),$("#email-input-blog").val("")},5e3)},error:function(){showMessage_blog(r)}})}else t.preventDefault(),$("#message_blog").html(a).show();else t.preventDefault(),$("#message_blog").html(i).show()})},validateEmail=function(e){var t=/^[A-Za-z0-9]+([_.][A-Za-z0-9]+)*@([A-Za-z0-9-]+\.)+[A-Za-z]{2,6}$/;return t.test(e)},bindHideMessageBlog=function(){$(window).click(function(){$("#message_blog").hide()})},bindCloseBlog=function(){$(".SubscribeForm .close").click(function(e){e.stopPropagation(),$(".SubscribeForm").fadeOut(),window.onscroll=""})},showMessage_blog=function(e){$("#message_blog").html(e).show()},showSuccessMessage_blog=function(e){$("#message1_blog").html(e).show()};window.onscroll=()=>{var e=document.documentElement.scrollTop||document.body.scrollTop,t=document.documentElement.clientHeight||document.body.clientHeight,n=document.documentElement.scrollHeight||document.body.scrollHeight;forbidForm&&(window.onscroll=""),e+t>n-710?$(".SubscribeForm").hide():$(".SubscribeForm").show()},blogBindSubmit(),bindCloseBlog(),bindHideMessageBlog()</script><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script></body></html>

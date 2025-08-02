@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>外部身份验证 on</title><link>https://openksc.github.io/zh/docs/v3.4/access-control-and-account-management/external-authentication/</link><description>Recent content in 外部身份验证 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v3.4/access-control-and-account-management/external-authentication/index.xml" rel="self" type="application/rss+xml"/><item><title>设置外部身份验证</title><link>https://openksc.github.io/zh/docs/v3.4/access-control-and-account-management/external-authentication/set-up-external-authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/access-control-and-account-management/external-authentication/set-up-external-authentication/</guid><description>&lt;p>本文档描述了如何在 KubeSphere 上使用外部身份提供者，例如 LDAP 服务或 Active Directory 服务。&lt;/p>
+&lt;p>KubeSphere 提供了一个内置的 OAuth 服务。用户通过获取 OAuth 访问令牌以对 API 进行身份验证。作为 KubeSphere 管理员，您可以编辑 CRD &lt;code>ClusterConfiguration&lt;/code> 中的 &lt;code>ks-installer&lt;/code> 来配置 OAuth 并指定身份提供者。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;p>您需要部署一个 Kubernetes 集群，并在集群中安装 KubeSphere。有关详细信息，请参阅&lt;a href="../../../installing-on-linux/">在 Linux 上安装&lt;/a>和&lt;a href="../../../installing-on-kubernetes/">在 Kubernetes 上安装&lt;/a>。&lt;/p>
+&lt;h2 id="步骤">步骤&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>以 &lt;code>admin&lt;/code> 身份登录 KubeSphere，将光标移动到右下角 &lt;img src="https://openksc.github.io/images/docs/v3.x/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px" alt="icon"> ，点击 &lt;strong>kubectl&lt;/strong>，然后执行以下命令来编辑 CRD &lt;code>ClusterConfiguration&lt;/code> 中的 &lt;code>ks-installer&lt;/code>：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl -n kubesphere-system edit cc ks-installer
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>在 &lt;code>spec.authentication.jwtSecret&lt;/code> 字段下添加以下字段。&lt;/p>
+&lt;p>示例:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">spec&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">authentication&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">jwtSecret&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">authenticateRateLimiterMaxTries&lt;/span>: &lt;span style="color:#ae81ff">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">authenticateRateLimiterDuration&lt;/span>: &lt;span style="color:#ae81ff">10m0s&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">loginHistoryRetentionPeriod&lt;/span>: &lt;span style="color:#ae81ff">168h&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">maximumClockSkew&lt;/span>: &lt;span style="color:#ae81ff">10s&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">multipleLogin&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">oauthOptions&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">accessTokenMaxAge&lt;/span>: &lt;span style="color:#ae81ff">1h&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">accessTokenInactivityTimeout&lt;/span>: &lt;span style="color:#ae81ff">30m&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">identityProviders&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">LDAP&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">type&lt;/span>: &lt;span style="color:#ae81ff">LDAPIdentityProvider&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">mappingMethod&lt;/span>: &lt;span style="color:#ae81ff">auto&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">provider&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">host&lt;/span>: &lt;span style="color:#ae81ff">192.168.0.2&lt;/span>:&lt;span style="color:#ae81ff">389&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">managerDN&lt;/span>: &lt;span style="color:#ae81ff">uid=root,cn=users,dc=nas&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">managerPassword&lt;/span>: &lt;span style="color:#75715e">********&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">userSearchBase&lt;/span>: &lt;span style="color:#ae81ff">cn=users,dc=nas&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">loginAttribute&lt;/span>: &lt;span style="color:#ae81ff">uid&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">mailAttribute&lt;/span>: &lt;span style="color:#ae81ff">mail&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>字段描述如下：&lt;/p></description></item><item><title>LDAP身份提供者</title><link>https://openksc.github.io/zh/docs/v3.4/access-control-and-account-management/external-authentication/use-an-ldap-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/access-control-and-account-management/external-authentication/use-an-ldap-service/</guid><description>&lt;p>本文档描述了如何使用 LDAP 服务作为外部身份提供者，允许您根据 LDAP 服务对用户进行身份验证。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;ul>
+&lt;li>您需要部署一个 Kubernetes 集群，并在集群中安装 KubeSphere。有关详细信息，请参阅&lt;a href="../../../installing-on-linux/">在 Linux 上安装&lt;/a>和&lt;a href="../../../installing-on-kubernetes/">在 Kubernetes 上安装&lt;/a>。&lt;/li>
+&lt;li>您需要获取 LDAP 服务的管理员专有名称（DN）和管理员密码。&lt;/li>
+&lt;/ul>
+&lt;h2 id="步骤">步骤&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>以 &lt;code>admin&lt;/code> 身份登录 KubeSphere，将光标移动到右下角 &lt;img src="https://openksc.github.io/images/docs/v3.x/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px" alt="icon"> ，点击 &lt;strong>kubectl&lt;/strong>，然后执行以下命令来编辑 CRD &lt;code>ClusterConfiguration&lt;/code> 中的 &lt;code>ks-installer&lt;/code>：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl -n kubesphere-system edit cc ks-installer
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>示例：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">spec&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">authentication&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">jwtSecret&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">maximumClockSkew&lt;/span>: &lt;span style="color:#ae81ff">10s&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">multipleLogin&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">oauthOptions&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">accessTokenMaxAge&lt;/span>: &lt;span style="color:#ae81ff">1h&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">accessTokenInactivityTimeout&lt;/span>: &lt;span style="color:#ae81ff">30m&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">identityProviders&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">LDAP&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">type&lt;/span>: &lt;span style="color:#ae81ff">LDAPIdentityProvider&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">mappingMethod&lt;/span>: &lt;span style="color:#ae81ff">auto&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">provider&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">host&lt;/span>: &lt;span style="color:#ae81ff">192.168.0.2&lt;/span>:&lt;span style="color:#ae81ff">389&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">managerDN&lt;/span>: &lt;span style="color:#ae81ff">uid=root,cn=users,dc=nas&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">managerPassword&lt;/span>: &lt;span style="color:#75715e">********&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">userSearchBase&lt;/span>: &lt;span style="color:#ae81ff">cn=users,dc=nas&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">loginAttribute&lt;/span>: &lt;span style="color:#ae81ff">uid&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">mailAttribute&lt;/span>: &lt;span style="color:#ae81ff">mail&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>在 &lt;code>spec:authentication&lt;/code> 部分配置 &lt;code>oauthOptions:identityProviders&lt;/code> 以外的字段信息请参阅&lt;a href="../set-up-external-authentication/">设置外部身份认证&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在 &lt;code>oauthOptions:identityProviders&lt;/code> 部分配置字段。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>name&lt;/code>: 用户定义的 LDAP 服务名称。&lt;/li>
+&lt;li>&lt;code>type&lt;/code>: 必须将该值设置为 &lt;code>LDAPIdentityProvider&lt;/code> 才能将 LDAP 服务用作身份提供者。&lt;/li>
+&lt;li>&lt;code>mappingMethod&lt;/code>: 帐户映射方式，值可以是 &lt;code>auto&lt;/code> 或者 &lt;code>lookup&lt;/code>。
+&lt;ul>
+&lt;li>如果值为 &lt;code>auto&lt;/code>（默认），需要指定新的用户名。KubeSphere 根据用户名自动创建并关联 LDAP 用户。&lt;/li>
+&lt;li>如果值为 &lt;code>lookup&lt;/code>，需要执行步骤 4 以手动关联现有 KubeSphere 用户和 LDAP 用户。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>provider&lt;/code>:
+&lt;ul>
+&lt;li>&lt;code>host&lt;/code>: LDAP 服务的地址和端口号。&lt;/li>
+&lt;li>&lt;code>managerDN&lt;/code>: 用于绑定到 LDAP 目录的 DN 。&lt;/li>
+&lt;li>&lt;code>managerPassword&lt;/code>: &lt;code>managerDN&lt;/code> 对应的密码。&lt;/li>
+&lt;li>&lt;code>userSearchBase&lt;/code>: 用户搜索基。设置为所有 LDAP 用户所在目录级别的 DN 。&lt;/li>
+&lt;li>&lt;code>loginAttribute&lt;/code>: 标识 LDAP 用户的属性。&lt;/li>
+&lt;li>&lt;code>mailAttribute&lt;/code>: 标识 LDAP 用户的电子邮件地址的属性。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>如果 &lt;code>mappingMethod&lt;/code> 设置为 &lt;code>lookup&lt;/code>，可以运行以下命令并添加标签来进行帐户关联。如果 &lt;code>mappingMethod&lt;/code> 是 &lt;code>auto&lt;/code> 可以跳过这个部分。&lt;/p></description></item><item><title>OIDC 身份提供者</title><link>https://openksc.github.io/zh/docs/v3.4/access-control-and-account-management/external-authentication/oidc-identity-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/access-control-and-account-management/external-authentication/oidc-identity-provider/</guid><description>&lt;h2 id="oidc-身份提供者">OIDC 身份提供者&lt;/h2>
+&lt;p>&lt;a href="https://openid.net/connect/" target="_blank" rel="noopener noreferrer">OpenID Connect&lt;/a> 是一种基于 OAuth 2.0 系列规范的可互操作的身份认证协议。使用简单的 REST/JSON 消息流，其设计目标是“让简单的事情变得简单，让复杂的事情成为可能”。与之前的任何身份认证协议（例如 Keycloak、Okta、Dex、Auth0、Gluu、Casdoor 等）相比，开发人员集成起来非常容易。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;p>您需要部署一个 Kubernetes 集群，并在集群中安装 KubeSphere。有关详细信息，请参阅&lt;a href="../../../installing-on-linux/">在 Linux 上安装&lt;/a>和&lt;a href="../../../installing-on-kubernetes/">在 Kubernetes 上安装&lt;/a>。&lt;/p>
+&lt;h2 id="步骤">步骤&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>以 &lt;code>admin&lt;/code> 身份登录 KubeSphere，将光标移动到右下角 &lt;img src="https://openksc.github.io/images/docs/v3.x/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px" alt="icon"> ，点击 &lt;strong>kubectl&lt;/strong>，然后执行以下命令来编辑 CRD &lt;code>ClusterConfiguration&lt;/code> 中的 &lt;code>ks-installer&lt;/code>：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl -n kubesphere-system edit cc ks-installer
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>在 &lt;code>spec.authentication.jwtSecret&lt;/code> 字段下添加以下字段。&lt;/p>
+&lt;p>&lt;em>使用 &lt;a href="https://developers.google.com/identity/protocols/oauth2/openid-connect" target="_blank" rel="noopener noreferrer">Google Identity Platform&lt;/a> 的示例&lt;/em>：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">spec&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">authentication&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">jwtSecret&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">authenticateRateLimiterMaxTries&lt;/span>: &lt;span style="color:#ae81ff">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">authenticateRateLimiterDuration&lt;/span>: &lt;span style="color:#ae81ff">10m0s&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">oauthOptions&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">accessTokenMaxAge&lt;/span>: &lt;span style="color:#ae81ff">1h&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">accessTokenInactivityTimeout&lt;/span>: &lt;span style="color:#ae81ff">30m&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">identityProviders&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">google&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">type&lt;/span>: &lt;span style="color:#ae81ff">OIDCIdentityProvider&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">mappingMethod&lt;/span>: &lt;span style="color:#ae81ff">auto&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">provider&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">clientID&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;********&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">clientSecret&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;********&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">issuer&lt;/span>: &lt;span style="color:#ae81ff">https://accounts.google.com&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">redirectURL&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;https://ks-console/oauth/redirect/google&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>字段描述如下：&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>参数&lt;/th>
+ &lt;th>描述&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>clientID&lt;/td>
+ &lt;td>客户端 ID。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>clientSecret&lt;/td>
+ &lt;td>客户端密码。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>redirectURL&lt;/td>
+ &lt;td>重定向到 ks-console 的 URL，格式为：&lt;code>https://&amp;lt;域名&amp;gt;/oauth/redirect/&amp;lt;身份提供者名称&amp;gt;&lt;/code>。URL 中的 &lt;code>&amp;lt;身份提供者名称&amp;gt;&lt;/code> 对应 &lt;code>oauthOptions:identityProviders:name&lt;/code> 的值。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>issuer&lt;/td>
+ &lt;td>定义客户端如何动态发现有关 OpenID 提供者的信息。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>preferredUsernameKey&lt;/td>
+ &lt;td>可配置的密钥，包含首选用户声明。此参数为可选参数。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>emailKey&lt;/td>
+ &lt;td>可配置的密钥，包含电子邮件声明。此参数为可选参数。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>getUserInfo&lt;/td>
+ &lt;td>使用 userinfo 端点获取令牌的附加声明。非常适用于上游返回 “thin” ID 令牌的场景。此参数为可选参数。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>insecureSkipVerify&lt;/td>
+ &lt;td>关闭 TLS 证书验证。&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;/li>
+&lt;/ol></description></item><item><title>CAS 身份提供者</title><link>https://openksc.github.io/zh/docs/v3.4/access-control-and-account-management/external-authentication/cas-identity-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/access-control-and-account-management/external-authentication/cas-identity-provider/</guid><description>&lt;p>CAS (Central Authentication Service) 是耶鲁 Yale 大学发起的一个java开源项目，旨在为 Web应用系统提供一种可靠的 单点登录 解决方案（ Web SSO ）， CAS 具有以下特点：&lt;/p>
+&lt;ul>
+&lt;li>开源的企业级单点登录解决方案&lt;/li>
+&lt;li>CAS Server 为需要独立部署的 Web 应用----一个独立的Web应用程序(cas.war)。&lt;/li>
+&lt;li>CAS Client 支持非常多的客户端 ( 指单点登录系统中的各个 Web 应用 ) ，包括 Java, .Net, PHP, Perl, 等。&lt;/li>
+&lt;/ul>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;p>您需要部署一个 Kubernetes 集群，并在集群中安装 KubeSphere。有关详细信息，请参阅&lt;a href="../../../installing-on-linux/">在 Linux 上安装&lt;/a>和&lt;a href="../../../installing-on-kubernetes/">在 Kubernetes 上安装&lt;/a>。&lt;/p>
+&lt;h2 id="步骤">步骤&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>以 &lt;code>admin&lt;/code> 身份登录 KubeSphere，将光标移动到右下角 &lt;img src="https://openksc.github.io/images/docs/v3.x/access-control-and-account-management/external-authentication/set-up-external-authentication/toolbox.png" width="20px" height="20px" alt="icon"> ，点击 &lt;strong>kubectl&lt;/strong>，然后执行以下命令来编辑 CRD &lt;code>ClusterConfiguration&lt;/code> 中的 &lt;code>ks-installer&lt;/code>：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl -n kubesphere-system edit cc ks-installer
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>在 &lt;code>spec.authentication.jwtSecret&lt;/code> 字段下添加以下字段。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">spec&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">authentication&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">jwtSecret&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">authenticateRateLimiterMaxTries&lt;/span>: &lt;span style="color:#ae81ff">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">authenticateRateLimiterDuration&lt;/span>: &lt;span style="color:#ae81ff">10m0s&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">oauthOptions&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">accessTokenMaxAge&lt;/span>: &lt;span style="color:#ae81ff">1h&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">accessTokenInactivityTimeout&lt;/span>: &lt;span style="color:#ae81ff">30m&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">identityProviders&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">cas&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">type&lt;/span>: &lt;span style="color:#ae81ff">CASIdentityProvider&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">mappingMethod&lt;/span>: &lt;span style="color:#ae81ff">auto&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">provider&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">redirectURL&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;https://ks-console:30880/oauth/redirect/cas&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">casServerURL&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;https://cas.example.org/cas&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">insecureSkipVerify&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>字段描述如下：&lt;/p></description></item><item><title>OAuth 2.0身份提供者</title><link>https://openksc.github.io/zh/docs/v3.4/access-control-and-account-management/external-authentication/use-an-oauth2-identity-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/access-control-and-account-management/external-authentication/use-an-oauth2-identity-provider/</guid><description>&lt;p>本文档介绍了如何使用基于 OAuth 2.0 协议的外部身份提供者。&lt;/p>
+&lt;p>下图显示了 KubeSphere 与外部 OAuth 2.0 身份提供者之间的身份验证过程。&lt;/p>
+&lt;p>&lt;img src="https://openksc.github.io/images/docs/v3.x/access-control-and-account-management/external-authentication/use-an-oauth2-identity-provider/oauth2.svg" alt="oauth2">&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;p>您需要部署一个 Kubernetes 集群，并在集群中安装 KubeSphere。有关详细信息，请参阅&lt;a href="../../../installing-on-linux/">在 Linux 上安装&lt;/a>和&lt;a href="../../../installing-on-kubernetes/">在 Kubernetes 上安装&lt;/a>。&lt;/p>
+&lt;h2 id="开发-oauth-20-插件">开发 OAuth 2.0 插件&lt;/h2>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>KubeSphere 提供了两个内置的 OAuth 2.0 插件：GitHub 的 &lt;a href="https://github.com/kubesphere/kubesphere/blob/release-3.1/pkg/apiserver/authentication/identityprovider/github/github.go" target="_blank" rel="noopener noreferrer">GitHubIdentityProvider&lt;/a> 和阿里云IDaaS的 &lt;a href="https://github.com/kubesphere/kubesphere/blob/release-3.1/pkg/apiserver/authentication/identityprovider/github/github.go" target="_blank" rel="noopener noreferrer">AliyunIDaasProvider&lt;/a> ，可以根据内置的插件开发其他插件。&lt;/div>
+&lt;/div>
+&lt;ol>
+&lt;li>
+&lt;p>在本地克隆 &lt;a href="https://github.com/kubesphere/kubesphere" target="_blank" rel="noopener noreferrer">KubeSphere&lt;/a> ，进入本地 KubeSphere 仓库，并在 &lt;code>/pkg/apiserver/authentication/identityprovider/&lt;/code> 目录下创建一个插件的包。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在插件包中，实现如下接口：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// /pkg/apiserver/authentication/identityprovider/oauth_provider.go&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">type&lt;/span> &lt;span style="color:#a6e22e">OAuthProvider&lt;/span> &lt;span style="color:#66d9ef">interface&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">// Exchange identity with a remote server.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">IdentityExchange&lt;/span>(&lt;span style="color:#a6e22e">code&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span>) (&lt;span style="color:#a6e22e">Identity&lt;/span>, &lt;span style="color:#66d9ef">error&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">type&lt;/span> &lt;span style="color:#a6e22e">OAuthProviderFactory&lt;/span> &lt;span style="color:#66d9ef">interface&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">// Return the identity provider type.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">Type&lt;/span>() &lt;span style="color:#66d9ef">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">// Apply settings from kubesphere-config.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">Create&lt;/span>(&lt;span style="color:#a6e22e">options&lt;/span> &lt;span style="color:#a6e22e">oauth&lt;/span>.&lt;span style="color:#a6e22e">DynamicOptions&lt;/span>) (&lt;span style="color:#a6e22e">OAuthProvider&lt;/span>, &lt;span style="color:#66d9ef">error&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// /pkg/apiserver/authentication/identityprovider/identity_provider.go&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">type&lt;/span> &lt;span style="color:#a6e22e">Identity&lt;/span> &lt;span style="color:#66d9ef">interface&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// (Mandatory) Return the identifier of the user at the identity provider.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">GetUserID&lt;/span>() &lt;span style="color:#66d9ef">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// (Optional) Return the name of the user to be referred as on KubeSphere.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">GetUsername&lt;/span>() &lt;span style="color:#66d9ef">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// (Optional) Return the email address of the user.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">GetEmail&lt;/span>() &lt;span style="color:#66d9ef">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>在插件包的 &lt;code>init()&lt;/code> 函数中注册插件。&lt;/p></description></item></channel></rss>

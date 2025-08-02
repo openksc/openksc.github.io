@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Project Roles on</title><link>https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/02-project-roles/</link><description>Recent content in Project Roles on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/02-project-roles/index.xml" rel="self" type="application/rss+xml"/><item><title>Create Project Roles</title><link>https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/02-project-roles/01-create-a-project-role/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/02-project-roles/01-create-a-project-role/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to create a project role.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a project and have the &lt;strong>Role Management&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Role Management&lt;/strong> permission, and access your project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Project Settings &amp;gt; Project Roles&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Create&lt;/strong> on the page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Create Role&lt;/strong> dialog, set the name, alias, and description of the project role, then click &lt;strong>Edit Permissions&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Name&lt;/p>
+&lt;/div></description></item><item><title>View Project Role Details</title><link>https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/02-project-roles/03-view-project-role-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/02-project-roles/03-view-project-role-details/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to view project role details.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a project and have the &lt;strong>Role Viewing&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Role Viewing&lt;/strong> permission, and access your project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Project Settings &amp;gt; Project Roles&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the name of a project role in the list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Permissions&lt;/strong> tab on the right side of the details page, you can view the permissions associated with the project role.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the &lt;strong>Authorized Users&lt;/strong> tab on the right side of the details page to view users with the current project role.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>View Project Role List</title><link>https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/02-project-roles/02-view-a-project-role-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/02-project-roles/02-view-a-project-role-list/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to view the project role list.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a project and have the &lt;strong>Role Viewing&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Role Viewing&lt;/strong> permission, and access your project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Project Settings &amp;gt; Project Roles&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>KubeSphere provides the following preset project roles:&lt;/p>
+&lt;/div></description></item><item><title>Edit Project Role Information</title><link>https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/02-project-roles/04-edit-project-role-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/02-project-roles/04-edit-project-role-information/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to edit project role information.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>You can edit the alias and description of project roles created by users. KubeSphere does not support editing preset project roles and does not support editing the names of project roles.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a project and have the &lt;strong>Role Management&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Role Management&lt;/strong> permission, and access your project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Project Settings &amp;gt; Project Roles&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span> on the right side of the project role you want to edit, then select &lt;strong>Edit Information&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Edit Information&lt;/strong> dialog, set the alias and description for the project role, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Alias&lt;/p>
+&lt;/div></description></item><item><title>Edit Project Role Permissions</title><link>https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/02-project-roles/05-edit-permissions-of-a-project-role/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/02-project-roles/05-edit-permissions-of-a-project-role/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to edit project role permissions.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>You can only edit permissions for project roles created by users. Permissions for preset project roles cannot be edited.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a project and have the &lt;strong>Role Management&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Role Management&lt;/strong> permission, and access your project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Project Settings &amp;gt; Project Roles&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span> on the right side of the project role you want to edit, then select &lt;strong>Edit Permissions&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Edit Permissions&lt;/strong> dialog, set the permissions for the project role, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Storage&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Permission&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Operations Allowed&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>PVC Management&lt;/p>
+&lt;/div></description></item><item><title>Delete Project Roles</title><link>https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/02-project-roles/06-delete-a-project-role/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/02-project-roles/06-delete-a-project-role/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to delete project roles.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>You can delete project roles created by users. Preset project roles cannot be deleted.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a project and have the &lt;strong>Role Management&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Ensure the project role you want to delete is not assigned to any project members. Otherwise, you need to remove the project members or change their roles.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

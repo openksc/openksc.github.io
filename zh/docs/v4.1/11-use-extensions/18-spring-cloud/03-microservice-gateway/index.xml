@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>微服务网关 on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/18-spring-cloud/03-microservice-gateway/</link><description>Recent content in 微服务网关 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/18-spring-cloud/03-microservice-gateway/index.xml" rel="self" type="application/rss+xml"/><item><title>创建微服务网关</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/18-spring-cloud/03-microservice-gateway/01-create-a-microservice-gateway/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/18-spring-cloud/03-microservice-gateway/01-create-a-microservice-gateway/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何创建微服务网关。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>创建微服务网关过程中实际上创建了一个运行 Spring Cloud Gateway 的部署。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere Spring Cloud&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个项目并在项目中具有&lt;strong> Spring Cloud 微服务管理&lt;/strong>权限。有关更多信息，请参阅“项目成员”和“项目角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>您需要提前准备 Spring Cloud Gateway 容器镜像。有关更多信息，请参阅 &lt;a href="https://spring.io/projects/spring-cloud-gateway#overview">Spring Cloud Gateway&lt;/a> 官方文档。本节使用 registry.cn-beijing.aliyuncs.com/kse/spring-cloud-gateway:latest 容器镜像作为示例，您也可以根据需要自行构建容器镜像。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>请参阅&lt;a href="#_参数描述">参数描述&lt;/a>设置微服务网关的参数。&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong> Spring Cloud 微服务管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择 &lt;strong>Spring Cloud &amp;gt; 微服务网关&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>网关设置&lt;/strong>页签，设置微服务网关的参数，然后点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>高级设置&lt;/strong>页签，选择是否启用外部访问和外部访问模式，然后点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_参数描述">参数描述&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>以下介绍如何设置微服务网关的参数。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>基本信息&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>名称&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>微服务网关的名称，同时也是对应的部署的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 63 个字符。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>镜像&lt;/p>
+&lt;/div></description></item><item><title>查看微服务网关信息</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/18-spring-cloud/03-microservice-gateway/02-view-microservice-gateway-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/18-spring-cloud/03-microservice-gateway/02-view-microservice-gateway-information/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看微服务网关信息。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere Spring Cloud&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个项目并在项目中具有&lt;strong> Spring Cloud 微服务查看&lt;/strong>权限。有关更多信息，请参阅“项目成员”和“项目角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong> Spring Cloud 微服务查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择 &lt;strong>Spring Cloud &amp;gt; 微服务网关&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>&lt;strong>微服务网关&lt;/strong>页面提供以下信息：&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>类型&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>网关的类型。对于微服务网关参数值为&lt;strong>微服务网关&lt;/strong>。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>状态&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>网关当前的状态。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>运行中&lt;/strong>：微服务网关运行正常。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>更新中&lt;/strong>：微服务网关正在创建中或正在更新设置。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>创建者&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>创建网关的用户。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>创建时间&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>网关的创建时间。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>访问模式&lt;/p>
+&lt;/div></description></item><item><title>查看微服务网关详情</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/18-spring-cloud/03-microservice-gateway/03-view-microservice-gateway-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/18-spring-cloud/03-microservice-gateway/03-view-microservice-gateway-details/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看微服务网关详情。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere Spring Cloud&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个项目并在项目中具有&lt;strong> Spring Cloud 微服务查看&lt;/strong>权限。有关更多信息，请参阅“项目成员”和“项目角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong> Spring Cloud 微服务查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择 &lt;strong>Spring Cloud &amp;gt; 微服务网关&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右侧选择&lt;strong>管理 &amp;gt; 查看详情&lt;/strong>打开网关详情页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在网关详情页面左侧的&lt;strong>属性&lt;/strong>区域查看网关的资源属性。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>网关所属的集群。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>创建时间&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>网关的创建时间。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>更新时间&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>网关的更新时间&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>创建者&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>启用网关的用户。&lt;/p>
+&lt;/div></description></item><item><title>编辑微服务网关</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/18-spring-cloud/03-microservice-gateway/04-edit-microservice-gateway-settings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/18-spring-cloud/03-microservice-gateway/04-edit-microservice-gateway-settings/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何编辑微服务网关。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere Spring Cloud&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个项目并在项目中具有&lt;strong> Spring Cloud 微服务管理&lt;/strong>权限。有关更多信息，请参阅“项目成员”和“项目角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong> Spring Cloud 微服务管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择 &lt;strong>Spring Cloud &amp;gt; 微服务网关&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右侧选择&lt;strong>管理 &amp;gt; 编辑&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>编辑微服务网关&lt;/strong>对话框，修改微服务网关的参数，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>有关微服务网关参数的更多信息，请参阅&lt;a href="#_参数描述">参数描述&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_参数描述">参数描述&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>以下介绍如何设置微服务网关的参数。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>基本信息&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>名称&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>微服务网关的名称，同时也是对应的部署的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 63 个字符。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>镜像&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>用于创建微服务网关的容器镜像。例如 &lt;strong>registry.cn-beijing.aliyuncs.com/kse/spring-cloud-gateway:latest&lt;/strong>。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>副本数量&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>微服务网关部署的容器组副本数量。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div></description></item><item><title>删除微服务网关</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/18-spring-cloud/03-microservice-gateway/05-delete-a-microservice-gateway/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/18-spring-cloud/03-microservice-gateway/05-delete-a-microservice-gateway/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何删除微服务网关。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">警告&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>删除微服务网关将导致微服务的业务中断，请谨慎执行此操作。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere Spring Cloud&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个项目并在项目中具有&lt;strong> Spring Cloud 微服务管理&lt;/strong>权限。有关更多信息，请参阅“项目成员”和“项目角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong> Spring Cloud 微服务管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择 &lt;strong>Spring Cloud &amp;gt; 微服务网关&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右侧选择&lt;strong>管理 &amp;gt; 删除&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>删除微服务网关&lt;/strong>对话框，输入微服务网关的名称，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

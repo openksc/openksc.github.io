@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>升级 on</title><link>https://openksc.github.io/zh/docs/v3.3/faq/upgrade/</link><description>Recent content in 升级 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v3.3/faq/upgrade/index.xml" rel="self" type="application/rss+xml"/><item><title>升级 QingCloud CSI</title><link>https://openksc.github.io/zh/docs/v3.3/faq/upgrade/qingcloud-csi-upgrade/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/faq/upgrade/qingcloud-csi-upgrade/</guid><description>&lt;h2 id="升级-kubesphere-后升级-qingcloud-csi">升级 KubeSphere 后升级 QingCloud CSI&lt;/h2>
+&lt;p>目前 QingCloud CSI 无法通过 KubeKey 升级。升级 KubeSphere 之后您可以运行以下命令手动升级 CSI：&lt;/p>
+&lt;pre tabindex="0">&lt;code>git clone https://github.com/yunify/qingcloud-csi.git
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>cd qingcloud-csi/
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>git checkout v1.1.1
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>kubectl delete -f deploy/disk/kubernetes/releases/qingcloud-csi-disk-v1.1.1.yaml
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>kubectl delete sc csi-qingcloud
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>helm repo add test https://charts.kubesphere.io/test
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>helm install test/csi-qingcloud --name-template csi-qingcloud --namespace kube-system \
+ --set config.qy_access_key_id=KEY,config.qy_secret_access_key=SECRET,config.zone=ZONE,sc.type=2
+&lt;/code>&lt;/pre>&lt;p>等待 CSI 控制器和守护进程集启动并运行：&lt;/p>
+&lt;pre tabindex="0">&lt;code>$ kubectl get po -n kube-system | grep csi
+csi-qingcloud-controller-56979d46cb-qk9ck 5/5 Running 0 24h
+csi-qingcloud-node-4s8n5 2/2 Running 0 24h
+csi-qingcloud-node-65dqn 2/2 Running 0 24h
+csi-qingcloud-node-khk49 2/2 Running 0 24h
+csi-qingcloud-node-nz9q9 2/2 Running 0 24h
+csi-qingcloud-node-pxr56 2/2 Running 0 24h
+csi-qingcloud-node-whqhk 2/2 Running 0 24h
+&lt;/code>&lt;/pre>&lt;p>运行以下命令查看 CSI 镜像版本是否是 1.2.x：&lt;/p></description></item></channel></rss>

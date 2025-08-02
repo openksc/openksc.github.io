@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notification Message Configuration on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/07-message-config/</link><description>Recent content in Notification Message Configuration on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/07-message-config/index.xml" rel="self" type="application/rss+xml"/><item><title>Configure WeCom Notification Message Template</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/07-message-config/01-wechat-template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/07-message-config/01-wechat-template/</guid><description>&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the cluster node and create a markdown template.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">vi &amp;lt;template-name&amp;gt;&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Content as follows:&lt;/p>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-yaml" data-lang="yaml">apiVersion: v1
+data:
+ template: |
+ {{- define &amp;#34;nm.default.markdown.test&amp;#34; }}
+ {{- range .Alerts }}
+ {{- $rawStatus := .Status }}
+ {{- if eq $rawStatus &amp;#34;firing&amp;#34; }}
+ ### &amp;lt;font color=&amp;#34;yellow&amp;#34;&amp;gt;{{ template &amp;#34;nm.default.message&amp;#34; . }}&amp;lt;/font&amp;gt;
+ {{- else }}
+ ### &amp;lt;font color=&amp;#34;green&amp;#34;&amp;gt;{{ template &amp;#34;nm.default.message&amp;#34; . }}&amp;lt;/font&amp;gt;
+ {{- end }}
+ {{- range .Labels.SortedPairs }}
+ {{- if eq .Name &amp;#34;severity&amp;#34; }}
+ {{- $color := &amp;#34;&amp;#34; }}
+ {{- if eq .Value &amp;#34;critical&amp;#34; }}
+ {{- $color = &amp;#34;red&amp;#34; }}
+ {{- else if eq .Value &amp;#34;error&amp;#34; }}
+ {{- $color = &amp;#34;orange&amp;#34; }}
+ {{- else if eq .Value &amp;#34;warning&amp;#34; }}
+ {{- $color = &amp;#34;yellow&amp;#34; }}
+ {{- else if eq .Value &amp;#34;info&amp;#34; }}
+ {{- $color = &amp;#34;blue&amp;#34; }}
+ {{- end }}
+ &amp;gt; &amp;lt;font color=&amp;#34;{{$color}}&amp;#34;&amp;gt;**{{ .Name | translate }}: {{ .Value }}**&amp;lt;/font&amp;gt;
+ {{- else }}
+ &amp;gt; **{{ .Name | translate }}**: {{ .Value }}
+ {{- end }}
+ {{- end }}
+ {{ range .Annotations.SortedPairs.Filter &amp;#34;runbook_url&amp;#34; &amp;#34;message&amp;#34; &amp;#34;summary&amp;#34; &amp;#34;summary_cn&amp;#34; }}
+ &amp;gt; **{{ .Name | translate }}**: {{ .Value }}
+ {{- end }}
+ {{ end }}
+ {{- end }}
+
+kind: ConfigMap
+metadata:
+ name: notification-manager-template-test
+ namespace: kubesphere-monitoring-system&lt;/code>&lt;/pre>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>微服务 on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/18-spring-cloud/01-microservices/</link><description>Recent content in 微服务 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/18-spring-cloud/01-microservices/index.xml" rel="self" type="application/rss+xml"/><item><title>创建部署并注册为微服务</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/18-spring-cloud/01-microservices/01-create-a-deployment-and-register-the-deployment-as-a-microservice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/18-spring-cloud/01-microservices/01-create-a-deployment-and-register-the-deployment-as-a-microservice/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何创建部署并将部署注册为微服务。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Spring Cloud 微服务实例通过 Kubernetes 部署管理，部署的容器组副本即微服务的实例。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere Spring Cloud&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个项目并在项目中具有&lt;strong> Spring Cloud 微服务管理&lt;/strong>权限。有关更多信息，请参阅“项目成员”和“项目角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>创建部署所使用的容器镜像中的应用程序需要符合 Nacos 规范。有关更多信息，请参阅 &lt;a href="https://nacos.io">Nacos 官方文档&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>请参阅&lt;a href="#_参数描述">参数描述&lt;/a>设置部署的参数。&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong> Spring Cloud 微服务管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择 &lt;strong>Spring Cloud &amp;gt; 微服务&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>启用 Spring Cloud&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>基本信息&lt;/strong>页签，设置&lt;strong>部署&lt;/strong>的基本信息，然后点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>容器组设置&lt;/strong>页签，为&lt;strong>部署&lt;/strong>管理的容器组设置副本数量、容器、更新策略、安全上下文、调度规则和元数据，然后点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>存储设置&lt;/strong>页签，为部署管理的容器挂载卷，然后点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>高级设置&lt;/strong>页签，为部署管理的容器组指定节点，并设置部署的元数据，然后点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>部署创建完成后将被注册为微服务，并显示在微服务列表中。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>在 &lt;strong>Spring Cloud &amp;gt; 微服务&lt;/strong>页面创建的部署将被自动注册为微服务。如需对微服务实例进行操作（例如调整实例数量），您需要前往&lt;strong>工作负载 &amp;gt; 部署&lt;/strong>页面对微服务对应的部署进行操作。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_参数描述">参数描述&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>基本信息&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>设置部署的基本信息。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>名称&lt;/p>
+&lt;/div></description></item><item><title>查看微服务列表</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/18-spring-cloud/01-microservices/02-view-a-microservice-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/18-spring-cloud/01-microservices/02-view-a-microservice-list/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看微服务列表。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere Spring Cloud&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个项目并在项目中具有&lt;strong> Spring Cloud 微服务查看&lt;/strong>权限。有关更多信息，请参阅“项目成员”和“项目角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong> Spring Cloud 微服务查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择 &lt;strong>Spring Cloud &amp;gt; 微服务&lt;/strong>。&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>服务注册中心显示服务注册中心的地址、微服务的数量、微服务实例的数量和健康实例的数量。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>微服务列表显示每个微服务的实例数量、健康实例数量和当前微服务是否已触发健康保护机制。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>为了防止因过多实例不健康导致流量全部流向健康实例，继而造成流量压力把健康实例压垮并形成雪崩效应，Nacos 支持设置健康保护阈值。当健康实例数量占微服务总实例数的比例小于该值时，无论实例是否健康，都会将这个实例返回给客户端。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>KubeSphere 的默认健康保护阈值为 0，即默认不使用健康保护机制。您可以参阅 &lt;a href="https://nacos.io">Nacos 官方文档&lt;/a>设置 Nacos 的健康保护阈值。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在列表上方点击搜索框并输入关键字，可搜索名称包含特定关键字的微服务。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>在列表右上角点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/refresh-light.svg" alt="refresh" width="18" height="18"/>&lt;/span>可刷新列表信息。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>在列表右上角点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/cogwheel.svg" alt="cogwheel" width="18" height="18"/>&lt;/span>可定制列表中显示的信息。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在微服务右侧点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/plus-square.svg" alt="plus-square" width="18" height="18"/>&lt;/span>查看微服务的所有实例。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>名称&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>微服务实例的名称。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>权重&lt;/p>
+&lt;/div></description></item><item><title>编辑微服务实例权重</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/18-spring-cloud/01-microservices/03-edit-the-weight-of-a-microservice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/18-spring-cloud/01-microservices/03-edit-the-weight-of-a-microservice/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何编辑微服务实例权重。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>微服务实例的权重用于决定微服务实例的流量分配，发送给微服务的流量将根据微服务实例的权重分配给微服务实例。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere Spring Cloud&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个项目并在项目中具有&lt;strong> Spring Cloud 微服务管理&lt;/strong>权限。有关更多信息，请参阅“项目成员”和“项目角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong> Spring Cloud 微服务管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择 &lt;strong>Spring Cloud &amp;gt; 微服务&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在微服务右侧点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/plus-square.svg" alt="plus-square" width="18" height="18"/>&lt;/span>打开微服务实例列表。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在需要操作的微服务实例右侧点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，然后在下拉列表中选择&lt;strong>编辑权重&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>编辑权重&lt;/strong>对话框，设置微服务实例的权重，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>下线和上线微服务实例</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/18-spring-cloud/01-microservices/04-take-a-microservice-instance-offline-and-online/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/18-spring-cloud/01-microservices/04-take-a-microservice-instance-offline-and-online/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何下线和上线微服务实例。微服务实例下线后将不再接收业务流量。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere Spring Cloud&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个项目并在项目中具有&lt;strong> Spring Cloud 微服务管理&lt;/strong>权限。有关更多信息，请参阅“项目成员”和“项目角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong> Spring Cloud 微服务管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择 &lt;strong>Spring Cloud &amp;gt; 微服务&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在微服务右侧点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/plus-square.svg" alt="plus-square" width="18" height="18"/>&lt;/span>打开微服务实例列表。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在需要操作的微服务实例右侧点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，然后在下拉列表中选择&lt;strong>下线&lt;/strong>可下线微服务。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在已下线的微服务实例右侧点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，然后在下拉列表中选择&lt;strong>上线&lt;/strong>可重新上线微服务。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

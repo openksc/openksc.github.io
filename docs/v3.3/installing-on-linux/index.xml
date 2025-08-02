@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Installing on Linux on</title><link>https://openksc.github.io/docs/v3.3/installing-on-linux/</link><description>Recent content in Installing on Linux on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v3.3/installing-on-linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Uninstall KubeSphere and Kubernetes</title><link>https://openksc.github.io/docs/v3.3/installing-on-linux/uninstall-kubesphere-and-kubernetes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/installing-on-linux/uninstall-kubesphere-and-kubernetes/</guid><description>&lt;p>Uninstalling KubeSphere and Kubernetes means they will be removed from your machine. This operation is irreversible and does not have any backup. Please be cautious with the operation.&lt;/p>
+&lt;p>To delete your cluster, execute the following command.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>If you installed KubeSphere with the quickstart (&lt;a href="../../quick-start/all-in-one-on-linux/">all-in-one&lt;/a>):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./kk delete cluster
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>If you installed KubeSphere with the advanced mode (&lt;a href="../introduction/multioverview/#step-3-create-a-cluster">created with a configuration file&lt;/a>):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./kk delete cluster &lt;span style="color:#f92672">[&lt;/span>-f config-sample.yaml&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul></description></item></channel></rss>

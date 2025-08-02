@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>灰度发布 on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/</link><description>Recent content in 灰度发布 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/index.xml" rel="self" type="application/rss+xml"/><item><title>创建灰度发布任务</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/01-create-a-grayscale-release-task/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/01-create-a-grayscale-release-task/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何创建灰度发布任务。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个项目并在项目中具有&lt;strong> Service Mesh 管理&lt;/strong>权限。有关更多信息，请参阅“项目成员”和“项目角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 服务网格&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>提前准备新版本的容器镜像并上传到容器镜像服务，同时确保容器镜像服务与 KubeSphere 网络连接正常。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>请参阅&lt;a href="#_参数描述">参数描述&lt;/a>设置灰度发布任务的参数。&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong> Service Mesh 管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>服务网格 &amp;gt; 灰度发布&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>根据需要选择灰度发布任务的类型，将光标悬停在&lt;strong>蓝绿部署&lt;/strong>、&lt;strong>金丝雀发布&lt;/strong>或&lt;strong>流量镜像&lt;/strong>区域，然后点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>基本信息&lt;/strong>页签，设置灰度发布任务的名称，然后点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>服务设置&lt;/strong>页签，选择需要进行灰度发布的应用和服务，然后点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>新版本设置&lt;/strong>页签，设置新版本的服务版本号、容器组副本数量和容器，然后点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>策略设置&lt;/strong>页签，设置灰度发布任务的流量转发策略，然后点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>灰度发布任务创建完成后将显示在&lt;strong>灰度发布&lt;/strong>页面的&lt;strong>发布任务&lt;/strong>页签。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_参数描述">参数描述&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>以下介绍如何设置灰度发布任务的参数。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>基本信息&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>设置任务的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 253 个字符。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>服务设置&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>选择需要进行灰度发布的自制应用和服务。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>点击下拉列表选择一个自制应用。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在需要进行灰度发布的服务右侧点击&lt;strong>选择&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>灰度发布仅支持自制应用，不支持基于模板的应用。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>新版本设置&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>设置新版本的服务版本号、容器组副本数量和容器。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>新版本号&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>新版本的服务版本号。新版本号只能包含小写字母和数字, 最长 16 个字符。&lt;/p>
+&lt;/div></description></item><item><title>查看灰度发布任务列表</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/02-view-a-grayscale-release-task-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/02-view-a-grayscale-release-task-list/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看灰度发布任务列表。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个项目并在项目中具有&lt;strong> Service Mesh 查看&lt;/strong>权限。有关更多信息，请参阅“项目成员”和“项目角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 服务网格&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong> Service Mesh 查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>服务网格 &amp;gt; 灰度发布&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>灰度发布&lt;/strong>页面，点击&lt;strong>发布任务&lt;/strong>打开灰度发布任务列表。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>灰度发布任务列表提供以下信息：&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>名称&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>灰度发布任务的名称、应用、发布模式和服务。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>版本&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>新旧版本的版本号和容器组副本数量。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>流量&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>新旧版本的每秒请求数量。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>请求成功率&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>新旧版本的成功请求百分比。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>请求延迟&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>新旧版本的平均请求延迟。&lt;/p>
+&lt;/div></description></item><item><title>查看灰度发布任务详情</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/03-view-grayscale-release-task-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/03-view-grayscale-release-task-details/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看灰度发布任务详情。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个项目并在项目中具有&lt;strong> Service Mesh 查看&lt;/strong>权限。有关更多信息，请参阅“项目成员”和“项目角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 服务网格&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong> Service Mesh 查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>服务网格 &amp;gt; 灰度发布&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>灰度发布&lt;/strong>页面，点击&lt;strong>发布任务&lt;/strong>，然后点击一个灰度发布任务的名称打开其详情页面。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>灰度发布任务详情页面提供以下信息：&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>名称&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>灰度发布任务的名称和发布模式。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>版本&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>新旧版本的容器组副本数量、容器组名称、CPU 用量和内存用量。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>流量分配&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>对于蓝绿部署，显示当前接收全部流量的服务版本。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>对于金丝雀发布，显示新旧版本的流量接收比例。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>对于流量镜像，显示旧版本接收新版本流量的相同副本。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>流量&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>新旧版本的每秒请求数量。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>请求成功率&lt;/p>
+&lt;/div></description></item><item><title>切换上线版本（蓝绿部署）</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/04-switch-versions-blue-green-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/04-switch-versions-blue-green-deployment/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何为蓝绿部署任务切换上线版本。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>根据业务需要，您可以一键设置蓝绿部署任务中的新版本或旧版本立即接管全部业务流量。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个项目并在项目中具有&lt;strong> Service Mesh 管理&lt;/strong>权限。有关更多信息，请参阅“项目成员”和“项目角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 服务网格&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong> Service Mesh 管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>服务网格 &amp;gt; 灰度发布&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>灰度发布&lt;/strong>页面，点击&lt;strong>发布任务&lt;/strong>，然后点击一个蓝绿部署任务的名称打开其详情页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>版本&lt;/strong>区域，在一个版本右上角点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，然后在下拉列表中选择&lt;strong>接管&lt;/strong>可设置该版本立即接管全部业务流量。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>调整流量分配比例（金丝雀发布）</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/05-adjust-traffic-distribution-ratio-canary-release/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/05-adjust-traffic-distribution-ratio-canary-release/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何为金丝雀发布任务调整流量分配比例。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>根据业务需要，您可以手动调整金丝雀发布任务中的新版本和旧版本接收业务流量的分配比例。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个项目并在项目中具有&lt;strong> Service Mesh 管理&lt;/strong>权限。有关更多信息，请参阅“项目成员”和“项目角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 服务网格&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong> Service Mesh 管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>服务网格 &amp;gt; 灰度发布&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>灰度发布&lt;/strong>页面，点击&lt;strong>发布任务&lt;/strong>，然后点击一个金丝雀发布任务的名称打开其详情页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>流量分配&lt;/strong>区域，拖动滑块调整新旧版本接收流量的比例，然后在弹出的对话框中点击&lt;strong>确定&lt;/strong>。系统将按照设置的比例在新旧版本之间分配业务流量。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>（可选）在&lt;strong>版本&lt;/strong>区域，在一个版本右上角点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，然后在下拉列表中选择&lt;strong>接管&lt;/strong>可设置该版本立即接管全部业务流量。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>编辑灰度发布任务设置</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/06-edit-settings-of-a-grayscale-release-task/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/06-edit-settings-of-a-grayscale-release-task/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何编辑灰度发布任务设置。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个项目并在项目中具有&lt;strong> Service Mesh 管理&lt;/strong>权限。有关更多信息，请参阅“项目成员”和“项目角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 服务网格&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong> Service Mesh 管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>服务网格 &amp;gt; 灰度发布&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>灰度发布&lt;/strong>页面，点击&lt;strong>发布任务&lt;/strong>，然后点击一个灰度发布任务的名称打开其详情页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>版本&lt;/strong>区域，在新版本右上角点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，然后在下拉列表中选择&lt;strong>编辑&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>新版本设置&lt;/strong>页签，点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/chevron-up.svg" alt="chevron-up" width="18" height="18"/>&lt;/span>/&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/chevron-down.svg" alt="chevron-down" width="18" height="18"/>&lt;/span>可增加/减少容器组副本的数量。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>灰度发布不支持修改新版本的版本号和容器镜像。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>策略设置&lt;/strong>页签，设置灰度发布任务的流量转发策略，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>对于&lt;strong>蓝绿部署&lt;/strong>，在新版本或旧版本右侧点击&lt;strong>接管&lt;/strong>可将业务流量全部转发给该版本。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>对于&lt;strong>金丝雀发布&lt;/strong>任务，您可以选择指定新旧版本的流量分配比例，或根据请求参数将请求转发给新版本或旧版本。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>指定流量分配&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>拖动滑块可设置新旧版本接收业务流量的百分比。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>指定请求参数&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>将参数满足特定条件的请求转发给新版本，其他请求转发给旧版本。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>流量镜像任务将业务流量的副本发送给新版本进行测试，而不实际暴露新版本，所以不需要设置业务流量转发策略。&lt;/p>
+&lt;/div></description></item><item><title>删除灰度发布任务</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/07-delete-a-grayscale-release-task/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/07-delete-a-grayscale-release-task/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何删除灰度发布任务。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">警告&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>只有在新旧版本之一已接管全部业务流量时才能删除灰度发布任务。灰度发布任务删除后，未接管业务流量的版本（服务、工作负载和容器组）也将被删除。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个项目并在项目中具有&lt;strong> Service Mesh 管理&lt;/strong>权限。有关更多信息，请参阅“项目成员”和“项目角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 服务网格&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>新旧版本之一已接管全部业务流量。有关更多信息，请参阅&lt;a href="../04-switch-versions-blue-green-deployment/">切换上线版本（蓝绿部署）&lt;/a>和&lt;a href="../05-adjust-traffic-distribution-ratio-canary-release/">调整流量分配比例（金丝雀发布）&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong> Service Mesh 管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>服务网格 &amp;gt; 灰度发布&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>灰度发布&lt;/strong>页面，点击&lt;strong>发布任务&lt;/strong>，然后点击一个灰度发布任务的名称打开其详情页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在灰度发布详情页面右上角，点击&lt;strong>删除&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>系统将删除灰度发布任务，同时删除未接管业务流量的版本。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

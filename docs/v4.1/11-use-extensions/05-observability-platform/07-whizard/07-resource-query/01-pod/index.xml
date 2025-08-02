@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pods on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/07-whizard/07-resource-query/01-pod/</link><description>Recent content in Pods on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/07-whizard/07-resource-query/01-pod/index.xml" rel="self" type="application/rss+xml"/><item><title>Cross-cluster Pod Query</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/07-whizard/07-resource-query/01-pod/01-query-pod/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/07-whizard/07-resource-query/01-pod/01-query-pod/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to query pods across clusters in the Whizard Observability Center.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>For a single cluster, you can search for pods on the cluster’s pod page by pod name and pod IP address.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>For a multi-cluster environment, you can search for specific pod information across clusters in the Whizard Observability Center by pod name or pod IP address.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>You should have the &lt;strong>platform-admin&lt;/strong> role on the KubeSphere platform. For more information, see &lt;a href="../../../../../../05-users-and-roles/01-users/">Users&lt;/a> and &lt;a href="../../../../../../05-users-and-roles/02-platform-roles/">Platform Roles&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The host cluster and member clusters that need monitoring must have the Whizard Observability Center enabled.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>If the member cluster does not have the Whizard Observability Center enabled, the Whizard Observability Center will not be able to retrieve data from the member cluster.&lt;/p>
+&lt;/div></description></item></channel></rss>

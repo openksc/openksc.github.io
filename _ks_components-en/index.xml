@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>_Ks_components-Ens on</title><link>https://openksc.github.io/_ks_components-en/</link><description>Recent content in _Ks_components-Ens on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/_ks_components-en/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://openksc.github.io/_ks_components-en/admonitions/admonend/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/admonitions/admonend/</guid><description>&lt;table class="tableblock frame-all grid-all stretch">
+&lt;/table></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/admonitions/note/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/admonitions/note/</guid><description>&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/admonitions/tip/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/admonitions/tip/</guid><description>&lt;table class="tableblock frame-all grid-all stretch admon tip">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Tip&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/admonitions/warning/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/admonitions/warning/</guid><description>&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Warning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/bloc-clustermanagementguideglossary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/bloc-clustermanagementguideglossary/</guid><description>&lt;table class="tableblock frame-all grid-all stretch glossary">
+&lt;colgroup>
+&lt;col style="width: 9.0909%;"/>
+&lt;col style="width: 45.4545%;"/>
+&lt;col style="width: 45.4546%;"/>
+&lt;/colgroup>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>API&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Application Programming Interface&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用程序编程接口&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CPU&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Central Processing Unit&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>中央处理器&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>DNS&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Domain Name System&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>域名系统&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>GPU&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Graphics Processing Unit&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>图形处理器&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>gRPC&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>gRPC Remote Procedure Calls&lt;/p>
+&lt;/div></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/bloc-devopsmanagementguideglossary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/bloc-devopsmanagementguideglossary/</guid><description>&lt;table class="tableblock frame-all grid-all stretch glossary">
+&lt;colgroup>
+&lt;col style="width: 9.0909%;"/>
+&lt;col style="width: 45.4545%;"/>
+&lt;col style="width: 45.4546%;"/>
+&lt;/colgroup>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CD&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Continuous Deployment&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>持续部署&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CI&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Continuous Integration&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>持续集成&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>ID&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Identifier&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>标识符&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>IP&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Internet Protocol&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>互联网协议&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>JAR&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Java Archive&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Java 归档&lt;/p>
+&lt;/div></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/bloc-installationguideglossary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/bloc-installationguideglossary/</guid><description>&lt;table class="tableblock frame-all grid-all stretch glossary">
+&lt;colgroup>
+&lt;col style="width: 9.0909%;"/>
+&lt;col style="width: 45.4545%;"/>
+&lt;col style="width: 45.4546%;"/>
+&lt;/colgroup>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>API&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Application Programming Interface&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用程序编程接口&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CSI&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Container Storage Interface&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>容器存储接口&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>ID&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Identifier&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>标识符&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>IP&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Internet Protocol&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>互联网协议&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>NFS&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Network File System&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>网络文件系统&lt;/p>
+&lt;/div></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/bloc-pdffrontmatter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/bloc-pdffrontmatter/</guid><description>&lt;div class="paragraph top_left">
+&lt;p>KubeSphere {ks_doc_type}&lt;/p>
+&lt;/div>
+&lt;div class="paragraph bottom_left">
+&lt;p>文档版本 01&lt;/p>
+&lt;/div>
+&lt;div class="paragraph bottom_center">
+&lt;p>版权所有 © 北京青云科技股份有限公司&lt;/p>
+&lt;/div>
+&lt;div class="openblock cover_product_logo">
+&lt;div class="content">
+
+&lt;/div>
+&lt;/div>
+&lt;div class="imageblock cover_doc_image">
+&lt;div class="content">
+&lt;img src="https://openksc.github.io/images/ks-qkcp/pdf/cover_doc_image.svg" alt="cover doc image"/>
+&lt;/div>
+&lt;/div>
+&lt;div class="paragraph cover_doc_name">
+&lt;p>KubeSphere&lt;br/>
+{ks_doc_type}&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch cover_footer">
+&lt;colgroup>
+&lt;col style="width: 66.6666%;"/>
+&lt;col style="width: 33.3334%;"/>
+&lt;/colgroup>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="imageblock cover_qc_logo">
+&lt;div class="content">
+&lt;img src="https://openksc.github.io/images/ks-qkcp/pdf/qingcloud-logo-color.png" alt="qingcloud logo color"/>
+&lt;/div>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>北京青云科技股份有限公司&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>文档版本：01&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>发布日期：{ks_release_date}&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="openblock legal_info">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>版权所有 © 北京青云科技股份有限公司 {ks_year}。保留所有权利。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>非经本公司书面许可，任何单位和个人不得摘抄、复制或以任何形式传播本文档的部分或全部内容。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;br/>&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;strong>商标声明&lt;/strong>&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/pdf/qingcloud-logo-icon.png" alt="qincloud-logo-icon" width="18" height="18"/>&lt;/span> 和其他青云商标均由北京青云科技股份有限公司拥有。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>本文档提及的其他商标或注册商标，由各自的所有人拥有。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;br/>&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;strong>注意&lt;/strong>&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>本文档描述的部分产品、服务和特性可能不在您的购买或使用范围之内，您购买的产品、服务或特性应受青云公司商业合同和条款的约束。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>本文档内容会不定期进行更新。本文档仅作为使用指导，本文档中的所有陈述、信息和建议不构成任何明示或暗示的担保。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;br/>&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>北京青云科技股份有限公司&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>网址：&lt;a href="https://www.qingcloud.com" class="bare">https://www.qingcloud.com&lt;/a>&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/bloc-platformmanagementguideglossary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/bloc-platformmanagementguideglossary/</guid><description>&lt;table class="tableblock frame-all grid-all stretch glossary">
+&lt;colgroup>
+&lt;col style="width: 9.0909%;"/>
+&lt;col style="width: 45.4545%;"/>
+&lt;col style="width: 45.4546%;"/>
+&lt;/colgroup>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>API&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Application Programming Interface&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用程序编程接口&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>ID&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Identifier&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>标识符&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>IP&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Internet Protocol&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>互联网协议&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>SMTP&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Simple Mail Transfer Protocol&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>简单邮件传输协议&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>SSL&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Secure Socket Layer&lt;/p>
+&lt;/div></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/bloc-projectmanagementguideglossary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/bloc-projectmanagementguideglossary/</guid><description>&lt;table class="tableblock frame-all grid-all stretch glossary">
+&lt;colgroup>
+&lt;col style="width: 9.0909%;"/>
+&lt;col style="width: 45.4545%;"/>
+&lt;col style="width: 45.4546%;"/>
+&lt;/colgroup>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CPU&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Central Processing Unit&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>中央处理器&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>HTTP&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Hypertext Transfer Protocol&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>超文本传输协议&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>IP&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Internet Protocol&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>互联网协议&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>JAR&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Java Archive&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Java 归档&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>URL&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Uniform Resource Locator&lt;/p>
+&lt;/div></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/bloc-radondbclickhousemanagementguideglossary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/bloc-radondbclickhousemanagementguideglossary/</guid><description>&lt;table class="tableblock frame-all grid-all stretch glossary">
+&lt;colgroup>
+&lt;col style="width: 9.0909%;"/>
+&lt;col style="width: 45.4545%;"/>
+&lt;col style="width: 45.4546%;"/>
+&lt;/colgroup>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CPU&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Central Processing Unit&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>中央处理器&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>HTTP&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Hypertext Transfer Protocol&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>超文本传输协议&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>IP&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Internet Protocol&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>互联网协议&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>TCP&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Transmission Control Protocol&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>传输控制协议&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/bloc-sectionfrontmatter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/bloc-sectionfrontmatter/</guid><description/></item><item><title/><link>https://openksc.github.io/_ks_components-en/bloc-springcloudmanagementguideglossary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/bloc-springcloudmanagementguideglossary/</guid><description>&lt;table class="tableblock frame-all grid-all stretch glossary">
+&lt;colgroup>
+&lt;col style="width: 9.0909%;"/>
+&lt;col style="width: 45.4545%;"/>
+&lt;col style="width: 45.4546%;"/>
+&lt;/colgroup>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CPU&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Central Processing Unit&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>中央处理器&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>GPU&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Graphics Processing Unit&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>图形处理器&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>HTTP&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Hypertext Transfer Protocol&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>超文本传输协议&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>HTTPS&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Hypertext Transfer Protocol Secure&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>超文本传输安全协议&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>ID&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Identifier&lt;/p>
+&lt;/div></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/bloc-workspacemanagementguideglossary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/bloc-workspacemanagementguideglossary/</guid><description>&lt;table class="tableblock frame-all grid-all stretch glossary">
+&lt;colgroup>
+&lt;col style="width: 9.0909%;"/>
+&lt;col style="width: 45.4545%;"/>
+&lt;col style="width: 45.4546%;"/>
+&lt;/colgroup>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CPU&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Central Processing Unit&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>中央处理器&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>URL&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Uniform Resource Locator&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>统一资源定位符&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/code/bash/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/code/bash/</guid><description>&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-shell" data-lang="shell">&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/code/go/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/code/go/</guid><description>&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-go" data-lang="go">&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/code/html/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/code/html/</guid><description>&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-html" data-lang="html">&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/code/javascript/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/code/javascript/</guid><description>&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-javascript" data-lang="javascript">&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/code/json/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/code/json/</guid><description>&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-json" data-lang="json">&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/code/yaml/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/code/yaml/</guid><description>&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-yaml" data-lang="yaml">&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/oper-autorefresh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/oper-autorefresh/</guid><description>&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/start-dark.svg" alt="start" width="18" height="18"/>&lt;/span>/&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/pause.svg" alt="pause" width="18" height="18"/>&lt;/span> in the upper right corner to enable/disable real-time data refresh.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/oper-clickcreate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/oper-clickcreate/</guid><description>&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Click &lt;strong>Create&lt;/strong> on the page.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/oper-clickinvite/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/oper-clickinvite/</guid><description>&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Click &lt;strong>Invite&lt;/strong> on the right side of the page.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/oper-customizecolumns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/oper-customizecolumns/</guid><description>&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/cogwheel.svg" alt="cogwheel" width="18" height="18"/>&lt;/span> in the upper right corner of the list to customize the information displayed in the list.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/oper-navigate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/oper-navigate/</guid><description>&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Click {ks_navigation} in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/oper-refreshdata/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/oper-refreshdata/</guid><description>&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/refresh-dark.svg" alt="refresh" width="18" height="18"/>&lt;/span> in the upper right corner to refresh data manually.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/oper-refreshlistdata/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/oper-refreshlistdata/</guid><description>&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/refresh-light.svg" alt="refresh" width="18" height="18"/>&lt;/span> in the upper right corner of the list to refresh the list information.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/oper-selectmenu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/oper-selectmenu/</guid><description>&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Select {ks_menu} in the upper left corner of the page.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title/><link>https://openksc.github.io/_ks_components-en/oper-selecttimerange/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/_ks_components-en/oper-selecttimerange/</guid><description>&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/timed-task.svg" alt="timed-task" width="18" height="18"/>&lt;/span> in the upper right corner to set the time range.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

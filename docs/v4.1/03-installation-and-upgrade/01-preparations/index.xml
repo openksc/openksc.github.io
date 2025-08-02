@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Preparation on</title><link>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/01-preparations/</link><description>Recent content in Preparation on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/01-preparations/index.xml" rel="self" type="application/rss+xml"/><item><title>Environment Requirements</title><link>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/01-preparations/01-supported-k8s/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/01-preparations/01-supported-k8s/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces the environment requirements for KubeSphere.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_system_requirements">System Requirements&lt;/h2>
+&lt;div class="sectionbody">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 27.2727%;"/>
+&lt;col style="width: 36.3636%;"/>
+&lt;col style="width: 36.3637%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">OS&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Minimum Requirements (per node)&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Requirements for Production Environment (per node)&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Ubuntu 16.04, 18.04, 20.04, 22.04&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CPU: 2 cores, Memory: 4 GB, Disk: 40 GB&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CPU: 8 cores, Memory: 16 GB, Disk: 200 GB&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Debian Buster, Stretch&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CPU: 2 cores, Memory: 4 GB, Disk: 40 GB&lt;/p>
+&lt;/div></description></item></channel></rss>

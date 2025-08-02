@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>KubeSphere Web Console on</title><link>https://openksc.github.io/docs/v3.3/faq/console/</link><description>Recent content in KubeSphere Web Console on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v3.3/faq/console/index.xml" rel="self" type="application/rss+xml"/><item><title>Supported Browsers</title><link>https://openksc.github.io/docs/v3.3/faq/console/console-web-browser/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/faq/console/console-web-browser/</guid><description>&lt;p>The KubeSphere web console supports major web browsers including &lt;strong>Chrome, Firefox, Safari, Opera, and Edge.&lt;/strong> You only need to consider the supported versions of these browsers listed in the green box of the table below:&lt;/p>
+&lt;p>&lt;img src="https://openksc.github.io/images/docs/v3.x/faq/kubesphere-web-console/supported-browsers/console-browser.png" alt="console-browser">&lt;/p></description></item><item><title>Edit System Resources on the Console</title><link>https://openksc.github.io/docs/v3.3/faq/console/edit-resources-in-system-workspace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/faq/console/edit-resources-in-system-workspace/</guid><description>&lt;p>When you install KubeSphere, the workspace &lt;code>system-workspace&lt;/code> is created where all KubeSphere system projects and Kubernetes system projects run. To avoid any misoperation on both systems, you are not allowed to edit resources in the workspace directly on the console. However, you can still make adjustments to resources using &lt;code>kubectl&lt;/code>.&lt;/p>
+&lt;p>This tutorial demonstrates how to enable the editing function of &lt;code>system-workspace&lt;/code> resources.&lt;/p>
+&lt;div class="notices warning">
+ 
+ &lt;p>Warning&lt;/p>
+ &lt;div>Editing resources in &lt;code>system-workspace&lt;/code> may cause unexpected results, such as KubeSphere system and node failures, and your business may be affected. Please be extremely careful about the operation.&lt;/div>
+&lt;/div>
+&lt;h2 id="edit-the-console-configuration">Edit the Console Configuration&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Log in to KubeSphere as &lt;code>admin&lt;/code>. Click &lt;img src="https://openksc.github.io/images/docs/v3.x/common-icons/hammer.png" height="25" width="25" alt="icon" /> in the lower-right corner and select &lt;strong>Kubectl&lt;/strong>.&lt;/p></description></item><item><title>Change the Console Language</title><link>https://openksc.github.io/docs/v3.3/faq/console/change-console-language/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/faq/console/change-console-language/</guid><description>&lt;p>The KubeSphere web console is currently available in four languages: Simplified Chinese, Traditional Chinese, English, and Spanish.&lt;/p>
+&lt;p>This tutorial demonstrates how to change the language of the console.&lt;/p>
+&lt;h2 id="prerequisites">&lt;strong>Prerequisites&lt;/strong>&lt;/h2>
+&lt;p>You have installed KubeSphere.&lt;/p>
+&lt;h2 id="change-the-console-language">Change the Console Language&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Log in to KubeSphere and click the username in the upper-right corner.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the drop-down list, select &lt;strong>User Settings&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Basic Information&lt;/strong> page, select a desired language from the &lt;strong>Language&lt;/strong> drop-down list.&lt;/p></description></item></channel></rss>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>添加和删除集群节点 on</title><link>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/05-add-and-delete-cluster-nodes/</link><description>Recent content in 添加和删除集群节点 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/05-add-and-delete-cluster-nodes/index.xml" rel="self" type="application/rss+xml"/><item><title>添加集群节点</title><link>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/05-add-and-delete-cluster-nodes/01-add-cluster-nodes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/05-add-and-delete-cluster-nodes/01-add-cluster-nodes/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何添加 KubeSphere 集群节点。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>节点添加过程中将用到开源工具 KubeKey。有关 KubeKey 的更多信息，请访问 &lt;a href="https://github.com/kubesphere/kubekey">GitHub KubeKey 仓库&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>本节介绍的节点添加方式仅适用于 Kubernetes 通过 KubeKey 安装的场景。如果您的 Kubernetes 不是通过 KubeKey 安装，请参阅 &lt;a href="https://kubernetes.io/zh/docs/concepts/architecture/nodes/">Kubernetes 官方文档&lt;/a>添加节点。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>新增节点的操作系统和版本须为 Ubuntu 16.04、Ubuntu 18.04、Ubuntu 20.04、Ubuntu 22.04、Debian 9、Debian 10、CentOS 7、CentOS Stream、RHEL 7、RHEL 8、SLES 15 或 openSUSE Leap 15。多个集群节点的操作系统可以不同。关于其它操作系统和版本支持，请联系 KubeSphere 技术支持。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>为确保集群具有足够的计算和存储资源，建议新增节点配置至少 8 个 CPU 核心，16 GB 内存和 200 GB 磁盘空间。除此之外，建议在每台集群节点的 &lt;strong>/var/lib/docker&lt;/strong>（对于 Docker）或 &lt;strong>/var/lib/containerd&lt;/strong>（对于 containerd） 目录额外挂载至少 200 GB 磁盘空间用于存储容器运行时数据。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果添加控制平面节点，您需要提前为集群配置高可用性。如果您使用负载均衡器，请确保负载均衡器监听所有控制平面节点的 6443 端口。有关更多信息，请参阅&lt;a href="../../../03-installation-and-upgrade/01-preparations/02-configure-high-availability/02-configure-k8s-high-availability/">配置高可用性&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>删除集群节点</title><link>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/05-add-and-delete-cluster-nodes/02-delete-cluster-nodes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/05-add-and-delete-cluster-nodes/02-delete-cluster-nodes/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何删除 KubeSphere 集群节点。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>节点删除过程中将用到开源工具 KubeKey。有关 KubeKey 的更多信息，请访问 &lt;a href="https://github.com/kubesphere/kubekey">GitHub KubeKey 仓库&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>本节介绍的节点删除方式仅适用于 Kubernetes 通过 KubeKey 安装的场景。如果您的 Kubernetes 不是通过 KubeKey 安装，请参阅 &lt;a href="https://kubernetes.io/zh/docs/concepts/architecture/nodes/">Kubernetes 官方文档&lt;/a>删除节点。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">警告&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>请勿删除控制平面节点，否则集群将出现错误。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>请确保节点删除后，集群中剩余的资源仍然足够运行现有的业务。否则，节点删除后可能会出现业务中断。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>您需要获取安装配置文件 &lt;strong>config-sample.yaml&lt;/strong> 并将其传输到用于执行本节操作的集群节点。有关更多信息，请参阅&lt;a href="../../../03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere/">安装 Kubernetes 和 KubeSphere&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">警告&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>如果您无法获取安装配置文件 &lt;strong>config-sample.yaml&lt;/strong>，您需要参阅&lt;a href="../../02-install-kubesphere/02-install-kubernetes-and-kubesphere/">安装 Kubernetes 和 KubeSphere&lt;/a> 重新创建 &lt;strong>config-sample.yaml&lt;/strong> 文件。重新创建该文件时，请务必确保文件中的集群信息与集群的当前实际情况一致。否则，删除节点后集群可能会出现错误。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>如果您访问 GitHub/Googleapis 受限，请登录任意集群节点，执行以下命令设置下载区域：&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">export KKZONE=cn&lt;/code>&lt;/pre>
+&lt;/div></description></item></channel></rss>

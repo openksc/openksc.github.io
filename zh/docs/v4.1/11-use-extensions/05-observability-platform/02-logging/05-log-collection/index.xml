@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>日志收集 on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/05-log-collection/</link><description>Recent content in 日志收集 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/05-log-collection/index.xml" rel="self" type="application/rss+xml"/><item><title>启用日志收集</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/05-log-collection/01-enable-logsidecar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/05-log-collection/01-enable-logsidecar/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何修改“WhizardTelemetry 日志”扩展组件的配置，以启用日志收集功能。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>启用后，项目左侧导航栏的&lt;strong>项目设置&lt;/strong>菜单下将显⽰&lt;strong>日志收集&lt;/strong>选项。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>您需要在 KubeSphere 平台具有 &lt;strong>platform-admin&lt;/strong> 角色。有关更多信息，请参阅&lt;a href="../../../../../05-users-and-roles/01-users/">用户&lt;/a>和&lt;a href="../../../../../05-users-and-roles/02-platform-roles/">平台角色&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>WhizardTelemetry 日志&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有 &lt;strong>platform-admin&lt;/strong> 角色的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>扩展中心&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击已安装的 &lt;strong>WhizardTelemetry 日志&lt;/strong>扩展组件，进入组件详情页。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击组件图标下的&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，选择&lt;strong>扩展组件配置&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在扩展组件配置文件中，将 &lt;strong>logsidecar-injector.enabled&lt;/strong> 参数设置为 &lt;strong>true&lt;/strong>，然后保存文件。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-yaml" data-lang="yaml">logsidecar-injector:
+ enabled: true&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>由于控制此参数更新的 job 只会在 host 集群运行，因此如果想仅开启或关闭某些 member 集群的落盘日志收集功能，只设置 member 集群的 logsidecar-injector.enabled 不会生效。每次修改此参数都需要同时修改 host 集群的参数，以此来触发参数更新。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>例如，当需要将某个 member 集群的日志收集功能关闭，只需要在该 member 集群的配置中设置 logsidecar-injector.enabled: false，然后在 host 集群的配置中设置 logsidecar-injector.updateVersion: 1。后续再进行同样操作只需要更新 logsidecar-injector.updateVersion，即可触发更新。&lt;/p>
+&lt;/div></description></item><item><title>在项目中启用日志收集</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/05-log-collection/02-enable-project-log-collection/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/05-log-collection/02-enable-project-log-collection/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何在项目中启用日志收集。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>启用后，在项目中创建工作负载和任务时，&lt;strong>存储设置&lt;/strong>页签的&lt;strong>收集卷上日志&lt;/strong>功能将可用。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个项目并在项目中具有&lt;strong>项目设置管理&lt;/strong>权限。有关更多信息，请参阅“项目成员”和“项目角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>WhizardTelemetry 日志&lt;/strong>扩展组件，并已&lt;a href="../01-enable-logsidecar/">启用日志收集&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>项目设置管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>项目设置 &amp;gt; 日志收集&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>收集卷上日志&lt;/strong>区域，点击切换开关将功能状态设置为&lt;strong>已启用&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>启用日志收集后，您需要重启容器组才能对现有的容器组生效。有关更多信息，请参阅&lt;a href="../../../../../09-project-management/03-application-workloads/03-workloads/05-re-create-a-workload/">重新创建工作负载&lt;/a>、&lt;a href="../../../../../09-project-management/03-application-workloads/04-jobs/05-rerun-a-job/">重新运行任务&lt;/a>或&lt;a href="../../../../../09-project-management/03-application-workloads/06-pods/05-delete-pods/">删除容器组&lt;/a>。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>启用收集卷上日志</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/05-log-collection/03-enable-collect-volume-logs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/05-log-collection/03-enable-collect-volume-logs/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何在创建工作负载、服务或任务时启用收集卷上的日志。有关更多信息，请参阅&lt;a href="../../../../../09-project-management/03-application-workloads/03-workloads/01-create-a-workload/">创建工作负载&lt;/a>或&lt;a href="../../../../../09-project-management/03-application-workloads/04-jobs/01-create-a-job/">创建任务&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个项目并在项目中具有&lt;strong>应用负载管理&lt;/strong>权限。有关更多信息，请参阅“项目成员”和“项目角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>WhizardTelemetry 日志&lt;/strong>扩展组件，并已&lt;a href="../02-enable-project-log-collection/">在项目中启用日志收集&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>应用负载管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>应用负载 &amp;gt; 工作负载&lt;/strong>或&lt;strong>应用负载 &amp;gt; 任务&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在工作负载页面，点击&lt;strong>部署&lt;/strong>、&lt;strong>有状态副本集&lt;/strong>或&lt;strong>守护进程集&lt;/strong>打开工作负载列表，或在任务页面，点击&lt;strong>任务&lt;/strong>或&lt;strong>定时任务&lt;/strong>打开任务列表。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>存储设置&lt;/strong>页签，点击&lt;strong>收集卷上日志&lt;/strong>开关启用该功能。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>挂载卷&lt;/strong>，为容器挂载&lt;strong>读写&lt;/strong>模式的持久卷或临时卷，并设置&lt;strong>容器日志路径&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>设置容器中的应用程序，将日志导出到卷挂载目录下的容器日志路径。&lt;/p>
+&lt;div class="paragraph">
+&lt;p>日志收集完成后将打印到容器的标准输出，您可以在 KubeSphere 提供的工具箱对容器日志进行查询。有关更多信息，请参阅&lt;a href="../../03-use-log-query-tools/">使用容器日志查询工具&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

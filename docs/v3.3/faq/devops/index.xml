@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DevOps on</title><link>https://openksc.github.io/docs/v3.3/faq/devops/</link><description>Recent content in DevOps on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v3.3/faq/devops/index.xml" rel="self" type="application/rss+xml"/><item><title>Install Plugins to Jenkins in KubeSphere</title><link>https://openksc.github.io/docs/v3.3/faq/devops/install-jenkins-plugins/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/faq/devops/install-jenkins-plugins/</guid><description>&lt;p>The KubeSphere DevOps System offers containerized CI/CD functions based on Jenkins. The primary means of enhancing the functionality of Jenkins is to install plugins. This tutorial demonstrates how to install plugins on the Jenkins dashboard.&lt;/p>
+&lt;div class="notices warning">
+ 
+ &lt;p>Warning&lt;/p>
+ &lt;div>Not all Jenkins plugins have good maintaining support. Some plugins may lead to issues in Jenkins or even cause serious problems in KubeSphere. It is highly recommended that you make a backup before installing any plugin and run testing in another environment if you can.&lt;/div>
+&lt;/div>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>You need to enable &lt;a href="../../../pluggable-components/devops/">the KubeSphere DevOps system&lt;/a>.&lt;/p></description></item><item><title>Create a DevOps Kubeconfig on AWS</title><link>https://openksc.github.io/docs/v3.3/faq/devops/create-devops-kubeconfig-on-aws/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/faq/devops/create-devops-kubeconfig-on-aws/</guid><description>&lt;p>If you have trouble deploying applications into your project when running a pipeline on your AWS cluster with KubeSphere installed, it may be caused by the issue of DevOps kubeconfig. This tutorial demonstrates how to create a DevOps kubeconfig on AWS.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;ul>
+&lt;li>You have an AWS cluster with KubeSphere installed. For more information about how to install KubeSphere on AWS, refer to &lt;a href="../../../installing-on-kubernetes/hosted-kubernetes/install-kubesphere-on-eks/">Deploy KubeSphere on AWS EKS&lt;/a>.&lt;/li>
+&lt;li>You have enabled &lt;a href="../../../pluggable-components/devops/">the KubeSphere DevOps system&lt;/a>.&lt;/li>
+&lt;li>You have a project available for deploying applications. This tutorial uses the project &lt;code>kubesphere-sample-dev&lt;/code> as an example.&lt;/li>
+&lt;/ul>
+&lt;h2 id="create-a-devops-kubeconfig">Create a DevOps Kubeconfig&lt;/h2>
+&lt;h3 id="step-1-create-a-service-account">Step 1: Create a Service Account&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>Create a &lt;code>devops-deploy.yaml&lt;/code> file on your AWS cluster and enter the following contents.&lt;/p></description></item></channel></rss>

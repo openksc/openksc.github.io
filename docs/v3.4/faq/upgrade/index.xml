@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Upgrade FAQ on</title><link>https://openksc.github.io/docs/v3.4/faq/upgrade/</link><description>Recent content in Upgrade FAQ on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v3.4/faq/upgrade/index.xml" rel="self" type="application/rss+xml"/><item><title>Upgrade QingCloud CSI</title><link>https://openksc.github.io/docs/v3.4/faq/upgrade/qingcloud-csi-upgrade/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.4/faq/upgrade/qingcloud-csi-upgrade/</guid><description>&lt;h2 id="upgrade-qingcloud-csi-after-upgrading-kubesphere">Upgrade QingCloud CSI after Upgrading KubeSphere&lt;/h2>
+&lt;p>Currently QingCloud CSI cannot be upgraded by KubeKey. You can run the following command to upgrade the CSI manually after you upgrade KubeSphere:&lt;/p>
+&lt;pre tabindex="0">&lt;code>git clone https://github.com/yunify/qingcloud-csi.git
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>cd qingcloud-csi/
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>git checkout v1.2.0
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>kubectl delete -f deploy/disk/kubernetes/releases/qingcloud-csi-disk-v1.1.1.yaml
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>kubectl delete sc csi-qingcloud
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>helm repo add test https://charts.kubesphere.io/test
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>helm install test/csi-qingcloud --name-template csi-qingcloud --namespace kube-system \
+ --set config.qy_access_key_id=KEY,config.qy_secret_access_key=SECRET,config.zone=ZONE,sc.type=2
+&lt;/code>&lt;/pre>&lt;p>Wait until the CSI controller and DaemonSet are up and running.&lt;/p></description></item></channel></rss>

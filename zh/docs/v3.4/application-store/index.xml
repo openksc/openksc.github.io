@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>应用商店 on</title><link>https://openksc.github.io/zh/docs/v3.4/application-store/</link><description>Recent content in 应用商店 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v3.4/application-store/index.xml" rel="self" type="application/rss+xml"/><item><title>应用程序生命周期管理</title><link>https://openksc.github.io/zh/docs/v3.4/application-store/app-lifecycle-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/application-store/app-lifecycle-management/</guid><description>&lt;p>KubeSphere 集成了 &lt;a href="https://github.com/openpitrix/openpitrix" target="_blank" rel="noopener noreferrer">OpenPitrix&lt;/a>（一个跨云管理应用程序的开源平台）来构建应用商店，管理应用程序的整个生命周期。应用商店支持两种应用程序部署方式：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>应用模板&lt;/strong>：这种方式让开发者和独立软件供应商 (ISV) 能够与企业空间中的用户共享应用程序。您也可以在企业空间中导入第三方应用仓库。&lt;/li>
+&lt;li>&lt;strong>自制应用&lt;/strong>：这种方式帮助用户使用多个微服务来快速构建一个完整的应用程序。KubeSphere 让用户可以选择现有服务或者创建新的服务，用于在一站式控制台上创建自制应用。&lt;/li>
+&lt;/ul>
+&lt;p>本教程使用 &lt;a href="https://redis.io/" target="_blank" rel="noopener noreferrer">Redis&lt;/a> 作为示例应用程序，演示如何进行应用全生命周期管理，包括提交、审核、测试、发布、升级和下架。&lt;/p>
+&lt;h2 id="视频演示">视频演示&lt;/h2>
+&lt;video controls="controls" style="width: 100% !important; height: auto !important;">
+ &lt;source type="video/mp4" src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeSphere-v3.1.x-tutorial-videos/zh/KS311_200P007C202109_%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AE%A1%E7%90%86.mp4">
+&lt;/video>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;ul>
+&lt;li>您需要启用 &lt;a href="../../pluggable-components/app-store/">KubeSphere 应用商店 (OpenPitrix)&lt;/a>。&lt;/li>
+&lt;li>您需要创建一个企业空间、一个项目以及一个用户 (&lt;code>project-regular&lt;/code>)。有关更多信息，请参见&lt;a href="../../quick-start/create-workspace-and-project/">创建企业空间、项目、用户和角色&lt;/a>。&lt;/li>
+&lt;/ul>
+&lt;h2 id="动手实验">动手实验&lt;/h2>
+&lt;h3 id="步骤一创建自定义角色和帐户">步骤一：创建自定义角色和帐户&lt;/h3>
+&lt;p>首先，您需要创建两个帐户，一个是 ISV 的帐户 (&lt;code>isv&lt;/code>)，另一个是应用技术审核员的帐户 (&lt;code>reviewer&lt;/code>)。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>使用 &lt;code>admin&lt;/code> 帐户登录 KubeSphere 控制台。点击左上角的&lt;strong>平台管理&lt;/strong>，选择&lt;strong>访问控制&lt;/strong>。转到&lt;strong>平台角色&lt;/strong>，点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>为角色设置一个名称，例如 &lt;code>app-review&lt;/code>，然后点击&lt;strong>编辑权限&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>转到&lt;strong>应用管理&lt;/strong>，选择权限列表中的&lt;strong>应用商店管理&lt;/strong>和&lt;strong>应用商店查看&lt;/strong>，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>被授予 &lt;code>app-review&lt;/code> 角色的用户能够查看平台上的应用商店并管理应用，包括审核和下架应用。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>创建角色后，您需要创建一个用户，并授予 &lt;code>app-review&lt;/code> 角色。转到&lt;strong>用户&lt;/strong>，点击&lt;strong>创建&lt;/strong>。输入必需的信息，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>再创建另一个用户 &lt;code>isv&lt;/code>，把 &lt;code>platform-regular&lt;/code> 角色授予它。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>邀请上面创建好的两个帐户进入现有的企业空间，例如 &lt;code>demo-workspace&lt;/code>，并授予它们 &lt;code>workspace-admin&lt;/code> 角色。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="步骤二上传和提交应用程序">步骤二：上传和提交应用程序&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>以 &lt;code>isv&lt;/code> 身份登录控制台，转到您的企业空间。您需要上传示例应用 Redis 至该企业空间，供后续使用。首先，下载应用 &lt;a href="https://github.com/kubesphere/tutorial/raw/master/tutorial%205%20-%20app-store/redis-11.3.4.tgz" target="_blank" rel="noopener noreferrer">Redis 11.3.4&lt;/a>，然后转到&lt;strong>应用模板&lt;/strong>，点击&lt;strong>上传模板&lt;/strong>。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>在本示例中，稍后会上传新版本的 Redis 来演示升级功能。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框中，点击&lt;strong>上传 Helm Chart&lt;/strong> 上传 Chart 文件。点击&lt;strong>确定&lt;/strong>继续。&lt;/p></description></item></channel></rss>

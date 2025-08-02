@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Persistent Volume Claims on</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/</link><description>Recent content in Persistent Volume Claims on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/index.xml" rel="self" type="application/rss+xml"/><item><title>Create PVCs</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/01-create-a-persistent-volume-claim/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/01-create-a-persistent-volume-claim/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to create a Persistent Volume Claim.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Persistent Volume Claim Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Persistent Volume Claim Management&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Storage &amp;gt; Persistent Volume Claims&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Create&lt;/strong> on the page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Basic Information&lt;/strong> tab, set the basic information for the Persistent Volume Claim, and then click &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Name&lt;/p>
+&lt;/div></description></item><item><title>View PVC List</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/02-view-a-persistent-volume-claim-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/02-view-a-persistent-volume-claim-list/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to view the list of Persistent Volume Claims.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Persistent Volume Claim Viewing&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Persistent Volume Claim Viewing&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Storage &amp;gt; Persistent Volume Claims&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The Persistent Volume Claim list provides the following information:&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Name&lt;/p>
+&lt;/div></description></item><item><title>View PVC Details</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/03-view-persistent-volume-claim-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/03-view-persistent-volume-claim-details/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to view details of a Persistent Volume Claim.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Persistent Volume Claim Viewing&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Persistent Volume Claim Viewing&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Storage &amp;gt; Persistent Volume Claims&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the name of a Persistent Volume Claim in the list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Attributes&lt;/strong> section on the left side of the details page, view the resource attributes of the Persistent Volume Claim.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Project&lt;/p>
+&lt;/div></description></item><item><title>Clone Persistent Volumes</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/04-clone-a-persistent-volume/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/04-clone-a-persistent-volume/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to clone a Persistent Volume.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>After creating a Persistent Volume Claim and Persistent Volume, you can create identical copies by cloning them.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a cluster and have the &lt;strong>Persistent Volume Claim Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Ensure that the system has created a Persistent Volume for the Persistent Volume Claim.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Ensure that the backend storage system supports volume cloning, and the storage class corresponding to the Persistent Volume Claim has enabled volume cloning. For more information, please refer to &lt;a href="../../02-storage-classes/05-enable-and-disable-volume-operations/">Enable and Disable Volume Operations&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Expand Persistent Volumes</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/05-expand-a-persistent-volume/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/05-expand-a-persistent-volume/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to expand the capacity of a Persistent Volume.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a cluster and have the &lt;strong>Persistent Volume Claim Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Ensure that the system has created a Persistent Volume for the Persistent Volume Claim.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Ensure that the backend storage system supports volume cloning, and the storage class corresponding to the Persistent Volume Claim has enabled volume cloning. For more information, please refer to &lt;a href="../../02-storage-classes/05-enable-and-disable-volume-operations/">Enable and Disable Volume Operations&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Edit PVC Information</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/08-edit-persistent-volume-claim-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/08-edit-persistent-volume-claim-information/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to edit Persistent Volume Claim information.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>You can edit the alias and description of the Persistent Volume Claim. KubeSphere does not support editing the name of an already created Persistent Volume Claim.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Persistent Volume Claim Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Persistent Volume Claim Management&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Storage &amp;gt; Persistent Volume Claims&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span> on the right of the Persistent Volume Claim you want to edit, then choose &lt;strong>Edit Information&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Edit Information&lt;/strong> dialog, set the alias and description for the Persistent Volume Claim, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Alias&lt;/p>
+&lt;/div></description></item><item><title>Delete PVCs</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/09-delete-persistent-volume-claim/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/09-delete-persistent-volume-claim/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to delete a Persistent Volume Claim.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Warning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Deleting a Persistent Volume Claim is irreversible, and by default, the Persistent Volume associated with the Persistent Volume Claim will also be deleted. Please proceed with caution to avoid data loss.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a cluster and have the &lt;strong>Persistent Volume Claim Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Please backup data in the backend storage area in advance to avoid data loss.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>View Persistent Volume List</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/10-view-a-persistent-volume-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/10-view-a-persistent-volume-list/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to view the list of Persistent Volumes.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Persistent Volume Claim Viewing&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Persistent Volume Claim Viewing&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Storage &amp;gt; Persistent Volume Claims&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Persistent Volume Claims&lt;/strong> page, click &lt;strong>Persistent Volume&lt;/strong> to open the list of Persistent Volumes.&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The Persistent Volume list provides the following information:&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Name&lt;/p>
+&lt;/div></description></item><item><title>View Persistent Volume Details</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/11-view-persistent-volume-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/11-view-persistent-volume-details/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to view details of Persistent Volumes in the cluster.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Persistent Volume Claim Viewing&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Persistent Volume Claim Viewing&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Storage &amp;gt; Persistent Volume Claims&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Persistent Volume Claims&lt;/strong> page, click &lt;strong>Persistent Volume&lt;/strong> to open the list of Persistent Volumes. Then, click the name of a Persistent Volume to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the left side of the Persistent Volume details page, in the &lt;strong>Attributes&lt;/strong> section, view the resource attributes of the Persistent Volume.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Status&lt;/p>
+&lt;/div></description></item><item><title>Edit Persistent Volume Information</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/12-edit-persistent-volume-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/12-edit-persistent-volume-information/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to edit Persistent Volume information.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>You can edit the alias and description of the Persistent Volume. KubeSphere does not support editing the name of an already created Persistent Volume.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Persistent Volume Claim Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Persistent Volume Claim Management&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Storage &amp;gt; Persistent Volume Claims&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Persistent Volume Claims&lt;/strong> page, click &lt;strong>Persistent Volume&lt;/strong> to open the list of Persistent Volumes.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span> on the right of the Persistent Volume you want to edit, then choose &lt;strong>Edit Information&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Edit Information&lt;/strong> dialog, set the alias and description for the Persistent Volume, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Alias&lt;/p>
+&lt;/div></description></item><item><title>Delete Persistent Volumes</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/13-delete-a-persistent-volume/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/13-delete-a-persistent-volume/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to delete a Persistent Volume.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>The default reclaim policy for storage classes in KubeSphere is &lt;strong>Delete&lt;/strong>, meaning that by default, the system automatically deletes the Persistent Volume after the Persistent Volume Claim is deleted. If you create a storage class with a reclaim policy of &lt;strong>Retain&lt;/strong> using command-line tools, there may be situations where the Persistent Volume Claim is deleted, but the Persistent Volume is not. For more information, refer to the &lt;a href="https://kubernetes.io/docs/concepts/storage/storage-classes/">Kubernetes Documentation&lt;/a>.&lt;/p>
+&lt;/div></description></item></channel></rss>

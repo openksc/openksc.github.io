@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>产品介绍 on</title><link>https://openksc.github.io/zh/docs/v3.3/introduction/</link><description>Recent content in 产品介绍 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v3.3/introduction/index.xml" rel="self" type="application/rss+xml"/><item><title>什么是 KubeSphere</title><link>https://openksc.github.io/zh/docs/v3.3/introduction/what-is-kubesphere/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/introduction/what-is-kubesphere/</guid><description>&lt;h2 id="概述">概述&lt;/h2>
+&lt;p>&lt;a href="https://kubesphere.io" target="_blank" rel="noopener noreferrer">KubeSphere&lt;/a> 是在 &lt;a href="https://kubernetes.io" target="_blank" rel="noopener noreferrer">Kubernetes&lt;/a> 之上构建的面向云原生应用的&lt;strong>分布式操作系统&lt;/strong>，完全开源，支持多云与多集群管理，提供全栈的 IT 自动化运维能力，简化企业的 DevOps 工作流。它的架构可以非常方便地使第三方应用与云原生生态组件进行即插即用 (plug-and-play) 的集成。&lt;/p>
+&lt;p>作为全栈的多租户容器平台，KubeSphere 提供了运维友好的向导式操作界面，帮助企业快速构建一个强大和功能丰富的容器云平台。KubeSphere 为用户提供构建企业级 Kubernetes 环境所需的多项功能，例如&lt;strong>多云与多集群管理、Kubernetes 资源管理、DevOps、应用生命周期管理、微服务治理（服务网格）、日志查询与收集、服务与网络、多租户管理、监控告警、事件与审计查询、存储管理、访问权限控制、GPU 支持、网络策略、镜像仓库管理以及安全管理&lt;/strong>等。&lt;/p>
+&lt;p>KubeSphere 还开源了 &lt;a href="https://github.com/kubesphere/kubekey" target="_blank" rel="noopener noreferrer">KubeKey&lt;/a> 帮助企业一键在公有云或数据中心快速搭建 Kubernetes 集群，提供单节点、多节点、集群插件安装，以及集群升级与运维。&lt;/p>
+&lt;p>&lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/introduction/what-is-kubesphere/kubesphere-feature-overview.jpeg" alt="功能概览">&lt;/p>
+&lt;h2 id="开发运维友好">开发运维友好&lt;/h2>
+&lt;p>KubeSphere 为用户屏蔽了基础设施底层复杂的技术细节，帮助企业在各类基础设施之上无缝地部署、更新、迁移和管理现有的容器化应用。通过这种方式，KubeSphere 使开发人员能够专注于应用程序开发，使运维团队能够通过企业级可观测性功能和故障排除机制、统一监控和日志查询、存储和网络管理，以及易用的 CI/CD 流水线等来加快 DevOps 自动化工作流程和交付流程等。&lt;/p>
+&lt;h2 id="支持在任意平台运行-kubesphere">支持在任意平台运行 KubeSphere&lt;/h2>
+&lt;p>作为一个灵活的轻量级容器 PaaS 平台，KubeSphere 对不同云生态系统的支持非常友好，因为它对原生 Kubernetes 本身没有任何的侵入 (Hack)。换句话说，KubeSphere 可以&lt;strong>部署并运行在任何基础架构以及所有版本兼容的 Kubernetes 集群&lt;/strong>之上，包括虚拟机、物理机、数据中心、公有云和混合云等。&lt;/p>
+&lt;p>您可以选择在公有云和托管 Kubernetes 集群（例如阿里云、AWS、青云QingCloud、腾讯云、华为云等）上安装 KubeSphere，&lt;strong>还可以导入和纳管已有的 Kubernetes 集群&lt;/strong>。&lt;/p>
+&lt;p>KubeSphere 可以在不修改用户当前的资源或资产、不影响其业务的情况下部署在现有的 Kubernetes 平台上。有关更多信息，请参见&lt;a href="../../installing-on-linux/">在 Linux 上安装&lt;/a>和&lt;a href="../../installing-on-kubernetes/">在 Kubernetes 上安装&lt;/a>。&lt;/p>
+&lt;h2 id="完全开源">完全开源&lt;/h2>
+&lt;p>借助开源的模式，KubeSphere 社区驱动着开发工作以开放的方式进行。KubeSphere &lt;strong>100% 开源免费&lt;/strong>，已大规模服务于社区用户，广泛地应用在以 Docker 和 Kubernetes 为中心的开发、测试及生产环境中，大量服务平稳地运行在 KubeSphere 之上。您可在 &lt;a href="https://github.com/kubesphere/" target="_blank" rel="noopener noreferrer">GitHub&lt;/a> 上找到所有源代码、文档和讨论，所有主要的开源项目介绍可以在&lt;a href="../../../../projects/">开源项目列表&lt;/a>中找到。&lt;/p></description></item><item><title>KubeSphere 生态工具</title><link>https://openksc.github.io/zh/docs/v3.3/introduction/ecosystem/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/introduction/ecosystem/</guid><description>&lt;h2 id="丰富的生态工具">丰富的生态工具&lt;/h2>
+&lt;p>KubeSphere &lt;strong>围绕 Kubernetes 集成了多个云原生生态主流的开源软件&lt;/strong>，同时支持对接大部分流行的第三方组件，从应用和应用生命周期管理到集群底层的运行时，将这些开源项目作为其后端组件，通过标准的 API 与 KubeSphere 控制台交互，最终在一个统一的控制台界面提供一致的用户体验，以降低对不同工具的学习成本和复杂性。&lt;/p>
+&lt;p>同时，KubeSphere 还具备了 Kubernetes 尚未提供的新功能，旨在解决 Kubernetes 本身存在的存储、网络、安全和易用性等痛点。KubeSphere 不仅允许开发人员和 DevOps 团队在统一的控制台中使用他们喜欢的工具，最重要的是，这些功能与平台松耦合，所有功能组件均支持可插拔安装。&lt;/p>
+&lt;p>&lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/introduction/kubesphere-ecosystem/kubesphere-ecosystem.png" alt="kubesphere-ecosystem">&lt;/p></description></item><item><title>平台功能</title><link>https://openksc.github.io/zh/docs/v3.3/introduction/features/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/introduction/features/</guid><description>&lt;h2 id="概览">概览&lt;/h2>
+&lt;p>KubeSphere 作为开源的企业级全栈化容器平台，为用户提供了一个健壮、安全、功能丰富、具备极致体验的 Web 控制台。拥有企业级 Kubernetes 所需的最常见的功能，如工作负载管理，网络策略配置，微服务治理（基于 Istio），DevOps 项目 (CI/CD) ，安全管理，Source to Image/Binary to Image，多租户管理，多维度监控，日志查询和收集，告警通知，审计，应用程序管理和镜像管理、应用配置密钥管理等功能模块。&lt;/p>
+&lt;p>它还支持各种开源存储和网络解决方案以及云存储服务。例如，KubeSphere 为用户提供了功能强大的云原生工具&lt;a href="https://openelb.github.io/" target="_blank" rel="noopener noreferrer">负载均衡器插件 OpenELB&lt;/a>，这是为 Kubernetes 集群开发的 CNCF 认证的负载均衡插件。&lt;/p>
+&lt;p>有了易于使用的图形化 Web 控制台，KubeSphere 简化了用户的学习曲线并推动了更多的企业使用 Kubernetes 。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200202153355.png" alt="Overview">&lt;/p>
+&lt;p>以下从专业的角度详解各个模块的功能服务。有关详细信息，请参阅本指南中的相应章节。&lt;/p>
+&lt;h2 id="部署和维护-kubernetes">部署和维护 Kubernetes&lt;/h2>
+&lt;h3 id="部署-kubernetes-集群">部署 Kubernetes 集群&lt;/h3>
+&lt;p>&lt;a href="https://github.com/kubesphere/kubekey" target="_blank" rel="noopener noreferrer">KubeKey&lt;/a> 允许用户直接在基础架构上部署 Kubernetes，为 Kubernetes 集群提供高可用性。建议在生产环境至少配置三个主节点。&lt;/p>
+&lt;h3 id="kubernetes-资源管理">Kubernetes 资源管理&lt;/h3>
+&lt;p>对底层 Kubernetes 中的多种类型的资源提供可视化的展示与监控数据，以向导式 UI 实现工作负载管理、镜像管理、服务与应用路由管理 (服务发现)、密钥配置管理等，并提供弹性伸缩 (HPA) 和容器健康检查支持，支持数万规模的容器资源调度，保证业务在高峰并发情况下的高可用性。&lt;/p>
+&lt;p>由于 KubeSphere 3.3 具有增强的可观测性，用户可以从多租户角度跟踪资源，例如自定义监视、事件、审核日志、告警通知。&lt;/p>
+&lt;h3 id="集群升级和扩展">集群升级和扩展&lt;/h3>
+&lt;p>&lt;a href="https://github.com/kubesphere/kubekey" target="_blank" rel="noopener noreferrer">KubeKey&lt;/a> 提供了一种简单的安装，管理和维护方式。它支持 Kubernetes 集群的滚动升级，以便集群服务在升级时始终可用。另外，也可以使用 KubeKey 将新节点添加到 Kubernetes 集群中以使用更多工作负载。&lt;/p>
+&lt;h2 id="多集群管理和部署">多集群管理和部署&lt;/h2>
+&lt;p>随着IT界越来越多的企业使用云原生应用程序来重塑软件产品组合，用户更倾向于跨位置、地理位置和云部署集群。在此背景下，KubeSphere 进行了重大升级，以其全新的多集群功能满足用户的迫切需求。&lt;/p>
+&lt;p>借助 KubeSphere的图形化 Web 控制台，用户可以管理底层的基础架构，例如添加或删除集群。可以使用相同的方式管理部署在任何基础架构（例如 Amazon EKS和Google Kubernetes Engine）上的异构集群。&lt;/p></description></item><item><title>3.3 重要更新</title><link>https://openksc.github.io/zh/docs/v3.3/introduction/whats-new-in-3.3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/introduction/whats-new-in-3.3/</guid><description>&lt;p>2022 年 6 月 24 日，KubeSphere 3.3 正式发布，带来了更多令人期待的功能。新增了基于 GitOps 的持续部署方案，进一步优化了 DevOps 的使用体验。同时还增强了 “多集群管理、多租户管理、可观测性、应用商店、微服务治理、边缘计算、存储” 等特性，更进一步完善交互设计，并全面提升了用户体验。&lt;/p>
+&lt;p>关于 3.3 新特性的详细解读，可参考博客 &lt;a href="../../../../news/kubesphere-3.3.0-ga-announcement/">KubeSphere 3.3.0 发布：全面拥抱 GitOps&lt;/a>。&lt;/p>
+&lt;p>关于 3.3 的新功能及增强、Bug 修复、重要的技术调整，以及废弃或移除的功能，请参见 &lt;a href="../../../v3.3/release/release-v330/">3.3.0 版本说明&lt;/a>，&lt;a href="../../../v3.3/release/release-v331/">3.3.1 版本说明&lt;/a>和&lt;a href="../../../v3.3/release/release-v332/">3.3.2 版本说明&lt;/a>。&lt;/p></description></item><item><title>架构说明</title><link>https://openksc.github.io/zh/docs/v3.3/introduction/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/introduction/architecture/</guid><description>&lt;h2 id="前后端分离">前后端分离&lt;/h2>
+&lt;p>KubeSphere 将 &lt;a href="https://github.com/kubesphere/console" target="_blank" rel="noopener noreferrer">前端&lt;/a> 与 &lt;a href="https://github.com/kubesphere/kubesphere" target="_blank" rel="noopener noreferrer">后端&lt;/a> 分开，实现了面向云原生的设计，后端的各个功能组件可通过 REST API 对接外部系统。 可参考 &lt;a href="../../reference/api-docs/">API文档&lt;/a>。下图是系统架构图。 KubeSphere 无底层的基础设施依赖，可以运行在任何 Kubernetes、私有云、公有云、VM 或物理环境（BM）之上。 此外，它可以部署在任何 Kubernetes 发行版上。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-docs/png/20190810073322.png" alt="Architecture">&lt;/p>
+&lt;h2 id="组件列表">组件列表&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>后端组件&lt;/th>
+ &lt;th>功能说明&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>ks-apiserver&lt;/td>
+ &lt;td>整个集群管理的 API 接口和集群内部各个模块之间通信的枢纽，以及集群安全控制。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ks-console&lt;/td>
+ &lt;td>提供 KubeSphere 的控制台服务。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ks-controller-manager&lt;/td>
+ &lt;td>实现业务逻辑的，例如创建企业空间时，为其创建对应的权限；或创建服务策略时，生成对应的 Istio 配置等。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>metrics-server&lt;/td>
+ &lt;td>Kubernetes 的监控组件，从每个节点的 Kubelet 采集指标信息。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Prometheus&lt;/td>
+ &lt;td>提供集群，节点，工作负载，API对象的监视指标和服务。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Elasticsearch&lt;/td>
+ &lt;td>提供集群的日志索引、查询、数据管理等服务，在安装时也可对接您已有的 ES 减少资源消耗。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Fluent Bit&lt;/td>
+ &lt;td>提供日志接收与转发，可将采集到的⽇志信息发送到 ElasticSearch、Kafka。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Jenkins&lt;/td>
+ &lt;td>提供 CI/CD 流水线服务。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Source-to-Image&lt;/td>
+ &lt;td>将源代码自动将编译并打包成 Docker 镜像，方便快速构建镜像。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Istio&lt;/td>
+ &lt;td>提供微服务治理与流量管控，如灰度发布、金丝雀发布、熔断、流量镜像等。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Jaeger&lt;/td>
+ &lt;td>收集 Sidecar 数据，提供分布式 Tracing 服务。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>OpenPitrix&lt;/td>
+ &lt;td>提供应用程序生命周期管理，例如应用模板、应用部署与管理的服务等。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Alert&lt;/td>
+ &lt;td>提供集群、Workload、Pod、容器级别的自定义告警服务。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Notification&lt;/td>
+ &lt;td>是一项综合通知服务； 它当前支持邮件传递方法。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Redis&lt;/td>
+ &lt;td>将 ks-console 与 ks-account 的数据存储在内存中的存储系统。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>OpenLDAP&lt;/td>
+ &lt;td>负责集中存储和管理用户帐户信息与对接外部的 LDAP。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Storage&lt;/td>
+ &lt;td>内置 CSI 插件对接云平台存储服务，可选安装开源的 NFS/Ceph/Gluster 的客户端。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Network&lt;/td>
+ &lt;td>可选安装 Calico/Flannel 等开源的网络插件，支持对接云平台 SDN。&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="服务组件">服务组件&lt;/h2>
+&lt;p>以上列表中每个功能组件下还有多个服务组件，关于服务组件的说明，可参考 &lt;a href="../../pluggable-components/">服务组件说明&lt;/a>。&lt;/p></description></item><item><title>为什么选择 KubeSphere</title><link>https://openksc.github.io/zh/docs/v3.3/introduction/advantages/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/introduction/advantages/</guid><description>&lt;h2 id="设计愿景">设计愿景&lt;/h2>
+&lt;p>Kubernetes 已经成为在私有云、公有云和混合云等环境中大规模部署容器化应用程序的事实标准。然而，很多人使用 Kubernetes 仍会不知所措，因为 Kubernetes 本身的使用复杂，需要管理的组件繁多，部分组件需要自行安装和部署，比如存储和网络部分。目前，Kubernetes 仅提供开源的解决方案或项目，可能在某种程度上难以安装、维护和操作。对于用户而言，学习成本和门槛都很高，快速上手并不是一件易事。&lt;/p>
+&lt;p>KubeSphere 旨在解决 Kubernetes 在构建、部署、管理和可观测性等方面的痛点，提供全面的服务和自动化的应用供应、伸缩和管理，让您专注于代码编写。具体来说，KubeSphere 包含多种功能，如多集群管理、应用程序生命周期管理、多租户管理、CI/CD 流水线、微服务治理和可观测性（监控日志、告警通知和审计事件）等。&lt;/p>
+&lt;p>作为一个综合性的开源平台，KubeSphere 致力于提供更加友好的用户体验，更强大的操作功能。例如，KubeSphere 的交互式 Web 控制台方便用户直接在平台上进行测试和操作，同时还内置了命令行工具 Kubectl，让习惯使用命令行操作的用户也能快速上手，以最低的学习成本轻松地在平台上创建和修改各类资源。&lt;/p>
+&lt;p>此外，KubeSphere 在存储和网络方面提供了最优的解决方案，比如存储除了支持流行的开源共享存储如 Ceph RBD 和 GlusterFS 之外，还提供&lt;a href="https://docs.qingcloud.com/product/storage/volume/" target="_blank" rel="noopener noreferrer">青云QingCloud 云平台块存储&lt;/a>和青云QingCloud 自研的&lt;a href="https://docs.qingcloud.com/product/storage/volume/super_high_performance_shared_volume/" target="_blank" rel="noopener noreferrer">分布式存储 QingStor NeonSAN&lt;/a> 作为 Kubernetes 的持久化存储，通过集成的 QingCloud CSI 和 NeonSAN CSI 插件，即可使用青云QingCloud 提供的高性能块存储或 NeonSAN 作为持久卷挂载至工作负载，为企业应用和数据提供更稳定安全的存储服务。&lt;/p>
+&lt;h2 id="为什么选择-kubesphere">为什么选择 KubeSphere&lt;/h2>
+&lt;p>KubeSphere 为企业用户提供高性能可伸缩的容器应用管理服务，旨在帮助企业完成新一代互联网技术驱动下的数字化转型，加速应用的快速迭代与业务交付，以满足企业日新月异的业务需求。&lt;/p>
+&lt;p>以下是 KubeSphere 的六大主要优势。&lt;/p>
+&lt;h3 id="跨云厂商的多集群统一管理">跨云厂商的多集群统一管理&lt;/h3>
+&lt;p>随着容器应用的日渐普及，各个企业跨云或在本地环境中部署多个集群，而集群管理的复杂程度也在不断增加。为满足用户统一管理多个异构集群的需求，KubeSphere 配备了全新的多集群管理功能，帮助用户跨区、跨云等多个环境管理、监控、导入和运维多个集群，全面提升用户体验。&lt;/p>
+&lt;p>多集群功能可在安装 KubeSphere 之前或之后启用。具体来说，该功能有两大特性：&lt;/p>
+&lt;p>&lt;strong>统一管理&lt;/strong>：用户可以使用直接连接或间接连接导入 Kubernetes 集群。只需简单配置，即可在数分钟内在 KubeSphere 的互动式 Web 控制台上完成整个流程。集群导入后，用户可以通过统一的中央控制平面监控集群状态、运维集群资源。&lt;/p>
+&lt;p>&lt;strong>高可用&lt;/strong>：在多集群架构中，一个集群可以运行主要服务，另一集群作为备用集群。一旦该主集群宕机，备用集群可以迅速接管相关服务。此外，当集群跨区域部署时，为最大限度地减少延迟，请求可以发送至距离最近的集群，由此实现跨区跨集群的高可用。&lt;/p>
+&lt;p>有关更多信息，请参见&lt;a href="../../multicluster-management/">多集群管理&lt;/a>。&lt;/p>
+&lt;h3 id="强大的可观测性功能">强大的可观测性功能&lt;/h3>
+&lt;p>KubeSphere 的可观测性功能在 v3.0 中全面升级，进一步优化与改善了其中的重要组件，包括监控日志、审计事件以及告警通知。用户可以借助 KubeSphere 强大的监控系统查看平台中的各类数据，该系统主要的优势包括：&lt;/p></description></item><item><title>应用场景</title><link>https://openksc.github.io/zh/docs/v3.3/introduction/scenarios/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/introduction/scenarios/</guid><description>&lt;p>KubeSphere 适用于多种场景，为企业提供容器化的环境，借助完善的管理和运维功能，让企业在数字化转型过程中从容应对各种挑战和各类业务场景，如多云多集群管理、敏捷软件开发、自动化运维、微服务治理、流量管理、高可用以及 DevOps 持续集成与交付等。&lt;/p>
+&lt;h2 id="多集群部署">多集群部署&lt;/h2>
+&lt;p>随着容器的普及和 Kubernetes 的日渐成熟，企业内部运行多个 Kubernetes 集群已变得颇为常见。概括起来，多个集群的使用场景主要有以下几种：&lt;/p>
+&lt;h3 id="高可用">高可用&lt;/h3>
+&lt;p>用户可以将应用负载部署在多个集群上，使用一个全局 VIP 或 DNS 域名将请求发送到对应的后端集群。当一个集群发生故障或无法处理请求时，将 VIP 或 DNS 记录切换至健康的集群。&lt;/p>
+&lt;p>&lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/introduction/use-cases/%E9%AB%98%E5%8F%AF%E7%94%A8.png" alt="高可用">&lt;/p>
+&lt;h3 id="低延迟">低延迟&lt;/h3>
+&lt;p>在多个地区部署集群时，可将用户请求转发至距离最近的集群处理，以此来最大限度减少网络带来的延迟。例如，在北京、上海和广州三地部署了三个 Kubernetes 集群，对于广东的用户就将请求转发至部署于广州的集群处理，这样可以减少地理距离带来的网络延迟，最大限度地实现各地一致的用户体验。&lt;/p>
+&lt;h3 id="隔离">隔离&lt;/h3>
+&lt;p>&lt;strong>故障隔离&lt;/strong>：通常来说，多个小规模的集群比一个大规模的集群更容易隔离故障。当集群发生诸如服务中断、网络故障、资源不足引起的连锁反应等问题时，使用多个集群可以将故障隔离在特定的集群，不会向其他集群传播。&lt;/p>
+&lt;p>&lt;strong>业务隔离&lt;/strong>：Kubernetes 通过命名空间来隔离应用，但这仅是逻辑上的隔离，不同命名空间之间网络互通，依旧存在资源抢占的问题。要想实现更进一步的隔离，需要额外设置诸如网络隔离策略、资源限额等。多集群可以在物理上实现彻底隔离，安全性和可靠性相比使用命名空间隔离更高。例如企业内部不同部门部署各自独立的集群、使用多个集群来分别部署开发、测试和生产环境等。&lt;/p>
+&lt;p>&lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/introduction/use-cases/%E6%B5%81%E6%B0%B4%E7%BA%BF.png" alt="流水线">&lt;/p>
+&lt;h3 id="避免厂商锁定">避免厂商锁定&lt;/h3>
+&lt;p>Kubernetes 已经成为容器编排领域的事实标准，很多企业在不同云厂商上部署集群时都避免将鸡蛋都放在一个篮子，以便可以随时迁移业务，在不同集群间伸缩。缺点是成本增加，考虑到不同厂商提供的 Kubernetes 服务对应的存储、网络接口有差异，业务迁移也非易事。&lt;/p>
+&lt;p>为应对不同的使用场景，KubeSphere 提供统一的中央控制平面，由 Host 集群纳管 Member 集群，即多个异构的 Kubernetes 集群可以聚合在一起作为 Kubernetes 资源池。当用户部署应用程序时，可以选择应用的副本所要运行于的一个或多个 Kubernetes 集群。整个过程可以通过 KubeSphere 控制台进行管理，以可视化的方式帮助用户实现跨区域和跨集群的高可用性。&lt;/p>
+&lt;p>有关更多信息，请参见&lt;a href="../../multicluster-management/">多集群管理&lt;/a>。&lt;/p>
+&lt;h2 id="多维度监控">多维度监控&lt;/h2>
+&lt;p>可观测性是运维团队日常工作中的重要一环，随着企业部署在云厂商平台上业务量的不断增加，运维团队所面临的压力与挑战也与日俱增。对于将业务跨云跨集群部署的企业来说，运维团队需要处理海量的数据以对各个 Kubernetes 集群进行监控与分析。此外，如何满足企业对自定义监控指标的需求也是急需解决的问题之一。&lt;/p>
+&lt;h3 id="多维度集群监控">多维度集群监控&lt;/h3>
+&lt;p>当前，越来越多的企业和个人跨云部署多集群，然而，由于各个云厂商的环境不同，其所提供可观测性工具可能并不适用其他平台。从学习成本和监控的角度来说，进行跨集群管理和监控也并非易事。简而言之，运维团队急需一种统一的工具以对多集群上不同的指标实现多维度监控。&lt;/p>
+&lt;h3 id="日志事件与审计查询">日志、事件与审计查询&lt;/h3>
+&lt;p>强大的可观测性系统需要由灵活的日志查询体系所支撑，帮助用户追踪集群内各类资源的完整信息，了解集群中的最新状况，例如告警消息、节点调度状态、应用部署情况以及网络策略变更等。由此，用户可对其业务做出相应的调整。&lt;/p>
+&lt;h3 id="自定义监控">自定义监控&lt;/h3>
+&lt;p>即使是在同一平台进行资源监控，云厂商所提供的工具也并非适用于所有场景。在某些情况下，用户需要建立其特有的可观测性标准，例如自定义监控指标和监控形式。此外，他们还需要手动将常用工具集成至云端，如用于 Kubernetes 监控的事实标准工具 Prometheus。换言之，自定义功能已成为行业上的必要需求，不仅需要各类云原生应用提供云上业务支撑，同时也需要细粒度全监控功能，以提前检测出任何可能对业务造成影响的问题。&lt;/p>
+&lt;p>如前文所述，KubeSphere 提供统一的中央控制平面用于跨云多集群管理，极大降低了运维成本。与此同时，KubeSphere 还具备强大的可观测性功能（告警通知、审计日志与事件）以监控多集群资源，为用户提供多维度自定义监控面板，用户可自行选择以何种形式监控任意资源。此外，KubeSphere 还配有多指标的日志、事件与审计查询功能，以可视化的形式提供基于多租户的日志检索。&lt;/p>
+&lt;p>借助 KubeSphere，企业可以更多地专注于业务创新，从复杂的数据收集和分析流程中彻底解放。&lt;/p>
+&lt;h2 id="微服务和云原生架构">微服务和云原生架构&lt;/h2>
+&lt;p>在企业数字化转型过程中，推动应用迅速迭代的压力也与日俱增。具体来说，企业需要加快开发流程，缩短交付时间，提高更新频率。然而，现代化、云原生应用更多地以微服务的形式部署，而非从前的单体大型应用，这也给企业的应用研发与更新带来了更多的挑战。例如，微服务之间的频繁交付需要稳定、流畅的网络连接，网络延迟不仅影响系统问题性，更会降低用户体验。如何在不影响生产环境的同时进行版本更迭成为各个企业必须要解决的问题。为此，企业需要搭建一套完整的微服务架构以及时地检测并解决潜在问题。&lt;/p></description></item></channel></rss>

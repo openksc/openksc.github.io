@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>创建服务 on</title><link>https://openksc.github.io/zh/docs/v4.1/09-project-management/03-application-workloads/02-services/01-create-a-service/</link><description>Recent content in 创建服务 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/09-project-management/03-application-workloads/02-services/01-create-a-service/index.xml" rel="self" type="application/rss+xml"/><item><title>创建有状态或无状态服务</title><link>https://openksc.github.io/zh/docs/v4.1/09-project-management/03-application-workloads/02-services/01-create-a-service/01-create-a-stateful-or-stateless-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/09-project-management/03-application-workloads/02-services/01-create-a-service/01-create-a-stateful-or-stateless-service/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何创建有状态或无状态服务。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>您需要加入一个项目并在项目中具有&lt;strong>应用负载管理&lt;/strong>权限。有关更多信息，请参阅“项目成员”和“项目角色”。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>请参阅&lt;a href="#_参数描述">参数描述&lt;/a>设置服务的参数。&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>应用负载管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>应用负载 &amp;gt; 服务&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>创建服务&lt;/strong>对话框，根据需要选择&lt;strong>有状态服务&lt;/strong>或&lt;strong>无状态服务&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>有状态服务&lt;/strong>：服务的内部访问模式为 Headless，后端工作负载为有状态副本集。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>无状态服务&lt;/strong>：服务的内部访问模式为 VirtualIP，后端工作负载为部署。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>基本信息&lt;/strong>页签，设置服务的基本信息，然后点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>容器组设置&lt;/strong>页签，为服务后端工作负载管理的容器组设置副本数量、容器、更新策略、安全上下文、调度规则和元数据，然后点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>存储设置&lt;/strong>页签，为服务后端工作负载管理的容器挂载卷，然后点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>高级设置&lt;/strong>页签，为服务后端工作负载管理的容器组指定 IP 池和节点，设置服务的外部访问模式、会话保持设置和元数据，然后点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;div class="paragraph">
+&lt;p>服务创建完成后将显示在服务列表中。&lt;/p>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_参数描述">参数描述&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>以下介绍如何设置有状态服务和无状态服务的参数。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>基本信息&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>设置服务的基本信息。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>名称&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>服务的名称。同一项目中的服务名称不能重复。名称只能包含小写字母、数字和连字符（-），必须以小写字母开头并以小写字母或数字结尾，最长 63 个字符。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>别名&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>服务的别名。不同服务的别名可以相同。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>版本&lt;/p>
+&lt;/div></description></item><item><title>创建外部服务</title><link>https://openksc.github.io/zh/docs/v4.1/09-project-management/03-application-workloads/02-services/01-create-a-service/02-create-an-external-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/09-project-management/03-application-workloads/02-services/01-create-a-service/02-create-an-external-service/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何创建外部服务。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>外部服务将业务流量转发给集群外部的其他服务，在集群内部可以通过 &amp;lt;service name&amp;gt;.&amp;lt;project name&amp;gt;&lt;strong>.svc.cluster.local&lt;/strong> 格式的域名访问。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>您需要加入一个项目并在项目中具有&lt;strong>应用负载管理&lt;/strong>权限。有关更多信息，请参阅“项目成员”和“项目角色”。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>应用负载管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>应用负载 &amp;gt; 服务&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>创建服务&lt;/strong>对话框，选择&lt;strong>外部服务&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>基本信息&lt;/strong>页签，设置服务的基本信息，然后点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>外部服务&lt;/strong>页签，设置目标服务的地址，然后点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>目标服务的地址必须为域名，如果您输入 IP 地址，该地址将被视为由数字组成的域名而不是真正的 IP 地址。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>为使业务流量可以被正常转发到目标服务，请确保目标服务的域名可以通过域名服务器解析为实际的 IP 地址。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>通过现有工作负载创建服务</title><link>https://openksc.github.io/zh/docs/v4.1/09-project-management/03-application-workloads/02-services/01-create-a-service/05-create-a-service-using-existing-workloads/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/09-project-management/03-application-workloads/02-services/01-create-a-service/05-create-a-service-using-existing-workloads/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何创建服务并使用现有工作负载作为后端的工作负载。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个项目并在项目中具有&lt;strong>应用负载管理&lt;/strong>权限。有关更多信息，请参阅“项目成员”和“项目角色”。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您需要提前在项目创建工作负载。有关更多信息，请参阅&lt;a href="../../../03-workloads/01-create-a-workload/">创建工作负载&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>应用负载管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>应用负载 &amp;gt; 服务&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>创建服务&lt;/strong>对话框，选择&lt;strong>指定工作负载&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>基本信息&lt;/strong>页签，设置服务的基本信息，然后点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>名称&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>服务的名称。同一项目中的服务名称不能重复。名称只能包含小写字母、数字和连字符（-），必须以小写字母开头并以小写字母或数字结尾，最长 63 个字符。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>别名&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>服务的别名。不同服务的别名可以相同。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>描述&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>服务的描述信息。描述可包含任意字符，最长 256 个字符。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>服务设置&lt;/strong>页签，设置服务的内部访问模式、工作负载选择器和端口，然后点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>内部访问模式&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>从集群内部访问服务的方式。&lt;/p>
+&lt;/div></description></item></channel></rss>

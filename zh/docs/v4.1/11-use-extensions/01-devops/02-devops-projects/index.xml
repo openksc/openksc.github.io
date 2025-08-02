@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>管理 DevOps 项目 on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/02-devops-projects/</link><description>Recent content in 管理 DevOps 项目 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/02-devops-projects/index.xml" rel="self" type="application/rss+xml"/><item><title>创建 DevOps 项目</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/02-devops-projects/01-create-a-devops-project/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/02-devops-projects/01-create-a-devops-project/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何创建 DevOps 项目。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>已有一个可用的企业空间（非 &lt;code>system-workspace&lt;/code>）。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个企业空间并在企业空间中具有 &lt;strong>DevOps 项目创建&lt;/strong>权限。有关更多信息，请参阅“企业空间成员”和“企业空间角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>DevOps&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有 &lt;strong>DevOps 项目创建&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择 &lt;strong>DevOps 项目&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在 &lt;strong>DevOps 项目&lt;/strong>页面，点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>创建 DevOps 项目&lt;/strong>对话框，设置 DevOps 项目的参数，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>名称&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>DevOps 项目的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母开头并以小写字母或数字结尾，最长 63 个字符。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>别名&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>DevOps 项目的别名。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>描述&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>DevOps 项目的描述信息。描述可包含任意字符，最长 256 个字符。&lt;/p>
+&lt;/div></description></item><item><title>查看 DevOps 项目列表</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/02-devops-projects/02-view-a-devops-project-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/02-devops-projects/02-view-a-devops-project-list/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看 DevOps 项目列表。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个企业空间并在企业空间中具有 &lt;strong>DevOps 项目查看&lt;/strong>权限。有关更多信息，请参阅“企业空间成员”和“企业空间角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>DevOps&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有 &lt;strong>DevOps 项目查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择 &lt;strong>DevOps 项目&lt;/strong>。&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>DevOps 项目列表提供以下信息：&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>名称&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>DevOps 项目的名称。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>状态&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>DevOps 项目当前的状态。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>成功&lt;/strong>：DevOps 项目已创建成功并且可用。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>等待中&lt;/strong>：DevOps 项目正在创建中。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>删除中&lt;/strong>：DevOps 项目正在删除中。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>创建者&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>创建 DevOps 项目的用户。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>创建时间&lt;/p>
+&lt;/div></description></item><item><title>编辑 DevOps 项目信息</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/02-devops-projects/03-edit-devops-project-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/02-devops-projects/03-edit-devops-project-information/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何编辑项目信息。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>您可以编辑项目的别名和描述。KubeSphere 不支持编辑已创建 DevOps 项目的名称。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个企业空间并在企业空间中具有 &lt;strong>DevOps 项目管理&lt;/strong>权限。有关更多信息，请参阅“企业空间成员”和“企业空间角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>DevOps&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有 &lt;strong>DevOps 项目管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择 &lt;strong>DevOps 项目&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在需要操作的 DevOps 项目右侧点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，然后在下拉列表中选择&lt;strong>编辑信息&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>编辑信息&lt;/strong>对话框，设置 DevOps 项目的别名和描述，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>别名&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>DevOps 项目的别名。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>描述&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>DevOps 项目的描述信息。描述可包含任意字符，最长 256 个字符。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>删除 DevOps 项目</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/02-devops-projects/04-delete-devops-projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/02-devops-projects/04-delete-devops-projects/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何删除 DevOps 项目。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>DevOps 项目删除后不能恢复，同时 DevOps 项目中的所有的资源也将被删除，请谨慎执行此操作。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个企业空间并在企业空间中具有 &lt;strong>DevOps 项目管理&lt;/strong>权限。有关更多信息，请参阅“企业空间成员”和“企业空间角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>DevOps&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_删除单个项目">删除单个项目&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有 &lt;strong>DevOps 项目管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择 &lt;strong>DevOps 项目&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在需要删除的 DevOps 项目右侧点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，然后在下拉列表中选择&lt;strong>删除&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>删除 DevOps 项目&lt;/strong>对话框，输入 DevOps 项目的名称，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_批量删除项目">批量删除项目&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有 &lt;strong>DevOps 项目管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择 &lt;strong>DevOps 项目&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>选择需要删除的 DevOps 项目左侧的复选框，然后在 DevOps 项目列表上方点击&lt;strong>删除&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>批量删除 DevOps 项目&lt;/strong>对话框，输入 DevOps 项目的名称，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>请使用半角逗号（,）和空格分隔多个名称。&lt;/p>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Applications on</title><link>https://openksc.github.io/docs/v3.4/faq/applications/</link><description>Recent content in Applications on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v3.4/faq/applications/index.xml" rel="self" type="application/rss+xml"/><item><title>Remove Built-in Apps in KubeSphere</title><link>https://openksc.github.io/docs/v3.4/faq/applications/remove-built-in-apps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.4/faq/applications/remove-built-in-apps/</guid><description>&lt;p>As an open source and app-centric container platform, KubeSphere integrates apps in the App Store that is based on &lt;a href="https://github.com/openpitrix/openpitrix" target="_blank" rel="noopener noreferrer">OpenPitrix&lt;/a>. They are accessible to all tenants in a workspace, while you can also remove them from the App Store. This tutorial demonstrates how to remove a built-in app from the App Store.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;ul>
+&lt;li>You need to use a user with the role of &lt;code>platform-admin&lt;/code> (for example, &lt;code>admin&lt;/code>) for this tutorial.&lt;/li>
+&lt;li>You need to &lt;a href="../../../pluggable-components/app-store/">enable the App Store&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="remove-a-built-in-app">Remove a Built-in App&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Log in to the web console of KubeSphere as &lt;code>admin&lt;/code>, click &lt;strong>Platform&lt;/strong> in the upper-left corner, and then select &lt;strong>App Store Management&lt;/strong>.&lt;/p></description></item></channel></rss>

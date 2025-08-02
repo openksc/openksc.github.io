@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Basic Information on</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/09-cluster-settings/01-basic-information/</link><description>Recent content in Basic Information on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/07-cluster-management/09-cluster-settings/01-basic-information/index.xml" rel="self" type="application/rss+xml"/><item><title>View Cluster Basic Information</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/09-cluster-settings/01-basic-information/01-view-cluster-basic-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/09-cluster-settings/01-basic-information/01-view-cluster-basic-information/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to view cluster basic information.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Cluster Settings Viewing&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Cluster Settings Viewing&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Cluster Settings &amp;gt; Basic Information&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Basic Information&lt;/strong> page, view the cluster’s name, provider, and Kubernetes version.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>Edit Cluster Basic Information</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/09-cluster-settings/01-basic-information/02-edit-cluster-basic-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/09-cluster-settings/01-basic-information/02-edit-cluster-basic-information/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to edit cluster basic information.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>KubeSphere does not support changing the name of an already added cluster.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Cluster Settings Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Cluster Settings Management&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Cluster Settings &amp;gt; Basic Information&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the right side of the &lt;strong>Basic Information&lt;/strong> page, click &lt;strong>Edit Information&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Edit Information&lt;/strong> dialog, set the cluster’s tag, provider, and description, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Tag&lt;/p>
+&lt;/div></description></item></channel></rss>

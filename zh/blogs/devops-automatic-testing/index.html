@@ -1,0 +1,194 @@
+<!doctype html><html lang=en-US><head><meta charset=utf-8><title>使用 KubeSphere DevOps 搭建自动化测试系统</title><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="KubeSphere 是在 Kubernetes 之上构建的以应用为中心的多租户容器平台，提供全栈的 IT 自动化运维的能力，简化企业的 DevOps 工作流。KubeSphere 提供了运维友好的向导式操作界面，帮助企业快速构建一个强大和功能丰富的容器云平台。"><meta name=keywords content="KubeSphere,Kubernetes,容器平台,DevOps,混合云"><meta property="og:type" content="article"><meta property="og:title" content="使用 KubeSphere DevOps 搭建自动化测试系统"><meta property="og:description" content="KubeSphere 是在 Kubernetes 之上构建的以应用为中心的多租户容器平台，提供全栈的 IT 自动化运维的能力，简化企业的 DevOps 工作流。KubeSphere 提供了运维友好的向导式操作界面，帮助企业快速构建一个强大和功能丰富的容器云平台。"><meta property="og:image" content="https://pek3b.qingstor.com/kubesphere-docs/png/20200428175258.png"><meta property="og:url" content="https://openksc.github.io/zh/blogs/devops-automatic-testing/"><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@KubeSphere"><meta property="twitter:image" content="https://pek3b.qingstor.com/kubesphere-docs/png/20200428175258.png"><meta name=docsearch:language content="zh-CN"><meta name=docsearch:version content><link rel=canonical href=https://kubesphere.io/zh/blogs/devops-automatic-testing/><link rel="shortcut icon" href=/images/favicons/favicon.ico><link rel=apple-touch-icon href=/images/favicons/apple-touch-icon.png sizes=180x180><link rel=icon type=image/png href=/images/favicons/favicon-16x16.png sizes=16x16><link rel=icon type=image/png href=/images/favicons/favicon-32x32.png sizes=32x32><link rel=icon type=image/svg+xml href=/images/favicons/favicon.svg><link rel=icon type=image/png href=/images/favicons/favicon.png><link rel=manifest href=/images/favicons/site.webmanifest><link rel=mask-icon href=/images/favicons/safari-pinned-tab.svg color=#00ad6e><meta name=msapplication-config content='/images/favicons/browserconfig.xml'><meta name=msapplication-TileColor content="#ffffff"><meta name=theme-color content="#ffffff"><link rel=stylesheet href=/fonts/Roboto/stylesheet.css><link rel=stylesheet href=/fonts/ProximaNova/stylesheet.css><link rel=stylesheet href=/css/jquery.modal.min.css><link rel=stylesheet href=/css/viewer.min.css><link rel=stylesheet href=/swiper/swiper-bundle.min.css><link rel=stylesheet href=/scss/common.min.0c3fdcc05ec210321169846714f74b11c4a1baf09a1833fa9273b2347c81e636.css><script src=/js/jquery-3.7.1.min.js></script><script src=/js/viewer.min.js></script><script src=/js/jquery.modal.min.js></script><script src=/swiper/swiper-bundle.min.js></script><script>var _hmt=_hmt||[];(function(){var e,t=document.createElement("script");t.src="https://hm.baidu.com/hm.js?0888981f1fa45d241b1fb6962da2963e",e=document.getElementsByTagName("script")[0],e.parentNode.insertBefore(t,e)})()</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-YYCVN36HT5"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-YYCVN36HT5")</script><script type=text/javascript>!function(e,t,n,s,o){e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},n=t.createElement("script"),tag=t.getElementsByTagName("script")[0],n.async=1,n.src=("https:"==document.location.protocol?"https://":"http://")+s,tag.parentNode.insertBefore(n,tag)}(window,document,"script","assets.giocdn.com/2.1/gio.js","gio"),gio("init","8a24ae300cbf8b8c",{}),gio("send")</script><link rel=stylesheet href=/scss/content.min.f73b326fbf8c5bd331900b0de21c7dde608a4926f482f6465f9ae1d9049b83ad.css><link rel=stylesheet href=/scss/markdown.min.db47186481122431dffae72d17dbbd51f90b66f022cc163458645709924e4eac.css></head><body><header class=navigation><div class=join-div><div class=content>🚀 KubeSphere v4.1.3 发布，多项优化与改进，欢迎体验！<a href=/zh/docs/v4.1/20-release-notes/release-v413/ target=_blank rel="noopener noreferrer">请查看 Release notes →</a>
+<img id=close-join src=/images/header/close.svg alt=close></div></div><div class=common-layout><div class=header-container><a href=/zh/ aria-label=logo><img src=/images/header/logo.svg alt class=logo></a><ul class=nav><li class=menu-li><span class=menu-span>应用场景</span><ul class="dropdown-menu menu-2"><li><a href=/zh/devops/>拥抱一站式 DevOps 工作流</a></li><li><a href=/zh/service-mesh/>在 Kubernetes 运行微服务</a></li><li><a href=/zh/observability/>构建丰富的云原生可观测性</a></li></ul></li><li class=menu-li><span class=menu-span>资源</span><ul class="dropdown-menu menu-3"><li><a href=/zh/projects/>开源项目</a></li><li><a href=/zh/conferences/>开源峰会</a></li><li><a href=/zh/blogs/>技术博客</a></li><li><a href=/zh/videos/>视频资源</a></li><li><a href=/zh/learn/>云原生实战</a></li></ul></li><li class=menu-li><span class=menu-span>文档中心</span><ul class="dropdown-menu menu-4"><li><a href=/zh/docs/v4.1>v4.1 <img src=/images/header/star.svg alt=star></a></li><li><a href=/zh/docs/v3.4>v3.4</a></li><li><a href=/zh/docs/v3.3>v3.3</a></li><li><a href=https://dev-guide.kubesphere.io/extension-dev-guide/zh/ target=_blank rel="noopener noreferrer">扩展组件开发</a></li><li><a href=https://kube.design/ target=_blank rel="noopener noreferrer">Kube Design</a></li></ul></li><li class=menu-li><span class=menu-span>开源社区</span><ul class="dropdown-menu menu-5"><li><a href=/zh/contribution/>参与贡献</a></li><li><a href=/zh/live/>社区活动</a></li><li><a href=/zh/case/>案例学习</a></li><li><a href=/zh/partner/>合作伙伴</a></li><li><a href=/zh/user-group/>用户委员会</a></li><li><a href=/zh/news/>动态</a></li><li><a href=https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md target=_blank rel="noopener noreferrer">版本计划</a></li><li><a href=https://www.kubesphere.io/zh/ target=_blank rel="noopener noreferrer">中国站</a></li><li><a href=https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2025 target=_blank rel="noopener noreferrer">开源之夏 2025</a></li></ul></li><li><a data-docs=用户论坛 href=https://ask.kubesphere.io/forum target=_blank rel="noopener noreferrer">用户论坛</a></li><li><a data-docs=认证 href=https://kubesphere.cloud/certification/ target=_blank rel="noopener noreferrer">认证</a></li></ul><div class=right-menu><ul><li class=language-menu><div><img src=/images/header/black.svg alt>
+<span>简体中文</span></div><ul class=dropdown-menu><li onclick='handleLangClick("en","/blogs/devops-automatic-testing/")'>English</li><li onclick='handleLangClick("zh","/zh/blogs/devops-automatic-testing/")'>简体中文</li></ul></li><li class=github-li><div class=github-star><a class=star-btn href=https://github.com/kubesphere/kubesphere rel="noopener noreferrer" target=_blank><span class=star-img></span>&nbsp;<span>Star</span>
+</a><a class=social-count href=https://github.com/kubesphere/kubesphere/stargazers rel="noopener noreferrer" target=_blank></a></div></li><li class=menu-icon><img src=/images/header/menu.svg alt></li></ul></div></div></div><div id=modal-for-menu class=modal><ul class=nav><li data-check=0 class=menu-li><span class=menu-span>应用场景</span><ul class=dropdown-menu><li><a href=/zh/devops/>拥抱一站式 DevOps 工作流</a></li><li><a href=/zh/service-mesh/>在 Kubernetes 运行微服务</a></li><li><a href=/zh/observability/>构建丰富的云原生可观测性</a></li></ul></li><li data-check=0 class=menu-li><span class=menu-span>资源</span><ul class=dropdown-menu><li><a href=/zh/projects/>开源项目</a></li><li><a href=/zh/conferences/>开源峰会</a></li><li><a href=/zh/blogs/>技术博客</a></li><li><a href=/zh/videos/>视频资源</a></li><li><a href=/zh/learn/>云原生实战</a></li></ul></li><li data-check=0 class=menu-li><span class=menu-span>文档中心</span><ul class=dropdown-menu><li><a href=/zh/docs/v4.1>v4.1 <img src=/images/header/star.svg alt=star></a></li><li><a href=/zh/docs/v3.4>v3.4</a></li><li><a href=/zh/docs/v3.3>v3.3</a></li><li><a href=https://dev-guide.kubesphere.io/extension-dev-guide/zh/>扩展组件开发</a></li><li><a href=https://kube.design/>Kube Design</a></li></ul></li><li data-check=0 class=menu-li><span class=menu-span>开源社区</span><ul class=dropdown-menu><li><a href=/zh/contribution/>参与贡献</a></li><li><a href=/zh/live/>社区活动</a></li><li><a href=/zh/case/>案例学习</a></li><li><a href=/zh/partner/>合作伙伴</a></li><li><a href=/zh/user-group/>用户委员会</a></li><li><a href=/zh/news/>动态</a></li><li><a href=https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md>版本计划</a></li><li><a href=https://www.kubesphere.io/zh/>中国站</a></li><li><a href=https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2025>开源之夏 2025</a></li></ul></li><li><a data-docs=用户论坛 href=https://ask.kubesphere.io/forum>用户论坛</a></li><li><a data-docs=认证 href=https://kubesphere.cloud/certification/>认证</a></li></ul><div class=link-div><a href=https://join.slack.com/t/kubesphere/shared_invite/zt-2b4t6rdb4-ico_4UJzCln_S2c1pcrIpQ target=_blank rel="noopener noreferrer" aria-label=slack><img src=/images/header/slack-hover.svg alt>
+</a><a href=https://x.com/KubeSphere target=_blank rel="noopener noreferrer" aria-label=twitter><img src=/images/header/twitter-hover.svg alt>
+</a><a href=https://github.com/kubesphere/kubesphere target=_blank rel="noopener noreferrer" aria-label=github><img src=/images/header/github-hover.svg alt></a></div></div></header><script>var bindNavMouseEvent,bindScrollChangeHeader,bindClickShowMenu,bindClickModalLi,bindClickClose,language,handleLangClick,githubApiLink="https://api.github.com/repos/kubesphere/kubesphere",getStar=function(){$(".social-count").hide(),$.getJSON(githubApiLink,function(e){$(".social-count").show().html(e.stargazers_count)})};getStar(),bindNavMouseEvent=function(e,t){t||(t=$(e));var n=!1;t.mouseenter(function(){if(n)return!1;n=!0,$(this).find(".dropdown-menu").fadeIn(200,function(){n=!1})}),t.mouseleave(function(){$(this).find(".dropdown-menu").fadeOut(200)})},bindScrollChangeHeader=function(){var t=100,e=$("header");window.addEventListener("scroll",function(){var t=window.scrollY;t>0?e.addClass("navigationScroll"):e.removeClass("navigationScroll")})},bindClickShowMenu=function(){$(".menu-icon").click(function(){$("#modal-for-menu").modal()})},bindClickModalLi=function(){$(".modal .menu-li").click(function(){var e=$(this).data("check");e===0?($(this).data("check",1),$(this).find(".dropdown-menu").slideDown(200)):($(this).data("check",0),$(this).find(".dropdown-menu").slideUp(200)),$(this).find(".menu-span").toggleClass("up")})},bindClickClose=function(){$("#close-join").click(function(){$(".navigation .join-div").hide(),$(".main-section").removeClass("padding")})},language="zh",bindClickClose(),bindScrollChangeHeader(),$(".header-container .menu-li").each(function(){bindNavMouseEvent("",$(this))}),bindNavMouseEvent(".header-container .language-menu"),bindNavMouseEvent(".header-container .btn-li"),bindClickShowMenu(),bindClickModalLi(),handleLangClick=function(e,t){try{localStorage.setItem("lang",e)}catch{}location.href=t}</script><section class=main-section><div class=common-layout><div class=breadcrumb><span><a href=/zh/blogs/>技术博客</a> > </span><span>使用 KubeSphere DevOps 搭建自动化测试系统</span></div><div class='main-div middle-div'><div class=author>Shaowen Chen</div><span class=date>发布于：2020-04-29</span>&nbsp;&nbsp;&nbsp;
+<span style=font-size:14px;color:#919aa3 id=busuanzi_container_page_pv>本文总阅读量：<span id=busuanzi_value_page_pv></span></span><h1>使用 KubeSphere DevOps 搭建自动化测试系统</h1><div class=share-1><div class=share><a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fdevops-automatic-testing%2f&text=%e4%bd%bf%e7%94%a8%20KubeSphere%20DevOps%20%e6%90%ad%e5%bb%ba%e8%87%aa%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95%e7%b3%bb%e7%bb%9f" target=_blank rel="noopener noreferrer"><img src=/images/share/Twitter.svg alt="twitter icon">
+</a><a href="https://reddit.com/submit?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fdevops-automatic-testing%2f&title=%e4%bd%bf%e7%94%a8%20KubeSphere%20DevOps%20%e6%90%ad%e5%bb%ba%e8%87%aa%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95%e7%b3%bb%e7%bb%9f" target=_blank rel="noopener noreferrer"><img src=/images/share/Reddit.svg alt="reddit icon">
+</a><a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fdevops-automatic-testing%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Facebook.svg alt="facebook icon">
+</a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fdevops-automatic-testing%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Linkedin.svg alt="linkedin icon">
+</a><a href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fdevops-automatic-testing%2f&t=%e4%bd%bf%e7%94%a8%20KubeSphere%20DevOps%20%e6%90%ad%e5%bb%ba%e8%87%aa%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95%e7%b3%bb%e7%bb%9f" target=_blank rel="noopener noreferrer"><img src=/images/share/HackerNews.svg alt="hackernews icon"></a></div></div><div class=content><div class=md-body><h2 id=测试分层>测试分层</h2><p>测试的目的是为了验证预期的功能，发现潜在的缺陷。测试增强了交付合格产品的信心，也给敏捷迭代带来了可能。可以说，测试决定了产品的开发进度。</p><p>网络模型有七层的 OSI 、四层的 TCP，而开发模式有 MTV、MVC、MVP、MVVM 等。高内聚、低耦合，划分职责、分模块、分层。然后结构化、标准化，技术逐步走向成熟。</p><p>测试也分为，UI 测试、API 测试、单元测试。测试并不是一项新技术，更多是产出与成本的一种平衡。</p><p><img src=https://pek3b.qingstor.com/kubesphere-docs/png/20200428175258.png alt></p><p>如上图，是一个测试金字塔。越往上，需要的成本越高，对环境要求越高，执行时间越长，维护越麻烦，但更贴近终端用户的场景。在 《Google软件测试之道》中，按照谷歌的经验，各层测试用例比例是 70：20：10，也就是 70% 的单元测试，20% 的 API 测试，10% 的 UI 测试。</p><p>本篇主要讲的是如何在 KubeSphere 平台上使用 <strong>KubeSphere DevOps 系统</strong> 运行自动化测试。</p><h2 id=什么是-kubesphere-devops>什么是 KubeSphere DevOps</h2><p>KubeSphere 针对容器与 Kubernetes 的应用场景，基于 Jenkins 提供了一站式 DevOps 系统，包括丰富的 CI/CD 流水线构建与插件管理功能，还提供 Binary-to-Image（B2I）、Source-to-Image（S2I），为流水线、S2I、B2I 提供代码依赖缓存支持，以及代码质量管理与流水线日志等功能。</p><p>KubeSphere 内置的 DevOps 系统将应用的开发和自动发布与容器平台进行了很好的结合，还支持对接第三方的私有镜像仓库和代码仓库形成完善的私有场景下的 CI/CD，提供了端到端的用户体验。</p><p>但是，很少有用户知道，KubeSphere DevOps 还可以用来搭建自动化测试系统，为自动化的<strong>单元测试、API 测试和 UI 测试</strong>带来极大的便利性，提高测试人员的工作效率。</p><p><img src=https://pek3b.qingstor.com/kubesphere-docs/png/20200428215435.png alt></p><h2 id=单元测试>单元测试</h2><p>单元测试的运行频率非常高，每次提交代码都应该触发一次。单元测试的依赖少，通常只需要一个容器运行环境即可。</p><p>下面是一个使用 golang:latest 跑单元测试的例子。</p><pre tabindex=0><code>pipeline {
+  agent {
+    node {
+      label &#39;go&#39;
+    }
+  }
+  stages {
+    stage(&#39;testing&#39;) {
+      steps {
+        container(&#39;go&#39;) {
+          sh &#39;&#39;&#39;
+          git clone https://github.com/etcd-io/etcd.git
+          cd etcd
+          make test
+          &#39;&#39;&#39;
+        }
+
+      }
+    }
+  }
+}
+</code></pre><p>执行日志：</p><p><img src=https://pek3b.qingstor.com/kubesphere-docs/png/20200428175308.png alt></p><p>针对其他语言、框架，单元测试通过安装一些包、Mock 相关服务，也能够便捷地运行在 Kubernetes 上。更多可以挖掘的是写单元测试的技巧，而不是运行时和单元测试方案。</p><h2 id=api-测试>API 测试</h2><p>如果团队的自动化测试刚起步，API 自动化测试是非常好的切入点。</p><p>单元测试主要由研发负责写。在快速迭代的过程中，有经验的研发也不会忘记写单元测试。重构、变更越快，测试不会成为负担，反而更重要。没有写单元测试，只能说其不被重视。推动一件不被执行者重视、管理者很难看到收益的事情是非常难的。</p><p>而 UI 自动化测试常常又被人工测试替代。同时，维护 UI 自动化测试成本较高，在快速迭代的过程中，不应该过多地进行 UI 自动化测试。</p><p>API 测试的优势在于，在前后端分离的架构下，API 相关的文档和资料相对完善，团队成员对 API 相对熟悉，有利于进行测试。</p><p>下面是一个使用 Postman 进行 API 自动化测试的例子：</p><pre tabindex=0><code>pipeline {
+  agent {
+    kubernetes {
+      label &#39;apitest&#39;
+      yaml &#39;&#39;&#39;apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: newman
+    image: postman/newman_alpine33
+    command: [\&#39;cat\&#39;]
+    tty: true
+    volumeMounts:
+    - name: dockersock
+      mountPath: /var/run/docker.sock
+    - name: dockerbin
+      mountPath: /usr/bin/docker
+  volumes:
+  - name: dockersock
+    hostPath:
+      path: /var/run/docker.sock
+  - name: dockerbin
+    hostPath:
+      path: /usr/bin/docker
+      &#39;&#39;&#39;
+      defaultContainer &#39;newman&#39;
+    }
+  }
+
+  parameters {
+    string(name: &#39;HOST&#39;, defaultValue: &#39;10.10.10.10&#39;, description: &#39;&#39;)
+    string(name: &#39;PORT&#39;, defaultValue: &#39;8000&#39;, description: &#39;&#39;)
+    string(name: &#39;USERNAME&#39;, defaultValue: &#39;admin&#39;, description: &#39;&#39;)
+    string(name: &#39;PASSWORD&#39;, defaultValue: &#39;password&#39;, description: &#39;&#39;)
+
+  }
+
+  stages {
+    stage(&#39;testing&#39;) {
+      steps {
+          sh &#39;&#39;&#39;
+          apk add --no-cache bash git openssh
+          git clone https://yourdomain.com/ns/ks-api-test.git
+
+          cd ks-api-test
+
+          sed -i &#34;s/__HOST__/$HOST/g&#34; postman_environment.json
+          sed -i &#34;s/__PORT__/$PORT/g&#34; postman_environment.json
+          sed -i &#34;s/__USERNAME__/$USERNAME/g&#34; postman_environment.json
+          sed -i &#34;s/__PASSWORD__/$PASSWORD/g&#34; postman_environment.json
+
+          npm install -g newman-reporter-htmlextra
+          newman run iam/postman_collection.json -e postman_environment.json -r htmlextra
+          &#39;&#39;&#39;
+      }
+    }
+  }
+  post {
+    always {
+        archiveArtifacts &#39;ks-api-test/newman/*&#39;
+    }
+  }
+}
+</code></pre><p>执行后的归档：</p><p><img src=https://pek3b.qingstor.com/kubesphere-docs/png/20200428175315.png alt></p><p>下载归档的构件，解压后查看测试报告：</p><p><img src=https://pek3b.qingstor.com/kubesphere-docs/png/20200428175325.png alt></p><p>API 自动化测试的框架很容易实现，实现几点功能即可：</p><ul><li>接口请求</li><li>响应断言</li><li>请求编排</li><li>生成报告</li></ul><p>但一定要根据团队的 API 测试、交付习惯选择合适的方案。可以自己开发，也可以使用现有的工具。上面选择的是 Postman + Newman 的方案，原因是团队普遍都使用 Postman 进行 API 测试。</p><p>剩下的就是如何组织大家进行测试，可以分别提交文件到一个共同的仓库，也可以使用付费版 Postman 共享数据集中测试。</p><h2 id=ui-测试>UI 测试</h2><p>UI 自动化测试的成本高有几个方面：</p><ul><li>测试用例难维护。前端样式变化、产品逻辑变化。</li><li>很难提供稳定的运行环境。各种超时、脏数据会导致失败率很高。</li></ul><p>这里的 UI 自动化测试，采用的是我熟悉的 Robotframework 框架，使用关键字进行自动化测试。</p><p>下面是一个使用 Robotframework 进行 UI 自动化测试的例子：</p><pre tabindex=0><code>pipeline {
+  agent {
+    kubernetes {
+      label &#39;robotframework&#39;
+      yaml &#39;&#39;&#39;apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: robotframework
+    image: shaowenchen/docker-robotframework:latest
+    tty: true
+    volumeMounts:
+    - name: dockersock
+      mountPath: /var/run/docker.sock
+    - name: dockerbin
+      mountPath: /usr/bin/docker
+  volumes:
+  - name: dockersock
+    hostPath:
+      path: /var/run/docker.sock
+  - name: dockerbin
+    hostPath:
+      path: /usr/bin/docker
+      &#39;&#39;&#39;
+      defaultContainer &#39;robotframework&#39;
+    }
+  }
+
+  parameters {
+    string(name: &#39;HOST&#39;, defaultValue: &#39;10.10.10.10&#39;, description: &#39;&#39;)
+    string(name: &#39;PORT&#39;, defaultValue: &#39;8080&#39;, description: &#39;&#39;)
+    string(name: &#39;USERNAME&#39;, defaultValue: &#39;admin&#39;, description: &#39;&#39;)
+    string(name: &#39;PASSWORD&#39;, defaultValue: &#39;password&#39;, description: &#39;&#39;)
+  }
+
+  stages {
+    stage(&#39;testing&#39;) {
+      steps {
+          sh &#39;&#39;&#39;
+          curl -s -L https://raw.githubusercontent.com/shaowenchen/scripts/master/kubesphere/preinstall.sh | bash
+          git clone https://yourdomain.com/ns/ks-ui-test.git
+
+          cd ks-ui-test
+
+          sed -i &#34;s/__USERNAME__/$USERNAME/g&#34; tests/common.robot
+          sed -i &#34;s/__PASSWORD__/$PASSWORD/g&#34; tests/common.robot
+
+          echo &#34;\nTestEnv  http://$HOST:$PORT&#34; &gt;&gt; tests/api.robot
+          echo &#34;\nTestEnv  http://$HOST:$PORT&#34; &gt;&gt; tests/devops.robot
+          ./start.sh&#39;&#39;&#39;
+      }
+    }
+  }
+
+  post {
+    always {
+        sh &#39;tar cvf report-$BUILD_NUMBER.tar ks-ui-test/tests/report&#39;
+        archiveArtifacts &#39;*.tar&#39;
+    }
+  }
+}
+</code></pre><p>执行日志：</p><p><img src=https://pek3b.qingstor.com/kubesphere-docs/png/20200428175638.png alt></p><p>下载归档的构件，解压后查看测试报告：</p><p><img src=https://pek3b.qingstor.com/kubesphere-docs/png/20200428175345.png alt></p><p><img src=https://pek3b.qingstor.com/kubesphere-docs/png/20200428175353.png alt></p></div></div><div class=share-2><div class=share><a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fdevops-automatic-testing%2f&text=%e4%bd%bf%e7%94%a8%20KubeSphere%20DevOps%20%e6%90%ad%e5%bb%ba%e8%87%aa%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95%e7%b3%bb%e7%bb%9f" target=_blank rel="noopener noreferrer"><img src=/images/share/Twitter.svg alt="twitter icon">
+</a><a href="https://reddit.com/submit?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fdevops-automatic-testing%2f&title=%e4%bd%bf%e7%94%a8%20KubeSphere%20DevOps%20%e6%90%ad%e5%bb%ba%e8%87%aa%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95%e7%b3%bb%e7%bb%9f" target=_blank rel="noopener noreferrer"><img src=/images/share/Reddit.svg alt="reddit icon">
+</a><a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fdevops-automatic-testing%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Facebook.svg alt="facebook icon">
+</a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fdevops-automatic-testing%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Linkedin.svg alt="linkedin icon">
+</a><a href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fdevops-automatic-testing%2f&t=%e4%bd%bf%e7%94%a8%20KubeSphere%20DevOps%20%e6%90%ad%e5%bb%ba%e8%87%aa%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95%e7%b3%bb%e7%bb%9f" target=_blank rel="noopener noreferrer"><img src=/images/share/HackerNews.svg alt="hackernews icon"></a></div></div></div><div class=aside><div class=inner-div><div class=title>目录</div><div class=tabs><nav id=TableOfContents><ul><li><a href=#测试分层>测试分层</a></li><li><a href=#什么是-kubesphere-devops>什么是 KubeSphere DevOps</a></li><li><a href=#单元测试>单元测试</a></li><li><a href=#api-测试>API 测试</a></li><li><a href=#ui-测试>UI 测试</a></li></ul></nav></div></div></div></div></section><div class=SubscribeForm><div class=innerBox><img class=close src=/images/home/close.svg alt=close><p class=description>通过邮件接收 KubeSphere 最新的技术博客与产品更新的通知</p><div id=blog_formAddress data-actionaddress="https://www.sendcloud.net/v3/api/subInvite/subscription?invitecode=1dc5a4fb-894c-4470-b01d-ca7fa9d47a46" data-usesendcloud=true data-lang=zh><input name=EMAIL id=email-input-blog type=text placeholder>
+<button id=email-submit-blog>订阅</button>
+<span id=message_blog data-message1=请提供您的邮箱 data-message2=请输入有效的邮箱地址! data-message3=邮箱地址已经存在 style=color:red></span><span id=message1_blog style=color:#00a971 data-success=订阅成功啦，我们保证不会给你发垃圾邮件的啦></span></div></div></div><footer><div class=footer><div class="footer-main common-layout"><div class=up-main><div class=left-div><img src=/images/logo.svg alt class=foot-logo><p>通过邮件接收 KubeSphere 最新的技术博客与产品更新的通知</p><div id=formAddress data-actionaddress="https://www.sendcloud.net/v3/api/subInvite/subscription?invitecode=1dc5a4fb-894c-4470-b01d-ca7fa9d47a46" data-usesendcloud=true data-lang=zh><input name=EMAIL id=email-input type=text placeholder=请输入您的邮箱地址>
+<button id=email-submit>订阅</button></div><span id=message data-message1=请提供您的邮箱 data-message2=请输入有效的邮箱地址! data-message3=邮箱地址已经存在></span><span id=message1 style=color:#00a971 data-success=订阅成功啦，我们保证不会给你发垃圾邮件的啦></span><script>var bindSubmit=function(){var e=$("#email-input");$("#email-submit").click(function(t){t.stopPropagation();var s,o,n=e.val(),i=$("#message").data("message1"),a=$("#message").data("message2"),r=$("#message").data("message3"),c=$("#message1").data("success");if(n)if(validateEmail(n)){if(s=$("#formAddress").data("usesendcloud"),!s)return;o=$("#formAddress").data("actionaddress"),$.post({type:"post",url:o,data:{email:$("#email-input").val().toString()},success:function(){showSuccessMessage(c),setTimeout(function(){$("#email-input").val("")},1e3)},error:function(){showMessage(r)}})}else t.preventDefault(),showMessage(a);else t.preventDefault(),showMessage(i)})},validateEmail=function(e){var t=/^[A-Za-z0-9]+([_.][A-Za-z0-9]+)*@([A-Za-z0-9-]+\.)+[A-Za-z]{2,6}$/;return t.test(e)},showMessage=function(e){$("#message").html(e).show()},showSuccessMessage=function(e){$("#message1").html(e).show()},bindHideMessage=function(){$(window).click(function(){$("#message").hide(),$("#message1").hide()})},bindClose=function(){$(".formBox .close").click(function(e){e.stopPropagation(),$(".formBox").fadeOut()})};bindSubmit(),bindClose(),bindHideMessage()</script><span id=message data-message1=请提供您的邮箱 data-message2=请输入有效的邮箱地址!></span></div><div class=right-div><ul class=common-flex-layout><li class=nowrap-li><div class=h3>应用场景</div><a href=/zh/devops/>拥抱一站式 DevOps</a>
+<a href=/zh/service-mesh/>在 K8s 运行微服务</a>
+<a href=/zh/observability/>构建云原生可观测性</a>
+<a href=https://github.com/kubesphere/kubekey target=_blank rel="noopener noreferrer">K8s 一键部署与运维</a>
+<a href=https://github.com/OpenFunction/OpenFunction target=_blank rel="noopener noreferrer">构建 FaaS 平台与 Serverless 架构</a>
+<a href=https://github.com/openpitrix/openpitrix target=_blank rel="noopener noreferrer">多云应用管理平台</a></li><li class=nowrap-li><div class=h3>资源</div><a href=/zh/projects/>开源项目</a>
+<a href=/zh/blogs/>技术博客</a>
+<a href=/zh/conferences/>开源峰会</a>
+<a href=/zh/videos/>视频资源</a>
+<a href=/zh/learn/>云原生实战</a></li><li class=nowrap-li><div class=h3>文档中心</div><a href=/zh/docs/v4.1/01-intro/01-introduction/>产品介绍</a>
+<a href=/zh/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere/>如何安装</a>
+<a href=/zh/docs/v4.1/02-quickstart/>快速入门</a>
+<a href=/zh/docs/v3.4/reference/api-docs/>API 文档</a></li><li class=nowrap-li><div class=h3>开源社区</div><a href=/zh/contribution/>参与贡献</a>
+<a href=/zh/live/>社区活动</a>
+<a href=/zh/case/>案例学习</a>
+<a href=/zh/partner/>合作伙伴</a>
+<a href=/zh/user-group/>用户委员会</a>
+<a href=https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md target=_blank rel="noopener noreferrer">版本计划</a>
+<a href=https://kubesphere.com.cn/ target=_blank rel="noopener noreferrer">中国站</a>
+<a href=https://ask.kubesphere.io/forum target=_blank rel="noopener noreferrer">中文论坛</a>
+<a href=https://kubesphere.io target=_blank rel="noopener noreferrer">全球站</a></li><li class=nowrap-li><div class=h3>产品与服务</div><a href=https://aws.amazon.com/cn/quickstart/architecture/qingcloud-kubesphere/ target=_blank rel="noopener noreferrer">KubeSphere on AWS</a>
+<a href=https://market.azure.cn/marketplace/apps/qingcloud.kubesphere target=_blank rel="noopener noreferrer">KubeSphere on Azure</a>
+<a href=https://marketplace.digitalocean.com/apps/kubesphere target=_blank rel="noopener noreferrer">KubeSphere on DigitalOcean</a>
+<a href=https://www.qingcloud.com/products/kubesphereqke target=_blank rel="noopener noreferrer">KubeSphere on QingCloud(QKE)</a>
+<a href=https://kubesphere.com.cn/kse/ target=_blank rel="noopener noreferrer">KubeSphere 企业版</a>
+<a href=https://kubesphere.cloud/ksv/ target=_blank rel="noopener noreferrer">KubeSphere 虚拟化平台</a>
+<a href=https://kubesphere.com.cn/marketplace/ target=_blank rel="noopener noreferrer">云原生扩展组件市场</a>
+<a href=https://kubesphere.cloud target=_blank rel="noopener noreferrer">云原生应用服务平台</a>
+<a href=https://m.qingcloud.com/p/aec50 target=_blank rel="noopener noreferrer">了解商业产品与咨询合作</a></li></ul></div></div><div class=down-main><div class=img-div><a class=wechat href=javascript:void(0); aria-label=wechat><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28"><defs><path id="a" d="M0 0h15.673v12.156H0z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="13" cy="13" r="13" stroke="#B6C2CD"/><g transform="translate(5 7)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="currentColor" d="M15.673 7.898c0-2.061-2.173-3.74-4.619-3.74-2.59.0-4.625 1.679-4.625 3.74.0 2.066 2.035 3.738 4.625 3.738.542.0 1.09-.13 1.632-.256l1.493.776-.408-1.29c1.09-.776 1.902-1.81 1.902-2.968zm-6.119-.645c-.27.0-.541-.257-.541-.514.0-.256.27-.514.541-.514.41.0.681.258.681.514.0.257-.271.514-.681.514zm2.994.0c-.27.0-.541-.257-.541-.514.0-.256.27-.514.54-.514.41.0.681.258.681.514.0.257-.277.514-.68.514z" mask="url(#b)"/><path fill="currentColor" d="M10.602 3.674c.177.0.356.011.533.029C10.657 1.576 8.27.0 5.543.0 2.498.0.0 1.974.0 4.485c0 1.45.829 2.64 2.216 3.564l-.552 1.588 1.94-.929c.693.129 1.251.263 1.94.263.17.0.343-.005.515-.022a3.68 3.68.0 01-.172-1.104c0-2.302 2.081-4.171 4.715-4.171zM7.618 2.243c.417.0.693.263.693.66s-.276.66-.693.66c-.418.0-.835-.263-.835-.66.006-.398.423-.66.835-.66zm-3.88 1.319c-.417.0-.834-.263-.834-.66s.417-.66.834-.66c.418.0.695.263.695.66.0.392-.277.66-.695.66z" mask="url(#b)"/></g></g></svg><div class=hide-div><img src=/images/home/wechat.svg alt></div></a><a class=facebook-a href=https://www.facebook.com/kubesphere target=_blank aria-label=facebook></a><a class=twitter-a href=https://x.com/KubeSphere target=_blank aria-label=twitter rel="noopener noreferrer"></a><a class=linkedin-a href=https://www.linkedin.com/company/kubesphere/ target=_blank aria-label=linkedin rel="noopener noreferrer"></a><a class=bilibili-a href=https://space.bilibili.com/438908638 target=_blank aria-label=bilibili rel="noopener noreferrer"></a><a class=slack-a href=https://join.slack.com/t/kubesphere/shared_invite/zt-2b4t6rdb4-ico_4UJzCln_S2c1pcrIpQ target=_blank aria-label=slack rel="noopener noreferrer"></a><a class=github-a href=https://github.com/kubesphere/kubesphere target=_blank aria-label=github rel="noopener noreferrer"></a><a class=medium-a href=https://itnext.io/@kubesphere target=_blank aria-label=medium rel="noopener noreferrer"></a></div><p class=p1></p><p class=case><a href=http://www.beian.miit.gov.cn/ target=_blank rel="noopener noreferrer"><span>京ICP备13019086号</span>
+</a><a target=_blank rel="noopener noreferrer" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502041003"><img src=/images/footer/case-icon.png alt=备案图标>
+<span>京公网安备 11010502041003号</span></a></p></div></div></div><div class=cookie><div class=common-layout><p>您的隐私对我们很重要。我们使用Cookie来记住订阅详细信息，优化网站功能并交付根据您的兴趣量身定制的内容。要了解更多信息，请参阅我们的<a href=/zh/privacy>隐私政策</a>.</p><button>
+接受并继续</button></div></div></footer><script>var lazyLoad=function(e,t){for(var n,o,i,s=0;s<t;s++){if(n=e.eq(s),o=n.attr("data-loaded"),o)continue;n.offset().top<parseInt($(window).height())+parseInt($(window).scrollTop())&&(i=n.attr("src"),n.attr("src",i),n.attr("data-loaded",!0))}},bindLayLoad=function(){var e=$("img"),t=e.length;lazyLoad(e,t),$(window).scroll(function(){lazyLoad(e,t)})},bindAddPadding=function(){var e=$("#close-join");e.length>0&&$(".main-section").addClass("padding")},docCookies={getItem:function(e){return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*"+encodeURIComponent(e).replace(/[-.+*]/g,"\\$&")+"\\s*\\=\\s*([^;]*).*$)|^.*$"),"$1"))||null},setItem:function(e,t){return!!e&&!/^(?:expires|max-age|path|domain|secure)$/i.test(e)&&(document.cookie=encodeURIComponent(e)+"="+encodeURIComponent(t),!0)}},bindHideCookie=function(){var t=docCookies.getItem("hasAuth"),e=$(".cookie");t?e.hide():e.show(),e.find("button").on("click",function(){docCookies.setItem("hasAuth","1"),e.hide()})};bindAddPadding(),bindHideCookie()</script><script type=text/javascript src=/js/aside.2d6977c0f16aef4ed3e886dd66675ce74bd0efcd467c2b2bcdb30b92d5e7c7c0e5c6e0c9d8f09a883c22f58df9e6b0b6347fcdd3c9a920b7faba6d7f91a201c3.js integrity="sha512-LWl3wPFq707T6IbdZmdc50vQ781GfCsrzbMLktXnx8DlxuDJ2PCaiDwi9Y355rC2NH/N08mpILf6um1/kaIBww=="></script><script type=text/javascript src=/js/markdown-tab.17f9f46b021adebc7250ce1b07134a577b307e7a436daa4aaf388f218e8463966f53770b26a64817c06c168738a887672d47fb4c29615adfc446e11d09a344cf.js integrity="sha512-F/n0awIa3rxyUM4bBxNKV3swfnpDbapKrziPIY6EY5ZvU3cLJqZIF8BsFoc4qIdnLUf7TClhWt/ERuEdCaNEzw=="></script><script>let forbidForm=!1;var viewer=new Viewer(document.querySelector(".md-body"),{url:"src"}),blogBindSubmit=function(){var e=$("#email-input-blog");$("#email-submit-blog").click(function(t){t.stopPropagation();var s,o,n=e.val(),i=$("#message_blog").data("message1"),a=$("#message_blog").data("message2"),r=$("#message_blog").data("message3"),c=$("#message1_blog").data("success");if(n)if(validateEmail(n)){if(s=$("#blog_formAddress").data("usesendcloud"),!s)return;o=$("#blog_formAddress").data("actionaddress"),$.post({type:"post",url:o,data:{email:n.toString()},success:function(){showSuccessMessage_blog(c),setTimeout(function(){window.onscroll="",$(".SubscribeForm").hide(),$("#email-input-blog").val("")},5e3)},error:function(){showMessage_blog(r)}})}else t.preventDefault(),$("#message_blog").html(a).show();else t.preventDefault(),$("#message_blog").html(i).show()})},validateEmail=function(e){var t=/^[A-Za-z0-9]+([_.][A-Za-z0-9]+)*@([A-Za-z0-9-]+\.)+[A-Za-z]{2,6}$/;return t.test(e)},bindHideMessageBlog=function(){$(window).click(function(){$("#message_blog").hide()})},bindCloseBlog=function(){$(".SubscribeForm .close").click(function(e){e.stopPropagation(),$(".SubscribeForm").fadeOut(),window.onscroll=""})},showMessage_blog=function(e){$("#message_blog").html(e).show()},showSuccessMessage_blog=function(e){$("#message1_blog").html(e).show()};window.onscroll=()=>{var e=document.documentElement.scrollTop||document.body.scrollTop,t=document.documentElement.clientHeight||document.body.clientHeight,n=document.documentElement.scrollHeight||document.body.scrollHeight;forbidForm&&(window.onscroll=""),e+t>n-710?$(".SubscribeForm").hide():$(".SubscribeForm").show()},blogBindSubmit(),bindCloseBlog(),bindHideMessageBlog()</script><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script></body></html>

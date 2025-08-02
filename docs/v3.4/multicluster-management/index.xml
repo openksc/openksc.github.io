@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Multi-cluster Management on</title><link>https://openksc.github.io/docs/v3.4/multicluster-management/</link><description>Recent content in Multi-cluster Management on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v3.4/multicluster-management/index.xml" rel="self" type="application/rss+xml"/><item><title>Remove a Member Cluster</title><link>https://openksc.github.io/docs/v3.4/multicluster-management/unbind-cluster/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.4/multicluster-management/unbind-cluster/</guid><description>&lt;p>This tutorial demonstrates how to remove a member cluster on the KubeSphere web console.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;ul>
+&lt;li>You have enabled multi-cluster management.&lt;/li>
+&lt;li>You need a user granted a role including the authorization of &lt;strong>Cluster Management&lt;/strong>. For example, you can log in to the console as &lt;code>admin&lt;/code> directly or create a new role with the authorization and assign it to a user.&lt;/li>
+&lt;/ul>
+&lt;h2 id="remove-a-cluster">Remove a Cluster&lt;/h2>
+&lt;p>You can remove a cluster by using either of the following methods:&lt;/p></description></item></channel></rss>

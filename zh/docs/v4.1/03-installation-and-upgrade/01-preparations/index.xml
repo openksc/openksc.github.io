@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>准备工作 on</title><link>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/</link><description>Recent content in 准备工作 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/index.xml" rel="self" type="application/rss+xml"/><item><title>环境要求</title><link>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/01-supported-k8s/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/01-supported-k8s/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍 KubeSphere 的环境要求。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_系统要求">系统要求&lt;/h2>
+&lt;div class="sectionbody">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 27.2727%;"/>
+&lt;col style="width: 36.3636%;"/>
+&lt;col style="width: 36.3637%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">系统&lt;/th>
+&lt;th class="tableblock halign-left valign-top">最低要求（每个节点）&lt;/th>
+&lt;th class="tableblock halign-left valign-top">生产环境要求（每个节点）&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Ubuntu 16.04，18.04，20.04，22.04&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CPU：2 核，内存：4 GB，硬盘：40 GB&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CPU：8 核，内存：16 GB，硬盘：200 GB&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Debian Buster，Stretch&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CPU：2 核，内存：4 GB，硬盘：40 GB&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CPU：8 核，内存：16 GB，硬盘：200 GB&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CentOS 7.x，CentOS Stream&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CPU：2 核，内存：4 GB，硬盘：40 GB&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CPU：8 核，内存：16 GB，硬盘：200 GB&lt;/p>
+&lt;/div></description></item></channel></rss>

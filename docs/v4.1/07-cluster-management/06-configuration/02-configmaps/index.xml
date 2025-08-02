@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ConfigMaps on</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/06-configuration/02-configmaps/</link><description>Recent content in ConfigMaps on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/07-cluster-management/06-configuration/02-configmaps/index.xml" rel="self" type="application/rss+xml"/><item><title>Create ConfigMaps</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/06-configuration/02-configmaps/01-create-a-configmap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/06-configuration/02-configmaps/01-create-a-configmap/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to create ConfigMaps.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Project Resource Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Project Resource Management&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Configuration &amp;gt; ConfigMaps&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Create&lt;/strong> on the page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Basic Information&lt;/strong> tab, set the basic information for the ConfigMap, and then click &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Name&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">The name of the ConfigMap. The name can only contain lowercase letters, numbers, and hyphens (-), must start and end with a lowercase letter or number, and can be up to 63 characters long.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Alias&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">The alias of the ConfigMap. Aliases can be the same for different ConfigMaps. The alias can only contain Chinese characters, letters, numbers, and hyphens (-), cannot start or end with a hyphen (-), and can be up to 63 characters long.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Project&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">The project to which the ConfigMap belongs.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Description&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">The description of the ConfigMap. The description can contain any characters and can be up to 256 characters long.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div></description></item><item><title>View ConfigMaps List</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/06-configuration/02-configmaps/02-view-a-configmap-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/06-configuration/02-configmaps/02-view-a-configmap-list/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to view the list of ConfigMaps.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Project Resource Viewing&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Project Resource Viewing&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Configuration &amp;gt; ConfigMaps&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The ConfigMaps list provides the following information:&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Name&lt;/p>
+&lt;/div></description></item><item><title>View ConfigMap Details</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/06-configuration/02-configmaps/03-view-configmap-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/06-configuration/02-configmaps/03-view-configmap-details/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to view ConfigMap details.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Project Resource Viewing&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Project Resource Viewing&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Configuration &amp;gt; ConfigMaps&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the name of a ConfigMap in the list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>View the resource attributes of the ConfigMap in the &lt;strong>Attributes&lt;/strong> area on the left side of the ConfigMap details page.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Cluster&lt;/p>
+&lt;/div></description></item><item><title>Edit ConfigMap Information</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/06-configuration/02-configmaps/04-edit-configmap-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/06-configuration/02-configmaps/04-edit-configmap-information/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to edit ConfigMap information.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>You can edit the alias and description of the ConfigMap. KubeSphere does not support editing the name of an already created ConfigMap.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Project Resource Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Project Resource Management&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Configuration &amp;gt; ConfigMaps&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span> on the right of the ConfigMap you want to edit, then choose &lt;strong>Edit Information&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Edit Information&lt;/strong> dialog, set the alias and description for the ConfigMap, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Alias&lt;/p>
+&lt;/div></description></item><item><title>Edit ConfigMap Settings</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/06-configuration/02-configmaps/05-edit-configmap-settings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/06-configuration/02-configmaps/05-edit-configmap-settings/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to edit the data of a ConfigMap.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Project Resource Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Project Resource Management&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Configuration &amp;gt; ConfigMaps&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span> on the right of the ConfigMap you want to edit, then choose &lt;strong>Edit Settings&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Edit Settings&lt;/strong> dialog, set the data for the ConfigMap, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Click &lt;strong>Add Data&lt;/strong> to add a key-value pair.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Hover over the created pair, then click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/pen-light.svg" alt="pen" width="18" height="18"/>&lt;/span> on the right to edit the pair.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Hover over the created pair, then click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/trash-light.svg" alt="trash-light" width="18" height="18"/>&lt;/span> on the right to delete the pair.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Delete ConfigMaps</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/06-configuration/02-configmaps/06-delete-configmaps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/06-configuration/02-configmaps/06-delete-configmaps/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to delete a ConfigMap.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Warning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Once a ConfigMap is deleted, it cannot be recovered. Please proceed with caution when performing this operation.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Project Resource Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_delete_a_single_configmap">Delete a Single ConfigMap&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Project Resource Management&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Configuration &amp;gt; ConfigMaps&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span> on the right of the ConfigMap you want to delete, then choose &lt;strong>Delete&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Delete ConfigMap&lt;/strong> dialog, enter the name of the ConfigMap, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item></channel></rss>

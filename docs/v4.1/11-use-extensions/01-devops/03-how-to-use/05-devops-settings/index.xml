@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DevOps Project Settings on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/05-devops-settings/</link><description>Recent content in DevOps Project Settings on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/05-devops-settings/index.xml" rel="self" type="application/rss+xml"/><item><title>Credential Management</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/05-devops-settings/01-credential-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/05-devops-settings/01-credential-management/</guid><description>&lt;div class="paragraph">
+&lt;p>Credentials are objects that contain sensitive information, such as usernames and passwords, SSH keys, and tokens. When the DevOps pipeline runs, it interacts with objects in the external environment to perform a series of tasks, including pulling code, pushing and pulling images, and running scripts. During this process, corresponding credentials are required, and these credentials will not appear in plain text in the pipeline.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>DevOps project users with the necessary permissions can configure credentials for Jenkins pipelines. After users add or configure these credentials in the DevOps project, they can use these credentials in the DevOps project to interact with third-party applications.&lt;/p>
+&lt;/div></description></item><item><title>Role and Member Management</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/05-devops-settings/02-role-and-member-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/05-devops-settings/02-role-and-member-management/</guid><description>&lt;div class="paragraph">
+&lt;p>This document demonstrates how to manage roles and members in a DevOps project.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Within the scope of a DevOps project, you can grant permissions for the following resources to roles:&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>DevOps project settings&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Pipelines&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Credentials&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Continuous deployments&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Code repositories&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Access control&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>A DevOps project has been created, for example, &lt;strong>demo-devops&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>A user (e.g. &lt;strong>devops-admin&lt;/strong>) with the &lt;strong>admin&lt;/strong> role in the DevOps project.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_preset_roles">Preset Roles&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>In &lt;strong>DevOps Project Roles&lt;/strong>, there are three preset roles as follows. Preset roles are automatically created when a DevOps project is created and cannot be edited or deleted.&lt;/p>
+&lt;/div></description></item><item><title>Add Continuous Deployment Whitelist</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/05-devops-settings/03-add-cd-allowlist/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/05-devops-settings/03-add-cd-allowlist/</guid><description>&lt;div class="paragraph">
+&lt;p>KubeSphere supports restricting the code repositories and deployment locations for resource continuous deployment by setting a whitelist.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This document introduces how to add a continuous deployment whitelist.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>DevOps&lt;/strong> must have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>A workspace, a DevOps project, and a user (e.g. &lt;strong>project-regular&lt;/strong>) have been created, and the user has been invited to the DevOps project with the &lt;strong>operator&lt;/strong> role. See &lt;a href="../02-role-and-member-management">Role and Member Management&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You have &lt;a href="../../04-import-code-repositories/">imported a code repository&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Set CI Nodes for Dependency Cache</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/05-devops-settings/04-set-ci-node/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/05-devops-settings/04-set-ci-node/</guid><description>&lt;div class="paragraph">
+&lt;p>Building applications often requires pulling different dependencies. Issues such as long pulling times and unstable networks may occur during the pulling process, leading to build failures. To provide a more reliable and stable environment, you can configure nodes or node groups specifically for continuous integration (CI) and speed up the build process by using cache.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This document demonstrates how to set CI nodes so that KubeSphere schedules pipeline tasks to these nodes.&lt;/p>
+&lt;/div></description></item></channel></rss>

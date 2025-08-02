@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>存储系统安装 on</title><link>https://openksc.github.io/zh/docs/v3.4/reference/storage-system-installation/</link><description>Recent content in 存储系统安装 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v3.4/reference/storage-system-installation/index.xml" rel="self" type="application/rss+xml"/><item><title>搭建 NFS 服务器</title><link>https://openksc.github.io/zh/docs/v3.4/reference/storage-system-installation/nfs-server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/reference/storage-system-installation/nfs-server/</guid><description>&lt;p>KubeSphere 支持存储插件 &lt;a href="https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client" target="_blank" rel="noopener noreferrer">NFS-client Provisioner&lt;/a>。若想使用该插件，必须预先配置 NFS 服务器。NFS 服务器配置完成后，NFS 客户端会在服务器机器上挂载目录，以便 NFS 客户端访问 NFS 服务器上的文件，即您需要创建并输出客户端机器可以访问的目录。&lt;/p>
+&lt;p>NFS 服务器机器就绪后，您可以使用 &lt;a href="../../../installing-on-linux/introduction/kubekey/">KubeKey&lt;/a> 通过 Helm Chart 来安装 NFS-client Provisioner 以及 Kubernetes 和 KubeSphere。您必须在 Chart 配置中提供 NFS 服务器的输出目录以便 KubeKey 在安装时使用。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>&lt;ul>
+&lt;li>您也可以在安装 KubeSphere 集群后创建 NFS-client 的存储类型。&lt;/li>
+&lt;li>NFS 与部分应用不兼容（例如 Prometheus），可能会导致容器组创建失败。如果确实需要在生产环境中使用 NFS，请确保您了解相关风险或咨询 KubeSphere 技术支持 &lt;a href="mailto:support@kubesphere.cloud">support@kubesphere.cloud&lt;/a>。&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;p>本教程演示了如何安装 NFS 服务器，以 Ubuntu 16.04 为例。&lt;/p>
+&lt;h2 id="安装及配置-nfs-服务器">安装及配置 NFS 服务器&lt;/h2>
+&lt;h3 id="步骤-1安装-nfs-服务器-nfs-kernel-server">步骤 1：安装 NFS 服务器 (NFS kernel server)&lt;/h3>
+&lt;p>若要设置服务器机器，就必须在机器上安装 NFS 服务器。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>运行以下命令，使用 Ubuntu 上的最新软件包进行安装。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo apt-get update
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>安装 NFS 服务器。&lt;/p></description></item><item><title>搭建 GlusterFS 服务器</title><link>https://openksc.github.io/zh/docs/v3.4/reference/storage-system-installation/glusterfs-server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/reference/storage-system-installation/glusterfs-server/</guid><description>&lt;p>&lt;a href="https://kubernetes.io/zh/docs/concepts/storage/volumes/#glusterfs" target="_blank" rel="noopener noreferrer">GlusterFS&lt;/a> 是开源的分布式文件系统，您能使用 GlusterFS 将 &lt;code>glusterfs&lt;/code> 存储卷挂载到 Pod。如果 &lt;code>glusterfs&lt;/code> 存储卷中预先填充了数据，则可以在 Kubernetes 集群中的 Pod 之间共享这些数据。&lt;/p>
+&lt;p>本教程演示了如何在三台服务器机器上配置 GlusterFS 以及如何安装 &lt;a href="https://github.com/heketi/heketi" target="_blank" rel="noopener noreferrer">Heketi&lt;/a> 来管理 GlusterFS 集群。&lt;/p>
+&lt;p>GlusterFS 和 Heketi 搭建好之后，就可以在客户端机器上安装 GlusterFS，并使用 KubeKey 创建一个存储类型为 GlusterFS 的 KubeSphere 集群。&lt;/p>
+&lt;h2 id="准备-glusterfs-节点">准备 GlusterFS 节点&lt;/h2>
+&lt;p>本示例中包含三台 Ubuntu 16.04 服务器机器，每台服务器都有一个附带的磁盘。&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>主机名&lt;/th>
+ &lt;th>IP 地址&lt;/th>
+ &lt;th>操作系统&lt;/th>
+ &lt;th>设备&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>server1&lt;/td>
+ &lt;td>192.168.0.2&lt;/td>
+ &lt;td>Ubuntu 16.04，4 核，4 GB 内存&lt;/td>
+ &lt;td>/dev/vdd 300 GB&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>server2&lt;/td>
+ &lt;td>192.168.0.3&lt;/td>
+ &lt;td>Ubuntu 16.04，4 核，4 GB 内存&lt;/td>
+ &lt;td>/dev/vdd 300 GB&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>server3&lt;/td>
+ &lt;td>192.168.0.4&lt;/td>
+ &lt;td>Ubuntu 16.04，4 核，4 GB 内存&lt;/td>
+ &lt;td>/dev/vdd 300 GB&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p></description></item></channel></rss>

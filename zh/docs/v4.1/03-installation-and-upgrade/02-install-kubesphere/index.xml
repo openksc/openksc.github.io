@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>安装 KubeSphere on</title><link>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/</link><description>Recent content in 安装 KubeSphere on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/index.xml" rel="self" type="application/rss+xml"/><item><title>在 Linux 上安装 Kubernetes 和 KubeSphere</title><link>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何安装 Kubernetes 和 KubeSphere。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>安装过程中将用到开源工具 KubeKey。有关 KubeKey 的更多信息，请访问 &lt;a href="https://github.com/kubesphere/kubekey">GitHub KubeKey 仓库&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>您需要准备至少 1 台 Linux 服务器作为集群节点。在生产环境中，为确保集群具备高可用性，建议准备至少 5 台 Linux 服务器，其中 3 台作为控制平面节点，另外 2 台作为工作节点。如果您在多台 Linux 服务器上安装 KubeSphere，请确保所有服务器属于同一子网。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>集群节点的操作系统和版本须为 Ubuntu 16.04、Ubuntu 18.04、Ubuntu 20.04、Ubuntu 22.04、Debian 9、Debian 10、CentOS 7、CentOS Stream、RHEL 7、RHEL 8、SLES 15 或 openSUSE Leap 15。多台服务器的操作系统可以不同。关于其它操作系统和版本支持，请联系 KubeSphere 技术支持。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在生产环境中，为确保集群具有足够的计算和存储资源，建议每台集群节点配置至少 8 个 CPU 核心、16 GB 内存和 200 GB 磁盘空间。除此之外，建议在每台集群节点的 &lt;strong>/var/lib/docker&lt;/strong>（对于 Docker）或 &lt;strong>/var/lib/containerd&lt;/strong>（对于 containerd） 目录额外挂载至少 200 GB 磁盘空间用于存储容器运行时数据。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在生产环境中，建议提前为 KubeSphere 集群配置高可用性以避免单个控制平面节点出现故障时集群服务中断。有关更多信息，请参阅&lt;a href="../../../03-installation-and-upgrade/01-preparations/02-configure-high-availability/02-configure-k8s-high-availability/">配置高可用性&lt;/a>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>如果您规划了多个控制平面节点，请务必提前为集群配置高可用性。&lt;/p>
+&lt;/div></description></item><item><title>离线安装 KubeSphere</title><link>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/03-offline-installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/03-offline-installation/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何使用 KubeKey 在联网状态下制作离线包，并在离线环境中部署 Kubernetes 和 KubeSphere。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>参考如下示例准备至少三台主机。&lt;/p>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 16.6666%;"/>
+&lt;col style="width: 16.6666%;"/>
+&lt;col style="width: 66.6668%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">主机 IP&lt;/th>
+&lt;th class="tableblock halign-left valign-top">主机名称&lt;/th>
+&lt;th class="tableblock halign-left valign-top">角色&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>192.168.0.2&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>node1&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>联网主机，用于制作离线包&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>192.168.0.3&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>master&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>离线环境的主节点&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>192.168.0.4&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>node2&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>离线环境的镜像仓库节点（若已有镜像仓库，可忽略）&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/li>
+&lt;li>
+&lt;p>master 和 node2 上需安装 socat 和 conntrack。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">apt install socat conntrack -y&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>如果集群节点使用其他操作系统，请将 &lt;strong>apt&lt;/strong> 替换为操作系统对应的软件包管理工具。&lt;/p>
+&lt;/div></description></item><item><title>配置 KubeSphere 高可用性</title><link>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/04-configure-ks-high-availability/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/04-configure-ks-high-availability/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何配置 KubeSphere 的高可用性。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon attention">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">注意&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>KubeSphere 的高可用性建立在 Kubernetes 控制平面节点高可用的基础上，因此需先确保 Kubernetes 为高可用部署。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_1_高可用架构概述">1. 高可用架构概述&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>KubeSphere 支持高可用部署，可通过 &lt;code>ha.enabled&lt;/code> 开启。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>在高可用模式下，Redis 支持两种部署方式：&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Redis 单实例模式&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Redis 高可用模式 (Redis HA)&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_2_版本兼容性">2. 版本兼容性&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>KubeSphere 高可用配置适用于 KubeSphere v4.1.2 及之后更新的版本。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_3_kubesphere_高可用配置">3. KubeSphere 高可用配置&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="sect2">
+&lt;h3 id="_3_1_启用高可用模式">3.1 启用高可用模式&lt;/h3>
+&lt;div class="paragraph">
+&lt;p>创建 &lt;code>values.yaml&lt;/code> 文件，添加如下配置。&lt;/p>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-yaml" data-lang="yaml">ha:
+ enabled: true&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_4_redis_配置">4. Redis 配置&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>根据需求选择 Redis 单实例模式或 Redis 高可用模式，在上一步创建的 &lt;code>values.yaml&lt;/code> 文件中继续添加对应的配置。&lt;/p>
+&lt;/div>
+&lt;div class="sect2">
+&lt;h3 id="_4_1_redis_单实例模式">4.1 Redis 单实例模式&lt;/h3>
+&lt;div class="paragraph">
+&lt;p>适用于小型集群，配置简单，资源消耗较少。&lt;/p>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-yaml" data-lang="yaml">redis:
+ port: 6379
+ replicaCount: 1
+ image:
+ repository: kubesphereio/redis
+ tag: 7.2.4-alpine
+ pullPolicy: IfNotPresent
+ persistentVolume:
+ enabled: true
+ size: 2Gi&lt;/code>&lt;/pre>
+&lt;/div></description></item><item><title>附录：KubeSphere Core 高级配置</title><link>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/05-appendix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/05-appendix/</guid><description>&lt;div class="sect1">
+&lt;h2 id="_kubesphere_helm_chart_选项">KubeSphere Helm Chart 选项&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="sect2">
+&lt;h3 id="_常用选项">常用选项&lt;/h3>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 60%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">选项&lt;/th>
+&lt;th class="tableblock halign-left valign-top">默认值&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">adminPassword&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&amp;#34;&amp;#34;&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>string - 为第一个管理员用户设置引导密码。登录后，管理员需要重置密码。如不设置，会使用内置默认密码 &lt;strong>P@88w0rd&lt;/strong>。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">portal.hostname&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&amp;#34;ks-console.kubesphere-system.svc&amp;#34;&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>string - KubeSphere Console 的完全限定域名。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">portal.http.port&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">80&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>uint16 - KubeSphere Console 的 HTTP 端口。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">portal.https.port&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">443&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>uint16 - KubeSphere Console 的 HTTPS 端口。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">ingress.enabled&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">false&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>bool - 如果值为 true, 创建 KubeSphere Ingress 网关。&lt;/p>
+&lt;/div></description></item></channel></rss>

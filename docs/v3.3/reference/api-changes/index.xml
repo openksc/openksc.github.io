@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>API Changes on</title><link>https://openksc.github.io/docs/v3.3/reference/api-changes/</link><description>Recent content in API Changes on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v3.3/reference/api-changes/index.xml" rel="self" type="application/rss+xml"/><item><title>Logging</title><link>https://openksc.github.io/docs/v3.3/reference/api-changes/logging/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/reference/api-changes/logging/</guid><description>&lt;p>The API changes of the component &lt;strong>logging&lt;/strong> in KubeSphere 3.3.&lt;/p>
+&lt;h2 id="time-format">Time Format&lt;/h2>
+&lt;p>The time format of query parameters must be Unix timestamps (the number of seconds that has elapsed since the Unix epoch). Milliseconds are no longer allowed. The change affects the parameters &lt;code>start_time&lt;/code> and &lt;code>end_time&lt;/code>.&lt;/p>
+&lt;h2 id="deprecated-apis">Deprecated APIs&lt;/h2>
+&lt;p>The following APIs are removed:&lt;/p>
+&lt;ul>
+&lt;li>GET /workspaces/{workspace}&lt;/li>
+&lt;li>GET /namespaces/{namespace}&lt;/li>
+&lt;li>GET /namespaces/{namespace}/workloads/{workload}&lt;/li>
+&lt;li>GET /namespaces/{namespace}/pods/{pod}&lt;/li>
+&lt;li>The whole log setting API group&lt;/li>
+&lt;/ul>
+&lt;h2 id="fluent-operator">Fluent Operator&lt;/h2>
+&lt;p>In KubeSphere 3.3, the whole log setting APIs are removed from the KubeSphere core since the project Fluent Operator is refactored in an incompatible way. Please refer to &lt;a href="https://github.com/kubesphere/fluentbit-operator" target="_blank" rel="noopener noreferrer">Fluent Operator docs&lt;/a> for how to configure log collection in KubeSphere 3.3.&lt;/p></description></item><item><title>Monitoring</title><link>https://openksc.github.io/docs/v3.3/reference/api-changes/monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/reference/api-changes/monitoring/</guid><description>&lt;h2 id="api-version">API Version&lt;/h2>
+&lt;p>The monitoring API version is bumped to &lt;code>v1alpha3&lt;/code>.&lt;/p>
+&lt;h2 id="time-format">Time Format&lt;/h2>
+&lt;p>The time format of query parameters must be in Unix timestamps (the number of seconds that has elapsed since the Unix epoch). Decimals are no longer allowed. The change affects the parameters &lt;code>start&lt;/code>, &lt;code>end&lt;/code> and &lt;code>time&lt;/code>.&lt;/p>
+&lt;h2 id="deprecated-metrics">Deprecated Metrics&lt;/h2>
+&lt;p>In KubeSphere 3.3, the metrics on the left have been renamed to the ones on the right.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>V2.0&lt;/th>
+ &lt;th>V3.3&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>workload_pod_cpu_usage&lt;/td>
+ &lt;td>workload_cpu_usage&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>workload_pod_memory_usage&lt;/td>
+ &lt;td>workload_memory_usage&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>workload_pod_memory_usage_wo_cache&lt;/td>
+ &lt;td>workload_memory_usage_wo_cache&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>workload_pod_net_bytes_transmitted&lt;/td>
+ &lt;td>workload_net_bytes_transmitted&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>workload_pod_net_bytes_received&lt;/td>
+ &lt;td>workload_net_bytes_received&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>The following metrics have been deprecated and removed.&lt;/p></description></item><item><title>Notification</title><link>https://openksc.github.io/docs/v3.3/reference/api-changes/notification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/reference/api-changes/notification/</guid><description>&lt;h2 id="api-version">API Version&lt;/h2>
+&lt;p>The notification API version is bumped to &lt;code>v2alpha1&lt;/code>.&lt;/p>
+&lt;h2 id="deprecated-api">Deprecated API&lt;/h2>
+&lt;p>In KubeSphere 3.1.0, the APIs of version &lt;code>v1&lt;/code> are deprecated:.&lt;/p></description></item></channel></rss>

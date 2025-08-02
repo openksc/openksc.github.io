@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Introduction to KubeSphere on</title><link>https://openksc.github.io/docs/v3.3/introduction/</link><description>Recent content in Introduction to KubeSphere on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v3.3/introduction/index.xml" rel="self" type="application/rss+xml"/><item><title>What is KubeSphere</title><link>https://openksc.github.io/docs/v3.3/introduction/what-is-kubesphere/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/introduction/what-is-kubesphere/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>KubeSphere is a &lt;strong>distributed operating system for cloud-native application management&lt;/strong>, using &lt;a href="https://kubernetes.io" target="_blank" rel="noopener noreferrer">Kubernetes&lt;/a> as its kernel. It provides a plug-and-play architecture, allowing third-party applications to be seamlessly integrated into its ecosystem.&lt;/p>
+&lt;p>KubeSphere also represents a multi-tenant enterprise-grade &lt;a href="https://kubesphere.io" target="_blank" rel="noopener noreferrer">Kubernetes container platform&lt;/a> with full-stack automated IT operation and streamlined &lt;a href="https://kubesphere.io/devops/" target="_blank" rel="noopener noreferrer">DevOps workflows&lt;/a>. It provides developer-friendly wizard web UI, helping enterprises to build out a robust and feature-rich platform. It boasts the most common functionalities needed for enterprise Kubernetes strategies, such as &lt;strong>Kubernetes resource management&lt;/strong>, &lt;strong>DevOps (CI/CD)&lt;/strong>, &lt;strong>application lifecycle management&lt;/strong>, &lt;strong>monitoring&lt;/strong>, &lt;strong>logging&lt;/strong>, &lt;strong>service mesh&lt;/strong>, &lt;strong>multi-tenancy&lt;/strong>, &lt;strong>alerting and notification&lt;/strong>, &lt;strong>auditing&lt;/strong>, &lt;strong>storage and networking&lt;/strong>, &lt;strong>autoscaling&lt;/strong>, &lt;strong>access control&lt;/strong>, &lt;strong>GPU support&lt;/strong>, &lt;strong>multi-cluster deployment and management&lt;/strong>, &lt;strong>network policy&lt;/strong>, &lt;strong>registry management&lt;/strong>, and &lt;strong>security management&lt;/strong>.&lt;/p></description></item><item><title>KubeSphere Ecosystem Tools</title><link>https://openksc.github.io/docs/v3.3/introduction/ecosystem/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/introduction/ecosystem/</guid><description>&lt;h2 id="abundant-ecosystem-tools">Abundant Ecosystem Tools&lt;/h2>
+&lt;p>KubeSphere integrates &lt;strong>a wide breadth of major ecosystem tools related to Kubernetes&lt;/strong>, ranging from cloud-native apps to the underlying container runtimes. These open-source projects serve as the backend components of KubeSphere, which interact with the KubeSphere console through standard APIs, thus providing consistent user experiences to reduce complexity.&lt;/p>
+&lt;p>KubeSphere also features new capabilities that are not yet available in upstream Kubernetes, alleviating the pain points of Kubernetes including storage, network, security and usability. Not only does KubeSphere allow developers and DevOps teams use their favorite tools in a unified console, but, most importantly, these functionalities are loosely coupled with the platform since they are pluggable and optional.&lt;/p></description></item><item><title>Features</title><link>https://openksc.github.io/docs/v3.3/introduction/features/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/introduction/features/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>As an &lt;a href="https://kubesphere.io/" target="_blank" rel="noopener noreferrer">open source container platform&lt;/a>, KubeSphere provides enterprises with a robust, secure and feature-rich platform, boasting the most common functionalities needed for enterprises adopting Kubernetes, such as multi-cluster deployment and management, network policy configuration, Service Mesh (Istio-based), DevOps projects (CI/CD), security management, Source-to-Image and Binary-to-Image, multi-tenant management, multi-dimensional monitoring, log query and collection, alerting and notification, auditing, application management, and image registry management.&lt;/p>
+&lt;p>It also supports various open source storage and network solutions, as well as cloud storage services. For example, KubeSphere presents users with a powerful cloud-native tool &lt;a href="https://openelb.github.io/" target="_blank" rel="noopener noreferrer">OpenELB&lt;/a>, a CNCF-certified load balancer developed for bare metal Kubernetes clusters.&lt;/p></description></item><item><title>What's New in 3.3</title><link>https://openksc.github.io/docs/v3.3/introduction/whats-new-in-3.3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/introduction/whats-new-in-3.3/</guid><description>&lt;p>In June 2022, KubeSphere 3.3 has been released with more exciting features. This release introduces GitOps-based continuous deployment and supports Git-based code repository management to further optimize the DevOps feature. Moreover, it also provides enhanced features of storage, multi-tenancy, multi-cluster, observability, app store, service mesh, and edge computing, to further perfect the interactive design for better user experience.&lt;/p>
+&lt;p>If you want to know details about new feature of KubeSphere 3.3, you can read the article &lt;a href="../../../../news/kubesphere-3.3.0-ga-announcement/">KubeSphere 3.3.0: Embrace GitOps&lt;/a>.&lt;/p></description></item><item><title>Architecture</title><link>https://openksc.github.io/docs/v3.3/introduction/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/introduction/architecture/</guid><description>&lt;h2 id="separation-of-frontend-and-backend">Separation of frontend and backend&lt;/h2>
+&lt;p>KubeSphere separates &lt;a href="https://github.com/kubesphere/console" target="_blank" rel="noopener noreferrer">frontend&lt;/a> from &lt;a href="https://github.com/kubesphere/kubesphere" target="_blank" rel="noopener noreferrer">backend&lt;/a>, and it itself is a cloud native application and provides open standard REST APIs for external systems to use. Please see &lt;a href="../../reference/api-docs/">API documentation&lt;/a> for details. The following figure is the system architecture. KubeSphere can run anywhere from on-premise datacenter to any cloud to edge. In addition, it can be deployed on any Kubernetes distribution.&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-docs/png/20190810073322.png" alt="Architecture">&lt;/p>
+&lt;h2 id="components-list">Components List&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Back-end component&lt;/th>
+ &lt;th>Function description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>ks-apiserver&lt;/td>
+ &lt;td>The KubeSphere API server validates and configures data for the API objects which include Kubernetes objects. The API Server services REST operations and provides the frontend to the cluster's shared state through which all other components interact.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ks-console&lt;/td>
+ &lt;td>KubeSphere console offers KubeSphere console service&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ks-controller-manager&lt;/td>
+ &lt;td>KubeSphere controller takes care of business logic, for example, when create a workspace, the controller will automatically create corresponding permissions and configurations for it.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>metrics-server&lt;/td>
+ &lt;td>Kubernetes monitoring component collects metrics from Kubelet on each node.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Prometheus&lt;/td>
+ &lt;td>provides monitoring metrics and services of clusters, nodes, workloads, API objects.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Elasticsearch&lt;/td>
+ &lt;td>provides log indexing, querying and data management. Besides the built-in service, KubeSphere supports the integration of external Elasticsearch service.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Fluent Bit&lt;/td>
+ &lt;td>collects logs and forwarding them to ElasticSearch or Kafka.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Jenkins&lt;/td>
+ &lt;td>provides CI/CD pipeline service.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>SonarQube&lt;/td>
+ &lt;td>is an optional component that provides code static checking and quality analysis.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Source-to-Image&lt;/td>
+ &lt;td>automatically compiles and packages source code into Docker image.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Istio&lt;/td>
+ &lt;td>provides microservice governance and traffic control, such as grayscale release, canary release, circuit break, traffic mirroring and so on.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Jaeger&lt;/td>
+ &lt;td>collects sidecar data and provides distributed tracing service.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>OpenPitrix&lt;/td>
+ &lt;td>provides application lifecycle management such as template management, deployment, app store management, etc.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Alert&lt;/td>
+ &lt;td>provides configurable alert service for cluster, workload, Pod, and container etc.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Notification&lt;/td>
+ &lt;td>is an integrated notification service; it currently supports mail delivery method.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Redis&lt;/td>
+ &lt;td>caches the data of ks-console and ks-account.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>MySQL&lt;/td>
+ &lt;td>is the shared database for cluster back-end components including monitoring, alarm, DevOps, OpenPitrix etc.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>PostgreSQL&lt;/td>
+ &lt;td>SonarQube and Harbor's back-end database&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>OpenLDAP&lt;/td>
+ &lt;td>is responsible for centralized storage and management of user account and integrates with external LDAP server.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Storage&lt;/td>
+ &lt;td>built-in CSI plug-in collecting cloud platform storage services. It supports open source NFS/Ceph/Gluster client.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Network&lt;/td>
+ &lt;td>supports Calico/Flannel and other open source network plug-ins to integrate with cloud platform SDN.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="service-components">Service Components&lt;/h2>
+&lt;p>Each component has many services. See &lt;a href="../../pluggable-components/overview/">Overview&lt;/a> for more details.&lt;/p></description></item><item><title>Advantages</title><link>https://openksc.github.io/docs/v3.3/introduction/advantages/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/introduction/advantages/</guid><description>&lt;h2 id="vision">Vision&lt;/h2>
+&lt;p>Kubernetes has become the de facto standard for deploying containerized applications at scale in private, public and hybrid cloud environments. However, many people can easily get confused when they start to use Kubernetes as it is complicated and has many additional components to manage. Some components need to be installed and deployed by users themselves, such as storage and network services. At present, Kubernetes only provides open-source solutions or projects, which can be difficult to install, maintain and operate to some extent. For users, it is not always easy to quickly get started as they are faced with a steep learning curve.&lt;/p></description></item><item><title>Use Cases</title><link>https://openksc.github.io/docs/v3.3/introduction/scenarios/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/introduction/scenarios/</guid><description>&lt;p>KubeSphere is applicable in a variety of scenarios. For enterprises that deploy their business system on bare metal, their business modules are tightly coupled with each other. That means it is extremely difficult for resources to be horizontally scaled. In this connection, KubeSphere provides enterprises with containerized environments with a complete set of features for management and operation. It empowers enterprises to rise to the challenges in the middle of their digital transformation, including agile software development, automated operation and maintenance, microservices governance, traffic management, autoscaling, high availability, as well as DevOps and CI/CD.&lt;/p></description></item></channel></rss>

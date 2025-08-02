@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>External Authentication on</title><link>https://openksc.github.io/docs/v4.1/04-platform-management/03-platform-settings/03-external-authentication/</link><description>Recent content in External Authentication on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/04-platform-management/03-platform-settings/03-external-authentication/index.xml" rel="self" type="application/rss+xml"/><item><title>Configure External Authentication</title><link>https://openksc.github.io/docs/v4.1/04-platform-management/03-platform-settings/03-external-authentication/01-set-up-external-authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/04-platform-management/03-platform-settings/03-external-authentication/01-set-up-external-authentication/</guid><description>&lt;div class="paragraph">
+&lt;p>KubeSphere supports setting up external authentication. Platform administrators can configure identity providers through Secrets.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>After configuring external identity providers, users can log in to the KubeSphere web console using usernames and passwords from LDAP, CAS, GitHub, Alibaba Cloud IDaaS, or OpenID Connect.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user having the &lt;strong>platform-admin&lt;/strong> role.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Cluster Management&lt;/strong> and then enter the &lt;strong>host&lt;/strong> cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Configuration &amp;gt; ConfigMap&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Create&lt;/strong> on the page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Create Secrets&lt;/strong> dialog, toggle the &lt;strong>Edit YAML&lt;/strong> switch in the top right corner to create a secret using YAML.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Modify the YAML file according to the example and configuration instructions below. Once configured, click &lt;strong>Create&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Log out of the KubeSphere web console. On the login page, enter the username and password for LDAP, CAS, GitHub, Alibaba Cloud IDaaS, or OpenID Connect based on the configured external authentication type.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item></channel></rss>

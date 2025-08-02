@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>API 变更 on</title><link>https://openksc.github.io/zh/docs/v3.4/reference/api-changes/</link><description>Recent content in API 变更 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v3.4/reference/api-changes/index.xml" rel="self" type="application/rss+xml"/><item><title>日志系统</title><link>https://openksc.github.io/zh/docs/v3.4/reference/api-changes/logging/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/reference/api-changes/logging/</guid><description>&lt;p>KubeSphere 3.4 中&lt;strong>日志系统&lt;/strong>（服务组件）的 API 变更。&lt;/p>
+&lt;h2 id="时间格式">时间格式&lt;/h2>
+&lt;p>查询参数的时间格式必须是 Unix 时间戳（自 Unix Epoch 以来已经过去的秒数）。不再支持使用毫秒。该变更影响 &lt;code>start_time&lt;/code> 和 &lt;code>end_time&lt;/code> 参数。&lt;/p>
+&lt;h2 id="已弃用的-api">已弃用的 API&lt;/h2>
+&lt;p>下列 API 已移除：&lt;/p>
+&lt;ul>
+&lt;li>GET /workspaces/{workspace}&lt;/li>
+&lt;li>GET /namespaces/{namespace}&lt;/li>
+&lt;li>GET /namespaces/{namespace}/workloads/{workload}&lt;/li>
+&lt;li>GET /namespaces/{namespace}/pods/{pod}&lt;/li>
+&lt;li>整个日志设置 API 组&lt;/li>
+&lt;/ul>
+&lt;h2 id="fluent-operator">Fluent Operator&lt;/h2>
+&lt;p>在 KubeSphere 3.4 中，由于 Fluent Operator 项目已重构且不兼容，整个日志设置 API 已从 KubeSphere 内核中移除。有关如何在 KubeSphere 3.4 中配置日志收集，请参考 &lt;a href="https://github.com/kubesphere/fluentbit-operator" target="_blank" rel="noopener noreferrer">Fluent Operator&lt;/a> 文档。&lt;/p></description></item><item><title>监控系统</title><link>https://openksc.github.io/zh/docs/v3.4/reference/api-changes/monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/reference/api-changes/monitoring/</guid><description>&lt;h2 id="api-版本">API 版本&lt;/h2>
+&lt;p>监控系统 API 版本已提升至 &lt;code>v1alpha3&lt;/code>。&lt;/p>
+&lt;h2 id="时间格式">时间格式&lt;/h2>
+&lt;p>查询参数的时间格式必须是 Unix 时间戳（自 Unix Epoch 以来已经过去的秒数）。不再支持使用小数。该变更影响 &lt;code>start&lt;/code>、&lt;code>end&lt;/code> 和 &lt;code>time&lt;/code> 参数。&lt;/p>
+&lt;h2 id="已弃用的指标">已弃用的指标&lt;/h2>
+&lt;p>在 KubeSphere 3.4 中，下表左侧的指标已重命名为右侧的指标。&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>V2.0&lt;/th>
+ &lt;th>V3.4&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>workload_pod_cpu_usage&lt;/td>
+ &lt;td>workload_cpu_usage&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>workload_pod_memory_usage&lt;/td>
+ &lt;td>workload_memory_usage&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>workload_pod_memory_usage_wo_cache&lt;/td>
+ &lt;td>workload_memory_usage_wo_cache&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>workload_pod_net_bytes_transmitted&lt;/td>
+ &lt;td>workload_net_bytes_transmitted&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>workload_pod_net_bytes_received&lt;/td>
+ &lt;td>workload_net_bytes_received&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>下列指标已被弃用并移除。&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>已弃用的指标&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>cluster_workspace_count&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>cluster_account_count&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>cluster_devops_project_count&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>coredns_up_sum&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>coredns_cache_hits&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>coredns_cache_misses&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>coredns_dns_request_rate&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>coredns_dns_request_duration&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>coredns_dns_request_duration_quantile&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>coredns_dns_request_by_type_rate&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>coredns_dns_request_by_rcode_rate&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>coredns_panic_rate&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>coredns_proxy_request_rate&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>coredns_proxy_request_duration&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>coredns_proxy_request_duration_quantile&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>prometheus_up_sum&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>prometheus_tsdb_head_samples_appended_rate&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>KubeSphere 3.4 中引入的新指标。&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>新指标&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>kubesphere_workspace_count&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>kubesphere_user_count&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>kubesphere_cluser_count&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>kubesphere_app_template_count&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="响应字段">响应字段&lt;/h2>
+&lt;p>在 KubeSphere 3.4 中，已移除响应字段 &lt;code>metrics_level&lt;/code>、&lt;code>status&lt;/code> 和 &lt;code>errorType&lt;/code>。&lt;/p>
+&lt;p>另外，字段名称 &lt;code>resource_name&lt;/code> 已替换为具体资源类型名称。这些类型是 &lt;code>node&lt;/code>、&lt;code>workspace&lt;/code>、&lt;code>namespace&lt;/code>、&lt;code>workload&lt;/code>、&lt;code>pod&lt;/code>、&lt;code>container&lt;/code> 和 &lt;code>persistentvolumeclaim&lt;/code>。例如，您将获取 &lt;code>node: node1&lt;/code>，而不是 &lt;code>resource_name: node1&lt;/code>。请参见以下示例响应：&lt;/p></description></item></channel></rss>

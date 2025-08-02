@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>外部身份验证 on</title><link>https://openksc.github.io/zh/docs/v4.1/04-platform-management/03-platform-settings/03-external-authentication/</link><description>Recent content in 外部身份验证 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/04-platform-management/03-platform-settings/03-external-authentication/index.xml" rel="self" type="application/rss+xml"/><item><title>配置外部身份验证</title><link>https://openksc.github.io/zh/docs/v4.1/04-platform-management/03-platform-settings/03-external-authentication/01-set-up-external-authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/04-platform-management/03-platform-settings/03-external-authentication/01-set-up-external-authentication/</guid><description>&lt;div class="paragraph">
+&lt;p>KubeSphere 支持设置外部身份验证，平台管理员可以通过 secret（保密字典）配置身份提供者。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>配置外部身份提供者后，允许使用 LDAP、CAS、GitHub、阿里云 IDaas、或 OpenID Connect 的用户名和密码登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有 &lt;strong>platform-admin&lt;/strong> 角色的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>集群管理&lt;/strong>，并进入 host 集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>配置 &amp;gt; 保密字典&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>创建保密字典&lt;/strong>对话框，点击右上角的&lt;strong>编辑 YAML&lt;/strong> 开关，使用 yaml 创建保密字典。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>按照以下示例及配置说明修改 yaml 文件，配置完成后，点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>登出 KubeSphere Web 控制台，在登录页面，根据配置的外部身份验证类型，输入 LDAP、CAS、GitHub、阿里云 IDaas、或 OpenID Connect 的用户名和密码登录。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>多集群环境中，只需要在主集群中进行配置。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_openldap_示例_yaml">OpenLDAP 示例 yaml&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-yaml" data-lang="yaml">apiVersion: v1
+kind: Secret
+metadata:
+ namespace: kubesphere-system
+ name: identity-provider-ldap
+ labels:
+ config.kubesphere.io/type: identityprovider
+stringData:
+ configuration.yaml: |
+ name: openldap
+ type: LDAPIdentityProvider
+ mappingMethod: auto
+ provider:
+ host: &amp;#34;192.168.0.2:389&amp;#34;
+ managerDN: uid=root,cn=users,dc=nas
+ managerPassword: &amp;#34;********&amp;#34;
+ userSearchBase: cn=users,dc=nas
+ loginAttribute: uid
+ mailAttribute: mail
+type: config.kubesphere.io/identityprovider&lt;/code>&lt;/pre>
+&lt;/div></description></item></channel></rss>

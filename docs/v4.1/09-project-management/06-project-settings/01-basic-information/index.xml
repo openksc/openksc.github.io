@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Basic Information on</title><link>https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/01-basic-information/</link><description>Recent content in Basic Information on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/01-basic-information/index.xml" rel="self" type="application/rss+xml"/><item><title>View Project Basic Information</title><link>https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/01-basic-information/01-view-project-basic-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/01-basic-information/01-view-project-basic-information/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to view project basic information.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a project and have the &lt;strong>Project Settings Viewing&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Project Settings Viewing&lt;/strong> permission, and access your project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Project Settings &amp;gt; Basic Information&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>The &lt;strong>Basic Information&lt;/strong> page provides the following information:&lt;/p>
+&lt;/div></description></item><item><title>Edit Project Basic Information</title><link>https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/01-basic-information/02-edit-project-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/01-basic-information/02-edit-project-information/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to edit project basic information.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>You can edit the alias and description of a project. KubeSphere does not support editing the name of an already created project.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a project and have the &lt;strong>Project Settings Management&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Project Settings Management&lt;/strong> permission, and access your project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Project Settings &amp;gt; Basic Information&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Basic Information&lt;/strong> page, click &lt;strong>Manage&lt;/strong>, then select &lt;strong>Edit Information&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Edit Information&lt;/strong> dialog, set the alias and description for the project, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Alias&lt;/p>
+&lt;/div></description></item><item><title>Edit Project Quotas</title><link>https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/01-basic-information/03-edit-project-quotas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/01-basic-information/03-edit-project-quotas/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to edit project quotas.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Project quotas include the following settings:&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Resource Request: Container resource request is the system’s reserved resources for a single container, and project resource request is the maximum value of the sum of all container resource requests in the project. KubeSphere currently supports setting CPU request and memory request for the project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Resource Limit: Container resource limit is the upper limit of resources that a single container can use, and project resource limit is the maximum value of the sum of all container resource limits in the project. KubeSphere currently supports setting CPU limit, memory limit, and GPU limit for the project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Storage Resource Quota: Limitations on the total amount of storage resources in the project, including the total amount of storage resources and associated resources with storage classes.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Application Resource Quota: Upper limits on the quantity of Pods, Deployments, StatefulSets, DaemonSets, Jobs, CronJobs, Persistent Volume Claims, Services, Ingresses, Secrets, and ConfigMaps that can be created in the project.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Edit Default Container Quotas</title><link>https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/01-basic-information/04-edit-default-container-quotas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/01-basic-information/04-edit-default-container-quotas/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to edit default container quotas.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Default container quotas are the default values for resource request and resource limit for containers in the project. When creating containers in the project, if users do not specify resource request and limit, the containers will automatically use the default container quotas.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Default container quotas include two types of settings:&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Resource Request: Resources reserved by the system for containers.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Resource Limit: The upper limit of resources that containers can use.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Delete Projects</title><link>https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/01-basic-information/05-delete-a-project/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/09-project-management/06-project-settings/01-basic-information/05-delete-a-project/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to delete projects.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Warning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Once a project is deleted, it cannot be recovered, and all resources within the project will be deleted. Please proceed with caution.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a project and have the &lt;strong>Project Settings Management&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Project Settings Management&lt;/strong> permission, and access your project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Project Settings &amp;gt; Basic Information&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Basic Information&lt;/strong> page, click &lt;strong>Manage&lt;/strong>, then select &lt;strong>Delete Project&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Delete Project&lt;/strong> dialog, enter the project name, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item></channel></rss>

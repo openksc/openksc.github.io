@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>应用分类 on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/02-app-categories/</link><description>Recent content in 应用分类 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/02-app-categories/index.xml" rel="self" type="application/rss+xml"/><item><title>管理应用分类</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/02-app-categories/01-manage-app-categories/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/02-app-categories/01-manage-app-categories/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何创建、编辑和删除应用分类。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要在 KubeSphere 平台具有&lt;strong>应用商店管理&lt;/strong>权限。有关更多信息，请参阅“平台角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 应用商店管理&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>应用商店管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右上角点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/grid.svg" alt="grid" width="18" height="18"/>&lt;/span>图标，选择&lt;strong>应用商店管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>应用分类&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>应用分类&lt;/strong>页面，根据需要创建、编辑或删除应用分类。&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>在应用分类列表右上角点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/add-light.svg" alt="add" width="18" height="18"/>&lt;/span>，在弹出的对话框设置应用分类的名称和图标，然后点击&lt;strong>确定&lt;/strong>可创建应用分类。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在已有的应用分类右侧点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/pen-light.svg" alt="pen" width="18" height="18"/>&lt;/span>，可编辑应用分类名称和图标。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在已有的应用分类右侧点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/trash-light.svg" alt="trash-light" width="18" height="18"/>&lt;/span>，然后在弹出的对话框中点击&lt;strong>确定&lt;/strong>可删除应用分类。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>删除应用分类前，您需要先将分类中的应用分配到其他分类或设置为&lt;strong>未分类&lt;/strong>。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>设置应用所属的分类</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/02-app-categories/02-set-the-category-of-an-app/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/02-app-categories/02-set-the-category-of-an-app/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何设置应用所属的分类。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要在 KubeSphere 平台具有&lt;strong>应用商店管理&lt;/strong>权限。有关更多信息，请参阅“平台角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 应用商店管理&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>应用商店管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右上角点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/grid.svg" alt="grid" width="18" height="18"/>&lt;/span>图标，选择&lt;strong>应用商店管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>应用分类&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在应用模板列表中，选择需要操作的应用模板左侧的复选框，然后在列表上方点击&lt;strong>更改分类&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>更改分类&lt;/strong>对话框，设置应用的分类，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

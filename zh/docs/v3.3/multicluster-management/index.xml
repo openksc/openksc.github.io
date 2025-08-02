@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>多集群管理 on</title><link>https://openksc.github.io/zh/docs/v3.3/multicluster-management/</link><description>Recent content in 多集群管理 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v3.3/multicluster-management/index.xml" rel="self" type="application/rss+xml"/><item><title>移除成员集群</title><link>https://openksc.github.io/zh/docs/v3.3/multicluster-management/unbind-cluster/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/multicluster-management/unbind-cluster/</guid><description>&lt;p>本教程演示如何在 KubeSphere 控制台移除成员集群。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;ul>
+&lt;li>您已经启用多集群管理。&lt;/li>
+&lt;li>您需要有一个拥有&lt;strong>集群管理&lt;/strong>权限角色的用户。例如，您可以直接以 &lt;code>admin&lt;/code> 身份登录控制台，或者创建一个拥有该权限的新角色并授予至一个用户。&lt;/li>
+&lt;/ul>
+&lt;h2 id="移除成员集群">移除成员集群&lt;/h2>
+&lt;p>你可以使用以下任一方法移除成员集群：&lt;/p>
+&lt;p>&lt;strong>方法 1&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>点击左上角的&lt;strong>平台管理&lt;/strong>，选择&lt;strong>集群管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>成员集群&lt;/strong>区域，点击要从中央控制平面移除的集群右侧的 &lt;img src="https://openksc.github.io/images/docs/v3.x/common-icons/three-dots.png" height="20" />，点击&lt;strong>移除集群&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的&lt;strong>移除集群&lt;/strong>对话框，请仔细阅读风险提示信息。如果您仍然想移除成员集群，输入集群名称，点击&lt;strong>确定&lt;/strong>以移除成员集群。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>方法 2&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>点击左上角的&lt;strong>平台管理&lt;/strong>，选择&lt;strong>集群管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>成员集群&lt;/strong>区域，请点击要从中央控制平面移除的集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>集群设置&lt;/strong> &amp;gt; &lt;strong>基本信息&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>集群信息&lt;/strong>右侧，点击&lt;strong>管理&lt;/strong> &amp;gt; &lt;strong>移除集群&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的&lt;strong>移除集群&lt;/strong>对话框，请仔细阅读风险提示信息。如果您仍然想移除成员集群，输入集群名称，点击&lt;strong>确定&lt;/strong>以移除成员集群。&lt;/p>
+&lt;div class="notices warning">
+ 
+ &lt;p>警告&lt;/p>
+ &lt;div>&lt;ul>
+&lt;li>
+&lt;p>集群被移除后，集群中原有的资源不会被自动清除。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>集群被移除后，集群中原有的多集群配置数据不会被自动清除，卸载 KubeSphere 或删除关联资源时会导致用户数据丢失。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>执行以下命令手动清理被移除集群中的多集群配置数据：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> ns in &lt;span style="color:#66d9ef">$(&lt;/span>kubectl get ns --field-selector status.phase!&lt;span style="color:#f92672">=&lt;/span>Terminating -o jsonpath&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;{.items[*].metadata.name}&amp;#39;&lt;/span>&lt;span style="color:#66d9ef">)&lt;/span>; &lt;span style="color:#66d9ef">do&lt;/span> kubectl label ns $ns kubesphere.io/workspace- &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> kubectl patch ns $ns --type merge -p &lt;span style="color:#e6db74">&amp;#39;{&amp;#34;metadata&amp;#34;:{&amp;#34;ownerReferences&amp;#34;:[]}}&amp;#39;&lt;/span>; &lt;span style="color:#66d9ef">done&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h2 id="移除不健康的集群">移除不健康的集群&lt;/h2>
+&lt;p>在某些情况下，您无法按照上述步骤移除集群。例如，您导入了一个凭证错误的集群，并且无法访问&lt;strong>集群设置&lt;/strong>。在这种情况下，请执行以下命令来移除不健康的集群：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl delete cluster &amp;lt;cluster name&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

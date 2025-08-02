@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>项目管理 on</title><link>https://openksc.github.io/zh/docs/v3.4/project-administration/</link><description>Recent content in 项目管理 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v3.4/project-administration/index.xml" rel="self" type="application/rss+xml"/><item><title>项目和多集群项目</title><link>https://openksc.github.io/zh/docs/v3.4/project-administration/project-and-multicluster-project/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/project-administration/project-and-multicluster-project/</guid><description>&lt;p>KubeSphere 中的项目即 Kubernetes &lt;a href="https://kubernetes.io/zh/docs/concepts/overview/working-with-objects/namespaces/" target="_blank" rel="noopener noreferrer">命名空间&lt;/a>，用于将资源划分成互不重叠的分组。这一功能可在多个租户之间分配集群资源，是一种逻辑分区功能。&lt;/p>
+&lt;p>多集群项目跨集群运行，能为用户提供高可用性，并在问题发生时将问题隔离在某个集群内，避免影响业务。有关更多信息，请参见&lt;a href="../../multicluster-management/">多集群管理&lt;/a>。&lt;/p>
+&lt;p>本教程演示如何管理项目和多集群项目。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;ul>
+&lt;li>您需要有一个可用的企业空间和一个用户 (&lt;code>project-admin&lt;/code>)。该用户必须在该企业空间拥有 &lt;code>workspace-self-provisioner&lt;/code> 角色。有关更多信息，请参见&lt;a href="../../quick-start/create-workspace-and-project/">创建企业空间、项目、用户和角色&lt;/a>。&lt;/li>
+&lt;li>在创建多集群项目前，您需要通过&lt;a href="../../multicluster-management/enable-multicluster/direct-connection/">直接连接&lt;/a>或&lt;a href="../../multicluster-management/enable-multicluster/agent-connection/">代理连接&lt;/a>启用多集群功能。&lt;/li>
+&lt;/ul>
+&lt;h2 id="项目">项目&lt;/h2>
+&lt;h3 id="创建项目">创建项目&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>前往企业空间的&lt;strong>项目&lt;/strong>页面，点击&lt;strong>项目&lt;/strong>选项卡下的&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>&lt;ul>
+&lt;li>
+&lt;p>您可以在&lt;strong>集群&lt;/strong>下拉列表中更改创建项目的集群。该下拉列表只有在启用多集群功能后才可见。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果页面上没有&lt;strong>创建&lt;/strong>按钮，则表示您的企业空间没有可用的集群。您需要联系平台管理员或集群管理员，以便在集群中创建企业空间资源。平台管理员或集群管理员需要在&lt;strong>集群管理&lt;/strong>页面设置&lt;strong>集群可见性&lt;/strong>，才能&lt;a href="../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/">将集群分配给企业空间&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的&lt;strong>创建项目&lt;/strong>窗口中输入项目名称，根据需要添加别名或说明。在&lt;strong>集群设置&lt;/strong>下，选择要创建项目的集群（如果没有启用多集群功能，则不会出现此选项），然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>创建的项目会显示在下图所示的列表中。您可以点击项目名称打开&lt;strong>概览&lt;/strong>页面。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="编辑项目">编辑项目&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>前往您的项目，选择&lt;strong>项目设置&lt;/strong>下的&lt;strong>基本信息&lt;/strong>，在页面右侧点击&lt;strong>管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>从下拉菜单中选择&lt;strong>编辑信息&lt;/strong>。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>项目名称无法编辑。如需修改其他信息，请参考相应的文档教程。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>若要删除项目，选择该下拉菜单中的&lt;strong>删除&lt;/strong>，在弹出的对话框中输入项目名称，点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="notices warning">
+ 
+ &lt;p>警告&lt;/p>
+ &lt;div>项目被删除后无法恢复，项目中的资源也会从项目中移除。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="多集群项目">多集群项目&lt;/h2>
+&lt;h3 id="创建多集群项目">创建多集群项目&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>前往企业空间的&lt;strong>项目&lt;/strong>页面，点击&lt;strong>多集群项目&lt;/strong>选项卡，再点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>&lt;ul>
+&lt;li>如果页面上没有&lt;strong>创建&lt;/strong>按钮，则表示您的企业空间没有可用的集群。您需要联系平台管理员或集群管理员，以便在集群中创建企业空间资源。平台管理员或集群管理员需要在&lt;strong>集群管理&lt;/strong>页面设置&lt;strong>集群可见性&lt;/strong>，才能&lt;a href="../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/">将集群分配给企业空间&lt;/a>。&lt;/li>
+&lt;li>请确保至少有两个集群已分配给您的企业空间。&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的&lt;strong>创建多集群项目&lt;/strong>窗口中输入项目名称，并根据需要添加别名或说明。在&lt;strong>集群设置&lt;/strong>下，点击&lt;strong>添加集群&lt;/strong>为项目选择多个集群，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>创建的多集群项目会显示在列表中。点击多集群项目右侧的 &lt;img src="https://openksc.github.io/images/docs/v3.x/common-icons/three-dots.png" width="15" />，从下拉菜单中选择一个操作：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>编辑信息&lt;/strong>：编辑多集群项目的基本信息。&lt;/li>
+&lt;li>&lt;strong>添加集群&lt;/strong>：在弹出对话框的下拉列表中选择一个集群并点击&lt;strong>确定&lt;/strong>，为多集群项目添加一个集群。&lt;/li>
+&lt;li>&lt;strong>删除&lt;/strong>：删除多集群项目。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="编辑多集群项目">编辑多集群项目&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>前往您的多集群项目，选择&lt;strong>项目设置&lt;/strong>下的&lt;strong>基本信息&lt;/strong>，在页面右侧点击&lt;strong>管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>从下拉菜单中选择&lt;strong>编辑信息&lt;/strong>。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>项目名称无法编辑。如需修改其他信息，请参考相应的文档教程。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>若要删除多集群项目，选择该下拉菜单中的&lt;strong>删除项目&lt;/strong>，在弹出的对话框中输入项目名称，点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="notices warning">
+ 
+ &lt;p>警告&lt;/p>
+ &lt;div>多集群项目被删除后无法恢复，项目中的资源也会从项目中移除。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol></description></item><item><title>项目角色和成员管理</title><link>https://openksc.github.io/zh/docs/v3.4/project-administration/role-and-member-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/project-administration/role-and-member-management/</guid><description>&lt;p>本教程演示如何在项目中管理角色和成员。在项目级别，您可以向角色授予以下模块中的权限：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>应用负载&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>存储管理&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>配置中心&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>监控告警&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>访问控制&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>项目设置&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;p>您需要至少创建一个项目（例如 &lt;code>demo-project&lt;/code>）。此外，您还需要准备一个在项目级别具有 &lt;code>admin&lt;/code> 角色的用户（例如 &lt;code>project-admin&lt;/code>）。有关更多信息，请参见&lt;a href="../../quick-start/create-workspace-and-project/">创建企业空间、项目、用户和角色&lt;/a>。&lt;/p>
+&lt;h2 id="内置角色">内置角色&lt;/h2>
+&lt;p>&lt;strong>项目角色&lt;/strong>页面列出了以下三个可用的内置角色。创建项目时，KubeSphere 会自动创建内置角色，并且内置角色无法进行编辑或删除。您只能查看内置角色的权限或将其分配给用户。&lt;/p>
+&lt;table>
+ &lt;tr>
+ &lt;th width="17%">内置角色&lt;/th>
+ &lt;th width="83%">描述&lt;/th>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>viewer&lt;/code>&lt;/td>
+ &lt;td>项目观察者，可以查看项目下所有的资源。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>operator&lt;/code>&lt;/td>
+ &lt;td>项目维护者，可以管理项目下除用户和角色之外的资源。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>admin&lt;/code>&lt;/td>
+ &lt;td>项目管理员，可以对项目下的所有资源执行所有操作。此角色可以完全控制项目下的所有资源。&lt;/td>
+ &lt;/tr>
+&lt;/table>
+&lt;p>若要查看角色所含权限：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>以 &lt;code>project-admin&lt;/code> 身份登录控制台。在&lt;strong>项目角色&lt;/strong>中，点击一个角色（例如，&lt;code>admin&lt;/code>）以查看角色详情。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>授权用户&lt;/strong>选项卡，查看所有被授予该角色的用户。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="创建项目角色">创建项目角色&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>转到&lt;strong>项目设置&lt;/strong>下的&lt;strong>项目角色&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>项目角色&lt;/strong>中，点击&lt;strong>创建&lt;/strong>并设置&lt;strong>角色标识符&lt;/strong>（例如，&lt;code>project-monitor&lt;/code>）。点击&lt;strong>编辑权限&lt;/strong>继续。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的窗口中，权限归类在不同的&lt;strong>功能模块&lt;/strong>下。在本示例中，为该角色选择&lt;strong>应用负载&lt;/strong>中的&lt;strong>应用负载查看&lt;/strong>，以及&lt;strong>监控告警&lt;/strong>中的&lt;strong>告警消息查看&lt;/strong>和&lt;strong>告警策略查看&lt;/strong>。点击&lt;strong>确定&lt;/strong>完成操作。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>&lt;strong>依赖于&lt;/strong>表示当前授权项依赖所列出的授权项，勾选该权限后系统会自动选上所有依赖权限。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>新创建的角色将在&lt;strong>项目角色&lt;/strong>中列出，点击右侧的 &lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/project-administration/role-and-member-management/three-dots.png" height="20px"> 以编辑该角色。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="邀请新成员">邀请新成员&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>转到&lt;strong>项目设置&lt;/strong>下的&lt;strong>项目成员&lt;/strong>，点击&lt;strong>邀请&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击右侧的 &lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/project-administration/role-and-member-management/add.png" height="20px"> 以邀请一名成员加入项目，并为其分配一个角色。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>将成员加入项目后，点击&lt;strong>确定&lt;/strong>。您可以在&lt;strong>项目成员&lt;/strong>列表中查看新邀请的成员。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>若要编辑现有成员的角色或将其从项目中移除，点击右侧的 &lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/project-administration/role-and-member-management/three-dots.png" height="20px"> 并选择对应的操作。&lt;/p>
+&lt;/li>
+&lt;/ol></description></item><item><title>项目网络隔离</title><link>https://openksc.github.io/zh/docs/v3.4/project-administration/project-network-isolation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/project-administration/project-network-isolation/</guid><description>&lt;p>项目网络隔离使项目管理员能够使用不同的规则来放行不同的网络流量。本教程演示如何开启项目间的网络隔离并设置规则控制网络流量。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;ul>
+&lt;li>已经启用&lt;a href="../../pluggable-components/network-policy/">网络策略&lt;/a>。&lt;/li>
+&lt;li>您必须有一个可用的项目和一个在项目层级拥有 &lt;code>admin&lt;/code> 角色的用户 (&lt;code>project-admin&lt;/code>)。有关更多信息，请参见&lt;a href="../../quick-start/create-workspace-and-project/">创建企业空间、项目、用户和角色&lt;/a>。&lt;/li>
+&lt;/ul>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>关于网络策略的实现，您可以参考 &lt;a href="https://github.com/kubesphere/community/blob/master/sig-network/concepts-and-designs/kubesphere-network-policy.md" target="_blank" rel="noopener noreferrer">KubeSphere NetworkPolicy&lt;/a>。&lt;/div>
+&lt;/div>
+&lt;h2 id="开启关闭项目网络隔离">开启/关闭项目网络隔离&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>以 &lt;code>project-admin&lt;/code> 身份登录 KubeSphere 控制台，进入您的项目，在&lt;strong>项目设置&lt;/strong>下选择&lt;strong>网络隔离&lt;/strong>。项目网络隔离默认关闭。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>要启用项目网络隔离，请点击&lt;strong>开启&lt;/strong>。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>当网络隔离开启时，默认放行出站流量，而不同项目的进站流量将被拒绝。若您添加出站网络策略，只有符合策略的流量才会被放行。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>您也可以在这个页面关闭网络隔离。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>关闭网络隔离时，先前创建的所有网络策略都将被删除。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="设置网络策略">设置网络策略&lt;/h2>
+&lt;p>若开启网络隔离后的默认策略无法满足您的需求，您可以自定义网络策略来满足您的需求。目前，您可以在 KubeSphere 中为集群内部的流量或来自集群外部的入站流量添加自定义网络策略。&lt;/p>
+&lt;h3 id="集群内部的流量">集群内部的流量&lt;/h3>
+&lt;p>集群内部项目层级的网络策略用于控制同一集群内的其他项目是否能访问该项目中的资源，以及您能访问哪些服务 (Service)。&lt;/p>
+&lt;p>假设在另一个项目 &lt;code>demo-project-2&lt;/code> 中已创建一个 NGINX 部署 (Deployment) 工作负载，并通过 &lt;code>nginx&lt;/code> 服务使用 &lt;code>TCP&lt;/code> 协议在 &lt;code>80&lt;/code> 端口进行暴露。下面是如何设置入站和出站流量规则的示例。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>有关如何创建工作负载的更多信息，请分别参见&lt;a href="../../project-user-guide/application-workloads/deployments/">部署&lt;/a>和&lt;a href="../../project-user-guide/application-workloads/services/">服务&lt;/a>。&lt;/div>
+&lt;/div>
+&lt;h4 id="放行来自不同项目的工作负载的入站流量">放行来自不同项目的工作负载的入站流量&lt;/h4>
+&lt;ol>
+&lt;li>
+&lt;p>在当前项目的&lt;strong>网络隔离&lt;/strong>页面，选择&lt;strong>内部白名单&lt;/strong>选项卡。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>添加白名单条目&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>流量方向&lt;/strong>下选择&lt;strong>入站&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>类型&lt;/strong>下选择&lt;strong>项目&lt;/strong>选项卡。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>选择 &lt;code>demo-project-2&lt;/code> 项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>确定&lt;/strong>，然后您可以在白名单中看到该项目。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>如果设置网络策略后仍无法访问该网络，您需要检查对等项目是否设置有相应的出站规则。&lt;/div>
+&lt;/div>
+&lt;h4 id="放行前往不同项目的服务的出站流量">放行前往不同项目的服务的出站流量&lt;/h4>
+&lt;ol>
+&lt;li>
+&lt;p>在当前项目的&lt;strong>网络隔离&lt;/strong>页面，选择&lt;strong>内部白名单&lt;/strong>选项卡。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>添加白名单条目&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>流量方向&lt;/strong>下选择&lt;strong>出站&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>类型&lt;/strong>下选择&lt;strong>服务&lt;/strong>选项卡。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在下拉列表中选择 &lt;code>demo-project-2&lt;/code> 项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>选择允许接收出站流量的服务。在本例中，请选择 &lt;code>nginx&lt;/code>。&lt;/p></description></item><item><title>容器限制范围</title><link>https://openksc.github.io/zh/docs/v3.4/project-administration/container-limit-ranges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/project-administration/container-limit-ranges/</guid><description>&lt;p>容器所使用的 CPU 和内存资源上限由&lt;a href="../../workspace-administration/project-quotas/">项目资源配额&lt;/a>指定。同时，KubeSphere 使用请求 (Request) 和限制 (Limit) 来控制单个容器的资源（例如 CPU 和内存）使用情况，在 Kubernetes 中也称为 &lt;a href="https://kubernetes.io/zh/docs/concepts/policy/limit-range/" target="_blank" rel="noopener noreferrer">LimitRange&lt;/a>。请求确保容器能够获得其所需要的资源，因为这些资源已经得到明确保障和预留。相反地，限制确保容器不能使用超过特定值的资源。&lt;/p>
+&lt;p>当您创建工作负载（例如部署）时，您可以为容器配置资源请求和资源限制。要预先填充这些请求字段和限制字段的值，您可以设置默认限制范围。&lt;/p>
+&lt;p>本教程演示如何为项目中的容器设置默认限制范围。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;p>您需要有一个可用的企业空间、一个项目和一个用户 (&lt;code>project-admin&lt;/code>)。该用户必须在项目层级拥有 &lt;code>admin&lt;/code> 角色。有关更多信息，请参见&lt;a href="../../quick-start/create-workspace-and-project/">创建企业空间、项目、用户和角色&lt;/a>。&lt;/p>
+&lt;h2 id="设置默认限制范围">设置默认限制范围&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>以 &lt;code>project-admin&lt;/code> 身份登录控制台，进入一个项目。如果该项目是新创建的项目，您在&lt;strong>概览&lt;/strong>页面上会看到默认配额尚未设置。点击&lt;strong>默认容器配额未设置&lt;/strong>旁的&lt;strong>编辑配额&lt;/strong>来配置限制范围。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框中，您可以看到 KubeSphere 默认不设置任何请求或限制。要设置请求和限制来控制 CPU 和内存资源，请移动滑块至期望的值或者直接输入数值。字段留空意味着不设置任何请求或限制。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>限制必须大于请求。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>确定&lt;/strong>完成限制范围设置。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>项目设置&lt;/strong>下的&lt;strong>基本信息&lt;/strong>页面，您可以查看项目中容器的默认容器配额。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>要更改默认容器配额，请在&lt;strong>基本信息&lt;/strong>页面点击&lt;strong>管理&lt;/strong>，然后选择&lt;strong>编辑默认容器配额&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框中直接更改容器配额，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>当您创建工作负载时，容器的请求和限制将预先填充对应的值。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>有关更多信息，请参见&lt;a href="../../project-user-guide/application-workloads/container-image-settings/">容器镜像设置&lt;/a>中的&lt;strong>资源请求&lt;/strong>。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="另请参见">另请参见&lt;/h2>
+&lt;p>&lt;a href="../../workspace-administration/project-quotas/">项目配额&lt;/a>&lt;/p></description></item><item><title>项目网关</title><link>https://openksc.github.io/zh/docs/v3.4/project-administration/project-gateway/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/project-administration/project-gateway/</guid><description>&lt;p>KubeSphere 项目中的网关是一个&lt;a href="https://www.nginx.com/products/nginx-ingress-controller/" target="_blank" rel="noopener noreferrer"> NGINX Ingress 控制器&lt;/a>。KubeSphere 内置的用于 HTTP 负载均衡的机制称为&lt;a href="../../project-user-guide/application-workloads/routes/">应用路由&lt;/a>，它定义了从外部到集群服务的连接规则。如需允许从外部访问服务，用户可创建路由资源来定义 URI 路径、后端服务名称等信息。&lt;/p>
+&lt;p>KubeSphere 除了提供项目范围的网关外，还提供&lt;a href="../../cluster-administration/cluster-settings/cluster-gateway/">集群范围的网关&lt;/a>，使得所有项目都能共享全局网关。&lt;/p>
+&lt;p>本教程演示如何在 KubeSphere 中开启项目网关以从外部访问服务和路由。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;p>您需要创建一个企业空间、一个项目和一个用户 (&lt;code>project-admin&lt;/code>)。该用户必须被邀请至项目，并且在项目中的角色为 &lt;code>admin&lt;/code>。有关更多信息，请参见&lt;a href="../../quick-start/create-workspace-and-project/">创建企业空间、项目、用户和角色&lt;/a>。&lt;/p>
+&lt;h2 id="开启网关">开启网关&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>以 &lt;code>project-admin&lt;/code> 用户登录 KubeSphere Web 控制台，进入您的项目，从左侧导航栏进入&lt;strong>项目设置&lt;/strong>下的&lt;strong>网关设置&lt;/strong>页面，然后点击&lt;strong>开启网关&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框中选择网关的访问方式。&lt;/p>
+&lt;p>&lt;strong>NodePort&lt;/strong>：通过网关访问服务对应的节点端口。&lt;/p>
+&lt;p>&lt;strong>LoadBalancer&lt;/strong>：通过网关访问服务的单独 IP 地址。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>开启网关&lt;/strong>对话框，您可以启用&lt;strong>链路追踪&lt;/strong>。创建自制应用时，您必须开启&lt;strong>链路追踪&lt;/strong>，以使用链路追踪功能和&lt;a href="../../project-user-guide/grayscale-release/overview/">不同的灰度发布策略&lt;/a>。如果启用&lt;strong>链路追踪&lt;/strong>后无法访问路由，请在路由 (Ingress) 中添加注解（例如 &lt;code>nginx.ingress.kubernetes.io/service-upstream: true&lt;/code>）。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>配置选项&lt;/strong>中，添加键值对，为 NGINX Ingress 控制器的系统组件提供配置信息。有关更多信息，请参阅 &lt;a href="https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/#configuration-options" target="_blank" rel="noopener noreferrer">NGINX Ingress 控制器官方文档&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>选择访问方式后点击&lt;strong>保存&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="nodeport">NodePort&lt;/h2>
+&lt;p>如果您选择 &lt;strong>NodePort&lt;/strong>，KubeSphere 将为 HTTP 请求和 HTTPS 请求分别设置一个端口。您可以用 &lt;code>EIP:NodePort&lt;/code> 或 &lt;code>Hostname:NodePort&lt;/code> 地址访问服务。&lt;/p>
+&lt;p>例如，如果您的服务配置了的弹性 IP 地址 (EIP)，请访问：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>http://EIP:32734&lt;/code>&lt;/li>
+&lt;li>&lt;code>https://EIP:32471&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>当创建&lt;a href="../../project-user-guide/application-workloads/routes/">路由&lt;/a> (Ingress) 时，您可以自定义主机名用于访问服务。例如，如果您的路由中配置了服务的主机名，请访问：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>http://demo.kubesphere.io:32734&lt;/code>&lt;/li>
+&lt;li>&lt;code>https://demo.kubesphere.io:32471&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p></description></item><item><title>日志收集</title><link>https://openksc.github.io/zh/docs/v3.4/project-administration/disk-log-collection/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/project-administration/disk-log-collection/</guid><description>&lt;p>KubeSphere 支持多种日志收集方式，使运维团队能够以灵活统一的方式收集、管理和分析日志。&lt;/p>
+&lt;p>本教程演示了如何为示例应用收集日志。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>您需要创建企业空间、项目和帐户 (&lt;code>project-admin&lt;/code>)。该用户必须被邀请到项目中，并在项目级别具有 &lt;code>admin&lt;/code> 角色。有关更多信息，请参见&lt;a href="../../quick-start/create-workspace-and-project/">创建企业空间、项目、用户和角色&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您需要启用 &lt;a href="../../pluggable-components/logging/">KubeSphere 日志系统&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="启用日志收集">启用日志收集&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>以 &lt;code>project-admin&lt;/code> 身份登录 KubeSphere 的 Web 控制台，进入项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏中，选择&lt;strong>项目设置&lt;/strong>中的&lt;strong>日志收集&lt;/strong>，点击 &lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/project-administration/disk-log-collection/log-toggle-switch.png" width="60" /> 以启用该功能。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="创建部署">创建部署&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>在左侧导航栏中，选择&lt;strong>应用负载&lt;/strong>中的&lt;strong>工作负载&lt;/strong>。在&lt;strong>部署&lt;/strong>选项卡下，点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在出现的对话框中，设置部署的名称（例如 &lt;code>demo-deployment&lt;/code>），选择将要创建资源的项目，点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>容器组设置&lt;/strong>下，点击&lt;strong>添加容器&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在搜索栏中输入 &lt;code>alpine&lt;/code>，以该镜像（标签：&lt;code>latest&lt;/code>）作为示例。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>向下滚动并勾选&lt;strong>启动命令&lt;/strong>。在&lt;strong>命令&lt;/strong>和&lt;strong>参数&lt;/strong>中分别输入以下值，点击 &lt;strong>√&lt;/strong>，然后点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;p>&lt;strong>命令&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>/bin/sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>参数&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>-c,if &lt;span style="color:#f92672">[&lt;/span> ! -d /data/log &lt;span style="color:#f92672">]&lt;/span>;&lt;span style="color:#66d9ef">then&lt;/span> mkdir -p /data/log;&lt;span style="color:#66d9ef">fi&lt;/span>; &lt;span style="color:#66d9ef">while&lt;/span> true; &lt;span style="color:#66d9ef">do&lt;/span> date &amp;gt;&amp;gt; /data/log/app-test.log; sleep 30;&lt;span style="color:#66d9ef">done&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>以上命令及参数意味着每 30 秒将日期信息导出到 &lt;code>/data/log&lt;/code> 的 &lt;code>app-test.log&lt;/code> 中。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>存储设置&lt;/strong>选项卡下，切换 &lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/project-administration/disk-log-collection/toggle-switch.png" width="20" /> 启用&lt;strong>收集卷上日志&lt;/strong>，点击&lt;strong>挂载卷&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>临时卷&lt;/strong>选项卡下，输入卷名称（例如 &lt;code>demo-disk-log-collection&lt;/code>），并设置访问模式和路径。&lt;/p>
+&lt;p>点击 &lt;strong>√&lt;/strong>，然后点击&lt;strong>下一步&lt;/strong>继续。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>高级设置&lt;/strong>中的&lt;strong>创建&lt;/strong>以完成创建。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>有关更多信息，请参见&lt;a href="../../project-user-guide/application-workloads/deployments/">部署&lt;/a>。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="查看日志">查看日志&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>在&lt;strong>部署&lt;/strong>选项卡下，点击刚才创建的部署以访问其详情页。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>资源状态&lt;/strong>中，点击 &lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/project-administration/disk-log-collection/arrow.png" width="20" /> 查看容器详情，然后点击 &lt;code>logsidecar-container&lt;/code>（filebeat 容器)日志图标 &lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/project-administration/disk-log-collection/log-icon.png" width="20" alt="icon" /> 以检查日志。&lt;/p></description></item></channel></rss>

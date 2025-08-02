@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>日志接收器 on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/</link><description>Recent content in 日志接收器 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/index.xml" rel="self" type="application/rss+xml"/><item><title>配置 OpenSearch 日志接收器</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/01-config-opensearch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/01-config-opensearch/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何配置 OpenSearch 日志接收器，以便将日志数据发送到指定的 OpenSearch 数据库。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>在扩展组件安装时或安装完成后均可以修改扩展组件配置，以配置日志接收器。下文仅介绍扩展组件已安装的情况下，如何配置 OpenSearch 日志接收器。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>您需要在 KubeSphere 平台具有 &lt;strong>platform-admin&lt;/strong> 角色。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已获取 OpenSearch 的服务地址和服务端口。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_配置步骤">配置步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有 &lt;strong>platform-admin&lt;/strong> 角色的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>扩展中心&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击扩展组件的名称，进入组件详情页。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击组件图标下的&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，选择&lt;strong>扩展组件配置&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>编辑 &lt;strong>WhizardTelemetry 日志&lt;/strong>的扩展组件配置，修改 &lt;code>vector-logging&lt;/code> 下 opensearch 的相关配置。&lt;/p>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-yaml" data-lang="yaml">vector-logging:
+ sinks:
+ opensearch:
+ # Create opensearch sink or not
+ enabled: true
+ # Configurations for the opensearch sink, more info for https://vector.dev/docs/reference/configuration/sinks/elasticsearch/
+ # Usually users needn&amp;#39;t change the following OpenSearch sink config, and the default sinks in secret &amp;#34;kubesphere-logging-system/vector-sinks&amp;#34; created by the WhizardTelemetry Data Pipeline extension will be used.
+ metadata:
+ api_version: v8
+ auth:
+ strategy: basic
+ user: admin
+ password: admin
+ batch:
+ timeout_secs: 5
+ buffer:
+ max_events: 10000
+ endpoints:
+ - https://&amp;lt;the opensearch cluster url&amp;gt;:&amp;lt;port&amp;gt;
+ tls:
+ verify_certificate: false&lt;/code>&lt;/pre>
+&lt;/div></description></item></channel></rss>

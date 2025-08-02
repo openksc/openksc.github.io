@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenSearch 分布式检索与分析引擎 on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/15-opensearch/</link><description>Recent content in OpenSearch 分布式检索与分析引擎 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/15-opensearch/index.xml" rel="self" type="application/rss+xml"/><item><title>概述</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/15-opensearch/01-intro/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/15-opensearch/01-intro/</guid><description>&lt;div class="paragraph">
+&lt;p>“OpenSearch 分布式检索与分析引擎”扩展组件是 KubeSphere 内置的日志存储扩展组件，用于存储日志、审计、事件、通知历史等可观测数据。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>除支持部署 OpenSearch 外，该扩展组件还支持部署 OpenSearch Dashboard 和 OpenSearch Curator。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>OpenSearch Dashboard&lt;/strong> 用于可视化 OpenSearch 数据以及管理 OpenSearch 集群的用户界面。部署后默认禁用，若要启用，将 &lt;code>opensearch-dashboards.enabled&lt;/code> 字段设置为 true。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>OpenSearch Curator&lt;/strong> 是一个定时任务，定期清理超过配置日期（默认为 7 天）的 Kubernetes 事件日志、Kubernetes 审计日志、Kubernetes 应用程序日志以及通知历史日志。部署后默认启用，若要禁用，将 &lt;code>opensearch-curator.enabled&lt;/code> 字段设置为 false。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>有关组件配置的更多信息，请参阅扩展中心“WhizardTelemetry 数据流水线”和“OpenSearch 分布式检索与分析引擎”扩展组件的详情页说明。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item></channel></rss>

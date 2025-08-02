@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>卸载 KubeSphere on</title><link>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/04-uninstall-kubesphere/</link><description>Recent content in 卸载 KubeSphere on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/04-uninstall-kubesphere/index.xml" rel="self" type="application/rss+xml"/><item><title>仅卸载 KubeSphere</title><link>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/04-uninstall-kubesphere/01-uninstall-kubesphere-only/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/04-uninstall-kubesphere/01-uninstall-kubesphere-only/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何卸载 KubeSphere Core，即卸载 KubeSphere。当前集群中运⾏的 Kubernetes 将不会被卸载。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">警告&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>虽然此操作不会卸载 Kubernetes，如果当前集群中运行的业务使用了 KubeSphere 提供的功能，此操作仍然可能导致业务中断。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>此操作不能撤销，请谨慎执行此操作。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>为避免数据丢失，请提前备份所有重要数据。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>执行以下命令卸载 KubeSphere。&lt;/p>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">helm -n kubesphere-system uninstall ks-core&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>卸载 Kubernetes 和 KubeSphere</title><link>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/04-uninstall-kubesphere/02-uninstall-kubernetes-and-kubesphere/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/04-uninstall-kubesphere/02-uninstall-kubernetes-and-kubesphere/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何卸载 Kubernetes 和 KubeSphere。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>本节介绍的 Kubernetes 卸载方式仅适用于 Kubernetes 通过 KubeKey 安装的场景。如果您的 Kubernetes 不是通过 KubeKey 安装，请参阅 &lt;a href="https://kubernetes.io/zh/docs/reference/setup-tools/kubeadm/kubeadm-reset/">Kubernetes 官方文档&lt;/a>卸载 Kubernetes。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">警告&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>此操作将导致 KubeSphere 集群业务中断，并且无法撤销，请谨慎执行此操作。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>您需要获取安装配置文件 &lt;strong>config-sample.yaml&lt;/strong> 并将其传输到用于执行本节操作的集群节点。有关更多信息，请参阅&lt;a href="../../../03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere">安装 Kubernetes 和 KubeSphere&lt;/a>。&lt;/p>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>如果您无法获取安装配置文件 &lt;strong>config-sample.yaml&lt;/strong>，您需要参阅&lt;a href="../../02-install-kubesphere/02-install-kubernetes-and-kubesphere/">安装 Kubernetes 和 KubeSphere&lt;/a> 重新创建 &lt;strong>config-sample.yaml&lt;/strong> 文件。重新创建该文件时，请务必确保文件中的集群信息与集群的当前实际情况一致。否则，卸载过程可能会出现错误。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/li>
+&lt;li>
+&lt;p>
+为避免数据丢失，请提前备份所有重要数据。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>如果您访问 GitHub/Googleapis 受限，请登录任意集群节点，执行以下命令设置下载区域：&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">export KKZONE=cn&lt;/code>&lt;/pre>
+&lt;/div></description></item></channel></rss>

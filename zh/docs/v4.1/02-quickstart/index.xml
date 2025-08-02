@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>快速入门 on</title><link>https://openksc.github.io/zh/docs/v4.1/02-quickstart/</link><description>Recent content in 快速入门 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/02-quickstart/index.xml" rel="self" type="application/rss+xml"/><item><title>在 Kubernetes 上快速安装 KubeSphere</title><link>https://openksc.github.io/zh/docs/v4.1/02-quickstart/01-install-kubesphere/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/02-quickstart/01-install-kubesphere/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何在单个节点上快速部署 Kubernetes 和 KubeSphere。此安装方法仅适用于测试，若要在生产环境中安装 KubeSphere，请参阅&lt;a href="../../03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere/">安装 Kubernetes 和 KubeSphere&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>准备一台 Linux 主机，并确保其满足最低硬件要求：CPU &amp;gt; 2 核，内存 &amp;gt; 4 GB， 磁盘空间 &amp;gt; 40 GB。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您需要提前&lt;a href="https://helm.sh/zh/docs/intro/install/">安装 Helm&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>（可选）如果您没有可用的 Kubernetes 集群，执行以下命令快速创建一个 Kubernetes 集群。&lt;/p>
+&lt;div class="olist loweralpha">
+&lt;ol class="loweralpha" type="a">
+&lt;li>
+&lt;p>如果您访问 GitHub/Googleapis 受限，请登录 Linux 主机，执行以下命令设置下载区域。&lt;/p>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">export KKZONE=cn&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>执行以下命令安装⼯具 KubeKey。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>下载完成后当前目录下将生成 KubeKey 二进制文件 &lt;strong>kk&lt;/strong>。&lt;/p>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">curl -sfL https://get-kk.kubesphere.io | sh -&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>执行以下命令安装依赖项。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">apt install socat conntrack -y&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>如果集群节点使用其他操作系统，请将 &lt;strong>apt&lt;/strong> 替换为操作系统对应的软件包管理工具。&lt;/p>
+&lt;/div></description></item><item><title>通过域名访问 KubeSphere 控制台</title><link>https://openksc.github.io/zh/docs/v4.1/02-quickstart/02-access-kubesphere-via-https/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/02-quickstart/02-access-kubesphere-via-https/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何通过自定义域名访问 KubeSphere Web 控制台。为实现此目的，您需要使用 cert-manager 配置 TLS 访问。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>已安装 Kubernetes 集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://helm.sh/zh/docs/intro/install/">已安装 Helm&lt;/a>（用于安装 cert-manager 和 ingress-nginx）。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已安装 KubeSphere 或准备安装 KubeSphere。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_步骤_1安装_nginx_ingress_controller">步骤 1：安装 NGINX Ingress Controller&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>如果您尚未安装 &lt;a href="https://kubernetes.github.io/ingress-nginx/">NGINX Ingress Controller&lt;/a>，请按照以下步骤安装。&lt;/p>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash"># 添加 ingress-nginx 仓库
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+
+# 更新仓库
+helm repo update
+
+# 安装 ingress-nginx
+helm install ingress-nginx ingress-nginx/ingress-nginx \
+ --namespace ingress-nginx \
+ --create-namespace \
+ --version 4.2.5
+
+# 验证安装结果
+kubectl -n ingress-nginx get svc ingress-nginx-controller
+
+# 检查 IngressClass
+kubectl get ingressclass&lt;/code>&lt;/pre>
+&lt;/div></description></item><item><title>安装并使用扩展组件</title><link>https://openksc.github.io/zh/docs/v4.1/02-quickstart/03-install-an-extension/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/02-quickstart/03-install-an-extension/</guid><description>&lt;div class="paragraph">
+&lt;p>自 v4.1 开始，KubeSphere 解耦了一些核心功能组件，它们以扩展组件的方式无缝融入到 KubeSphere 控制台中，并独立维护版本，真正实现即插即用的应用级云原生操作系统。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>原有的功能模块，如 DevOps，服务网格，可观测（包括监控、告警、日志、事件、通知），应用商店，边缘计算，网络与存储管理等，现由扩展组件提供。因此，为了充分利用这些功能，建议您根据实际需求选择要安装的扩展组件，定制您专属的 KubeSphere 容器管理平台。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_了解扩展组件">了解扩展组件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>请参照下表了解扩展组件的功能，以便选择合适的扩展组件进行安装。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>可在 KubeSphere Web 控制台的扩展市场中查看各个扩展组件的更多信息。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 60%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">类别&lt;/th>
+&lt;th class="tableblock halign-left valign-top">名称&lt;/th>
+&lt;th class="tableblock halign-left valign-top">功能&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top" rowspan="10">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>WhizardTelemetry 可观测平台&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>WhizardTelemetry 平台服务&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>它是 WhizardTelemetry 可观测平台各扩展组件的公共服务。是各个可观测性扩展组件通用的 APIServer，为所有可观测性扩展组件提供公共的后端平台服务。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>WhizardTelemetry 数据流水线&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>提供可观测性数据的收集、转换和路由能力。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>OpenSearch 分布式检索与分析引擎&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>KubeSphere 内置的日志存储扩展组件，用于存储日志、审计、事件、通知历史等可观测数据。&lt;/p>
+&lt;/div></description></item><item><title>控制用户权限</title><link>https://openksc.github.io/zh/docs/v4.1/02-quickstart/04-control-user-permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/02-quickstart/04-control-user-permissions/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何创建用户，并使用企业空间、项目和角色控制用户的访问权限。有关用户权限控制的更多信息，请参阅&lt;a href="../../05-users-and-roles/">用户和角色管理&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>作为多租户系统，KubeSphere 支持在平台、集群、企业空间和项目级别基于角色对用户的权限进行控制，实现逻辑层面的资源隔离。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>您需要准备一个 Kubernetes 集群，并已安装 KubeSphere。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_创建用户">创建用户&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>使用默认用户 &lt;strong>admin&lt;/strong> 和密码 &lt;strong>P@88w0rd&lt;/strong> 登录 KubeSphere Web 控制台。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>为了您的账户安全，首次登录时系统会提示您修改密码。密码修改后，后续请使用新密码登录。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>用户和角色管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏，选择&lt;strong>用户&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在用户列表页面，点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>创建用户&lt;/strong>对话框，输入以下必填参数：&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>用户名&lt;/strong>：用户的名称。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>邮箱&lt;/strong>：用户的邮箱地址。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>密码&lt;/strong>：用户的密码。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>确定&lt;/strong>。用户创建后将显示在用户列表中。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_创建企业空间">创建企业空间&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>企业空间管理&lt;/strong>，点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>创建企业空间&lt;/strong>的&lt;strong>基本信息&lt;/strong>页面，输入企业空间的名称（例如 &lt;strong>demo-workspace&lt;/strong>）。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>对于多集群环境，设置企业空间的基本信息后，点击&lt;strong>下一步&lt;/strong>。在&lt;strong>集群设置&lt;/strong>页面，选择企业空间需要使用的集群。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>确定&lt;/strong>。企业空间创建后将显示在企业空间列表中。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_创建企业空间角色">创建企业空间角色&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>在企业空间列表页面，点击企业空间的名称 &lt;strong>demo-workspace&lt;/strong> 进入该企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏，选择&lt;strong>企业空间设置&lt;/strong> &amp;gt; &lt;strong>企业空间角色&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>企业空间角色列表页面默认列出以下四个内置角色。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 33.3333%;"/>
+&lt;col style="width: 66.6667%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">角色&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>&lt;strong>workspace-viewer&lt;/strong>&lt;/p>
+&lt;/div></description></item><item><title>创建并部署 WordPress</title><link>https://openksc.github.io/zh/docs/v4.1/02-quickstart/05-deploy-wordpress/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/02-quickstart/05-deploy-wordpress/</guid><description>&lt;div class="paragraph">
+&lt;p>本节以安装 WordPress 为例，演示如何在 KubeSphere Web 控制台部署应用程序，并在集群外进行访问。有关应用资源管理的更多信息，请参阅&lt;a href="../../09-project-management/">项目管理&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_wordpress_简介">WordPress 简介&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>WordPress 是一款基于 PHP 的免费、开源内容管理系统，您可以使用 WordPress 搭建自己的网站。完整的 WordPress 应用程序包括以下 Kubernetes 对象，由 MySQL 作为后端数据库。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/v4.1/WordPress.png" alt="WordPress"/>&lt;/span>&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>准备一个项目（例如 &lt;strong>demo-project&lt;/strong>）和一个已邀请到该项目的用户（例如 &lt;strong>project-regular&lt;/strong>）。该用户在项目中应具有 &lt;strong>operator&lt;/strong> 角色。有关更多信息，请参阅&lt;a href="../04-control-user-permissions/">控制用户权限&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 服务网格&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="sect2">
+&lt;h3 id="_1_创建保密字典">1. 创建保密字典&lt;/h3>
+&lt;div class="paragraph">
+&lt;p>创建两个保密字典，分别用于设置 MySQL 和 WordPress 的 root 密码。&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>使用 &lt;strong>project-regular&lt;/strong> 用户登录 KubeSphere Web 控制台，点击&lt;strong>企业空间管理&lt;/strong>并进入项目所在的企业空间，在项目列表中点击 &lt;strong>demo-project&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏，选择&lt;strong>配置&lt;/strong> &amp;gt; &lt;strong>保密字典&lt;/strong>，在页面右侧点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>基本信息&lt;/strong>页签，输入保密字典的基本信息（例如，将&lt;strong>名称&lt;/strong>设置为 &lt;strong>mysql-secret&lt;/strong>），点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>数据配置&lt;/strong>页签，点击&lt;strong>添加数据&lt;/strong>添加键值对。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>将&lt;strong>键&lt;/strong>和&lt;strong>值&lt;/strong>分别设置为 &lt;strong>MYSQL_ROOT_PASSWORD&lt;/strong> 和 &lt;strong>123456&lt;/strong>，在页面右下角点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/check-dark.svg" alt="check" width="18" height="18"/>&lt;/span>保存设置。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>创建&lt;/strong>以创建保密字典，用于为 MySQL 提供 root 密码。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>重复以上步骤创建一个名为 &lt;strong>wordpress-secret&lt;/strong> 的保密字典，将&lt;strong>键&lt;/strong>和&lt;strong>值&lt;/strong>分别设置为 &lt;strong>WORDPRESS_DB_PASSWORD&lt;/strong> 和 &lt;strong>123456&lt;/strong>，用于为 WordPress 提供 root 密码。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>部署并访问 Bookinfo</title><link>https://openksc.github.io/zh/docs/v4.1/02-quickstart/06-deploy-bookinfo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/02-quickstart/06-deploy-bookinfo/</guid><description>&lt;div class="paragraph">
+&lt;p>作为开源的服务网格解决方案，&lt;a href="https://istio.io/">Istio&lt;/a> 为微服务提供了强大的流量管理功能。&lt;strong>KubeSphere 服务网格&lt;/strong>扩展组件集成了 Istio，为用户提供一致的微服务管理体验。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>本节演示了如何部署由四个独立的微服务组成的示例应用程序 Bookinfo，以及如何通过 NodePort 访问该应用。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_bookinfo_简介">Bookinfo 简介&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Bookinfo 应用会显示一本书的信息页面，类似于在线书店的一个品类。 此页面上会显示一本书的描述、书籍的细节（ISBN、页数等）以及这本书相关的几条评论。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Bookinfo 应用由以下四个独立的微服务组成。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>productpage&lt;/strong> 微服务会调用 &lt;strong>details&lt;/strong> 和 &lt;strong>reviews&lt;/strong> 用来生成页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>details&lt;/strong> 微服务中包含了书籍的信息。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>reviews&lt;/strong> 微服务中包含了书籍相关的评论，它还会调用 &lt;strong>ratings&lt;/strong> 微服务。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>ratings&lt;/strong> 微服务中包含了由书籍评价组成的评级信息。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>reviews 微服务有 3 个版本：&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>v1 版本不会调用 ratings 服务。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>v2 版本会调用 ratings 服务，并使用 1 到 5 个黑色星形图标来显示评分信息。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>v3 版本会调用 ratings 服务，并使用 1 到 5 个红色星形图标来显示评分信息。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>下图展示了这个应用的端到端架构。有关更多详细信息，请参见 &lt;a href="https://istio.io/latest/zh/docs/examples/bookinfo/">Bookinfo 应用&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/v4.1/bookinfo.png" alt="bookinfo"/>&lt;/span>&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>准备一个项目（例如 &lt;strong>demo-project&lt;/strong>）和一个已邀请到该项目的用户（例如 &lt;strong>project-regular&lt;/strong>）。该用户在项目中应具有 &lt;strong>operator&lt;/strong> 角色。有关更多信息，请参阅&lt;a href="../04-control-user-permissions/">控制用户权限&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 服务网格&lt;/strong>和 &lt;strong>KubeSphere 网关&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>启用项目网关，并为项目网关启用&lt;strong>链路追踪&lt;/strong>功能。有关更多信息，请参阅&lt;a href="../../11-use-extensions/12-gateway/01-project-gateway/01-enable-a-project-gateway">启用项目网关&lt;/a>。&lt;/p>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>如果启用链路追踪后无法访问路由(Ingress)，请在路由中添加注解 &lt;code>nginx.ingress.kubernetes.io/service-upstream: true&lt;/code>。&lt;/p>
+&lt;/div></description></item><item><title>金丝雀发布实践</title><link>https://openksc.github.io/zh/docs/v4.1/02-quickstart/07-canary-release-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/02-quickstart/07-canary-release-example/</guid><description>&lt;div class="paragraph">
+&lt;p>在金丝雀发布中，您可以引入应用的新版本，并向其发送一小部分流量来进行测试。同时，旧版本负责处理其余的流量。如果一切顺利，您就可以逐渐增加向新版本发送的流量，同时逐步停用旧版本。如果出现任何问题，您可以更改流量比例，回滚至先前版本。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>该方法能够高效地测试服务性能和可靠性，有助于在实际环境中发现潜在问题，同时不影响系统整体稳定性。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>准备一个项目（例如 &lt;strong>demo-project&lt;/strong>）和一个已邀请到该项目的用户（例如 &lt;strong>project-regular&lt;/strong>）。该用户在项目中应具有 &lt;strong>operator&lt;/strong> 角色。有关更多信息，请参阅&lt;a href="../04-control-user-permissions/">控制用户权限&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 服务网格&lt;/strong>和 &lt;strong>KubeSphere 网关&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>启用项目网关，并为项目网关启用&lt;strong>链路追踪&lt;/strong>功能。有关更多信息，请参阅&lt;a href="../../11-use-extensions/12-gateway/01-project-gateway/01-enable-a-project-gateway">启用项目网关&lt;/a>。&lt;/p>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>如果启用链路追踪后无法访问路由(Ingress)，请在路由中添加注解 &lt;code>nginx.ingress.kubernetes.io/service-upstream: true&lt;/code>。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/li>
+&lt;li>
+&lt;p>已创建一个可用的自制应用，并且在创建时开启了&lt;strong>应用治理&lt;/strong>，以便实现该应用的金丝雀发布。本教程中使用的示例应用是 Bookinfo。有关更多信息，请参见&lt;a href="../06-deploy-bookinfo/">部署并访问 Bookinfo&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="sect2">
+&lt;h3 id="_1_创建金丝雀发布任务">1. 创建金丝雀发布任务&lt;/h3>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>使用 &lt;strong>project-regular&lt;/strong> 用户登录 KubeSphere Web 控制台，点击&lt;strong>企业空间管理&lt;/strong>并进入项目所在的企业空间，在项目列表中点击 &lt;strong>demo-project&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏，选择&lt;strong>服务网格&lt;/strong> &amp;gt; &lt;strong>灰度发布&lt;/strong>，在&lt;strong>发布模式&lt;/strong>页签下，点击&lt;strong>金丝雀发布&lt;/strong>右侧的&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>设置任务名称，点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>服务设置&lt;/strong>页签，从下拉列表中选择您的应用和要实现金丝雀发布的服务。如果您同样使用示例应用 Bookinfo，请选择 &lt;strong>reviews&lt;/strong> 并点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>新版本设置&lt;/strong>页签，设置新版本号 &lt;code>v2&lt;/code>，并修改 &lt;code>reviews&lt;/code> 的容器镜像地址（例如 &lt;code>kubesphere/examples-bookinfo-reviews-v2:1.16.2&lt;/code>；将 &lt;code>v1&lt;/code> 改为 &lt;code>v2&lt;/code>），点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您可以使用具体比例或者使用请求内容（例如 &lt;code>Http Header&lt;/code>、&lt;code>Cookie&lt;/code> 和 &lt;code>URI&lt;/code>）分别向这两个版本（&lt;code>v1&lt;/code> 和 &lt;code>v2&lt;/code>）发送流量。选择&lt;strong>指定流量分配&lt;/strong>，并拖动中间的滑块来更改向这两个版本分别发送的流量比例（例如设置为各 50%）。操作完成后，点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;div class="paragraph">
+&lt;p>该发布任务也会同时创建新的部署，可在&lt;strong>应用负载 &amp;gt; 工作负载&lt;/strong>页面查看新版本对应的部署。&lt;/p>
+&lt;/div></description></item><item><title>从集群外访问服务</title><link>https://openksc.github.io/zh/docs/v4.1/02-quickstart/08-access-a-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/02-quickstart/08-access-a-service/</guid><description>&lt;div class="paragraph">
+&lt;p>&lt;strong>服务（Service）&lt;/strong>将运行在容器组（pod）上的应用程序公开为网络服务，提供了固定的地址（域名或 IP 地址）供客⼾端访问。访问服务即可访问部署在集群中的应用程序。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>KubeSphere 支持通过 NodePort、LoadBalancer、Ingress 或端口转发的方式，从集群外访问服务。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>本节以应用程序 Bookinfo 为例，介绍如何从集群外访问服务。在进行以下步骤之前，请先在项目中&lt;a href="../06-deploy-bookinfo/">部署 Bookinfo&lt;/a> 或其他应用程序。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_通过_nodeport_访问服务">通过 NodePort 访问服务&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>&lt;strong>NodePort&lt;/strong>：系统将节点的端口映射到服务端口，可通过节点的 IP 地址和节点端口访问服务。&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>在集群或项目的左侧导航栏，选择&lt;strong>应用负载&lt;/strong> &amp;gt; &lt;strong>服务&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击应用相应服务（如 &lt;code>productpage&lt;/code>）右侧的&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，选择&lt;strong>编辑外部访问&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>访问模式&lt;/strong>中选择 &lt;strong>NodePort&lt;/strong>，点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在服务列表的&lt;strong>外部访问&lt;/strong>列，查看暴露的节点端口。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在浏览器中输入 &lt;code>&amp;lt;节点 IP&amp;gt;:&amp;lt;节点端口&amp;gt;&lt;/code>，即可从集群外访问服务。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>访问服务前，您可能需要配置端口转发规则并在安全组中放行该端口。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_通过_loadbalancer_访问服务">通过 LoadBalancer 访问服务&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>&lt;strong>LoadBalancer&lt;/strong>：系统在 NodePort 服务的基础上为服务分配一个外部 IP 地址，并将外部 IP 地址与一个外部负载均衡器绑定。外部负载均衡器监听服务对应的节点端口，从而可以通过外部 IP 地址访问服务。为实现上述功能，LoadBalancer 类型的服务需要负载均衡器插件和基础设施环境提供支持，并且需要设置相关注解。有关更多信息，请联系您的基础设施环境提供商。&lt;/p>
+&lt;/div>
+&lt;div class="sect2">
+&lt;h3 id="_前提条件">前提条件&lt;/h3>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>请提前创建好用于绑定服务的外部负载均衡器。可使用云服务商提供的负载均衡器，或开源负载均衡方案，如 OpenELB。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>负载均衡器与 KubeSphere 集群在同一私有网络下，且负载均衡器已绑定公网 IP。&lt;/p>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>有关具体操作，请参阅云环境的用户指南或联系您的云服务提供商。&lt;/p>
+&lt;/div></description></item><item><title>修改界面语言</title><link>https://openksc.github.io/zh/docs/v4.1/02-quickstart/10-change-display-language/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/02-quickstart/10-change-display-language/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何修改 KubeSphere Web 控制台的界面语言。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>已获取 KubeSphere Web 控制台的用户名和密码。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右上角点击当前用户名，然后在下拉列表中选择&lt;strong>用户设置&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>基本信息&lt;/strong>页签设置用户的邮箱和语言。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>邮箱&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>用户的邮箱地址。邮箱地址可用于登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>语言&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>KubeSphere  Web 控制台对当前用户显示的语言。当前支持简体中文和繁体中文。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

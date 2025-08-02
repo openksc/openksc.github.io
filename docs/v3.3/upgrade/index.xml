@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Upgrade on</title><link>https://openksc.github.io/docs/v3.3/upgrade/</link><description>Recent content in Upgrade on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v3.3/upgrade/index.xml" rel="self" type="application/rss+xml"/><item><title>Upgrade — Overview</title><link>https://openksc.github.io/docs/v3.3/upgrade/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/upgrade/overview/</guid><description>&lt;h2 id="make-your-upgrade-plan">Make Your Upgrade Plan&lt;/h2>
+&lt;p>KubeSphere 3.3 is compatible with Kubernetes v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x:&lt;/p>
+&lt;ul>
+&lt;li>Before you upgrade your cluster to KubeSphere 3.3, you need to have a KubeSphere cluster running v3.2.x.&lt;/li>
+&lt;li>You can choose to only upgrade KubeSphere to 3.3 or upgrade Kubernetes (to a higher version) and KubeSphere (to 3.3) at the same time.&lt;/li>
+&lt;li>For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.&lt;/li>
+&lt;/ul>
+&lt;h2 id="before-the-upgrade">Before the Upgrade&lt;/h2>
+&lt;div class="notices warning">
+ 
+ &lt;p>Warning&lt;/p></description></item><item><title>Upgrade with KubeKey</title><link>https://openksc.github.io/docs/v3.3/upgrade/upgrade-with-kubekey/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/upgrade/upgrade-with-kubekey/</guid><description>&lt;p>KubeKey is recommended for users whose KubeSphere and Kubernetes were both installed by &lt;a href="../../installing-on-linux/introduction/kubekey/">KubeKey&lt;/a>. If your Kubernetes cluster was provisioned by yourself or cloud providers, refer to &lt;a href="../upgrade-with-ks-installer/">Upgrade with ks-installer&lt;/a>.&lt;/p>
+&lt;p>This tutorial demonstrates how to upgrade your cluster using KubeKey.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;ul>
+&lt;li>You need to have a KubeSphere cluster running v3.2.x. If your KubeSphere version is v3.1.x or earlier, upgrade to v3.2.x first.&lt;/li>
+&lt;li>Read &lt;a href="../../../v3.3/release/release-v332/">Release Notes for 3.3.2&lt;/a> carefully.&lt;/li>
+&lt;li>Back up any important component beforehand.&lt;/li>
+&lt;li>Make your upgrade plan. Two scenarios are provided in this document for &lt;a href="#all-in-one-cluster">all-in-one clusters&lt;/a> and &lt;a href="#multi-node-cluster">multi-node clusters&lt;/a> respectively.&lt;/li>
+&lt;/ul>
+&lt;h2 id="major-updates">Major Updates&lt;/h2>
+&lt;p>In KubeSphere 3.3.1, some changes have made on built-in roles and permissions of custom roles. Therefore, before you upgrade KubeSphere to 3.3.1, please note the following:&lt;/p></description></item><item><title>Upgrade with ks-installer</title><link>https://openksc.github.io/docs/v3.3/upgrade/upgrade-with-ks-installer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/upgrade/upgrade-with-ks-installer/</guid><description>&lt;p>ks-installer is recommended for users whose Kubernetes clusters were not set up by &lt;a href="../../installing-on-linux/introduction/kubekey/">KubeKey&lt;/a>, but hosted by cloud vendors or created by themselves. This tutorial is for &lt;strong>upgrading KubeSphere only&lt;/strong>. Cluster operators are responsible for upgrading Kubernetes beforehand.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;ul>
+&lt;li>You need to have a KubeSphere cluster running v3.2.x. If your KubeSphere version is v3.1.x or earlier, upgrade to v3.2.x first.&lt;/li>
+&lt;li>Read &lt;a href="../../../v3.3/release/release-v332/">Release Notes for 3.3.2&lt;/a> carefully.&lt;/li>
+&lt;li>Back up any important component beforehand.&lt;/li>
+&lt;li>Supported Kubernetes versions of KubeSphere 3.3: v1.20.x, v1.21.x, * v1.22.x, * v1.23.x， and v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.&lt;/li>
+&lt;/ul>
+&lt;h2 id="major-updates">Major Updates&lt;/h2>
+&lt;p>In KubeSphere 3.3.1, some changes have made on built-in roles and permissions of custom roles. Therefore, before you upgrade KubeSphere to 3.3.1, please note the following:&lt;/p></description></item><item><title>Air-Gapped Upgrade with KubeKey</title><link>https://openksc.github.io/docs/v3.3/upgrade/air-gapped-upgrade-with-kubekey/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/upgrade/air-gapped-upgrade-with-kubekey/</guid><description>&lt;p>Air-gapped upgrade with KubeKey is recommended for users whose KubeSphere and Kubernetes were both deployed by &lt;a href="../../installing-on-linux/introduction/kubekey/">KubeKey&lt;/a>. If your Kubernetes cluster was provisioned by yourself or cloud providers, refer to &lt;a href="../air-gapped-upgrade-with-ks-installer/">Air-gapped Upgrade with ks-installer&lt;/a>.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;ul>
+&lt;li>You need to have a KubeSphere cluster running v3.2.x. If your KubeSphere version is v3.1.x or earlier, upgrade to v3.2.x first.&lt;/li>
+&lt;li>Your Kubernetes version must be v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.&lt;/li>
+&lt;li>Read &lt;a href="../../../v3.3/release/release-v332/">Release Notes for 3.3.2&lt;/a> carefully.&lt;/li>
+&lt;li>Back up any important component beforehand.&lt;/li>
+&lt;li>A Docker registry. You need to have a Harbor or other Docker registries.&lt;/li>
+&lt;li>Make sure every node can push and pull images from the Docker Registry.&lt;/li>
+&lt;/ul>
+&lt;h2 id="major-updates">Major Updates&lt;/h2>
+&lt;p>In KubeSphere 3.3.1, some changes have made on built-in roles and permissions of custom roles. Therefore, before you upgrade KubeSphere to 3.3.1, please note the following:&lt;/p></description></item><item><title>Air-Gapped Upgrade with ks-installer</title><link>https://openksc.github.io/docs/v3.3/upgrade/air-gapped-upgrade-with-ks-installer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/upgrade/air-gapped-upgrade-with-ks-installer/</guid><description>&lt;p>ks-installer is recommended for users whose Kubernetes clusters were not set up by &lt;a href="../../installing-on-linux/introduction/kubekey/">KubeKey&lt;/a>, but hosted by cloud vendors or created by themselves. This tutorial is for &lt;strong>upgrading KubeSphere only&lt;/strong>. Cluster operators are responsible for upgrading Kubernetes beforehand.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;ul>
+&lt;li>You need to have a KubeSphere cluster running v3.2.x. If your KubeSphere version is v3.1.x or earlier, upgrade to v3.2.x first.&lt;/li>
+&lt;li>Read &lt;a href="../../../v3.3/release/release-v332/">Release Notes for 3.3.2&lt;/a> carefully.&lt;/li>
+&lt;li>Back up any important component beforehand.&lt;/li>
+&lt;li>A Docker registry. You need to have a Harbor or other Docker registries. For more information, see &lt;a href="../../installing-on-linux/introduction/air-gapped-installation/#step-2-prepare-a-private-image-registry">Prepare a Private Image Registry&lt;/a>.&lt;/li>
+&lt;li>Supported Kubernetes versions of KubeSphere 3.3: v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, and * v1.24.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.21.x.&lt;/li>
+&lt;/ul>
+&lt;h2 id="major-updates">Major Updates&lt;/h2>
+&lt;p>In KubeSphere 3.3.1, some changes have made on built-in roles and permissions of custom roles. Therefore, before you upgrade KubeSphere to 3.3.1, please note the following:&lt;/p></description></item><item><title>Changes after Upgrade</title><link>https://openksc.github.io/docs/v3.3/upgrade/what-changed/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/upgrade/what-changed/</guid><description>&lt;p>This section covers the changes after upgrade for existing settings in previous versions. If you want to know all the new features and enhancements in KubeSphere 3.3, see &lt;a href="../../../v3.3/release/release-v330/">Release Notes for 3.3.0&lt;/a>, &lt;a href="../../../v3.3/release/release-v331/">Release Notes for 3.3.1&lt;/a>, and &lt;a href="../../../v3.3/release/release-v332/">Release Notes for 3.3.2&lt;/a>.&lt;/p></description></item></channel></rss>

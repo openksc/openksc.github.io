@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Access Your Workspace on</title><link>https://openksc.github.io/docs/v4.1/08-workspace-management/01-web-console/</link><description>Recent content in Access Your Workspace on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/08-workspace-management/01-web-console/index.xml" rel="self" type="application/rss+xml"/><item><title>Log In and Access Workspaces</title><link>https://openksc.github.io/docs/v4.1/08-workspace-management/01-web-console/01-log-in-and-go-to-a-workspace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/08-workspace-management/01-web-console/01-log-in-and-go-to-a-workspace/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to log in to the KubeSphere web console and access a workspace.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>You should have the username and password of a workspace member.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Contact the administrator to obtain the IP address and port number of the KubeSphere web console.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Depending on your network environment, you may need to configure firewall and traffic forwarding rules. For specific instructions, please contact your network administrator.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Open a web browser and enter the IP address and port number of the KubeSphere web console in the address bar, such as &lt;code>172.31.85.22:30880&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the login page, enter your username and password and click &lt;strong>Log In&lt;/strong>.&lt;/p>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+Upon initial login, the system will prompt you to change your password.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

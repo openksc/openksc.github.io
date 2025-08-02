@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Create Services on</title><link>https://openksc.github.io/docs/v4.1/09-project-management/03-application-workloads/02-services/01-create-a-service/</link><description>Recent content in Create Services on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/09-project-management/03-application-workloads/02-services/01-create-a-service/index.xml" rel="self" type="application/rss+xml"/><item><title>Create a Stateful or Stateless Service</title><link>https://openksc.github.io/docs/v4.1/09-project-management/03-application-workloads/02-services/01-create-a-service/01-create-a-stateful-or-stateless-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/09-project-management/03-application-workloads/02-services/01-create-a-service/01-create-a-stateful-or-stateless-service/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to create stateful or stateless services.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a project and have the &lt;strong>Application Workload Management&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Please refer to &lt;a href="#_parameter_description">Parameter Description&lt;/a> for configuring the parameters of a service.&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Application Workload Management&lt;/strong> permission, and access your project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Application Workloads &amp;gt; Services&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Create&lt;/strong> on the page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Create Service&lt;/strong> dialog, choose &lt;strong>Stateful Service&lt;/strong> or &lt;strong>Stateless Service&lt;/strong> based on your requirements.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Stateful Service&lt;/strong>: The internal access mode of the service is Headless, and the backend workload is Statefulset.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Stateless Service&lt;/strong>: The internal access mode of the service is VirtualIP, and the backend workload is Deployment.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Create External Services</title><link>https://openksc.github.io/docs/v4.1/09-project-management/03-application-workloads/02-services/01-create-a-service/02-create-an-external-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/09-project-management/03-application-workloads/02-services/01-create-a-service/02-create-an-external-service/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to create external services.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>External services forward business traffic to other services outside the cluster, and can be accessed internally within the cluster using the domain name format &lt;code>&amp;lt;service name&amp;gt;.&amp;lt;project name&amp;gt;.svc.cluster.local&lt;/code>.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a project and have the &lt;strong>Application Workload Management&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Application Workload Management&lt;/strong> permission, and access your project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Application Workloads &amp;gt; Services&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Create&lt;/strong> on the page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Create Service&lt;/strong> dialog, select &lt;strong>External Service&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Basic Information&lt;/strong> tab, set the basic information of the service, then click &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>External Service&lt;/strong> tab, set the address of the target service, then click &lt;strong>Create&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The address of the target service must be a domain name. If you input an IP address, it will be considered as a domain composed of numbers rather than a real IP address.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>To ensure that business traffic can be correctly forwarded to the target service, please make sure the domain name of the target service can be resolved to an actual IP address by a domain name server.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Create Services Using Existing Workloads</title><link>https://openksc.github.io/docs/v4.1/09-project-management/03-application-workloads/02-services/01-create-a-service/05-create-a-service-using-existing-workloads/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/09-project-management/03-application-workloads/02-services/01-create-a-service/05-create-a-service-using-existing-workloads/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to create services using existing workloads as backend workloads.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a project and have the &lt;strong>Application Workload Management&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You should have workloads created in the project beforehand. For more information, refer to &lt;a href="../../../03-workloads/01-create-a-workload/">Create Workloads&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Application Workload Management&lt;/strong> permission, and access your project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Application Workloads &amp;gt; Services&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Create&lt;/strong> on the page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Create Service&lt;/strong> dialog, select &lt;strong>Specify Workload&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Basic Information&lt;/strong> tab, configure the basic information for the service, and then click &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Name&lt;/p>
+&lt;/div></description></item></channel></rss>

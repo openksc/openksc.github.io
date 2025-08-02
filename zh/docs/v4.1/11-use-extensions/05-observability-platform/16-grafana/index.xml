@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Grafana for WhizardTelemetry on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/16-grafana/</link><description>Recent content in Grafana for WhizardTelemetry on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/16-grafana/index.xml" rel="self" type="application/rss+xml"/><item><title>查看内置 Dashboard</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/16-grafana/01-built-in-dashboards/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/16-grafana/01-built-in-dashboards/</guid><description>&lt;div class="paragraph">
+&lt;p>Grafana for WhizardTelemetry 扩展组件内置了多个 Grafana Dashboard 模板，可供直接查询 Kubernetes 的监控数据，而无需自行配置 Grafana Dashboard。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>登录 Grafana 控制台后，点击左侧导航栏的 &lt;strong>Dashboards&lt;/strong>，查看所有内置的 Dashboard 模板。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 25%;"/>
+&lt;col style="width: 75%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">目录&lt;/th>
+&lt;th class="tableblock halign-left valign-top">模板介绍&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>kube-prometheus-stack&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>可视化 Kubernetes 的监控数据。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table class="tableblock frame-all grid-all stretch admon attention">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">注意&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>安装 &lt;strong>WhizardTelemetry 监控&lt;/strong>扩展组件后，&lt;strong>kube-prometheus-stack&lt;/strong> 中的 Dashboard 才会显示监控数据。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>点击目录中的 Dashboard 模板，查看对应指标的监控数据。&lt;/p>
+&lt;div class="paragraph">
+&lt;p>&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/v4.1.2/grafana/node-dashboard.png" alt="node-dashboard"/>&lt;/span>&lt;/p>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>点击上方的 &lt;strong>data source&lt;/strong>、&lt;strong>cluster&lt;/strong>、&lt;strong>node&lt;/strong>，可选择查看指定数据源、集群和节点的相关数据。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击右上角的&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/time-light.png" alt="time-light" width="18" height="18"/>&lt;/span>，设置数据展示的时间范围，支持自定义时间段。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击右上角的&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/refresh-light.png" alt="refresh-light" width="18" height="18"/>&lt;/span>，刷新看板上的数据。点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/chevron-down.svg" alt="chevron-down" width="18" height="18"/>&lt;/span>设置数据自动刷新的时间间隔。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击每个 Panel 右上角的&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，可对指定 Panel 进行独立查看、编辑、分享、检查、删除等操作。&lt;/p>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>有关 Dashboard 的更多信息，请参阅 &lt;a href="https://grafana.com/docs/grafana/latest/dashboards/">Grafana 官方文档&lt;/a>。&lt;/p>
+&lt;/div></description></item><item><title>添加数据源</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/16-grafana/05-add-data-source/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/16-grafana/05-add-data-source/</guid><description>&lt;div class="paragraph">
+&lt;p>本节简要介绍如何添加、配置和查询数据源。有关更多信息，请参阅 &lt;a href="https://grafana.com/docs/grafana/latest/datasources/">Grafana data sources&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>创建 Dashboard 前，必须先添加数据源。Grafana for WhizardTelemetry 扩展组件默认添加了 Prometheus 的服务器地址为数据源。您也可以自行添加数据源，如 Loki、Elasticsearch、InfluxDB、PostgreSQL、MySQL 等。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>添加数据源后，您可以：&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>使用 Explore 查询数据。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在面板中将数据可视化。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>创建告警规则。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>只有在 Grafana 控制台具有 admin 角色的用户才能添加或删除数据源。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_添加数据源">添加数据源&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>登录 Grafana 控制台后，点击左侧导航栏的 &lt;strong>Connections&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>搜索数据源，如 loki。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击数据源名称，进入数据源概览页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击右上角的 &lt;strong>Add new data source&lt;/strong>，进入数据源配置页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>输入数据源的服务器地址，点击最下方的 &lt;strong>Save &amp;amp; test&lt;/strong>，完成数据源的添加和配置。&lt;/p>
+&lt;div class="paragraph">
+&lt;p>&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/v4.1.2/grafana/loki-data-source.png" alt="loki-data-source"/>&lt;/span>&lt;/p>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_查询数据源数据">查询数据源数据&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>设置查询条件，查询数据源中特定指标一段时间范围内的数据。&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>点击左侧导航栏的 &lt;strong>Explore&lt;/strong>，在上方选择数据源。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在查询编辑器中输入或选择 &lt;strong>Metric&lt;/strong>，设置 &lt;strong>Label filters&lt;/strong>，然后点击右上角的 &lt;strong>Run query&lt;/strong>。&lt;/p>
+&lt;div class="paragraph">
+&lt;p>&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/v4.1.2/grafana/explore.png" alt="explore"/>&lt;/span>&lt;/p>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_删除数据源">删除数据源&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>点击左侧导航栏的 &lt;strong>Connections &amp;gt; Data sources&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击需要删除的数据源名称，进入数据源配置页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击最下方的 &lt;strong>Delete&lt;/strong>， 删除数据源。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>创建 Dashboard</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/16-grafana/07-create-dashboards/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/16-grafana/07-create-dashboards/</guid><description>&lt;div class="paragraph">
+&lt;p>添加数据源后，创建 Dashboard， 以便将数据源中的数据可视化。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Dashboard 由一个或多个 Panel（面板）组成，按行组织和排列。Panel 显示可视化内容并提供各种控制选项。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>本节简要介绍如何创建 Dashboard。有关更多信息，请参阅 &lt;a href="https://grafana.com/docs/grafana/latest/dashboards/">Grafana dashboards&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>点击 Grafana 控制台左侧导航栏的 &lt;strong>Dashboards&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击 &lt;strong>New &amp;gt; New Dashboard&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在空白 Dashboard 页面，点击 &lt;strong>+ Add visualization&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框中，选择已添加的数据源，将自动打开 Panel 编辑页面。&lt;/p>
+&lt;div class="paragraph">
+&lt;p>&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/v4.1.2/grafana/edit-panel.png" alt="edit-panel"/>&lt;/span>&lt;/p>
+&lt;/div>
+&lt;div class="olist loweralpha">
+&lt;ol class="loweralpha" type="a">
+&lt;li>
+&lt;p>使用数据源的查询语言设置查询条件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/refresh-light.png" alt="refresh-light" width="18" height="18"/>&lt;/span>查询数据。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击右侧的图表类型（如 Time series），选择一个图表样式。数据将以该样式展示。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在 &lt;strong>Panel options&lt;/strong> 区域，设置 Panel 的名称，描述等。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>编辑完成后，点击 &lt;strong>Apply&lt;/strong> 保存 Panel，点击 &lt;strong>Save&lt;/strong> 保存 Dashboard。&lt;/p>
+&lt;div class="paragraph">
+&lt;p>保存 Dashboard 时，可设置 Dashboard 的名称、描述和所在目录。&lt;/p>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在新建的 Dashboard 页面，点击上方的 &lt;strong>Add&lt;/strong>，选择 &lt;strong>Visualization&lt;/strong>，可继续添加 Panel。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>退出 Panel 编辑页面后，可拖拽 Panel 标题将其移动到任意位置；在 Panel 右下角拖动光标，可调整 Dashboard 中 Panel 的大小。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击 Dashboard 页面上方的保存按钮，再次保存 Dashboard。&lt;/p>
+&lt;div class="paragraph">
+&lt;p>至此，一个含有多个 Panel 的 Dashboard 创建完成。&lt;/p>
+&lt;/div></description></item></channel></rss>

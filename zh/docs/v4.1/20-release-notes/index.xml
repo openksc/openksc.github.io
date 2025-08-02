@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>版本说明 on</title><link>https://openksc.github.io/zh/docs/v4.1/20-release-notes/</link><description>Recent content in 版本说明 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/20-release-notes/index.xml" rel="self" type="application/rss+xml"/><item><title>4.1.3 版本说明</title><link>https://openksc.github.io/zh/docs/v4.1/20-release-notes/release-v413/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/20-release-notes/release-v413/</guid><description>&lt;h2 id="kubesphere">KubeSphere&lt;/h2>
+&lt;h3 id="优化">优化&lt;/h3>
+&lt;ul>
+&lt;li>优化企业空间的级联删除逻辑。&lt;/li>
+&lt;li>调整部分平台角色、企业空间角色的授权规则。&lt;/li>
+&lt;li>优化 Pod 列表页的数据展示。&lt;/li>
+&lt;li>允许用户关联多个身份提供程序。&lt;/li>
+&lt;li>支持手动触发应用仓库更新。&lt;/li>
+&lt;li>新增“拒绝访问”页面。&lt;/li>
+&lt;li>调整 Helm Chart 中集群角色配置方式。&lt;/li>
+&lt;/ul>
+&lt;h3 id="缺陷修复">缺陷修复&lt;/h3>
+&lt;ul>
+&lt;li>修复 web kubectl 中潜在的权限提升漏洞。&lt;/li>
+&lt;li>修复应用实例无法升级的问题。&lt;/li>
+&lt;li>修复与预发布 K8s 版本号的兼容性问题。&lt;/li>
+&lt;li>修复 LDAP 身份提供程序 LDAPS 和 STARTTLS 的配置问题。&lt;/li>
+&lt;li>修复无法从 Docker Hub 和 Harbor 搜索镜像的问题。&lt;/li>
+&lt;li>修复应用程序版本中处理特殊字符的问题。&lt;/li>
+&lt;li>修复未安装网关扩展时无法创建 Ingress 的问题。&lt;/li>
+&lt;/ul></description></item><item><title>4.1.2 版本说明</title><link>https://openksc.github.io/zh/docs/v4.1/20-release-notes/release-v412/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/20-release-notes/release-v412/</guid><description>&lt;h2 id="kubesphere">KubeSphere&lt;/h2>
+&lt;h3 id="新特性">新特性&lt;/h3>
+&lt;ul>
+&lt;li>支持基于 OCI 的 Helm Chart 仓库&lt;/li>
+&lt;/ul>
+&lt;h3 id="优化">优化&lt;/h3>
+&lt;ul>
+&lt;li>增加默认的扩展组件仓库&lt;/li>
+&lt;/ul>
+&lt;h3 id="缺陷修复">缺陷修复&lt;/h3>
+&lt;ul>
+&lt;li>修复部分扩展组件页面白屏的问题&lt;/li>
+&lt;li>修复 ks-core 卸载时部分资源残留的问题&lt;/li>
+&lt;li>修复 K8s 1.19 环境无法安装的问题&lt;/li>
+&lt;/ul>
+&lt;h3 id="已知问题">已知问题&lt;/h3>
+&lt;ul>
+&lt;li>DevOps 中镜像构建器（S2I、B2I）功能在此版本暂不可用&lt;/li>
+&lt;/ul></description></item><item><title>4.1.1 版本说明</title><link>https://openksc.github.io/zh/docs/v4.1/20-release-notes/release-v411/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/20-release-notes/release-v411/</guid><description>&lt;h2 id="kubesphere">KubeSphere&lt;/h2>
+&lt;h3 id="新特性">新特性&lt;/h3>
+&lt;ul>
+&lt;li>基于全新微内核架构 KubeSphere LuBan 重构&lt;/li>
+&lt;li>内置 KubeSphere 扩展市场&lt;/li>
+&lt;li>支持通过扩展中心统一管理扩展组件&lt;/li>
+&lt;li>支持 UI、API 扩展&lt;/li>
+&lt;li>支持通过 kubeconfig 一键导入 member 集群&lt;/li>
+&lt;li>支持 KubeSphere 服务帐户&lt;/li>
+&lt;li>支持动态扩展 Resource API&lt;/li>
+&lt;li>支持添加集群、企业空间、项目到快捷访问&lt;/li>
+&lt;li>支持通过容器终端进行文件上传和下载&lt;/li>
+&lt;li>支持适配不同厂商的云原生网关（Kubernetes Ingress API）&lt;/li>
+&lt;li>支持 API 限流&lt;/li>
+&lt;li>支持在页面创建持久卷&lt;/li>
+&lt;/ul>
+&lt;h3 id="优化">优化&lt;/h3>
+&lt;ul>
+&lt;li>创建企业空间时支持选取所有集群&lt;/li>
+&lt;li>优化 web kubectl，支持 pod 动态回收、切换集群时支持模糊搜索&lt;/li>
+&lt;li>优化节点管理列表，将默认排序修改为升序&lt;/li>
+&lt;li>仅允许受信的 OAuth Client 直接使用用户名和密码对用户身份进行校验&lt;/li>
+&lt;li>精简 member 集群中部署的 Agent 组件&lt;/li>
+&lt;li>拆分 KubeSphere Config 中部分配置作为独立的配置项&lt;/li>
+&lt;li>容器镜像搜索调整为按时间倒序进行排序&lt;/li>
+&lt;li>支持编辑用户别名&lt;/li>
+&lt;li>集群列表新增调度状态的展示&lt;/li>
+&lt;li>配置字典详情页支持 binaryData 数据显示&lt;/li>
+&lt;li>重构工作台管理页面&lt;/li>
+&lt;li>删除不必要的扩展组件&lt;/li>
+&lt;li>支持通过 helm 快速部署和卸载&lt;/li>
+&lt;li>简化成员集群中 agent 的部署&lt;/li>
+&lt;li>支持禁用控制平面节点终端&lt;/li>
+&lt;li>支持主动触发集群资源同步&lt;/li>
+&lt;li>集群下工作负载页面的用户体验优化&lt;/li>
+&lt;li>应用列表页的用户体验优化&lt;/li>
+&lt;li>持久卷声明和存储类列表页的用户体验优化&lt;/li>
+&lt;li>资源名超长显示优化&lt;/li>
+&lt;li>支持全局开启 fieldValidation&lt;/li>
+&lt;li>集群节点的列表页支持横向移动&lt;/li>
+&lt;/ul>
+&lt;h3 id="缺陷修复">缺陷修复&lt;/h3>
+&lt;ul>
+&lt;li>修复节点终端一直显示 connecting 的问题&lt;/li>
+&lt;li>修复潜在的企业空间资源越权访问的问题&lt;/li>
+&lt;li>修复潜在的企业空间集群授权 API 越权访问的问题&lt;/li>
+&lt;li>修复因错误配置导致会话异常登出的问题&lt;/li>
+&lt;li>修复添加镜像服务信息从指定仓库拉取镜像时异常的问题&lt;/li>
+&lt;li>编辑保密字典编辑时 ownerReferences 丢失的问题&lt;/li>
+&lt;li>修复首次登录白屏和页面错误重定向的问题&lt;/li>
+&lt;li>修复 Windows 环境下，选择框滚动的问题&lt;/li>
+&lt;li>修复当 cluster-admin 登录时找不到集群管理入口的问题&lt;/li>
+&lt;li>修复 kubectl 容器终端关闭 pod 未停止的问题&lt;/li>
+&lt;li>修复 kubeconfig 下载时无法选择集群的问题&lt;/li>
+&lt;li>修复部分列表中资源名称过长无法完全显示的问题&lt;/li>
+&lt;li>修复部分页面文本翻译缺失的问题&lt;/li>
+&lt;li>修复容器详情页显示空白的问题&lt;/li>
+&lt;li>修复创建镜像服务地址选 https 时，默认跳过证书验证的问题&lt;/li>
+&lt;li>修复 member 集群的服务账户无法编辑项目角色的问题&lt;/li>
+&lt;li>修复无键值对的配置字典无法编辑设置的问题&lt;/li>
+&lt;li>修复 member 集群的配置字典无法编辑、删除键值对数据的问题&lt;/li>
+&lt;li>修复集群管理页面，移除未就绪集群时弹窗的样式问题&lt;/li>
+&lt;li>修复集群管理页面，移除集群时进度条的显示问题&lt;/li>
+&lt;li>修复在“添加标签到集群”的弹窗中，搜索集群后，之前已选中的集群选中状态消失&lt;/li>
+&lt;li>修复工作负载详情页的容器组未分页的问题&lt;/li>
+&lt;li>修复扩展组件详情页面的更新日志显示 HTML 注释的问题&lt;/li>
+&lt;li>修复在某些情况下列表页面的悬浮元素显示不完整的问题&lt;/li>
+&lt;li>修复右上角错误提示显示异常的问题&lt;/li>
+&lt;li>修复“创建企业空间”弹窗的样式问题&lt;/li>
+&lt;li>修复无法搜索 Harbor（ 2.8.0 及之后的版本）镜像的问题&lt;/li>
+&lt;li>修复在 https 协议下 console 加载缓慢的问题&lt;/li>
+&lt;li>创建集群时默认指定创建者为集群管理员&lt;/li>
+&lt;li>修复删除节点的标签数据时出现异常的问题&lt;/li>
+&lt;li>修复添加 member 集群时，页面未实时更新的问题&lt;/li>
+&lt;li>添加容器上传的提示信息&lt;/li>
+&lt;li>修复选择集群时，未根据用户权限过滤集群的问题&lt;/li>
+&lt;li>修复 helm 应用部署存在潜在的权限提升、越权风险&lt;/li>
+&lt;li>修复创建应用模板时上传文件卡住&lt;/li>
+&lt;li>修复项目中创建的应用在其他项目中也可见的问题&lt;/li>
+&lt;li>修复应用仓库的 bitnami 源无法同步的问题&lt;/li>
+&lt;li>修复应用模板显示无数据的问题&lt;/li>
+&lt;li>修复无权限用户在应用商店部署应用时白屏的问题&lt;/li>
+&lt;li>修复保密字典的类型显示错误&lt;/li>
+&lt;li>修复企业空间列表的显示问题&lt;/li>
+&lt;li>修复持久卷列表的状态错误&lt;/li>
+&lt;li>修复基于快照创建 pvc 失败的问题&lt;/li>
+&lt;li>删除持久卷扩容时的无用提示&lt;/li>
+&lt;li>修复创建保密字典时类型下拉框显示错误&lt;/li>
+&lt;li>修复创建“镜像服务信息”类型的保密字典时，数据填充错误&lt;/li>
+&lt;li>修复工作负载列表不能检索全部项目的问题&lt;/li>
+&lt;li>修复工作负载中容器组的提示信息显示异常&lt;/li>
+&lt;li>修复定制资源定义页面中显示的版本不是最新版本的问题&lt;/li>
+&lt;li>修复在集群列表搜索集群时的显示问题&lt;/li>
+&lt;li>修复 EKS 环境中 web kubectl 终端无法使用的问题&lt;/li>
+&lt;/ul>
+&lt;h3 id="api-更新">API 更新&lt;/h3>
+&lt;h4 id="api-移除">API 移除&lt;/h4>
+&lt;p>v4.1 版本将停止提供以下 API：&lt;/p></description></item><item><title>3.4.1 版本说明</title><link>https://openksc.github.io/zh/docs/v4.1/20-release-notes/release-v341/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/20-release-notes/release-v341/</guid><description>&lt;h2 id="应用商店">应用商店&lt;/h2>
+&lt;h3 id="问题修复">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复应用仓库页面的报错。&lt;/li>
+&lt;li>修复应用审核报错。&lt;/li>
+&lt;li>Appdeploy schemaform 支持 select。&lt;/li>
+&lt;/ul>
+&lt;h2 id="控制台">控制台&lt;/h2>
+&lt;h3 id="问题修复-1">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复编辑 CRD 资源后，状态丢失的问题。&lt;/li>
+&lt;li>修复网络隔离页面的 IsolateInfo 和 RuleInfo 样式错误。&lt;/li>
+&lt;li>修复某些页面的中文翻译错误。&lt;/li>
+&lt;li>修复高版本 K8s 中，资源创建失败的问题。&lt;/li>
+&lt;li>修复最近访问面板中名称被遮挡的问题。&lt;/li>
+&lt;li>修复在列表页面点击定制内容按钮，内容显示不全。&lt;/li>
+&lt;li>修复容器状态显示错误。&lt;/li>
+&lt;li>修复在 PVC 页面设置卷容量时，数字显示有误。&lt;/li>
+&lt;li>修复添加容器页面，使用 tag 搜索 image 失效。&lt;/li>
+&lt;li>支持构建 ARM64 镜像。&lt;/li>
+&lt;/ul>
+&lt;h2 id="多集群">多集群&lt;/h2>
+&lt;h3 id="问题修复-2">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复多集群中，CD 关联集群显示错误。&lt;/li>
+&lt;li>修复主机集群被错误地添加为其他集群的成员集群。&lt;/li>
+&lt;/ul>
+&lt;h2 id="可观测性">可观测性&lt;/h2>
+&lt;h3 id="问题修复-3">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复 CPU 和内存统计图表不显示。&lt;/li>
+&lt;li>修复通知渠道页面，API 调用错误。&lt;/li>
+&lt;li>修复日志接收器页面，显示空白。&lt;/li>
+&lt;li>修复新建通知渠道页面，条件过滤值丢失。&lt;/li>
+&lt;/ul>
+&lt;h2 id="认证和授权">认证和授权&lt;/h2>
+&lt;h3 id="问题修复-4">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复 LDAP 登录失败。&lt;/li>
+&lt;/ul>
+&lt;h2 id="devops">DevOps&lt;/h2>
+&lt;h3 id="问题修复-5">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复图形化编辑 Shell 不生效。&lt;/li>
+&lt;li>当集群未就绪或未安装 DevOps 时，DevOps 项目不可用。&lt;/li>
+&lt;li>修复 jenkins 参数传递不正确的问题。&lt;/li>
+&lt;li>修复点击回放按钮时报错。&lt;/li>
+&lt;li>修复 Pipeline 详情无法查看的问题。&lt;/li>
+&lt;li>修复流水线日志过大引发的问题。&lt;/li>
+&lt;li>修复 Jenkins 镜像漏洞。&lt;/li>
+&lt;li>修复 DevOps 更新版本后无法正常使用的问题。&lt;/li>
+&lt;li>修复流水线清理任务报错。&lt;/li>
+&lt;li>修复设置 timeout 失败的问题。&lt;/li>
+&lt;li>修复多分支流水线下载制品失败的问题。&lt;/li>
+&lt;li>修复无法禁用已丢弃的历史 Pipelinerun。&lt;/li>
+&lt;li>修复级联删除多个应用程序时，一些应用程序资源未被删除的问题。&lt;/li>
+&lt;/ul>
+&lt;h3 id="优化增强">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>在流水线页面显示 git 仓库地址。&lt;/li>
+&lt;li>完善 API 文档。&lt;/li>
+&lt;/ul>
+&lt;h2 id="用户体验">用户体验&lt;/h2>
+&lt;h3 id="问题修复-6">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复 Statefuls 页面缺少 Pod Grace Period 参数。&lt;/li>
+&lt;li>修复集群管理中，集群网关不显示。&lt;/li>
+&lt;li>修复创建应用路由报错。&lt;/li>
+&lt;li>在列出仓库标签时实现分页功能。&lt;/li>
+&lt;/ul>
+&lt;h2 id="监控">监控&lt;/h2>
+&lt;h3 id="问题修复-7">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复监控目标显示为空。&lt;/li>
+&lt;/ul>
+&lt;p>有关 KubeSphere 3.4.1 的 Issue 和贡献者详细信息，请参阅 &lt;a href="https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.4.1.md" target="_blank" rel="noopener noreferrer">GitHub&lt;/a>。&lt;/p></description></item><item><title>3.4.0 版本说明</title><link>https://openksc.github.io/zh/docs/v4.1/20-release-notes/release-v340/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/20-release-notes/release-v340/</guid><description>&lt;h2 id="devops">DevOps&lt;/h2>
+&lt;h3 id="优化增强">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>支持用户自定义流水线配置步骤。&lt;/li>
+&lt;li>优化 DevOps Jenkins JVM 内存配置。&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复级联删除 ArgoCD 资源的问题。&lt;/li>
+&lt;li>修复多分支流水线下载制品失败的问题。&lt;/li>
+&lt;li>修复流水线运行状态与 Jenkins 不一致的问题（增加重试以同步状态）。&lt;/li>
+&lt;li>修复新建用户运行流水线一直等待中的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="存储">存储&lt;/h2>
+&lt;h3 id="问题修复-1">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复 pvc 无法删除的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="网关和微服务">网关和微服务&lt;/h2>
+&lt;h3 id="新特性">新特性&lt;/h3>
+&lt;ul>
+&lt;li>网关支持配置 TCP/UDP 流量转发。&lt;/li>
+&lt;/ul>
+&lt;h3 id="优化增强-1">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>升级 ingress nginx 版本: v1.1.0 -&amp;gt; v1.3.1。&lt;/li>
+&lt;li>升级 servicemesh 组件版本：istio: 1.11.1 -&amp;gt; 1.14.6；kiali: v1.38.1 -&amp;gt; v1.50.1；jaeger: 1.27 -&amp;gt; 1.29。&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复-2">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复返回集群网关数据重复的问题。&lt;/li>
+&lt;li>修复网关升级校验错误 。&lt;/li>
+&lt;li>修复更改网关命名空间配置后，集群网关日志和资源状态显示异常的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="可观测性">可观测性&lt;/h2>
+&lt;h3 id="新特性-1">新特性&lt;/h3>
+&lt;ul>
+&lt;li>新增 RuleGroup, ClusterRuleGroup, GlobalRuleGroup 等 CRDs，用于支持 Alerting v2beta1 APIs。&lt;/li>
+&lt;li>新增 RuleGroup, ClusterRuleGroup, GlobalRuleGroup 等资源的准入控制 webhook。&lt;/li>
+&lt;li>新增 Controllers，将 RuleGroup, ClusterRuleGroup, GlobalRuleGroup 资源同步为 PrometheusRule 资源。&lt;/li>
+&lt;li>添加 Alerting v2beta1 APIs。&lt;/li>
+&lt;li>在 Kubesphere 的 ks-apiserver 中集成了 opensearch 的 v1 和 v2 版本，用户可以使用外置或内置的 opensearch 集群进行日志的存储和查询。（目前 Kubesphere 内置的 opensearch 版本为 v2）&lt;/li>
+&lt;li>ks-installer 集成了 opensearch 的 dashboard，需要用户自行开启。&lt;/li>
+&lt;/ul>
+&lt;h3 id="优化增强-2">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>升级 Prometheus 栈依赖。&lt;/li>
+&lt;li>支持配置最大日志导出数量。&lt;/li>
+&lt;li>监控组件部署支持 Kubernetes PDB Apiversion 变更。&lt;/li>
+&lt;li>升级 Notification Manager 到 v2.3.0。&lt;/li>
+&lt;li>支持删除集群时删除集群上的通知设置。&lt;/li>
+&lt;li>支持切换通知语言。&lt;/li>
+&lt;li>通知支持路由功能。&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复-3">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复潜在 Go 协程泄漏的问题。&lt;/li>
+&lt;li>修复 ingress P95 延迟时间 promql 语句。&lt;/li>
+&lt;/ul>
+&lt;h2 id="多租户和多集群">多租户和多集群&lt;/h2>
+&lt;h3 id="优化增强-3">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>更新集群的时候校验集群 ID。&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复-4">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>确保在清理通知相关资源时集群状态正常。&lt;/li>
+&lt;li>修复针对新集群的校验问题。&lt;/li>
+&lt;li>修复集群状态信息不正确的问题。&lt;/li>
+&lt;li>限制企业空间授权集群不可重复。&lt;/li>
+&lt;/ul>
+&lt;h2 id="app-store">App Store&lt;/h2>
+&lt;h3 id="问题修复-5">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复 IPv6 环境下应用商店模块无法生成 ID 的问题。&lt;/li>
+&lt;li>修复应用模板 Home 字段缺失的问题。&lt;/li>
+&lt;li>修复应用模板图标缺失的问题。&lt;/li>
+&lt;li>修复应用模板缺少 Maintainers 字段的问题。&lt;/li>
+&lt;li>修复应用部署失败后无法重新部署的问题。&lt;/li>
+&lt;li>修复应用 ID 参数错误的问题。&lt;/li>
+&lt;li>修复部分应用无法正确安装的问题。&lt;/li>
+&lt;li>修复应用仓库状态不正确的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="网络">网络&lt;/h2>
+&lt;h3 id="优化增强-4">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>升级依赖。&lt;/li>
+&lt;/ul>
+&lt;h2 id="验证和授权">验证和授权&lt;/h2>
+&lt;h3 id="新特性-2">新特性&lt;/h3>
+&lt;ul>
+&lt;li>新增 inmemory cache。&lt;/li>
+&lt;li>新增 Resource Getter v1beta1。&lt;/li>
+&lt;li>新增 Resource Manager 写操作。&lt;/li>
+&lt;/ul>
+&lt;h3 id="优化增强-5">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>新增 iam.kubesphere/v1beta1 RoleTemplate。&lt;/li>
+&lt;li>更新密码最小长度为 8 位。&lt;/li>
+&lt;li>修改 Version 的 API。&lt;/li>
+&lt;li>修改 identityProvider 的 API。&lt;/li>
+&lt;li>新增 IAM v1beta1 APIs。&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复-6">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复 enableMultiLogin 配置不生效的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="api-changes">API Changes&lt;/h2>
+&lt;ul>
+&lt;li>使用 autoscaling/v2 版本 API。&lt;/li>
+&lt;li>使用 batch/v1 版本的 API 。&lt;/li>
+&lt;li>更新 KubeSphere 健康检查 API。&lt;/li>
+&lt;li>修复 K8s 1.25 版本中 ks-apiserver 崩溃的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="用户体验">用户体验&lt;/h2>
+&lt;h3 id="新特性-3">新特性&lt;/h3>
+&lt;ul>
+&lt;li>Resource API 支持别名搜索。&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复-7">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复潜在 Websocket 链接泄漏的问题。&lt;/li>
+&lt;/ul>
+&lt;h3 id="优化增强-6">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>使用 helm action 包代替直接使用 helm 二进制。&lt;/li>
+&lt;li>调整 kubectl terminal 中 bash 和 sh 的优先级。&lt;/li>
+&lt;li>修复由于 DiscoveryAPI 异常导致 ks-apiserver 无法启动的问题。&lt;/li>
+&lt;li>修复容器组列表页按状态查询时，显示的状态与筛选的结果不一致的问题。&lt;/li>
+&lt;li>查询 Secret 支持 fieldSelector 筛选。&lt;/li>
+&lt;/ul>
+&lt;p>有关 KubeSphere 3.4.0 的 Issue 和贡献者详细信息，请参阅 &lt;a href="https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.4.0.md" target="_blank" rel="noopener noreferrer">GitHub&lt;/a>。&lt;/p></description></item><item><title>3.3.2 版本说明</title><link>https://openksc.github.io/zh/docs/v4.1/20-release-notes/release-v332/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/20-release-notes/release-v332/</guid><description>&lt;h2 id="devops">DevOps&lt;/h2>
+&lt;h3 id="优化增强">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>添加最新的 GitHub Actions。&lt;/li>
+&lt;li>将 PipelineRun 的结果保存到 configmap 中。&lt;/li>
+&lt;li>修改持续部署应用程序状态的中文描述。&lt;/li>
+&lt;li>为持续部署参数添加更丰富的信息。&lt;/li>
+&lt;li>为处于中止状态的 PipelineRun 添加链接。&lt;/li>
+&lt;li>为 PipelineRun 增加 ID 列，用于执行 kubectl 命令时展示。&lt;/li>
+&lt;li>PipelineRun 生命周期中去掉 Queued 状态。&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复用户修改并保存流水线配置后 Webhook 配置丢失的问题。&lt;/li>
+&lt;li>修复下载 DevOps 流水线制品失败的问题。&lt;/li>
+&lt;li>修复使用 JAR/WAR 文件创建服务时，镜像地址不匹配的问题。&lt;/li>
+&lt;li>修复 PipelineRun 从“取消”状态变成“未运行”状态的问题。&lt;/li>
+&lt;li>修复 Pipeline 的自动清理策略，使其与 Jenkins 的清理保持一致。&lt;/li>
+&lt;/ul>
+&lt;h2 id="app-store">App Store&lt;/h2>
+&lt;h3 id="问题修复-1">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复上传的应用程序模板上不显示图标的问题。&lt;/li>
+&lt;li>修复应用商店应用信息处没有显示应用首页的问题。&lt;/li>
+&lt;li>修复应用商店导入内置应用时导入失败的问题。&lt;/li>
+&lt;li>修复 IPv6 环境下 UUID 生成错误的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="可观测性">可观测性&lt;/h2>
+&lt;h3 id="问题修复-2">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复 logsidecar-injector 配置文件中的解析问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="微服务">微服务&lt;/h2>
+&lt;h3 id="问题修复-3">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复未启用 service mesh 时创建的 Bookinfo 项目没有默认关闭应用治理的问题。&lt;/li>
+&lt;li>修复蓝绿部署发布模式下线按钮缺失的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="网络">网络&lt;/h2>
+&lt;h3 id="优化增强-1">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>限制项目的网络隔离范围为当前企业空间。&lt;/li>
+&lt;/ul>
+&lt;h2 id="存储">存储&lt;/h2>
+&lt;h3 id="优化增强-2">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>在多集群环境中显示 system-workspace 所属集群。&lt;/li>
+&lt;li>将“应用路由”的英文词条由 “route” 修改为 “ingress”。&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复-4">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复编辑联邦项目中的持久卷声明存储类错误的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="验证和授权">验证和授权&lt;/h2>
+&lt;h3 id="优化增强-3">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>增加了动态的 cache 配置项。&lt;/li>
+&lt;li>移除“告警消息管理”权限。&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复-5">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复拥有集群管理权限的平台角色无法管理集群的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="开发--测试">开发 &amp;amp; 测试&lt;/h2>
+&lt;h3 id="问题修复-6">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复引入热加载功能后部分数据后处于“不同步”状态的问题。&lt;/li>
+&lt;li>修复 ks-apiserver 多次重载后崩溃的问题。&lt;/li>
+&lt;li>修复缺少必要的 CRD 造成的资源缓存失败问题。&lt;/li>
+&lt;li>修复 ks-apiserver 在 Kubernetes 1.24+ 版本中异常崩溃的问题。&lt;/li>
+&lt;li>修复审计功能中协程泄露的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="用户体验">用户体验&lt;/h2>
+&lt;ul>
+&lt;li>限制集群名称长度。&lt;/li>
+&lt;li>修复 pod 副本不能自动刷新的问题。&lt;/li>
+&lt;li>修复删除服务时，相关的 pod 没有删除的问题。&lt;/li>
+&lt;li>修复只有一个节点时，节点数量和角色显示错误的问题。&lt;/li>
+&lt;/ul>
+&lt;p>有关 KubeSphere 3.3.2 的 Issue 和贡献者详细信息，请参阅 &lt;a href="https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.2.md" target="_blank" rel="noopener noreferrer">GitHub&lt;/a>。&lt;/p></description></item><item><title>3.3.1 版本说明</title><link>https://openksc.github.io/zh/docs/v4.1/20-release-notes/release-v331/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/20-release-notes/release-v331/</guid><description>&lt;h2 id="devops">DevOps&lt;/h2>
+&lt;h3 id="优化增强">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>支持通过 UI 编辑流水线中 kubeconfig 文件绑定方式。&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复用户查看 CI/CD 模板失败的问题。&lt;/li>
+&lt;li>将 &lt;code>Deprecated&lt;/code> 标签从 CI/CD 模版中移除，并将部署环节由 &lt;code>kubernetesDeploy&lt;/code> 修改为 kubeconfig 绑定方式。&lt;/li>
+&lt;/ul>
+&lt;h2 id="网络">网络&lt;/h2>
+&lt;h3 id="问题修复-1">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复 IPv4/IPv6 双栈模式下用户创建路由规则失败的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="存储">存储&lt;/h2>
+&lt;h3 id="问题修复-2">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>当用户使用 &lt;code>hostpath&lt;/code> 作为存储时，必须填写主机路径。&lt;/li>
+&lt;/ul>
+&lt;h2 id="验证和授权">验证和授权&lt;/h2>
+&lt;h3 id="问题修复-3">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>删除角色 &lt;code>users-manager&lt;/code> 和 &lt;code>workspace-manager&lt;/code>。&lt;/li>
+&lt;li>新增角色 &lt;code>platform-self-provisioner&lt;/code>。&lt;/li>
+&lt;li>屏蔽用户自定义角色的部分权限。&lt;/li>
+&lt;/ul>
+&lt;h2 id="用户体验">用户体验&lt;/h2>
+&lt;ul>
+&lt;li>支持修改每页列表的展示数量。&lt;/li>
+&lt;li>新增对 statefulset 和 deamonset 批量停止的支持&lt;/li>
+&lt;/ul>
+&lt;p>有关 KubeSphere 3.3.1 的 Issue 和贡献者详细信息，请参阅 &lt;a href="https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.1.md" target="_blank" rel="noopener noreferrer">GitHub&lt;/a>。&lt;/p></description></item><item><title>3.3.0 版本说明</title><link>https://openksc.github.io/zh/docs/v4.1/20-release-notes/release-v330/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/20-release-notes/release-v330/</guid><description>&lt;h2 id="devops">DevOps&lt;/h2>
+&lt;h3 id="新特性">新特性&lt;/h3>
+&lt;ul>
+&lt;li>提供了基于 GitOps 的持续部署方案，底层支持 Argo CD，可以实时查看持续部署的状态。&lt;/li>
+&lt;li>支持配置持续部署白名单，限制持续部署的目标代码仓库和部署位置。&lt;/li>
+&lt;li>支持导入并管理代码仓库。&lt;/li>
+&lt;li>新增多款基于 CRD 的内置流水线模板，支持参数自定义。&lt;/li>
+&lt;li>支持查看流水线事件。&lt;/li>
+&lt;/ul>
+&lt;h2 id="存储">存储&lt;/h2>
+&lt;h3 id="新特性-1">新特性&lt;/h3>
+&lt;ul>
+&lt;li>支持租户级存储类权限管理。&lt;/li>
+&lt;li>新增卷快照内容和卷快照类管理。&lt;/li>
+&lt;li>支持 deployment 与 statefulSet 资源调整存储卷声明修改后自动重启。&lt;/li>
+&lt;li>支持存储卷声明设定使用阈值自动扩容。&lt;/li>
+&lt;/ul>
+&lt;h2 id="多租户和多集群">多租户和多集群&lt;/h2>
+&lt;h3 id="新特性-2">新特性&lt;/h3>
+&lt;ul>
+&lt;li>支持 kubeconfig 证书到期提示。&lt;/li>
+&lt;li>支持 kubesphere-config configmap 以显示当前集群的名称。&lt;/li>
+&lt;li>支持集群层级的成员管理。&lt;/li>
+&lt;/ul>
+&lt;h2 id="可观察性">可观察性&lt;/h2>
+&lt;h3 id="新特性-3">新特性&lt;/h3>
+&lt;ul>
+&lt;li>增加容器进程/线程监控指标。&lt;/li>
+&lt;li>支持监控节点用量。&lt;/li>
+&lt;li>支持导入 Grafana 模板实现自定义监控看板。&lt;/li>
+&lt;li>支持为容器日志、资源事件和审计日志指定不同的数据保存时间。&lt;/li>
+&lt;/ul>
+&lt;h3 id="优化增强">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>Alertmanager 从 v0.21.0 升级至 v0.23.0。&lt;/li>
+&lt;li>Grafana 从 7.4.3 升级至 8.3.3。&lt;/li>
+&lt;li>kube-state-metrics 从 v1.9.7 升级至 v2.3.0。&lt;/li>
+&lt;li>node-exporter 从 v0.18.1 升级至 v1.3.1。&lt;/li>
+&lt;li>Prometheus 从 v2.26.0 升级至 v2.34.0。&lt;/li>
+&lt;li>Prometheus Operator 从 v0.43.2 升级至 v0.55.1。&lt;/li>
+&lt;li>kube-rbac-proxy 从 v0.8.0 升级至 v0.11.0。&lt;/li>
+&lt;li>configmap-reload 从 v0.3.0 升级至 v0.5.0。&lt;/li>
+&lt;li>Thanos 从 v0.18.0 升级至 v0.25.2。&lt;/li>
+&lt;li>kube-events 从 v0.3.0 升级至 v0.4.0。&lt;/li>
+&lt;li>Fluent Bit Operator 从 v0.11.0 升级至 v0.13.0。&lt;/li>
+&lt;li>Fluent Bit 从 v1.8.3 升级至 v1.8.11。&lt;/li>
+&lt;/ul>
+&lt;h2 id="kubeedge-集成">KubeEdge 集成&lt;/h2>
+&lt;h3 id="新特性-4">新特性&lt;/h3>
+&lt;ul>
+&lt;li>支持节点终端，可以直接在 UI 上登陆集群节点，包括边缘节点。&lt;/li>
+&lt;/ul>
+&lt;h3 id="优化增强-1">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>KubeEdge 版本从v1.7.2 升级到 v1.9.2。&lt;/li>
+&lt;li>移除 EdgeWatcher。&lt;/li>
+&lt;/ul>
+&lt;h2 id="网络">网络&lt;/h2>
+&lt;h3 id="优化增强-2">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>负载均衡类型选择新增 OpenELB。&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复了删除项目后项目网关遗留的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="app-store">App Store&lt;/h2>
+&lt;h3 id="问题修复-1">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复 Helm Controller NPE 错误引起的 ks-controller-manager 崩溃。&lt;/li>
+&lt;/ul>
+&lt;h2 id="验证和授权">验证和授权&lt;/h2>
+&lt;h3 id="新特性-5">新特性&lt;/h3>
+&lt;ul>
+&lt;li>支持手动启用/禁用用户。&lt;/li>
+&lt;/ul>
+&lt;h2 id="用户体验">用户体验&lt;/h2>
+&lt;ul>
+&lt;li>新增 Kubernetes 审计日志开启提示。&lt;/li>
+&lt;li>支持容器生命周期管理。&lt;/li>
+&lt;li>支持应用整个配置字典或保密字典文件。&lt;/li>
+&lt;li>支持在&lt;strong>流量监控&lt;/strong>页签选择时间段。&lt;/li>
+&lt;li>新增在&lt;strong>审计日志搜索&lt;/strong> 对话框提醒用户开启审计日志的功能。&lt;/li>
+&lt;li>支持通过 &lt;code>ClusterConfiguration&lt;/code> 配置更多 Istio 参数。&lt;/li>
+&lt;li>新增多语言支持，如土耳其语。&lt;/li>
+&lt;li>支持用户密码合规性检查。&lt;/li>
+&lt;li>新增在 webhook 设置页面将&lt;strong>访问令牌&lt;/strong>设置为必填项的功能。&lt;/li>
+&lt;li>修复&lt;strong>服务拓扑&lt;/strong>页面的服务详情区域数据未自动更新的问题。&lt;/li>
+&lt;li>修复“修改有状态服务时未显示服务名称”问题。&lt;/li>
+&lt;li>修复用户点击按钮过快造成的应用安装失败问题。&lt;/li>
+&lt;li>修复容器组探针删除后仍然显示的问题。&lt;/li>
+&lt;li>修复存储卷挂载到 init 容器时 statefulset 创建失败的问题。&lt;/li>
+&lt;li>优化了服务拓扑图详情展示窗口。&lt;/li>
+&lt;li>优化了 ClusterConfiguration 更新机制，无需重启 ks-apiserver、ks-controller-manager。&lt;/li>
+&lt;li>优化了部分页面文案描述。&lt;/li>
+&lt;/ul>
+&lt;p>有关 KubeSphere 3.3.0 的 Issue 和贡献者详细信息，请参阅 &lt;a href="https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.md" target="_blank" rel="noopener noreferrer">GitHub&lt;/a>。&lt;/p></description></item></channel></rss>

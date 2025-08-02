@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Workloads on</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/</link><description>Recent content in Workloads on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/index.xml" rel="self" type="application/rss+xml"/><item><title>Create Workloads</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/01-create-a-workload/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/01-create-a-workload/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to create workloads.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Application Workload Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Please refer to &lt;a href="#_parameter_description">Parameter Description&lt;/a> for configuring the parameters of a workload.&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Application Workload Management&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Application Workloads &amp;gt; Workloads&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Workloads&lt;/strong> page, click &lt;strong>Deployments&lt;/strong>, &lt;strong>StatefulSets&lt;/strong>, or &lt;strong>DaemonSets&lt;/strong> to open the list of workloads.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Create&lt;/strong> on the page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Basic Information&lt;/strong> tab, configure the basic information for the workload, and then click &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Pod Settings&lt;/strong> tab, set the replica count, containers, update strategy, security context, scheduling rules, and metadata for the pods managed by the workload, then click &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Storage Settings&lt;/strong> tab, mount volumes for the containers managed by the workload, then click &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Advanced Settings&lt;/strong> tab, specify IP pools and nodes for the pods managed by the workload, set metadata for the workload, then click &lt;strong>Create&lt;/strong>.&lt;/p>
+&lt;div class="paragraph">
+&lt;p>Once the workload is created, it will be displayed in the list of workloads.&lt;/p>
+&lt;/div></description></item><item><title>View Workload List</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/02-view-a-workload-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/02-view-a-workload-list/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to view the list of workloads.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Application Workload Viewing&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Application Workload Viewing&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Application Workloads &amp;gt; Workloads&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Workloads&lt;/strong> page, click &lt;strong>Deployments&lt;/strong>, &lt;strong>StatefulSets&lt;/strong>, or &lt;strong>DaemonSets&lt;/strong> to open the list of workloads.&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The workload list provides the following information:&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Name&lt;/p>
+&lt;/div></description></item><item><title>View Workload Details</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/03-view-workload-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/03-view-workload-details/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to view workload details.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Application Workload Viewing&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Application Workload Viewing&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Application Workloads &amp;gt; Workloads&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Workloads&lt;/strong> page, click &lt;strong>Deployments&lt;/strong>, &lt;strong>StatefulSets&lt;/strong>, or &lt;strong>DaemonSets&lt;/strong>, then click the name of a workload in the list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Attributes&lt;/strong> section on the left side of the workload details page, view the attributes of the workload.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Cluster&lt;/p>
+&lt;/div></description></item><item><title>Edit Workload Information</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/04-edit-workload-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/04-edit-workload-information/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to edit workload information.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>You can edit the alias and description of the workload. KubeSphere does not support editing the name of an already created workload.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Application Workload Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Application Workload Management&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Application Workloads &amp;gt; Workloads&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Workloads&lt;/strong> page, click &lt;strong>Deployments&lt;/strong>, &lt;strong>StatefulSets&lt;/strong>, or &lt;strong>DaemonSets&lt;/strong> to open the list of workloads.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span> on the right of the workload you want to edit, then choose &lt;strong>Edit Information&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Edit Information&lt;/strong> dialog, set the alias and description for the workload, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Alias&lt;/p>
+&lt;/div></description></item><item><title>Adjust Pod Replicas Count</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/06-adjust-the-number-of-pod-replicas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/06-adjust-the-number-of-pod-replicas/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to adjust the number of pod replicas in a workload.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Application Workload Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Application Workload Management&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Application Workloads &amp;gt; Workloads&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Workloads&lt;/strong> page, click &lt;strong>Deployments&lt;/strong>, &lt;strong>StatefulSets&lt;/strong>, or &lt;strong>DaemonSets&lt;/strong>, then click the name of a workload in the list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Resource Status&lt;/strong> tab of the workload details page, click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/add-dark.svg" alt="add-dark" width="18" height="18"/>&lt;/span> or &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/substract-dark.svg" alt="subtract-dark" width="18" height="18"/>&lt;/span> to adjust the replica count. Then, in the &lt;strong>Adjust Replicas&lt;/strong> dialog at the top right corner, click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Warning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>If you adjust the pod replica count to 0, all replicas managed by the workload will be deleted, and the running business will be interrupted. Please proceed with caution.&lt;/p>
+&lt;/div></description></item><item><title>Recreate Workloads</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/07-re-create-a-workload/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/07-re-create-a-workload/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to recreate a workload.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Warning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>This operation will delete and recreate all pods in the workload. The business in the workload will be interrupted until the new pods are created. Please proceed with caution.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Application Workload Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div></description></item><item><title>Roll Back Workload Settings</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/08-roll-back-workload-settings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/08-roll-back-workload-settings/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to roll back workload settings.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>The system generates revision records after creating or modifying workloads, which can be used to roll back workload settings. Up to 10 revision records can be retained.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Warning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>This operation will recreate the workload based on the selected revision record, and the running business will be interrupted. Please proceed with caution.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a cluster and have the &lt;strong>Application Workload Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Edit Workload Settings</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/10-edit-workload-settings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/10-edit-workload-settings/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to edit settings for created workloads.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>After the workload is created, you can edit the workload’s update strategy, containers, storage, pod scheduling rules and pod grace period.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Application Workload Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Application Workload Management&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Application Workloads &amp;gt; Workloads&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Workloads&lt;/strong> page, click &lt;strong>Deployments&lt;/strong>, &lt;strong>StatefulSets&lt;/strong>, or &lt;strong>DaemonSets&lt;/strong>, then click the name of a workload in the list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the top left of the workload details page, select &lt;strong>More &amp;gt; Edit Settings&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Edit Settings&lt;/strong> dialog, set the workload’s update strategy, containers, storage, pod scheduling rules (not available for DaemonSets), and pod graceful period. Then, click &lt;strong>OK&lt;/strong>. For specific parameter settings, refer to &lt;a href="#_Parameter_Description">Parameter Description&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>Stop Workloads</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/11-stop-workloads/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/11-stop-workloads/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to stop workloads.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Warning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>This operation will adjust the pod replica count to 0, and the running business will be interrupted. Please proceed with caution.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Application Workload Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Application Workload Management&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Application Workloads &amp;gt; Workloads&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Workloads&lt;/strong> page, click &lt;strong>Deployments&lt;/strong>, &lt;strong>StatefulSets&lt;/strong>, or &lt;strong>DaemonSets&lt;/strong> to open the list of workloads.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Select the checkbox on the left side of the workloads you want to stop, then click &lt;strong>Stop&lt;/strong> above the workload list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Stop Workload&lt;/strong> dialog, enter the name of the workload, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Please separate multiple names using a comma (,) and a space.&lt;/p>
+&lt;/div></description></item><item><title>Delete Workloads</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/12-delete-workloads/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/12-delete-workloads/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to delete a workload.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Warning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>This operation will delete the workload and all pods managed by it. The business running in the workload will be interrupted. Please proceed with caution.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Application Workload Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div></description></item></channel></rss>

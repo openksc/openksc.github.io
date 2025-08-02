@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>User Notification Settings on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/</link><description>Recent content in User Notification Settings on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/index.xml" rel="self" type="application/rss+xml"/><item><title>Set Up Email Notification</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/01-set-email-notification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/01-set-email-notification/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to set up email notification.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>WhizardTelemetry Notification&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the current username in the upper-right corner of the page, and then select &lt;strong>Notification Settings&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Notification Settings&lt;/strong> page, under the &lt;strong>Email&lt;/strong> tab, set the email notification parameters, and then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Recipient Settings&lt;/p>
+&lt;div class="paragraph">
+&lt;p>Enter the email address, click &lt;strong>Add&lt;/strong> to set multiple notification recipients.&lt;/p>
+&lt;/div></description></item><item><title>Set Up Feishu Notification</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/02-set-feishu-notification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/02-set-feishu-notification/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to set up Feishu notification.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Feishu notification functionality supports sending notifications to users through the following two methods:&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Chat Settings&lt;/strong>: Use a Feishu application to send notifications to specific users or departments.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Chatbot Settings&lt;/strong>: Use a Feishu chatbot to send notifications to specific group chats.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>WhizardTelemetry Notification&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You should get the access parameters for the application or chatbot from Feishu in advance. For more information, see &lt;a href="https://open.feishu.cn/document/ukTMukTMukTM/uITNz4iM1MjLyUzM">Feishu Developer Documentation&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Set Up DingTalk Notification</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/03-set-dingtalk-notification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/03-set-dingtalk-notification/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to set up DingTalk notification.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>DingTalk notification functionality supports sending notifications to users through the following two methods:&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Chat Settings&lt;/strong>: Use a DingTalk application to send notifications to specific users or departments.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Chatbot Settings&lt;/strong>: Use a DingTalk chatbot to send notifications to specific group chats.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>WhizardTelemetry Notification&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You should get the access parameters for the application or chatbot from DingTalk in advance. For more information, see &lt;a href="https://open.dingtalk.com/document/orgapp-server/how-to-call-apis">DingTalk Developer Documentation&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Set Up WeCom Notification</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/04-set-wecom-notification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/04-set-wecom-notification/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to set up WeCom notification. After configuration, you can receive notification messages through WeCom chats or chatbots.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>WhizardTelemetry Notification&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You should get the access parameters for the WeCom application in advance. For more information, see &lt;a href="https://developer.work.weixin.qq.com/document/path/90664">WeCom Developer Documentation&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the current username in the upper-right corner of the page, and then select &lt;strong>Notification Settings&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Notification Settings&lt;/strong> page, under the &lt;strong>WeCom&lt;/strong> tab, set the WeCom notification parameters, and then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Chat Settings &amp;gt; Recipient Settings&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>Set the User ID, Department ID, or Tag ID that will receive notifications. Click &lt;strong>Add&lt;/strong> to set multiple IDs.&lt;/p>
+&lt;/div></description></item><item><title>Set Up Slack Notification</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/05-set-slack-notification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/05-set-slack-notification/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to set up Slack notification.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>WhizardTelemetry Notification&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You should get the access parameters for the Slack application in advance. For more information, see &lt;a href="https://api.slack.com/messaging/webhooks#create_a_webhook">Slack Developer Documentation&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the current username in the upper-right corner of the page, and then select &lt;strong>Notification Settings&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Notification Settings&lt;/strong> page, under the &lt;strong>Slack&lt;/strong> tab, set the Slack notification parameters, and then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Slack Channel Settings&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>Set the Slack channels that will receive notifications. Click &lt;strong>Add&lt;/strong> to set multiple Slack channels.&lt;/p>
+&lt;/div></description></item><item><title>Set Up Webhook Notification</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/06-set-webhook-notification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/06-set-webhook-notification/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to set up Webhook notification.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>WhizardTelemetry Notification&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You should get the access parameters for the Webhook in advance. For more information, please contact your Webhook administrator.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the current username in the upper-right corner of the page, and then select &lt;strong>Notification Settings&lt;/strong> from the drop-down list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Notification Settings&lt;/strong> page, under the &lt;strong>Webhook&lt;/strong> tab, set the Webhook notification parameters, and then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Server Settings&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Webhook URL&lt;/p>
+&lt;/div></description></item></channel></rss>

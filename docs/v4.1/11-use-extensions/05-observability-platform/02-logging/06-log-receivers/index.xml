@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Log Receivers on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/</link><description>Recent content in Log Receivers on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/index.xml" rel="self" type="application/rss+xml"/><item><title>Configure OpenSearch Log Receiver</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/01-config-opensearch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/01-config-opensearch/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to configure the OpenSearch log receiver to send log data to the specified OpenSearch database.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>You can modify the extension configuration to configure the log receiver either during or after the extension installation. The following only introduces how to configure the OpenSearch log receiver when the extension is already installed.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>You should have the &lt;strong>platform-admin&lt;/strong> role on the KubeSphere platform.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You have obtained the service address and port of OpenSearch.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

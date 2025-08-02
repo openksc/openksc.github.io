@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>可观测性 on</title><link>https://openksc.github.io/zh/docs/v3.3/faq/observability/</link><description>Recent content in 可观测性 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v3.3/faq/observability/index.xml" rel="self" type="application/rss+xml"/><item><title>日志</title><link>https://openksc.github.io/zh/docs/v3.3/faq/observability/logging/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/faq/observability/logging/</guid><description>&lt;p>本页包含一些关于日志的常见问题。&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="../../observability/logging/#%e5%a6%82%e4%bd%95%e5%b0%86%e6%97%a5%e5%bf%97%e5%ad%98%e5%82%a8%e6%94%b9%e4%b8%ba%e5%a4%96%e9%83%a8-elasticsearch-%e5%b9%b6%e5%85%b3%e9%97%ad%e5%86%85%e9%83%a8-elasticsearch">如何将日志存储改为外部 Elasticsearch 并关闭内部 Elasticsearch&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../observability/logging/#%e5%a6%82%e4%bd%95%e5%9c%a8%e5%90%af%e7%94%a8-x-pack-security-%e7%9a%84%e6%83%85%e5%86%b5%e4%b8%8b%e5%b0%86%e6%97%a5%e5%bf%97%e5%ad%98%e5%82%a8%e6%94%b9%e4%b8%ba-elasticsearch">如何在启用 X-Pack Security 的情况下将日志存储改为 Elasticsearch&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../observability/logging/#%e5%a6%82%e4%bd%95%e4%bf%ae%e6%94%b9%e6%97%a5%e5%bf%97%e6%95%b0%e6%8d%ae%e4%bf%9d%e7%95%99%e6%9c%9f%e9%99%90">如何修改日志数据保留期限&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../observability/logging/#%e6%97%a0%e6%b3%95%e4%bd%bf%e7%94%a8%e5%b7%a5%e5%85%b7%e7%ae%b1%e6%89%be%e5%88%b0%e6%9f%90%e4%ba%9b%e8%8a%82%e7%82%b9%e4%b8%8a%e5%b7%a5%e4%bd%9c%e8%b4%9f%e8%bd%bd%e7%9a%84%e6%97%a5%e5%bf%97">无法使用工具箱找到某些节点上工作负载的日志&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../observability/logging/#%e5%b7%a5%e5%85%b7%e7%ae%b1%e4%b8%ad%e7%9a%84%e6%97%a5%e5%bf%97%e6%9f%a5%e8%af%a2%e9%a1%b5%e9%9d%a2%e5%9c%a8%e5%8a%a0%e8%bd%bd%e6%97%b6%e5%8d%a1%e4%bd%8f">工具箱中的日志查询页面在加载时卡住&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../observability/logging/#%e5%b7%a5%e5%85%b7%e7%ae%b1%e6%98%be%e7%a4%ba%e4%bb%8a%e5%a4%a9%e6%b2%a1%e6%9c%89%e6%97%a5%e5%bf%97%e8%ae%b0%e5%bd%95">工具箱显示今天没有日志记录&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../observability/logging/#%e5%9c%a8%e5%b7%a5%e5%85%b7%e7%ae%b1%e4%b8%ad%e6%9f%a5%e7%9c%8b%e6%97%a5%e5%bf%97%e6%97%b6%e6%8a%a5%e5%91%8a%e5%86%85%e9%83%a8%e6%9c%8d%e5%8a%a1%e5%99%a8%e9%94%99%e8%af%af">在工具箱中查看日志时，报告内部服务器错误&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../observability/logging/#%e5%a6%82%e4%bd%95%e8%ae%a9-kubesphere-%e5%8f%aa%e6%94%b6%e9%9b%86%e6%8c%87%e5%ae%9a%e5%b7%a5%e4%bd%9c%e8%b4%9f%e8%bd%bd%e7%9a%84%e6%97%a5%e5%bf%97">如何让 KubeSphere 只收集指定工作负载的日志&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../observability/logging/#%e5%9c%a8%e6%9f%a5%e7%9c%8b%e5%ae%b9%e5%99%a8%e5%ae%9e%e6%97%b6%e6%97%a5%e5%bf%97%e7%9a%84%e6%97%b6%e5%80%99%e6%8e%a7%e5%88%b6%e5%8f%b0%e4%b8%8a%e7%9c%8b%e5%88%b0%e7%9a%84%e5%ae%9e%e6%97%b6%e6%97%a5%e5%bf%97%e8%a6%81%e6%af%94-kubectl-log--f-xxx-%e7%9c%8b%e5%88%b0%e7%9a%84%e5%b0%91">在查看容器实时日志的时候，控制台上看到的实时日志要比 kubectl log -f xxx 看到的少&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="如何将日志存储改为外部-elasticsearch-并关闭内部-elasticsearch">如何将日志存储改为外部 Elasticsearch 并关闭内部 Elasticsearch&lt;/h2>
+&lt;p>如果您使用的是 KubeSphere 内部的 Elasticsearch，并且想把它改成您的外部 Elasticsearch，请按照以下步骤操作。如果您还没有启用日志系统，请参考 &lt;a href="../../../pluggable-components/logging/">KubeSphere 日志系统&lt;/a>直接设置外部 Elasticsearch。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>首先，请执行以下命令更新 KubeKey 配置：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl edit cc -n kubesphere-system ks-installer
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>将 &lt;code>es.elasticsearchDataXXX&lt;/code>、&lt;code>es.elasticsearchMasterXXX&lt;/code> 和 &lt;code>status.logging&lt;/code> 的注释取消，将 &lt;code>es.externalElasticsearchHost&lt;/code> 设置为 Elasticsearch 的地址，将 &lt;code>es.externalElasticsearchPort&lt;/code> 设置为其端口号。以下示例供您参考：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">apiVersion&lt;/span>: &lt;span style="color:#ae81ff">installer.kubesphere.io/v1alpha1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">kind&lt;/span>: &lt;span style="color:#ae81ff">ClusterConfiguration&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">metadata&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">ks-installer&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">namespace&lt;/span>: &lt;span style="color:#ae81ff">kubesphere-system&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">spec&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">common&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">es&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># elasticsearchDataReplicas: 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># elasticsearchDataVolumeSize: 20Gi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># elasticsearchMasterReplicas: 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># elasticsearchMasterVolumeSize: 4Gi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">elkPrefix&lt;/span>: &lt;span style="color:#ae81ff">logstash&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">logMaxAge&lt;/span>: &lt;span style="color:#ae81ff">7&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">externalElasticsearchHost&lt;/span>: &lt;span style="color:#ae81ff">&amp;lt;192.168.0.2&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">externalElasticsearchPort&lt;/span>: &lt;span style="color:#ae81ff">&amp;lt;9200&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">status&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># logging:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># enabledTime: 2020-08-10T02:05:13UTC&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># status: enabled&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">...&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>重新运行 &lt;code>ks-installer&lt;/code>。&lt;/p></description></item><item><title>监控</title><link>https://openksc.github.io/zh/docs/v3.3/faq/observability/monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/faq/observability/monitoring/</guid><description>&lt;p>本页包含关于监控的一些常见问题。&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="../../observability/monitoring/#%e5%a6%82%e4%bd%95%e8%ae%bf%e9%97%ae-kubesphere-prometheus-%e6%8e%a7%e5%88%b6%e5%8f%b0">如何访问 KubeSphere Prometheus 控制台&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../observability/monitoring/#node-exporter-%e5%bc%95%e8%b5%b7%e7%9a%84%e4%b8%bb%e6%9c%ba%e7%ab%af%e5%8f%a3-9100-%e5%86%b2%e7%aa%81">Node Exporter 引起的主机端口 9100 冲突&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../observability/monitoring/#%e4%b8%8e%e7%8e%b0%e6%9c%89%e7%9a%84-prometheus-operator-%e7%9b%b8%e5%86%b2%e7%aa%81">与现有的 Prometheus Operator 相冲突&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../observability/monitoring/#%e5%a6%82%e4%bd%95%e6%9b%b4%e6%94%b9%e7%9b%91%e6%8e%a7%e6%95%b0%e6%8d%ae%e4%bf%9d%e7%95%99%e6%9c%9f%e9%99%90">如何更改监控数据保留期限&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../observability/monitoring/#kube-scheduler-%e5%92%8c-kube-controller-manager-%e6%b2%a1%e6%9c%89%e7%9b%91%e6%8e%a7%e6%95%b0%e6%8d%ae">kube-scheduler 和 kube-controller-manager 没有监控数据&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../observability/monitoring/#%e8%bf%91%e5%87%a0%e5%88%86%e9%92%9f%e6%b2%a1%e6%9c%89%e7%9b%91%e6%8e%a7%e6%95%b0%e6%8d%ae">近几分钟没有监控数据&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../observability/monitoring/#%e8%8a%82%e7%82%b9%e5%92%8c%e6%8e%a7%e5%88%b6%e5%b9%b3%e9%9d%a2%e9%83%bd%e6%b2%a1%e6%9c%89%e7%9b%91%e6%8e%a7%e6%95%b0%e6%8d%ae">节点和控制平面都没有监控数据&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../observability/monitoring/#prometheus-%e4%ba%a7%e7%94%9f%e9%94%99%e8%af%af%e6%97%a5%e5%bf%97%e6%89%93%e5%bc%80%e5%ad%98%e5%82%a8%e5%a4%b1%e8%b4%a5%e6%b2%a1%e6%9c%89%e6%ad%a4%e6%96%87%e4%bb%b6%e6%88%96%e7%9b%ae%e5%bd%95">Prometheus 产生错误日志：打开存储失败、没有此文件或目录&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="如何访问-kubesphere-prometheus-控制台">如何访问 KubeSphere Prometheus 控制台&lt;/h2>
+&lt;p>KubeSphere 监控引擎由 Prometheus 提供支持。出于调试目的，您可能希望通过 NodePort 访问内置的 Prometheus 服务，请运行以下命令将服务类型更改为 &lt;code>NodePort&lt;/code>：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>kubectl edit svc -n kubesphere-monitoring-system prometheus-k8s
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>若要访问 Prometheus 控制台，您可能需要根据您的环境开放相关端口并配置端口转发规则。&lt;/div>
+&lt;/div>
+&lt;h2 id="node-exporter-引起的主机端口-9100-冲突">Node Exporter 引起的主机端口 9100 冲突&lt;/h2>
+&lt;p>如果有进程占用主机端口 9100，&lt;code>kubespher-monitoring-system&lt;/code> 下的 Node Exporter 会崩溃。若要解决冲突，您需要终止进程或将 Node Exporter 换到另一个可用端口。&lt;/p>
+&lt;p>若要采用另一个主机端口（例如 &lt;code>29100&lt;/code>），请运行以下命令将所有的 &lt;code>9100&lt;/code> 替换为 &lt;code>29100&lt;/code>（需要更改 5 处）。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>kubectl edit ds -n kubesphere-monitoring-system node-exporter
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>apiVersion: apps/v1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kind: DaemonSet
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>metadata:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> name: node-exporter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> namespace: kubesphere-monitoring-system
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>spec:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> template:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> spec:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> containers:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: node-exporter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> image: kubesphere/node-exporter:ks-v0.18.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> args:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - --web.listen-address&lt;span style="color:#f92672">=&lt;/span>127.0.0.1:9100
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: kube-rbac-proxy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> image: kubesphere/kube-rbac-proxy:v0.4.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> args:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - --logtostderr
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - --secure-listen-address&lt;span style="color:#f92672">=[&lt;/span>&lt;span style="color:#66d9ef">$(&lt;/span>IP&lt;span style="color:#66d9ef">)&lt;/span>&lt;span style="color:#f92672">]&lt;/span>:9100
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - --upstream&lt;span style="color:#f92672">=&lt;/span>http://127.0.0.1:9100/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ports:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - containerPort: &lt;span style="color:#ae81ff">9100&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> hostPort: &lt;span style="color:#ae81ff">9100&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="与现有的-prometheus-operator-相冲突">与现有的 Prometheus Operator 相冲突&lt;/h2>
+&lt;p>如果您已自行部署 Prometheus Operator，请确保在安装 KubeSphere 之前将 Prometheus Operator 删除。否则，可能会出现冲突，即 KubeSphere 内置的 Prometheus Operator 选择重复的 ServiceMonitor 对象。&lt;/p></description></item><item><title>集成您自己的 Prometheus</title><link>https://openksc.github.io/zh/docs/v3.3/faq/observability/byop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/faq/observability/byop/</guid><description>&lt;p>KubeSphere 自带一些预装的自定义监控组件，包括 Prometheus Operator、Prometheus、Alertmanager、Grafana（可选）、各种 ServiceMonitor、node-exporter 和 kube-state-metrics。在您安装 KubeSphere 之前，这些组件可能已经存在。在 KubeSphere 3.3 中，您可以使用自己的 Prometheus 堆栈设置。&lt;/p>
+&lt;h2 id="集成您自己的-prometheus">集成您自己的 Prometheus&lt;/h2>
+&lt;p>要使用您自己的 Prometheus 堆栈设置，请执行以下步骤：&lt;/p>
+&lt;h3 id="步骤-1卸载-kubesphere-的自定义-prometheus-堆栈">步骤 1：卸载 KubeSphere 的自定义 Prometheus 堆栈&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>执行以下命令，卸载堆栈：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl -n kubesphere-system exec &lt;span style="color:#66d9ef">$(&lt;/span>kubectl get pod -n kubesphere-system -l app&lt;span style="color:#f92672">=&lt;/span>ks-installer -o jsonpath&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;{.items[0].metadata.name}&amp;#39;&lt;/span>&lt;span style="color:#66d9ef">)&lt;/span> -- kubectl delete -f /kubesphere/kubesphere/prometheus/alertmanager/ 2&amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl -n kubesphere-system exec &lt;span style="color:#66d9ef">$(&lt;/span>kubectl get pod -n kubesphere-system -l app&lt;span style="color:#f92672">=&lt;/span>ks-installer -o jsonpath&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;{.items[0].metadata.name}&amp;#39;&lt;/span>&lt;span style="color:#66d9ef">)&lt;/span> -- kubectl delete -f /kubesphere/kubesphere/prometheus/devops/ 2&amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl -n kubesphere-system exec &lt;span style="color:#66d9ef">$(&lt;/span>kubectl get pod -n kubesphere-system -l app&lt;span style="color:#f92672">=&lt;/span>ks-installer -o jsonpath&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;{.items[0].metadata.name}&amp;#39;&lt;/span>&lt;span style="color:#66d9ef">)&lt;/span> -- kubectl delete -f /kubesphere/kubesphere/prometheus/etcd/ 2&amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl -n kubesphere-system exec &lt;span style="color:#66d9ef">$(&lt;/span>kubectl get pod -n kubesphere-system -l app&lt;span style="color:#f92672">=&lt;/span>ks-installer -o jsonpath&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;{.items[0].metadata.name}&amp;#39;&lt;/span>&lt;span style="color:#66d9ef">)&lt;/span> -- kubectl delete -f /kubesphere/kubesphere/prometheus/grafana/ 2&amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl -n kubesphere-system exec &lt;span style="color:#66d9ef">$(&lt;/span>kubectl get pod -n kubesphere-system -l app&lt;span style="color:#f92672">=&lt;/span>ks-installer -o jsonpath&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;{.items[0].metadata.name}&amp;#39;&lt;/span>&lt;span style="color:#66d9ef">)&lt;/span> -- kubectl delete -f /kubesphere/kubesphere/prometheus/kube-state-metrics/ 2&amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl -n kubesphere-system exec &lt;span style="color:#66d9ef">$(&lt;/span>kubectl get pod -n kubesphere-system -l app&lt;span style="color:#f92672">=&lt;/span>ks-installer -o jsonpath&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;{.items[0].metadata.name}&amp;#39;&lt;/span>&lt;span style="color:#66d9ef">)&lt;/span> -- kubectl delete -f /kubesphere/kubesphere/prometheus/node-exporter/ 2&amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl -n kubesphere-system exec &lt;span style="color:#66d9ef">$(&lt;/span>kubectl get pod -n kubesphere-system -l app&lt;span style="color:#f92672">=&lt;/span>ks-installer -o jsonpath&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;{.items[0].metadata.name}&amp;#39;&lt;/span>&lt;span style="color:#66d9ef">)&lt;/span> -- kubectl delete -f /kubesphere/kubesphere/prometheus/upgrade/ 2&amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl -n kubesphere-system exec &lt;span style="color:#66d9ef">$(&lt;/span>kubectl get pod -n kubesphere-system -l app&lt;span style="color:#f92672">=&lt;/span>ks-installer -o jsonpath&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;{.items[0].metadata.name}&amp;#39;&lt;/span>&lt;span style="color:#66d9ef">)&lt;/span> -- kubectl delete -f /kubesphere/kubesphere/prometheus/prometheus-rules-v1.16&lt;span style="color:#ae81ff">\+&lt;/span>.yaml 2&amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl -n kubesphere-system exec &lt;span style="color:#66d9ef">$(&lt;/span>kubectl get pod -n kubesphere-system -l app&lt;span style="color:#f92672">=&lt;/span>ks-installer -o jsonpath&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;{.items[0].metadata.name}&amp;#39;&lt;/span>&lt;span style="color:#66d9ef">)&lt;/span> -- kubectl delete -f /kubesphere/kubesphere/prometheus/prometheus-rules.yaml 2&amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl -n kubesphere-system exec &lt;span style="color:#66d9ef">$(&lt;/span>kubectl get pod -n kubesphere-system -l app&lt;span style="color:#f92672">=&lt;/span>ks-installer -o jsonpath&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;{.items[0].metadata.name}&amp;#39;&lt;/span>&lt;span style="color:#66d9ef">)&lt;/span> -- kubectl delete -f /kubesphere/kubesphere/prometheus/prometheus 2&amp;gt;/dev/null
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Uncomment this line if you don&amp;#39;t have Prometheus managed by Prometheus Operator in other namespaces.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># kubectl -n kubesphere-system exec $(kubectl get pod -n kubesphere-system -l app=ks-installer -o jsonpath=&amp;#39;{.items[0].metadata.name}&amp;#39;) -- kubectl delete -f /kubesphere/kubesphere/prometheus/init/ 2&amp;gt;/dev/null&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>删除 Prometheus 使用的 PVC。&lt;/p></description></item></channel></rss>

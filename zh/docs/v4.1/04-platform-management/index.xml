@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>平台管理 on</title><link>https://openksc.github.io/zh/docs/v4.1/04-platform-management/</link><description>Recent content in 平台管理 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/04-platform-management/index.xml" rel="self" type="application/rss+xml"/><item><title>平台介绍</title><link>https://openksc.github.io/zh/docs/v4.1/04-platform-management/01-platform-features/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/04-platform-management/01-platform-features/</guid><description>&lt;div class="paragraph">
+&lt;p>KubeSphere 采用细粒度权限控制机制。根据用户角色不同，KubeSphere Web 控制台也有所不同。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>本节以具有 platform-admin 角色的用户视角，介绍 KubeSphere Web 控制台的模块及功能。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">模块&lt;/th>
+&lt;th class="tableblock halign-left valign-top">功能&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>扩展市场&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>扩展组件的商店，支持安装、卸载、配置、升级扩展组件等。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用商店&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用商店提供了基于 Helm Chart 的应用模板，支持搜索、安装应用到某一项目。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top" rowspan="5">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>工作台&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群管理：从基础设施视角管理资源，支持添加成员集群、管理集群资源、更新 kubeconfig、移除成员集群等操作。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>企业空间管理：提供跨集群共享资源的能力，支持创建企业空间、管理企业空间和项目资源、删除企业空间等操作。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>用户和角色管理：创建用户/平台角色、编辑用户/平台角色信息、启用和禁用用户、修改用户角色、编辑平台角色信息&amp;amp;权限，删除用户/平台角色。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>扩展中心：管理扩展组件，如安装、卸载、配置、禁用、升级扩展组件等。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>快捷访问：支持对集群、企业空间、项目等资源的快速访问。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>扩展组件&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>平台级、多集群和多租户级扩展组件的全局访问入口，支持快捷访问已安装的扩展组件。&lt;/p>
+&lt;/div></description></item><item><title>快捷访问</title><link>https://openksc.github.io/zh/docs/v4.1/04-platform-management/02-quick-access/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/04-platform-management/02-quick-access/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何添加或移除对集群、企业空间、项目等资源的快捷访问，以便快速进入对应资源的管理页面。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>已获取 KubeSphere Web 控制台的用户名和密码。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在集群列表、企业空间列表、项目列表页面，点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/star_none.svg" alt="star_none" width="18" height="18"/>&lt;/span>，即可添加对应资源到&lt;strong>工作台&lt;/strong>的&lt;strong>快捷访问&lt;/strong>区域。点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/star.svg" alt="star" width="18" height="18"/>&lt;/span>，即可从快捷访问中移除该资源。&lt;/p>
+&lt;div class="paragraph">
+&lt;p>也可在&lt;strong>快捷访问&lt;/strong>区域点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/star.svg" alt="star" width="18" height="18"/>&lt;/span>，移除已添加的资源。&lt;/p>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

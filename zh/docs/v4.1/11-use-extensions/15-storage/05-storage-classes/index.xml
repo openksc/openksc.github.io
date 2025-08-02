@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>存储类 on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/15-storage/05-storage-classes/</link><description>Recent content in 存储类 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/15-storage/05-storage-classes/index.xml" rel="self" type="application/rss+xml"/><item><title>设置授权规则</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/15-storage/05-storage-classes/01-set-authorization-rules/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/15-storage/05-storage-classes/01-set-authorization-rules/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何为存储类设置授权规则。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>设置并启用授权规则后，用户只能在特定项目和企业空间使用存储类。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 存储&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个集群并在集群中具有&lt;strong>存储类访问规则管理&lt;/strong>权限。有关更多信息，请参阅“集群成员”和“集群角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>存储类访问规则管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>存储 &amp;gt; 存储类&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在存储类列表中点击一个存储类的名称打开其详情页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在存储类详情页面的左上角，选择&lt;strong>更多操作 &amp;gt; 设置授权规则&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>设置授权规则&lt;/strong>对话框，点击页面右侧的&lt;strong>已禁用&lt;/strong>按钮启用授权规则。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>若要禁用授权规则，在页面右侧点击&lt;strong>已启用&lt;/strong>。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>授权规则&lt;/strong>设置区域，设置在特定的项目和企业空间使用该存储类。&lt;/p>
+&lt;div class="paragraph">
+&lt;p>&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/v4.1/storage1.png" alt="rule" width="100%"/>&lt;/span>&lt;/p>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>设置完成后，点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>设置存储卷自动扩展</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/15-storage/05-storage-classes/02-set-auto-expansion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/15-storage/05-storage-classes/02-set-auto-expansion/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何设置存储卷自动扩展。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>卷容量自动扩展指系统在卷剩余空间低于阈值时自动扩展卷容量。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 存储&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个集群并在集群中具有&lt;strong>存储类管理&lt;/strong>权限。有关更多信息，请参阅“集群成员”和“集群角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>请确保后端存储系统支持卷扩展功能，且存储类已启用卷扩展功能。有关更多信息，请参阅&lt;a href="../../../../07-cluster-management/08-storage/02-storage-classes/05-enable-and-disable-volume-operations">启用和禁用卷操作&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>存储类管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>存储 &amp;gt; 存储类&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在存储类列表中点击一个存储类的名称打开其详情页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在存储类详情页面的左上角，选择&lt;strong>更多操作 &amp;gt; 设置自动扩展&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>设置自动扩展&lt;/strong>对话框，点击页面右侧的&lt;strong>已禁用&lt;/strong>按钮启用自动扩展功能。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>如果您需要禁用自动扩展功能，在页面右侧点击&lt;strong>已启用&lt;/strong>。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>自动扩展&lt;/strong>设置区域，设置扩展的最大容量、阈值、以及增量。&lt;/p>
+&lt;div class="paragraph">
+&lt;p>&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/v4.1/storage2.png" alt="scale" width="100%"/>&lt;/span>&lt;/p>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>（可选）如果您需要系统自动检查卷状态并重启工作负载，请勾选&lt;strong>自动重启工作负载&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>设置完成后，点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

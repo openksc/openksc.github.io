@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>流水线 on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/</link><description>Recent content in 流水线 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/index.xml" rel="self" type="application/rss+xml"/><item><title>使用图形编辑面板创建流水线</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/01-create-a-pipeline-using-graphical-editing-panel/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/01-create-a-pipeline-using-graphical-editing-panel/</guid><description>&lt;div class="paragraph">
+&lt;p>DevOps 中的图形编辑面板包含用于 Jenkins &lt;a href="https://www.jenkins.io/zh/doc/book/pipeline/#阶段">阶段 (Stage)&lt;/a> 和&lt;a href="https://www.jenkins.io/zh/doc/book/pipeline/#步骤">步骤 (Step)&lt;/a> 的所有必要操作。DevOps 支持直接在交互式面板上定义这些阶段和步骤，无需创建任何 Jenkinsfile。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>本文档演示如何在 KubeSphere 中使用图形编辑面板创建流水线。在整个过程中，DevOps 将根据编辑面板上的设置自动生成 Jenkinsfile，您无需手动创建 Jenkinsfile。待流水线成功运行，它会将镜像推送至 Docker Hub。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>DevOps&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已有一个 &lt;a href="http://www.dockerhub.com/">Docker Hub&lt;/a> 账户。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已创建一个企业空间、一个 DevOps 项目和一个用户 (例如 &lt;strong>project-regular&lt;/strong>)，并已邀请该用户至 DevOps 项目且授予 &lt;strong>operator&lt;/strong> 角色。请参阅&lt;a href="../../05-devops-settings/02-role-and-member-management">角色和成员管理&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已设置 CI 专用节点用于运行流水线。请参阅&lt;a href="../../05-devops-settings/04-set-ci-node/">为缓存依赖项设置 CI 节点&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>配置电子邮件服务器用于接收流水线通知（可选）。
+请参阅&lt;a href="../09-jenkins-email/">为流水线设置电子邮件服务器&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>配置 SonarQube 将代码分析纳入流水线中（可选）。
+请参阅&lt;a href="../../../04-how-to-integrate/01-sonarqube/">将 SonarQube 集成到流水线&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_流水线概述">流水线概述&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>本示例流水线包括以下阶段。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>阶段 1：Checkout SCM&lt;/strong>：从 GitHub 仓库拉取源代码。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>阶段 2：单元测试&lt;/strong>：待该测试通过后才会进行下一阶段。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>阶段 3：代码分析&lt;/strong>：配置 SonarQube 用于静态代码分析。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>阶段 4：构建并推送&lt;/strong>：构建镜像并附上标签 &lt;strong>snapshot-$BUILD_NUMBER&lt;/strong> 推送至 Docker Hub，其中 &lt;strong>$BUILD_NUMBER&lt;/strong> 是流水线运行记录列表中的记录的运行 ID。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>阶段 5：制品&lt;/strong>：生成一个制品（JAR 文件包）并保存。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>使用 Jenkinsfile 创建流水线</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/02-create-a-pipeline-using-jenkinsfile/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/02-create-a-pipeline-using-jenkinsfile/</guid><description>&lt;div class="paragraph">
+&lt;p>Jenkinsfile 是一个文本文件，包含 Jenkins 流水线的定义，并被检入源代码控制仓库。Jenkinsfile 将整个工作流存储为代码，因此它是代码审查和流水线迭代过程的基础。有关更多信息，请参阅 &lt;a href="https://www.jenkins.io/zh/doc/book/pipeline/jenkinsfile/">Jenkins 官方文档&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>本文档演示如何基于 GitHub 仓库中的 Jenkinsfile 创建流水线。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>DevOps 支持创建两种类型的流水线：一种是本文档中介绍的基于 SCM 中 Jenkinsfile 创建的流水线，另一种是&lt;a href="../01-create-a-pipeline-using-graphical-editing-panel/">通过图形编辑面板创建的流水线&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Jenkinsfile in SCM 需要源代码管理 (SCM) 中有内置 Jenkinsfile，换句话说，Jenkinsfile 必须是 SCM 的一部分。DevOps 系统会根据代码仓库的现有 Jenkinsfile 自动构建 CI/CD 流水线。通过定义工作流，例如 &lt;strong>stage&lt;/strong> 和 &lt;strong>step&lt;/strong> 可以满足特定的构建、测试和部署要求。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>DevOps&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已有一个 &lt;a href="https://hub.docker.com/">Docker Hub&lt;/a> 账户和一个 &lt;a href="https://github.com/">GitHub&lt;/a> 账户。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已创建一个企业空间、一个 DevOps 项目和一个用户 (例如 &lt;strong>project-regular&lt;/strong>)，并已邀请该用户至 DevOps 项目且授予 &lt;strong>operator&lt;/strong> 角色。请参阅&lt;a href="../../05-devops-settings/02-role-and-member-management">角色和成员管理&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已设置 CI 专用节点用于运行流水线。请参阅&lt;a href="../../05-devops-settings/04-set-ci-node/">为依赖项缓存设置 CI 节点&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已安装和配置 SonarQube（可选）。请参阅&lt;a href="../../../04-how-to-integrate/01-sonarqube/">将 SonarQube 集成到流水线&lt;/a>。如果跳过这一部分，则没有下面的 &lt;strong>SonarQube 分析&lt;/strong>阶段。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>使用流水线模板创建流水线</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/03-use-pipeline-templates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/03-use-pipeline-templates/</guid><description>&lt;div class="paragraph">
+&lt;p>本文档演示如何在 KubeSphere 上使用流水线模板创建流水线。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>DevOps 提供图形编辑面板，支持通过交互式操作来定义 Jenkins 流水线的阶段和步骤。内置多个流水线模板，如 Node.js、Maven 以及 Golang，使用户能够快速创建对应模板的流水线。DevOps 还提供 CI 以及 CI &amp;amp; CD 流水线模板，但是这两个模板难以满足定制化需求，建议您采用其它内置模板或直接自定义流水线。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>CI 流水线模板&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>CI 流水线模板包含两个阶段。&lt;strong>clone code&lt;/strong> 阶段用于检出代码，&lt;strong>build &amp;amp; push&lt;/strong> 阶段用于构建镜像并将镜像推送至 Docker Hub。先为代码仓库和 Docker Hub 仓库创建凭证，然后在相应的步骤中设置仓库的 URL 以及凭证。完成编辑后，流水线即可开始运行。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>CI &amp;amp; CD 流水线模板&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>CI &amp;amp; CD 流水线模板包含六个阶段。有关每个阶段的更多信息，请参阅&lt;a href="../02-create-a-pipeline-using-jenkinsfile/">使用 Jenkinsfile 创建流水线&lt;/a>。先为代码仓库、Docker Hub 仓库创建凭证，然后在相应的步骤中设置仓库的 URL 以及凭证。完成编辑后，流水线即可开始运行。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>DevOps&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已创建一个企业空间、一个 DevOps 项目和一个用户 (例如 &lt;strong>project-regular&lt;/strong>)，并已邀请该用户至 DevOps 项目且授予 &lt;strong>operator&lt;/strong> 角色。请参阅&lt;a href="../../05-devops-settings/02-role-and-member-management">角色和成员管理&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>下面以 Node.js 为例演示如何使用内置流水线模板。使用 Maven 以及 Golang 流水线模板的操作基本相同。&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以 &lt;strong>project-regular&lt;/strong> 用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>企业空间管理&lt;/strong>并进入您的 DevOps 项目，在&lt;strong>流水线&lt;/strong>页面点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框中，输入流水线名称，点击&lt;strong>下一步&lt;/strong>，然后点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击已创建的流水线，在&lt;strong>流水线配置&lt;/strong>页签下，点击&lt;strong>编辑流水线&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>创建流水线&lt;/strong>对话框，点击 &lt;strong>Node.js&lt;/strong>，然后点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>参数设置&lt;/strong>页签，按照实际情况设置以下参数，点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>GitURL&lt;/p>
+&lt;/div></description></item><item><title>使用 GitLab 创建多分支流水线</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/04-gitlab-multibranch-pipeline/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/04-gitlab-multibranch-pipeline/</guid><description>&lt;div class="paragraph">
+&lt;p>&lt;a href="https://gitlab.com/users/sign_in">GitLab&lt;/a> 是一款基于 web 的 Git 仓库管理工具，支持公开和私有仓库，并提供了全面的 DevOps 功能，包括源代码管理、代码审查、问题跟踪、持续集成等。通过 GitLab，团队能够在一个平台上高效协作，完成从代码编写到部署的整个软件开发过程。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>KubeSphere 支持在 DevOps 项目中使用 GitLab 创建多分支流水线。本文档演示如何使用 GitLab 创建多分支流水线。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>DevOps&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已创建一个企业空间、一个 DevOps 项目和一个用户 (例如 &lt;strong>project-regular&lt;/strong>)，并已邀请该用户至 DevOps 项目且授予 &lt;strong>operator&lt;/strong> 角色。请参阅&lt;a href="../../05-devops-settings/02-role-and-member-management">角色和成员管理&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已有一个 &lt;a href="https://gitlab.com/users/sign_in">GitLab&lt;/a> 账户以及一个 &lt;a href="https://hub.docker.com/">Docker Hub&lt;/a> 账户。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_步骤_1创建凭证">步骤 1：创建凭证&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以 &lt;strong>project-regular&lt;/strong> 用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>企业空间管理&lt;/strong>并进入您的 DevOps 项目，在 &lt;strong>DevOps 项目设置&lt;/strong>下的&lt;strong>凭证&lt;/strong>中创建以下凭证。有关如何创建凭证的更多信息，请参阅&lt;a href="../../05-devops-settings/01-credential-management/">凭证管理&lt;/a>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>如果您的账户或密码中包含特殊字符，例如 &lt;strong>@&lt;/strong> 和 &lt;strong>$&lt;/strong>，则可能会因为无法识别而在流水线运行时导致错误。在此情况下，您需要先在第三方网站（例如 &lt;a href="https://www.urlencoder.org/">urlencoder&lt;/a>）上对账户或密码进行编码，然后将输出结果复制粘贴作为您的凭证信息。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 40%;"/>
+&lt;col style="width: 40%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">凭证 ID&lt;/th>
+&lt;th class="tableblock halign-left valign-top">类型&lt;/th>
+&lt;th class="tableblock halign-left valign-top">用途&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>dockerhub-id&lt;/p>
+&lt;/div></description></item><item><title>设置流水线</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/05-pipeline-settings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/05-pipeline-settings/</guid><description>&lt;div class="paragraph">
+&lt;p>创建流水线时，可以通过各种设置来自定义流水线配置。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>流水线创建后，进入流水线详情页，点击&lt;strong>编辑信息&lt;/strong>和更多操作中的&lt;strong>编辑设置&lt;/strong>，也可以编辑流水线的配置。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>本文档详细介绍如何设置流水线。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>DevOps&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已创建一个企业空间、一个 DevOps 项目和一个用户 (例如 &lt;strong>project-regular&lt;/strong>)，并已邀请该用户至 DevOps 项目且授予 &lt;strong>operator&lt;/strong> 角色。请参阅&lt;a href="../../05-devops-settings/02-role-and-member-management">角色和成员管理&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_基本信息">基本信息&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>创建流水线时，在&lt;strong>基本信息&lt;/strong>页签，您可以自定义以下信息：&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>名称&lt;/strong>：流水线的名称，同一个 DevOps 项目内的流水线不能重名。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>DevOps 项目&lt;/strong>：流水线所属的 DevOps 项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>描述&lt;/strong>：描述流水线的附加信息，描述信息不超过 256 个字符。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>流水线类别&lt;/strong>：普通流水线或多分支流水线。若选择多分支流水线，则需要选择一个代码仓库。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>代码仓库（可选）&lt;/strong>：选择一个代码仓库作为流水线的代码源，可选择 GitHub、GitLab、Bitbucket、以及 Git 作为代码源。&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>GitHub&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>如果选择 &lt;strong>GitHub&lt;/strong>，则必须指定用于访问 GitHub 的凭证。如果您已预先使用您的 GitHub 令牌创建了凭证，则从下拉菜单中选择已有凭证，或者点击&lt;strong>创建凭证&lt;/strong>来创建新凭证。选择凭证后，点击&lt;strong>确定&lt;/strong>，即可在右侧选择您的仓库。完成所有操作后，点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/check-dark.svg" alt="check" width="18" height="18"/>&lt;/span>。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>GitLab&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>如果选择 &lt;strong>GitLab&lt;/strong>，则必须指定 GitLab 服务器地址、项目组/所有者和代码仓库。如果访问代码仓库需要凭证，则需要指定一个凭证。完成所有操作后，点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/check-dark.svg" alt="check" width="18" height="18"/>&lt;/span>。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>Bitbucket&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>如果选择 &lt;strong>Bitbucket&lt;/strong>，则需要输入您的 Bitbucket 服务器地址。预先使用您的 Bitbucket 用户名和密码创建一个凭证，或者点击&lt;strong>创建凭证&lt;/strong>来创建一个新凭证。输入信息后点击&lt;strong>确定&lt;/strong>，即可在右侧选择您的仓库。完成所有操作后，点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/check-dark.svg" alt="check" width="18" height="18"/>&lt;/span>。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>Git&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>如果选择 &lt;strong>Git&lt;/strong>，则需要指定仓库 URL。如果访问代码仓库需要凭证，则需要指定一个凭证，或者点击&lt;strong>创建凭证&lt;/strong>来添加新凭证。完成所有操作后，点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/check-dark.svg" alt="check" width="18" height="18"/>&lt;/span>。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_高级设置">高级设置&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="sect2">
+&lt;h3 id="_指定代码仓库">指定代码仓库&lt;/h3>
+&lt;div class="paragraph">
+&lt;p>如果指定了一个代码仓库，则可以在&lt;strong>高级设置&lt;/strong>页签上自定义以下配置：&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>分支设置&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>&lt;strong>删除旧分支&lt;/strong>：自动删除旧分支。分支记录将一起被删除。分支记录包括控制台输出、已归档制品以及特定分支相关的其他元数据。更少的分支意味着您可以节省 Jenkins 正在使用的磁盘空间。DevOps 提供两个选项来确定何时丢弃旧分支：&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>分支保留天数（天）&lt;/strong>：超过保留期限的分支将被删除。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>分支最大数量&lt;/strong>：分支数量超过最大数量时，删除最旧的分支。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>&lt;strong>分支保留天数（天）&lt;/strong>和&lt;strong>分支最大数量&lt;/strong>可以同时应用于分支。只要某个分支满足其中一个字段所设置的条件，则会删除该分支。例如，如果您将保留天数和最大分支数分别指定为 2 和 3，待某个分支的保留天数超过 2 或者分支保留数量超过 3，则会删除该分支。DevOps 默认用 7 和 5 预填充这两个字段。&lt;/p>
+&lt;/div></description></item><item><title>使用 Webhook 触发流水线</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/06-pipeline-webhook/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/06-pipeline-webhook/</guid><description>&lt;div class="paragraph">
+&lt;p>若要通过远程代码仓库创建基于 Jenkinsfile 的流水线，可以在远程仓库中配置 webhook，以便在远程仓库变更时，自动触发流水线。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>本文档演示如何在 GitHub 仓库中用 webhook 触发流水线。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>DevOps&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已创建一个企业空间、一个 DevOps 项目和一个用户 (例如 &lt;strong>project-regular&lt;/strong>)，并已邀请该用户至 DevOps 项目且授予 &lt;strong>operator&lt;/strong> 角色。请参阅&lt;a href="../../05-devops-settings/02-role-and-member-management">角色和成员管理&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已通过远程代码仓库创建一个基于 Jenkinsfile 的流水线。有关更多信息，请参阅&lt;a href="../02-create-a-pipeline-using-jenkinsfile/">使用 Jenkinsfile 创建流水线&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_配置_webhook">配置 Webhook&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="sect2">
+&lt;h3 id="_获取_webhook_url">获取 webhook URL&lt;/h3>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以 &lt;strong>project-regular&lt;/strong> 用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>企业空间管理&lt;/strong>并进入您的 DevOps 项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>流水线&lt;/strong>页面，点击一个流水线（例如 &lt;strong>jenkins-in-scm&lt;/strong>）以查看其详情页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>更多操作&lt;/strong>，在下拉菜单中选择&lt;strong>编辑设置&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的会话框中，滚动至 &lt;strong>Webhook&lt;/strong> 以获得 Webhook push URL。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect2">
+&lt;h3 id="_在_github_仓库中设置_webhook">在 GitHub 仓库中设置 webhook&lt;/h3>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>登录您的 GitHub，并进入 &lt;strong>devops-maven-sample&lt;/strong> 仓库。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击 &lt;strong>Settings&lt;/strong> &amp;gt; &lt;strong>Webhooks&lt;/strong>，然后点击 &lt;strong>Add webhook&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在 &lt;strong>Payload URL&lt;/strong> 中输入流水线中的 Webhook push URL，然后点击 &lt;strong>Add webhook&lt;/strong>。
+本教程选择默认的 &lt;strong>Just the push event&lt;/strong>，请根据实际需要进行配置。有关更多信息，请参阅 &lt;a href="https://docs.github.com/en/developers/webhooks-and-events/webhooks/creating-webhooks">GitHub 文档&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>配置好的 webhook 会展示在 &lt;strong>Webhooks&lt;/strong> 页面。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>登录 Jenkins 仪表板</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/07-access-jenkins-console/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/07-access-jenkins-console/</guid><description>&lt;div class="paragraph">
+&lt;p>安装 DevOps 时，默认情况下也会安装 Jenkins 仪表板。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>DevOps&lt;/strong> 扩展组件。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>查看 jenkins 仪表盘对应的服务，然后参阅&lt;a href="../../../../../02-quickstart/08-access-a-service/">如何访问服务&lt;/a>，访问 Jenkins 仪表板。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">kubectl -n kubesphere-devops-system get svc devops-jenkins&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>获取 jenkins 管理员的用户名和密码。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">kubectl -n kubesphere-devops-system get secret devops-jenkins -o yaml&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>输出示例：&lt;/p>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-yaml" data-lang="yaml">data:
+ jenkins-admin-password: aXMxZno1Z3lnQWFTaGRIU2EwUDZkbg==
+ jenkins-admin-token: MTE5NTQ4NDY3MTE4MDQ4ODAzMDI1MTc3MDk1OTUwNTM2MQ==
+ jenkins-admin-user: YWRtaW4=&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>将 &lt;code>jenkins-admin-user&lt;/code> 和 &lt;code>jenkins-admin-password&lt;/code> 对应的内容 base64 解码后，即得到 jenkins 管理员的用户名和密码。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>使用获取的用户名和密码，登录 Jenkins 仪表板。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>若想以 LDAP 或 OpenId Connect 的方式登录 jenkins 仪表板，请参阅扩展中心 DevOps 扩展组件的详情页说明。&lt;/p>
+&lt;/div></description></item><item><title>设置 Jenkins 系统</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/07-jenkins-setting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/07-jenkins-setting/</guid><description>&lt;div class="paragraph">
+&lt;p>DevOps 系统提供基于 Jenkins 的容器化 CI/CD 功能。Jenkins 作为 CI/CD 工作流的事实标准，具备强大而灵活的特性。然而，许多插件要求用户在使用 Jenkins 之前必须进行系统级配置。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>为了提供可调度的 Jenkins 环境，KubeSphere 采用了 &lt;strong>Configuration as Code&lt;/strong> 的方式进行 Jenkins 系统设置。用户需要登录 Jenkins 仪表板，修改配置后再重新加载。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>本文档演示如何在 Jenkins 仪表板上设置 Jenkins 并重新加载配置。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>DevOps&lt;/strong> 扩展组件。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_jenkins_configuration_as_code">Jenkins Configuration as Code&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>KubeSphere 默认安装 Jenkins Configuration as Code 插件，支持通过 YAML 文件定义 Jenkins 的期望状态，便于再现 Jenkins 的配置（包括插件配置）。请参阅&lt;a href="https://github.com/jenkinsci/configuration-as-code-plugin/tree/master/demos">该目录&lt;/a>查看具体的 Jenkins 配置和示例 YAML 文件。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>此外，还可以在 &lt;a href="https://github.com/kubesphere/ks-jenkins">ks-jenkins&lt;/a> 仓库中找到 &lt;strong>formula.yaml&lt;/strong> 文件，查看插件版本并按需自定义这些版本。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_修改_configmap">修改 ConfigMap&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>建议通过 Configuration as Code (CasC) 在 KubeSphere 中配置 Jenkins。将内置 Jenkins CasC 文件存储为 ConfigMap。&lt;/p>
+&lt;/div></description></item><item><title>在流水线中使用 Jenkins 共享库</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/08-jenkins-shared-library/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/08-jenkins-shared-library/</guid><description>&lt;div class="paragraph">
+&lt;p>对于包含相同阶段或步骤的 Jenkins 流水线，可以在 Jenkinsfile 中使用 Jenkins 共享库避免流水线代码重复。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>本文档演示如何在 DevOps 流水线中使用 Jenkins 共享库。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>DevOps&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已创建一个企业空间、一个 DevOps 项目和一个用户 (例如 &lt;strong>project-regular&lt;/strong>)，并已邀请该用户至 DevOps 项目且授予 &lt;strong>operator&lt;/strong> 角色。请参阅&lt;a href="../../05-devops-settings/02-role-and-member-management">角色和成员管理&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已有一个可用 Jenkins 共享库。本教程以 &lt;a href="https://github.com/devops-ws/jenkins-shared-library">GitHub 仓库&lt;/a>中的 Jenkins 共享库为例。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_步骤_1在_jenkins_仪表板配置共享库">步骤 1：在 Jenkins 仪表板配置共享库&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>&lt;a href="../07-access-jenkins-console">登录 Jenkins 仪表板&lt;/a>并点击左侧导航栏中的&lt;strong>系统管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>向下滚动并点击&lt;strong>系统配置&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>向下滚动到 &lt;strong>Global Pipeline Libraries&lt;/strong>，然后点击&lt;strong>新增&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>配置字段如下所示。&lt;/p>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Name：&lt;/strong> 为共享库设置名称（例如，&lt;code>demo-shared-library&lt;/code>），以便在 Jenkinsfile 中引用此名称来导入共享库。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Default version：&lt;/strong> 设置共享库所在仓库的一个分支名称，将其作为导入共享库的默认分支。本教程将使用 master。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在 &lt;strong>Retrieval method&lt;/strong> 下，选择 &lt;strong>Modern SCM&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在 &lt;strong>Source Code Management&lt;/strong> 下，选择 &lt;strong>Git&lt;/strong>，并为&lt;strong>项目仓库&lt;/strong>输入示例仓库的 URL 。如果您使用自己的仓库且访问此仓库需要凭证，还需要配置&lt;strong>凭证&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>编辑完成后，点击&lt;strong>应用&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>您还可以配置&lt;a href="https://www.jenkins.io/zh/doc/book/pipeline/shared-libraries/#folder-level-shared-libraries">文件夹级别的共享库&lt;/a>。&lt;/p>
+&lt;/div></description></item><item><title>为流水线设置电子邮件服务器</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/09-jenkins-email/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/09-jenkins-email/</guid><description>&lt;div class="paragraph">
+&lt;p>内置 Jenkins 无法与 KubeSphere 的通知系统共享相同的电子邮件配置。因此，您需要单独为 DevOps 流水线配置电子邮件服务器。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>DevOps&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您需要在 KubeSphere 平台具有&lt;strong>集群管理&lt;/strong>权限。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>集群管理&lt;/strong>权限的账户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>集群管理&lt;/strong>，进入一个集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏中选择&lt;strong>应用负载&lt;/strong>下的&lt;strong>工作负载&lt;/strong>，从下拉列表中选择 &lt;strong>kubesphere-devops-system&lt;/strong> 项目。点击 &lt;strong>devops-jenkins&lt;/strong> 右侧的&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，并选择&lt;strong>编辑 YAML&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在 YAML 文件中编辑如下所示的字段。完成修改后，点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">警告&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>修改电子邮件服务器配置后，&lt;strong>devops-jenkins&lt;/strong> 部署 (Deployment) 会重新启动。因此，DevOps 系统将在几分钟内不可用，请在适当的时候修改这些配置。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 25%;"/>
+&lt;col style="width: 75%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">环境变量名称&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述信息&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>EMAIL_SMTP_HOST&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>SMTP 服务器地址&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>EMAIL_SMTP_PORT&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>SMTP 服务器端口（如：25）&lt;/p>
+&lt;/div></description></item><item><title>选择 Jenkins Agent</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/10-choose-jenkins-agent/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/10-choose-jenkins-agent/</guid><description>&lt;div class="paragraph">
+&lt;p>&lt;strong>agent&lt;/strong> 部分指定整个流水线或特定阶段 (Stage) 将在 Jenkins 环境中执行的位置，具体取决于该 &lt;strong>agent&lt;/strong> 部分的放置位置。该部分必须在 &lt;strong>pipeline&lt;/strong> 块的顶层进行定义，但是阶段级别的使用是可选的。有关更多信息，请参阅 &lt;a href="https://www.jenkins.io/zh/doc/book/pipeline/syntax/#代理">Jenkins 官方文档&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_内置_podtemplate">内置 podTemplate&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>podTemplate 是一种 Pod 模板，用于创建 Agent。您可以定义在 Kubernetes 插件中使用的 podTemplate。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>在流水线运行期间，每个 Jenkins Agent Pod 必须具有一个名为 &lt;strong>jnlp&lt;/strong> 的容器，以便实现 Jenkins Controller 与 Jenkins Agent 之间的通信。此外，您可以在 podTemplate 中添加容器，以满足个性化需求。可选择使用自定义的 Pod YAML 来灵活控制运行时环境（Runtime），并通过 &lt;strong>container&lt;/strong> 命令来切换容器。以下是相关示例。&lt;/p>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-json" data-lang="json">pipeline {
+ agent {
+ kubernetes {
+ //cloud &amp;#39;kubernetes&amp;#39;
+ label &amp;#39;mypod&amp;#39;
+ yaml &amp;#34;&amp;#34;&amp;#34;
+apiVersion: v1
+kind: Pod
+spec:
+ containers:
+ - name: maven
+ image: maven:3.3.9-jdk-8-alpine
+ command: [&amp;#39;cat&amp;#39;]
+ tty: true
+&amp;#34;&amp;#34;&amp;#34;
+ }
+ }
+ stages {
+ stage(&amp;#39;Run maven&amp;#39;) {
+ steps {
+ container(&amp;#39;maven&amp;#39;) {
+ sh &amp;#39;mvn -version&amp;#39;
+ }
+ }
+ }
+ }
+}&lt;/code>&lt;/pre>
+&lt;/div></description></item><item><title>自定义 Jenkins Agent</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/11-customize-jenkins-agent/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/11-customize-jenkins-agent/</guid><description>&lt;div class="paragraph">
+&lt;p>若要使用运行特定环境（例如 JDK 11）的 Jenkins Agent，可以在 KubeSphere 上自定义 Jenkins Agent。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>本文档描述如何在 KubeSphere 上自定义 Jenkins Agent。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>DevOps&lt;/strong> 扩展组件。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_自定义_jenkins_agent">自定义 Jenkins Agent&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以 &lt;strong>admin&lt;/strong> 用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>集群管理&lt;/strong>，进入一个集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>配置&lt;/strong>下的&lt;strong>配置字典&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>配置字典&lt;/strong>页面的搜索框中输入 &lt;strong>jenkins-casc-config&lt;/strong> 并按&lt;strong>回车键&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击 &lt;strong>jenkins-casc-config&lt;/strong> 进入其详情页面，点击&lt;strong>更多操作&lt;/strong>，选择&lt;strong>编辑 YAML&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框中，搜寻至 &lt;strong>data:jenkins_user.yaml:jenkins:clouds:kubernetes:templates&lt;/strong> 下方并输入以下代码，点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-yaml" data-lang="yaml">- name: &amp;#34;maven-jdk11&amp;#34; # 自定义 Jenkins Agent 的名称。
+ label: &amp;#34;maven jdk11&amp;#34; # 自定义 Jenkins Agent 的标签。若要指定多个标签，请用空格来分隔标签。
+ inheritFrom: &amp;#34;maven&amp;#34; # 自定义 Jenkins Agent 所继承的现有容器组模板的名称。
+ containers:
+ - name: &amp;#34;maven&amp;#34; # 自定义 Jenkins Agent 所继承的现有容器组模板中指定的容器名称。
+ image: &amp;#34;kubespheredev/builder-maven:v3.2.0jdk11&amp;#34; # 此镜像只用于测试。请使用您自己的镜像。&lt;/code>&lt;/pre>
+&lt;/div></description></item></channel></rss>

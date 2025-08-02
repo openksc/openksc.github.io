@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>升级 KubeSphere on</title><link>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/03-upgrade-kubesphere/</link><description>Recent content in 升级 KubeSphere on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/03-upgrade-kubesphere/index.xml" rel="self" type="application/rss+xml"/><item><title>从 v4.1.x 升级到 v4.1.3</title><link>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/03-upgrade-kubesphere/02-upgrade-kubesphere-from-v4.1.x/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/03-upgrade-kubesphere/02-upgrade-kubesphere-from-v4.1.x/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何在保持当前的 Kubernetes 版本不变的情况下从 KubeSphere v4.1.x 升级到 KubeSphere v4.1.3。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>请确保当前 KubeSphere 版本为 v4.1.x。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>请确保当前 Kubernetes 版本为 v1.21.x ~ v1.30.x。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>若扩展组件有特殊配置，需备份扩展组件配置。在“扩展组件配置”对话框中，下载文件备份。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>为避免数据丢失，请提前备份所有重要数据。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_升级kubesphere">升级 KubeSphere&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>KubeSphere  v4.1 及后续版本采用 helm 升级 ks-core。&lt;/p>
+&lt;/div>
+&lt;div class="sect2">
+&lt;h3 id="_升级_host_集群">升级 host 集群&lt;/h3>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>确认当前集群为待升级集群。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">kubectl get node -o wide&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>导出当前集群 ks-core 的配置。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">helm get values -n kubesphere-system ks-core -o yaml &amp;gt; host-cluster-custom-values.yaml&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>修改配置文件。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-yaml" data-lang="yaml"># 需要注意以下配置项，其他的配置字段请保留
+global:
+ imageRegistry: docker.io
+extension:
+ imageRegistry: docker.io
+
+# 注意集群角色参数由 role 变更为 multicluster.role
+multicluster:
+ role: host&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>执行以下命令开始升级。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">helm -n kubesphere-system upgrade ks-core https://charts.kubesphere.io/main/ks-core-1.1.4.tgz -f host-cluster-custom-values.yaml --wait --debug&lt;/code>&lt;/pre>
+&lt;/div></description></item><item><title>从 v3.4.x 升级到 v4.1.3</title><link>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/03-upgrade-kubesphere/03-upgrade-kubesphere-from-v3.4.x/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/03-upgrade-kubesphere/03-upgrade-kubesphere-from-v3.4.x/</guid><description>&lt;div class="paragraph">
+&lt;p>以下操作步骤适用于将 KubeSphere 从 v3.4.x 升级到 v4.1.3 版本。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>在开始升级之前，您需要确保当前 KubeSphere 版本已升级到 v3.4.x，否则无法继续升级到 v4.1.3。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="paragraph">
+&lt;p>升级过程分为以下三个主要步骤，请严格按照顺序执行：&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>升级 host 集群并迁移扩展组件数据。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>升级 member 集群并迁移扩展组件数据。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>升级网关。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_下载升级脚本">下载升级脚本&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>在 host 集群和 member 集群环境中下载升级脚本：&lt;/p>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">curl -LO https://github.com/kubesphere/ks-installer/archive/refs/tags/v4.1.3.tar.gz
+tar -xzvf v4.1.3.tar.gz
+cd ks-installer-4.1.3/scripts&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_修改升级配置文件">修改升级配置文件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>在 host 和所有的 member 集群中调整升级配置文件 &lt;code>ks-core-values.yaml&lt;/code>，其中 &lt;code>upgrade&lt;/code> 部分为升级相关的配置项目，你需要在升级之前确认需要升级的组件和配置信息，通过 &lt;code>upgrade.config.jobs.&amp;lt;name&amp;gt;.enabled&lt;/code> 控制是否需要升级该组件，以下为配置示例：&lt;/p>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-yaml" data-lang="yaml">upgrade:
+ enabled: true
+ image:
+ registry: &amp;#34;&amp;#34;
+ repository: kubesphere/ks-upgrade
+ tag: &amp;#34;v4.1.3&amp;#34;
+ pullPolicy: IfNotPresent
+ persistenceVolume:
+ name: ks-upgrade
+ storageClassName: &amp;#34;&amp;#34;
+ accessMode: ReadWriteOnce
+ size: 5Gi
+ config:
+ storage:
+ local:
+ path: /tmp/ks-upgrade
+ validator:
+ ksVersion:
+ enabled: true
+ extensionsMuseum:
+ enabled: true
+ namespace: kubesphere-system
+ name: extensions-museum
+ syncInterval: 0
+ watchTimeout: 30m
+ jobs:
+ network:
+ enabled: true # 是否启用并升级该扩展组件
+ priority: 100
+ extensionRef: # 扩展组件的版本配置，需要与 extensions-museum 中的信息一致
+ name: &amp;#34;network&amp;#34;
+ version: &amp;#34;1.1.0&amp;#34;
+ dynamicOptions: {
+ &amp;#34;rerun&amp;#34;: &amp;#34;false&amp;#34;
+ }
+ gateway:
+ enabled: true
+ priority: 90
+ extensionRef:
+ name: &amp;#34;gateway&amp;#34;
+ version: &amp;#34;1.0.5&amp;#34;&lt;/code>&lt;/pre>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Storage Classes on</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/02-storage-classes/</link><description>Recent content in Storage Classes on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/02-storage-classes/index.xml" rel="self" type="application/rss+xml"/><item><title>Create Storage Classes</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/02-storage-classes/01-create-a-storage-class/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/02-storage-classes/01-create-a-storage-class/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to create a storage class.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a cluster and have the &lt;strong>Storage Class Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>To ensure that the storage class can provide storage resources properly, you need to pre-configure the storage system and install the storage plugin corresponding to the storage system. For more information, please contact your storage system provider.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>View Storage Class List</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/02-storage-classes/02-view-a-storage-class-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/02-storage-classes/02-view-a-storage-class-list/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to view the storage class list.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Storage Class Viewing&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Storage Class Viewing&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Storage &amp;gt; Storage Classes&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The storage class list provides the following information:&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>View Storage Class Details</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/02-storage-classes/03-view-storage-class-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/02-storage-classes/03-view-storage-class-details/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to view storage class details.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Storage Class Viewing&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Storage Class Viewing&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Storage &amp;gt; Storage Classes&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the name of a storage class in the list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Attributes&lt;/strong> section on the left side of the details page, view the resource attributes of the storage class.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Provisioner&lt;/p>
+&lt;/div></description></item><item><title>Set Default Storage Class</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/02-storage-classes/04-set-a-default-storage-class/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/02-storage-classes/04-set-a-default-storage-class/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to set the default storage class. Once a default storage class is set, the system will use it to create Persistent Volume Claims if no specific storage class is designated. Only one default storage class is allowed in a KubeSphere cluster.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Storage Class Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div></description></item><item><title>Enable and Disable Volume Operations</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/02-storage-classes/05-enable-and-disable-volume-operations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/02-storage-classes/05-enable-and-disable-volume-operations/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to enable and disable volume operations.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>You can configure whether users can clone and expand Persistent Volume Claims created using specific storage classes in the KubeSphere web console.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>The steps outlined in this section only control whether users can take these operations in the KubeSphere web console. The actual support for these operations by Persistent Volume Claims depends on the backend storage system.&lt;/p>
+&lt;/div></description></item><item><title>Edit Storage Class Information</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/02-storage-classes/06-edit-storage-class-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/02-storage-classes/06-edit-storage-class-information/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to edit storage class information.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>You can edit the alias and description of the storage class. KubeSphere does not support editing the name of an already created storage class.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster and have the &lt;strong>Storage Class Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Storage Class Management&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Storage &amp;gt; Storage Classes&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span> on the right of the storage class you want to edit, then choose &lt;strong>Edit Information&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Edit Information&lt;/strong> dialog, set the alias and description for the storage class, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Alias&lt;/p>
+&lt;/div></description></item><item><title>Delete Storage Classes</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/02-storage-classes/07-delete-a-storage-class/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/08-storage/02-storage-classes/07-delete-a-storage-class/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to delete a storage class.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Warning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>After deleting a storage class, Persistent Volume Claims and Persistent Volumes created based on this storage class will not be deleted. Containers can still use the mounted Persistent Volumes, but users will no longer be able to use volume cloning, volume snapshots, and volume expansion features. Additionally, it will not be possible to create storage areas in the backend storage system using this storage class.&lt;/p>
+&lt;/div></description></item></channel></rss>

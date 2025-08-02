@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>WhizardTelemetry Data Pipeline on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/01-vector/</link><description>Recent content in WhizardTelemetry Data Pipeline on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/01-vector/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/01-vector/01-intro/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/01-vector/01-intro/</guid><description>&lt;div class="paragraph">
+&lt;p>The WhizardTelemetry Data Pipeline is an extension that provides capabilities to collect, transform, and route observability data.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon attention">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The WhizardTelemetry Data Pipeline is a common dependency for WhizardTelemetry Logging, WhizardTelemetry Events, WhizardTelemetry Auditing, WhizardTelemetry Notification, etc., so it must be installed before the above extensions, otherwise, the logging, notification, auditing, and event functions will not work properly!&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The WhizardTelemetry Observability Platform supports querying logs, audits, events, notification history, etc., from OpenSearch, so you need to configure the OpenSearch service information for receiving logs, audits, events, notification history, etc., in the WhizardTelemetry Data Pipeline. It can be a user-built OpenSearch service or an OpenSearch service installed by the “OpenSearch Distributed Search and Analytics Engine” extension.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

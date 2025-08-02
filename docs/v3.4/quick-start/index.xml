@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Quickstarts on</title><link>https://openksc.github.io/docs/v3.4/quick-start/</link><description>Recent content in Quickstarts on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v3.4/quick-start/index.xml" rel="self" type="application/rss+xml"/><item><title>Create Workspaces, Projects, Users and Roles</title><link>https://openksc.github.io/docs/v3.4/quick-start/create-workspace-and-project/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.4/quick-start/create-workspace-and-project/</guid><description>&lt;p>This quickstart demonstrates how to create workspaces, roles and users which are required for other tutorials. Meanwhile, you will learn how to create projects and DevOps projects within your workspace where your workloads are running. After reading this tutorial, you will become familiar with the multi-tenant management system of KubeSphere.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>KubeSphere needs to be installed in your machine.&lt;/p>
+&lt;h2 id="architecture">Architecture&lt;/h2>
+&lt;p>The multi-tenant system of KubeSphere features &lt;strong>three&lt;/strong> levels of hierarchical structure which are cluster, workspace, and project. A project in KubeSphere is a Kubernetes &lt;a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/" target="_blank" rel="noopener noreferrer">namespace&lt;/a>.&lt;/p></description></item><item><title>Deploy and Access Bookinfo</title><link>https://openksc.github.io/docs/v3.4/quick-start/deploy-bookinfo-to-k8s/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.4/quick-start/deploy-bookinfo-to-k8s/</guid><description>&lt;p>&lt;a href="https://istio.io/" target="_blank" rel="noopener noreferrer">Istio&lt;/a>, as an open-source service mesh solution, provides powerful features of traffic management for microservices. The introduction of traffic management from the official website of &lt;a href="https://istio.io/latest/docs/concepts/traffic-management/" target="_blank" rel="noopener noreferrer">Istio&lt;/a> is as follows:&lt;/p>
+&lt;p>&lt;em>Istio’s traffic routing rules let you easily control the flow of traffic and API calls between services. Istio simplifies configuration of service-level properties like circuit breakers, timeouts, and retries, and makes it easy to set up important tasks like A/B testing, canary rollouts, and staged rollouts with percentage-based traffic splits. It also provides out-of-box failure recovery features that help make your application more robust against failures of dependent services or the network.&lt;/em>&lt;/p></description></item><item><title>Compose and Deploy WordPress</title><link>https://openksc.github.io/docs/v3.4/quick-start/wordpress-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.4/quick-start/wordpress-deployment/</guid><description>&lt;h2 id="wordpress-introduction">WordPress Introduction&lt;/h2>
+&lt;p>WordPress is a free and open-source content management system written in PHP, allowing users to build their own websites. A complete WordPress application includes the following Kubernetes objects with MySQL serving as the backend database.&lt;/p>
+&lt;p>&lt;img src="https://openksc.github.io/images/docs/v3.x/quickstart/wordpress-deployment/WordPress.png" alt="WordPress">&lt;/p>
+&lt;h2 id="objective">Objective&lt;/h2>
+&lt;p>This tutorial demonstrates how to create an application (WordPress as an example) in KubeSphere and access it outside the cluster.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>An account &lt;code>project-regular&lt;/code> is needed with the role of &lt;code>operator&lt;/code> assigned in one of your projects (the user has been invited to the project). For more information, see &lt;a href="../create-workspace-and-project/">Create Workspaces, Projects, Users and Roles&lt;/a>.&lt;/p></description></item><item><title>Enable Pluggable Components</title><link>https://openksc.github.io/docs/v3.4/quick-start/enable-pluggable-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.4/quick-start/enable-pluggable-components/</guid><description>&lt;p>This tutorial demonstrates how to enable pluggable components of KubeSphere both before and after the installation. Refer to the table below for all pluggable components of KubeSphere.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Configuration&lt;/th>
+ &lt;th>Component&lt;/th>
+ &lt;th>Description&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;code>alerting&lt;/code>&lt;/td>
+ &lt;td>KubeSphere Alerting System&lt;/td>
+ &lt;td>You can customize alerting policies for workloads and nodes. After an alerting policy is triggered, alert messages can be sent to your recipients through different channels (for example, email and Slack).&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>auditing&lt;/code>&lt;/td>
+ &lt;td>KubeSphere Auditing Log System&lt;/td>
+ &lt;td>Provide a security-relevant chronological set of records, recording the sequence of activities that happen in the platform, initiated by different tenants.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>devops&lt;/code>&lt;/td>
+ &lt;td>KubeSphere DevOps System&lt;/td>
+ &lt;td>Provide an out-of-box CI/CD system based on Jenkins, and automated workflow tools including Source-to-Image and Binary-to-Image.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>events&lt;/code>&lt;/td>
+ &lt;td>KubeSphere Events System&lt;/td>
+ &lt;td>Provide a graphical web console for the exporting, filtering and alerting of Kubernetes events in multi-tenant Kubernetes clusters.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>logging&lt;/code>&lt;/td>
+ &lt;td>KubeSphere Logging System&lt;/td>
+ &lt;td>Provide flexible logging functions for log query, collection and management in a unified console. Additional log collectors can be added, such as Elasticsearch, Kafka and Fluentd.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>metrics_server&lt;/code>&lt;/td>
+ &lt;td>HPA&lt;/td>
+ &lt;td>The Horizontal Pod Autoscaler automatically scales the number of Pods based on needs.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>networkpolicy&lt;/code>&lt;/td>
+ &lt;td>Network policy&lt;/td>
+ &lt;td>Allow network isolation within the same cluster, which means firewalls can be set up between certain instances (Pods).&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>kubeedge&lt;/code>&lt;/td>
+ &lt;td>KubeEdge&lt;/td>
+ &lt;td>Add edge nodes to your cluster and run workloads on them.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>openpitrix&lt;/code>&lt;/td>
+ &lt;td>KubeSphere App Store&lt;/td>
+ &lt;td>Provide an app store for Helm-based applications and allow users to manage apps throughout the entire lifecycle.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>servicemesh&lt;/code>&lt;/td>
+ &lt;td>KubeSphere Service Mesh (Istio-based)&lt;/td>
+ &lt;td>Provide fine-grained traffic management, observability and tracing, and visualized traffic topology.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>ippool&lt;/code>&lt;/td>
+ &lt;td>Pod IP Pool&lt;/td>
+ &lt;td>Create Pod IP pools and assign IP addresses from the Pools to your Pods.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>topology&lt;/code>&lt;/td>
+ &lt;td>Service Topology&lt;/td>
+ &lt;td>Integrate &lt;a href="https://www.weave.works/oss/scope/" target="_blank" rel="noopener noreferrer">Weave Scope&lt;/a> to view service-to-service communication (topology) of your apps and containers.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>For more information about each component, see &lt;a href="../../pluggable-components/overview/">Overview of Enable Pluggable Components&lt;/a>.&lt;/p></description></item><item><title>All-in-One Installation of Kubernetes and KubeSphere on Linux</title><link>https://openksc.github.io/docs/v3.4/quick-start/all-in-one-on-linux/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.4/quick-start/all-in-one-on-linux/</guid><description>&lt;p>For those who are new to KubeSphere and looking for a quick way to discover the &lt;a href="https://kubesphere.io/" target="_blank" rel="noopener noreferrer">container platform&lt;/a>, the all-in-one mode is your best choice to get started. It features rapid deployment and hassle-free configurations with KubeSphere and Kubernetes all provisioned on your machine.&lt;/p>
+&lt;h2 id="video-demonstration">Video Demonstration&lt;/h2>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/PtVQZVb3AgE?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
+ &lt;/div>
+
+&lt;h2 id="step-1-prepare-a-linux-machine">Step 1: Prepare a Linux Machine&lt;/h2>
+&lt;p>To get started with all-in-one installation, you only need to prepare one host according to the following requirements for hardware and operating system.&lt;/p></description></item><item><title>Minimal KubeSphere on Kubernetes</title><link>https://openksc.github.io/docs/v3.4/quick-start/minimal-kubesphere-on-k8s/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.4/quick-start/minimal-kubesphere-on-k8s/</guid><description>&lt;p>In addition to installing KubeSphere on a Linux machine, you can also deploy it on existing Kubernetes clusters. This tutorial demonstrates the general steps of completing a minimal KubeSphere installation on Kubernetes. For more information, see &lt;a href="../../installing-on-kubernetes/">Installing on Kubernetes&lt;/a>.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;ul>
+&lt;li>To install KubeSphere 3.4 on Kubernetes, your Kubernetes version must be v1.20.x, v1.21.x, v1.22.x, v1.23.x, * v1.24.x, * v1.25.x, and * v1.26.x. For Kubernetes versions with an asterisk, some features of edge nodes may be unavailable due to incompatability. Therefore, if you want to use edge nodes, you are advised to install Kubernetes v1.23.x.&lt;/li>
+&lt;li>Make sure your machine meets the minimal hardware requirement: CPU &amp;gt; 1 Core, Memory &amp;gt; 2 GB.&lt;/li>
+&lt;li>A &lt;strong>default&lt;/strong> Storage Class in your Kubernetes cluster needs to be configured before the installation.&lt;/li>
+&lt;/ul>
+&lt;div class="notices note">
+ 
+ &lt;p>Note&lt;/p></description></item></channel></rss>

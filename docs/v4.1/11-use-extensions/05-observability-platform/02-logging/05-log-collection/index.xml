@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Log Collection on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/05-log-collection/</link><description>Recent content in Log Collection on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/05-log-collection/index.xml" rel="self" type="application/rss+xml"/><item><title>Enable Log Collection</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/05-log-collection/01-enable-logsidecar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/05-log-collection/01-enable-logsidecar/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to modify the configuration of the &amp;#34;WhizardTelemetry Logging&amp;#34; extension to enable the log collection feature.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>After enabling, the &lt;strong>Log Collection&lt;/strong> option will be displayed under the &lt;strong>Project Settings&lt;/strong> menu in the left navigation pane.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>You should have the &lt;strong>platform-admin&lt;/strong> role on the KubeSphere platform. For more information, see &lt;a href="../../../../../05-users-and-roles/01-users/">Users&lt;/a> and &lt;a href="../../../../../05-users-and-roles/02-platform-roles/">Platform Roles&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>WhizardTelemetry Logging&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Enable Log Collection in a Project</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/05-log-collection/02-enable-project-log-collection/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/05-log-collection/02-enable-project-log-collection/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to enable log collection in a project.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>After enabling, the &lt;strong>Collect Logs on Volumes&lt;/strong> feature will be available on the &lt;strong>Storage Settings&lt;/strong> tab when creating workloads and Jobs in the project.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a project and have the &lt;strong>Project Settings Management&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>WhizardTelemetry Logging&lt;/strong> should have been installed and enabled, and &lt;a href="../01-enable-logsidecar/">the log collection feature have been enabled&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Enable Collect Logs on Volumes</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/05-log-collection/03-enable-collect-volume-logs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/05-log-collection/03-enable-collect-volume-logs/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to enable collect logs on volumes when creating workloads, services, or Jobs. For more information, see &lt;a href="../../../../../09-project-management/03-application-workloads/03-workloads/01-create-a-workload/">Create a Workload&lt;/a> or &lt;a href="../../../../../09-project-management/03-application-workloads/04-jobs/01-create-a-job/">Create a Job&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a project and have the &lt;strong>Application Workload Management&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>WhizardTelemetry Logging&lt;/strong> should have been installed and enabled, and &lt;a href="../02-enable-project-log-collection/">the log collection feature must be enabled in the project&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Application Workload Management&lt;/strong> permission, and access your project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the left navigation pane, select &lt;strong>Application Workloads &amp;gt; Workloads&lt;/strong> or &lt;strong>Application Workloads &amp;gt; Jobs&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the workloads page, click &lt;strong>Deploy&lt;/strong>, &lt;strong>StatefulSet&lt;/strong>, or &lt;strong>DaemonSet&lt;/strong> to open the workload list, or on the Jobs page, click &lt;strong>Job&lt;/strong> or &lt;strong>CronJob&lt;/strong> to open the Job list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Create&lt;/strong> on the page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Storage Settings&lt;/strong> tab, click the &lt;strong>Collect Logs on Volumes&lt;/strong> switch to enable the feature.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Mount Volume&lt;/strong> to mount a persistent volume or temporary volume in &lt;strong>ReadWrite&lt;/strong> mode for the container, and set the &lt;strong>Container Log Path&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Set the application in the container to export logs to the container log path under the volume mount directory.&lt;/p>
+&lt;div class="paragraph">
+&lt;p>After the log collection is completed, it will be printed to the standard output of the container, and you can query the container logs using the toolbox provided by KubeSphere. For more information, see &lt;a href="../../03-use-log-query-tools/">Use the Container Log Query Tool&lt;/a>.&lt;/p>
+&lt;/div></description></item></channel></rss>

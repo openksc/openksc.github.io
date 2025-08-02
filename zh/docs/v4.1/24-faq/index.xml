@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>常见问题 on</title><link>https://openksc.github.io/zh/docs/v4.1/24-faq/</link><description>Recent content in 常见问题 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/24-faq/index.xml" rel="self" type="application/rss+xml"/><item><title>改进计划</title><link>https://openksc.github.io/zh/docs/v4.1/24-faq/01-info-collection/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/24-faq/01-info-collection/</guid><description>&lt;div class="sect1">
+&lt;h2 id="_什么是改进计划">什么是改进计划？&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>改进计划会收集关于 KubeSphere 安装、使用功能的汇总信息。这些信息将仅被 KubeSphere 用于改进产品，并且不与任何第三方分享。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_改进计划报告的内容是什么">改进计划报告的内容是什么？&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>改进计划不会收集任何特定的身份信息，比如用户名、密码、资源的名称或地址。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>主要收集的内容包括：&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>扩展组件安装信息：组件名称，组件版本和安装时间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>集群信息：集群名称，集群角色，集群版本，集群 uid (kube-system 命名空间的 uid)，KubeSphere 版本，KubeSphere 的 uid (kubesphere-system 命名空间的 uid)。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>集群节点信息：节点名称，节点 uid，节点角色，节点架构，节点操作系统版本，节点操作系统镜像名称，内核版本，容器运行时版本，kube-proxy 版本，kubelet 版本。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>资源统计信息：用户数量，命名空间数量，企业空间数量。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_如何参与或退出改进计划">如何参与或退出改进计划？&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>KubesSphere 安装或配置变更时，可以通过配置 &lt;code>telemetry.enabled&lt;/code> 选择是否参与改进计划。更多信息，请参阅 &lt;a href="../../03-installation-and-upgrade/02-install-kubesphere/05-appendix/#_高级选项">KubeSphere Core 高级配置&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

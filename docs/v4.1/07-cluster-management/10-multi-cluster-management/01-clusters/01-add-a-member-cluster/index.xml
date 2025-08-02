@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Add Member Clusters on</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/01-add-a-member-cluster/</link><description>Recent content in Add Member Clusters on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/01-add-a-member-cluster/index.xml" rel="self" type="application/rss+xml"/><item><title>Add Member Cluster via Direct Connection</title><link>https://openksc.github.io/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/01-add-a-member-cluster/01-add-a-member-cluster-using-direct-connection/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/01-add-a-member-cluster/01-add-a-member-cluster-using-direct-connection/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to add member clusters via direct connection.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>You should have the &lt;strong>platform-admin&lt;/strong> role in the host cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>All nodes in the host cluster must be able to access the Kubernetes API service of the member cluster (usually port 6443 on the master node of the member cluster). Depending on your network environment, you may need to configure firewall and traffic forwarding rules.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_get_member_cluster_kubeconfig">Get Member Cluster Kubeconfig&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>On a node in the member cluster, run the following command to get the kubeconfig information of the member cluster:&lt;/p>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">kubectl config view --raw&lt;/code>&lt;/pre>
+&lt;/div></description></item></channel></rss>

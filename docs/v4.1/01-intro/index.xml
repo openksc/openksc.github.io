@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Introduction on</title><link>https://openksc.github.io/docs/v4.1/01-intro/</link><description>Recent content in Introduction on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/01-intro/index.xml" rel="self" type="application/rss+xml"/><item><title>KubeSphere LuBan</title><link>https://openksc.github.io/docs/v4.1/01-intro/01-introduction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/01-intro/01-introduction/</guid><description>&lt;div class="paragraph">
+&lt;p>KubeSphere is a distributed multi-tenant commercial cloud-native operating system based on the Kubernetes kernel. Based on open-source capabilities, it extends functionality across multiple core business scenarios, such as multi-cloud cluster management, microservice governance, and application management. Its extension center - KubeSphere Marketplace is highly modular, catering to various business needs in different scenarios. With its robust enterprise-grade cloud-native foundation, comprehensive professional solutions, and service support, it empowers enterprises for digital transformation and operations on a large scale.&lt;/p>
+&lt;/div></description></item><item><title>KubeSphere LuBan Architecture</title><link>https://openksc.github.io/docs/v4.1/01-intro/02-architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/01-intro/02-architecture/</guid><description>&lt;div class="paragraph">
+&lt;p>To make KubeSphere flexible and extensible, a &lt;code>microkernel + extensions&lt;/code> architecture (LuBan) is designed. In this architecture, the core part (KubeSphere Core) contains only essential basic functions for system running, while independent modules are packaged in various components (Extensions). Users can dynamically install, uninstall, enable, or disable extensions while the system is running.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_kubesphere_luban_architecture">KubeSphere LuBan Architecture&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>The KubeSphere LuBan architecture is designed as the following diagram.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/v4.0/4.0-architecture.png" alt="architecture" width="80%"/>&lt;/span>&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_what_are_kubesphere_extensions">What Are KubeSphere Extensions?&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>KubeSphere extensions are Helm Charts that follow the KubeSphere extension development specification, which extends KubeSphere’s functionality and orchestrates using Helm.&lt;/p>
+&lt;/div></description></item><item><title>Usage Scenarios</title><link>https://openksc.github.io/docs/v4.1/01-intro/03-scenarios/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/01-intro/03-scenarios/</guid><description>&lt;div class="paragraph">
+&lt;p>KubeSphere is suitable for the following scenarios.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_resource_quantification_operations">Resource Quantification Operations&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Resource management of multiple departments often brings huge pressure to the O&amp;amp;M department, which has to spend a lot of time on statistics on resource utilization of each business line, and assessment of the reasonableness of resource utilization. KubeSphere provides multi-dimensional and multi-perspective resource quantitative statistics methods, and resource data can be viewed at a glance.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_multi_level_permission_control">Multi-level Permission Control&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Efficiently coordinating different business lines within a company has always been an age-old challenge. How to achieve tight collaboration between infrastructure operations, application operations, and business developers while implementing access control has become the core requirement of organizational structure.&lt;/p>
+&lt;/div></description></item></channel></rss>

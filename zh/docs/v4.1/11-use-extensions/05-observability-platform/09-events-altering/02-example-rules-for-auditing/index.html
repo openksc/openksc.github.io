@@ -1,0 +1,1308 @@
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><title>事件/审计的告警规则示例</title><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="介绍事件和审计的告警规则示例。"><meta name=keywords content="KubeSphere,Kubernetes,容器平台,DevOps,混合云"><meta property="og:type" content="article"><meta property="og:title" content="事件/审计的告警规则示例"><meta property="og:description" content="介绍事件和审计的告警规则示例。"><meta property="og:image" content="https://openksc.github.io/images/common/snapshot-zh.png"><meta property="og:url" content="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/09-events-altering/02-example-rules-for-auditing/"><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@KubeSphere"><meta property="twitter:image" content="https://openksc.github.io/images/common/snapshot-zh.png"><meta name=docsearch:language content="zh-CN"><meta name=docsearch:version content='v4.1'><link rel=canonical href=https://kubesphere.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/09-events-altering/02-example-rules-for-auditing/><link rel="shortcut icon" href=/images/favicons/favicon.ico><link rel=apple-touch-icon href=/images/favicons/apple-touch-icon.png sizes=180x180><link rel=icon type=image/png href=/images/favicons/favicon-16x16.png sizes=16x16><link rel=icon type=image/png href=/images/favicons/favicon-32x32.png sizes=32x32><link rel=icon type=image/svg+xml href=/images/favicons/favicon.svg><link rel=icon type=image/png href=/images/favicons/favicon.png><link rel=manifest href=/images/favicons/site.webmanifest><link rel=mask-icon href=/images/favicons/safari-pinned-tab.svg color=#00ad6e><meta name=msapplication-config content='/images/favicons/browserconfig.xml'><meta name=msapplication-TileColor content="#ffffff"><meta name=theme-color content="#ffffff"><link rel=stylesheet href=/fonts/Roboto/stylesheet.css><link rel=stylesheet href=/fonts/ProximaNova/stylesheet.css><link rel=stylesheet href=/css/jquery.modal.min.css><link rel=stylesheet href=/css/viewer.min.css><link rel=stylesheet href=/swiper/swiper-bundle.min.css><link rel=stylesheet href=/scss/common.min.0c3fdcc05ec210321169846714f74b11c4a1baf09a1833fa9273b2347c81e636.css><link rel=stylesheet href=/npm/docsearch.js@2/dist/cdn/docsearch.min.css><link rel=stylesheet href=/scss/doc.min.6386f8ef12d58904c1ceb2c6c1a35acc29636881d06cce80e1a9e2ef773e1a7a.css><script src=/js/jquery-3.7.1.min.js></script><script src=/js/viewer.min.js></script><script src=/js/jquery.modal.min.js></script><script src=/swiper/swiper-bundle.min.js></script><script type=text/javascript src=/npm/docsearch.js@2/dist/cdn/docsearch.min.js></script><script>var _hmt=_hmt||[];(function(){var e,t=document.createElement("script");t.src="https://hm.baidu.com/hm.js?0888981f1fa45d241b1fb6962da2963e",e=document.getElementsByTagName("script")[0],e.parentNode.insertBefore(t,e)})()</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-YYCVN36HT5"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-YYCVN36HT5")</script><script type=text/javascript>!function(e,t,n,s,o){e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},n=t.createElement("script"),tag=t.getElementsByTagName("script")[0],n.async=1,n.src=("https:"==document.location.protocol?"https://":"http://")+s,tag.parentNode.insertBefore(n,tag)}(window,document,"script","assets.giocdn.com/2.1/gio.js","gio"),gio("init","8a24ae300cbf8b8c",{}),gio("send")</script></head><body><header class=navigation><div class=join-div><div class=content>🚀 KubeSphere v4.1.3 发布，多项优化与改进，欢迎体验！<a href=/zh/docs/v4.1/20-release-notes/release-v413/ target=_blank rel="noopener noreferrer">请查看 Release notes →</a>
+<img id=close-join src=/images/header/close.svg alt=close></div></div><div class=common-layout><div class=header-container><a href=/zh/ aria-label=logo><img src=/images/header/logo.svg alt class=logo></a><ul class=nav><li class=menu-li><span class=menu-span>应用场景</span><ul class="dropdown-menu menu-2"><li><a href=/zh/devops/>拥抱一站式 DevOps 工作流</a></li><li><a href=/zh/service-mesh/>在 Kubernetes 运行微服务</a></li><li><a href=/zh/observability/>构建丰富的云原生可观测性</a></li></ul></li><li class=menu-li><span class=menu-span>资源</span><ul class="dropdown-menu menu-3"><li><a href=/zh/projects/>开源项目</a></li><li><a href=/zh/conferences/>开源峰会</a></li><li><a href=/zh/blogs/>技术博客</a></li><li><a href=/zh/videos/>视频资源</a></li><li><a href=/zh/learn/>云原生实战</a></li></ul></li><li class=menu-li><span class=menu-span>文档中心</span><ul class="dropdown-menu menu-4"><li><a href=/zh/docs/v4.1>v4.1 <img src=/images/header/star.svg alt=star></a></li><li><a href=/zh/docs/v3.4>v3.4</a></li><li><a href=/zh/docs/v3.3>v3.3</a></li><li><a href=https://dev-guide.kubesphere.io/extension-dev-guide/zh/ target=_blank rel="noopener noreferrer">扩展组件开发</a></li><li><a href=https://kube.design/ target=_blank rel="noopener noreferrer">Kube Design</a></li></ul></li><li class=menu-li><span class=menu-span>开源社区</span><ul class="dropdown-menu menu-5"><li><a href=/zh/contribution/>参与贡献</a></li><li><a href=/zh/live/>社区活动</a></li><li><a href=/zh/case/>案例学习</a></li><li><a href=/zh/partner/>合作伙伴</a></li><li><a href=/zh/user-group/>用户委员会</a></li><li><a href=/zh/news/>动态</a></li><li><a href=https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md target=_blank rel="noopener noreferrer">版本计划</a></li><li><a href=https://www.kubesphere.io/zh/ target=_blank rel="noopener noreferrer">中国站</a></li><li><a href=https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2025 target=_blank rel="noopener noreferrer">开源之夏 2025</a></li></ul></li><li><a data-docs=用户论坛 href=https://ask.kubesphere.io/forum target=_blank rel="noopener noreferrer">用户论坛</a></li><li><a data-docs=认证 href=https://kubesphere.cloud/certification/ target=_blank rel="noopener noreferrer">认证</a></li></ul><div class=right-menu><ul><li class=language-menu><div><img src=/images/header/black.svg alt>
+<span>简体中文</span></div><ul class=dropdown-menu><li onclick='handleLangClick("en","/docs/v4.1/11-use-extensions/05-observability-platform/09-events-altering/02-example-rules-for-auditing/")'>English</li><li onclick='handleLangClick("zh","/zh/docs/v4.1/11-use-extensions/05-observability-platform/09-events-altering/02-example-rules-for-auditing/")'>简体中文</li></ul></li><li class=github-li><div class=github-star><a class=star-btn href=https://github.com/kubesphere/kubesphere rel="noopener noreferrer" target=_blank><span class=star-img></span>&nbsp;<span>Star</span>
+</a><a class=social-count href=https://github.com/kubesphere/kubesphere/stargazers rel="noopener noreferrer" target=_blank></a></div></li><li class=menu-icon><img src=/images/header/menu.svg alt></li></ul></div></div></div><div id=modal-for-menu class=modal><ul class=nav><li data-check=0 class=menu-li><span class=menu-span>应用场景</span><ul class=dropdown-menu><li><a href=/zh/devops/>拥抱一站式 DevOps 工作流</a></li><li><a href=/zh/service-mesh/>在 Kubernetes 运行微服务</a></li><li><a href=/zh/observability/>构建丰富的云原生可观测性</a></li></ul></li><li data-check=0 class=menu-li><span class=menu-span>资源</span><ul class=dropdown-menu><li><a href=/zh/projects/>开源项目</a></li><li><a href=/zh/conferences/>开源峰会</a></li><li><a href=/zh/blogs/>技术博客</a></li><li><a href=/zh/videos/>视频资源</a></li><li><a href=/zh/learn/>云原生实战</a></li></ul></li><li data-check=0 class=menu-li><span class=menu-span>文档中心</span><ul class=dropdown-menu><li><a href=/zh/docs/v4.1>v4.1 <img src=/images/header/star.svg alt=star></a></li><li><a href=/zh/docs/v3.4>v3.4</a></li><li><a href=/zh/docs/v3.3>v3.3</a></li><li><a href=https://dev-guide.kubesphere.io/extension-dev-guide/zh/>扩展组件开发</a></li><li><a href=https://kube.design/>Kube Design</a></li></ul></li><li data-check=0 class=menu-li><span class=menu-span>开源社区</span><ul class=dropdown-menu><li><a href=/zh/contribution/>参与贡献</a></li><li><a href=/zh/live/>社区活动</a></li><li><a href=/zh/case/>案例学习</a></li><li><a href=/zh/partner/>合作伙伴</a></li><li><a href=/zh/user-group/>用户委员会</a></li><li><a href=/zh/news/>动态</a></li><li><a href=https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md>版本计划</a></li><li><a href=https://www.kubesphere.io/zh/>中国站</a></li><li><a href=https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2025>开源之夏 2025</a></li></ul></li><li><a data-docs=用户论坛 href=https://ask.kubesphere.io/forum>用户论坛</a></li><li><a data-docs=认证 href=https://kubesphere.cloud/certification/>认证</a></li></ul><div class=link-div><a href=https://join.slack.com/t/kubesphere/shared_invite/zt-2b4t6rdb4-ico_4UJzCln_S2c1pcrIpQ target=_blank rel="noopener noreferrer" aria-label=slack><img src=/images/header/slack-hover.svg alt>
+</a><a href=https://x.com/KubeSphere target=_blank rel="noopener noreferrer" aria-label=twitter><img src=/images/header/twitter-hover.svg alt>
+</a><a href=https://github.com/kubesphere/kubesphere target=_blank rel="noopener noreferrer" aria-label=github><img src=/images/header/github-hover.svg alt></a></div></div></header><script>var bindNavMouseEvent,bindScrollChangeHeader,bindClickShowMenu,bindClickModalLi,bindClickClose,language,handleLangClick,githubApiLink="https://api.github.com/repos/kubesphere/kubesphere",getStar=function(){$(".social-count").hide(),$.getJSON(githubApiLink,function(e){$(".social-count").show().html(e.stargazers_count)})};getStar(),bindNavMouseEvent=function(e,t){t||(t=$(e));var n=!1;t.mouseenter(function(){if(n)return!1;n=!0,$(this).find(".dropdown-menu").fadeIn(200,function(){n=!1})}),t.mouseleave(function(){$(this).find(".dropdown-menu").fadeOut(200)})},bindScrollChangeHeader=function(){var t=100,e=$("header");window.addEventListener("scroll",function(){var t=window.scrollY;t>0?e.addClass("navigationScroll"):e.removeClass("navigationScroll")})},bindClickShowMenu=function(){$(".menu-icon").click(function(){$("#modal-for-menu").modal()})},bindClickModalLi=function(){$(".modal .menu-li").click(function(){var e=$(this).data("check");e===0?($(this).data("check",1),$(this).find(".dropdown-menu").slideDown(200)):($(this).data("check",0),$(this).find(".dropdown-menu").slideUp(200)),$(this).find(".menu-span").toggleClass("up")})},bindClickClose=function(){$("#close-join").click(function(){$(".navigation .join-div").hide(),$(".main-section").removeClass("padding")})},language="zh",bindClickClose(),bindScrollChangeHeader(),$(".header-container .menu-li").each(function(){bindNavMouseEvent("",$(this))}),bindNavMouseEvent(".header-container .language-menu"),bindNavMouseEvent(".header-container .btn-li"),bindClickShowMenu(),bindClickModalLi(),handleLangClick=function(e,t){try{localStorage.setItem("lang",e)}catch{}location.href=t}</script><main class='main-section padding'><section class='section-1 bg-cover'><div class=common-layout><ol class=breadcrumbnav><li><a href=/zh/docs/>Docs&nbsp;/&nbsp;</a></li><li><a href=/zh/docs/v4.1/>文档&nbsp;/&nbsp;</a></li><li><a href=/zh/docs/v4.1/11-use-extensions/>扩展组件使用&nbsp;/&nbsp;</a></li><li><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/>WhizardTelemetry 可观测平台&nbsp;/&nbsp;</a></li><li><a href>WhizardTelemetry 事件告警&nbsp;/&nbsp;</a></li><li class=active><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/09-events-altering/02-example-rules-for-auditing/>事件/审计的告警规则示例</a></li></ol><div class=title-div><p><a href=/zh/docs/v4.1/>文档</a></p><div class="menu section-control"><div></div><div></div><div></div></div></div><div class=search-div><div class=search-input-div><input id=search type=text placeholder>
+<svg width="1em" height="1em" viewBox="0 0 18 18"><g fill="none" fill-rule="evenodd"><path d="M12.606 11.192l5.24 5.24-1.415 1.414-5.239-5.24a7.041 7.041.0 001.414-1.414z" fill="#324558"/><path d="M7 14A7 7 0 117 0a7 7 0 010 14zm0-2A5 5 0 107 2a5 5 0 000 10z" fill="#B6C2CD"/></g></svg></div><script>docsearch({appId:"P64S7K7Q7W",apiKey:"1cf6480742e28cdc08c95710326ede25",indexName:"kubesphere",inputSelector:"#search",algoliaOptions:{hitsPerPage:10,facetFilters:[`lang:${language}`,`version:v4.1`]},transformData:function(e){const t=/(releases?|notes?|patches?|updates?|changelogs?|版本|说明)/i,n=document.getElementById("search").value.trim(),s=t.test(n);return s?e.filter(e=>e.isReleaseNote.includes("yes")):e.filter(e=>e.isReleaseNote.includes("no"))},debug:!1})</script></div></div></section><section class=section-menu><div class=common-layout><ul class=common-flex-layout><li><p><span><img src alt=文档></span>
+<a href=/zh/docs/v4.1/>文档</a></p><ul><li><a href=/zh/docs/v4.1/01-intro/01-introduction/>产品简介</a></li><li><a href=/zh/docs/v4.1/02-quickstart/01-install-kubesphere/>快速入门</a></li><li><a href=/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/01-supported-k8s/>安装指南</a></li><li><a href=/zh/docs/v4.1/04-platform-management/01-platform-features/>平台管理</a></li><li><a href=/zh/docs/v4.1/05-users-and-roles/01-users/01-create-a-user/>用户和角色管理</a></li><li><a href=/zh/docs/v4.1/>查看更多...</a></li></ul></li><li style=height:0;margin:0;padding:0></li></ul></div></section><section class=section-2><div class=common-layout><div class="left-div left-tree"><div class=inner-tree><div><nav class=nav-menu><ul class=ul-active><li class=list><p class=list-title><span class=arrow></span>
+<span>产品简介</span></p><ul><li class=list><a href=/zh/docs/v4.1/01-intro/01-introduction/>KubeSphere LuBan</a></li><li class=list><a href=/zh/docs/v4.1/01-intro/02-architecture/>KubeSphere LuBan 架构</a></li><li class=list><a href=/zh/docs/v4.1/01-intro/03-scenarios/>应用场景</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>快速入门</span></p><ul><li class=list><a href=/zh/docs/v4.1/02-quickstart/01-install-kubesphere/>在 Kubernetes 上快速安装 KubeSphere</a></li><li class=list><a href=/zh/docs/v4.1/02-quickstart/02-access-kubesphere-via-https/>通过域名访问 KubeSphere 控制台</a></li><li class=list><a href=/zh/docs/v4.1/02-quickstart/03-install-an-extension/>安装并使用扩展组件</a></li><li class=list><a href=/zh/docs/v4.1/02-quickstart/04-control-user-permissions/>创建企业空间、项目、用户和角色</a></li><li class=list><a href=/zh/docs/v4.1/02-quickstart/05-deploy-wordpress/>创建并部署 WordPress</a></li><li class=list><a href=/zh/docs/v4.1/02-quickstart/06-deploy-bookinfo/>部署并访问 Bookinfo</a></li><li class=list><a href=/zh/docs/v4.1/02-quickstart/07-canary-release-example/>金丝雀发布实践</a></li><li class=list><a href=/zh/docs/v4.1/02-quickstart/08-access-a-service/>从集群外访问服务</a></li><li class=list><a href=/zh/docs/v4.1/02-quickstart/10-change-display-language/>修改界面语言</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>安装指南</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>准备工作</span></p><ul><li class=list><a href=/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/01-supported-k8s/>环境要求</a></li><li class=list><p class=list-title><span class=arrow></span>
+<span>配置高可用性</span></p><ul><li class=list><a href=/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/02-configure-high-availability/02-configure-k8s-high-availability/>配置 Kubernetes 高可用性</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>配置外部持久化存储</span></p><ul><li class=list><a href=/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/01-configure-storage-devices-on-cloud/>配置云上存储设备</a></li><li class=list><a href=/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/04-configure-neosan-csi/>配置 NeonSAN CSI</a></li><li class=list><a href=/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/05-configure-nfs/>配置 NFS</a></li><li class=list><a href=/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/04-configure-external-persistent-storage/07-configure-opensource-storage/>配置开源存储系统</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>安装 KubeSphere</span></p><ul><li class=list><a href=/zh/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere/>在 Linux 上安装 Kubernetes 和 KubeSphere</a></li><li class=list><a href=/zh/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/03-offline-installation/>离线安装 KubeSphere</a></li><li class=list><a href=/zh/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/04-configure-ks-high-availability/>配置 KubeSphere 高可用性</a></li><li class=list><a href=/zh/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/05-appendix/>附录：KubeSphere Core 高级配置</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>升级 KubeSphere</span></p><ul><li class=list><a href=/zh/docs/v4.1/03-installation-and-upgrade/03-upgrade-kubesphere/02-upgrade-kubesphere-from-v4.1.x/>从 v4.1.x 升级到 v4.1.3</a></li><li class=list><a href=/zh/docs/v4.1/03-installation-and-upgrade/03-upgrade-kubesphere/03-upgrade-kubesphere-from-v3.4.x/>从 v3.4.x 升级到 v4.1.3</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>卸载 KubeSphere</span></p><ul><li class=list><a href=/zh/docs/v4.1/03-installation-and-upgrade/04-uninstall-kubesphere/01-uninstall-kubesphere-only/>仅卸载 KubeSphere</a></li><li class=list><a href=/zh/docs/v4.1/03-installation-and-upgrade/04-uninstall-kubesphere/02-uninstall-kubernetes-and-kubesphere/>卸载 Kubernetes 和 KubeSphere</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>添加和删除集群节点</span></p><ul><li class=list><a href=/zh/docs/v4.1/03-installation-and-upgrade/05-add-and-delete-cluster-nodes/01-add-cluster-nodes/>添加集群节点</a></li><li class=list><a href=/zh/docs/v4.1/03-installation-and-upgrade/05-add-and-delete-cluster-nodes/02-delete-cluster-nodes/>删除集群节点</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>平台管理</span></p><ul><li class=list><a href=/zh/docs/v4.1/04-platform-management/01-platform-features/>平台介绍</a></li><li class=list><a href=/zh/docs/v4.1/04-platform-management/02-quick-access/>快捷访问</a></li><li class=list><p class=list-title><span class=arrow></span>
+<span>平台设置</span></p><ul><li class=list><a href=/zh/docs/v4.1/04-platform-management/03-platform-settings/01-view-and-customize-platform-information/>查看平台信息</a></li><li class=list><p class=list-title><span class=arrow></span>
+<span>外部身份验证</span></p><ul><li class=list><a href=/zh/docs/v4.1/04-platform-management/03-platform-settings/03-external-authentication/01-set-up-external-authentication/>配置外部身份验证</a></li></ul></li><li class=list><a href=/zh/docs/v4.1/04-platform-management/03-platform-settings/04-ks-as-oidc-identity-provider/>作为 OIDC 身份提供者</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>用户和角色管理</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>用户</span></p><ul><li class=list><a href=/zh/docs/v4.1/05-users-and-roles/01-users/01-create-a-user/>创建用户</a></li><li class=list><a href=/zh/docs/v4.1/05-users-and-roles/01-users/02-view-a-user-list/>查看用户列表</a></li><li class=list><a href=/zh/docs/v4.1/05-users-and-roles/01-users/03-view-user-details/>查看用户详情</a></li><li class=list><a href=/zh/docs/v4.1/05-users-and-roles/01-users/04-edit-user-information/>编辑用户信息</a></li><li class=list><a href=/zh/docs/v4.1/05-users-and-roles/01-users/05-change-the-email-language-and-language/>编辑当前用户信息</a></li><li class=list><a href=/zh/docs/v4.1/05-users-and-roles/01-users/06-change-the-password-of-a-user/>修改用户密码</a></li><li class=list><a href=/zh/docs/v4.1/05-users-and-roles/01-users/07-reset-user-password/>重置用户密码</a></li><li class=list><a href=/zh/docs/v4.1/05-users-and-roles/01-users/09-enable-and-disable-users/>启用和禁用用户</a></li><li class=list><a href=/zh/docs/v4.1/05-users-and-roles/01-users/10-delete-users/>删除用户</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>平台角色</span></p><ul><li class=list><a href=/zh/docs/v4.1/05-users-and-roles/02-platform-roles/01-create-a-platform-role/>创建平台角色</a></li><li class=list><a href=/zh/docs/v4.1/05-users-and-roles/02-platform-roles/02-view-a-platform-role-list/>查看平台角色列表</a></li><li class=list><a href=/zh/docs/v4.1/05-users-and-roles/02-platform-roles/03-view-platform-role-details/>查看平台角色详情</a></li><li class=list><a href=/zh/docs/v4.1/05-users-and-roles/02-platform-roles/04-edit-platform-role-information/>编辑平台角色信息</a></li><li class=list><a href=/zh/docs/v4.1/05-users-and-roles/02-platform-roles/05-edit-permissions-of-a-platform-role/>编辑平台角色权限</a></li><li class=list><a href=/zh/docs/v4.1/05-users-and-roles/02-platform-roles/06-delete-platform-roles/>删除平台角色</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>扩展组件管理</span></p><ul><li class=list><a href=/zh/docs/v4.1/06-extension-user-guide/01-install-extensions/>安装扩展组件</a></li><li class=list><p class=list-title><span class=arrow></span>
+<span>管理扩展组件</span></p><ul><li class=list><a href=/zh/docs/v4.1/06-extension-user-guide/02-manage-extensions/01-set-configurations/>配置扩展组件</a></li><li class=list><a href=/zh/docs/v4.1/06-extension-user-guide/02-manage-extensions/02-set-cluster-agents/>配置集群 Agent</a></li><li class=list><a href=/zh/docs/v4.1/06-extension-user-guide/02-manage-extensions/03-disable-extensions/>禁用扩展组件</a></li></ul></li><li class=list><a href=/zh/docs/v4.1/06-extension-user-guide/03-upgrade-extensions/>升级扩展组件</a></li><li class=list><a href=/zh/docs/v4.1/06-extension-user-guide/04-uninstall-extensions/>卸载扩展组件</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>集群管理</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>进入集群</span></p><ul><li class=list><a href=/zh/docs/v4.1/07-cluster-management/01-web-console/01-log-in-and-go-to-a-cluster/>登录并进入集群</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>概览</span></p><ul><li class=list><a href=/zh/docs/v4.1/07-cluster-management/02-overview/01-view-cluster-overall-information/>查看集群概览信息</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>节点</span></p><ul><li class=list><a href=/zh/docs/v4.1/07-cluster-management/03-nodes/01-view-a-node-list/>查看节点列表</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/03-nodes/02-view-node-details/>查看节点详情</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/03-nodes/03-prevent-and-allow-pod-scheduling/>阻止和允许容器组调度</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/03-nodes/04-access-a-node-terminal/>使用节点终端</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/03-nodes/05-edit-node-taints/>编辑节点污点</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/03-nodes/06-edit-node-labels/>编辑节点标签</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>项目</span></p><ul><li class=list><a href=/zh/docs/v4.1/07-cluster-management/04-projects/01-create-a-project/>创建项目</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/04-projects/02-view-a-project-list/>查看项目列表</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/04-projects/03-view-project-details/>查看项目详情</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/04-projects/04-edit-project-information/>编辑项目信息</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/04-projects/05-edit-project-annotations/>编辑项目注解</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/04-projects/06-edit-project-quotas/>编辑项目配额</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/04-projects/07-edit-default-container-quotas/>编辑默认容器配额</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/04-projects/08-delete-projects/>删除项目</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>应用负载</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>工作负载</span></p><ul><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/01-create-a-workload/>创建工作负载</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/02-view-a-workload-list/>查看工作负载列表</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/03-view-workload-details/>查看工作负载详情</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/04-edit-workload-information/>编辑工作负载信息</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/06-adjust-the-number-of-pod-replicas/>调整容器组副本数量</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/07-re-create-a-workload/>重新创建工作负载</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/08-roll-back-workload-settings/>回退工作负载设置</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/10-edit-workload-settings/>编辑工作负载设置</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/11-stop-workloads/>停止工作负载</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/01-workloads/12-delete-workloads/>删除工作负载</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>任务</span></p><ul><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/02-jobs/01-create-a-job/>创建任务</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/02-jobs/02-view-a-job-list/>查看任务列表</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/02-jobs/03-view-job-details/>查看任务详情</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/02-jobs/04-edit-job-information/>编辑任务信息</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/02-jobs/05-delete-jobs/>删除任务</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/02-jobs/06-re-run-a-job/>重新运行任务</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/02-jobs/07-pause-a-cronjob/>暂停定时任务</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>容器组</span></p><ul><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/03-pods/01-view-a-pod-list/>查看容器组列表</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/03-pods/02-view-pod-details/>查看容器组详情</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/03-pods/03-view-container-details/>查看容器详情</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/03-pods/04-access-a-container-terminal/>访问容器终端</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/03-pods/05-delete-pods/>删除容器组</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>服务</span></p><ul><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/04-services/01-create-a-service/>创建服务</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/04-services/02-view-a-service-list/>查看服务列表</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/04-services/03-view-service-details/>查看服务详情</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/04-services/04-edit-service-information/>编辑服务信息</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/04-services/05-edit-service-settings/>编辑服务设置</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/04-services/06-edit-service-external-access-settings/>编辑服务外部访问设置</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/04-services/08-delete-services/>删除服务</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>应用路由</span></p><ul><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/05-routes/01-create-a-route/>创建应用路由</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/05-routes/02-view-a-route-list/>查看应用路由列表</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/05-routes/03-view-route-details/>查看应用路由详情</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/05-routes/04-access-a-backend-service-of-a-route/>访问应用路由的后端服务</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/05-routes/05-edit-route-information/>编辑应用路由信息</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/05-routes/06-edit-routing-rules/>编辑路由规则</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/05-routes/07-edit-route-annotations/>编辑应用路由注解</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/05-application-workloads/05-routes/08-delete-routes/>删除应用路由</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>配置</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>保密字典</span></p><ul><li class=list><a href=/zh/docs/v4.1/07-cluster-management/06-configuration/01-secrets/01-create-a-secret/>创建保密字典</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/06-configuration/01-secrets/02-view-a-secret-list/>查看保密字典列表</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/06-configuration/01-secrets/03-view-secret-details/>查看保密字典详情</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/06-configuration/01-secrets/04-edit-secret-information/>编辑保密字典信息</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/06-configuration/01-secrets/05-edit-secret-settings/>编辑保密字典设置</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/06-configuration/01-secrets/06-delete-secrets/>删除保密字典</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>配置字典</span></p><ul><li class=list><a href=/zh/docs/v4.1/07-cluster-management/06-configuration/02-configmaps/01-create-a-configmap/>创建配置字典</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/06-configuration/02-configmaps/02-view-a-configmap-list/>查看配置字典列表</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/06-configuration/02-configmaps/03-view-configmap-details/>查看配置字典详情</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/06-configuration/02-configmaps/04-edit-configmap-information/>编辑配置字典信息</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/06-configuration/02-configmaps/05-edit-configmap-settings/>编辑配置字典设置</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/06-configuration/02-configmaps/06-delete-configmaps/>删除配置字典</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>服务帐户</span></p><ul><li class=list><a href=/zh/docs/v4.1/07-cluster-management/06-configuration/03-service-accounts/01-create-a-service-account/>创建服务帐户</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/06-configuration/03-service-accounts/02-view-a-service-account-list/>查看服务帐户列表</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/06-configuration/03-service-accounts/03-view-service-account-details/>查看服务帐户详情</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/06-configuration/03-service-accounts/04-edit-service-account-information/>编辑服务帐户信息</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/06-configuration/03-service-accounts/05-change-the-role-of-a-service-account/>修改服务帐户角色</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/06-configuration/03-service-accounts/06-delete-service-accounts/>删除服务帐户</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>定制资源定义</span></p><ul><li class=list><a href=/zh/docs/v4.1/07-cluster-management/07-crds/01-view-a-crd-list/>查看定制资源定义列表</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/07-crds/02-view-crd-details/>查看定制资源定义详情</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/07-crds/03-edit-a-custom-resource/>编辑定制资源</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/07-crds/04-delete-a-custom-resource/>删除定制资源</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>存储</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>持久卷声明</span></p><ul><li class=list><a href=/zh/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/01-create-a-persistent-volume-claim/>创建持久卷声明</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/02-view-a-persistent-volume-claim-list/>查看持久卷声明列表</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/03-view-persistent-volume-claim-details/>查看持久卷声明详情</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/04-clone-a-persistent-volume/>克隆持久卷</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/05-expand-a-persistent-volume/>扩展持久卷</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/08-edit-persistent-volume-claim-information/>编辑持久卷声明信息</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/09-delete-persistent-volume-claim/>删除持久卷声明</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/10-view-a-persistent-volume-list/>查看持久卷列表</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/11-view-persistent-volume-details/>查看持久卷详情</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/12-edit-persistent-volume-information/>编辑持久卷信息</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/08-storage/01-persistent-volume-claims/13-delete-a-persistent-volume/>删除持久卷</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>存储类</span></p><ul><li class=list><a href=/zh/docs/v4.1/07-cluster-management/08-storage/02-storage-classes/01-create-a-storage-class/>创建存储类</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/08-storage/02-storage-classes/02-view-a-storage-class-list/>查看存储类列表</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/08-storage/02-storage-classes/03-view-storage-class-details/>查看存储类详情</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/08-storage/02-storage-classes/04-set-a-default-storage-class/>设置默认存储类</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/08-storage/02-storage-classes/05-enable-and-disable-volume-operations/>启用和禁用卷操作</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/08-storage/02-storage-classes/06-edit-storage-class-information/>编辑存储类信息</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/08-storage/02-storage-classes/07-delete-a-storage-class/>删除存储类</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>集群设置</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>基本信息</span></p><ul><li class=list><a href=/zh/docs/v4.1/07-cluster-management/09-cluster-settings/01-basic-information/01-view-cluster-basic-information/>查看集群基本信息</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/09-cluster-settings/01-basic-information/02-edit-cluster-basic-information/>编辑集群基本信息</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>集群可见性</span></p><ul><li class=list><a href=/zh/docs/v4.1/07-cluster-management/09-cluster-settings/02-cluster-visibility/01-view-cluster-visibility/>查看集群可见性</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/09-cluster-settings/02-cluster-visibility/02-edit-cluster-visibility/>编辑集群可见性</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>集群成员</span></p><ul><li class=list><a href=/zh/docs/v4.1/07-cluster-management/09-cluster-settings/03-cluster-members/01-invite-a-user-to-a-cluster/>邀请用户加入集群</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/09-cluster-settings/03-cluster-members/02-view-a-cluster-member-list/>查看集群成员列表</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/09-cluster-settings/03-cluster-members/03-change-the-role-of-a-cluster-member/>修改集群成员的角色</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/09-cluster-settings/03-cluster-members/04-remove-a-cluster-member/>移除集群成员</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>集群角色</span></p><ul><li class=list><a href=/zh/docs/v4.1/07-cluster-management/09-cluster-settings/04-cluster-roles/01-view-a-cluster-role-list/>查看集群角色列表</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/09-cluster-settings/04-cluster-roles/02-view-cluster-role-details/>查看集群角色详情</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>多集群管理</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>多集群管理</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>添加成员集群</span></p><ul><li class=list><a href=/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/01-add-a-member-cluster/01-add-a-member-cluster-using-direct-connection/>通过直接连接添加成员集群</a></li></ul></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/02-view-a-cluster-list/>查看集群列表</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/03-edit-cluster-information/>编辑集群信息</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/04-add-cluster-tags/>添加集群标签</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/05-edit-cluster-configuration/>编辑集群配置</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/07-update-kubeconfig/>更新 kubeconfig</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/09-remove-a-member-cluster/>移除成员集群</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/01-clusters/11-add-a-removed-member-cluster/>纳管成员集群到其他 host 集群</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>集群标签</span></p><ul><li class=list><a href=/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/02-cluster-tags/01-create-a-cluster-tag/>创建集群标签</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/02-cluster-tags/02-edit-a-cluster-tag/>编辑集群标签</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/02-cluster-tags/03-add-a-tag-to-clusters/>将标签添加到集群</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/02-cluster-tags/04-remove-a-tag-from-clusters/>从集群上移除标签</a></li><li class=list><a href=/zh/docs/v4.1/07-cluster-management/10-multi-cluster-management/02-cluster-tags/05-delete-cluster-tags/>删除集群标签</a></li></ul></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>企业空间管理</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>进入企业空间</span></p><ul><li class=list><a href=/zh/docs/v4.1/08-workspace-management/01-web-console/01-log-in-and-go-to-a-workspace/>登录并进入企业空间</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>管理企业空间</span></p><ul><li class=list><a href=/zh/docs/v4.1/08-workspace-management/02-workspaces/01-create-a-workspace/>创建企业空间</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/02-workspaces/02-view-a-workspace-list/>查看企业空间列表</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/02-workspaces/03-edit-workspace-information/>编辑企业空间信息</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/02-workspaces/04-delete-workspaces/>删除企业空间</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>概览</span></p><ul><li class=list><a href=/zh/docs/v4.1/08-workspace-management/03-overview/01-view-workspace-resource-usage/>查看资源用量</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/03-overview/03-view-cluster-resource-usage/>查看集群信息</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>项目</span></p><ul><li class=list><a href=/zh/docs/v4.1/08-workspace-management/04-projects/01-create-a-project/>创建项目</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/04-projects/02-view-a-project-list/>查看项目列表</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/04-projects/03-edit-project-information/>编辑项目信息</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/04-projects/04-edit-project-annotations/>编辑项目注解</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/04-projects/05-edit-project-quotas/>编辑项目配额</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/04-projects/06-delete-projects/>删除项目</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/04-projects/08-unbind-a-project-from-a-workspace/>将项目纳管到其他企业空间</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>应用管理</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>应用仓库</span></p><ul><li class=list><a href=/zh/docs/v4.1/08-workspace-management/05-app-management/02-app-repositories/01-add-an-app-repository/>添加应用仓库</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/05-app-management/02-app-repositories/02-view-an-app-repository-list/>查看应用仓库列表</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/05-app-management/02-app-repositories/03-edit-an-app-repository/>编辑应用仓库</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/05-app-management/02-app-repositories/05-delete-an-app-repository/>删除应用仓库</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>企业空间设置</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>基本信息</span></p><ul><li class=list><a href=/zh/docs/v4.1/08-workspace-management/06-workspace-settings/01-basic-information/01-view-workspace-basic-information/>查看企业空间基本信息</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/06-workspace-settings/01-basic-information/02-edit-workspace-information/>编辑企业空间信息</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/06-workspace-settings/01-basic-information/04-delete-a-workspace/>删除企业空间</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>企业空间配额</span></p><ul><li class=list><a href=/zh/docs/v4.1/08-workspace-management/06-workspace-settings/02-workspace-quotas/01-edit-workspace-quotas/>编辑企业空间配额</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/06-workspace-settings/02-workspace-quotas/02-view-workspace-quotas/>查看企业空间配额</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>企业空间成员</span></p><ul><li class=list><a href=/zh/docs/v4.1/08-workspace-management/06-workspace-settings/03-workspace-members/01-invite-a-user-to-a-workspace/>邀请用户加入企业空间</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/06-workspace-settings/03-workspace-members/02-view-a-workspace-member-list/>查看企业空间成员列表</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/06-workspace-settings/03-workspace-members/03-view-workspace-member-details/>查看企业空间成员详情</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/06-workspace-settings/03-workspace-members/04-change-the-role-of-a-workspace-member/>修改企业空间成员的角色</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/06-workspace-settings/03-workspace-members/05-remove-a-workspace-member/>移除企业空间成员</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>企业空间角色</span></p><ul><li class=list><a href=/zh/docs/v4.1/08-workspace-management/06-workspace-settings/04-workspace-roles/01-create-a-workspace-role/>创建企业空间角色</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/06-workspace-settings/04-workspace-roles/02-view-a-workspace-role-list/>查看企业空间角色列表</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/06-workspace-settings/04-workspace-roles/03-view-workspace-role-details/>查看企业空间角色详情</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/06-workspace-settings/04-workspace-roles/04-edit-workspace-role-information/>编辑企业空间角色信息</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/06-workspace-settings/04-workspace-roles/05-edit-permissions-of-a-workspace-role/>编辑企业空间角色权限</a></li><li class=list><a href=/zh/docs/v4.1/08-workspace-management/06-workspace-settings/04-workspace-roles/06-delete-a-workspace-role/>删除企业空间角色</a></li></ul></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>项目管理</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>进入项目</span></p><ul><li class=list><a href=/zh/docs/v4.1/09-project-management/01-web-console/01-log-in-and-go-to-a-project/>登录并进入项目</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>概览</span></p><ul><li class=list><a href=/zh/docs/v4.1/09-project-management/02-overview/01-view-project-overall-information/>查看项目概览信息</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>应用负载</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>应用</span></p><ul><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/01-apps/01-install-an-app-from-the-app-store/>从应用商店安装应用</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/01-apps/02-install-an-app-using-an-app-template/>从应用模板安装应用</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/01-apps/04-view-an-app-list/>查看应用列表</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/01-apps/05-view-template-based-app-details/>查看基于模板的应用详情</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/01-apps/06-edit-app-information/>编辑应用信息</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/01-apps/08-edit-app-settings/>编辑应用设置</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/01-apps/10-delete-apps/>删除应用</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>服务</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>创建服务</span></p><ul><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/02-services/01-create-a-service/01-create-a-stateful-or-stateless-service/>创建有状态或无状态服务</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/02-services/01-create-a-service/02-create-an-external-service/>创建外部服务</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/02-services/01-create-a-service/05-create-a-service-using-existing-workloads/>通过现有工作负载创建服务</a></li></ul></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/02-services/02-view-a-service-list/>查看服务列表</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/02-services/04-view-service-details/>查看服务详情</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/02-services/05-edit-service-information/>编辑服务信息</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/02-services/06-edit-service-settings/>编辑服务设置</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/02-services/07-edit-service-external-access-settings/>编辑服务外部访问设置</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/02-services/09-delete-services/>删除服务</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>工作负载</span></p><ul><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/03-workloads/01-create-a-workload/>创建工作负载</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/03-workloads/02-view-a-workload-list/>查看工作负载列表</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/03-workloads/03-view-workload-details/>查看工作负载详情</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/03-workloads/04-edit-workload-information/>编辑工作负载信息</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/03-workloads/05-re-create-a-workload/>重新创建工作负载</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/03-workloads/06-adjust-the-number-of-pod-replicas/>调整容器组副本数量</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/03-workloads/07-stop-workloads/>停止工作负载</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/03-workloads/08-roll-back-workload-settings/>回退工作负载设置</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/03-workloads/10-edit-workload-settings/>编辑工作负载设置</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/03-workloads/11-delete-workloads/>删除工作负载</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>任务</span></p><ul><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/04-jobs/01-create-a-job/>创建任务</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/04-jobs/02-view-a-job-list/>查看任务列表</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/04-jobs/03-view-job-details/>查看任务详情</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/04-jobs/04-edit-job-information/>编辑任务信息</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/04-jobs/05-rerun-a-job/>重新运行任务</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/04-jobs/06-pause-a-cronjob/>暂停定时任务</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/04-jobs/07-delete-jobs/>删除任务</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>应用路由</span></p><ul><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/05-routes/01-create-a-route/>创建应用路由</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/05-routes/02-view-a-route-list/>查看应用路由列表</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/05-routes/03-view-route-details/>查看应用路由详情</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/05-routes/04-access-a-backend-service-of-a-route/>访问应用路由的后端服务</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/05-routes/05-edit-route-information/>编辑应用路由信息</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/05-routes/06-edit-routing-rules/>编辑路由规则</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/05-routes/07-edit-route-annotations/>编辑应用路由注解</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/05-routes/08-delete-routes/>删除应用路由</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>容器组</span></p><ul><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/06-pods/01-view-a-pod-list/>查看容器组列表</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/06-pods/02-view-pod-details/>查看容器组详情</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/06-pods/03-view-container-details/>查看容器详情</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/06-pods/04-access-a-container-terminal/>访问容器终端</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/03-application-workloads/06-pods/05-delete-pods/>删除容器组</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>存储</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>持久卷声明</span></p><ul><li class=list><a href=/zh/docs/v4.1/09-project-management/04-storage/01-peristent-volume-claims/01-create-a-persistent-volume-claim/>创建持久卷声明</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/04-storage/01-peristent-volume-claims/02-view-a-persistent-volume-claim-list/>查看持久卷声明列表</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/04-storage/01-peristent-volume-claims/03-view-persistent-volume-claim-details/>查看持久卷声明详情</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/04-storage/01-peristent-volume-claims/04-clone-a-persistent-volume/>克隆持久卷</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/04-storage/01-peristent-volume-claims/06-expand-a-persistent-volume/>扩展持久卷</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/04-storage/01-peristent-volume-claims/07-edit-persistent-volume-claim-information/>编辑持久卷声明信息</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/04-storage/01-peristent-volume-claims/08-delete-persistent-volume-claims/>删除持久卷声明</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>配置</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>保密字典</span></p><ul><li class=list><a href=/zh/docs/v4.1/09-project-management/05-configuration/01-secrets/01-create-a-secret/>创建保密字典</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/05-configuration/01-secrets/02-view-a-secret-list/>查看保密字典列表</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/05-configuration/01-secrets/03-view-secret-details/>查看保密字典详情</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/05-configuration/01-secrets/04-edit-secret-information/>编辑保密字典信息</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/05-configuration/01-secrets/05-edit-secret-settings/>编辑保密字典设置</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/05-configuration/01-secrets/06-delete-secrets/>删除保密字典</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>配置字典</span></p><ul><li class=list><a href=/zh/docs/v4.1/09-project-management/05-configuration/02-configmaps/01-create-a-configmap/>创建配置字典</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/05-configuration/02-configmaps/02-view-a-configmap-list/>查看配置字典列表</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/05-configuration/02-configmaps/03-view-configmap-details/>查看配置字典详情</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/05-configuration/02-configmaps/04-edit-configmap-information/>编辑配置字典信息</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/05-configuration/02-configmaps/05-edit-configmap-settings/>编辑配置字典设置</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/05-configuration/02-configmaps/06-delete-configmaps/>删除配置字典</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>服务帐户</span></p><ul><li class=list><a href=/zh/docs/v4.1/09-project-management/05-configuration/03-service-accounts/01-create-a-service-account/>创建服务帐户</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/05-configuration/03-service-accounts/02-view-a-service-account-list/>查看服务帐户列表</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/05-configuration/03-service-accounts/03-view-service-account-details/>查看服务帐户详情</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/05-configuration/03-service-accounts/04-edit-service-account-information/>编辑服务帐户信息</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/05-configuration/03-service-accounts/05-change-the-role-of-a-service-account/>修改服务帐户角色</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/05-configuration/03-service-accounts/06-delete-service-accounts/>删除服务帐户</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>项目设置</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>基本信息</span></p><ul><li class=list><a href=/zh/docs/v4.1/09-project-management/06-project-settings/01-basic-information/01-view-project-basic-information/>查看项目基本信息</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/06-project-settings/01-basic-information/02-edit-project-information/>编辑项目信息</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/06-project-settings/01-basic-information/03-edit-project-quotas/>编辑项目配额</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/06-project-settings/01-basic-information/04-edit-default-container-quotas/>编辑默认容器配额</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/06-project-settings/01-basic-information/05-delete-a-project/>删除项目</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>项目角色</span></p><ul><li class=list><a href=/zh/docs/v4.1/09-project-management/06-project-settings/02-project-roles/01-create-a-project-role/>创建项目角色</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/06-project-settings/02-project-roles/02-view-a-project-role-list/>查看项目角色列表</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/06-project-settings/02-project-roles/03-view-project-role-details/>查看项目角色详情</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/06-project-settings/02-project-roles/04-edit-project-role-information/>编辑项目角色信息</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/06-project-settings/02-project-roles/05-edit-permissions-of-a-project-role/>编辑项目角色权限</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/06-project-settings/02-project-roles/06-delete-a-project-role/>删除项目角色</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>项目成员</span></p><ul><li class=list><a href=/zh/docs/v4.1/09-project-management/06-project-settings/03-project-members/01-invite-a-user-to-a-project/>邀请用户加入项目</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/06-project-settings/03-project-members/02-view-a-project-member-list/>查看项目成员列表</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/06-project-settings/03-project-members/03-change-the-role-of-a-project-member/>修改项目成员的角色</a></li><li class=list><a href=/zh/docs/v4.1/09-project-management/06-project-settings/03-project-members/04-remove-a-project-member/>移除项目成员</a></li></ul></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>工具箱</span></p><ul><li class=list><a href=/zh/docs/v4.1/10-toolbox/01-use-kubectl-tool/>通过 kubectl 运行命令</a></li><li class=list><a href=/zh/docs/v4.1/10-toolbox/02-view-a-kubeconfig-file/>查看和下载 kubeconfig 文件</a></li></ul></li><li class=list><p class=list-title><span class="arrow arrow-open"></span>
+<span>扩展组件使用</span></p><ul class=ul-active><li class=list><a href=/zh/docs/v4.1/11-use-extensions/00-overview/>概述</a></li><li class=list><p class=list-title><span class=arrow></span>
+<span>DevOps</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/01-overview/>概述</a></li><li class=list><p class=list-title><span class=arrow></span>
+<span>管理 DevOps 项目</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/02-devops-projects/01-create-a-devops-project/>创建 DevOps 项目</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/02-devops-projects/02-view-a-devops-project-list/>查看 DevOps 项目列表</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/02-devops-projects/03-edit-devops-project-information/>编辑 DevOps 项目信息</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/02-devops-projects/04-delete-devops-projects/>删除 DevOps 项目</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>使用 DevOps</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/01-devops-project-management/>创建和管理 DevOps 项目</a></li><li class=list><p class=list-title><span class=arrow></span>
+<span>流水线</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/01-create-a-pipeline-using-graphical-editing-panel/>使用图形编辑面板创建流水线</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/02-create-a-pipeline-using-jenkinsfile/>使用 Jenkinsfile 创建流水线</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/03-use-pipeline-templates/>使用流水线模板创建流水线</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/04-gitlab-multibranch-pipeline/>使用 GitLab 创建多分支流水线</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/05-pipeline-settings/>设置流水线</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/06-pipeline-webhook/>使用 Webhook 触发流水线</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/07-access-jenkins-console/>登录 Jenkins 仪表板</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/07-jenkins-setting/>设置 Jenkins 系统</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/08-jenkins-shared-library/>在流水线中使用 Jenkins 共享库</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/09-jenkins-email/>为流水线设置电子邮件服务器</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/10-choose-jenkins-agent/>选择 Jenkins Agent</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/11-customize-jenkins-agent/>自定义 Jenkins Agent</a></li></ul></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/03-use-gitops-for-continous-deployment/>使用 GitOps 实现应用持续部署</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/04-import-code-repositories/>导入代码仓库</a></li><li class=list><p class=list-title><span class=arrow></span>
+<span>DevOps 项目设置</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/05-devops-settings/01-credential-management/>凭证管理</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/05-devops-settings/02-role-and-member-management/>角色和成员管理</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/05-devops-settings/03-add-cd-allowlist/>添加持续部署白名单</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/05-devops-settings/04-set-ci-node/>为依赖项缓存设置 CI 节点</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>工具集成</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/04-how-to-integrate/01-sonarqube/>将 SonarQube 集成到流水线</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/01-devops/04-how-to-integrate/02-harbor/>将 Harbor 集成到流水线</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>KubeSphere 应用商店管理</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>应用管理</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>应用模板</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/01-create-an-app-template/>创建应用模板</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/02-view-an-app-template-list/>查看应用模板列表</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/03-view-app-template-details/>查看应用模板详情</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/04-edit-app-template-information/>编辑应用模板信息</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/05-install-an-app-by-using-an-app-template/>使用应用模板安装应用</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/06-upload-an-app-version/>上传应用版本</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/08-delete-an-app-version/>删除应用版本</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/09-download-a-helm-chart-package/>下载 Helm Chart 压缩包</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/10-release-an-app-version-to-the-app-store/>将应用版本发布到应用商店</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/11-delete-an-app-template/>删除应用模板</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>应用商店管理</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>应用</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/01-view-an-app-template-list/>查看应用模板列表</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/02-view-app-template-details/>查看应用模板详情</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/04-edit-an-app-template/>编辑应用模板</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/06-publish-an-app-template/>上架应用模板</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/08-cancel-release-an-app-version/>取消发布应用版本</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/09-delete-an-app-version/>删除应用版本</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/10-suspend-an-app-template/>下架应用模板</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/12-delete-an-app-template/>删除应用模板</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>应用分类</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/02-app-categories/01-manage-app-categories/>管理应用分类</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/02-app-categories/02-set-the-category-of-an-app/>设置应用所属的分类</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>应用审核</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/03-app-review/01-review-an-app-version/>审核应用版本</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/03-app-review/02-view-app-review-records/>查看应用版本审核记录</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>应用仓库</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/04-app-repositories/01-add-an-app-repository/>添加应用仓库</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/04-app-repositories/02-view-an-app-repository-list/>查看应用仓库列表</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/04-app-repositories/03-edit-an-app-repository/>编辑应用仓库</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/04-app-repositories/05-delete-an-app-repository/>删除应用仓库</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>部署管理</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/05-app-deployment/01-view-an-app-list/>查看应用列表</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/05-app-deployment/02-view-app-instance-details/>查看应用详情</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/05-app-deployment/04-edit-an-app-information/>编辑应用信息</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/05-app-deployment/06-delete-an-app-instance/>删除应用</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/05-app-deployment/08-deploy-an-app-from-the-app-store/>从应用商店部署应用</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/05-app-deployment/10-deploy-an-app-using-an-app-template/>从应用模板部署应用</a></li></ul></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>KubeSphere 服务网格</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>自制应用</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/03-service-mesh/01-apps/03-manually-compose-an-app/>创建自制应用</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/03-service-mesh/01-apps/04-view-an-app-list/>查看自制应用列表</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/03-service-mesh/01-apps/05-view-composed-app-details/>查看自制应用详情</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/03-service-mesh/01-apps/06-edit-app-information/>编辑自制应用信息</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/03-service-mesh/01-apps/07-add-a-service/>为自制应用添加服务</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/03-service-mesh/01-apps/08-add-an-app-route/>为自制应用添加应用路由</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/03-service-mesh/01-apps/10-delete-apps/>删除自制应用</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>灰度发布</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/01-create-a-grayscale-release-task/>创建灰度发布任务</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/02-view-a-grayscale-release-task-list/>查看灰度发布任务列表</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/03-view-grayscale-release-task-details/>查看灰度发布任务详情</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/04-switch-versions-blue-green-deployment/>切换上线版本（蓝绿部署）</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/05-adjust-traffic-distribution-ratio-canary-release/>调整流量分配比例（金丝雀发布）</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/06-edit-settings-of-a-grayscale-release-task/>编辑灰度发布任务设置</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/07-delete-a-grayscale-release-task/>删除灰度发布任务</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>联邦集群应用管理</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>Web 控制台</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/00-web-console/01-log-in-and-go-to-a-project/>登录并进入联邦项目</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>管理联邦项目</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/01-manage-multi-project/01-create-a-project/>创建联邦项目</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/01-manage-multi-project/02-view-a-project-list/>查看联邦项目列表</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/01-manage-multi-project/03-edit-project-information/>编辑联邦项目信息</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/01-manage-multi-project/04-edit-project-annotations/>编辑联邦项目注解</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/01-manage-multi-project/05-add-a-cluster/>为联邦项目添加集群</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/01-manage-multi-project/06-delete-projects/>删除联邦项目</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>概览</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/02-overview/01-view-project-overall-information/>查看联邦项目概览信息</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>应用负载</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>自制应用</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/01-apps/01-compose-an-app/>创建自制应用</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/01-apps/02-view-an-app-list/>查看自制应用列表</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/01-apps/03-view-app-details/>查看自制应用详情</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/01-apps/04-delete-apps/>删除自制应用</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>服务</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/02-services/01-create-a-stateful-or-stateless-service/>创建有状态或无状态服务</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/02-services/02-view-a-service-list/>查看服务列表</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/02-services/03-view-service-details/>查看服务详情</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/02-services/04-edit-service-information/>编辑服务信息</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/02-services/05-edit-service-settings/>编辑服务设置</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/02-services/06-edit-service-external-access-settings/>编辑服务外部访问设置</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/02-services/07-delete-services/>删除服务</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>工作负载</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/03-workloads/01-create-a-workload/>创建工作负载</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/03-workloads/02-view-a-workload-list/>查看工作负载列表</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/03-workloads/03-view-workload-details/>查看工作负载详情</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/03-workloads/04-edit-workload-information/>编辑工作负载信息</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/03-workloads/05-adjust-the-number-of-pod-replicas/>调整容器组副本数量</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/03-workloads/06-stop-workloads/>停止工作负载</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/03-workloads/07-edit-workload-settings/>编辑工作负载设置</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/03-workloads/08-delete-workloads/>删除工作负载</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>应用路由</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/04-routes/01-create-a-route/>创建应用路由</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/04-routes/02-view-a-route-list/>查看应用路由列表</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/04-routes/03-view-route-details/>查看应用路由详情</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/04-routes/04-edit-route-information/>编辑应用路由信息</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/04-routes/05-edit-routing-rules/>编辑路由规则</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/04-routes/06-edit-route-annotations/>编辑应用路由注解</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/03-application-workloads/04-routes/07-delete-routes/>删除应用路由</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>持久卷声明</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/04-peristent-volume-claims/01-create-a-persistent-volume-claim/>创建持久卷声明</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/04-peristent-volume-claims/02-view-a-persistent-volume-claim-list/>查看持久卷声明列表</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/04-peristent-volume-claims/03-view-persistent-volume-claim-details/>查看持久卷声明详情</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/04-peristent-volume-claims/04-edit-persistent-volume-claim-information/>编辑持久卷声明信息</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/04-peristent-volume-claims/05-delete-persistent-volume-claims/>删除持久卷声明</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>配置</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>保密字典</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/05-configuration/01-secrets/01-create-a-secret/>创建保密字典</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/05-configuration/01-secrets/02-view-a-secret-list/>查看保密字典列表</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/05-configuration/01-secrets/03-view-secret-details/>查看保密字典详情</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/05-configuration/01-secrets/04-edit-secret-information/>编辑保密字典信息</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/05-configuration/01-secrets/05-edit-secret-settings/>编辑保密字典设置</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/05-configuration/01-secrets/06-delete-secrets/>删除保密字典</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>配置字典</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/05-configuration/02-configmaps/01-create-a-configmap/>创建配置字典</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/05-configuration/02-configmaps/02-view-a-configmap-list/>查看配置字典列表</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/05-configuration/02-configmaps/03-view-configmap-details/>查看配置字典详情</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/05-configuration/02-configmaps/04-edit-configmap-information/>编辑配置字典信息</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/05-configuration/02-configmaps/05-edit-configmap-settings/>编辑配置字典设置</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/05-configuration/02-configmaps/06-delete-configmaps/>删除配置字典</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>项目设置</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>基本信息</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/06-project-settings/01-basic-information/01-view-project-basic-information/>查看项目基本信息</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/06-project-settings/01-basic-information/02-edit-project-information/>编辑项目信息</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/06-project-settings/01-basic-information/03-edit-annotation/>编辑项目注解</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/06-project-settings/01-basic-information/04-add-cluster/>添加项目集群</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/06-project-settings/01-basic-information/05-edit-default-container-quotas/>编辑默认容器配额</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/06-project-settings/01-basic-information/06-delete-a-project/>删除项目</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>项目配额</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/06-project-settings/02-project-quotas/01-view-project-quotas/>查看项目配额</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/04-kubefed/06-project-settings/02-project-quotas/02-edit-project-quotas/>编辑项目配额</a></li></ul></li></ul></li></ul></li><li class=list><p class=list-title><span class="arrow arrow-open"></span>
+<span>WhizardTelemetry 可观测平台</span></p><ul class=ul-active><li class=list><p class=list-title><span class=arrow></span>
+<span>WhizardTelemetry 平台服务</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/01-platform-services/01-intro/>配置 WhizardTelemetry 平台服务</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>WhizardTelemetry 数据流水线</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/01-vector/01-intro/>概览</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>WhizardTelemetry 日志</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/01-config/>配置日志管理</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/03-use-log-query-tools/>使用容器日志查询工具</a></li><li class=list><p class=list-title><span class=arrow></span>
+<span>日志收集</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/05-log-collection/01-enable-logsidecar/>启用日志收集</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/05-log-collection/02-enable-project-log-collection/>在项目中启用日志收集</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/05-log-collection/03-enable-collect-volume-logs/>启用收集卷上日志</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>日志接收器</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/01-config-opensearch/>配置 OpenSearch 日志接收器</a></li><li class=list><p class=list-title><span class=arrow></span>
+<span>管理日志接收器</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/01-add-a-log-receiver/>添加日志接收器</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/02-view-a-log-receiver-list/>查看日志接收器列表</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/03-view-log-receiver-details/>查看日志接收器详情</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/04-edit-log-receiver-settings/>编辑日志接收器设置</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/05-enable-and-disable-log-receiver/>启用和禁用日志接收器</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/06-delete-a-log-receiver/>删除日志接收器</a></li></ul></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>WhizardTelemetry 事件</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/03-events/01-use-event-query-tools/>使用资源事件查询工具</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>WhizardTelemetry 监控</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>概览</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/01-overview/01-cluster-monitoring-overview/>查看集群监控概览</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/01-overview/02-workspace-monitoring-overview/>查看企业空间监控概览</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/01-overview/03-project-monitoring-overview/>查看项目监控概览</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>集群状态</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/03-cluster-status/01-view-cluster-status-overview/>查看集群状态概览</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/03-cluster-status/02-view-physical-resource-status/>查看物理资源状态</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/03-cluster-status/03-view-etcd-status/>查看 etcd 数据库状态</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/03-cluster-status/04-view-api-server-status/>查看 Kubernetes API 服务器状态</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/03-cluster-status/05-view-scheduler-monitoring-data/>查看调度器状态</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/03-cluster-status/06-view-nodes-ranked-by-resource-usage/>查看节点资源用量排行</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>应用资源</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/04-application-resources/01-view-resource-usage/>查看应用资源用量</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/04-application-resources/02-view-projects-ranked-by-resource-usage/>查看项目资源用量排行</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>自定义监控</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/01-create-a-custom-monitoring-dashboard/>创建自定义监控面板</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/02-view-a-custom-monitoring-dashboard/>查看自定义监控面板</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/03-edit-custom-monitoring-dashboard-information/>编辑自定义监控面板信息</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/04-edit-a-custom-monitoring-dashboard/>编辑自定义监控面板</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/05-delete-custom-monitoring-dashboards/>删除自定义监控面板</a></li></ul></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/08-edit-a-metrics-exporter/>编辑监控导出器</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>WhizardTelemetry 告警</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>规则组</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/01-create-a-rule-group/>创建规则组</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/02-view-a-rule-group-list/>查看规则组列表</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/03-view-rule-group-details/>查看规则组详情</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/04-edit-rule-group-information/>编辑规则组信息</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/05-edit-alert-rules/>编辑告警规则</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/06-disable-and-enable-rule-groups/>禁用和启用规则组</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/07-delete-rule-groups/>删除规则组</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/08-reset-built-in-rule-groups/>重置内置规则组</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>告警</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/04-alerts/01-view-an-alert-list/>查看告警列表</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>WhizardTelemetry 通知</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>通知渠道</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/01-notification-channels/01-set-email-notification/>设置邮件通知</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/01-notification-channels/02-set-feishu-notification/>设置飞书通知</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/01-notification-channels/03-set-dingtalk-notification/>设置钉钉通知</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/01-notification-channels/04-set-wecom-notification/>设置企业微信通知</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/01-notification-channels/05-set-slack-notification/>设置 Slack 通知</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/01-notification-channels/06-set-webhook-notification/>设置 Webhook 通知</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>通知订阅</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/02-notification-subscription/01-set-subscription/>创建通知订阅</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/02-notification-subscription/02-view-subscription/>查看通知订阅</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/02-notification-subscription/03-edit-subscription/>编辑通知订阅</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/02-notification-subscription/04-delete-subscription/>删除通知订阅</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>通知设置</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/03-notification-settings/01-create-a-silence-policy/>创建静默策略</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/03-notification-settings/02-edit-silence-policy-information/>编辑静默策略信息</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/03-notification-settings/03-edit-silence-conditions/>编辑静默条件</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/03-notification-settings/04-edit-silence-time/>编辑静默时间</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/03-notification-settings/05-delete-silence-policies/>删除静默策略</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/03-notification-settings/06-change-the-notification-language/>修改通知语言</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>用户通知设置</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/01-set-email-notification/>设置邮件通知</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/02-set-feishu-notification/>设置飞书通知</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/03-set-dingtalk-notification/>设置钉钉通知</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/04-set-wecom-notification/>设置企业微信通知</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/05-set-slack-notification/>设置 Slack 通知</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/05-users-notification/06-set-webhook-notification/>设置 Webhook 通知</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>通知消息配置</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/11-notifications/07-message-config/01-wechat-template/>配置企业微信的通知消息模板</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>OpenSearch 分布式检索与分析引擎</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/15-opensearch/01-intro/>概述</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>Grafana for WhizardTelemetry</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/16-grafana/01-built-in-dashboards/>查看内置 Dashboard</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/16-grafana/05-add-data-source/>添加数据源</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/16-grafana/07-create-dashboards/>创建 Dashboard</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>Grafana Loki for WhizardTelemetry</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/17-loki/01-display-loki-data/>可视化 Loki 中的数据</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>KubeSphere 网络</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>网络策略</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/11-network/01-network-policies/01-create-a-network-policy/>创建网络策略</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/11-network/01-network-policies/02-view-a-network-policy-list/>查看网络策略列表</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/11-network/01-network-policies/03-view-network-policy-details/>查看网络策略详情</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/11-network/01-network-policies/04-edit-network-policy-information/>编辑网络策略信息</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/11-network/01-network-policies/05-edit-network-policy-yaml/>编辑网络策略配置</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/11-network/01-network-policies/06-delete-network-policies/>删除网络策略</a></li><li class=list><p class=list-title><span class=arrow></span>
+<span>网络隔离</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/11-network/01-network-policies/07-network-isolation/01-workspace-network-isolation/>启用企业空间网络隔离</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/11-network/01-network-policies/07-network-isolation/02-project-network-isolation/>启用项目网络隔离</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>容器组 IP 池</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/01-create-a-pod-ip-pool/>创建容器组 IP 池</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/02-view-a-pod-ip-pool-list/>查看容器组 IP 池列表</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/03-view-pod-ip-pool-details/>查看容器组 IP 池详情</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/04-assign-a-project-to-a-ip-pool/>将容器组 IP 池分配到项目</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/05-edit-pod-ip-pool-information/>编辑容器组 IP 池信息</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/06-edit-overlay-mode/>编辑 Overlay 模式</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/07-edit-yaml-for-a-pod-ip-pool/>编辑节点选择</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/08-disable-and-enable-pod-ip-pool/>禁用和启用容器组 IP 池</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/09-delete-pod-ip-pools/>删除容器组 IP 池</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>KubeSphere 网关</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>项目网关</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/12-gateway/01-project-gateway/01-enable-a-project-gateway/>启用项目网关</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/12-gateway/01-project-gateway/02-view-project-gateway-information/>查看项目网关信息</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/12-gateway/01-project-gateway/03-view-project-gateway-details/>查看项目网关详情</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/12-gateway/01-project-gateway/04-edit-project-gateway-settings/>编辑项目网关设置</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/12-gateway/01-project-gateway/05-disable-a-project-gateway/>禁用项目网关</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>企业空间网关</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/12-gateway/02-workspace-gateway/01-enable-workspace-gateway/>启用企业空间网关</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/12-gateway/02-workspace-gateway/02-view-workspace-gateway-info/>查看企业空间网关信息</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/12-gateway/02-workspace-gateway/03-view-workspace-gateway-details/>查看企业空间网关详情</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/12-gateway/02-workspace-gateway/04-edit-workspace-gateway-settings/>编辑企业空间网关设置</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/12-gateway/02-workspace-gateway/05-disable-workspace-gateway/>禁用企业空间网关</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>集群网关</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/12-gateway/03-cluster-gateway/01-enable-a-cluster-gateway/>启用集群网关</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/12-gateway/03-cluster-gateway/02-view-gateway-information/>查看网关信息</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/12-gateway/03-cluster-gateway/03-view-cluster-gateway-details/>查看集群网关详情</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/12-gateway/03-cluster-gateway/04-edit-cluster-gateway-settings/>编辑集群网关设置</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/12-gateway/03-cluster-gateway/05-disable-a-cluster-gateway/>禁用集群网关</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/12-gateway/03-cluster-gateway/07-issue-no-gateway-log-in-member/>附录：member 集群网关日志无数据的解决办法</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>KubeSphere 存储</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>卷快照</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/01-create-a-volume-snapshot/>创建卷快照</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/02-view-a-volume-snapshot-list/>查看卷快照列表</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/03-view-volume-snapshot-details/>查看卷快照详情</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/04-create-a-persistent-volume-from-a-volume-snapshot/>使用卷快照创建持久卷</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/05-delete-volume-snapshots/>删除卷快照</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/06-view-a-volume-snapshot-content-list/>查看卷快照内容列表</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/07-view-volume-snapshot-content-details/>查看卷快照内容详情</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/08-edit-volume-snapshot-content-information/>编辑卷快照内容信息</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/09-delete-a-volume-snapshot-content/>删除卷快照内容</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>卷快照类</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/15-storage/04-volume-snapshot-classes/01-create-a-volume-snapshot-class/>创建卷快照类</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/15-storage/04-volume-snapshot-classes/02-view-a-volume-snapshot-class-list/>查看卷快照类列表</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/15-storage/04-volume-snapshot-classes/03-view-volume-snapshot-class-details/>查看卷快照类详情</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/15-storage/04-volume-snapshot-classes/04-edit-volume-snapshot-class-information/>编辑卷快照类信息</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/15-storage/04-volume-snapshot-classes/05-delete-volume-snapshot-classes/>删除卷快照类</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>存储类</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/15-storage/05-storage-classes/01-set-authorization-rules/>设置授权规则</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/15-storage/05-storage-classes/02-set-auto-expansion/>设置存储卷自动扩展</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>KubeEdge</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/17-kubeedge/01-add-an-edge-node/>添加边缘节点</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/17-kubeedge/02-view-an-edge-node-list/>查看边缘节点列表</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/17-kubeedge/03-delete-an-edge-node/>删除边缘节点</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>KubeSphere 多集群代理连接</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/19-tower/02-add-a-member-cluster-using-proxy-connection/>通过代理连接添加成员集群</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>Gatekeeper</span></p><ul><li class=list><p class=list-title><span class=arrow></span>
+<span>约束模板</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/20-gatekeeper/01-constraint-templates/01-create-a-constraint-template/>创建约束模板</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/20-gatekeeper/01-constraint-templates/03-view-constraint-template-details/>查看约束模板详情</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/20-gatekeeper/01-constraint-templates/04-edit-constraint-template-yaml/>编辑约束模板配置</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/20-gatekeeper/01-constraint-templates/07-delete-constraint-templates/>删除约束模板</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>约束</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/20-gatekeeper/02-constraints/01-create-a-constraint/>创建约束</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/20-gatekeeper/02-constraints/02-view-a-constraint-list/>查看约束列表</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/20-gatekeeper/02-constraints/03-view-constraint-details/>查看约束详情</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/20-gatekeeper/02-constraints/04-edit-constraint-yaml/>编辑约束配置</a></li><li class=list><a href=/zh/docs/v4.1/11-use-extensions/20-gatekeeper/02-constraints/07-delete-constraints/>删除约束</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>Metrics Server</span></p><ul><li class=list><a href=/zh/docs/v4.1/11-use-extensions/24-metrics-server/01-edit-auto-scaling-settings/>编辑自动扩缩设置</a></li></ul></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>版本说明</span></p><ul><li class=list><a href=/zh/docs/v4.1/20-release-notes/release-v413/>4.1.3 版本说明</a></li><li class=list><a href=/zh/docs/v4.1/20-release-notes/release-v412/>4.1.2 版本说明</a></li><li class=list><a href=/zh/docs/v4.1/20-release-notes/release-v411/>4.1.1 版本说明</a></li><li class=list><a href=/zh/docs/v4.1/20-release-notes/release-v341/>3.4.1 版本说明</a></li><li class=list><a href=/zh/docs/v4.1/20-release-notes/release-v340/>3.4.0 版本说明</a></li><li class=list><a href=/zh/docs/v4.1/20-release-notes/release-v332/>3.3.2 版本说明</a></li><li class=list><a href=/zh/docs/v4.1/20-release-notes/release-v331/>3.3.1 版本说明</a></li><li class=list><a href=/zh/docs/v4.1/20-release-notes/release-v330/>3.3.0 版本说明</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>安全说明</span></p><ul><li class=list><a href=/zh/docs/v4.1/21-security/01-security-policy/>安全策略</a></li><li class=list><a href=/zh/docs/v4.1/21-security/02-vulnerability-advisory/>KubeSphere 网关组件安全漏洞公告</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>常见问题</span></p><ul><li class=list><a href=/zh/docs/v4.1/24-faq/01-info-collection/>改进计划</a></li></ul></li><li class=list><p class=list-title><span class=arrow></span>
+<span>参考</span></p><ul><li class=list><a href=/zh/docs/v4.1/25-reference/glossary-final/>术语表</a></li></ul></li></ul></nav></div><script>$(".nav-menu .list-title").click(function(){$(this).find(".arrow").toggleClass("arrow-open"),$(this).next().toggleClass("ul-active")})</script></div></div><div class=second-section-menu><div></div><div></div><div></div></div><div class=middle-div><div class="top-div common-flex-layout"><div class=contributor-div><span>最新更新:</span>
+<span class=update-time></span>
+<a href=https://github.com/kubesphere/website/blob/master/content/zh/docs/v4.1/11-use-extensions/05-observability-platform/09-events-altering/02-example-rules-for-auditing.adoc target=_blank rel="noopener noreferrer"><ul class=contributor-avatar></ul></a><span class=more-contributor></span></div><div class="mutual-div common-flex-layout"><div class=edit-div><a href=https://github.com/kubesphere/website/edit/master/content/zh/docs/v4.1/11-use-extensions/05-observability-platform/09-events-altering/02-example-rules-for-auditing.adoc target=_blank rel="noopener noreferrer"><span class=icon-span></span>
+<span>编辑</span></a></div><div class=feedback-div><a href=https://github.com/kubesphere/website/issues/new target=_blank rel="noopener noreferrer"><span class=icon-span></span>
+<span>反馈</span></a></div><div class=share-div><div><span class=icon-span></span>
+<span>分享</span></div><ul><li><img src=/images/docs/v3.3/twitter.svg alt=twitter>
+<a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fopenksc.github.io%2fzh%2fdocs%2fv4.1%2f11-use-extensions%2f05-observability-platform%2f09-events-altering%2f02-example-rules-for-auditing%2f&text=%e4%ba%8b%e4%bb%b6%2f%e5%ae%a1%e8%ae%a1%e7%9a%84%e5%91%8a%e8%ad%a6%e8%a7%84%e5%88%99%e7%a4%ba%e4%be%8b" target=_blank rel="noopener noreferrer">twitter</a></li><li><img src=/images/docs/v3.3/linkedIn.svg alt=linkedIn>
+<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fopenksc.github.io%2fzh%2fdocs%2fv4.1%2f11-use-extensions%2f05-observability-platform%2f09-events-altering%2f02-example-rules-for-auditing%2f" target=_blank rel="noopener noreferrer">linkedIn</a></li><li><img src=/images/docs/v3.3/facebook.svg alt=facebook>
+<a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fopenksc.github.io%2fzh%2fdocs%2fv4.1%2f11-use-extensions%2f05-observability-platform%2f09-events-altering%2f02-example-rules-for-auditing%2f" target=_blank rel="noopener noreferrer">facebook</a></li><li><img src=/images/docs/v3.3/reddit.svg alt=reddit>
+<a href="https://reddit.com/submit?url=https%3a%2f%2fopenksc.github.io%2fzh%2fdocs%2fv4.1%2f11-use-extensions%2f05-observability-platform%2f09-events-altering%2f02-example-rules-for-auditing%2f&title=%e4%ba%8b%e4%bb%b6%2f%e5%ae%a1%e8%ae%a1%e7%9a%84%e5%91%8a%e8%ad%a6%e8%a7%84%e5%88%99%e7%a4%ba%e4%be%8b" target=_blank rel="noopener noreferrer">reddit</a></li><li><img src=/images/docs/v3.3/email.svg alt=email>
+<a href=mailto:info@kubesphere.io target=_blank rel="noopener noreferrer">email</a></li></ul></div></div></div><div class="content-div main-div"><div class=md-body><h1>事件/审计的告警规则示例</h1><div class=paragraph><p>您可参照示例和参数描述，自定义事件和审计的告警规则，然后<a href=../01-create-rules-for-auditing>创建告警规则</a>。</p></div><div class=sect1><h2 id=_事件告警规则示例>事件告警规则示例</h2><div class=sectionbody><div class=listingblock><div class=content><pre class=highlight><code class=language-yaml data-lang=yaml>apiVersion: logging.whizard.io/v1alpha1
+kind: ClusterRuleGroup
+metadata:
+  name: events-rules
+spec:
+  type: events
+  rules:
+    - name: ContainerCreated
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and involvedObject.kind=&#34;Pod&#34; and reason=&#34;Created&#34; and involvedObject.fieldPath != &#34;&#34;
+      desc: create new container
+      enable: true
+      alerts:
+        severity: info
+    - name: ContainerStarted
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and involvedObject.kind=&#34;Pod&#34; and reason=&#34;Started&#34; and involvedObject.fieldPath != &#34;&#34;
+      desc: start new pod
+      alerts:
+        severity: warning
+        annotations:
+          summary:  start new pod
+          summaryCn: 创建新容器
+      enable: true
+    - name: ContainerFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;Pod&#34; and reason=&#34;Failed&#34; and involvedObject.fieldPath != &#34;&#34;
+      desc: Create container failed
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Container failed
+          summaryCn: 容器失败
+    - name: ContainerKilling
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and involvedObject.kind=&#34;Pod&#34; and reason=&#34;Killing&#34; and involvedObject.fieldPath != &#34;&#34;
+      desc: container kill
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: container killing
+          summaryCn: 容器停止
+    - name: ContainerPreempting
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;Pod&#34; and reason=&#34;Preempting&#34;
+      desc: container is preempting
+      alerts:
+        severity: warning
+        annotations:
+          summary: Container is preemting
+          summaryCn: 容器抢占中
+      enable: true
+    - name: ContainerBackoff
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;Pod&#34; and reason=&#34;BackOff&#34; and involvedObject.fieldPath != &#34;&#34; and count&gt;3
+      desc: container back off
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Container back-off
+          summaryCn: 容器回退
+    - name: ContainerUnhealthy
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;Pod&#34; and reason=&#34;Unhealthy&#34; and count&gt;3
+      desc: container is unhealthy
+      alerts:
+        severity: warning
+        annotations:
+          summary: Container is unhealthy
+          summaryCn: 容器状态不良
+      enable: true
+    - name: ContainerProbeWarning
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;Pod&#34; and reason=&#34;ProbeWarning&#34; and count&gt;3
+      desc: Warning to perform a probe to the container
+      alerts:
+        severity: warning
+        annotations:
+          summary: Warning to perform a probe to the container
+          summaryCn: 容器探测警告
+      enable: true
+    - name: PodKillingExceededGracePeriod
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;Pod&#34; and reason=&#34;ExceededGracePeriod&#34;
+      desc: Pod killing exceeded specified grace period
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Pod killing exceeded specified grace period
+          summaryCn: pod终止超时
+    - name: PodKillFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;FailedKillPod&#34;
+      desc: Warning to perform a probe to the container
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to kill pod
+          summaryCn: pod终止失败
+    - name: PodContainerCreateFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;FailedCreatePodContainer&#34;
+      desc: Failed to create pod container
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to create pod container
+          summaryCn: pod容器创建失败
+    - name: PodFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;Pod&#34; and reason=&#34;Failed&#34; and involvedObject.fieldPath=&#34;&#34;
+      desc: Pod failed
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Pod failed
+          summaryCn: pod失败
+    - name: PodNetworkNotReady
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;Pod&#34; and reason=&#34;NetworkNotReady&#34;
+      desc: Pod network is not ready
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Pod network is not ready
+          summaryCn: Pod网络异常
+    - name: ImagePulling
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and involvedObject.kind=&#34;Pod&#34; and reason=&#34;Pulling&#34;
+      desc: pull images
+      enable: true
+      alerts:
+        severity: warning
+    - name: ImagePulled
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and involvedObject.kind=&#34;Pod&#34; and reason=&#34;Pulled&#34;
+      desc: images pulled
+      enable: true
+      alerts:
+        severity: warning
+    - name: ImagePullPolicyError
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;Pod&#34; and reason=&#34;ErrImageNeverPull&#34;
+      desc: Wrong image pull policy
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Wrong image pull policy
+          summaryCn: 镜像拉取策略错误
+    - name: ImageInspectFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;Pod&#34; and reason=&#34;InspectFailed&#34;
+      desc: Failed to inspect image
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to inspect image
+          summaryCn: 镜像检查失败
+    - name: NodeReady
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and involvedObject.kind=&#34;Node&#34; and reason=&#34;NodeReady&#34;
+      desc: Pod network is not ready
+      enable: true
+      alerts:
+        severity: warning
+    - name: NodeSchedulable
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and involvedObject.kind=&#34;Node&#34; and reason=&#34;NodeSchedulable&#34;
+      desc: node is schedulable
+      enable: true
+      alerts:
+        severity: warning
+    - name: NodeNotSchedulable
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and involvedObject.kind=&#34;Node&#34; and reason=&#34;NodeNotSchedulable&#34;
+      desc: node is not schedulable
+      enable: true
+      alerts:
+        severity: warning
+    - name: KubeletStarting
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and involvedObject.kind=&#34;Node&#34; and reason=&#34;Starting&#34;
+      desc: kubelet is starting
+      enable: true
+      alerts:
+        severity: warning
+    - name: KubeletSetupFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;Node&#34; and reason=&#34;KubeletSetupFailed&#34;
+      desc: Failed to setup kubelet
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to setup kubelet
+          summaryCn: kubelet安装失败
+    - name: VolumeAttachFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;FailedAttachVolume&#34;
+      desc: Failed to attach volume
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to attach volume
+          summaryCn: 存储卷装载失败
+    - name: VolumeMountFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;FailedMount&#34;
+      desc: Failed to mount volume
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to mount volume
+          summaryCn: 存储卷挂载失败
+    - name: VolumeResizeFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;VolumeResizeFailed&#34;
+      desc: Failed to expand/reduce volume
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to expand/reduce volume
+          summaryCn: 存储卷扩缩容失败
+    - name: VolumeResizeSuccess
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and reason=&#34;VolumeResizeSuccessful&#34;
+      desc: volume resize success
+      enable: true
+      alerts:
+        severity: warning
+    - name: FileSystemResizeFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;FileSystemResizeFailed&#34;
+      desc: failed to expand/reduce file system
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to expand/reduce file system
+          summaryCn: 文件系统扩缩容失败
+    - name: FileSystemResized
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and reason=&#34;FileSystemResizeSuccessful&#34;
+      desc: File system resize success
+      enable: true
+      alerts:
+        severity: warning
+    - name: VolumeMapFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;FailedMapVolume&#34;
+      desc: Failed to map volume
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to map volume
+          summaryCn: 存储卷映射失败
+    - name: VolumeAlreadyMounted
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;AlreadyMountedVolume&#34;
+      desc: Volume is already mounted
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Volume is already mounted
+          summaryCn: 存储卷已被挂载
+    - name: VolumeAttached
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and reason=&#34;SuccessfulAttachVolume&#34;
+      desc: Volume is attached
+      enable: true
+      alerts:
+        severity: warning
+    - name: VolumeMounted
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and reason=&#34;SuccessfulMountVolume&#34;
+      desc: volume is mounted
+      enable: true
+      alerts:
+        severity: warning
+    - name: NodeRebooted
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;Node&#34; and reason=&#34;Rebooted&#34;
+      desc: Node Rebooted
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Node Rebooted
+          summaryCn: 节点重启
+    - name: ContainerGCFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;ContainerGCFailed&#34;
+      desc: Container GC failed
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Container GC failed
+          summaryCn: 容器GC失败
+    - name: ImageGCFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;ImageGCFailed&#34;
+      desc: Image GC failed
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Image GC failed
+          summaryCn: 镜像GC失败
+    - name: NodeAllocatableEnforcementFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;FailedNodeAllocatableEnforcement&#34;
+      desc: Node allocatable enforcement failed
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Node allocatable enforcement failed
+          summaryCn: 节点可分配资源更新失败
+    - name: NodeAllocatableEnforcedSuccess
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and involvedObject.kind=&#34;Node&#34; and reason=&#34;NodeAllocatableEnforced&#34;
+      desc: Node allocatable enforcement success
+      enable: true
+      alerts:
+        severity: warning
+    - name: SandboxChanged
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and reason=&#34;SandboxChanged&#34;
+      desc: Sandbox changed
+      enable: true
+      alerts:
+        severity: warning
+    - name: SandboxCreateFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;FailedCreatePodSandBox&#34;
+      desc: Failed to create sandbox
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to create sandbox
+          summaryCn: Sandbox创建失败
+    - name: SandboxStatusFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;FailedPodSandBoxStatus&#34;
+      desc: Failed to get sandbox status
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to get sandbox status
+          summaryCn: 获取Sandbox状态错误
+    - name: DiskCapacityInvalid
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;InvalidDiskCapacity&#34;
+      desc: Invalid disk capacity
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Invalid disk capacity
+          summaryCn: 磁盘容量配置不合法
+    - name: DiskSpaceFreeFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;FreeDiskSpaceFailed&#34;
+      desc: Failed to free disk space
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to free disk space
+          summaryCn: 磁盘空间释放失败
+    - name: PodStatusSyncFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;Pod&#34; and reason=&#34;FailedSync&#34;
+      desc: Failed To Sync Pod Status
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed To Sync Pod Status
+          summaryCn: Pod状态同步失败
+    - name: ConfigurationValidationFaile
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;Pod&#34; and reason=&#34;FailedValidation&#34;
+      desc: Configuration Validation Failed
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Configuration Validation Failed
+          summaryCn: 配置验证失败
+    - name: LifecycleHookPostStartFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;FailedPostStartHook&#34;
+      desc: Failed to postStart LifecycleHook
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to postStart LifecycleHook
+          summaryCn: 容器启动后的生命周期钩子运行失败
+    - name: LifecycleHookPreStopFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;FailedPreStopHook&#34;
+      desc: Failed to preStop LifecycleHook
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to preStop LifecycleHook
+          summaryCn: 容器停止前的生命周期钩子运行失败
+    - name: HPASelectorError
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;HorizontalPodAutoscaler&#34; and reason in (&#34;SelectorRequired&#34;,&#34;InvalidSelector&#34;)
+      desc: HPA selector error
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: HPA selector error
+          summaryCn: HPA选择器错误
+    - name: HPAMetricError
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;HorizontalPodAutoscaler&#34; and reason in (&#34;FailedGetObjectMetric&#34;,&#34;InvalidMetricSourceType&#34;)
+      desc: Node allocatable enforcement failed
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: HPA metric error
+          summaryCn: HPA对象指标错误
+    - name: HPAConvertFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;HorizontalPodAutoscaler&#34; and reason=&#34;FailedConvertHPA&#34;
+      desc: Failed to convert HPA
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to convert HPA
+          summaryCn: HPA转换失败
+    - name: HPAGetScaleFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;HorizontalPodAutoscaler&#34; and reason=&#34;FailedGetScale&#34;
+      desc: Failed to get HPA scale
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to get HPA scale
+          summaryCn: HPA规模获取失败
+    - name: HPAComputeReplicasFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;HorizontalPodAutoscaler&#34; and reason=&#34;FailedComputeMetricsReplicas&#34;
+      desc: Failed to compute HPA replicas
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to compute HPA replicas
+          summaryCn: HPA副本计算失败
+    - name: HPARescaleFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;HorizontalPodAutoscaler&#34; and reason=&#34;FailedRescale&#34;
+      desc: Failed to rescale HPA size
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to rescale HPA size
+          summaryCn: HPA规模调整失败
+    - name: HPARescaleSuccess
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and involvedObject.kind=&#34;HorizontalPodAutoscaler&#34; and reason=&#34;SuccessfulRescale&#34;
+      desc: Rescaled HPA size
+      enable: true
+      alerts:
+        severity: warning
+    - name: NodeSystemOOM
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;Node&#34; and reason=&#34;SystemOOM&#34;
+      desc: Node system OOM encountered
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Node system OOM encountered
+          summaryCn: 节点内存溢出
+    - name: VolumeBindingFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;FailedBinding&#34;
+      desc: Volume binding failed
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Volume binding failed
+          summaryCn: 存储卷绑定失败
+    - name: VolumeMismatch
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;VolumeMismatch&#34;
+      desc: Volume Mismatch
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Volume Mismatch
+          summaryCn: 存储卷不匹配
+    - name: VolumeRecycleFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;VolumeFailedRecycle&#34;
+      desc: Failed to recycle volume
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to recycle volume
+          summaryCn: 存储卷回收失败
+    - name: VolumeRecycled
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and reason=&#34;VolumeRecycled&#34;
+      desc: Volume Recycled
+      enable: true
+      alerts:
+        severity: warning
+    - name: VolumeRecyclerPodError
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;RecyclerPod&#34;
+      desc: Volume Recycler pod error
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Volume Recycler pod error
+          summaryCn: 存储卷回收器错误
+    - name: VolumeDeleted
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and reason=&#34;VolumeDelete&#34;
+      desc: Volume Deleted
+      enable: true
+      alerts:
+        severity: warning
+    - name: VolumeDeleteFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;VolumeFailedDelete&#34;
+      desc: Failed to delete volume
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to delete volume
+          summaryCn: 存储卷删除失败
+    - name: VolumeProvisionFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;ProvisioningFailed&#34;
+      desc: Failed to provision volume
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to provision volume
+          summaryCn: 存储申请失败
+    - name: VolumeProvisioned
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and reason=&#34;ProvisioningSucceeded&#34;
+      desc: Volume provisioned
+      enable: true
+      alerts:
+        severity: warning
+    - name: VolumeProvisionCleanupFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;ProvisioningCleanupFailed&#34;
+      desc: Failed to clean up provision volume
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to clean up provision volume
+          summaryCn: 清理存储失败
+    - name: VolumeExternalExpandingError
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;ExternalExpanding&#34;
+      desc: Error for volume external expanding
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Error for volume external expanding
+          summaryCn: 存储外部扩展错误
+    - name: PodScheduleFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;Pod&#34; and reason=&#34;FailedScheduling&#34;
+      desc: Failed to schedule pod
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to schedule pod
+          summaryCn: pod调度失败
+    - name: PodSchedulePreempted
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and involvedObject.kind=&#34;Pod&#34; and reason=&#34;Preempted&#34;
+      desc: Pod preempted
+      enable: true
+      alerts:
+        severity: warning
+    - name: PodScheduled
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and involvedObject.kind=&#34;Pod&#34; and reason=&#34;Scheduled&#34;
+      desc: Pod scheduled
+      enable: true
+      alerts:
+        severity: warning
+    - name: PodCreateFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind in (&#34;Pod&#34;,&#34;ReplicaSet&#34;,&#34;DaemonSet&#34;,&#34;StatefulSet&#34;,&#34;Job&#34;) and reason=&#34;FailedCreate&#34;
+      desc: Failed to create pod
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to create pod
+          summaryCn: pod创建失败
+    - name: PodCreated
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and involvedObject.kind in (&#34;Pod&#34;,&#34;ReplicaSet&#34;,&#34;DaemonSet&#34;,&#34;StatefulSet&#34;,&#34;Job&#34;) and reason=&#34;SuccessfulCreate&#34;
+      desc: pod created
+      enable: true
+      alerts:
+        severity: warning
+    - name: PodDeleteFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind in (&#34;Pod&#34;,&#34;ReplicaSet&#34;,&#34;DaemonSet&#34;,&#34;StatefulSet&#34;,&#34;Job&#34;) and reason=&#34;FailedDelete&#34;
+      desc: Failed to delete pod
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to delete pod
+          summaryCn: pod删除失败
+    - name: PodDeleted
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and involvedObject.kind in (&#34;Pod&#34;,&#34;ReplicaSet&#34;,&#34;DaemonSet&#34;,&#34;StatefulSet&#34;,&#34;Job&#34;) and reason=&#34;SuccessfulDelete&#34;
+      desc: pod deleted
+      enable: true
+      alerts:
+        severity: warning
+    - name: ReplicaSetCreateError
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;ReplicaSetCreateError&#34;
+      desc: Error to create replica set for deployment
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Error to create replica set for deployment
+          summaryCn: 副本集创建错误
+    - name: DeploymentRollbackFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason in(&#34;DeploymentRollbackRevisionNotFound&#34;,&#34;DeploymentRollbackTemplateUnchanged&#34;)
+      desc: Failed to rollback deployment
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to rollback deployment
+          summaryCn: 部署回滚失败
+    - name: DeploySelectorAll
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;Deployment&#34; and reason=&#34;SelectingAll&#34;
+      desc: The deploy is selecting all pods
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: The deploy is selecting all pods
+          summaryCn: deploy选择了所有pod
+    - name: DaemonSelectorAll
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;DaemonSet&#34; and reason=&#34;SelectingAll&#34;
+      desc: The daemon set is selecting all pods
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: The daemon set is selecting all pods
+          summaryCn: daemonset选择了所有pod
+    - name: DaemonPodFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;DaemonSet&#34; and reason in (&#34;FailedDaemonPod&#34;,&#34;FailedPlacement&#34;)
+      desc: Failed daemon pod
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed daemon pod
+          summaryCn: daemonset的pod失败
+    - name: LoadBalancerSyncFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;SyncLoadBalancerFailed&#34;
+      desc: Error syncing load balancer
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Error syncing load balancer
+          summaryCn: 负载据衡器不可用
+    - name: LoadBalancerDeleting
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and reason=&#34;DeletingLoadBalancer&#34;
+      desc: LoadBalancer is deleting
+      enable: true
+      alerts:
+        severity: warning
+    - name: LoadBalancerEnsuring
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and reason=&#34;EnsuringLoadBalancer&#34;
+      desc: LoadBalancer is ensuring
+      enable: true
+      alerts:
+        severity: warning
+    - name: LoadBalancerEnsured
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and reason=&#34;EnsuredLoadBalancer&#34;
+      desc: LoadBalancer is ensured
+      enable: true
+      alerts:
+        severity: warning
+    - name: LoadBalancerUnAvailable
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;UnAvailableLoadBalancer&#34;
+      desc: Load balancer is not available
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Load balancer is not available
+          summaryCn: 负载据衡器不可用
+    - name: LoadBalancerUpdated
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and reason=&#34;UpdatedLoadBalancer&#34;
+      desc: LoadBalancer is updated
+      enable: true
+      alerts:
+        severity: warning
+    - name: LoadBalancerUpdateFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;UpdateLoadBalancerFailed&#34;
+      desc: Failed to update load balancer
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to update load balancer
+          summaryCn: 更新负载据衡器失败
+    - name: LoadBalancerDeleting
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and reason=&#34;DeletingLoadBalancer&#34;
+      desc: Failed To Sync Pod Status
+      enable: true
+      alerts:
+        severity: warning
+    - name: LoadBalancerDeleted
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and reason=&#34;DeletedLoadBalancer&#34;
+      desc: LoadBalancer is deleted
+      enable: true
+      alerts:
+        severity: warning
+    - name: VolumeDeleted
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and reason=&#34;VolumeDelete&#34;
+      desc: Volume is deleted
+      enable: true
+      alerts:
+        severity: warning
+    - name: LoadBalancerDeleteFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and reason=&#34;DeleteLoadBalancerFailed&#34;
+      desc: Failed to delete load balancer
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to delete load balancer
+          summaryCn: 负载据衡器删除失败
+    - name: JobGetFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;CronJob&#34; and reason=&#34;FailedGet&#34;
+      desc: Failed to get job
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to get job
+          summaryCn: 任务获取失败
+    - name: JobCreated
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and involvedObject.kind=&#34;CronJob&#34; and reason=&#34;SuccessfulCreate&#34;
+      desc: job is created
+      enable: true
+      alerts:
+        severity: warning
+    - name: JobCreateFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;CronJob&#34; and reason=&#34;FailedCreate&#34;
+      desc: Failed to create job
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to create job
+          summaryCn: 任务创建失败
+    - name: JobDeleted
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and involvedObject.kind=&#34;CronJob&#34; and reason=&#34;SuccessfulDelete&#34;
+      desc: job is deleted
+      enable: true
+      alerts:
+        severity: warning
+    - name: JobDeleteFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;CronJob&#34; and reason=&#34;FailedDelete&#34;
+      desc: Failed to delete job
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: Failed to delete job
+          summaryCn: 任务删除失败
+    - name: JobCompleted
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and involvedObject.kind=&#34;CronJob&#34; and reason=&#34;SawCompletedJob&#34;
+      desc: job is completed
+      enable: true
+      alerts:
+        severity: warning
+    - name: JobUnexpected
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;CronJob&#34; and reason=&#34;UnexpectedJob&#34;
+      desc: CronJob saw unexpected job
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: CronJob saw unexpected job
+          summaryCn: 任务非预期
+    - name: JobMissing
+      expr:
+        kind: rule
+        condition: type=&#34;Normal&#34; and involvedObject.kind=&#34;CronJob&#34; and reason=&#34;MissingJob&#34;
+      desc: CronJob missed expected job
+      enable: true
+      alerts:
+        severity: warning
+    - name: JobScheduleFailed
+      expr:
+        kind: rule
+        condition: type=&#34;Warning&#34; and involvedObject.kind=&#34;CronJob&#34; and reason in (&#34;MissSchedule&#34;,&#34;FailedNeedsStart&#34;)
+      desc: CronJob failed to schedule job
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: CronJob failed to schedule job
+          summaryCn: 任务调度失败</code></pre></div></div></div></div><div class=sect1><h2 id=_审计告警规则示例>审计告警规则示例</h2><div class=sectionbody><div class=listingblock><div class=content><pre class=highlight><code class=language-yaml data-lang=yaml>apiVersion: logging.whizard.io/v1alpha1
+kind: ClusterRuleGroup
+metadata:
+  name: auditing-rules
+spec:
+  type: auditing
+  rules:
+    - name: ignore-action
+      expr:
+        kind: list
+        list:
+          - get
+          - list
+          - watch
+      desc: all action not need to be audit
+    - name: action
+      expr:
+        kind: list
+        list:
+          - create
+          - delete
+          - update
+          - patch
+      desc: all operator need to be audit
+    - name: pod
+      expr:
+        kind: macro
+        macro: ObjectRef.Resource=&#34;pods&#34;
+      desc: pod
+    - name: service
+      expr:
+        kind: macro
+        macro: ObjectRef.Resource=&#34;services&#34;
+      desc: service
+    - name: user
+      expr:
+        kind: alias
+        alias: User.username
+      desc: the alias of the user related to audit event
+    - name: name
+      expr:
+        kind: alias
+        alias: ObjectRef.Name
+      desc: the alias of the resource name
+    - name: namespace
+      expr:
+        kind: alias
+        alias: ObjectRef.Namespace
+      desc: the alias of the resource namespace
+    - name: create
+      expr:
+        kind: macro
+        macro: Verb = &#34;create&#34;
+      desc: create operator
+    - name: ResourceChange
+      expr:
+        kind: rule
+        condition: Verb in ${action}
+      desc: audit the change of resource
+      enable: true
+      alerts:
+        severity: info
+    - name: CreateHostNetworkPod
+      expr:
+        kind: rule
+        condition: ${pod} and ${create} and RequestObject.spec.hostNetwork = true
+      desc: Detect an attempt to start a pod using the host network
+      alerts:
+        severity: warning
+        annotations:
+          summary: creat hostNetwork pod
+          summaryCn: 创建 hostNetwork 容器
+        message: ${user} ${Verb} HostNetwork Pod ${name} in Namespace ${namespace}.
+      enable: true
+    - name: CreateHostportPod
+      expr:
+        kind: rule
+        condition: ${pod} and ${create} and (RequestObject.spec.containers[*].ports[*].hostPort &gt; 0 or RequestObject.spec.initContainers[*].ports[*].hostPort &gt; 0)
+      desc: Detect an attempt to start a pod mount to a host port
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: creat hostport pod
+          summaryCn: 创建 hostport 容器
+        message: ${user} ${Verb} HostPort Pod ${name} in Namespace ${namespace}.
+    - name: CreateNodePortService
+      expr:
+        kind: rule
+        condition: ${service} and ${create} and RequestObject.spec.type = &#34;NodePort&#34;
+      desc: Detect an attempt to start a service with a NodePort service type
+      enable: true
+      alerts:
+        severity: warning
+        annotations:
+          summary: creat NodePort service
+          summaryCn: 创建 NodePort 服务
+        message: ${user} ${Verb} NodePort Service ${name} in Namespace ${namespace}.
+    - name: AttachOrExecPod
+      expr:
+        kind: rule
+        condition: ${pod} and ${create} and ObjectRef.Subresource in (&#34;exec&#34;, &#34;attach&#34;)
+      desc: Detect any attempt to attach/exec to a pod
+      alerts:
+        severity: warning
+        annotations:
+          summary: attach or exec pod
+          summaryCn: 进入容器
+        message: ${user} ${ObjectRef.Subresource} Pod ${name} in Namespace ${namespace}.</code></pre></div></div></div></div><div class=sect1><h2 id=_告警规则参数描述>告警规则参数描述</h2><div class=sectionbody><div class=paragraph><p>告警规则目前支持三种类型：审计、事件和日志。在 <code>spec.type</code> 下配置不同类型的告警规则，如 <code>type: auditing</code>，<code>type: events</code> 或 <code>type: logs</code> 。</p></div><div class=paragraph><p>告警规则 <code>spec.rules</code> 的设置项如下：</p></div><table class="tableblock frame-all grid-all stretch"><col style=width:20%><col style=width:80%><thead><tr><th class="tableblock halign-left valign-top">参数</th><th class="tableblock halign-left valign-top">描述</th></tr></thead><tbody><tr><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p><code>name</code></p></div></div></td><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p>规则名称。</p></div></div></td></tr><tr><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p><code>desc</code></p></div></div></td><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p>规则描述。</p></div></div></td></tr><tr><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p><code>expr.kind</code></p></div></div></td><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p>规则类型，取值可以为 <code>rule</code>, <code>macro</code>, <code>list</code>, 或 <code>alias</code>。</p></div></div></td></tr><tr><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p><code>expr.condition</code></p></div></div></td><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p>日志的过滤表达式，以检查日志是否与规则匹配。可使用比较运算符（=，!=，&lt;，⇐，>，>=，contains，in，like，regexp）、布尔运算符（and，or 和 not）以及括号进行组合。</p></div></div></td></tr><tr><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p><code>expr.macro</code></p></div></div></td><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p>macro 的条件。</p></div></div></td></tr><tr><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p><code>expr.list</code></p></div></div></td><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p>list 的值。</p></div></div></td></tr><tr><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p><code>expr.alias</code></p></div></div></td><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p>alias 的值。</p></div></div></td></tr><tr><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p><code>enable</code></p></div></div></td><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p>如果为 false，规则将不生效。</p></div></div></td></tr><tr><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p><code>alerts.output</code></p></div></div></td><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p>指定在匹配事件发生时输出的消息。</p></div></div></td></tr><tr><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p><code>alerts.annotations</code></p></div></div></td><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p>规则的注解，包含在匹配事件发生时输出的告警消息。</p></div></div></td></tr><tr><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p><code>alerts.annotations.summary</code></p></div></div></td><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p>指定在匹配事件发生时输出的摘要消息。</p></div></div></td></tr><tr><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p><code>alerts.annotations.summaryCn</code></p></div></div></td><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p>指定在匹配事件发生时输出的中文摘要消息。</p></div></div></td></tr><tr><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p><code>alerts.severity</code></p></div></div></td><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p>规则的告警级别，取值可以为 INFO、WARNING、ERROR、或 CRITICAL。</p></div></div></td></tr></tbody></table><div class=paragraph><p><strong>Macro</strong></p></div><div class=paragraph><p>宏（Macro）是规则条件片段，可以在规则内部甚至其他宏中重复使用。宏提供了一种命名常见模式和消除规则冗余的方法。以下是一个宏的示例：</p></div><div class=listingblock><div class=content><pre class=highlight><code class=language-yaml data-lang=yaml>apiVersion: logging.whizard.io/v1alpha1
+kind: ClusterRuleGroup
+metadata:
+  name: macro-rule
+spec:
+  type: auditing
+  rules:
+  - desc: pod
+    expr:
+      kind: macro
+      macro: ObjectRef.Resource=&#34;pods&#34;
+    name: pod</code></pre></div></div><table class="tableblock frame-all grid-all stretch admon note"><col style=width:100%><thead><tr><th class="tableblock halign-left valign-top">说明</th></tr></thead><tbody><tr><td class="tableblock halign-left valign-top"><div class=content><div class=paragraph><p>宏可以在规则或其他宏中使用，例如 <code>${pod}</code> 或 <code>${alerting-rule.pod}</code> 。这两种方法的区别在于 <code>${pod}</code> 只能用于 <code>alerting-rule</code>，而 <code>${alerting-rule.pod}</code> 可以用于所有实例。宏也可用于 list 和 alias。</p></div></div></td></tr></tbody></table><div class=paragraph><p><strong>List</strong></p></div><div class=paragraph><p>列表（List）是可以包含在规则、宏或其他列表中的项目集合。与规则和宏不同，列表不能被解析为过滤表达式。以下是一个列表的示例：</p></div><div class=listingblock><div class=content><pre class=highlight><code class=language-yaml data-lang=yaml>apiVersion: logging.whizard.io/v1alpha1
+kind: ClusterRuleGroup
+metadata:
+  name: list-rule
+spec:
+  type: alerting
+  rules:
+  - desc: all action not need to be audit
+    expr:
+      kind: list
+      list:
+        - get
+        - list
+        - watch
+    name: ignore-action</code></pre></div></div><div class=paragraph><p><strong>Alias</strong></p></div><div class=paragraph><p>别名（Alias）是过滤字段的缩写名称，它可以包含在规则、宏、列表和输出字符串中。以下是一个别名的示例：</p></div><div class=listingblock><div class=content><pre class=highlight><code class=language-yaml data-lang=yaml>apiVersion: logging.whizard.io/v1alpha1
+kind: ClusterRuleGroup
+metadata:
+  name: alias-rule
+spec:
+  type: alerting
+  rules:
+  - desc: the alias of the user related to audit event
+    expr:
+      alias: User.username
+      kind: alias
+    name: user</code></pre></div></div></div></div><section class=feedback-section><p class=title>反馈</p><p>这篇文章对您有帮助吗？</p><button class=Yes>是</button>
+<button class=No>否</button></section><div class=SubscribeForm><div class=innerBox><p class=description>通过邮件接收 KubeSphere 最新的技术博客与产品更新的通知</p><div id=formAddress data-actionaddress="https://www.sendcloud.net/v3/api/subInvite/subscription?invitecode=1dc5a4fb-894c-4470-b01d-ca7fa9d47a46" data-usesendcloud=true data-lang=zh><input name=EMAIL id=email-input type=text placeholder=请输入您的邮箱地址>
+<button id=email-submit>订阅</button></div><span id=message data-message1=请提供您的邮箱 data-message2=请输入有效的邮箱地址! data-message3=邮箱地址已经存在></span><span id=message1 style=color:#00a971 data-success=订阅成功啦，我们保证不会给你发垃圾邮件的啦></span><script>var bindSubmit=function(){var e=$("#email-input");$("#email-submit").click(function(t){t.stopPropagation();var s,o,n=e.val(),i=$("#message").data("message1"),a=$("#message").data("message2"),r=$("#message").data("message3"),c=$("#message1").data("success");if(n)if(validateEmail(n)){if(s=$("#formAddress").data("usesendcloud"),!s)return;o=$("#formAddress").data("actionaddress"),$.post({type:"post",url:o,data:{email:$("#email-input").val().toString()},success:function(){showSuccessMessage(c),setTimeout(function(){$("#email-input").val("")},1e3)},error:function(){showMessage(r)}})}else t.preventDefault(),showMessage(a);else t.preventDefault(),showMessage(i)})},validateEmail=function(e){var t=/^[A-Za-z0-9]+([_.][A-Za-z0-9]+)*@([A-Za-z0-9-]+\.)+[A-Za-z]{2,6}$/;return t.test(e)},showMessage=function(e){$("#message").html(e).show()},showSuccessMessage=function(e){$("#message1").html(e).show()},bindHideMessage=function(){$(window).click(function(){$("#message").hide(),$("#message1").hide()})},bindClose=function(){$(".formBox .close").click(function(e){e.stopPropagation(),$(".formBox").fadeOut()})};bindSubmit(),bindClose(),bindHideMessage()</script></div></div><br><p class=msg-thank>感谢您的反馈。如果您有关于如何使用 KubeSphere 的具体问题，请在 Slack 上提问。如果您想报告问题或提出改进建议，请在 GitHub 存储库中打开问题。</p></div></div><div class="page-div common-flex-layout"><a class=last href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/09-events-altering/01-create-rules-for-auditing/><img src=/images/docs/v3.3/last.svg alt>
+上一篇
+<span>: 创建事件/审计的告警规则</span>
+</a><a class=next href=/zh/docs/v4.1/11-use-extensions/05-observability-platform/09-events-altering/03-create-rules-for-logs/>下一篇
+<span>: 创建日志告警规则</span>
+<img src=/images/docs/v3.3/next.svg alt></a></div><div></div></div><div class=aside><div class=inner-div><div class=title>页面内容</div><div class=tabs><nav id=TableOfContents><ul><li><a href=#_事件告警规则示例>事件告警规则示例</a></li><li><a href=#_审计告警规则示例>审计告警规则示例</a></li><li><a href=#_告警规则参数描述>告警规则参数描述</a></li></ul></nav></div></div></div></div></section><script type=text/javascript src=/js/aside.2d6977c0f16aef4ed3e886dd66675ce74bd0efcd467c2b2bcdb30b92d5e7c7c0e5c6e0c9d8f09a883c22f58df9e6b0b6347fcdd3c9a920b7faba6d7f91a201c3.js integrity="sha512-LWl3wPFq707T6IbdZmdc50vQ781GfCsrzbMLktXnx8DlxuDJ2PCaiDwi9Y355rC2NH/N08mpILf6um1/kaIBww=="></script><script type=text/javascript src=/js/markdown-tab.17f9f46b021adebc7250ce1b07134a577b307e7a436daa4aaf388f218e8463966f53770b26a64817c06c168738a887672d47fb4c29615adfc446e11d09a344cf.js integrity="sha512-F/n0awIa3rxyUM4bBxNKV3swfnpDbapKrziPIY6EY5ZvU3cLJqZIF8BsFoc4qIdnLUf7TClhWt/ERuEdCaNEzw=="></script><script>var getLatestTime,filterData,getFileContributors,renderContributors,renderLatestTime,bindClickMenu,bindClickSecondMenu,useViewer,__main,languageCode="zh",filePath="docs/v4.1/11-use-extensions/05-observability-platform/09-events-altering/02-example-rules-for-auditing.adoc",githubUrl="https://github.com/kubesphere/website",Yes=$("button.Yes"),No=$("button.No"),msg=$("p.msg-thank");msg.hide(),Yes.click(function(){Yes.css("background-color"," #55BC8A"),Yes.css("opacity","0.5"),Yes.css("pointer-events","none"),No.css("pointer-events","none"),msg.show()}),No.click(function(){No.css("background-color"," #55BC8A"),No.css("opacity","0.5"),Yes.css("pointer-events","none"),No.css("pointer-events","none"),msg.show()}),getLatestTime=function(e){var t=e[0].commit;return t.author.date.replace("T"," ").replace("Z","")},filterData=function(e){for(var t,o,n=[],i=e.length,s=0;s<i;s++)o=e[s].author,o&&(t=o.avatar_url,t&&!n.includes(t)&&n.push(t));return n},getFileContributors=function(){var e="https://api.github.com/repos/kubesphere/website/commits?path=content/"+languageCode+"/"+filePath;$.getJSON(e,function(e){if(!e||e.length===0){$(".contributor-div").hide();return}var t=filterData(e),n=getLatestTime(e);renderLatestTime(n),renderContributors(t)})},renderContributors=function(e){var t,s=$(".contributor-avatar"),o=e.length,n=5;$.each(e.slice(0,n),function(e,t){var n=$("<img />",{src:t,alt:"avatar"});$("<li />",{html:n}).appendTo(s)}),t=o-n,t>0&&$(".more-contributor").html("+"+t)},renderLatestTime=function(e){$(".update-time").html(e)},bindClickMenu=function(){var e=$(".section-menu");$(".section-control").on("mouseenter",function(){e.is(":hidden")&&e.show()}),e.on("mouseleave",function(){e.hide()}),$(document).on("click",function(){e.hide()}),e.on("click",function(e){e.stopPropagation()})},bindClickSecondMenu=function(){var e=$(".section-2 .left-div");$(".second-section-menu").on("click",function(t){e.css("left","0"),$(document).one("click",function(){e.css("left","-274px")}),t.stopPropagation()}),e.on("click",function(e){e.stopPropagation()})},useViewer=function(){var e=new Viewer(document.querySelector(".md-body"),{url:"src"})},__main=function(){getFileContributors(),bindClickMenu(),bindClickSecondMenu(),useViewer()},__main(),$(".asciicast").children().attr("title","video")</script></main><footer><div class=down-main><div class=img-div><a class=wechat href=javascript:void(0); aria-label=wechat><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28"><defs><path id="a" d="M0 0h15.673v12.156H0z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="13" cy="13" r="13" stroke="#B6C2CD"/><g transform="translate(5 7)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="currentColor" d="M15.673 7.898c0-2.061-2.173-3.74-4.619-3.74-2.59.0-4.625 1.679-4.625 3.74.0 2.066 2.035 3.738 4.625 3.738.542.0 1.09-.13 1.632-.256l1.493.776-.408-1.29c1.09-.776 1.902-1.81 1.902-2.968zm-6.119-.645c-.27.0-.541-.257-.541-.514.0-.256.27-.514.541-.514.41.0.681.258.681.514.0.257-.271.514-.681.514zm2.994.0c-.27.0-.541-.257-.541-.514.0-.256.27-.514.54-.514.41.0.681.258.681.514.0.257-.277.514-.68.514z" mask="url(#b)"/><path fill="currentColor" d="M10.602 3.674c.177.0.356.011.533.029C10.657 1.576 8.27.0 5.543.0 2.498.0.0 1.974.0 4.485c0 1.45.829 2.64 2.216 3.564l-.552 1.588 1.94-.929c.693.129 1.251.263 1.94.263.17.0.343-.005.515-.022a3.68 3.68.0 01-.172-1.104c0-2.302 2.081-4.171 4.715-4.171zM7.618 2.243c.417.0.693.263.693.66s-.276.66-.693.66c-.418.0-.835-.263-.835-.66.006-.398.423-.66.835-.66zm-3.88 1.319c-.417.0-.834-.263-.834-.66s.417-.66.834-.66c.418.0.695.263.695.66.0.392-.277.66-.695.66z" mask="url(#b)"/></g></g></svg><div class=hide-div><p>Follow the official account</p><img src=/images/footer/wechat_code.svg alt></div></a><a class=facebook-a href=https://www.facebook.com/kubesphere target=_blank aria-label=facebook></a><a class=twitter-a href=https://x.com/KubeSphere target=_blank aria-label=twitter rel="noopener noreferrer"></a><a class=linkedin-a href=https://www.linkedin.com/company/kubesphere/ target=_blank aria-label=linkedin rel="noopener noreferrer"></a><a class=youtube-a href target=_blank aria-label=youtube rel="noopener noreferrer"></a><a class=slack-a href=https://join.slack.com/t/kubesphere/shared_invite/zt-2b4t6rdb4-ico_4UJzCln_S2c1pcrIpQ target=_blank aria-label=slack rel="noopener noreferrer"></a><a class=github-a href=https://github.com/kubesphere/kubesphere target=_blank aria-label=github rel="noopener noreferrer"></a><a class=medium-a href=https://itnext.io/@kubesphere target=_blank aria-label=medium rel="noopener noreferrer"></a></div><p class=p1></p></div></footer></body></html>

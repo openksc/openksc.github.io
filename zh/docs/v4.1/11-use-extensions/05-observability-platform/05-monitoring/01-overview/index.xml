@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>概览 on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/01-overview/</link><description>Recent content in 概览 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/01-overview/index.xml" rel="self" type="application/rss+xml"/><item><title>查看集群监控概览</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/01-overview/01-cluster-monitoring-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/01-overview/01-cluster-monitoring-overview/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看集群概览页面的监控信息。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>有关集群概览页面的其他信息，请参阅&lt;a href="../../../../../07-cluster-management/02-overview/01-view-cluster-overall-information/">查看集群概览信息&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个集群并在集群中具有&lt;strong>监控查看&lt;/strong>权限。有关更多信息，请参阅“集群成员”和“集群角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>WhizardTelemetry 监控&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>监控查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>概览&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>&lt;strong>概览&lt;/strong>页面提供以下监控信息：&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">功能区&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群配额统计&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>当前集群中容器和项目的 CPU 配额和内存配额，包含预留数量、上限数量和总量。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>节点资源用量&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>所有节点的 CPU、内存、磁盘的总量和实时用量，以及集群允许创建的容器组总数和已创建的容器组数量。默认情况下每个节点最多允许创建 110 个容器组。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>容器组&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>当前集群的各种类型容器组的数量。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>容器组状态类型包括：&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>运行中&lt;/strong>：容器组已分配给某个节点，容器组中的所有容器都已被创建，至少有一个容器正在运行、启动或重启。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>等待中&lt;/strong>：容组器已被系统接受，但有至少一个容器尚未创建也未运行。此状态下，容器组可能正在等待调度，或等待容器镜像下载完成。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>成功完成&lt;/strong>：容器组中的所有容器都成功终止（以 0 退出码终止），并且不再重启。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>失败&lt;/strong>：容器组中的所有容器都已终止，并且至少有一个容器以非 0 退出码终止。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>未知&lt;/strong>：系统无法获取容器组状态。出现这种状态通常是由于系统与容器组所在的主机通信失败。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>容器组 QoS（服务质量）类型包括：&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Guaranteed&lt;/strong>：容器组中的每个容器都具有内存上限、内存请求、CPU 上限、CPU 请求，并且内存上限等于内存请求，CPU 上限等于 CPU 请求。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Burstable&lt;/strong>：容器组中至少有一个容器不满足 &lt;strong>Guaranteed&lt;/strong> 类型的要求。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>BestEffort&lt;/strong>：容器组中的容器没有配置任何内存上限、内存请求、CPU 上限或CPU 请求。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>查看企业空间监控概览</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/01-overview/02-workspace-monitoring-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/01-overview/02-workspace-monitoring-overview/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看企业空间概览页面的监控信息。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个企业空间并在企业空间中具有&lt;strong>监控查看&lt;/strong>权限。有关更多信息，请参阅“企业空间成员”和“企业空间角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>WhizardTelemetry 监控&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>监控查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>概览&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>&lt;strong>概览&lt;/strong>页面的&lt;strong>资源用量&lt;/strong>页签提供以下信息：&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">功能区&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>物理资源&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>企业空间在指定集群中的 CPU 和内存使用情况。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用资源&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>企业空间在指定集群中创建的部署、有状态副本集、守护进程集、任务、定时任务、持久卷声明等的数量。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>在右上角点击 &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/timed-task.svg" alt="timed-task" width="18" height="18"/>&lt;/span> 可设置数据的时间范围。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>在右上角点击 &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/start-dark.svg" alt="start" width="18" height="18"/>&lt;/span>/&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/pause.svg" alt="pause" width="18" height="18"/>&lt;/span> 可开启/停止实时数据刷新。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>在右上角点击 &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/refresh-dark.svg" alt="refresh" width="18" height="18"/>&lt;/span> 可手动刷新数据。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在右上角点击&lt;strong>集群&lt;/strong>下拉列表可查看特定集群中的数据。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>概览&lt;/strong>页面点击&lt;strong>用量排行&lt;/strong>页签查看企业空间中的项目的资源使用情况。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>在列表左上角点击&lt;strong>集群&lt;/strong>下拉列表可查看特定集群中的数据。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在列表上方点击下拉列表可选择按照 CPU 用量、内存用量、容器组数量、出站流量或入站流量对项目进行排序。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在列表上方点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/sort-ascending.svg" alt="sort-ascending" width="18" height="18"/>&lt;/span>/&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/sort-descending.svg" alt="sort-descending" width="18" height="18"/>&lt;/span> 可按升序/降序排序。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>在列表右上角点击&lt;strong>导出&lt;/strong>可下载 JSON 格式的资源用量数据。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>概览&lt;/strong>页面点击&lt;strong>集群信息&lt;/strong>页签查看授权给企业空间的集群的 CPU、内存、磁盘的总量和已使用量，以及集群上可创建容器组的总数和已创建容器组的数量。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>默认情况下每个集群节点最多可以创建 110 个容器组。&lt;/p>
+&lt;/div></description></item><item><title>查看项目监控概览</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/01-overview/03-project-monitoring-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/01-overview/03-project-monitoring-overview/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看项目概览页面的监控信息。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>有关项目概览页面的其他信息，请参阅&lt;a href="../../../../../09-project-management/02-overview/01-view-project-overall-information/">查看项目概览信息&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个企业空间并在企业空间中具有&lt;strong>监控查看&lt;/strong>权限。有关更多信息，请参阅“企业空间成员”和“企业空间角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>WhizardTelemetry 监控&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>监控查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>概览&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>&lt;strong>概览&lt;/strong>页面提供以下监控信息：&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">功能区&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>资源用量&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>当前项目的CPU、内存、磁盘的总量和实时用量。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>容器组&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>当前项目的各种类型容器组的数量。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>容器组状态类型包括：&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>运行中&lt;/strong>：容器组已分配给某个节点，容器组中的所有容器都已被创建，至少有一个容器正在运行、启动或重启。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>等待中&lt;/strong>：容组器已被系统接受，但有至少一个容器尚未创建也未运行。此状态下，容器组可能正在等待调度，或等待容器镜像下载完成。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>成功完成&lt;/strong>：容器组中的所有容器都成功终止（以 0 退出码终止），并且不再重启。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>失败&lt;/strong>：容器组中的所有容器都已终止，并且至少有一个容器以非 0 退出码终止。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>未知&lt;/strong>：系统无法获取容器组状态。出现这种状态通常是由于系统与容器组所在的主机通信失败。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>容器组 QoS（服务质量）类型包括：&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Guaranteed&lt;/strong>：容器组中的每个容器都具有内存上限、内存请求、CPU 上限、CPU 请求，并且内存上限等于内存请求，CPU 上限等于 CPU 请求。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Burstable&lt;/strong>：容器组中至少有一个容器不满足 &lt;strong>Guaranteed&lt;/strong> 类型的要求。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>BestEffort&lt;/strong>：容器组中的容器没有配置任何内存上限、内存请求、CPU 上限或CPU 请求。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>容器组的 QoS 类型将决定容器组运行的优先级。当系统中资源不足以运行所有容器组时，系统优先保证运行 QoS 类型为 &lt;strong>Guaranteed&lt;/strong> 的容器组，其次保证运行 QoS 类型为 &lt;strong>Burstable&lt;/strong> 的容器组，最后保证运行 QoS 类型为 &lt;strong>BestEffort&lt;/strong> 的容器组。&lt;/p>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Microservice Gateway on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/18-spring-cloud/03-microservice-gateway/</link><description>Recent content in Microservice Gateway on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/18-spring-cloud/03-microservice-gateway/index.xml" rel="self" type="application/rss+xml"/><item><title>Create Microservice Gateway</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/18-spring-cloud/03-microservice-gateway/01-create-a-microservice-gateway/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/18-spring-cloud/03-microservice-gateway/01-create-a-microservice-gateway/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to create a microservice gateway.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>During the creation of a microservice gateway, a deployment running Spring Cloud Gateway is actually created.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Spring Cloud&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a project and have the &lt;strong>Spring Cloud Microservices Management&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You should prepare the Spring Cloud Gateway container image in advance. For more information, see the &lt;a href="https://spring.io/projects/spring-cloud-gateway#overview">Spring Cloud Gateway&lt;/a> documentation. This section uses the &lt;code>registry.cn-beijing.aliyuncs.com/kse/spring-cloud-gateway:latest&lt;/code> container image as an example. You can also build your own container image as needed.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>View Microservice Gateway Information</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/18-spring-cloud/03-microservice-gateway/02-view-microservice-gateway-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/18-spring-cloud/03-microservice-gateway/02-view-microservice-gateway-information/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to view microservice gateway information.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Spring Cloud&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a project and have the &lt;strong>Spring Cloud Microservices Viewing&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Spring Cloud Microservices Viewing&lt;/strong> permission, and access your project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Spring Cloud &amp;gt; Microservice Gateways&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>The &lt;strong>Microservice Gateways&lt;/strong> page provides the following information:&lt;/p>
+&lt;/div></description></item><item><title>View Microservice Gateway Details</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/18-spring-cloud/03-microservice-gateway/03-view-microservice-gateway-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/18-spring-cloud/03-microservice-gateway/03-view-microservice-gateway-details/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to view microservice gateway details.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Spring Cloud&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a project and have the &lt;strong>Spring Cloud Microservices Viewing&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Spring Cloud Microservices Viewing&lt;/strong> permission, and access your project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Spring Cloud &amp;gt; Microservice Gateways&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the right side of the page, select &lt;strong>Manage &amp;gt; View Details&lt;/strong> to open the gateway details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>View the gateway’s resource attributes in the &lt;strong>Attributes&lt;/strong> area on the left side of the gateway details page.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Cluster&lt;/p>
+&lt;/div></description></item><item><title>Edit Microservice Gateway</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/18-spring-cloud/03-microservice-gateway/04-edit-microservice-gateway-settings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/18-spring-cloud/03-microservice-gateway/04-edit-microservice-gateway-settings/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to edit a microservice gateway.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Spring Cloud&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a project and have the &lt;strong>Spring Cloud Microservices Management&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Spring Cloud Microservices Management&lt;/strong> permission, and access your project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Spring Cloud &amp;gt; Microservice Gateways&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the right side of the page, select &lt;strong>Manage &amp;gt; Edit&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Edit Microservice Gateway&lt;/strong> dialog, modify the parameters of the microservice gateway, and then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>For more information on microservice gateway parameters, see the &lt;a href="#_parameter_description">Parameter Description&lt;/a>.&lt;/p>
+&lt;/div></description></item><item><title>Delete Microservice Gateway</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/18-spring-cloud/03-microservice-gateway/05-delete-a-microservice-gateway/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/18-spring-cloud/03-microservice-gateway/05-delete-a-microservice-gateway/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to delete a microservice gateway.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Warning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Deleting the microservice gateway will cause the microservice’s business to be interrupted. Please proceed with caution.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Spring Cloud&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a project and have the &lt;strong>Spring Cloud Microservices Management&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

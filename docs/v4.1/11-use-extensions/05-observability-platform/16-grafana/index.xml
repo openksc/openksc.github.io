@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Grafana for WhizardTelemetry on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/16-grafana/</link><description>Recent content in Grafana for WhizardTelemetry on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/16-grafana/index.xml" rel="self" type="application/rss+xml"/><item><title>View Built-in Dashboards</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/16-grafana/01-built-in-dashboards/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/16-grafana/01-built-in-dashboards/</guid><description>&lt;div class="paragraph">
+&lt;p>The Grafana for WhizardTelemetry extension comes with multiple Grafana Dashboards that allow direct querying of monitoring data for Kubernetes without the need for manual configuration of Grafana Dashboards.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>After logging into the Grafana console, click &lt;strong>Dashboards&lt;/strong> in the left navigation pane to view all built-in Dashboard templates.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 25%;"/>
+&lt;col style="width: 75%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Directory&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>kube-prometheus-stack&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Visualizes monitoring data for Kubernetes.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table class="tableblock frame-all grid-all stretch admon attention">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Attention&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>After installing the &lt;strong>WhizardTelemetry Monitoring&lt;/strong> extension, the Dashboards in &lt;strong>kube-prometheus-stack&lt;/strong> will display monitoring data.&lt;/p>
+&lt;/div></description></item><item><title>Add Data Sources</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/16-grafana/05-add-data-source/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/16-grafana/05-add-data-source/</guid><description>&lt;div class="paragraph">
+&lt;p>This section briefly introduces how to add, configure, and query data sources. For more information, see &lt;a href="https://grafana.com/docs/grafana/latest/datasources/">Grafana data sources&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Before creating a Dashboard, you must first add a data source. The Grafana for WhizardTelemetry extension defaults to adding the Prometheus server address as a data source. You can also add data sources yourself, such as Loki, Elasticsearch, InfluxDB, PostgreSQL, MySQL, etc.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>After adding a data source, you can:&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Use Explore to query data.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Visualize data in panels.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Create alert rules.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Create Dashboards</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/16-grafana/07-create-dashboards/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/16-grafana/07-create-dashboards/</guid><description>&lt;div class="paragraph">
+&lt;p>After adding a data source, create a Dashboard to visualize the data from the data source.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>A Dashboard consists of one or more panels, organized and arranged in rows. Panels display data and provide various control options.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This section briefly introduces how to create a Dashboard. For more information, see &lt;a href="https://grafana.com/docs/grafana/latest/dashboards/">Grafana dashboards&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Click &lt;strong>Dashboards&lt;/strong> in the left navigation pane of the Grafana console.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>New &amp;gt; New Dashboard&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the blank Dashboard page, click &lt;strong>+ Add visualization&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the pop-up dialog, select the added data source, and the panel editing page will automatically open.&lt;/p>
+&lt;div class="paragraph">
+&lt;p>&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/v4.1.2/grafana/edit-panel.png" alt="edit-panel"/>&lt;/span>&lt;/p>
+&lt;/div></description></item></channel></rss>

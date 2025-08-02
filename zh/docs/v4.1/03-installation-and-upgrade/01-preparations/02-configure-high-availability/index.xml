@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>配置高可用性 on</title><link>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/02-configure-high-availability/</link><description>Recent content in 配置高可用性 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/02-configure-high-availability/index.xml" rel="self" type="application/rss+xml"/><item><title>配置 Kubernetes 高可用性</title><link>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/02-configure-high-availability/02-configure-k8s-high-availability/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/03-installation-and-upgrade/01-preparations/02-configure-high-availability/02-configure-k8s-high-availability/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何在生产环境中为 KubeSphere 集群配置多个控制平面节点，以防止单个控制平面节点故障时集群服务中断，从而实现高可用性。如果您的 KubeSphere 集群没有高可用性需求，您可以跳过本节。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>本节介绍以下高可用性配置方式：&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>使用本地负载均衡配置。您可以在安装 KubeSphere 的过程中，设置 KubeKey 工具在工作节点上安装 HAProxy 作为各控制平面节点的反向代理，所有工作节点的 Kubernetes 组件将通过 HAProxy 连接各控制平面节点。这种方式需要额外的健康检查机制，所以相较其他方式运行效率有所降低，但可以用于没有专用负载均衡器且服务器数量有限的场景。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>使用专用负载均衡器。您可以使用云环境提供的负载均衡器作为各控制平面节点的反向代理。这种方式要求 KubeSphere 集群安装在云环境中，并且云环境可以提供专用负载均衡器。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>使用通用服务器作为负载均衡器。您可以在集群节点以外的 Linux 服务器上安装 Keepalived 和 HAProxy 作为负载均衡器。这种方式需要至少 2 台额外的 Linux 服务器。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_使用本地负载均衡配置">使用本地负载均衡配置&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>如需使用 HAProxy 实现高可用性，只需要在安装 KubeSphere 时在安装配置文件 &lt;strong>config-sample.yaml&lt;/strong> 中设置以下参数：&lt;/p>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-yaml" data-lang="yaml">spec:
+ controlPlaneEndpoint:
+ internalLoadbalancer: haproxy
+ domain: lb.kubesphere.local
+ address: &amp;#34;&amp;#34;
+ port: 6443&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>KubeKey 将自动在工作节点上安装 HAProxy 并完成高可用配置，您无需进行其他操作。有关更多信息请参阅&lt;a href="../../../02-install-kubesphere/02-install-kubernetes-and-kubesphere/">安装 Kubernetes 和 KubeSphere&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_使用专用负载均衡器">使用专用负载均衡器&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>如需使用云环境提供的专用负载均衡器实现高可用性，您需要在云环境中进行以下操作：&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>在云环境中创建一台至少包含两个副本的负载均衡器。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>设置负载均衡器监听 KubeSphere 集群各控制平面节点的 6443 端口。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>获取负载均衡器的 IP 地址，供后续安装 KubeSphere 时使用。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item></channel></rss>

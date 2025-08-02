@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>企业空间管理和用户指南 on</title><link>https://openksc.github.io/zh/docs/v3.3/workspace-administration/</link><description>Recent content in 企业空间管理和用户指南 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v3.3/workspace-administration/index.xml" rel="self" type="application/rss+xml"/><item><title>企业空间概述</title><link>https://openksc.github.io/zh/docs/v3.3/workspace-administration/what-is-workspace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/workspace-administration/what-is-workspace/</guid><description>&lt;p>企业空间是用来管理&lt;a href="../../project-administration/">项目&lt;/a>、&lt;a href="../../devops-user-guide/">DevOps 项目&lt;/a>、&lt;a href="../upload-helm-based-application/">应用模板&lt;/a>和应用仓库的一种逻辑单元。您可以在企业空间中控制资源访问权限，也可以安全地在团队内部分享资源。&lt;/p>
+&lt;p>最佳的做法是为租户（集群管理员除外）创建新的企业空间。同一名租户可以在多个企业空间中工作，并且多个租户可以通过不同方式访问同一个企业空间。&lt;/p>
+&lt;p>本教程演示如何创建和删除企业空间。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;p>准备一个被授予 &lt;code>workspaces-manager&lt;/code> 角色的用户，例如&lt;a href="../../quick-start/create-workspace-and-project/">创建企业空间、项目、用户和角色&lt;/a>中创建的 &lt;code>ws-manager&lt;/code> 帐户。&lt;/p>
+&lt;h2 id="创建企业空间">创建企业空间&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>以 &lt;code>ws-manager&lt;/code> 身份登录 KubeSphere Web 控制台。点击左上角的&lt;strong>平台管理&lt;/strong>并选择&lt;strong>访问控制&lt;/strong>。在&lt;strong>企业空间&lt;/strong>页面，点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>对于单节点集群，您需要在&lt;strong>基本信息&lt;/strong>页面，为创建的企业空间输入名称，并从下拉菜单中选择一名企业空间管理员。点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>名称&lt;/strong>：为企业空间设置一个专属名称。&lt;/li>
+&lt;li>&lt;strong>别名&lt;/strong>：该企业空间的另一种名称。&lt;/li>
+&lt;li>&lt;strong>管理员&lt;/strong>：管理该企业空间的用户。&lt;/li>
+&lt;li>&lt;strong>描述&lt;/strong>：企业空间的简短介绍。&lt;/li>
+&lt;/ul>
+&lt;p>对于多节点集群，设置企业空间的基本信息后，点击&lt;strong>下一步&lt;/strong>。在&lt;strong>集群设置&lt;/strong>页面，选择企业空间需要使用的集群，然后点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>企业空间创建后将显示在企业空间列表中。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击该企业空间，您可以在&lt;strong>概览&lt;/strong>页面查看企业空间中的资源状态。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="删除企业空间">删除企业空间&lt;/h2>
+&lt;p>在 KubeSphere 中，可以通过企业空间对项目进行分组管理，企业空间下项目的生命周期会受到企业空间的影响。具体来说，企业空间删除之后，企业空间下的项目及关联的资源也同时会被销毁。&lt;/p>
+&lt;p>删除企业空间之前，请先确定您是否要解绑部分关键项目。&lt;/p>
+&lt;h3 id="删除前解绑项目">删除前解绑项目&lt;/h3>
+&lt;p>若要删除企业空间并保留其中的部分项目，删除前请先执行以下命令：&lt;/p>
+&lt;pre tabindex="0">&lt;code>kubectl label ns &amp;lt;namespace&amp;gt; kubesphere.io/workspace- &amp;amp;&amp;amp; kubectl patch ns &amp;lt;namespace&amp;gt; -p &amp;#39;{&amp;#34;metadata&amp;#34;:{&amp;#34;ownerReferences&amp;#34;:[]}}&amp;#39; --type=merge
+&lt;/code>&lt;/pre>&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>以上命令会移除与企业空间关联的标签并移除 ownerReferences。之后，您可以将解绑的项目重新&lt;a href="../../faq/access-control/add-kubernetes-namespace-to-kubesphere-workspace/">分配给新的企业空间&lt;/a>。&lt;/div>
+&lt;/div>
+&lt;h3 id="在控制台上删除企业空间">在控制台上删除企业空间&lt;/h3>
+&lt;p>从企业空间解绑关键项目后，您可以按照以下步骤删除企业空间。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>如果您使用 kubectl 删除企业空间资源对象，请务必谨慎操作。&lt;/div>
+&lt;/div>
+&lt;ol>
+&lt;li>
+&lt;p>在企业空间页面，转到&lt;strong>企业空间设置&lt;/strong>菜单下的&lt;strong>基本信息&lt;/strong>。在&lt;strong>基本信息&lt;/strong>页面，您可以查看该企业空间的基本信息，例如项目数量和成员数量。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>在该页面，您可以点击&lt;strong>编辑信息&lt;/strong>更改企业空间的基本信息（企业空间名称无法更改），也可以开启或关闭&lt;a href="../../workspace-administration/workspace-network-isolation/">网络隔离&lt;/a>。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>若要删除企业空间，点击&lt;strong>管理 &amp;gt; 删除企业空间&lt;/strong>。在出现的对话框中输入企业空间的名称，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="notices warning">
+ 
+ &lt;p>警告&lt;/p>
+ &lt;div>企业空间删除后将无法恢复，并且企业空间下的资源也同时会被销毁。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol></description></item><item><title>上传基于 Helm 的应用程序</title><link>https://openksc.github.io/zh/docs/v3.3/workspace-administration/upload-helm-based-application/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/workspace-administration/upload-helm-based-application/</guid><description>&lt;p>KubeSphere 提供应用程序的全生命周期管理。例如，企业空间管理员可以上传或创建新的应用模板，并进行快速测试。此外，管理员会将经过充分测试的应用发布到&lt;a href="../../application-store/">应用商店&lt;/a>，这样其他用户能一键部署这些应用。为了开发应用模板，企业空间管理员首先需要将打包的 &lt;a href="https://helm.sh/" target="_blank" rel="noopener noreferrer">Helm chart&lt;/a> 上传到 KubeSphere。&lt;/p>
+&lt;p>本教程演示了如何通过上传打包的 Helm chart 来开发应用模板。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;ul>
+&lt;li>您需要启用 &lt;a href="../../pluggable-components/app-store/">KubeSphere 应用商店 (OpenPitrix)&lt;/a>。&lt;/li>
+&lt;li>您需要创建一个企业空间和一个用户 (&lt;code>project-admin&lt;/code>)。该用户必须被邀请至企业空间中，并被授予 &lt;code>workspace-self-provisioner&lt;/code> 角色。有关更多信息，请参考&lt;a href="../../quick-start/create-workspace-and-project/">创建企业空间、项目、用户和角色&lt;/a>。&lt;/li>
+&lt;/ul>
+&lt;h2 id="动手实验">动手实验&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>用 &lt;code>project-admin&lt;/code> 帐户登录 KubeSphere。在企业空间页面，转到&lt;strong>应用管理&lt;/strong>下的&lt;strong>应用模板&lt;/strong>，点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框中，点击&lt;strong>上传&lt;/strong>。您可以上传自己的 Helm chart，或者下载 &lt;a href="https://openksc.github.io/files/application-templates/nginx-0.1.0.tgz">Nginx chart&lt;/a> 用它作为示例来完成接下来的步骤。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>文件包上传完毕后，点击&lt;strong>确定&lt;/strong>继续。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您可以在&lt;strong>应用信息&lt;/strong>下查看应用的基本信息。点击&lt;strong>上传图标&lt;/strong>来上传应用的图标。您也可以跳过上传图标，直接点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>应用图标支持的最大分辨率为 96 × 96 像素。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>成功上传后，模板列表中会列出应用，状态为&lt;strong>开发中&lt;/strong>，意味着该应用正在开发中。上传的应用对同一企业空间下的所有成员均可见。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击应用，随后打开的页面默认选中&lt;strong>版本&lt;/strong>标签。点击待提交版本以展开菜单，您可以在菜单上看到&lt;strong>删除&lt;/strong>、&lt;strong>测试&lt;/strong>、&lt;strong>提交发布&lt;/strong>的选项。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>有关如何将应用发布到应用商店的更多信息，请参考&lt;a href="../../application-store/app-lifecycle-management/">应用程序生命周期管理&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ol></description></item><item><title>企业空间角色和成员管理</title><link>https://openksc.github.io/zh/docs/v3.3/workspace-administration/role-and-member-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/workspace-administration/role-and-member-management/</guid><description>&lt;p>本教程演示如何在企业空间中管理角色和成员。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;p>至少已创建一个企业空间，例如 &lt;code>demo-workspace&lt;/code>。您还需要准备一个用户（如 &lt;code>ws-admin&lt;/code>），该用户在企业空间级别具有 &lt;code>workspace-admin&lt;/code> 角色。有关更多信息，请参见&lt;a href="../../quick-start/create-workspace-and-project/">创建企业空间、项目、用户和角色&lt;/a>。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>实际角色名称的格式：&lt;code>workspace name-role name&lt;/code>。例如，在名为 &lt;code>demo-workspace&lt;/code> 的企业空间中，角色 &lt;code>admin&lt;/code> 的实际角色名称为 &lt;code>demo-workspace-admin&lt;/code>。&lt;/div>
+&lt;/div>
+&lt;h2 id="内置角色">内置角色&lt;/h2>
+&lt;p>&lt;strong>企业空间角色&lt;/strong>页面列出了以下四个可用的内置角色。创建企业空间时，KubeSphere 会自动创建内置角色，并且内置角色无法进行编辑或删除。您只能查看内置角色的权限或将其分配给用户。&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>&lt;strong>名称&lt;/strong>&lt;/th>
+ &lt;th>&lt;strong>描述&lt;/strong>&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;code>workspace-viewer&lt;/code>&lt;/td>
+ &lt;td>企业空间观察员，可以查看企业空间中的所有资源。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>workspace-self-provisioner&lt;/code>&lt;/td>
+ &lt;td>企业空间普通成员，可以查看企业设置、管理应用模板、创建项目和 DevOps 项目。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>workspace-regular&lt;/code>&lt;/td>
+ &lt;td>企业空间普通成员，可以查看企业空间设置。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>workspace-admin&lt;/code>&lt;/td>
+ &lt;td>企业空间管理员，可以管理企业空间中的所有资源。&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>若要查看角色所含权限：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>以 &lt;code>ws-admin&lt;/code> 身份登录控制台。在&lt;strong>企业空间角色&lt;/strong>中，点击一个角色（例如，&lt;code>workspace-admin&lt;/code>）以查看角色详情。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>授权用户&lt;/strong>选项卡，查看所有被授予该角色的用户。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="创建企业空间角色">创建企业空间角色&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>转到&lt;strong>企业空间设置&lt;/strong>下的&lt;strong>企业空间角色&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>企业空间角色&lt;/strong>中，点击&lt;strong>创建&lt;/strong>并设置&lt;strong>名称&lt;/strong>（例如，&lt;code>demo-project-admin&lt;/code>）。点击&lt;strong>编辑权限&lt;/strong>继续。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的窗口中，权限归类在不同的&lt;strong>功能模块&lt;/strong>下。在本示例中，点击&lt;strong>项目管理&lt;/strong>，并为该角色选择&lt;strong>项目创建&lt;/strong>、&lt;strong>项目管理&lt;/strong>和&lt;strong>项目查看&lt;/strong>。点击&lt;strong>确定&lt;/strong>完成操作。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>&lt;strong>依赖于&lt;/strong>表示当前授权项依赖所列出的授权项，勾选该权限后系统会自动选上所有依赖权限。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>新创建的角色将在&lt;strong>企业空间角色&lt;/strong>中列出，点击右侧的 &lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/workspace-administration-and-user-guide/role-and-member-management/three-dots.png" height="20px"> 以编辑该角色的信息、权限，或删除该角色。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="邀请新成员">邀请新成员&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>转到&lt;strong>企业空间设置&lt;/strong>下&lt;strong>企业空间成员&lt;/strong>，点击&lt;strong>邀请&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击右侧的 &lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/workspace-administration-and-user-guide/role-and-member-management/add.png" height="20px"> 以邀请一名成员加入企业空间，并为其分配一个角色。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>将成员加入企业空间后，点击&lt;strong>确定&lt;/strong>。您可以在&lt;strong>企业空间成员&lt;/strong>列表中查看新邀请的成员。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>若要编辑现有成员的角色或将其从企业空间中移除，点击右侧的 &lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/workspace-administration-and-user-guide/role-and-member-management/three-dots.png" height="20px"> 并选择对应的操作。&lt;/p>
+&lt;/li>
+&lt;/ol></description></item><item><title>企业空间网络隔离</title><link>https://openksc.github.io/zh/docs/v3.3/workspace-administration/workspace-network-isolation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/workspace-administration/workspace-network-isolation/</guid><description>&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>已经启用&lt;a href="../../pluggable-components/network-policy/">网络策略&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>需要使用拥有 &lt;code>workspace-admin&lt;/code> 角色的用户。例如，使用在&lt;a href="../../quick-start/create-workspace-and-project/">创建企业空间、项目、用户和角色&lt;/a>教程中创建的 &lt;code>ws-admin&lt;/code> 用户。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>关于网络策略的实现，您可以参考 &lt;a href="https://github.com/kubesphere/community/blob/master/sig-network/concepts-and-designs/kubesphere-network-policy.md" target="_blank" rel="noopener noreferrer">KubeSphere NetworkPolicy&lt;/a>。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="开启或关闭企业空间网络隔离">开启或关闭企业空间网络隔离&lt;/h2>
+&lt;p>企业空间网络隔离默认关闭。您可以在&lt;strong>企业空间设置&lt;/strong>下的&lt;strong>基本信息&lt;/strong>页面开启网络隔离。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>当网络隔离开启时，默认允许出站流量，而不同企业空间的进站流量将被拒绝。如果您需要自定义网络策略，则需要开启&lt;a href="../../project-administration/project-network-isolation/">项目网络隔离&lt;/a>并在&lt;strong>项目设置&lt;/strong>中添加网络策略。&lt;/div>
+&lt;/div>
+&lt;p>您也可以在&lt;strong>基本信息&lt;/strong>页面关闭网络隔离。&lt;/p>
+&lt;h2 id="最佳做法">最佳做法&lt;/h2>
+&lt;p>要确保企业空间中的所有容器组都安全，一个最佳做法是开启企业空间网络隔离。&lt;/p>
+&lt;p>当网络隔离开启时，其他企业空间无法访问该企业空间。如果企业空间的默认网络隔离无法满足您的需求，请开启项目网络隔离并自定义您的项目网络策略。&lt;/p></description></item><item><title>项目配额</title><link>https://openksc.github.io/zh/docs/v3.3/workspace-administration/project-quotas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/workspace-administration/project-quotas/</guid><description>&lt;p>KubeSphere 使用预留（Request）和限制（Limit）来控制项目中的资源（例如 CPU 和内存）使用情况，在 Kubernetes 中也称为&lt;a href="https://kubernetes.io/zh/docs/concepts/policy/resource-quotas/" target="_blank" rel="noopener noreferrer">资源配额&lt;/a>。请求确保项目能够获得其所需的资源，因为这些资源已经得到明确保障和预留。相反地，限制确保项目不能使用超过特定值的资源。&lt;/p>
+&lt;p>除了 CPU 和内存，您还可以单独为其他对象设置资源配额，例如项目中的容器组、&lt;a href="../../project-user-guide/application-workloads/deployments/">部署&lt;/a>、&lt;a href="../../project-user-guide/application-workloads/jobs/">任务&lt;/a>、&lt;a href="../../project-user-guide/application-workloads/services/">服务&lt;/a>和&lt;a href="../../project-user-guide/configuration/configmaps/">配置字典&lt;/a>。&lt;/p>
+&lt;p>本教程演示如何配置项目配额。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;p>您需要有一个可用的企业空间、一个项目和一个用户 (&lt;code>ws-admin&lt;/code>)。该用户必须在企业空间层级拥有 &lt;code>admin&lt;/code> 角色。有关更多信息，请参见&lt;a href="../../quick-start/create-workspace-and-project/">创建企业空间、项目、用户和角色&lt;/a>。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>如果使用 &lt;code>project-admin&lt;/code> 用户（该用户在项目层级拥有 &lt;code>admin&lt;/code> 角色），您也可以为新项目（即其配额尚未设置）设置项目配额。不过，项目配额设置完成之后，&lt;code>project-admin&lt;/code> 无法更改配额。一般情况下，&lt;code>ws-admin&lt;/code> 负责为项目设置限制和请求。&lt;code>project-admin&lt;/code> 负责为项目中的容器&lt;a href="../../project-administration/container-limit-ranges/">设置限制范围&lt;/a>。&lt;/div>
+&lt;/div>
+&lt;h2 id="设置项目配额">设置项目配额&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>以 &lt;code>ws-admin&lt;/code> 身份登录控制台，进入一个项目。如果该项目是新创建的项目，您可以在&lt;strong>概览&lt;/strong>页面看到项目配额尚未设置。点击&lt;strong>编辑配额&lt;/strong>来配置配额。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出对话框中，您可以看到 KubeSphere 默认不为项目设置任何请求或限制。要设置请求和限制来控制 CPU 和内存资源，请将滑块移动到期望的值或者直接输入数字。字段留空意味着您不设置任何请求或限制。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>限制必须大于请求。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>要为其他资源设置配额，在&lt;strong>项目资源配额&lt;/strong>下点击&lt;strong>添加&lt;/strong>，选择一个资源或输入资源名称并设置配额。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>确定&lt;/strong>完成配额设置。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>项目设置&lt;/strong>下的&lt;strong>基本信息&lt;/strong>页面，您可以查看该项目的所有资源配额。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>要更改项目配额，请在&lt;strong>基本信息&lt;/strong>页面点击&lt;strong>编辑项目&lt;/strong>，然后选择&lt;strong>编辑项目配额&lt;/strong>。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>对于&lt;a href="../../project-administration/project-and-multicluster-project/#%e5%a4%9a%e9%9b%86%e7%be%a4%e9%a1%b9%e7%9b%ae">多集群项目&lt;/a>，&lt;strong>管理项目&lt;/strong>下拉菜单中不会显示&lt;strong>编辑配额&lt;/strong>选项。若要为多集群项目设置配额，前往&lt;strong>项目设置&lt;/strong>下的&lt;strong>项目配额&lt;/strong>，并点击&lt;strong>编辑配额&lt;/strong>。请注意，由于多集群项目跨集群运行，您可以为多集群项目针对不同集群分别设置资源配额。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>项目配额&lt;/strong>页面更改项目配额，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="另请参见">另请参见&lt;/h2>
+&lt;p>&lt;a href="../../project-administration/container-limit-ranges/">容器限制范围&lt;/a>&lt;/p></description></item><item><title>企业空间配额</title><link>https://openksc.github.io/zh/docs/v3.3/workspace-administration/workspace-quotas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/workspace-administration/workspace-quotas/</guid><description>&lt;p>企业空间配额用于管理企业空间中所有项目和 DevOps 项目的总资源用量。企业空间配额与&lt;a href="../project-quotas/">项目配额&lt;/a>相似，也包含 CPU 和内存的预留（Request）和限制（Limit）。预留确保企业空间中的项目能够获得其所需的资源，因为这些资源已经得到明确保障和预留。相反，限制则确保企业空间中的所有项目的资源用量不能超过特定数值。&lt;/p>
+&lt;p>在&lt;a href="../../multicluster-management/">多集群架构&lt;/a>中，由于您需要&lt;a href="../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/">将一个或多个集群分配到企业空间中&lt;/a>，您可以设置该企业空间在不同集群上的资源用量。&lt;/p>
+&lt;p>本教程演示如何管理企业空间中的资源配额。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;p>您需要准备一个可用的企业空间和一个用户 (&lt;code>ws-manager&lt;/code>)。该用户必须在平台层级具有 &lt;code>workspaces-manager&lt;/code> 角色。有关更多信息，请参阅&lt;a href="../../quick-start/create-workspace-and-project/">创建企业空间、项目、用户和角色&lt;/a>。&lt;/p>
+&lt;h2 id="设置企业空间配额">设置企业空间配额&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>使用 &lt;code>ws-manager&lt;/code> 用户登录 KubeSphere Web 控制台，进入企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>企业空间设置&lt;/strong>下，选择&lt;strong>企业空间配额&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>企业空间配额&lt;/strong>页面列有分配到该企业空间的全部可用集群，以及各集群的 CPU 限额、CPU 需求、内存限额和内存需求。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在列表右侧点击&lt;strong>编辑配额&lt;/strong>即可查看企业空间配额信息。默认情况下，KubeSphere 不为企业空间设置任何资源预留或资源限制。如需设置资源预留或资源限制来管理 CPU 和内存资源，您可以移动 &lt;img src="https://openksc.github.io/images/docs/v3.x/common-icons/slider.png" width="20" /> 至期望数值或直接输入期望数值。将字段设为空值表示不对资源进行预留或限制。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>资源预留不能超过资源限制。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>配额设置完成后，点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="另请参见">另请参见&lt;/h2>
+&lt;p>&lt;a href="../project-quotas/">项目配额&lt;/a>&lt;/p>
+&lt;p>&lt;a href="../../project-administration/container-limit-ranges/">容器限制范围&lt;/a>&lt;/p></description></item><item><title>部门管理</title><link>https://openksc.github.io/zh/docs/v3.3/workspace-administration/department-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/workspace-administration/department-management/</guid><description>&lt;p>本文档介绍如何管理企业空间中的部门。&lt;/p>
+&lt;p>企业空间中的部门是用来管理权限的逻辑单元。您可以在部门中设置企业空间角色、多个项目角色以及多个 DevOps 项目角色，还可以将用户分配到部门中以批量管理用户权限。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;ul>
+&lt;li>您需要&lt;a href="../../quick-start/create-workspace-and-project/">创建一个企业空间和一个用户&lt;/a>，该用户需在该企业空间中具有 &lt;code>workspace-admin&lt;/code> 角色。本文档以 &lt;code>demo-ws&lt;/code> 企业空间和 &lt;code>ws-admin&lt;/code> 用户为例。&lt;/li>
+&lt;li>如需在一个部门中设置项目角色或者 DevOps 项目角色，则需要在该企业空间中&lt;a href="../../quick-start/create-workspace-and-project/">创建至少一个项目或一个 DevOps 项目&lt;/a>。&lt;/li>
+&lt;/ul>
+&lt;h2 id="创建部门">创建部门&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>以 &lt;code>ws-admin&lt;/code> 用户登录 KubeSphere Web 控制台并进入 &lt;code>demo-ws&lt;/code> 企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>企业空间设置&lt;/strong>下的&lt;strong>部门&lt;/strong>，点击右侧的&lt;strong>设置部门&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>设置部门&lt;/strong>对话框中，设置以下参数，然后点击&lt;strong>确定&lt;/strong>创建部门。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>&lt;ul>
+&lt;li>如果企业空间中已经创建过部门，您可以点击&lt;strong>创建部门&lt;/strong>为该企业空间添加更多部门。&lt;/li>
+&lt;li>您可以在每个部门中创建多个部门和多个子部门。如需创建子部门，在左侧部门树中选择一个部门，然后点击右侧的&lt;strong>创建部门&lt;/strong>。&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;ul>
+&lt;li>&lt;strong>名称&lt;/strong>：为部门设置一个名称。&lt;/li>
+&lt;li>&lt;strong>别名&lt;/strong>：为部门设置一个别名。&lt;/li>
+&lt;li>&lt;strong>企业空间角色&lt;/strong>：当前企业空间中所有部门成员的角色。&lt;/li>
+&lt;li>&lt;strong>项目角色&lt;/strong>：一个项目中所有部门成员的角色。您可以点击&lt;strong>添加项目&lt;/strong>来指定多个项目角色。每个项目只能指定一个角色。&lt;/li>
+&lt;li>&lt;strong>DevOps 项目角色&lt;/strong>：一个 DevOps 项目中所有部门成员的角色。您可以点击&lt;strong>添加 DevOps 项目&lt;/strong>来指定多个 DevOps 项目角色。每个 DevOps 项目只能指定一个角色。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>部门创建完成后，点击&lt;strong>确定&lt;/strong>，然后点击&lt;strong>关闭&lt;/strong>。在&lt;strong>部门&lt;/strong>页面，可以在左侧的部门树中看到已创建的部门。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="分配用户至部门">分配用户至部门&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>在&lt;strong>部门&lt;/strong>页面，选择左侧部门树中的一个部门，点击右侧的&lt;strong>未分配&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在用户列表中，点击用户右侧的 &lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/workspace-administration-and-user-guide/department-management/assign.png" height="20px">，对出现的提示消息点击&lt;strong>确定&lt;/strong>，以将用户分配到该部门。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>&lt;ul>
+&lt;li>如果部门提供的权限与用户的现有权限重叠，则会为用户添加新的权限。用户的现有权限不受影响。&lt;/li>
+&lt;li>分配到某个部门的用户可以根据与该部门关联的企业空间角色、项目角色和 DevOps 项目角色来执行操作，而无需被邀请到企业空间、项目和 DevOps 项目中。&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="从部门中移除用户">从部门中移除用户&lt;/h2>
+&lt;ol>
+&lt;li>在&lt;strong>部门&lt;/strong>页面，选择左侧部门树中的一个部门，然后点击右侧的&lt;strong>已分配&lt;/strong>。&lt;/li>
+&lt;li>在已分配用户列表中，点击用户右侧的 &lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/workspace-administration-and-user-guide/department-management/remove.png" height="20px">，在出现的对话框中输入相应的用户名，然后点击&lt;strong>确定&lt;/strong>来移除用户。&lt;/li>
+&lt;/ol>
+&lt;h2 id="删除和编辑部门">删除和编辑部门&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>在&lt;strong>部门&lt;/strong>页面，点击&lt;strong>设置部门&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>设置部门&lt;/strong>对话框的左侧，点击需要编辑或删除部门的上级部门。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击部门右侧的 &lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/workspace-administration-and-user-guide/department-management/edit.png" height="20px"> 进行编辑。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p></description></item></channel></rss>

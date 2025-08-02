@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开源峰会 on</title><link>https://openksc.github.io/zh/conferences/</link><description>Recent content in 开源峰会 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/conferences/index.xml" rel="self" type="application/rss+xml"/><item><title>Porter-面向裸金属环境的 Kubernetes 开源负载均衡器</title><link>https://openksc.github.io/zh/conferences/porter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/conferences/porter/</guid><description>&lt;p>我们知道，在 Kubernetes 集群中可以使用 “LoadBalancer” 类型的服务将后端工作负载暴露在外部。云厂商通常为 Kubernetes 提供云上的 LB 插件，但这需要将集群部署在特定 IaaS 平台上。然而，许多企业用户通常都将 Kubernetes 集群部署在裸机上，尤其是用于生产环境时。而且对于本地裸机集群，Kubernetes 不提供 LB 实施。Porter 是一个专为裸金属 Kubernetes 集群环境而设计的开源的负载均衡器项目，可完美地解决此类问题。&lt;/p>
+&lt;h2 id="kubernetes-服务介绍">Kubernetes 服务介绍&lt;/h2>
+&lt;p>在 Kubernetes 集群中，网络是非常基础也非常重要的一部分。对于大规模的节点和容器来说，要保证网络的连通性、网络转发的高效，同时能做的 IP 和 Port 自动化分配和管理，并提供给用户非常直观和简单的方式来访问需要的应用，这是非常复杂且细致的设计。&lt;/p>
+&lt;p>Kubernetes 本身在这方面下了很大的功夫，它通过 CNI、Service、DNS、Ingress 等一系列概念，解决了服务发现、负载均衡的问题，也大大简化了用户的使用和配置。其中的 Service 是 Kubernetes 微服务的基础，Kubernetes 是通过 kube-proxy 这个组件来实现服务的。kube-proxy 运行在每个节点上，监听 API Server 中服务对象的变化，通过管理 iptables 来实现网络的转发。用户可以创建多种形式的 Service，比如基于 Label Selector 、Headless 或者 ExternalName 的 Service，kube-proxy 会为 Service 创建一个虚拟的 IP（即 Cluster IP），用于集群内部访问服务。&lt;/p>
+&lt;h2 id="暴露服务的三种方式">暴露服务的三种方式&lt;/h2>
+&lt;p>如果需要从集群外部访问服务，即将服务暴露给用户使用，Kubernetes Service 本身提供了两种方式，一种是 NodePort，另外一种是 LoadBalancer。另外 Ingress 也是一种常用的暴露服务的方式。&lt;/p>
+&lt;h3 id="nodeport">NodePort&lt;/h3>
+&lt;p>如果将服务的类型设置为 NodePort，kube-proxy 就会为这个服务申请一个 30000 以上的端口号（默认情况下），然后在集群所有主机上配置 IPtables 规则，这样用户就能通过集群中的任意节点加上这个分配的端口号访问服务了，如下图&lt;/p></description></item><item><title>超越基础：朝着使 Thanos 达到生产就绪状态的方向前进</title><link>https://openksc.github.io/zh/conferences/thanos-2024/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/conferences/thanos-2024/</guid><description>&lt;h2 id="议题信息">议题信息&lt;/h2>
+&lt;h3 id="议题简介">议题简介&lt;/h3>
+&lt;p>作为最受欢迎和强大的 Prometheus 长期存储项目之一，Thanos 被社区广泛采用。但要在生产环境中使用 Thanos，仍然需要自动化许多第二天的运维工作。&lt;/p>
+&lt;p>在这次演讲中，KubeSphere 的维护者将分享他们在生产环境中使用和维护 Thanos 的经验，包括：&lt;/p>
+&lt;ul>
+&lt;li>所有 Thanos 组件的 Kubernetes 本地定义&lt;/li>
+&lt;li>数据摄入、规则评估、压缩的租户隔离&lt;/li>
+&lt;li>基于租户的 Thanos Ingester、Ruler 和 Compactor 的自动扩展机制&lt;/li>
+&lt;li>Thanos 存储的基于时间的分区&lt;/li>
+&lt;li>基于租户的数据生命周期管理&lt;/li>
+&lt;li>全局规则分片机制，用于处理大量录制规则和警报规则评估工作负载&lt;/li>
+&lt;li>用于读写的网关和代理机制，带有租户访问控制&lt;/li>
+&lt;li>网关的 basic_auth、内置查询 UI 以及外部远程写入和查询支持&lt;/li>
+&lt;li>Thanos 组件之间的 tls 支持&lt;/li>
+&lt;li>三层配置管理&lt;/li>
+&lt;/ul>
+&lt;h3 id="分享者简介">分享者简介&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>霍秉杰：KubeSphere 可观测性、边缘计算和 Serverless 团队负责人，Fluent Operator 和 OpenFunction 项目的创始人，还是多个可观测性开源项目包括 Kube-Events、Notification Manager 等的作者，热爱云原生技术，并贡献过 KEDA、Prometheus Operator、Thanos、Loki 和 Falco 等知名开源项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>张军豪：青云科技高级软件工程师，负责容器平台监控、报警等云原生服务的研发。拥有多年行业经验，曾就职于瑞幸咖啡、海康威视等公司。对 Kubernetes、Prometheus、Thanos、容器网络等云原生技术有深入的了解，在云化容器产品的研发、实施和运维方面拥有丰富的经验。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="视频回放">视频回放&lt;/h3>
+&lt;video id="videoPlayer" controls="" preload="true">
+ &lt;source src="https://kubesphere-community.pek3b.qingstor.com/videos/Towards-Making-Thanos-Production-Ready.mp4" type="video/mp4">
+&lt;/video>
+&lt;h3 id="ppt-下载">PPT 下载&lt;/h3>
+&lt;p>关注公众号【KubeSphere云原生】，后台回复关键词 &lt;code>20240823&lt;/code> 即可获取 PPT 下载链接。&lt;/p>
+&lt;hr>
+&lt;p>以下是根据分享内容整理而成的文章。&lt;/p>
+&lt;h2 id="thanos">Thanos&lt;/h2>
+&lt;p>Prometheus 目前已经是一个云原生监控领域的事实标准，但它同样有一些企业级需求没有解决，它是一个单实例单副本的，没有高可用，也不可扩展。自从 Prometheus 开源后，出现了很多社区项目来解决这个问题。&lt;/p></description></item><item><title>多租户环境中的 Kubernetes 事件导出、过滤和警报</title><link>https://openksc.github.io/zh/conferences/event/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/conferences/event/</guid><description>&lt;h2 id="议题简介">议题简介&lt;/h2>
+&lt;p>K8s 事件管理的各个方面，包括事件导出、过滤、告警及通知；如何使用 Kube-Events Operator 管理事件导出、过滤和告警；如何处理多租户环境中的事件告警需求；如何使用 Alertmanager 像管理 Prometheus发出的告警一样，来管理 K8s 事件告警；如何使用 Notification Manager 在多租户环境下管理 Alertmanager 发出的通知。&lt;/p>
+&lt;h2 id="分享者简介">分享者简介&lt;/h2>
+&lt;p>霍秉杰，KubeSphere 可观测性负责人&lt;/p>
+&lt;p>向军涛，KubeSphere 研发工程师&lt;/p>
+&lt;h2 id="视频回放">视频回放&lt;/h2>
+&lt;video id="videoPlayer" controls="" preload="true">
+ &lt;source src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeCon2020-event.mp4" type="video/mp4">
+&lt;/video></description></item><item><title>基于 CSI Kubernetes 存储插件的开发实践</title><link>https://openksc.github.io/zh/conferences/csi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/conferences/csi/</guid><description>&lt;p>现在很多用户都会将自己的应用迁移到 Kubernetes 容器平台中。在 Kubernetes 容器平台中，存储是支撑用户应用的基石。随着用户不断的将自己的应用深度部署在 K8S 容器平台中，但是我们现有的 Kubernetes 存储插件无论从多样性还是存储的功能来说，都无法满足用户日益增长的需求。我们急需开发新的存储插件，将我们的存储服务和 Kubernetes 容器平台相对接。&lt;/p>
+&lt;h2 id="kubernetes-存储插件分类">Kubernetes 存储插件分类&lt;/h2>
+&lt;p>今天的主题是基于 CSI Kubernetes 存储插件的开发实践，我们会通过以下四部分为大家详细讲解 CSI 插件有什么功能，如何部署一个 CSI 插件，以及 CSI 的实践原理。&lt;/p>
+&lt;p>首先，我们会介绍 Kubernetes 存储插件的分类情况；然后为大家介绍如何开发一款 QingCloud 云平台 CSI 插件；之后，会介绍如何将 QingCloud 云平台 CSI 插件部署到 Kubernetes 容器平台中；最后，介绍如何对开发的 CSI 插件进行质量管理。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-docs/png/20191001182756.png" alt="">&lt;/p>
+&lt;p>在 Kubernetes 容器平台中，Kubernetes 可以调用某类存储插件，对接后端存储服务，如调用 GCE 存储插件对接后端 GCE 存储服务。Kubernetes 里的存储插件可以分为 &lt;strong>In-tree 和 Out-of-tree&lt;/strong> 这两大类。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-docs/png/20191001182807.png" alt="">&lt;/p>
+&lt;p>首先，In-tree 存储插件的代码是在 Kubernetes 核心代码库里，In-tree 存储插件运行在 Kubernetes 核心组件里。Kubernetes 容器平台要使用后端某类存储服务，需要调用相应的 In-tree 存储插件，比如 Kubernetes 容器平台要使用后端 AWS 存储服务，需要调用 In-tree AWS 存储插件才能对接后端 AWS 存储服务。&lt;/p></description></item><item><title>基于 Kubernetes 的 Serverless Jenkins — Jenkins X</title><link>https://openksc.github.io/zh/conferences/jenkins-x/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/conferences/jenkins-x/</guid><description>&lt;p>在云原生时代，应用模块不断被拆分，使得模块的数量不断上涨并且关系也越加复杂。企业在落地云原生技术的时候同事也需要有强大的 DevOps 手段，没有 DevOps 的云原生不可能是成功的。Jenkins X 是 CDF（持续交付基金会）与 Jenkins 社区在云原生时代的 DevOps产品，本文我们将介绍 Jenkins X 以及 Jenkins X 背后的技术。&lt;/p>
+&lt;h2 id="背景">背景&lt;/h2>
+&lt;p>Jenkins 在2004年诞生。根据官网的数据统计（截止2019年3月）有 250,000 的 Jenkins 服务器正在运行、15,000,000+ Jenkins 用户、1000+ Jenkins插件。Jenkins 在 DevOps 领域取得了巨大的成功，但随着技术的不断发展与用户数量的不断上升，传统 Jenkins 所暴露出来的问题也越来越多。在这里我们将介绍传统 Jenkins 所遇到的挑战。&lt;/p>
+&lt;h3 id="jenkins-所遇到的挑战---单点故障">Jenkins 所遇到的挑战 - 单点故障&lt;/h3>
+&lt;p>在传统的 Jenkins 当中，我们首先会遇到的问题就是 Jenkins 的单点故障问题。
+Jenkins 的历史非常悠久，在当时大多数程序都是单机程序，Jenkins也不例外。
+对比其他系统，Jenkins 的单点故障问题会更加凸显，熟悉 Jenkins 的用户都知道，它是一个基于插件的系统，而我们会经常安装插件，这时候我们就需要重启 Jenkins 服务器。这将导致共用这个平台的所有用户都无法使用。&lt;/p>
+&lt;h3 id="jenkins-所遇到的挑战---jvm消耗资源多">Jenkins 所遇到的挑战 - JVM消耗资源多&lt;/h3>
+&lt;p>Jenkins 是 Java 系的程序，这使得 Jenkins 需要使用 JVM，而 JVM 将会消耗大量的内存。
+CI/CD 任务往往都是在代码提交时被触发，在非工作时间，这些资源消耗是可以大大降低的。&lt;/p>
+&lt;h3 id="jenkins-所遇到的挑战---job-的调度方式使-cicd-变得困难">Jenkins 所遇到的挑战 - Job 的调度方式使 CI/CD 变得困难&lt;/h3>
+&lt;p>在 Jenkins 诞生的年代，机器资源并没有像现在一样丰富、可调度，导致 Jenkins 的调度模式使得不适合现代的环境。
+Jenkins 的调度模式是一种尽量能够节省资源的方式进行调度的。在一般的调度过程中 Jenkins 需要经历以下几个阶段:
+检查有没有可用的 agent -&amp;gt; 如果没有的可用的agent，计算是否有 agent 预计将要运行完任务 -&amp;gt; 等待一段时间-&amp;gt; 启动动态的 agent -&amp;gt; agent 与 master建立连接。
+这种方式使 CI/CD 任务被执行的太慢，我们往往都需要等待几十秒甚至更长时间来准备 CI/CD的执行环境。&lt;/p></description></item><item><title>基于 RBAC 和 Kubefed 的 Kubernetes 多集群和多租户管理</title><link>https://openksc.github.io/zh/conferences/rbac/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/conferences/rbac/</guid><description>&lt;h2 id="议题简介">议题简介&lt;/h2>
+&lt;p>软隔离是一种没有严格隔离不同用户、工作负载或应用程序的隔离形式。就 Kubernetes 而言，软隔离通常由 RBAC 和命名空间隔离。当集群管理员跨多个 Kubernetes 集群实现隔离时，会遇到许多挑战，如身份验证和授权、资源配额、网络策略、安全策略等。在本次演讲中，KubeSphere 维护人员分享了他们在设计隔离体系结构方面的经验和最佳实践。如何跨多个集群管理用户和身份验证。如何管理不同集群租户的资源配额。资源隔离机制以及如何跨多个集群授权资源。&lt;/p>
+&lt;h2 id="分享者简介">分享者简介&lt;/h2>
+&lt;p>万宏明，KubeSphere 研发工程师 &amp;amp; 核心贡献者，KubeSphere 多租户和安全团队负责人，专注于开源和云原生安全领域。&lt;/p>
+&lt;h2 id="视频回放">视频回放&lt;/h2>
+&lt;video id="videoPlayer" controls="" preload="true">
+ &lt;source src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeCon2021-China-hongming.mp4" type="video/mp4">
+&lt;/video></description></item><item><title>基于云原生系统通用模型的计量计费系统</title><link>https://openksc.github.io/zh/conferences/metering/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/conferences/metering/</guid><description>&lt;h2 id="议题简介">议题简介&lt;/h2>
+&lt;p>云原生服务比传统云服务更具弹性和可定制性。计算能力、存储和网络能力应该按需求实时分配，指标计量和计费参数复杂，产品定价策略将依靠许多参数不仅包括资源指标，和不同的资源提供者将使用不同的程序创建和释放资源，所以硬编码的计量/计费系统不能满足快速增长的需求。&lt;/p>
+&lt;p>在原生云时代，定价的通用模型、计量和计费的标准API是一个强烈的需求。此外，计量/计费系统本身应该是实时的、健壮的、可扩展的和安全的。青云QingCloud 产品经理 Anne Song 和资深软件工程师马丹提出一个计量/计费模型来满足所有这些需求，并根据该模型实现了一个工作系统。&lt;/p>
+&lt;h2 id="分享者简介">分享者简介&lt;/h2>
+&lt;p>Anne Song，青云QingCloud 产品经理&lt;/p>
+&lt;p>马丹，资深软件工程师&lt;/p>
+&lt;h2 id="视频回放">视频回放&lt;/h2>
+&lt;video id="videoPlayer" controls="" preload="true">
+ &lt;source src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeCon2020-metering.mp4" type="video/mp4">
+&lt;/video></description></item><item><title>去哪儿网 Kubernetes 多集群和金丝雀部署最佳实践</title><link>https://openksc.github.io/zh/conferences/qunar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/conferences/qunar/</guid><description>&lt;h2 id="议题简介">议题简介&lt;/h2>
+&lt;p>去哪儿网是中国领先的在线旅游平台，成立于 2005 年 5 月，总部位于北京。去哪儿网基础设施团队在 2020 年底开始研究和应用 k8s，其计划在 2021 年底前将在生产中将所有应用程序迁移到 Kubernetes 中。目前去哪儿网使用 KubeSphere 作为多 K8s 集群管理平台，大大提高了运维同学的工作效率，同时作为统一的集群入口，它也保障了业务数据的安全。&lt;/p>
+&lt;p>随着云原生时代的到来，学习和拥抱云原生不可避免，因为其可以使业务运营更加敏捷。容器化是将应用转移到 Kubernetes 之前的第一步。如何将数以千计的应用程序高效、顺畅地从基于内核的虚拟机 (KVM) 迁移到容器已成为去哪儿网基础设施团队面临的一个巨大挑战。在此次分享中，去哪儿网基础设施团队分享讨论：&lt;/p>
+&lt;ul>
+&lt;li>如何将 CI/CD 模式从 KVM 发展到云原生时代&lt;/li>
+&lt;li>如何运用多集群和基于批量的 Canary 部署帮助应用程序、sdk 顺利进行升级&lt;/li>
+&lt;li>从 CI/CD 演化路径中吸取的教训。&lt;/li>
+&lt;li>KubeSphere 多集群在去哪儿网的落地实践&lt;/li>
+&lt;/ul>
+&lt;h2 id="分享者简介">分享者简介&lt;/h2>
+&lt;p>陈靖贤，去哪儿网 DevOps 产品经理，目前主要负责在去哪儿传播 DevOps 文化，调查、导入和开发流程、工具、平台的最佳实践，帮助公司以更快的速度交付软件，降低风险，降低运营成本。&lt;/p>
+&lt;p>邹晟，去哪儿网基础架构团队高级 DevOps 工程师，现主要负责 CI/CD 平台开发与维护，云原生技术研究与实现。同时也是 KubeSphere Talented Speaker。&lt;/p>
+&lt;h2 id="视频回放">视频回放&lt;/h2>
+&lt;video id="videoPlayer" controls="" preload="true">
+ &lt;source src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeCon2021-China-qunar.mp4" type="video/mp4">
+&lt;/video>
+&lt;h2 id="对应文章">对应文章&lt;/h2>
+&lt;p>&lt;a href="https://kubesphere.io/zh/blogs/qunar-kubesphere-best-practice/" target="_blank" rel="noopener noreferrer">https://kubesphere.io/zh/blogs/qunar-kubesphere-best-practice/&lt;/a>&lt;/p></description></item><item><title>深入浅出 Fluent Operator</title><link>https://openksc.github.io/zh/conferences/fluent-operator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/conferences/fluent-operator/</guid><description>&lt;h2 id="议题简介">议题简介&lt;/h2>
+&lt;p>在新增 Fluentd 的支持后，Fluent Bit Operator 现已被重新命名为 Fluent Operator。在本次分享中，Fluent Operator 的 Maintainer 将会详细介绍 Fluent Operator 的主要功能及其设计原则和架构，包括：&lt;/p>
+&lt;ul>
+&lt;li>从 Fluent Bit Operator 到 Fluent Operator；&lt;/li>
+&lt;li>Fluent Operator 设计原则；&lt;/li>
+&lt;li>Fluent Operator 架构解析；&lt;/li>
+&lt;li>使用 Fluent Bit 作为 Kubernetes 的轻量级日志代理；&lt;/li>
+&lt;li>使用 Fluentd 作为 Kubernetes 的全局日志转发和聚合层；&lt;/li>
+&lt;li>利用 Fluent Bit 和 Fluentd 为 Kubernetes 建立一个灵活的多用户日志处理管道；&lt;/li>
+&lt;li>Demo 演示；&lt;/li>
+&lt;li>社区现状与长期发展规划。&lt;/li>
+&lt;/ul>
+&lt;h2 id="分享者简介">分享者简介&lt;/h2>
+&lt;p>霍秉杰是 KubeSphere 可观测性和 Serverless 团队的 Leader，还是 Fluent Operator 和 FaaS 项目 OpenFunction 的创始人，同时也是多个可观测性开源项目的作者和架构师，如 Kube-Events、Notification Manager 等。他热爱云原生和开源技术，是 KEDA、Prometheus Operator、Thanos、Loki、Falco 等项目的贡献者。&lt;/p></description></item><item><title>使用 Fluent Bit 实现云边统一可观测性</title><link>https://openksc.github.io/zh/conferences/fluentbit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/conferences/fluentbit/</guid><description>&lt;h2 id="议题信息">议题信息&lt;/h2>
+&lt;h3 id="议题简介">议题简介&lt;/h3>
+&lt;p>随着云原生边缘计算技术的兴起，越来越多的组织开始使用 Kubernetes 结合边缘计算框架来管理边缘的资源和工作负载。其中一些边缘计算框架（如 KubeEdge）将边缘节点作为云端 K8s 集群的一部分进行管理，这对于用户管理边缘节点和边缘应用是个巨大的挑战。&lt;/p>
+&lt;p>其中一个挑战就是可观测性，例如：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>与云端使用相同的方式对边缘节点和应用程序进行监控和告警。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>与云端使用相同的方式收集和检索边缘节点和应用程序日志。
+在本次分享中，Fluent Operator maintainers 将讨论以下内容:&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>使用 Fluent Operator 管理云端和边缘环境中的 FluentBit。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>使用 FluentBit 收集边缘节点和应用的日志，并转发到云端。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>使用 FluentBit 收集边缘节点和应用程序的监控指标并将其通过 remote write 方式写入云端 Prometheus 长期存储。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>集中管理边缘和云端的日志和监控指标。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="分享者简介">分享者简介&lt;/h3>
+&lt;p>霍秉杰是 KubeSphere 可观测性和 Serverless 团队的 Leader，还是 Fluent Operator 和 FaaS 项目 OpenFunction 的创始人，同时也是多个可观测性开源项目的作者和架构师，如 Kube-Events、Notification Manager 等。他热爱云原生和开源技术，是 KEDA、Prometheus Operator、Thanos、Loki、Falco 等项目的贡献者。&lt;/p>
+&lt;h3 id="视频回放">视频回放&lt;/h3>
+&lt;video id="videoPlayer" controls="" preload="true">
+ &lt;source src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeCon-America-2022-ben.mp4" type="video/mp4">
+&lt;/video>
+&lt;p>&lt;strong>以下是本分享对应的文章内容。整理人：米开朗基杨、大飞哥。&lt;/strong>&lt;/p>
+&lt;h2 id="fluent-operator-简介">Fluent Operator 简介&lt;/h2>
+&lt;p>2019 年 1 月 21 日，KubeSphere 社区为了满足以云原生的方式管理 Fluent Bit 的需求开发了 FluentBit Operator，并在 2020 年 2 月 17 日发布了 v0.1.0 版本。此后产品不断迭代，一直维护到 v0.8.0，实现了 Fluent Bit 配置的热加载，而无需重启整个 Fluent Bit 容器。2021 年 8 月，Kubesphere 团队将该项目捐献给 Fluent 社区，并从 v0.9.0 一直持续迭代到 v0.13.0。&lt;/p></description></item><item><title>使用 Fluent Operator 在边缘端构建云原生日志管道</title><link>https://openksc.github.io/zh/conferences/fluent-operator-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/conferences/fluent-operator-2/</guid><description>&lt;h2 id="议题简介">议题简介&lt;/h2>
+&lt;p>Fluent Operator 的前身是 Fluentbit Operator，在构建基于 Fluent Bit 和 Fluentd 的日志层时提供了极大的灵活性。它由 KubeSphere 社区创建，旨在解决以下几个问题：&lt;/p>
+&lt;ul>
+&lt;li>通过像 Fluent Bit 这样的轻量级代理收集 K8s 日志；&lt;/li>
+&lt;li>通过 Kubernetes API 控制 Fluent Bit；&lt;/li>
+&lt;li>可以在不重启 Fluent Bit 和 Fluentd Pod 的情况下更新配置；&lt;/li>
+&lt;li>多租户日志隔离；&lt;/li>
+&lt;li>自动部署和销毁 Fluent Bit DaemonSet 与 Fluentd StatefulSet。&lt;/li>
+&lt;li>Fluent Operator 已逐渐成熟，目前已经发布了 v1.0.0，支持 Fluentd 和最新插件，并且几个月前就已经成为了 Fluent 社区的子项目。&lt;/li>
+&lt;/ul>
+&lt;p>在本次分享中，周鹏飞将给大家介绍 Fluent Operator 的架构和全新设计，并通过一个 Demo 来演示如何在 K3s 上使用 Fluent Operator 来处理边缘和 IoT 场景的日志。&lt;/p>
+&lt;h2 id="分享者简介">分享者简介&lt;/h2>
+&lt;p>周鹏飞是 CNCF 和 CDF 大使，同时也是 KubeSphere Member、Fluent Member 和 InfoQ 编辑，热衷于技术布道和推广。他于 2021 年发起并组织了首届中国 Kubernetes Community Days。&lt;/p></description></item><item><title>使用 Kubernetes 原生方式实现多集群告警</title><link>https://openksc.github.io/zh/conferences/alerting-2023/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/conferences/alerting-2023/</guid><description>&lt;h2 id="议题信息">议题信息&lt;/h2>
+&lt;h3 id="议题简介">议题简介&lt;/h3>
+&lt;p>在这个演示中，我们将揭示一个基于 Kubernetes 的解决方案，以满足多集群和多租户告警和通知的需求。我们的综合方法涵盖了指标、事件、审计和日志的告警，同时确保与 alertmanager 的兼容性。对于指标，我们提供了适用于不同告警范围的分层 RuleGroups CRDs，同时保持与 Prometheus 规则定义的兼容性。我们还为 Kubernetes 事件和审计事件开发了特定的规则定义和评估器（即 rulers），它们共享同一规则评估引擎。我们的通知实现名为 notification-manager，提供了许多通知渠道和基本功能，如路由、过滤、聚合和通过 CRDs 进行静默。不仅如此，还提供了全面的通知历史记录、多集群和多租户支持。这些功能有助于在各种告警源之间实现无缝集成。&lt;/p>
+&lt;h3 id="分享者简介">分享者简介&lt;/h3>
+&lt;p>向军涛：KubeSphere 监控、告警和事件管理模块的核心维护者，对 Kubernetes 和云原生开源技术以及大数据技术有浓厚的兴趣。&lt;/p>
+&lt;p>雷万钧：KubeSphere 可观测性和 Serverless 团队资深开发工程师。Fluent Operator、Notification Manager 和 OpenFunction 的维护者。热爱云原生和开源技术，参与了多个开源项目，如 thanos 和 buildpacks 等。&lt;/p>
+&lt;h3 id="视频回放">视频回放&lt;/h3>
+&lt;video id="videoPlayer" controls="" preload="true">
+ &lt;source src="https://kubesphere-community.pek3b.qingstor.com/videos/Multi-Cluster-Alerting-A-Kubernetes-Native-Approach.mp4" type="video/mp4">
+&lt;/video>
+&lt;h3 id="ppt-下载">PPT 下载&lt;/h3>
+&lt;p>关注公众号【KubeSphere云原生】，后台回复关键词 &lt;code>alerting-2023&lt;/code> 即可获取 PPT 下载链接。&lt;/p>
+&lt;p>&lt;strong>以下是本分享对应的文章内容。整理人：赵法威。&lt;/strong>&lt;/p>
+&lt;h2 id="可观测性来源">可观测性来源&lt;/h2>
+&lt;p>在 Kubernetes 集群上，各个维度的可观测性数据，可以让我们及时了解集群上应用的状态，以及集群本身的状态。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/kubecon-2023-alerting-1.png" alt="">&lt;/p>
+&lt;ul>
+&lt;li>Metrics 指标：监控对象状态的量化信息，通常会以时序数据的形式采集和存储。&lt;/li>
+&lt;li>Events：这里特指的是 Kubernetes 集群上所报告的各种事件，他们是以 Kubernetes 资源对象的形式存在。&lt;/li>
+&lt;li>Auditing：审计，是与用户 API 和安全相关的一些事件。&lt;/li>
+&lt;li>Logs：日志，是应用和系统对它们内部所发生各种事件的详细记录。&lt;/li>
+&lt;li>Traces：链路，主要记录了请求在系统中调用时的链路信息。&lt;/li>
+&lt;/ul>
+&lt;h2 id="告警规则">告警规则&lt;/h2>
+&lt;p>接下来介绍一下几个可观测性维度上，我们是如何实现告警的。&lt;/p>
+&lt;h3 id="metrics">metrics&lt;/h3>
+&lt;p>在云原生监控领域，Prometheus 是被广泛使用的，它可以说是一个事实上的标准。&lt;/p>
+&lt;p>对于一个单独的集群来说，或者说是集群自己管理指标存储的场景，我们直接部署一个 Prometheus，就可以提供指标采集、存储、查询和告警的功能。当然也可以额外部署一个 Ruler 组件，来专门进行规则的评估和告警，这样可以减轻 Prometheus 组件的负担。&lt;/p></description></item><item><title>使用 OpenFunction 在任何基础设施上运行无服务器工作负载</title><link>https://openksc.github.io/zh/conferences/openfunction-2023/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/conferences/openfunction-2023/</guid><description>&lt;h2 id="议题信息">议题信息&lt;/h2>
+&lt;h3 id="议题简介">议题简介&lt;/h3>
+&lt;p>云原生技术的崛起使得我们可以以相同的方式在公有云、私有云或本地数据中心运行应用程序或工作负载。但是，对于需要访问不同云或开源中间件的各种 BaaS 服务的无服务器工作负载来说，这并不容易。在这次演讲中，OpenFunction 维护者将详细介绍如何使用 OpenFunction 解决这个问题，以及 OpenFunction 的最新更新和路线图：&lt;/p>
+&lt;ul>
+&lt;li>使用 Dapr 将 FaaS 与 BaaS 解耦&lt;/li>
+&lt;li>使用 Dapr 代理而不是 Dapr sidecar 来加速函数启动&lt;/li>
+&lt;li>使用 Kubernetes Gateway API 构建 OpenFunction 网关&lt;/li>
+&lt;li>使用 WasmEdge 运行时运行 WebAssembly 函数&lt;/li>
+&lt;li>OpenFunction 在自动驾驶行业的应用案例&lt;/li>
+&lt;li>最新更新和路线图&lt;/li>
+&lt;/ul>
+&lt;h3 id="分享者简介">分享者简介&lt;/h3>
+&lt;p>霍秉杰：KubeSphere 可观测性、边缘计算和 Serverless 团队负责人，Fluent Operator 和 OpenFunction 项目的创始人，还是多个可观测性开源项目包括 Kube-Events、Notification Manager 等的作者，热爱云原生技术，并贡献过 KEDA、Prometheus Operator、Thanos、Loki 和 Falco 等知名开源项目。&lt;/p>
+&lt;p>王翼飞：青云科技资深软件工程师，负责开发和维护 OpenFunction 项目。专注于 Serverless 领域的研发，对 Knative、Dapr、Keda 等开源项目有深入的了解和实践经验。&lt;/p>
+&lt;h3 id="视频回放">视频回放&lt;/h3>
+&lt;video id="videoPlayer" controls="" preload="true">
+ &lt;source src="https://kubesphere-community.pek3b.qingstor.com/videos/Run-Serverless-Workloads-on-Any-Infrastructure-with-OpenFunction.mp4" type="video/mp4">
+&lt;/video>
+&lt;h3 id="ppt-下载">PPT 下载&lt;/h3>
+&lt;p>关注公众号【KubeSphere云原生】，后台回复关键词 &lt;code>KubeCon-2023&lt;/code> 即可获取 PPT 下载链接。&lt;/p></description></item><item><title>使用云原生 Serverless 技术为自动驾驶赋能</title><link>https://openksc.github.io/zh/conferences/serverless/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/conferences/serverless/</guid><description>&lt;h2 id="议题简介">议题简介&lt;/h2>
+&lt;p>对于自动驾驶平台来说，复杂的用例和众多的模块给整个架构带来了巨大的挑战。以数据存档为例，车辆和云端每秒钟都会产生大量的时间敏感数据，分散在各种设备和集群中。各种类型的存储介质、不均匀的数据大小、混合的异步操作、陡峭的资源开销曲线等挑战都促使我们需要一个更灵活、更有弹性、更节省成本的架构。&lt;/p>
+&lt;p>在本次演讲中，UISEE 研发人员和 OpenFunction Maintainer 将会跟大家探讨以下主题：&lt;/p>
+&lt;ul>
+&lt;li>为什么自动驾驶领域需要一个由 Dapr、Keda 和 Knative 驱动的现代化 FaaS 平台？&lt;/li>
+&lt;li>云原生 FaaS 平台 OpenFunction 介绍。&lt;/li>
+&lt;li>为什么异步函数天然适合自动驾驶？&lt;/li>
+&lt;li>UISEE 是如何在自动驾驶中使用异步函数的？&lt;/li>
+&lt;li>现代化 FaaS 平台为自动驾驶带来的优势。&lt;/li>
+&lt;li>OpenFunction 的近期更新和长期发展规划。&lt;/li>
+&lt;/ul>
+&lt;h2 id="分享者简介">分享者简介&lt;/h2>
+&lt;p>霍秉杰是 KubeSphere 可观测性和 Serverless 团队的 Leader，还是 Fluent Operator 和 FaaS 项目 OpenFunction 的创始人，同时也是多个可观测性开源项目的作者和架构师，如 Kube-Events、Notification Manager 等。他热爱云原生和开源技术，是 KEDA、Prometheus Operator、Thanos、Loki、Falco 等项目的贡献者。&lt;/p>
+&lt;p>卢修明是 UISEE 的架构师，负责自动驾驶行云平台的系统架构和 DevOps 系统，在云原生 FaaS 和可观测性领域具有非常丰富的经验。&lt;/p>
+&lt;h2 id="视频回放">视频回放&lt;/h2>
+&lt;video id="videoPlayer" controls="" preload="true">
+ &lt;source src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeCon-EU-2022-Ben-Lu.mp4" type="video/mp4">
+&lt;/video></description></item><item><title>用统一的方式分发 Helm 和 Operator 应用</title><link>https://openksc.github.io/zh/conferences/apps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/conferences/apps/</guid><description>&lt;h2 id="议题简介">议题简介&lt;/h2>
+&lt;p>许多应用程序定义和框架都来自云原生计算基金会领域，Helm 和 Operator 是 Kubernetes 生态系统中打包和管理应用程序的最流行方式。根据云原生计算基金会 2020 年的调查，以多集群和多云为代表的企业架构已成为现代基础设施的新趋势。如何利用以应用为中心的概念来提供自助服务，跨多个 Kubernetes 集群和云交付/部署应用程序？KubeSphere 团队正在构建一个统一的控制面，使用户能够以一致的工作流交付应用程序和云功能。在本次演讲中，KubeSphere 维护人员讨论：使用 CRD 简化 Helm Chart 和 Operator 部署，如何跨多个云传播原生应用程序，如何跨多个云管理 Operator 及其 CRD，如何在优雅的界面中扩展操作符。&lt;/p>
+&lt;h2 id="分享者简介">分享者简介&lt;/h2>
+&lt;p>赖正一，KubeSphere 研发工程师，为 Helm, virtualkubelet, grpc-gateway 等做出了贡献。他还在 KubeSphere 中维护应用程序商店、网络和可插拔架构。他的主要工作集中在网络、多集群、应用程序交付和云原生技术，如 Artifact Hub 和 Kube-OVN。&lt;/p>
+&lt;h2 id="视频回放">视频回放&lt;/h2>
+&lt;video id="videoPlayer" controls="" preload="true">
+ &lt;source src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeCon2021-China-zhengyi.mp4" type="video/mp4">
+&lt;/video></description></item><item><title>用云原生无服务器技术构建现代 FaaS（函数即服务）平台</title><link>https://openksc.github.io/zh/conferences/openfunction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/conferences/openfunction/</guid><description>&lt;h2 id="议题简介">议题简介&lt;/h2>
+&lt;p>作为无服务器的核心，FaaS（函数即服务）越来越受到人们的关注。新兴的云原生无服务器技术可以通过用更强大的云原生替代方案替换 FaaS平台的关键组件，从而构建一个强大的现代 FaaS 平台。在本次分享中，OpenFunction 的维护人员分享讨论：&lt;/p>
+&lt;ul>
+&lt;li>构成 FaaS 平台的关键组成部分，包括函数框架、函数构建、函数服务以及函数事件管理。&lt;/li>
+&lt;li>新兴云原生无服务器技术在 FaaS 各个关键领域中的优势，包括 Knative 服务、Cloud Native Buildpacks、Shipwright、Tekton、KEDA 和 Dapr。&lt;/li>
+&lt;li>如何以 OpenFunction 为例，利用这些云原生技术构建强大的现代 FaaS 平台。&lt;/li>
+&lt;li>事件管理对 FaaS 很重要的原因。既然已经有了 Knative eventing 和 Argo Events，为什么 OpenFunction 还要创建自己的事件管理系统“OpenFunction Events”?&lt;/li>
+&lt;/ul>
+&lt;h2 id="分享者简介">分享者简介&lt;/h2>
+&lt;p>霍秉杰，云原生 FaaS 项目 OpenFunction Founder；FluentBit Operator 的发起人；他还是几个可观测性开源项目的发起人，如 Kube-Events、Notification Manager 等；热爱云原生和开源技术，是 Prometheus Operator, Thanos, Loki, Falco 的贡献者。&lt;/p>
+&lt;p>雷万钧，OpenFunction Maintainer，负责开发 OpenFunction；FluentBit Operator 的维护者；KubeSphere 可观测性团队的成员，负责 Notification Manager 的开发；云原生和开源技术的爱好者，fluent bit 和 nats 的贡献者。&lt;/p>
+&lt;h2 id="视频回放">视频回放&lt;/h2>
+&lt;video id="videoPlayer" controls="" preload="true">
+ &lt;source src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeCon2021-China-Ben.mp4" type="video/mp4">
+&lt;/video>
+&lt;h2 id="对应文章用云原生无服务器技术构建现代-faas函数即服务平台">对应文章——用云原生无服务器技术构建现代 FaaS（函数即服务）平台&lt;/h2>
+&lt;p>作为无服务器的核心，FaaS（功能即服务）越来越受到人们的关注。新兴的云原生无服务器技术可以通过用更强大的云原生替代方案替换 FaaS（功能即服务）平台的关键组件，从而构建一个强大的现代 FaaS（功能即服务）平台。本文将介绍如何通过云原生无服务器技术构建 FaaS 平台。&lt;/p></description></item><item><title>云原生可观测性之日志管理</title><link>https://openksc.github.io/zh/conferences/logging/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/conferences/logging/</guid><description>&lt;p>日志通常含有非常有价值的信息，日志管理是云原生可观测性的重要组成部分。不同于物理机或虚拟机，在容器与 Kubernetes 环境中，日志有标准的输出方式(stdout)，这使得进行平台级统一的日志收集、分析与管理水到渠成，并体现出日志数据独特的价值。本文将介绍云原生领域比较主流的日志管理方案 EFK 、 KubeSphere 团队开发的 FluentBit Operator 以及 KubeSphere 在多租户日志管理方面的实践。此外还将介绍受 Prometheus 启发专为 Kubernetes 日志管理开发，具有低成本可扩展等特性的开源软件 Loki。&lt;/p>
+&lt;h2 id="什么是可观测性">什么是可观测性&lt;/h2>
+&lt;p>近年来随着以 Kubernetes 为代表的云原生技术的崛起，可观测性 ( Observability ) 作为一种新的理念逐渐走入人们的视野。云原生基金会 ( CNCF ) 在其 Landscape 里已经将可观测性单独列为一个分类，狭义上主要包含监控、日志和追踪等，广义上还包括告警、事件、审计等。在此领域陆续涌现出了众多新兴开源软件如 Prometheus, Grafana, Fluentd, Loki, Jaeger 等。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-docs/png/20191001085607.png" alt="">&lt;/p>
+&lt;p>日志作为可观测性的重要组成部分在开发、运维、测试、审计等过程中起着非常重要的作用。著名的应用开发十二要素中提到：“日志使得应用程序运行的动作变得透明，应用本身从不考虑存储自己的输出流。 不应该试图去写或者管理日志文件。每一个运行的进程都会直接输出到标准输出（stdout）。每个进程的输出流由运行环境截获，并将其他输出流整理在一起，然后一并发送给一个或多个最终的处理程序，用于查看或是长期存档。”&lt;/p>
+&lt;p>在物理机或者虚拟机的环境中，日志通常是输出到文件，并由用户自己管理，这使得日志的集中管理和分析变得困难和不便。而 Kubernetes 、docker 等容器技术直接将日志输出到 stdout，这使得日志的集中管理和分析变得更为便捷和水到渠成。&lt;/p>
+&lt;p>Kubernetes 官网文档给出的通用日志架构如下图所示，包含日志 Agent，后端服务和前端控制台等三个部分。无论是成熟的日志解决方案如 ELK/EFK , 还是云原生领域 2018 年开源的 Loki 都具有相似的架构，下面将分别介绍 ELK/EFK , &lt;a href="https://github.com/grafana/loki" target="_blank" rel="noopener noreferrer">Loki&lt;/a> 以及 &lt;a href="https://github.com/kubesphere/kubesphere" target="_blank" rel="noopener noreferrer">KubeSphere&lt;/a>) 在这方面的贡献。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-docs/png/20191001090839.png" alt="">&lt;/p>
+&lt;h2 id="新旧势力的联姻从-elk-到-efk从-fluentd-到-fluent-bit">新旧势力的联姻：从 ELK 到 EFK，从 Fluentd 到 Fluent Bit&lt;/h2>
+&lt;p>ELK 是 Elasticsearch, Logstash, Kibana 的简称，是目前比较主流的开源日志解决方案。 而 2019 年 4 月从 CNCF 毕业用 C 和 Ruby 编写的 Fluentd 作为通用日志采集器，以其高效、灵活、易用的特性逐渐取代了用 Java 编写的 Logstash 成为新的日志解决方案 EFK 中的重要一员，并在云原生领域得到广泛认可与应用。Google 的云端日志服务 Stackdriver 也用修改后的 Fluentd 作为 Agent 。然而 Fluentd 开发团队并没有停滞不前，推出了更为轻量级的完全用 C 编写的产品 Fluent Bit，两者的对比如下图所示：&lt;/p></description></item></channel></rss>

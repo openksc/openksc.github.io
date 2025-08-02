@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Configure High Availability on</title><link>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/01-preparations/02-configure-high-availability/</link><description>Recent content in Configure High Availability on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/01-preparations/02-configure-high-availability/index.xml" rel="self" type="application/rss+xml"/><item><title>Configure Kubernetes High Availability</title><link>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/01-preparations/02-configure-high-availability/02-configure-k8s-high-availability/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/01-preparations/02-configure-high-availability/02-configure-k8s-high-availability/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to configure multiple control plane nodes for high availability in a production environment for the KubeSphere cluster. This ensures that the cluster services remain operational even if a single control plane node fails. If your KubeSphere cluster does not require high availability, you can skip this section.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This section explains the following methods for configuring high availability:&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Local Load Balancer Configuration&lt;/strong>: You can install HAProxy on the worker nodes during the KubeSphere installation process using the KubeKey tool. HAProxy will act as a reverse proxy for the control plane nodes, and the Kubernetes components on the worker nodes will connect to the control plane nodes through HAProxy. This method requires additional health check mechanisms and may reduce efficiency compared to other methods, but can be used in scenarios without a dedicated load balancer and with a limited number of servers.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Dedicated Load Balancer&lt;/strong>: You can use a load balancer provided by your cloud environment as a reverse proxy for the control plane nodes. This method requires deploying the KubeSphere cluster in a cloud environment that offers a dedicated load balancer.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Generic Servers as Load Balancers&lt;/strong>: You can install Keepalived and HAProxy on Linux servers outside the cluster nodes to act as load balancers. This method requires at least two additional Linux servers.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

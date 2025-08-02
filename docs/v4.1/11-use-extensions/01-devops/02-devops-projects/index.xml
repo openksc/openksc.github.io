@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Manage DevOps Projects on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/02-devops-projects/</link><description>Recent content in Manage DevOps Projects on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/02-devops-projects/index.xml" rel="self" type="application/rss+xml"/><item><title>Create DevOps Projects</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/02-devops-projects/01-create-a-devops-project/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/02-devops-projects/01-create-a-devops-project/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to create DevOps projects.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>A workspace (not &lt;code>system-workspace&lt;/code>) has been created.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a workspace and have the &lt;strong>DevOps Project Creation&lt;/strong> permission within the workspace. For more information, refer to &amp;#34;Workspace Members&amp;#34; and &amp;#34;Workspace Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>DevOps&lt;/strong> must have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>DevOps Project Creation&lt;/strong> permission, and access your workspace.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>DevOps Projects&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>DevOps Projects&lt;/strong> page, click &lt;strong>Create&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Create DevOps Project&lt;/strong> dialog, configure the parameters for the DevOps project and then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Name&lt;/p>
+&lt;/div></description></item><item><title>View DevOps Project List</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/02-devops-projects/02-view-a-devops-project-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/02-devops-projects/02-view-a-devops-project-list/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to view the DevOps project list.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a workspace and have the &lt;strong>DevOps Project Viewing&lt;/strong> permission within the workspace. For more information, refer to &amp;#34;Workspace Members&amp;#34; and &amp;#34;Workspace Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>DevOps&lt;/strong> must have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>DevOps Project Viewing&lt;/strong> permission, and access your workspace.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>DevOps Projects&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The DevOps project list provides the following information:&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Name&lt;/p>
+&lt;/div></description></item><item><title>Edit DevOps Project Information</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/02-devops-projects/03-edit-devops-project-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/02-devops-projects/03-edit-devops-project-information/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to edit project information.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>You can edit the alias and description of a DevOps project. KubeSphere does not support editing the name of an already created DevOps project.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a workspace and have the &lt;strong>DevOps Project Management&lt;/strong> permission within the workspace. For more information, refer to &amp;#34;Workspace Members&amp;#34; and &amp;#34;Workspace Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>DevOps&lt;/strong> must be installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>DevOps Project Management&lt;/strong> permission, and access your workspace.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>DevOps Projects&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the right side of the DevOps project you want to edit, click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>, and then select &lt;strong>Edit Information&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Edit Information&lt;/strong> dialog, set the alias and description of the DevOps project, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Alias&lt;/p>
+&lt;/div></description></item><item><title>Delete DevOps Projects</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/02-devops-projects/04-delete-devops-projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/02-devops-projects/04-delete-devops-projects/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to delete DevOps projects.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Once a DevOps project is deleted, it cannot be recovered, and all resources within the DevOps project will also be deleted. Please proceed with caution.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a workspace and have the &lt;strong>DevOps Project Management&lt;/strong> permission within the workspace. For more information, refer to &amp;#34;Workspace Members&amp;#34; and &amp;#34;Workspace Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>DevOps&lt;/strong> must be installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

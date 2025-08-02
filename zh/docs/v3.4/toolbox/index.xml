@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>工具箱 on</title><link>https://openksc.github.io/zh/docs/v3.4/toolbox/</link><description>Recent content in 工具箱 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v3.4/toolbox/index.xml" rel="self" type="application/rss+xml"/><item><title>日志查询</title><link>https://openksc.github.io/zh/docs/v3.4/toolbox/log-query/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/toolbox/log-query/</guid><description>&lt;p>应用程序和系统的日志可以帮助您更好地了解集群内部和工作负载内部发生的事情。日志对于排除故障问题和监控集群活动特别有用。KubeSphere 提供强大且易用的日志系统，从租户的角度为用户提供日志收集、查询和管理的功能。基于租户的日志系统使不同的租户只能查看自己的日志，安全性更好，相较于 Kibana 更为实用。此外，KubeSphere 日志系统会过滤掉一些冗余信息，以便用户能够只专注于对自己有用的日志。&lt;/p>
+&lt;p>本教程演示了如何使用日志查询功能，包括界面、搜索参数和详情页面。&lt;/p>
+&lt;h2 id="视频演示">视频演示&lt;/h2>
+&lt;video controls="controls" style="width: 100% !important; height: auto !important;">
+ &lt;source type="video/mp4" src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeSphere-v3.1.x-tutorial-videos/zh/KS311_200P010C202109_%E6%97%A5%E5%BF%97%E4%B8%8E%E4%BA%8B%E4%BB%B6%E6%9F%A5%E8%AF%A2.mp4">
+&lt;/video>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;p>您需要启用 &lt;a href="../../pluggable-components/logging/">KubeSphere 日志系统&lt;/a>。&lt;/p>
+&lt;h2 id="进入日志查询界面">进入日志查询界面&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>所有用户都可以使用日志查询功能。使用任意帐户登录控制台，在右下角的 &lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/toolbox/log-query/toolbox.png" width='20' alt="icon" /> 上悬停，然后在弹出菜单中选择&lt;strong>日志查询&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出窗口中，您可以看到日志数量的时间直方图、集群选择下拉列表以及日志查询栏。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>​ &lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>&lt;ul>
+&lt;li>
+&lt;p>如果您启用了&lt;a href="../../multicluster-management/">多集群功能&lt;/a>，KubeSphere 支持对每个集群分别进行日志查询。您可以点击搜索栏左侧的 &lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/toolbox/log-query/drop-down-list.png" width='20' alt="icon" /> 切换目标集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>KubeSphere 默认存储最近七天内的日志。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>&lt;/p>
+&lt;ol start="3">
+&lt;li>
+&lt;p>您可以点击搜索栏并输入搜索条件，可以按照消息、企业空间、项目、资源类型、资源名称、原因、类别或时间范围搜索事件（例如，输入&lt;code>时间范围:最近 10 分钟&lt;/code>来搜索最近 10 分钟的事件）。或者，点击时间直方图中的柱状图，KubeSphere 会使用该柱状图的时间范围进行日志查询。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>&lt;ul>
+&lt;li>
+&lt;p>关键字字段支持关键字组合查询。例如，您可以同时使用 &lt;code>Error&lt;/code>、&lt;code>Fail&lt;/code>、&lt;code>Fatal&lt;/code>、&lt;code>Exception&lt;/code> 和 &lt;code>Warning&lt;/code> 来查询所有异常日志。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>关键字字段支持精确匹配和模糊匹配。模糊匹配不区分大小写，并且根据 ElasticSearch 分段规则，通过单词或词组的前半部分来检索完整术语。例如，您可以通过搜索关键字 &lt;code>node_cpu&lt;/code>（而不是 &lt;code>cpu&lt;/code>）来检索包含 &lt;code>node_cpu_total&lt;/code> 的日志。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>每个集群都有自己的日志保留期限，可单独设置，您可以在 &lt;code>ClusterConfiguration&lt;/code> 中进行修改。有关详细信息，请参考 &lt;a href="../../pluggable-components/logging/">KubeSphere 日志系统&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="使用搜索参数">使用搜索参数&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>您可以输入多个条件来缩小搜索结果。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击列表中的任一结果，进入它的详情页面，查看该容器组 (Pod) 的日志，包括右侧的完整内容，便于开发者分析和排除故障。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>&lt;ul>
+&lt;li>日志查询界面支持每 5 秒、10 秒或 15 秒动态刷新一次。&lt;/li>
+&lt;li>您可以点击右上角的 &lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/toolbox/log-query/export-logs.png" width='20' alt="icon" /> 将日志导出至本地文件进行进一步分析。&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧面板中，您可以点击 &lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/toolbox/log-query/drop-down-list.png" width='20' alt="icon" /> 切换 Pod 并查看其在同一个项目中的容器，从而查看是否有任何异常 Pod 影响到其他 Pod。&lt;/p></description></item><item><title>事件查询</title><link>https://openksc.github.io/zh/docs/v3.4/toolbox/events-query/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/toolbox/events-query/</guid><description>&lt;p>Kubernetes 事件系统用于深入了解集群内部发生的事件，KubeSphere 在此之上添加了跨度更长的历史查询和聚合功能，并且支持租户隔离的事件查询。&lt;/p>
+&lt;p>本指南演示了如何进行多层级、细粒度的事件查询，以追踪服务组件的状态。&lt;/p>
+&lt;h2 id="视频演示">视频演示&lt;/h2>
+&lt;video controls="controls" style="width: 100% !important; height: auto !important;">
+ &lt;source type="video/mp4" src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeSphere-v3.1.x-tutorial-videos/zh/KS311_200P010C202109_%E6%97%A5%E5%BF%97%E4%B8%8E%E4%BA%8B%E4%BB%B6%E6%9F%A5%E8%AF%A2.mp4">
+&lt;/video>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;p>需要启用 &lt;a href="../../pluggable-components/events/">KubeSphere 事件系统&lt;/a>。&lt;/p>
+&lt;h2 id="查询事件">查询事件&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>所有用户都可以使用事件查询功能。使用任意帐户登录控制台，在右下角的 &lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/toolbox/event-query/toolbox.png" width="20" alt="icon" /> 上悬停，然后在弹出菜单中选择&lt;strong>资源事件查询&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出窗口中，您可以看到该帐户有权限查看的事件数量。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>&lt;ul>
+&lt;li>
+&lt;p>如果您启用了&lt;a href="../../multicluster-management/">多集群功能&lt;/a>，KubeSphere 支持对每个集群分别进行事件查询。您可以点击搜索栏左侧的 &lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/toolbox/event-query/drop-down-list.png" width='20' alt="icon" />，然后选择一个目标集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>KubeSphere 默认存储最近七天的事件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>您可以点击搜索栏并输入搜索条件，可以按照消息、企业空间、项目、资源类型、资源名称、原因、类别或时间范围搜索事件（例如，输入&lt;code>时间范围:最近 10 分钟&lt;/code>来搜索最近 10 分钟的事件）。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击列表中的任一查询结果，可以查看该结果的原始信息，便于开发者分析和排除故障。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>事件查询界面支持每 5 秒、10 秒或 15 秒动态刷新一次。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol></description></item><item><title>Web Kubectl</title><link>https://openksc.github.io/zh/docs/v3.4/toolbox/web-kubectl/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/toolbox/web-kubectl/</guid><description>&lt;p>Kubectl 是 Kubernetes 命令行工具，您可以用它在 Kubernetes 集群上运行命令。Kubectl 可用于部署应用、查看和管理集群资源、查看日志等。&lt;/p>
+&lt;p>KubeSphere 控制台提供 Web Kubectl，方便用户使用。在默认情况下，当前版本中只有被授予 &lt;code>platform-admin&lt;/code> 角色的用户（例如默认帐户 &lt;code>admin&lt;/code>）才有权限使用 Web Kubectl 进行集群资源操作和管理。&lt;/p>
+&lt;p>本教程演示了如何使用 Web Kubectl 进行集群资源操作和管理。&lt;/p>
+&lt;h2 id="使用-web-kubectl">使用 Web Kubectl&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>使用被授予 &lt;code>platform-admin&lt;/code> 角色的用户登录 KubeSphere，在右下角的&lt;strong>工具箱&lt;/strong>图标上悬停，然后在弹出菜单中选择 &lt;strong>kubectl&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您可以在弹出窗口中看到 Kubectl 界面，如下图所示。如果您启用了多集群功能，则需要先在右上角的下拉列表中选择目标集群。如果未启用多集群功能，则该下拉列表不可见。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在命令行工具中输入 Kubectl 命令，查询并管理 Kubernetes 集群资源。例如，执行以下命令查询集群中所有 PVC 的状态。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl get pvc --all-namespaces
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>在终端窗口中使用以下语法运行 Kubectl 命令：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl &lt;span style="color:#f92672">[&lt;/span>command&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">[&lt;/span>TYPE&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">[&lt;/span>NAME&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">[&lt;/span>flags&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>&lt;ul>
+&lt;li>其中，&lt;code>command&lt;/code>、&lt;code>TYPE&lt;/code>、&lt;code>NAME&lt;/code> 和 &lt;code>flags&lt;/code> 分别是：
+&lt;ul>
+&lt;li>&lt;code>command&lt;/code>：指定要对一个或多个资源执行的操作，例如 &lt;code>create&lt;/code>、&lt;code>get&lt;/code>、&lt;code>describe&lt;/code> 和 &lt;code>delete&lt;/code>。&lt;/li>
+&lt;li>&lt;code>TYPE&lt;/code>：指定&lt;a href="https://kubernetes.io/zh/docs/reference/kubectl/overview/" target="_blank" rel="noopener noreferrer">资源类型&lt;/a>。资源类型不区分大小写，您可以指定单数、复数或缩写形式。&lt;/li>
+&lt;li>&lt;code>NAME&lt;/code>：指定资源的名称。名称区分大小写。如果省略名称，则会显示所有资源的详细信息，例如 &lt;code>kubectl get pods&lt;/code>。&lt;/li>
+&lt;li>&lt;code>flags&lt;/code>：指定可选标志。例如，您可以使用 &lt;code>-s&lt;/code> 或 &lt;code>--server&lt;/code> 标志指定 Kubernetes API 服务器的地址和端口。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>如果您需要帮助，请在终端窗口运行 &lt;code>kubectl help&lt;/code> 或者参考 &lt;a href="https://kubernetes.io/zh/docs/reference/kubectl/overview/" target="_blank" rel="noopener noreferrer">Kubernetes Kubectl CLI 文档&lt;/a>。&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol></description></item></channel></rss>

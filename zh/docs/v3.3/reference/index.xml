@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>参考 on</title><link>https://openksc.github.io/zh/docs/v3.3/reference/</link><description>Recent content in 参考 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v3.3/reference/index.xml" rel="self" type="application/rss+xml"/><item><title>词汇表</title><link>https://openksc.github.io/zh/docs/v3.3/reference/glossary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/reference/glossary/</guid><description>&lt;p>本词汇表包含 KubeSphere 中专有的通用术语和技术术语。&lt;/p>
+&lt;h2 id="通用术语">通用术语&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>企业空间&lt;/strong> &lt;br>
+管理租户工作负载项目（即 Kubernetes 中的企业空间）和 DevOps 项目的逻辑单位。不同团队的成员在企业空间中有不同的权限，可对资源执行不同的操作并共享信息。&lt;/li>
+&lt;li>&lt;strong>系统企业空间&lt;/strong> &lt;br>管理 KubeSphere、Kubernetes 以及可选组件（例如应用商店、服务网格和 DevOps 等）系统项目的特殊企业空间。&lt;/li>
+&lt;li>&lt;strong>企业空间成员&lt;/strong> &lt;br>邀请至企业空间中工作的用户，拥有特定的权限。&lt;/li>
+&lt;li>&lt;strong>项目&lt;/strong> &lt;br>
+KubeSphere 中的项目对应 Kubernetes 中的命名空间。&lt;/li>
+&lt;li>&lt;strong>多集群项目&lt;/strong> &lt;br>
+工作负载部署在多个集群上的项目。&lt;/li>
+&lt;li>&lt;strong>项目成员&lt;/strong> &lt;br>
+邀请至项目中工作的用户，拥有特定的权限。&lt;/li>
+&lt;li>&lt;strong>工作台&lt;/strong> &lt;br>
+租户的登录页面，会显示租户拥有访问权限的资源，例如企业空间和项目。&lt;/li>
+&lt;li>&lt;strong>持久卷&lt;/strong> &lt;br>
+持久卷（Persistent Volume，PV）是集群中的一块存储，可以由管理员预设，也可以使用存储类（Storage Class）来动态供应。&lt;/li>
+&lt;li>&lt;strong>持久卷声明&lt;/strong> &lt;br>
+持久卷声明（Persistent Volume Claim，PVC）定义了存储需求，系统根据持久卷声明创建持久卷。&lt;/li>
+&lt;li>&lt;strong>公开集群&lt;/strong> &lt;br>集群管理员可以设置集群可见性，以便企业空间可以使用所授权的集群。将集群设置为公开集群意味着所有的平台成员都可访问该集群，并在该集群中创建和调度资源。&lt;/li>
+&lt;li>&lt;strong>KubeKey&lt;/strong> &lt;br>
+以 Go 语言编写的全新安装器，可单独安装 Kubernetes 或同时安装 Kubernetes 和 KubeSphere，并支持在创建集群时部署云原生插件（YAML 或 Chart 格式），亦可用于伸缩和升级集群。&lt;/li>
+&lt;li>&lt;strong>ks-installer&lt;/strong> &lt;br>
+在已有 Kubernetes 集群上部署 KubeSphere 的安装包。&lt;/li>
+&lt;/ul>
+&lt;h2 id="应用程序和工作负载">应用程序和工作负载&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>OpenPitrix&lt;/strong> &lt;br>
+一个用于打包、部署和管理不同类型应用的开源系统。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>应用模板&lt;/strong> &lt;br>
+某个应用程序的模板，租户可使用应用模板部署新的应用程序实例。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>应用仓库&lt;/strong> &lt;br>
+基于 Web 包含不同应用模板的仓库，独立于 OpenPitrix 的外部存储而创建，例如 &lt;a href="https://min.io/" target="_blank" rel="noopener noreferrer">MinIO&lt;/a> 对象存储、&lt;a href="https://github.com/qingstor" target="_blank" rel="noopener noreferrer">QingStor 对象存储&lt;/a>以及 &lt;a href="https://aws.amazon.com/cn/what-is-cloud-object-storage/" target="_blank" rel="noopener noreferrer">AWS 对象存储&lt;/a>。&lt;/p></description></item><item><title>KubeSphere API</title><link>https://openksc.github.io/zh/docs/v3.3/reference/api-docs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/reference/api-docs/</guid><description>&lt;h2 id="架构">架构&lt;/h2>
+&lt;p>KubeSphere API 服务器为 API 对象验证和配置数据。API 服务器为 REST 操作提供服务，并为集群的共享状态提供前端，其他所有组件通过它进行交互。&lt;/p>
+&lt;p>其中 /kapi 和/kapis 是 KubeSphere 拓展聚合的 API，/api和 /apis开头的都属于 Kubernetes 原生的 API，KubeSphere 把用户对原生 Kubernetes 资源的请求通过 API Server 转发到 Kubernetes API Server 对原生资源进行操作和管理。&lt;/p>
+&lt;p>&lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/reference/kubesphere-api/ks-apiserver.png" alt="ks-apiserver">&lt;/p>
+&lt;h2 id="使用-kubesphere-api">使用 KubeSphere API&lt;/h2>
+&lt;p>KubeSphere 3.0 将 &lt;strong>ks-apigateway&lt;/strong> 和 &lt;strong>ks-account&lt;/strong> 功能移动至 &lt;strong>ks-apiserver&lt;/strong> 中，使架构更加紧凑和清晰。要使用 KubeSphere API，您需要将 &lt;strong>ks-apiserver&lt;/strong> 暴露给您的客户端。&lt;/p>
+&lt;h3 id="步骤-1暴露-kubesphere-api-服务">步骤 1：暴露 KubeSphere API 服务&lt;/h3>
+&lt;p>如果您要在集群内部访问 KubeSphere，可以跳过以下内容，使用 KubeSphere API 服务器 Endpoint &lt;strong>&lt;code>http://ks-apiserver.kubesphere-system.svc&lt;/code>&lt;/strong> 即可。&lt;/p>
+&lt;p>如果从集群外部访问，您需要先将 KubeSphere API 服务器 Endpoint 暴露给集群外部。&lt;/p>
+&lt;p>暴露 Kubernetes 服务的方式有很多。本示例使用 &lt;code>NodePort&lt;/code> 来演示。使用以下命令将 &lt;code>ks-apiserver&lt;/code> 的服务类型变更为 &lt;code>NodePort&lt;/code>。&lt;/p></description></item><item><title>环境要求</title><link>https://openksc.github.io/zh/docs/v3.3/reference/environment-requirements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/reference/environment-requirements/</guid><description>&lt;p>本页面归纳了安装和使用 KubeSphere 的部分要求。&lt;/p>
+&lt;h2 id="系统要求">系统要求&lt;/h2>
+
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>系统&lt;/th>
+ &lt;th>最低要求（每个节点）&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;strong>Ubuntu&lt;/strong> &lt;em>16.04，18.04，20.04&lt;/em>&lt;/td>
+ &lt;td>CPU：2 核，内存：4 GB，硬盘：40 GB&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Debian&lt;/strong> &lt;em>Buster，Stretch&lt;/em>&lt;/td>
+ &lt;td>CPU：2 核，内存：4 GB，硬盘：40 GB&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>CentOS&lt;/strong> &lt;em>7&lt;/em>.x&lt;/td>
+ &lt;td>CPU：2 核，内存：4 GB，硬盘：40 GB&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Red Hat Enterprise Linux&lt;/strong> &lt;em>7&lt;/em>&lt;/td>
+ &lt;td>CPU：2 核，内存：4 GB，硬盘：40 GB&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>SUSE Linux Enterprise Server&lt;/strong> &lt;em>15&lt;/em> &lt;strong>/openSUSE Leap&lt;/strong> &lt;em>15.2&lt;/em>&lt;/td>
+ &lt;td>CPU：2 核，内存：4 GB，硬盘：40 GB&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+
+&lt;h2 id="依赖项要求">依赖项要求&lt;/h2>
+
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>依赖项&lt;/th>
+ &lt;th>Kubernetes 版本 ≥ 1.18&lt;/th>
+ &lt;th>Kubernetes 版本 &amp;lt; 1.18&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;code>socat&lt;/code>&lt;/td>
+ &lt;td>必须&lt;/td>
+ &lt;td>可选，但建议安装&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>conntrack&lt;/code>&lt;/td>
+ &lt;td>必须&lt;/td>
+ &lt;td>可选，但建议安装&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>ebtables&lt;/code>&lt;/td>
+ &lt;td>可选，但建议安装&lt;/td>
+ &lt;td>可选，但建议安装&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>ipset&lt;/code>&lt;/td>
+ &lt;td>可选，但建议安装&lt;/td>
+ &lt;td>可选，但建议安装&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+
+&lt;h2 id="容器运行时要求">容器运行时要求&lt;/h2>
+
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>支持的容器运行时&lt;/th>
+ &lt;th>版本&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Docker&lt;/td>
+ &lt;td>19.3.8+&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>containerd&lt;/td>
+ &lt;td>最新版&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>CRI-O（试验版，未经充分测试）&lt;/td>
+ &lt;td>最新版&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>iSula（试验版，未经充分测试）&lt;/td>
+ &lt;td>最新版&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+
+&lt;h2 id="网络要求">网络要求&lt;/h2>
+
+&lt;ul>
+&lt;li>请确保 &lt;code>/etc/resolv.conf&lt;/code> 中的 DNS 地址可用，否则，可能会导致集群中的 DNS 出现问题。&lt;/li>
+&lt;li>如果您的网络配置使用防火墙规则或安全组，请务必确保基础设施组件可以通过特定端口相互通信。建议您关闭防火墙。有关更多信息，请参见&lt;a href="https://openksc.github.io/zh/docs/v3.3/installing-on-linux/introduction/port-firewall/">端口要求&lt;/a>。&lt;/li>
+&lt;li>支持的 CNI 插件：Calico 和 Flannel。其他插件也适用（例如 Cilium 和 Kube-OVN 等），但请注意它们未经充分测试。&lt;/li>
+&lt;/ul>
+
+&lt;h2 id="支持的-kubernetes-版本">支持的 Kubernetes 版本&lt;/h2>
+
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>安装工具&lt;/th>
+ &lt;th>KubeSphere 版本&lt;/th>
+ &lt;th>支持的 Kubernetes 版本&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>KubeKey&lt;/td>
+ &lt;td>3.3.2&lt;/td>
+ &lt;td>v1.20.x, v1.21.x, * v1.22.x， * v1.23.x，* v1.24.x&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ks-installer&lt;/td>
+ &lt;td>3.3.2&lt;/td>
+ &lt;td>v1.20.x, v1.21.x, * v1.22.x， * v1.23.x，* v1.24.x&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;div class="notices note">
+ &lt;p>备注&lt;/p></description></item></channel></rss>

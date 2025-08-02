@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>应用模板 on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/</link><description>Recent content in 应用模板 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/index.xml" rel="self" type="application/rss+xml"/><item><title>创建应用模板</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/01-create-an-app-template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/01-create-an-app-template/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何创建应用模板。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个企业空间并在企业空间中具有&lt;strong>应用/应用版本/应用实例创建&lt;/strong>权限。有关更多信息，请参阅“企业空间成员”和“企业空间角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 应用商店管理&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已准备 .tar.gz 或 .tgz 格式的 Helm Chart 压缩包，或应用的 yaml 文件。您可以&lt;a href="https://kubesphere.io/files/application-templates/nginx-0.1.0.tgz">下载 Nginx Helm Chart&lt;/a> 用于测试。有关更多信息，请参阅 &lt;a href="https://helm.sh/zh/docs/topics/charts/">Helm 官方文档&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>应用/应用版本/应用实例创建&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>应用管理 &amp;gt; 应用模板&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>创建应用&lt;/strong>对话框，点击&lt;strong>上传 Helm Chart&lt;/strong>，选择本地存储的 .tar.gz 或 .tgz 格式的 Helm Chart 压缩包。&lt;/p>
+&lt;div class="paragraph">
+&lt;p>或者点击&lt;strong>创建 yaml 应用&lt;/strong>，输入应用名称和版本号，使用 yaml 文件创建应用。&lt;/p>
+&lt;/div>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/upload-dark-white.svg" alt="upload-dark" width="18" height="18"/>&lt;/span>可从本地上传 yaml 文件。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/download-dark-white.svg" alt="download-dark" width="18" height="18"/>&lt;/span>可将 yaml 文件下载到本地。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>应用模板创建完成后将显示在应用模板列表中。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>查看应用模板列表</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/02-view-an-app-template-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/02-view-an-app-template-list/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看应用模板列表。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个企业空间并在企业空间中具有&lt;strong>应用/应用版本/应用实例查看&lt;/strong>权限。有关更多信息，请参阅“企业空间成员”和“企业空间角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 应用商店管理&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>应用/应用版本/应用实例查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>应用管理 &amp;gt; 应用模板&lt;/strong>。&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>应用模板列表提供以下信息：&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>名称&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用模板的名称、图标和描述信息。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>状态&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用模板当前的状态。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>未上架&lt;/strong>：应用模板已创建成功，但是未上架到 KubeSphere 平台的应用商店。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>已上架&lt;/strong>：应用模板已创建成功，并且已上架到 KubeSphere 平台的应用商店。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>已下架&lt;/strong>：应用模板上架到 KubeSphere 平台的应用商店后被应用商店管理员下架。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>企业空间&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用模板所属的企业空间。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>最新版本&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用模板中 Helm Chart 的最新版本。每个应用模板可包含应用的多个版本。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用模板&lt;/p>
+&lt;/div></description></item><item><title>查看应用模板详情</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/03-view-app-template-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/03-view-app-template-details/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看应用模板详情。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个企业空间并在企业空间中具有&lt;strong>应用/应用版本/应用实例查看&lt;/strong>权限。有关更多信息，请参阅“企业空间成员”和“企业空间角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 应用商店管理&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>应用/应用版本/应用实例查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>应用管理 &amp;gt; 应用模板&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在应用模板列表中点击一个应用模板的名称打开其详情页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在应用模板详情页面左侧的&lt;strong>属性&lt;/strong>区域，查看应用模板的资源属性。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用 ID&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用名称。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>状态&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用模板当前的状态。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>未上架&lt;/strong>：应用模板已创建成功，但是未上架到 KubeSphere 平台的应用商店。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>已上架&lt;/strong>：应用模板已创建成功，并且已上架到 KubeSphere 平台的应用商店。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>已下架&lt;/strong>：应用模板上架到 KubeSphere 平台的应用商店后被应用商店管理员下架。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>分类&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用模板所属的分类，需手动设置。有关更多信息，请参阅&lt;a href="../04-edit-app-template-information/">编辑应用模板信息&lt;/a>。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>类型&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用模板的类型，如 &lt;strong>helm 应用&lt;/strong>或 &lt;strong>yaml 应用&lt;/strong>。&lt;/p>
+&lt;/div></description></item><item><title>编辑应用模板信息</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/04-edit-app-template-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/04-edit-app-template-information/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何编辑应用模板信息。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个企业空间并在企业空间中具有&lt;strong>应用/应用版本/应用实例管理&lt;/strong>权限。有关更多信息，请参阅“企业空间成员”和“企业空间角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 应用商店管理&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>应用/应用版本/应用实例管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>应用管理 &amp;gt; 应用模板&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在应用模板列表中点击一个应用模板的名称打开其详情页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在应用模板详情页面左上角点击&lt;strong>编辑&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>编辑信息&lt;/strong>对话框设置应用模板的参数，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>别名&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用的别名。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>描述&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用的描述信息。描述可包含任意字符，最长 120 个字符。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>图标&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用的图标。如果未设置应用模板的图标，系统将默认使用应用名称第一个字符大写作为图标。图标格式必须为 .png 或 .jpg，不能超过 96 x 96 像素和 20 KB。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用分类&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用的功能分类。应用模板在上传到应用商店后将被自动划分到此处选择的分类下。&lt;/p>
+&lt;/div></description></item><item><title>使用应用模板安装应用</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/05-install-an-app-by-using-an-app-template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/05-install-an-app-by-using-an-app-template/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何在企业空间中使用应用模板安装应用。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个企业空间并在企业空间中具有&lt;strong>应用/应用版本/应用实例管理&lt;/strong>权限。有关更多信息，请参阅“企业空间成员”和“企业空间角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 应用商店管理&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>应用/应用版本/应用实例管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>应用管理 &amp;gt; 应用模板&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在应用模板列表中点击一个应用模板的名称打开其详情页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在应用模板详情页面右侧的&lt;strong>版本&lt;/strong>页签，点击所需的应用版本，然后在展开的区域中点击&lt;strong>部署&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的&lt;strong>位置&lt;/strong>对话框，选择应用的安装位置，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>基本信息&lt;/strong>页签，设置应用的基本信息，然后点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>名称&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>用户自定义的应用名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母开头并以小写字母或数字结尾，最长 32 个字符。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>版本&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>需要安装的应用版本。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>描述&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用的描述信息。描述可包含任意字符，最长 256 个字符。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>位置&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用所属的集群和项目。应用所属的企业空间默认为应用模板所属的企业空间。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>应用设置&lt;/strong>页签，根据需要修改应用的参数设置，然后点击&lt;strong>安装&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>KubeSphere 的应用模板功能底层基于 Helm Chart 实现。&lt;strong>应用设置&lt;/strong>页签的参数设置应符合 Helm Chart 的 Values 文件规范。有关更多信息，请参阅 &lt;a href="https://helm.sh/zh/docs/chart_template_guide/values_files/">Helm 官方文档&lt;/a>。&lt;/p>
+&lt;/div></description></item><item><title>上传应用版本</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/06-upload-an-app-version/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/06-upload-an-app-version/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何在应用模板创建后上传应用版本。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个企业空间并在企业空间中具有&lt;strong>应用/应用版本/应用实例管理&lt;/strong>权限。有关更多信息，请参阅“企业空间成员”和“企业空间角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 应用商店管理&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已准备 .tar.gz 或 .tgz 格式的 Helm Chart 压缩包。有关更多信息，请参阅 &lt;a href="https://helm.sh/zh/docs/topics/charts/">Helm 官方文档&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>应用/应用版本/应用实例管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>应用管理 &amp;gt; 应用模板&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在应用模板列表中点击一个应用模板的名称打开其详情页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在应用模板详情页面右侧的&lt;strong>版本&lt;/strong>页签，点击&lt;strong>上传版本&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框中，点击&lt;strong>上传 Helm Chart&lt;/strong>，选择本地存储的 .tar.gz 或 .tgz 格式 Helm Chart 压缩包，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>应用新版本上传完成后将显示在应用模板详情页面的&lt;strong>版本&lt;/strong>页签。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>删除应用版本</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/08-delete-an-app-version/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/08-delete-an-app-version/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何在应用模板中删除应用版本。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">警告&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用版本删除后无法恢复，请谨慎执行此操作。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个企业空间并在企业空间中具有&lt;strong>应用/应用版本/应用实例删除&lt;/strong>权限。有关更多信息，请参阅“企业空间成员”和“企业空间角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 应用商店管理&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果需要删除的应用版本已上架到应用商店，您需要联系应用商店管理员将应用版本下架。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>应用/应用版本/应用实例删除&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>应用管理 &amp;gt; 应用模板&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在应用模板列表中点击一个应用模板的名称打开其详情页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在应用模板详情页面右侧的&lt;strong>版本&lt;/strong>页签，点击需要删除的应用版本，在展开的区域中点击&lt;strong>删除&lt;/strong>，然后在弹出的对话框点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>下载 Helm Chart 压缩包</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/09-download-a-helm-chart-package/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/09-download-a-helm-chart-package/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何下载应用版本的 Helm Chart 压缩包。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个企业空间并在企业空间中具有&lt;strong>应用/应用版本/应用实例查看&lt;/strong>权限。有关更多信息，请参阅“企业空间成员”和“企业空间角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 应用商店管理&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>应用/应用版本/应用实例查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>应用管理 &amp;gt; 应用模板&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在应用模板列表中点击一个应用模板的名称打开其详情页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在应用模板详情页面右侧的&lt;strong>版本&lt;/strong>页签，点击所需的应用版本，然后在展开的区域中点击&lt;strong>下载&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>应用版本的 Helm Chart 压缩包将通过浏览器下载到本地。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>将应用版本发布到应用商店</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/10-release-an-app-version-to-the-app-store/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/10-release-an-app-version-to-the-app-store/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何将应用版本发布到应用商店。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个企业空间并在企业空间中具有&lt;strong>应用/应用版本/应用实例管理&lt;/strong>权限。有关更多信息，请参阅“企业空间成员”和“企业空间角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 应用商店管理&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>应用/应用版本/应用实例管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>应用管理 &amp;gt; 应用模板&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在应用模板列表中点击一个应用模板的名称打开其详情页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在应用模板详情页面右侧的&lt;strong>版本&lt;/strong>页签，点击需要发布的应用版本，然后在展开的区域中点击&lt;strong>提交审核&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>待应用商店管理员审核通过并将其上架后，在页面左上角点击&lt;strong>应用商店&lt;/strong>，即可在应用商店中查看已上架的应用版本。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>审核通过后，应用版本的状态将变为&lt;strong>已发布&lt;/strong>，表示可以被应用商店管理员上架到应用商店。上架后，所有项目成员才可以从应用商店将应用版本安装到项目中。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>有关应用审核和上架的更多信息，请参阅&lt;a href="../../../03-app-store-management/">应用商店管理&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>删除应用模板</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/11-delete-an-app-template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/11-delete-an-app-template/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何删除应用模板。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">警告&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用模板删除后无法恢复，请谨慎执行此操作。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个企业空间并在企业空间中具有&lt;strong>应用/应用版本/应用实例删除&lt;/strong>权限。有关更多信息，请参阅“企业空间成员”和“企业空间角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 应用商店管理&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>应用/应用版本/应用实例删除&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>应用管理 &amp;gt; 应用模板&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在需要删除的应用模板右侧点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，然后在下拉列表中选择&lt;strong>删除&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>删除应用模板&lt;/strong>对话框，输入应用模板的名称，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

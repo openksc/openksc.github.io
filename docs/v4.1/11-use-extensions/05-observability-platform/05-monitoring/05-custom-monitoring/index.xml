@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Custom Monitoring on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/</link><description>Recent content in Custom Monitoring on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/index.xml" rel="self" type="application/rss+xml"/><item><title>Create Custom Monitoring Dashboards</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/01-create-a-custom-monitoring-dashboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/01-create-a-custom-monitoring-dashboard/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to create a custom monitoring dashboard.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a cluster or a project and have the &lt;strong>Monitoring Management&lt;/strong> permission within the cluster or the project. For more information, refer to &amp;#34;Cluster Roles&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Configure applications running in containers to expose monitoring metrics that conform to the Prometheus specification at a certain service endpoint. For more information, see the &lt;a href="https://prometheus.io/docs/instrumenting/clientlibs/">Prometheus Documentation&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You should set up a monitoring exporter on the service exposing the workload to declare the path providing application monitoring metrics. KubeSphere will get the application’s monitoring metrics based on the relevant parameters of the monitoring exporter. For more information, see &lt;a href="../../08-edit-a-metrics-exporter/">Edit a Metrics Exporter&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>View Custom Monitoring Dashboard Details</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/02-view-a-custom-monitoring-dashboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/02-view-a-custom-monitoring-dashboard/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to view a custom monitoring dashboard.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster or a project and have the &lt;strong>Monitoring Viewing&lt;/strong> permission within the cluster or the project. For more information, refer to &amp;#34;Cluster Roles&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Monitoring Viewing&lt;/strong> permission and enter your cluster or project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Monitoring &amp;amp; Alerting &amp;gt; Custom Monitoring&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the name of a custom monitoring dashboard in the list to open the dashboard.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>View text-displayed monitoring metrics in the left area of the page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>View line charts or bar charts of monitoring metrics in the middle area of the page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/chevron-right.svg" alt="chevron-right" width="18" height="18"/>&lt;/span> on the right side of the page to view sub-metrics of each monitoring metric and their maximum, minimum, average, and last sampled values within the specified time range.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/theme.svg" alt="theme" width="18" height="18"/>&lt;/span> at the top of the page to switch between light and dark themes.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/calendar-dark.svg" alt="calendar-dark" width="18" height="18"/>&lt;/span> at the top of the page to set the time range of the data.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/refresh-dark.svg" alt="refresh-dark" width="18" height="18"/>&lt;/span> at the top of the page to set the refresh interval of the data.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/close-dark.svg" alt="close" width="18" height="18"/>&lt;/span> in the upper right corner of the page to return to the custom monitoring dashboard list.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Edit Custom Monitoring Dashboard Information</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/03-edit-custom-monitoring-dashboard-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/03-edit-custom-monitoring-dashboard-information/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to edit the information of a custom monitoring dashboard.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>You can edit the alias and description of a custom monitoring dashboard. KubeSphere does not support editing the name of a custom monitoring dashboard.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster or a project and have the &lt;strong>Monitoring Management&lt;/strong> permission within the cluster or the project. For more information, refer to &amp;#34;Cluster Roles&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Monitoring Management&lt;/strong> permission and enter your cluster or project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Monitoring &amp;amp; Alerting &amp;gt; Custom Monitoring&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span> on the right side of the custom monitoring dashboard you want to edit, then select &lt;strong>Edit Information&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Edit Information&lt;/strong> dialog, set the alias and description of the custom monitoring dashboard, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Alias&lt;/p>
+&lt;/div></description></item><item><title>Edit Custom Monitoring Dashboards</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/04-edit-a-custom-monitoring-dashboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/04-edit-a-custom-monitoring-dashboard/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to edit a custom monitoring dashboard.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster or a project and have the &lt;strong>Monitoring Management&lt;/strong> permission within the cluster or the project. For more information, refer to &amp;#34;Cluster Roles&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Monitoring Management&lt;/strong> permission and enter your cluster or project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Monitoring &amp;amp; Alerting &amp;gt; Custom Monitoring&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the name of a custom monitoring dashboard in the list to open the custom monitoring dashboard, then click &lt;strong>Edit Template&lt;/strong> in the upper right corner of the page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Set the text-displayed monitoring metrics on the left side of the page.&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/add-dark.svg" alt="add-dark" width="18" height="18"/>&lt;/span> to add monitoring metrics.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Chart Name&lt;/p>
+&lt;/div></description></item><item><title>Delete Custom Monitoring Dashboards</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/05-delete-custom-monitoring-dashboards/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/05-delete-custom-monitoring-dashboards/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to delete a custom monitoring dashboard.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Warning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Custom monitoring dashboards cannot be recovered after deletion, so please proceed with caution.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a cluster or a project and have the &lt;strong>Monitoring Management&lt;/strong> permission within the cluster or the project. For more information, refer to &amp;#34;Cluster Roles&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_delete_a_single_custom_monitoring_dashboard">Delete a Single Custom Monitoring Dashboard&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Monitoring Management&lt;/strong> permission and enter your cluster or project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Monitoring &amp;amp; Alerting &amp;gt; Custom Monitoring&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span> on the right side of the custom monitoring dashboard you want to delete, then select &lt;strong>Delete&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Delete Custom Monitoring Dashboard&lt;/strong> dialog, enter the name of the custom monitoring dashboard, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pipelines on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/</link><description>Recent content in Pipelines on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/index.xml" rel="self" type="application/rss+xml"/><item><title>Create a Pipeline Using Graphic Editing Panels</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/01-create-a-pipeline-using-graphical-editing-panel/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/01-create-a-pipeline-using-graphical-editing-panel/</guid><description>&lt;div class="paragraph">
+&lt;p>The graphic editing panel in DevOps includes all the necessary operations for Jenkins &lt;a href="https://www.jenkins.io/en/doc/book/pipeline/#阶段">Stages&lt;/a> and &lt;a href="https://www.jenkins.io/en/doc/book/pipeline/#步骤">Steps&lt;/a>. DevOps supports defining these stages and steps directly on the interactive panel without the need to create any Jenkinsfile.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This section demonstrates how to use the graphic editing panel to create pipelines in KubeSphere. Throughout the process, DevOps will automatically generate a Jenkinsfile based on the settings on the editing panel, eliminating the need to manually create a Jenkinsfile. Once the pipeline runs successfully, it will push the image to Docker Hub.&lt;/p>
+&lt;/div></description></item><item><title>Create a Pipeline Using a Jenkinsfile</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/02-create-a-pipeline-using-jenkinsfile/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/02-create-a-pipeline-using-jenkinsfile/</guid><description>&lt;div class="paragraph">
+&lt;p>A Jenkinsfile is a text file that contains the definition of a Jenkins pipeline and is checked into a source code control repository. As it stores the entire workflow as code, the Jenkinsfile forms the basis for code reviews and pipeline iterations. For more information, refer to the &lt;a href="https://www.jenkins.io/zh/doc/book/pipeline/jenkinsfile/">Jenkins Documentation&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This document demonstrates how to create a pipeline based on a Jenkinsfile from a GitHub repository.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>DevOps supports creating two types of pipelines: pipelines created based on a Jenkinsfile in SCM as described in this document, and &lt;a href="../01-create-a-pipeline-using-graphical-editing-panel/">pipelines created through the graphical editing panel&lt;/a>.&lt;/p>
+&lt;/div></description></item><item><title>Create Pipelines Using Pipeline Templates</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/03-use-pipeline-templates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/03-use-pipeline-templates/</guid><description>&lt;div class="paragraph">
+&lt;p>This document illustrates how to create pipelines using pipeline templates on KubeSphere.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>DevOps provides a graphic editing panel that facilitates the definition of stages and steps in Jenkins pipelines through interactive operations. It includes various built-in pipeline templates like Node.js, Maven, and Golang, enabling users to swiftly create pipelines based on these templates. While DevOps also offers CI and CI &amp;amp; CD pipeline templates, they might not fully align with custom requirements. It is advisable to use other built-in templates or directly customize pipelines.&lt;/p>
+&lt;/div></description></item><item><title>Create a Multi-branch Pipeline with GitLab</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/04-gitlab-multibranch-pipeline/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/04-gitlab-multibranch-pipeline/</guid><description>&lt;div class="paragraph">
+&lt;p>&lt;a href="https://gitlab.com/users/sign_in">GitLab&lt;/a> is a web-based Git repository management tool that supports public and private repositories, and provides comprehensive DevOps functionalities including source code management, code review, issue tracking, continuous integration, and more. With GitLab, teams can collaborate efficiently on a single platform to complete the entire software development process from coding to deployment.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>KubeSphere supports creating multi-branch pipelines using GitLab in DevOps projects. This document demonstrates how to create a multi-branch pipeline with GitLab.&lt;/p>
+&lt;/div></description></item><item><title>Pipeline Settings</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/05-pipeline-settings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/05-pipeline-settings/</guid><description>&lt;div class="paragraph">
+&lt;p>When creating a pipeline, you can customize the pipeline configuration through various settings.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>After the pipeline is created, you can also edit the pipeline’s configuration by entering the pipeline details page, clicking &lt;strong>Edit Information&lt;/strong> and &lt;strong>More &amp;gt; Edit Settings&lt;/strong>.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This document details how to configure pipelines.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>DevOps&lt;/strong> must have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>A workspace, a DevOps project, and a user (e.g., &lt;strong>project-regular&lt;/strong>) have been created, and the user has been invited to the DevOps project with the &lt;strong>operator&lt;/strong> role. Refer to &lt;a href="../../05-devops-settings/02-role-and-member-management">Role and Member Management&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Trigger a Pipeline Using a Webhook</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/06-pipeline-webhook/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/06-pipeline-webhook/</guid><description>&lt;div class="paragraph">
+&lt;p>If you create a Jenkinsfile-based pipeline from a remote code repository, you can configure a webhook in the remote repository so that the pipeline is automatically triggered when changes are made to the remote repository.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This tutorial demonstrates how to trigger a pipeline by using a webhook in GitHub.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>DevOps&lt;/strong> must have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>A workspace, a DevOps project, and a user (e.g., &lt;strong>project-regular&lt;/strong>) have been created, and the user has been invited to the DevOps project with the &lt;strong>operator&lt;/strong> role. Refer to &lt;a href="../../05-devops-settings/02-role-and-member-management">Role and Member Management&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You have created a Jenkinsfile-based pipeline from a remote code repository. For more information, refer to &lt;a href="../02-create-a-pipeline-using-jenkinsfile/">Create a Pipeline Using a Jenkinsfile&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Jenkins System Settings</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/07-jenkins-setting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/07-jenkins-setting/</guid><description>&lt;div class="paragraph">
+&lt;p>The DevOps system provides containerized CI/CD functionalities based on Jenkins. As the standard for CI/CD workflows, Jenkins is powerful and flexible. However, many plugins require users to perform system-level configurations before using Jenkins.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>To provide a schedulable Jenkins environment, KubeSphere adopts the &lt;strong>Configuration as Code&lt;/strong> approach for Jenkins system settings. Users need to log in to the Jenkins dashboard, modify the configurations, and then reload them.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This document demonstrates how to set up Jenkins and reload configurations on the Jenkins dashboard.&lt;/p>
+&lt;/div></description></item><item><title>Log in to Jenkins Dashboard</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/07-access-jenkins-console/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/07-access-jenkins-console/</guid><description>&lt;div class="paragraph">
+&lt;p>Jenkins dashboard is installed by default when you install DevOps.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>KubeSphere platform needs to have the &lt;strong>DevOps&lt;/strong> extension installed and enabled.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Check the service corresponding to the Jenkins dashboard, then refer to &lt;a href="../../../../../02-quickstart/08-access-a-service/">Access a Service&lt;/a> to access Jenkins dashboard.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">kubectl -n kubesphere-devops-system get svc devops-jenkins&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>Get the username and password for Jenkins admin.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">kubectl -n kubesphere-devops-system get secret devops-jenkins -o yaml&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Sample output:&lt;/p>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-yaml" data-lang="yaml">data:
+ jenkins-admin-password: aXMxZno1Z3lnQWFTaGRIU2EwUDZkbg==
+ jenkins-admin-token: MTE5NTQ4NDY3MTE4MDQ4ODAzMDI1MTc3MDk1OTUwNTM2MQ==
+ jenkins-admin-user: YWRtaW4=&lt;/code>&lt;/pre>
+&lt;/div></description></item><item><title>Use Jenkins Shared Libraries in a Pipeline</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/08-jenkins-shared-library/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/08-jenkins-shared-library/</guid><description>&lt;div class="paragraph">
+&lt;p>For Jenkins pipelines that contain the same stages or steps, you can use Jenkins shared libraries in the Jenkinsfile to avoid pipeline code duplication.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This document demonstrates how to use Jenkins shared libraries in a DevOps pipeline.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>DevOps&lt;/strong> must have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>A workspace, a DevOps project, and a user (e.g. &lt;strong>project-regular&lt;/strong>) have been created, and the user has been invited to the DevOps project with the &lt;strong>operator&lt;/strong> role. See &lt;a href="../../05-devops-settings/02-role-and-member-management">Role and Member Management&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You have a usable Jenkins shared library. This tutorial uses the Jenkins shared library in the &lt;a href="https://github.com/devops-ws/jenkins-shared-library">GitHub repository&lt;/a> as an example.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Set an Email Server for Pipelines</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/09-jenkins-email/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/09-jenkins-email/</guid><description>&lt;div class="paragraph">
+&lt;p>The built-in Jenkins cannot share the same email configuration with the notification system of KubeSphere Therefore, you need to configure an email server separately for DevOps pipelines.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>DevOps&lt;/strong> must have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You should have the &lt;strong>Cluster Management&lt;/strong> permission on the KubeSphere platform.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with an account that has the &lt;strong>Cluster Management&lt;/strong> permission.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Cluster Management&lt;/strong> and enter a cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the left navigation pane, select &lt;strong>Application Workloads&lt;/strong> &amp;gt; &lt;strong>Workloads&lt;/strong>, and choose the &lt;strong>kubesphere-devops-system&lt;/strong> project from the dropdown list. Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span> on the right side of &lt;strong>devops-jenkins&lt;/strong> and select &lt;strong>Edit YAML&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Edit the fields in the YAML file as shown below. After making the changes, click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Warning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>After modifying the email server configuration, the &lt;strong>devops-jenkins&lt;/strong> deployment will restart. Therefore, the DevOps system will be unavailable for a few minutes. Please modify these configurations at an appropriate time.&lt;/p>
+&lt;/div></description></item><item><title>Choose Jenkins Agent</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/10-choose-jenkins-agent/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/10-choose-jenkins-agent/</guid><description>&lt;div class="paragraph">
+&lt;p>The &lt;strong>agent&lt;/strong> section specifies where the entire pipeline or a specific stage will be executed in the Jenkins environment, depending on where the &lt;code>agent&lt;/code> section is placed. This section must be defined at the top level inside the &lt;strong>pipeline&lt;/strong> block, but stage-level usage is optional. For more information, see &lt;a href="https://www.jenkins.io/zh/doc/book/pipeline/syntax/#代理">Jenkins Documentation&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_built_in_podtemplate">Built-in podTemplate&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>podTemplate is a Pod template used to create Agents. You can define podTemplates to be used in the Kubernetes plugin.&lt;/p>
+&lt;/div></description></item><item><title>Customize Jenkins Agent</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/11-customize-jenkins-agent/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/02-pipelines/11-customize-jenkins-agent/</guid><description>&lt;div class="paragraph">
+&lt;p>To use a Jenkins Agent that runs a specific environment (e.g., JDK 11), you can customize the Jenkins Agent on KubeSphere.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This document describes how to customize the Jenkins Agent on KubeSphere.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>&lt;strong>DevOps&lt;/strong> must have been installed and enabled.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_customize_jenkins_agent">Customize Jenkins Agent&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console as the &lt;strong>admin&lt;/strong> user.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Cluster Management&lt;/strong> and enter a cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the left navigation pane, select &lt;strong>Configuration&lt;/strong> &amp;gt; &lt;strong>ConfigMaps&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>ConfigMaps&lt;/strong> page, enter &lt;strong>jenkins-casc-config&lt;/strong> in the search box and press &lt;strong>Enter&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>jenkins-casc-config&lt;/strong> to enter its detail page, click &lt;strong>More&lt;/strong>, and select &lt;strong>Edit YAML&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the dialog that appears, search for &lt;strong>data:jenkins_user.yaml:jenkins:clouds:kubernetes:templates&lt;/strong> and enter the following code below it, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-yaml" data-lang="yaml">- name: &amp;#34;maven-jdk11&amp;#34; # Customize the name of the Jenkins Agent.
+ label: &amp;#34;maven jdk11&amp;#34; # Customize the label of the Jenkins Agent. If you want to specify multiple labels, separate them with spaces.
+ inheritFrom: &amp;#34;maven&amp;#34; # The name of the existing Pod template from which the custom Jenkins Agent inherits.
+ containers:
+ - name: &amp;#34;maven&amp;#34; # The container name specified in the existing Pod template from which the custom Jenkins Agent inherits.
+ image: &amp;#34;kubespheredev/builder-maven:v3.2.0jdk11&amp;#34; # This image is for testing purposes only. Please use your own image.&lt;/code>&lt;/pre>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pod IP Pool on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/</link><description>Recent content in Pod IP Pool on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/index.xml" rel="self" type="application/rss+xml"/><item><title>Create Pod IP Pools</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/01-create-a-pod-ip-pool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/01-create-a-pod-ip-pool/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to create pod IP pools.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a cluster and have the &lt;strong>Cluster Network Resource Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Network&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Cluster Network Resource Management&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Network &amp;gt; Pod IP Pools&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Create&lt;/strong> on the page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Create Pod IP Pool&lt;/strong> dialog box, set the parameters for the pod IP pool, and then click &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>IP Address&lt;/p>
+&lt;/div></description></item><item><title>View Pod IP Pool List</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/02-view-a-pod-ip-pool-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/02-view-a-pod-ip-pool-list/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to view the pod IP pool list.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a cluster and have the &lt;strong>Cluster Network Resource Viewing&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Network&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Cluster Network Resource Viewing&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Network &amp;gt; Pod IP Pools&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The pod IP pool list provides the following information:&lt;/p>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Name&lt;/p>
+&lt;/div></description></item><item><title>View Pod IP Pool Details</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/03-view-pod-ip-pool-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/03-view-pod-ip-pool-details/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to view pod IP pool details.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a cluster and have the &lt;strong>Cluster Network Resource Viewing&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Network&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Cluster Network Resource Viewing&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Network &amp;gt; Pod IP Pools&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the name of a pod IP pool in the pod IP pool list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the pod IP pool details page, view the basic information of the pod IP pool in the &lt;strong>Attributes&lt;/strong> area on the left.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 28.5714%;"/>
+&lt;col style="width: 71.4286%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Status&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">The status of the pod IP pool.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Network Segment&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">The network segment contained in the pod IP pool.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Used IP Addresses&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">The number of IP addresses already used.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">IP Pool Block Size&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">The CIDR size of the block used by the IP pool to allocate IPs.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">NAT Outgoing&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Whether to allow communication across IP pools via NAT.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Overlay Mode&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">The communication mode between containers. Supports IPIP mode and VXLAN mode.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Mask&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">The mask bits of the network segment corresponding to the pod IP pool.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Network&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">The IP address of the network corresponding to the pod IP pool.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Start IP Address/End IP Address&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">The IP address range contained in the pod IP pool.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Creation Time&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">The creation time of the pod IP pool.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">Creator&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">The user who created the pod IP pool.&lt;/p>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div></description></item><item><title>Assign Pod IP Pools to Projects</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/04-assign-a-project-to-a-ip-pool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/04-assign-a-project-to-a-ip-pool/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to assign pod IP pools to projects.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>If a project is assigned to a pod IP pool, when creating workloads and jobs in the project, if a pod IP pool is not specified, the pods in the project will be assigned to the default pod IP pool.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>If a project is not assigned to any pod IP pool, i.e., the project is not bound to any pod IP pool, when creating workloads and jobs in the project, if a pod IP pool is not specified, the pods in the project will be assigned to any available pod IP pool.&lt;/p>
+&lt;/div></description></item><item><title>Edit Pod IP Pool Information</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/05-edit-pod-ip-pool-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/05-edit-pod-ip-pool-information/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to edit pod IP pool information.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>You can edit the alias and description of a pod IP pool. KubeSphere does not support editing the name of a pod IP pool.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a cluster and have the &lt;strong>Cluster Network Resource Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Network&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Cluster Network Resource Management&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Network &amp;gt; Pod IP Pools&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span> on the right side of the pod IP pool you want to edit, and then select &lt;strong>Edit Information&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Edit Information&lt;/strong> dialog box, set the alias and description of the pod IP pool, and then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Alias&lt;/p>
+&lt;/div></description></item><item><title>Edit Overlay Mode</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/06-edit-overlay-mode/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/06-edit-overlay-mode/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to edit overlay mode.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Overlay mode can achieve cross-host container communication without modifying the physical network of the host machines.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a cluster and have the &lt;strong>Cluster Network Resource Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Network&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Cluster Network Resource Management&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Network &amp;gt; Pod IP Pools&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span> on the right side of the pod IP pool you want to edit, and then select &lt;strong>Edit Overlay Mode&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Edit Overlay Mode&lt;/strong> dialog box, select IPIP mode or VXLAN mode, and then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Mode&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>IPIP Mode&lt;/p>
+&lt;/div></description></item><item><title>Edit Node Selection</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/07-edit-yaml-for-a-pod-ip-pool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/07-edit-yaml-for-a-pod-ip-pool/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to edit the automatic node allocation for pod IP pools to automatically match appropriate nodes for the pod IP pool.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>When creating a pod IP pool, by default, its IP addresses can be allocated to pods on all nodes. You can set node selectors to restrict that only pods on nodes that meet specific conditions can use the IP addresses of the IP pool.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a cluster and have the &lt;strong>Cluster Network Resource Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Network&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Disable and Enable Pod IP Pools</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/08-disable-and-enable-pod-ip-pool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/08-disable-and-enable-pod-ip-pool/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to disable and enable pod IP pools.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>After a pod IP pool is disabled, it will not continue to allocate IP addresses and will not affect the network of pods that have already been allocated IP addresses. However, disabling a pod IP pool will automatically unbind its associated projects. When migrating a pod IP pool, the number of available addresses in the new IP pool must not be less than the number of IP addresses used in the current IP pool.&lt;/p>
+&lt;/div></description></item><item><title>Delete Pod IP Pools</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/09-delete-pod-ip-pools/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/02-pod-ip-pools/09-delete-pod-ip-pools/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to delete pod IP pools.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Warning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Pod IP pools cannot be recovered after deletion, so please proceed with caution.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a cluster and have the &lt;strong>Cluster Network Resource Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Network&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The pod IP pool is not used by any pods. If there are pods using the pod IP pool, you need to specify another pod IP pool for the pods or delete the pods.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

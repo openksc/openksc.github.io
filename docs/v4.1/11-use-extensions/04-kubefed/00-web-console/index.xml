@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web Console on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/04-kubefed/00-web-console/</link><description>Recent content in Web Console on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/04-kubefed/00-web-console/index.xml" rel="self" type="application/rss+xml"/><item><title>Log In and Access Multi-cluster Projects</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/04-kubefed/00-web-console/01-log-in-and-go-to-a-project/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/04-kubefed/00-web-console/01-log-in-and-go-to-a-project/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to log in to the KubeSphere web console and access multi-cluster projects.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Application Management for Cluster Federation&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You should get the username and password for a multi-cluster project member.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Contact the administrator to obtain the IP address and port number of the KubeSphere web console.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Depending on your network environment, you may need to configure firewall and traffic forwarding rules. For specific instructions, please contact your network administrator.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>How to Use DevOps on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/</link><description>Recent content in How to Use DevOps on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/index.xml" rel="self" type="application/rss+xml"/><item><title>Create and Manage DevOps Projects</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/01-devops-project-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/01-devops-project-management/</guid><description>&lt;div class="paragraph">
+&lt;p>This section demonstrates how to create and manage DevOps projects.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>A workspace and a user (&lt;strong>project-admin&lt;/strong>) have been created. Invite this user to the workspace and assign them the &lt;strong>workspace-self-provisioner&lt;/strong> role. For more information, see &lt;a href="../../../../02-quickstart/04-control-user-permissions">Control User Permissions&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>DevOps&lt;/strong> must have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_create_a_devops_project">Create a DevOps Project&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console as the &lt;strong>project-admin&lt;/strong> user and navigate to a workspace.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>DevOps Projects&lt;/strong> and then click &lt;strong>Create&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Enter the basic information for the DevOps project and click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Name&lt;/strong>: A concise name for the DevOps project, e.g., &lt;strong>demo-devops&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Alias&lt;/strong>: An alias for the DevOps project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Description&lt;/strong>: A brief introduction to the DevOps project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Cluster Settings&lt;/strong>: In the current version, a DevOps project cannot run across multiple clusters simultaneously. If there are multiple clusters, you must choose one cluster to run the DevOps project.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Use GitOps to Achieve Continuous Deployment of Applications</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/03-use-gitops-for-continous-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/03-use-gitops-for-continous-deployment/</guid><description>&lt;div class="paragraph">
+&lt;p>KubeSphere introduces a philosophy for implementing continuous deployment of cloud-native applications – GitOps. The core idea of GitOps is to have a Git repository where the declarative infrastructure and applications of the application system are stored and version-controlled. GitOps combined with Kubernetes can use an automated delivery pipeline to apply changes to any number of specified clusters, thus solving the consistency problem of cross-cloud deployment.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This document walks you through the process of deploying an application using a continuous deployment.&lt;/p>
+&lt;/div></description></item><item><title>Import Code Repositories</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/04-import-code-repositories/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/04-import-code-repositories/</guid><description>&lt;div class="paragraph">
+&lt;p>KubeSphere supports importing GitHub, GitLab, Bitbucket, or other Git-based code repositories, such as Gitee. Below is an example of how to import a GitHub repository.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>DevOps&lt;/strong> must have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>A workspace, a DevOps project, and a user (e.g. &lt;strong>project-regular&lt;/strong>) have been created, and the user has been invited to the DevOps project with the &lt;strong>operator&lt;/strong> role. See &lt;a href="../05-devops-settings/02-role-and-member-management">Role and Member Management&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console as the &lt;strong>project-regular&lt;/strong> user.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Workspace Management&lt;/strong> and enter your DevOps project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the left navigation pane, click &lt;strong>Code Repositories&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the right side of the page, click &lt;strong>Add&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Import Code Repository&lt;/strong> dialog, enter a code repository name, and click &lt;strong>Select a code repository&lt;/strong>. You can also set an alias and add a description for the code repository.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>The table below lists the supported code repositories and parameter settings. The following steps use GitHub as an example.&lt;/p>
+&lt;/div></description></item></channel></rss>

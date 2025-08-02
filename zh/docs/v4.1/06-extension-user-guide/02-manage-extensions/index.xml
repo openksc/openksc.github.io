@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>管理扩展组件 on</title><link>https://openksc.github.io/zh/docs/v4.1/06-extension-user-guide/02-manage-extensions/</link><description>Recent content in 管理扩展组件 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/06-extension-user-guide/02-manage-extensions/index.xml" rel="self" type="application/rss+xml"/><item><title>配置扩展组件</title><link>https://openksc.github.io/zh/docs/v4.1/06-extension-user-guide/02-manage-extensions/01-set-configurations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/06-extension-user-guide/02-manage-extensions/01-set-configurations/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何配置扩展组件。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>除了在安装组件时配置组件，您还可以在扩展中心的组件详情页，修改扩展组件的配置。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>您需要在 KubeSphere 平台具有 &lt;strong>platform-admin&lt;/strong> 角色。有关更多信息，请参阅&lt;a href="../../../05-users-and-roles/01-users/">用户&lt;/a>和&lt;a href="../../../05-users-and-roles/02-platform-roles/">平台角色&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您已成功安装一个扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有 &lt;strong>platform-admin&lt;/strong> 角色的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>扩展中心&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击已安装的组件名称，进入组件详情页。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击组件图标下的&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，选择&lt;strong>扩展组件配置&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>编辑完成后，点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>点击&lt;strong>恢复推荐配置&lt;/strong>，将当前配置恢复到默认推荐配置，点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/upload-dark-white.svg" alt="upload-dark" width="18" height="18"/>&lt;/span>可将扩展组件的配置文件 &lt;strong>config.yaml&lt;/strong> 从本地上传。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/download-dark-white.svg" alt="download-dark" width="18" height="18"/>&lt;/span>可将扩展组件的配置文件 &lt;strong>config.yaml&lt;/strong> 下载到本地。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>配置集群 Agent</title><link>https://openksc.github.io/zh/docs/v4.1/06-extension-user-guide/02-manage-extensions/02-set-cluster-agents/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/06-extension-user-guide/02-manage-extensions/02-set-cluster-agents/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何配置集群 Agent。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>除了在安装组件时配置集群 Agent，您还可以在扩展中心的组件详情页，修改集群 Agent 的配置。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>您需要在 KubeSphere 平台具有 &lt;strong>platform-admin&lt;/strong> 角色。有关更多信息，请参阅&lt;a href="../../../05-users-and-roles/01-users/">用户&lt;/a>和&lt;a href="../../../05-users-and-roles/02-platform-roles/">平台角色&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您已成功安装一个配置了集群 Agent 的扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有 &lt;strong>platform-admin&lt;/strong> 角色的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>扩展中心&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击已安装的组件名称，进入组件详情页。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击组件图标下的&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，选择&lt;strong>集群 Agent 配置&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>选择一个集群，并进行差异化配置。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>禁用扩展组件</title><link>https://openksc.github.io/zh/docs/v4.1/06-extension-user-guide/02-manage-extensions/03-disable-extensions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/06-extension-user-guide/02-manage-extensions/03-disable-extensions/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何禁用扩展组件。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>组件安装完成后，会自动启用。您可以在扩展中心的组件详情页中禁用扩展组件。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>禁用后，再次启用，即可在集群、企业空间、项目中继续使用该组件。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>您需要在 KubeSphere 平台具有 &lt;strong>platform-admin&lt;/strong> 角色。有关更多信息，请参阅&lt;a href="../../../05-users-and-roles/01-users/">用户&lt;/a>和&lt;a href="../../../05-users-and-roles/02-platform-roles/">平台角色&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有 &lt;strong>platform-admin&lt;/strong> 角色的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>扩展中心&lt;/strong>，进入扩展中心页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击已安装的组件名称，进入组件详情页。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击组件图标下的&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，选择&lt;strong>禁用&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>禁用后，再次点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，选择&lt;strong>启用&lt;/strong>即可继续使用该组件。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

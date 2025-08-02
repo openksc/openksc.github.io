@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OpenSearch Distributed Search and Analytics Engine on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/15-opensearch/</link><description>Recent content in OpenSearch Distributed Search and Analytics Engine on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/15-opensearch/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/15-opensearch/01-intro/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/15-opensearch/01-intro/</guid><description>&lt;div class="paragraph">
+&lt;p>The &amp;#34;OpenSearch Distributed Search and Analytics Engine&amp;#34; extension is a built-in log storage extension for KubeSphere, used to store observability data such as logs, audits, events, and notification history.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>In addition to supporting the deployment of OpenSearch, this extension also supports the deployment of OpenSearch Dashboard and OpenSearch Curator.&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>OpenSearch Dashboard&lt;/strong> is used for visualizing OpenSearch data and managing the OpenSearch cluster’s user interface. It is disabled by default after deployment. To enable it, set the &lt;code>opensearch-dashboards.enabled&lt;/code> field to &lt;code>true&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>OpenSearch Curator&lt;/strong> is a CronJob that periodically cleans up Kubernetes event logs, Kubernetes audit logs, Kubernetes application logs, and notification history logs that exceed the configured date (default is 7 days). It is enabled by default after deployment. To disable it, set the &lt;code>opensearch-curator.enabled&lt;/code> field to &lt;code>false&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

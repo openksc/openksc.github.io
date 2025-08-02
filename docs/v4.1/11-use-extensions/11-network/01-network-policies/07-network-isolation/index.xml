@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Network Isolation on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/01-network-policies/07-network-isolation/</link><description>Recent content in Network Isolation on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/01-network-policies/07-network-isolation/index.xml" rel="self" type="application/rss+xml"/><item><title>Enable Workspace Network Isolation</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/01-network-policies/07-network-isolation/01-workspace-network-isolation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/01-network-policies/07-network-isolation/01-workspace-network-isolation/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to enable and disable network isolation for clusters authorized to a workspace.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>When network isolation is enabled for a cluster authorized to a workspace, pods belonging to the workspace and running in the cluster cannot be accessed by clients outside the workspace or outside the cluster. The egress traffic of pods belonging to the workspace and running in the cluster is not restricted.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a workspace and have the &lt;strong>Workspace NetworkPolicy Management&lt;/strong> permission within the workspace. For more information, refer to &amp;#34;Workspace Members&amp;#34; and &amp;#34;Workspace Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Network&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Enable Project Network Isolation</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/01-network-policies/07-network-isolation/02-project-network-isolation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/11-network/01-network-policies/07-network-isolation/02-project-network-isolation/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to enable project network isolation, as well as add and delete isolation whitelist entries.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a project and have the &lt;strong>Namespace NetworkPolicy Management&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Network&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="sect2">
+&lt;h3 id="_enable_network_isolation">Enable Network Isolation&lt;/h3>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Namespace NetworkPolicy Management&lt;/strong> permission, and access your project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Project Settings &amp;gt; Network Isolation&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Network Isolation&lt;/strong> page, click &lt;strong>Enable&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>After enabling network isolation, pods in other projects, other node host environments, and all network segments outside the cluster will not be able to access pods in the current project. There is no restriction on egress traffic by default, meaning that if no whitelist entries are set, pods in the current project can communicate with pods in other projects, other node host environments, and all network segments outside the cluster. After adding whitelist entries, pods in the current project are only allowed to communicate with pods in specific projects, specific node host environments, and specific network segments outside the cluster.&lt;/p>
+&lt;/div></description></item></channel></rss>

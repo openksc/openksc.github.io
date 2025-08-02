@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>工具集成 on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/04-how-to-integrate/</link><description>Recent content in 工具集成 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/04-how-to-integrate/index.xml" rel="self" type="application/rss+xml"/><item><title>将 SonarQube 集成到流水线</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/04-how-to-integrate/01-sonarqube/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/04-how-to-integrate/01-sonarqube/</guid><description>&lt;div class="paragraph">
+&lt;p>&lt;a href="https://www.sonarqube.org/">SonarQube&lt;/a> 是一种主流的代码质量持续检测工具，可用于代码库的静态和动态分析。SonarQube 集成到 KubeSphere 流水线后，如果在运行的流水线中检测到问题，将会在仪表板上直接显示常见代码问题，例如 Bug 和漏洞。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>本文档演示如何将 SonarQube 集成到流水线中。在&lt;a href="../../03-how-to-use/02-pipelines/02-create-a-pipeline-using-jenkinsfile/">使用 Jenkinsfile 创建流水线&lt;/a>之前，请先参考以下步骤。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>DevOps&lt;/strong> 扩展组件。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_安装_sonarqube_服务器">安装 SonarQube 服务器&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>要将 SonarQube 集成到您的流水线，必须先在集群节点上安装 SonarQube 服务器。&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>安装 Helm，以便使用该工具安装 SonarQube。例如，运行以下命令安装 Helm 3：&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>查看 Helm 版本。&lt;/p>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">helm version
+
+version.BuildInfo{Version:&amp;#34;v3.4.1&amp;#34;, GitCommit:&amp;#34;c4e74854886b2efe3321e185578e6db9be0a6e29&amp;#34;, GitTreeState:&amp;#34;clean&amp;#34;, GoVersion:&amp;#34;go1.14.11&amp;#34;}&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>有关更多信息，请参阅 &lt;a href="https://helm.sh/zh/docs/intro/install/">Helm 文档&lt;/a>。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>执行以下命令安装 SonarQube 服务器。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">helm upgrade --install sonarqube sonarqube --repo https://charts.kubesphere.io/main -n \
+kubesphere-devops-system --create-namespace --set service.type=NodePort&lt;/code>&lt;/pre>
+&lt;/div></description></item><item><title>将 Harbor 集成到流水线</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/04-how-to-integrate/02-harbor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/04-how-to-integrate/02-harbor/</guid><description>&lt;div class="paragraph">
+&lt;p>本文档演示如何将 Harbor 集成到 KubeSphere 流水线。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>DevOps&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已有一个企业空间、一个 DevOps 项目和一个用户 (例如 &lt;strong>project-regular&lt;/strong>)，并已邀请该用户至 DevOps 项目且授予 &lt;strong>operator&lt;/strong> 角色。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_安装_harbor">安装 Harbor&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>执行以下命令，使用 Helm 3 安装 Harbor。&lt;/p>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">helm repo add harbor https://helm.goharbor.io
+# 如需快速安装，您可以通过 NodePort 暴露 Harbor 并禁用 tls。
+# 请将 externalURL 设置为您的一个节点 IP，并确保 Jenkins 能够访问它。
+helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL=http://$ip:30002,expose.tls.enabled=false&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_获取_harbor_凭证">获取 Harbor 凭证&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>安装 Harbor 后，访问 &lt;strong>&amp;lt;NodeIP&amp;gt;:30002&lt;/strong> 并使用默认账户和密码 (&lt;strong>admin/Harbor12345&lt;/strong>) 登录 Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏中点击&lt;strong>项目&lt;/strong>，然后点击&lt;strong>新建项目&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框中，设置项目名称 &lt;strong>ks-devops-harbor&lt;/strong> 并点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击刚刚创建的项目，在&lt;strong>机器人账户&lt;/strong>页签下点击&lt;strong>添加机器人账户&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框中，为机器人账户设置名称 &lt;strong>robot-test&lt;/strong> 和&lt;strong>过期时间&lt;/strong>。然后在&lt;strong>权限&lt;/strong>中勾选制品（Artifact）和仓库的所有权限。点击&lt;strong>完成&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框中，点击&lt;strong>导出到文件中&lt;/strong>，保存该 Harbor 令牌。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item></channel></rss>

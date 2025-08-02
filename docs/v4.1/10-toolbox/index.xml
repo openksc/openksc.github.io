@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Toolbox on</title><link>https://openksc.github.io/docs/v4.1/10-toolbox/</link><description>Recent content in Toolbox on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/10-toolbox/index.xml" rel="self" type="application/rss+xml"/><item><title>Run Commands with kubectl</title><link>https://openksc.github.io/docs/v4.1/10-toolbox/01-use-kubectl-tool/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/10-toolbox/01-use-kubectl-tool/</guid><description>&lt;div class="paragraph">
+&lt;p>Kubectl is the Kubernetes command-line tool. You can use it to run commands on Kubernetes clusters to view and manage cluster resources, and more.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>The KubeSphere console provides a Web kubectl. By default, only users granted the platform-admin role (such as the default &lt;strong>admin&lt;/strong> account) have permission to use the Web kubectl for cluster resource operations and management.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This section demonstrates how to use the Web kubectl for cluster resource operations and management.&lt;/p>
+&lt;/div></description></item><item><title>View and Download kubeconfig Files</title><link>https://openksc.github.io/docs/v4.1/10-toolbox/02-view-a-kubeconfig-file/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/10-toolbox/02-view-a-kubeconfig-file/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to view and download the kubeconfig file.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>The kubeconfig file contains authentication information for the cluster, enabling other applications to access the cluster. KubeSphere supports automatically generating the kubeconfig file based on the current logged-in user, granting the same access permissions to other applications. For more information, please refer to the &lt;a href="https://kubernetes.io/zh/docs/concepts/configuration/organize-cluster-access-kubeconfig/">Kubernetes documentation&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should have KubeSphere username and password.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Hover over the &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/hammer.svg" alt="hammer" width="18" height="18"/>&lt;/span> icon in the bottom right corner of the page, then click &lt;strong>kubeconfig&lt;/strong> from the menu.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the pop-up dialog, view the kubeconfig configuration information.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The &lt;strong>clusters:cluster:server&lt;/strong> field displays a virtual IP address for access, which can only be accessed from within the cluster. If you need to access it from outside the cluster, modify this address to the one exposed by the kube-apiserver.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;strong>contexts:cluster:namespace&lt;/strong> field defaults to the project name &lt;strong>default&lt;/strong>. Modify this field value to the actual project name that the current user has access to.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/download-dark.svg" alt="download-dark" width="18" height="18"/>&lt;/span> to download the &lt;strong>kubeconfig.yaml&lt;/strong> file to your local machine.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

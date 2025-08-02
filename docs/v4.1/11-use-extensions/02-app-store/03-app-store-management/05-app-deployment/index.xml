@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Deployment Management on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/05-app-deployment/</link><description>Recent content in Deployment Management on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/05-app-deployment/index.xml" rel="self" type="application/rss+xml"/><item><title>View App List</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/05-app-deployment/01-view-an-app-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/05-app-deployment/01-view-an-app-list/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to view the list of deployed apps.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should have the &lt;strong>App Store Management&lt;/strong> permission on the KubeSphere platform. For more information, refer to &amp;#34;Platform Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere App Store Management&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>App Store Management&lt;/strong> permission.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/grid.svg" alt="grid" width="18" height="18"/>&lt;/span> in the upper-right corner and select &lt;strong>App Store Management&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Deployment Management&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The app list provides the following information:&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Name&lt;/p>
+&lt;/div></description></item><item><title>View App Details</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/05-app-deployment/02-view-app-instance-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/05-app-deployment/02-view-app-instance-details/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to view the details of a deployed app.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should have the &lt;strong>App Store Management&lt;/strong> permission on the KubeSphere platform. For more information, refer to &amp;#34;Platform Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere App Store Management&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>App Store Management&lt;/strong> permission.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/grid.svg" alt="grid" width="18" height="18"/>&lt;/span> in the upper-right corner and select &lt;strong>App Store Management&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Deployment Management&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Deployment Management&lt;/strong> page, click the name of an app to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the app details page, view the resource attributes of the app in the &lt;strong>Attributes&lt;/strong> area on the left.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Cluster&lt;/p>
+&lt;/div></description></item><item><title>Edit App Information</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/05-app-deployment/04-edit-an-app-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/05-app-deployment/04-edit-an-app-information/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to edit the information of a deployed app.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>You can edit the alias and description of the app. KubeSphere does not support editing the name of a deployed app.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should have the &lt;strong>App Store Management&lt;/strong> permission on the KubeSphere platform. For more information, refer to &amp;#34;Platform Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere App Store Management&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>App Store Management&lt;/strong> permission.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/grid.svg" alt="grid" width="18" height="18"/>&lt;/span> in the upper-right corner and select &lt;strong>App Store Management&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Deployment Management&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span> on the right side of the app you want to edit, then select &lt;strong>Edit Information&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Edit Information&lt;/strong> dialog, set the alias and description of the app, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>Delete App Instances</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/05-app-deployment/06-delete-an-app-instance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/05-app-deployment/06-delete-an-app-instance/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to delete a deployed app instance.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should have the &lt;strong>App Store Management&lt;/strong> permission on the KubeSphere platform. For more information, refer to &amp;#34;Platform Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere App Store Management&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>App Store Management&lt;/strong> permission.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/grid.svg" alt="grid" width="18" height="18"/>&lt;/span> in the upper-right corner and select &lt;strong>App Store Management&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Deployment Management&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span> on the right side of the app you want to delete, then select &lt;strong>Delete&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Delete App&lt;/strong> dialog, enter the name of the app, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>Deploy App from App Store</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/05-app-deployment/08-deploy-an-app-from-the-app-store/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/05-app-deployment/08-deploy-an-app-from-the-app-store/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to deploy an app from the App Store on the App Store Management page.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should have the &lt;strong>App Store Management&lt;/strong> permission on the KubeSphere platform. For more information, refer to &amp;#34;Platform Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere App Store Management&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>App Store Management&lt;/strong> permission.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/grid.svg" alt="grid" width="18" height="18"/>&lt;/span> in the upper-right corner and select &lt;strong>App Store Management&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Deployment Management&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Create&lt;/strong> on the page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Create App&lt;/strong> dialog, click &lt;strong>From App Store&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the App Store, click the app template you want to use, then click &lt;strong>Deployment&lt;/strong> in the upper-right corner.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>If the &lt;strong>Deployment Notice&lt;/strong> dialog pops up, please read the related content carefully, then click &lt;strong>Agree&lt;/strong>.&lt;/p>
+&lt;/div></description></item><item><title>Deploy App from App Templates</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/05-app-deployment/10-deploy-an-app-using-an-app-template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/05-app-deployment/10-deploy-an-app-using-an-app-template/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to deploy an app from an app template on the App Store Management page.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should have the &lt;strong>App Store Management&lt;/strong> permission on the KubeSphere platform. For more information, refer to &amp;#34;Platform Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere App Store Management&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>App Store Management&lt;/strong> permission.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/grid.svg" alt="grid" width="18" height="18"/>&lt;/span> in the upper-right corner and select &lt;strong>App Store Management&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Deployment Management&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Create&lt;/strong> on the page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Create App&lt;/strong> dialog, click &lt;strong>From App Template&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>App Template&lt;/strong> page, click the &lt;strong>Current Workspace&lt;/strong> dropdown list and select &lt;strong>Current Workspace&lt;/strong> or an app repository.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the app template you want to use, then click &lt;strong>Install&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>App templates are created by workspace members with relevant permissions, and app repositories are created by App Store administrators.
+For more information, see &lt;a href="../../../02-app-management/01-app-templates/01-create-an-app-template/">Create App Templates&lt;/a> and &lt;a href="../../../03-app-store-management/04-app-repositories/01-add-an-app-repository/">Add an App Repository&lt;/a>.&lt;/p>
+&lt;/div></description></item></channel></rss>

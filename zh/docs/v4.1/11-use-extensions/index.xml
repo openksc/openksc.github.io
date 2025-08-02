@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>扩展组件使用 on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/</link><description>Recent content in 扩展组件使用 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/index.xml" rel="self" type="application/rss+xml"/><item><title>概述</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/00-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/00-overview/</guid><description>&lt;div class="paragraph">
+&lt;p>KubeSphere 扩展组件，是构建在 KubeSphere LuBan 之上，用来扩展并增强 KubeSphere 产品能力，以进一步满足企业各类型的业务需求。KubeSphere 安装完成后，仅包含系统运行的必备基础功能，建议您安装扩展组件以充分利用 KubeSphere 的功能特性。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>了解并安装扩展组件后，请参阅本章节中的扩展组件教程了解如何访问、配置及使用各个扩展组件。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_扩展组件介绍">扩展组件介绍&lt;/h2>
+&lt;div class="sectionbody">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>可在 KubeSphere Web 控制台的扩展市场中查看各个扩展组件的更多信息。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 60%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">类别&lt;/th>
+&lt;th class="tableblock halign-left valign-top">名称&lt;/th>
+&lt;th class="tableblock halign-left valign-top">功能&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top" rowspan="10">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>WhizardTelemetry 可观测平台&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>WhizardTelemetry 平台服务&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>它是 WhizardTelemetry 可观测平台各扩展组件的公共服务。是各个可观测性扩展组件通用的 APIServer，为所有可观测性扩展组件提供公共的后端平台服务。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>WhizardTelemetry 数据流水线&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>提供可观测性数据的收集、转换和路由能力。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>OpenSearch 分布式检索与分析引擎&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>KubeSphere 内置的日志存储扩展组件，用于存储日志、审计、事件、通知历史等可观测数据。&lt;/p>
+&lt;/div></description></item></channel></rss>

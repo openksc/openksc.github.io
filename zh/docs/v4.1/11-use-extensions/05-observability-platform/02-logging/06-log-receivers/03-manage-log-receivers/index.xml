@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>管理日志接收器 on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/</link><description>Recent content in 管理日志接收器 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/index.xml" rel="self" type="application/rss+xml"/><item><title>添加日志接收器</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/01-add-a-log-receiver/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/01-add-a-log-receiver/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何添加日志接收器。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>KubeSphere 支持使用 Elasticsearch、OpenSearch 和 Kafka 作为日志接收器。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>每种类型的日志接收器只能添加一个。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>KubeSphere 默认使用 OpenSearch 并提供日志分析工具，您可以在 KubeSphere Web 控制台的工具箱中使用日志分析工具查询 OpenSearch 收集的日志。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>KubeSphere 默认未安装 Kafka，并且目前未提供针对 Kafka 的日志分析工具。KubeSphere 仅提供与 Kafka 对接的功能。如需使用 Kafka 作为日志接收器，您需要参阅 &lt;a href="https://kafka.apache.org/documentation/">Kafka 官方文档&lt;/a>安装 Kafka。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个集群并在集群中具有&lt;strong>集群设置管理&lt;/strong>权限。有关更多信息，请参阅“集群成员”和“集群角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>WhizardTelemetry 日志&lt;/strong>、&lt;strong>WhizardTelemetry 事件&lt;/strong>、&lt;strong>WhizardTelemetry 审计&lt;/strong>、或 &lt;strong>WhizardTelemetry 通知&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>集群设置管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>集群设置 &amp;gt; 日志接收器&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>日志接收器&lt;/strong>页面，点击&lt;strong>容器日志&lt;/strong>、&lt;strong>资源事件&lt;/strong>、&lt;strong>审计日志&lt;/strong>或&lt;strong>通知历史&lt;/strong>打开日志接收器列表。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右侧点击&lt;strong>添加日志接收器&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>添加日志接收器&lt;/strong>对话框，选择 &lt;strong>Elasticsearch&lt;/strong>、 &lt;strong>OpenSearch&lt;/strong> 或 &lt;strong>Kafka&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>设置日志接收器的参数，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>服务地址&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>日志接收器的服务地址和服务端口。KubeSphere 会将日志发送给该地址和端口。KubeSphere 默认使用的 OpenSearch 的服务地址和服务端口为 &lt;strong>opensearch-cluster-data.kubesphere-logging-system.svc:9200&lt;/strong>。&lt;/p>
+&lt;/div></description></item><item><title>查看日志接收器列表</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/02-view-a-log-receiver-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/02-view-a-log-receiver-list/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看日志接收器列表。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个集群并在集群中具有&lt;strong>集群设置查看&lt;/strong>权限。有关更多信息，请参阅“集群成员”和“集群角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>已添加一个日志接收器。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>集群设置查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>集群设置 &amp;gt; 日志接收器&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>日志接收器&lt;/strong>页面，点击&lt;strong>容器日志&lt;/strong>、&lt;strong>资源事件&lt;/strong>、&lt;strong>审计日志&lt;/strong>或&lt;strong>通知历史&lt;/strong>打开日志接收器列表。&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>日志接收器列表提供以下信息：&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>名称&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>日志接收器的名称。KubeSphere 支持 Elasticsearch、 OpenSearch、Kafka 日志接收器。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>地址&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>日志接收器的服务地址和服务端口。KubeSphere 会将日志发送给该地址和端口。KubeSphere 默认使用的 OpenSearch 的服务地址和服务端口为 &lt;strong>opensearch-cluster-data.kubesphere-logging-system.svc:9200&lt;/strong>。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>状态&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>日志接收器是否已启用，取值为&lt;strong>已启用&lt;/strong>或&lt;strong>已禁用&lt;/strong>。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>类型&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>日志接收器的类型，可以为&lt;strong>日志&lt;/strong>、&lt;strong>事件&lt;/strong>、&lt;strong>审计日志&lt;/strong>或&lt;strong>通知历史&lt;/strong>。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>创建时间&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>日志接收器的创建时间。&lt;/p>
+&lt;/div></description></item><item><title>查看日志接收器详情</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/03-view-log-receiver-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/03-view-log-receiver-details/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看日志接收器详情。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个集群并在集群中具有&lt;strong>集群设置查看&lt;/strong>权限。有关更多信息，请参阅“集群成员”和“集群角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>已添加一个日志接收器。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>集群设置查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>集群设置 &amp;gt; 日志接收器&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>日志接收器&lt;/strong>页面，点击&lt;strong>容器日志&lt;/strong>、&lt;strong>资源事件&lt;/strong>、&lt;strong>审计日志&lt;/strong>或&lt;strong>通知历史&lt;/strong>，然后在列表中点击一个日志接收器的名称打开其详情页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在日志接收器详情页面左侧的&lt;strong>属性&lt;/strong>区域查看日志接收器是否已启用。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在日志接收器详情页面右侧的&lt;strong>资源状态&lt;/strong>页签查看日志接收器的设置。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>服务地址&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>日志接收器的服务地址和服务端口。KubeSphere 会将日志发送给该地址和端口。KubeSphere 默认使用的 OpenSearch 的服务地址和服务端口为 &lt;strong>opensearch-cluster-data.kubesphere-logging-system.svc:9200&lt;/strong>。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>索引前缀&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>日志数据的索引前缀，用于区分不同类型的日志。仅对 Elasticsearch 和 OpenSearch 可用。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>主题&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>日志数据的主题，用于区分不同类型的日志。仅对 Kafka 可用。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>编辑日志接收器设置</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/04-edit-log-receiver-settings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/04-edit-log-receiver-settings/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何编辑日志接收器设置。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个集群并在集群中具有&lt;strong>集群设置管理&lt;/strong>权限。有关更多信息，请参阅“集群成员”和“集群角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>已添加一个日志接收器。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>集群设置管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>集群设置 &amp;gt; 日志接收器&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>日志接收器&lt;/strong>页面，点击&lt;strong>容器日志&lt;/strong>、&lt;strong>资源事件&lt;/strong>、&lt;strong>审计日志&lt;/strong>或&lt;strong>通知历史&lt;/strong>，然后在列表中点击一个日志接收器的名称打开其详情页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在日志接收器详情页面左上角点击&lt;strong>编辑&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框修改日志接收器的设置，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>服务地址&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>日志接收器的服务地址和服务端口。KubeSphere 会将日志发送给该地址和端口。KubeSphere 默认使用的 OpenSearch 的服务地址和服务端口为 &lt;strong>opensearch-cluster-data.kubesphere-logging-system.svc:9200&lt;/strong>。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>索引前缀&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>日志数据的索引前缀，用于区分不同类型的日志。仅对 Elasticsearch 和 OpenSearch 可用。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>主题&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>日志数据的主题，用于区分不同类型的日志。仅对 Kafka 可用。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table class="tableblock frame-all grid-all stretch admon attention">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">注意&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>修改完成后，需确保 &lt;strong>WhizardTelemetry 平台服务&lt;/strong>的扩展组件配置中，各组件配置下的 &lt;code>endpoints&lt;/code> 与修改的服务地址一致，以便 KubeSphere 平台能够正确查询日志数据。有关更多信息，请参阅扩展中心“WhizardTelemetry 平台服务”扩展组件的详情页说明。&lt;/p>
+&lt;/div></description></item><item><title>启用和禁用日志接收器</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/05-enable-and-disable-log-receiver/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/05-enable-and-disable-log-receiver/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何启用和禁用日志接收器。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个集群并在集群中具有&lt;strong>集群设置管理&lt;/strong>权限。有关更多信息，请参阅“集群成员”和“集群角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>已添加一个日志接收器。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>集群设置管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>集群设置 &amp;gt; 日志接收器&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>日志接收器&lt;/strong>页面，点击&lt;strong>容器日志&lt;/strong>、&lt;strong>资源事件&lt;/strong>、&lt;strong>审计日志&lt;/strong>或&lt;strong>通知历史&lt;/strong>，然后在列表中点击一个日志接收器的名称打开其详情页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在日志接收器详情页面左上角点击&lt;strong>更多操作 &amp;gt; 更改状态&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框中选择&lt;strong>启用&lt;/strong>或&lt;strong>禁用&lt;/strong>，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>删除日志接收器</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/06-delete-a-log-receiver/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/06-delete-a-log-receiver/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何删除日志接收器。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个集群并在集群中具有&lt;strong>集群设置管理&lt;/strong>权限。有关更多信息，请参阅“集群成员”和“集群角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>已添加一个日志接收器。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>集群设置管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>集群设置 &amp;gt; 日志接收器&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>日志接收器&lt;/strong>页面，点击&lt;strong>容器日志&lt;/strong>、&lt;strong>资源事件&lt;/strong>、&lt;strong>审计日志&lt;/strong>或&lt;strong>通知历史&lt;/strong>，然后在列表中点击一个日志接收器的名称打开其详情页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在日志接收器详情页面左上角点击&lt;strong>更多操作 &amp;gt; 删除&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框中输入日志接收器的名称，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

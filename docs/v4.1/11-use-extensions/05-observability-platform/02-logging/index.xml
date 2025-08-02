@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>WhizardTelemetry Logging on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/</link><description>Recent content in WhizardTelemetry Logging on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/index.xml" rel="self" type="application/rss+xml"/><item><title>Configure Log Management</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/01-config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/01-config/</guid><description>&lt;div class="paragraph">
+&lt;p>WhizardTelemetry Logging supports configuring extensions to collect specified logs and create log indices by project.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>For more configuration information, see the details page of the &amp;#34;WhizardTelemetry Logging&amp;#34; extension in the Extensions Center.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_collect_specified_logs">Collect Specified Logs&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>WhizardTelemetry Logging supports setting filter conditions to collect logs that include or exclude specified namespaces, which can reduce the number of logs.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Edit the following parameters in the configuration of the WhizardTelemetry Logging extension:&lt;/p>
+&lt;/div></description></item><item><title>Use the Container Log Query Tool</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/03-use-log-query-tools/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/03-use-log-query-tools/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to query container logs.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Container logs: Logs obtained from the container’s standard output. The content of container logs is determined by the application running in the container.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>You should have resource viewing permissions for the platform, cluster, workspace, or project to view logs within a specific scope.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>WhizardTelemetry Logging&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the resource viewing permissions.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Hover the cursor over &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/hammer.svg" alt="hammer" width="18" height="18"/>&lt;/span> at the bottom right of the page, then select &lt;strong>Container Log Search&lt;/strong> from the menu.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the pop-up dialog, set the search conditions to query logs.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>If there are multiple clusters, click the &lt;strong>Cluster&lt;/strong> dropdown list to query logs in a specific cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the search box, set the search conditions, then press &lt;strong>Enter&lt;/strong> to view logs that meet specific conditions. You can set multiple search conditions at the same time.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the query results page, you can view the time distribution chart of the logs. Click the histogram to switch to the log list for that time period. Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/start-dark.svg" alt="start-dark" width="18" height="18"/>&lt;/span>/&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/stop-dark-white.svg" alt="stop-dark-white" width="18" height="18"/>&lt;/span> to start/stop real-time data refresh, click the &lt;strong>Log Export&lt;/strong> dropdown list to select ascending or descending order to export container logs, click the &lt;strong>Refresh Rate&lt;/strong> time to select the data refresh frequency.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/cogwheel.svg" alt="cogwheel" width="18" height="18"/>&lt;/span> in the upper right corner of the query results list to customize the information displayed in the list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click on a log entry in the query results to view the detailed information of the log.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

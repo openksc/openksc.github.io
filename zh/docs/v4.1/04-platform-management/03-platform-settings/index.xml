@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>平台设置 on</title><link>https://openksc.github.io/zh/docs/v4.1/04-platform-management/03-platform-settings/</link><description>Recent content in 平台设置 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/04-platform-management/03-platform-settings/index.xml" rel="self" type="application/rss+xml"/><item><title>查看平台信息</title><link>https://openksc.github.io/zh/docs/v4.1/04-platform-management/03-platform-settings/01-view-and-customize-platform-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/04-platform-management/03-platform-settings/01-view-and-customize-platform-information/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看 KubeSphere Web 控制台的信息。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右上角点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/cogwheel.svg" alt="cogwheel" width="18" height="18"/>&lt;/span>进入&lt;strong>平台设置&lt;/strong>页面。&lt;/p>
+&lt;div class="paragraph">
+&lt;p>&lt;strong>平台信息&lt;/strong>页面显示平台的访问地址、标识、标题和描述。&lt;/p>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>作为 OIDC 身份提供者</title><link>https://openksc.github.io/zh/docs/v4.1/04-platform-management/03-platform-settings/04-ks-as-oidc-identity-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/04-platform-management/03-platform-settings/04-ks-as-oidc-identity-provider/</guid><description>&lt;div class="paragraph">
+&lt;p>OpenID Connect 是一种基于 OAuth 2.0 规范框架（IETF RFC 6749 和 6750）的可互操作的身份验证协议。KubeSphere v4.1.3 实现了 &lt;a href="https://openid.net/developers/how-connect-works/">OpenID Connect&lt;/a> 协议中的授权码认证流程 &lt;a href="https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth">Authorization Code Flow&lt;/a>，用于扩展组件向上对接 KubeSphere 的账户系统。本教程使用 &lt;a href="https://goharbor.io/">Harbor&lt;/a> 作为 OIDC 客户端，配置完成后将使用 KubeSphere 账户登录 Harbor。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_基于_oidc_实现_sso_的基本流程">基于 OIDC 实现 SSO 的基本流程&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/v4.1.3/oidc-flow.png" alt="oidc flow" width="70%"/>&lt;/span>&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>终端用户通过浏览器访问网站或网络应用。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>终端用户点击登录并输入用户名和密码。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>依赖方（客户端）向 OpenID 提供商（OP）发送请求。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>OpenID 提供商验证用户身份并获取授权。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>OpenID 提供商返回身份令牌（Identity Token），通常会同时返回访问令牌（Access Token）。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>依赖方可使用该访问令牌向用户设备发送请求。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>用户信息端点（UserInfo Endpoint）将返回终端用户的相关身份声明信息（Claims）。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_部署_kubesphere_4_1_3">部署 KubeSphere 4.1.3&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">helm upgrade --install -n kubesphere-system --create-namespace ks-core https://charts.kubesphere.io/main/ks-core-1.1.4.tgz --debug --wait \
+ --set portal.hostname=172.31.17.16.nip.io \
+ --set portal.https.port=30491 \
+ --set ingress.enabled=true \
+ --set ingress.tls.enabled=true \
+ --set ingress.ingressClassName=kubesphere-router-cluster&lt;/code>&lt;/pre>
+&lt;/div></description></item></channel></rss>

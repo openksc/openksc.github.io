@@ -1,0 +1,2307 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>动态 on</title><link>https://openksc.github.io/zh/news/</link><description>Recent content in 动态 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/news/index.xml" rel="self" type="application/rss+xml"/><item><title>2021 年新晋 KubeSphere Contributor 们，快来领证吧！</title><link>https://openksc.github.io/zh/news/kubesphere-contributor-certificates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-contributor-certificates/</guid><description>&lt;p>2021 年，KubeSphere 社区又收获了逾百位的贡献者，包括代码、中英文文档、技术布道、本地化与国际化等贡献都是我们认可的贡献方式，在此我们对 KubeSphere 社区所有的贡献者与合作伙伴表示衷心的感谢！&lt;/p>
+&lt;p>KubeSphere 开源贡献的方式，包括在 GitHub 提交 Pull Request 参与应用的开发及 bug 的修复（即我们常说的贡献代码），或者在 KubeSphere 中文论坛发布过优质的技术博客。社区设置了 KubeSphere Contributor 奖项作为激励多次为 KubeSphere 贡献代码的成员。&lt;/p>
+&lt;p>从上一次&lt;a href="https://kubesphere.io/zh/news/kubesphere-certificates/" target="_blank" rel="noopener noreferrer">颁发&lt;/a>（2021 年 2 月 11 日）到现在，共诞生了 76 位 KubeSphere Contributor，他们都曾为 KubeSphere 贡献过代码。&lt;/p>
+&lt;p>另外，在 10 月份，作为 Hacktoberfest 活动的项目之一，KubeSphere 也开启了为期一个月的 Hacktoberfest 活动月。只要在 10 月 1 日至 31 日期间（在任何时区）提交的 PR 数量达到 4 个，就可以获得官方限定的 2021 年 Hacktoberfest T恤、KubeSphere 周边礼品和证书。活动开启后，有些社区小伙伴积极参与并达到了要求，他们的证书在本次一并发放。&lt;/p>
+&lt;h2 id="领取证书">领取证书&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>GitHub ID 或姓名&lt;/th>
+ &lt;th>证书&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>123liubao&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-123liubao.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>24sama&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-24sama.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>94rain&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-94rain.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>AbdelouahabMbarki&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-AbdelouahabMbarki.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>alabulei1&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-alabulei1.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>alimy&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-alimy.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>andyli029&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-andyli029.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Bettygogo2021&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-Bettygogo2021.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>caojiele&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-caojiele.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>cndoit18&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-cndoit18.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>cnscottluo&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-cnscottluo.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>cwen0&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-cwen0.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>cycwll&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-cycwll.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>daixijun&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-daixijun.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Dishone&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-Dishone.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>dkeven&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-dkeven.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>dkkb&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-dkkb.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>duguhaotian&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-duguhaotian.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Yang Zhou&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-zhouyang.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>FingerLiu&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-FingerLiu.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>flamywhale&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-flamywhale.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>fossabot&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-fossabot.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Chunlan Fu&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-fuchunlan.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>haminhcong&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-haminhcong.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>happywzy&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-happywzy.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>iawia002&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-iawia002.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>iparanoid&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-iparanoid.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Liang Zhang&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-JohnNiang.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>jonahzheng&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-jonahzheng.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>jrkeen&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-jrkeen.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>karuppiah7890&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-karuppiah7890.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>KONY128&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-KONY128.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>l1ch40&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-l1ch40.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>live77&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-live77.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Lruler&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-Lruler.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>lshgdut&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-lshgdut.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Shaohui Liu&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-liushaohui.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Xingmin Lu&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-luxingmin.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Wei Xu&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-xuwei.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>mayocream&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-mayocream.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>mazak-ui&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-mazak-ui.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>molliezhang&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-molliezhang.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Mrxyy&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-Mrxyy.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>muzi502&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-muzi502.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>nanjofan&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-nanjofan.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>nathan-415&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-nathan-415.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>PulkitSinghDev&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-PulkitSinghDev.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>RealHarshThakur&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-RealHarshThakur.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>rockpanda&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-rockpanda.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>rodmiromind&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-rodmiromind.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ruibaby&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-ruibaby.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>sagilio&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-sagilio.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>sbhnet&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-sbhnet.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>seanly&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-seanly.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>serenashe&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-serenashe.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>shihaoH&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-shihaoH.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Sigboom&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-Sigboom.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>styshoo&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-styshoo.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>tagGeeY&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-tagGeeY.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>TCeason&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-TCeason.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>txfs19260817&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-txfs19260817.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>VeraXIE1997&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-VeraXIE1997.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>vincenthe-ks&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-vincenthe-ks.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>vinsonzou&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-vinsonzou.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>waynerv&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-waynerv.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Changjiang Li&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-lichangjiang.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Kanwen Deng&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-dengkanwen.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Zhisong Weng&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-wengzhisong.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>x893675&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-x893675.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Yangmao Zhang&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-zhangyangmao.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>yJunS&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-yJunS.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Yongjun Du&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-duyongjun.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>yuezhuangshi&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-yuezhuangshi.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>yuyicai&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-yuyicai.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>zhanglin-doudou&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-zhanglin-doudou.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Han Zhu&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-zhuhan.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;blockquote>
+&lt;p>因贡献者都是从 GitHub 仓库导出，因此大部分证书是以 GitHub ID 进行制作的，如果您希望以自己的真实姓名制作证书，请联系小 kk（微信搜索 kubesphere），进行二次制作。&lt;/p></description></item><item><title>Fluent Operator v2.0 发布</title><link>https://openksc.github.io/zh/news/fluent-operator-v2.0-announcement/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/fluent-operator-v2.0-announcement/</guid><description>&lt;p>2019 年 1 月 21 日，KubeSphere 社区为了满足以云原生的方式管理 Fluent Bit 的需求开发了 FluentBit Operator。此后产品不断迭代，在 2021 年 8 月 4 日 正式将 FluentBit Operator 捐献给 Fluent 社区，之后重新命名为 Fluent Operator。自此 Fluent Operator 社区吸引了来自世界各地的贡献者参与项目的开发和迭代。&lt;/p>
+&lt;p>日前，Fluent Operator v2.0（2.0.0 &amp;amp; 2.0.1）发布，该版本新增许多重要功能，并进行了众多优化，以下将重点介绍：&lt;/p>
+&lt;h2 id="fluent-bit-新的部署方式-fluent-bit-collector">Fluent Bit 新的部署方式: Fluent Bit Collector&lt;/h2>
+&lt;p>Fluent Operator 降低了 Fluent Bit 以及 Fluentd 的使用门槛，能高效、快捷的处理可观测性相关的各种数据。使用 Fluent Operator 可以灵活且方便地部署、配置及管理 Fluent Bit 以及 Fluentd。同时, 社区还提供支持 Fluentd 以及 Fluent Bit 的海量插件，用户可以根据实际情况进行定制化配置。&lt;/p>
+&lt;p>Fluent Bit 对于处理的数据一直是中立的，在 v2.0 之前 Fluent Bit 主要被用于处理日志数据。 Fluent Bit v2.0 的发布是 Fluent Bit 全面支持可观测性所有类型数据（Logs, Metrics, Tracing）的一个标志和起点。自 Fluent Bit v2.0 开始，除了继续支持处理日志数据之外，也开始支持 Metrics 和 Tracing 数据的收集和发送，即全面支持 Prometheus 和 OpenTelemetry 生态体系。&lt;/p></description></item><item><title>Fluent Operator v2.5.0 发布</title><link>https://openksc.github.io/zh/news/fluent-operator-v2.5.0-announcement/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/fluent-operator-v2.5.0-announcement/</guid><description>&lt;p>日前，Fluent Operator 发布了 v2.5.0。&lt;/p>
+&lt;p>Fluent Operator v2.5.0 新增 11 个 features， 其中 Fluent Bit 新增支持 7 个插件， Fluentd 新增支持 1 个插件。此外，对 Fluent Operator 也进行了增强，调整了默认参数，以便适应更多场景，并对 helm chart 进行了优化，用户可以更方便的进行安装，并修复了部分 bug。&lt;/p>
+&lt;p>以下将重点介绍：&lt;/p>
+&lt;h2 id="fluent-bit-增加多个插件">Fluent Bit 增加多个插件&lt;/h2>
+&lt;h3 id="1-prometheus-exporter-插件">1. Prometheus Exporter 插件&lt;/h3>
+&lt;p>Fluent Bit 新增了输出插件 Prometheus Exporter，Prometheus Exporter 输出插件允许您从 Fluent Bit 中获取 metrics 并暴露它们，以便 prometheus 实例可以抓取它们。&lt;/p>
+&lt;p>相关 PR： &lt;a href="https://github.com/fluent/fluent-operator/pull/840" target="_blank" rel="noopener noreferrer">https://github.com/fluent/fluent-operator/pull/840&lt;/a>。&lt;/p>
+&lt;h3 id="2-forward-插件">2. Forward 插件&lt;/h3>
+&lt;p>Fluent Bit 新增了输入插件 Forward，Forward 是 Fluent Bit 和 Fluentd 用于在对等设备之间路由消息的协议。使用该插件可以监听 Forward 消息的输入。&lt;/p>
+&lt;p>相关 PR： &lt;a href="https://github.com/fluent/fluent-operator/pull/843" target="_blank" rel="noopener noreferrer">https://github.com/fluent/fluent-operator/pull/843&lt;/a>。&lt;/p></description></item><item><title>KubeKey 2.0.0 发布：让离线部署 Kubernetes 更加便捷</title><link>https://openksc.github.io/zh/news/kubekey-v2.0.0-release/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubekey-v2.0.0-release/</guid><description>&lt;p>2022 年 3 月 8 日，KubeKey 2.0.0 正式发布，这是 KubeKey 的第 7 个正式版本，也是非常重要的一个版本。该版本新增了清单（manifest）和制品（artifact）的概念，为用户离线部署 Kubernetes 集群提供了解决方案。&lt;/p>
+&lt;h2 id="kubekey-简介">KubeKey 简介&lt;/h2>
+&lt;p>KubeKey 是 KubeSphere 社区开源的一款高效集群部署工具，运行时默认使用 Docker , 也可对接 &lt;code>Containerd&lt;/code> &lt;code>CRI-O&lt;/code> &lt;code>iSula&lt;/code> 等 CRI 运行时，且 ETCD 集群独立运行，支持与 K8s 分离部署，提高环境部署灵活性。它提供了一种灵活、快速、便捷的方式来仅安装 Kubernetes/K3s，或同时安装 Kubernetes/K3s 和 KubeSphere，以及其他云原生插件。除此之外，它也是扩展和升级集群的有效工具。&lt;/p>
+&lt;p>传统的离线部署方式需要提前准备好部署工具，镜像 tar 包或者本地镜像仓库，以及其他相关的二进制文件，而每一位用户的需要部署的 Kubernetes 版本和需要部署的镜像都是不同的。而 KubeKey 只需要通过配置清单（即 manifest 文件）来定义将要离线部署的集群环境的内容，再通过该 manifest 来导出制品（artifact）即可完成准备工作。后续只需通过 KubeKey 和 artifact 就可以简单快速地在离线环境中部署 Kubernetes 集群和镜像仓库。&lt;/p>
+&lt;h2 id="解读-kubekey-200-重大更新">解读 KubeKey 2.0.0 重大更新&lt;/h2>
+&lt;h3 id="全新的任务编排框架">全新的任务编排框架&lt;/h3>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/kubesphere/kubekey/master/docs/img/KubeKey-Architecture.png" alt="kubekey">&lt;/p>
+&lt;p>基于模块化的设计思路，KubeKey v2.0.0 实现了通用且规范化的任务编排框架。其中定义了&lt;code>host&lt;/code>, &lt;code>pipeline&lt;/code>, &lt;code>module&lt;/code>, &lt;code>task&lt;/code>和&lt;code>action&lt;/code>等对象，实现了模块化的任务调度引擎。基于该框架，用户可根据具体需求及业务逻辑，便捷的开发自定义任务流水线执行程序以及扩展 KubeKey 原有的任务流水线。&lt;/p>
+&lt;p>相关文档可参考：&lt;a href="https://github.com/kubesphere/kubekey/blob/master/docs/developer-guide.md" target="_blank" rel="noopener noreferrer">开发者指南&lt;/a>。&lt;/p></description></item><item><title>KubeKey 2.1.0 发布，增强 K8s 离线交付体验</title><link>https://openksc.github.io/zh/news/kubekey-v2.1.0-release/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubekey-v2.1.0-release/</guid><description>&lt;p>2022 年 5 月 6 日，KubeKey 2.1.0 正式发布，这是 KubeKey 的第 8 个正式版本。该版本增强了离线部署能力和交付体验，同时支持“一云多芯”，即同一个 K8s 集群中可以同时包含 ARM64 节点和 AMD64 节点。&lt;/p>
+&lt;blockquote>
+&lt;p>Kubekey 2.0.0 于两个月前发布，关于该版本的变化，你可以点击此处了解：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://kubesphere.io/zh/blogs/kubekey-v2.0.0-release/" target="_blank" rel="noopener noreferrer">KubeKey 2.0.0 发布：让离线部署 K8s 更加便捷&lt;/a>&lt;/li>
+&lt;/ul>&lt;/blockquote>
+&lt;h2 id="kubekey-简介">KubeKey 简介&lt;/h2>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/202205121620270.png" alt="">&lt;/p>
+&lt;p>KubeKey 是 KubeSphere 社区开源的一款高效集群部署工具，运行时默认使用 Docker , 也可对接 Containerd、CRI-O、iSula 等 CRI 运行时，且 ETCD 集群独立运行，支持与 K8s 分离部署，提高环境部署灵活性。它提供了一种灵活、快速、便捷的方式来仅安装 Kubernetes/K3s，或同时安装 Kubernetes/K3s 和 KubeSphere，以及其他云原生插件。除此之外，它也是扩展和升级集群的有效工具。&lt;/p>
+&lt;h2 id="主要更新变化">主要更新变化&lt;/h2>
+&lt;h3 id="breaking-changes">Breaking Changes&lt;/h3>
+&lt;p>KubeKey v2.1.0 不兼容 KubeKey v2.0.0 制作的制品，请使用 KubeKey v2.1.0 重新导出 KubeKey 制品。
+这是因为 KubeKey v2.1.0 优化了制品的存储结构。目前制品采用 OCI 标准对镜像进行拉取和归档保存，实现了复用基础镜像层，其存储空间占用可降低近一半。&lt;/p></description></item><item><title>KubeKey v3.1 发布：快速自定义离线安装包</title><link>https://openksc.github.io/zh/news/kubekey-v3.1-release/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubekey-v3.1-release/</guid><description>&lt;p>日前，KubeKey v3.1 正式发布。该版本主要对离线场景部署、离线包制作以及向 Kubernetes v1.24+ 升级进行了优化。&lt;/p>
+&lt;h2 id="kubekey-简介">KubeKey 简介&lt;/h2>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/202205121620270.png" alt="">&lt;/p>
+&lt;p>KubeKey 是 KubeSphere 社区开源的一款高效集群部署工具，运行时默认使用 Docker，也可对接 Containerd、CRI-O、iSula 等 CRI 运行时，且 ETCD 集群独立运行，支持与 K8s 分离部署，提高环境部署灵活性。它提供了一种灵活、快速、便捷的方式来仅安装 Kubernetes/K3s，或同时安装 Kubernetes/K3s 和 KubeSphere，以及其他云原生插件。除此之外，它也是扩展和升级集群的有效工具。&lt;/p>
+&lt;h2 id="主要更新变化">主要更新变化&lt;/h2>
+&lt;h4 id="支持-docker-作为-runtime-部署-kubernetes-v124-集群">支持 Docker 作为 runtime 部署 Kubernetes v1.24+ 集群&lt;/h4>
+&lt;p>相关 PR: &lt;strong>&lt;a href="https://github.com/kubesphere/kubekey/pull/2111" target="_blank" rel="noopener noreferrer">https://github.com/kubesphere/kubekey/pull/2111&lt;/a>&lt;/strong>&lt;/p>
+&lt;p>贡献者：chilianyi&lt;/p>
+&lt;h4 id="支持-docker-作为-runtime-的集群升级至-v124-版本">支持 Docker 作为 runtime 的集群升级至 v1.24+ 版本&lt;/h4>
+&lt;p>相关 PR: &lt;strong>&lt;a href="https://github.com/kubesphere/kubekey/pull/2148" target="_blank" rel="noopener noreferrer">https://github.com/kubesphere/kubekey/pull/2148&lt;/a>&lt;/strong>&lt;/p>
+&lt;p>贡献者：pixiake&lt;/p>
+&lt;h4 id="支持部署开启-ipv6-协议的集群">支持部署开启 IPV6 协议的集群&lt;/h4>
+&lt;p>相关 PR: &lt;strong>&lt;a href="https://github.com/kubesphere/kubekey/pull/2142" target="_blank" rel="noopener noreferrer">https://github.com/kubesphere/kubekey/pull/2142&lt;/a>&lt;/strong>&lt;/p>
+&lt;p>贡献者：wenwenxiong&lt;/p>
+&lt;h4 id="支持向多级路径镜像仓库中推送镜像">支持向多级路径镜像仓库中推送镜像&lt;/h4>
+&lt;p>相关 PR: &lt;strong>&lt;a href="https://github.com/kubesphere/kubekey/pull/2159" target="_blank" rel="noopener noreferrer">https://github.com/kubesphere/kubekey/pull/2159&lt;/a>&lt;/strong>&lt;/p>
+&lt;p>贡献者：liangzai006&lt;/p>
+&lt;h4 id="支持按需制作-artifact">支持按需制作 artifact&lt;/h4>
+&lt;p>相关 PR: &lt;strong>&lt;a href="https://github.com/kubesphere/kubekey/pull/2161" target="_blank" rel="noopener noreferrer">https://github.com/kubesphere/kubekey/pull/2161&lt;/a>&lt;/strong>&lt;/p></description></item><item><title>KubeSphere 2.1.0 发布！多项功能与用户体验优化！</title><link>https://openksc.github.io/zh/news/release-210/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/release-210/</guid><description>&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-docs/png/20191112093503.png" alt="">&lt;/p>
+&lt;h2 id="210-正式发布">2.1.0 正式发布&lt;/h2>
+&lt;p>2019 年 11 月 11 日，KubeSphere 开源社区激动地向大家宣布，KubeSphere 2.1.0 正式发布！2.1.0 版本不仅在安装上提供了&lt;code>最快速方便的安装方式，解耦了核心的功能组件并提供了可插拔的安装方式&lt;/code>，还提供了非常多的让开源社区用户期待已久的新功能，&lt;strong>并修复了已知的 Bug&lt;/strong>。&lt;/p>
+&lt;p>同时，社区对 KubeSphere 组件的高可用进行了深度优化与测试，因此，该版本也是被定义为 &lt;code>Prodcution-ready&lt;/code> 的，&lt;code>支持用户在生产环境部署和使用&lt;/code>。我们在此对社区用户提交的 issue、PR、Bug 反馈、需求建议、文档改进等一系列贡献表示由衷的感谢，并对 2.1.0 版本做出巨大贡献的开发者们深表谢意。&lt;/p>
+&lt;p>在新版本中，KubeSphere 对 &lt;code>安装部署、DevOps、应用商店、存储、可观测性、认证与权限&lt;/code> 等模块提供了诸多新功能和深度优化，&lt;strong>更好地帮助企业用户在测试生产环境快速落地云原生技术和运维 Kubernetes，使开发者能够更专注在业务本身，赋能运维和测试人员高效地管理集群资源，实现业务快速发布与持续迭代的需求&lt;/strong>。同时，功能组件的可插拔安装能够满足不同用户的个性化需求，下面先通过一张图来快速介绍 2.1.0 版本各功能模块的新功能与优化项。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-docs/png/20191112191613.png" alt="">&lt;/p>
+&lt;h2 id="应用商店">应用商店&lt;/h2>
+&lt;p>KubeSphere 是一个 &lt;strong>以应用为中心&lt;/strong> 的容器平台，基于自研的开源项目 &lt;a href="https://github.com/openpitrix/openpitrix" target="_blank" rel="noopener noreferrer">OpenPitrix&lt;/a> 构建了应用商店、内置应用仓库与应用生命周期管理，KubeSphere 应用商店 &lt;strong>对内可作为团队间共享企业内部的中间件、大数据、业务应用等&lt;/strong>，以应用模板的形式方便用户快速地一键上传和部署应用到 Kubernetes 中；&lt;strong>对外可作为根据行业特性构建行业交付标准、交付流程和交付路径的基础，作为行业通用的应用商店&lt;/strong>，可根据不同需求应对不同的业务场景。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-docs/png/20191025011318.png" alt="">&lt;/p>
+&lt;p>在 2.1.0 版本中，KubeSphere 从业务视角实现了应用的生命周期管理，支持 Helm 应用的 &lt;strong>上传提交、应用审核、测试部署、应用上架、应用分类、应用升级、应用下架&lt;/strong>，帮助开发者或 ISV 将应用共享和交付给普通用户。同时，应用商店内置了多个常用的 Helm 应用方便开发测试。未来将提供基于应⽤的监控指标、应⽤⽇志关键字段告警能⼒，以及计量计费等运营功能。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-docs/png/20191111154118.png" alt="">&lt;/p>
+&lt;h2 id="devops">DevOps&lt;/h2>
+&lt;p>DevOps 是云原生时代在开发测试与持续交付场景下最核心的一环，KubeSphere 2.1.0 对 DevOps 系统进行了深度优化，流水线、S2I、B2I 提供了代码依赖缓存支持，&lt;strong>使构建速度大幅提升&lt;/strong>。在 CI/CD 流水线集成了更多 Jenkins 插件和版本，优化了流水线 Agent 节点选择，新增了对 PV、PVC、Network Policy 的支持，&lt;strong>并将这一系列优化成果贡献给了 Jenkins 社区&lt;/strong>。&lt;/p></description></item><item><title>KubeSphere 3.0.0 GA：面向应用的容器混合云</title><link>https://openksc.github.io/zh/news/kubesphere-3.0.0-ga-announcement/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-3.0.0-ga-announcement/</guid><description>&lt;p>2020 年 8 月 31 日，KubeSphere 开源社区官方宣布 KubeSphere 3.0.0 GA 版本正式发布！ KubeSphere 3.0.0 主打 “面向应用的容器混合云”，专为&lt;strong>多云、多集群、多团队、多租户&lt;/strong>而设计，大幅增强了&lt;strong>集群管理、可观测性、存储管理、网络管理、多租户安全、应用商店、安装部署&lt;/strong>等特性，并且进一步提升了交互设计与用户体验，KubeSphere 3.0.0 是 KubeSphere 至今为止最重要的版本更新。作为多云与多集群的统一控制平面，KubeSphere 3.0.0 带来的新功能将帮助企业加速落地&lt;strong>多云与混合云策略&lt;/strong>，降低企业对任何基础设施之上的 Kubernetes 集群运维管理的门槛，实现现代化应用在容器场景下的快速交付，为企业在生产环境构建云原生技术栈提供了 &lt;strong>完整的平台级解决方案&lt;/strong>。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/10123241J_0.png" alt="">&lt;/p>
+&lt;p>IDC 预测，到 2022 年有 70% 的企业会采用 Kubernetes 作为多云与混合云管理工具，到 2023 年将会有一半以上的企业级应用部署在容器化的混合云与多云环境，同时还会有超过 5 亿的数字化应用与服务将会以云原生的方式来开发与构建。&lt;/p>
+&lt;p>面对这一发展趋势，KubeSphere 研发总监周小四表示，KubeSphere 3.0.0 已经提前为 &lt;strong>以混合云与云原生架构&lt;/strong> 为变革核心的技术演进提供了最易用的工具型解决方案，在未来还将提供以边缘计算、大数据与和 AI 为应用场景的容器平台。KubeSphere 设计理念始终以应用为中心，专注于用户目标，以极简的交互体验和最低的学习成本，把 Kubernetes 变成了看不见的水和电。&lt;/p>
+&lt;p>值得一提的是，与以往相比，3.0.0 版本得到了来自&lt;strong>开源社区用户和青云QingCloud 之外的企业&lt;/strong> 多方支持和参与，无论是功能开发、功能测试、缺陷报告、需求建议、企业最佳实践，还是提供 Bug 修复、多云环境部署测试、国际化翻译、文档贡献，这些来自开源社区的贡献都为 3.0.0 的发布和推广提供了极大的帮助，我们将在文末予以特别致谢！&lt;/p>
+&lt;h2 id="解读-300-重大更新">解读 3.0.0 重大更新&lt;/h2>
+&lt;p>KubeSphere 3.0.0 在多集群管理中支持跨云的联邦部署和多集群的统一管理，帮助企业将应用一键分发到不同的公有云和私有化的基础设施之上。同时，3.0.0 打造了业界可观测性最丰富的容器平台，提供从集群层级到应用层级的监控、日志、告警通知、审计、事件，支持多维度与多租户查询，还支持了第三方应用的自定义监控，让开发者和集群管理员能够清晰掌握应用与集群的运行状况。存储与网络管理能力在 3.0.0 也上了一个台阶，例如在不同租户间支持网络隔离、网络防火墙策略、K8s 网络策略（Network Policy）管理等；而存储卷支持了快照、容量管理、监控等实用的功能。&lt;/p>
+&lt;h2 id="多云与多集群管理">多云与多集群管理&lt;/h2>
+&lt;p>多云与多集群管理是 KubeSphere 用户呼声最高的功能，企业在 &lt;strong>开发与生产环境分离、业务跨云部署与多云灾备、业务异地多活、业务与数据分离、业务流量潮汐效应&lt;/strong> 等应用场景中，传统的多云混合云方案已经无法满足用户的业务需求，企业通常选择以 Kubernetes 为核心的容器技术来布局多云混合云架构，多数企业对于运维管理多种基础设施之上的 Kubernetes 集群是刚需。而 3.0.0 带来的多云与多集群管理提供了面向多个 Kubernetes 集群的中央控制面板，让用户只需要在一个统一的控制台全面纳管公有云托管与自建的 Kubernetes 集群，实现应用跨云和跨集群的部署与运维。&lt;/p></description></item><item><title>KubeSphere 3.1.0 GA：混合多云走向边缘，让应用无处不在</title><link>https://openksc.github.io/zh/news/kubesphere-3.1.0-ga-announcement/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-3.1.0-ga-announcement/</guid><description>&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/3.1.0GA.png" alt="">&lt;/p>
+&lt;p>2021 年 4 月 29 日，KubeSphere 开源社区激动地向大家宣布，KubeSphere 3.1.0 正式发布！为了帮助企业最大化资源利用效率，KubeSphere 打造了一个以 Kubernetes 为内核的云原生分布式操作系统，提供可插拔的开放式架构，无缝对接第三方应用，极大地降低了企业用户的使用门槛。&lt;/p>
+&lt;p>KubeSphere v3.1.0 主打 &lt;strong>“延伸至边缘侧的容器混合云”&lt;/strong>，新增了对 &lt;strong>“边缘计算”&lt;/strong> 场景的支持。同时在 v3.0.0 的基础上新增了 &lt;strong>计量计费&lt;/strong>，让基础设施的运营成本更清晰，并进一步优化了在 &lt;strong>“多云、多集群、多团队、多租户”&lt;/strong> 等应用场景下的使用体验，增强了 &lt;strong>“多集群管理、多租户管理、可观测性、DevOps、应用商店、微服务治理”&lt;/strong> 等特性，更进一步完善交互设计提升了用户体验。&lt;/p>
+&lt;p>云原生产业联盟撰写的《云原生发展白皮书》提到，万物互联时代加速了云-边协同的需求演进，传统云计算中心集中存储、计算的模式已经无法满足终端设备对于时效、容量、算力的需求，向边缘下沉并通过中心进行统一交付、运维、管控，已经成为云计算的重要发展趋势。&lt;/p>
+&lt;p>面对这一发展趋势，KubeSphere 与 KubeEdge 社区紧密合作，将 Kubernetes 从云端扩展至边缘，以统一的标准实现了对边缘基础设施的纳管。通过与 KubeEdge 集成，解决了边缘节点纳管、边缘工作负载调度和边缘可观测性等难题，结合 KubeSphere 已有的多集群管理将混合多云管理延伸至边缘侧。&lt;/p>
+&lt;p>并且，v3.1.0 得到了来自青云 QingCloud 之外的更多企业与用户的贡献和参与，无论是功能开发、功能测试、缺陷报告、需求建议、企业最佳实践，还是提供 Bug 修复、国际化翻译、文档贡献，这些来自开源社区的贡献都为 v3.1.0 的发布和推广提供了极大的帮助，我们将在文末予以特别致谢！&lt;/p>
+&lt;h2 id="解读-v310-重大更新">解读 v3.1.0 重大更新&lt;/h2>
+&lt;p>KubeSphere 3.1.0 增加了计量计费功能，支持集群、企业空间的多层级与多租户在应用资源消耗的计量与统计。通过集成 KubeEdge，实现应用快速分发至边缘节点。同时还提供了更强大的可观测性能力，如兼容 PromQL、内置主流告警规则、可视化对接钉钉、企业微信、Slack 和 Webhook 等通知渠道。DevOps 的易用性在 3.1.0 也上了一个台阶，例如内置多套常用流水线模板，支持多分支流水线和流水线复制等，关于重大更新详情请查看文末海报。&lt;/p>
+&lt;h2 id="多维度计量计费让-k8s-运营成本更透明">多维度计量计费，让 K8s 运营成本更透明&lt;/h2>
+&lt;p>在企业运营和管理 Kubernetes 容器平台时，通常需要分析资源消耗，查看集群及其中租户的消费账单，洞察资源使用情况，分析基础设施运营成本。&lt;/p>
+&lt;p>在 KubeSphere 3.1.0 中，可从多个维度来分析平台资源消耗：&lt;/p>
+&lt;ul>
+&lt;li>从集群维度，可查看每个集群资源消耗，深入到节点中分析运行的工作负载，精准规划每个节点中工作负载的资源使用状况。&lt;/li>
+&lt;li>从企业空间维度，可查看每个企业空间资源消耗，获取企业空间中项目、应用、工作负载的消费账单，分析多租户环境中各个租户的资源使用是否合理。&lt;/li>
+&lt;/ul>
+&lt;p>另外，除了可以通过界面查看和导出数据，KubeSphere 计量计费平台也提供了所有操作的 API。接下来在后续的版本里，会持续加强并构筑端到端完整的计量计费可运营系统。&lt;/p></description></item><item><title>KubeSphere 3.2.0 发布：带来面向 AI 场景的 GPU 调度与更灵活的网关</title><link>https://openksc.github.io/zh/news/kubesphere-3.2.0-ga-announcement/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-3.2.0-ga-announcement/</guid><description>&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/3.2.0GA.png" alt="">&lt;/p>
+&lt;p>现如今最热门的服务器端技术是什么？答案大概就是&lt;strong>云原生&lt;/strong>！KubeSphere 作为一个以 Kubernetes 为内核的云原生分布式操作系统，也是这如火如荼的云原生热潮中的一份子。KubeSphere 持续秉承 100% 开源的承诺，借助于开源社区的力量，迅速走向全球。&lt;/p>
+&lt;p>2021 年 11 月 3 日，KubeSphere 开源社区激动地向大家宣布，KubeSphere 3.2.0 正式发布！&lt;/p>
+&lt;p>6 个月前，KubeSphere 3.1.0 带着 &lt;strong>“边缘计算”&lt;/strong>、&lt;strong>“计量计费”&lt;/strong> 等功能，将 Kubernetes 从云端扩展至边缘，更进一步完善交互设计提升了用户体验。3 个月前，KubeSphere 又发布了 v3.1.1，在部署 KubeSphere 时可以指定 Kubernetes 集群中已有的 Prometheus。&lt;/p>
+&lt;p>今天，KubeSphere 3.2.0 带来了更多令人期待的功能，新增了对 &lt;strong>“GPU 资源调度管理”&lt;/strong> 与 GPU 使用监控的支持，进一步增强了在云原生 AI 场景的使用体验。同时还增强了 &lt;strong>“多集群管理、多租户管理、可观测性、DevOps、应用商店、微服务治理”&lt;/strong> 等特性，更进一步完善交互设计，并全面提升了用户体验。&lt;/p>
+&lt;p>并且，v3.2.0 得到了来自青云科技之外的更多企业与用户的贡献和参与，无论是功能开发、功能测试、缺陷报告、需求建议、企业最佳实践，还是提供 Bug 修复、国际化翻译、文档贡献，这些来自开源社区的贡献都为 v3.2.0 的发布和推广提供了极大的帮助，我们将在文末予以特别致谢！&lt;/p>
+&lt;h2 id="解读-kubesphere-320-重大更新">解读 KubeSphere 3.2.0 重大更新&lt;/h2>
+&lt;h3 id="gpu-调度与配额管理">GPU 调度与配额管理&lt;/h3>
+&lt;p>当前随着人工智能机器学习等领域技术的快速发展，市场上涌现了越来越多 AI 公司对服务器集群中 GPU 资源调度管理的需求，其中监控 GPU 使用情况以及 GPU 资源配额管理等需求在社区的呼声很高，在 KubeSphere 中文论坛收到了&lt;a href="https://kubesphere.io/forum/?q=gpu" title="很多 GPU 相关的需求" target="_blank" rel="noopener noreferrer">很多 GPU 相关的需求&lt;/a>，KubeSphere 本身是一直支持 GPU 的，现在在 v3.2.0 中会将 GPU 的管理变得更易用。&lt;/p></description></item><item><title>KubeSphere 3.3.0 发布：全面拥抱 GitOps</title><link>https://openksc.github.io/zh/news/kubesphere-3.3.0-ga-announcement/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-3.3.0-ga-announcement/</guid><description>&lt;p>&lt;strong>2022 年 6 月 27 日，KubeSphere 开源社区激动地向大家宣布，KubeSphere 3.3.0 正式发布！&lt;/strong>&lt;/p>
+&lt;p>CNCF 发布的 2021 年度调查报告指出，容器和 K8s 的事实地位已经趋于稳固，并慢慢退居“幕后”，类似于无处不在的 Linux，人们甚至都感觉不到它的存在。这要得益于众多致力于降低用户使用门槛的 K8s 管理平台，KubeSphere 便是这其中的佼佼者，它帮助用户屏蔽了底层 K8s 集群的复杂性和差异性，提供了可插拔的开放式架构，无缝对接第三方应用，极大地降低了企业用户的使用门槛。&lt;/p>
+&lt;p>2021 年 KubeSphere 先后推出了 &lt;a href="https://kubesphere.io/zh/news/kubesphere-3.1.0-ga-announcement/" target="_blank" rel="noopener noreferrer">v3.1&lt;/a> 和 &lt;a href="https://kubesphere.io/zh/news/kubesphere-3.2.0-ga-announcement/" target="_blank" rel="noopener noreferrer">v3.2&lt;/a> 两个大版本，带来了 &lt;strong>“边缘计算”&lt;/strong>、&lt;strong>“计量计费”&lt;/strong>、&lt;strong>“GPU 资源调度管理”&lt;/strong> 等众多令人期待的功能，将 K8s 从云端扩展至边缘，并进一步增强了在云原生 AI 场景的使用体验。&lt;/p>
+&lt;p>今天，KubeSphere 3.3.0 带来了更多令人期待的功能，新增了基于 &lt;strong>GitOps&lt;/strong> 的持续部署方案，进一步优化了 DevOps 的使用体验。同时还增强了 “&lt;strong>多集群管理、多租户管理、可观测性、应用商店、微服务治理、边缘计算、存储&lt;/strong>” 等特性，更进一步完善交互设计，并全面提升了用户体验。&lt;/p>
+&lt;p>并且，v3.3.0 得到了来自青云科技之外的更多企业与用户的贡献和参与，无论是功能开发、功能测试、缺陷报告、需求建议、企业最佳实践，还是提供 Bug 修复、国际化翻译、文档贡献，这些来自开源社区的贡献都为 v3.3.0 的发布和推广提供了极大的帮助，我们将在文末予以特别致谢！&lt;/p>
+&lt;h2 id="解读-kubesphere-330-重大更新">解读 KubeSphere 3.3.0 重大更新&lt;/h2>
+&lt;h3 id="更易用的-devops">更易用的 DevOps&lt;/h3>
+&lt;p>KubeSphere DevOps 从 3.3.0 开始，后端已支持独立部署，并提供了&lt;strong>基于 GitOps&lt;/strong> 的持续部署（Continuous Delivery, CD）方案，&lt;strong>引入 Argo CD&lt;/strong> 作为 CD 的后端，可以实时统计持续部署的状态。&lt;/p></description></item><item><title>KubeSphere 3.3.1 发布：权限控制修改</title><link>https://openksc.github.io/zh/news/kubesphere-3.3.1-ga-announcement/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-3.3.1-ga-announcement/</guid><description>&lt;p>从 4 年前发布第一个版本开始，KubeSphere 已经经历了 10 多个版本的迭代，如今 KubeSphere 已经收获了 &lt;strong>320+&lt;/strong> 位开源贡献者，KubeSphere 主仓库 GitHub Star &lt;strong>11300+&lt;/strong>，Fork &lt;strong>1700+&lt;/strong>，在全球下载次数超过&lt;strong>百万&lt;/strong>。&lt;/p>
+&lt;p>自今年 &lt;strong>6&lt;/strong> 月份 v3.3.0 发布以来，社区用户就一直比较关心 v3.3.1 版本的发布时间，如今 v3.3.1 已正式发布！&lt;/p>
+&lt;p>此版本历时 &lt;strong>4&lt;/strong> 个月左右的时间，由 &lt;strong>36&lt;/strong> 位贡献者进行贡献，感谢各位贡献者对 KubeSphere 项目的支持与贡献！&lt;/p>
+&lt;p>接下来将会详细介绍 KubeSphere 3.3.1 的主要变化。&lt;/p>
+&lt;h2 id="权限控制修改">权限控制修改&lt;/h2>
+&lt;p>和之前的版本相比，KubeSphere 3.3.1 权限控制有非常大的变化，移除了两个平台级内置角色 &lt;code>users-manager&lt;/code>(用户管理员)和 &lt;code>workspace-manager&lt;/code>（企业空间管理员），如果已有用户绑定了 &lt;code>users-manager&lt;/code> 或 &lt;code>workspace-manager&lt;/code>则升级至该版本后会对相关权限进行降级，他们的角色将会在升级之后变更为 &lt;code>platform-regular&lt;/code>。同时还增加了一个平台级内置角色 &lt;code>platform-self-provisioner&lt;/code>用于管理企业空间。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/202210281343186.png" alt="">&lt;/p>
+&lt;p>角色 &lt;code>platform-self-provisioner&lt;/code> 可以创建企业空间并成为所创建企业空间的管理员，即&lt;strong>可以管理自己创建的企业空间内的所有资源&lt;/strong>。这个角色的设计主要考虑到了多集群的场景：&lt;/p>
+&lt;ul>
+&lt;li>对于集群可见性设置为公开的集群，platform-self-provisioner 创建的企业空间，可以使用该集群部署资源。&lt;/li>
+&lt;li>对于集群可见性设置为非公开的集群，platform-self-provisioner 创建的企业空间，需要向（platform-admin）平台管理员或集群管理员（cluster-admin）申请这个集群的资源部署授权。&lt;/li>
+&lt;/ul>
+&lt;p>除此之外，自定义角色的授权项也有些许调整：&lt;/p>
+&lt;ul>
+&lt;li>移除平台层级自定义角色授权项：用户管理，角色管理，企业空间管理。&lt;/li>
+&lt;li>移除企业空间层级自定义角色授权项：成员管理，角色管理，用户组管理。&lt;/li>
+&lt;li>移除命名空间层级自定义角色授权项：成员管理，角色管理。&lt;/li>
+&lt;li>升级到 KubeSphere 3.3.1 后，自定义角色会被保留，但是其包含的已被移除的授权项会被删除。&lt;/li>
+&lt;/ul>
+&lt;h2 id="devops-优化">DevOps 优化&lt;/h2>
+&lt;p>DevOps 模块针对于流水线做了部分优化：&lt;/p>
+&lt;ul>
+&lt;li>对于带有 build parameters 的流水线，页面保存后不再依靠每隔 10s 的元数据同步，而是立即触发一次源数据更新，确保下次运行时正确加载参数。&lt;/li>
+&lt;li>将 CI/CD 流水线模板中，部署阶段使用 kubeconfig 绑定的方式，替换掉不可用的 kubernetesDeploy 函数方式。&lt;/li>
+&lt;li>流水线 UI 界面支持编辑带有 kubeconfig 绑定到文件步骤的 Jenkinsfile。&lt;/li>
+&lt;li>优化流水线定时构建 CRON 表达式校验正则。&lt;/li>
+&lt;/ul>
+&lt;h2 id="更多细节">更多细节&lt;/h2>
+&lt;p>除了上述提到的新特性和功能增强，该版本中还有很多细节改进，例如：&lt;/p></description></item><item><title>KubeSphere 3.3.2 发布</title><link>https://openksc.github.io/zh/news/kubesphere-3.3.2-ga-announcement/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-3.3.2-ga-announcement/</guid><description>&lt;p>距离上一个版本 v3.3.1 发布，已经过了 3 个多月，今天我们很高兴宣布 KubeSphere v3.3.2 正式发布！&lt;/p>
+&lt;p>此版本由 68 位贡献者参与代码提交，感谢各位贡献者对 KubeSphere 项目的支持与贡献！&lt;/p>
+&lt;p>本次发布的 KubeSphere v3.3.2 带来了更多的优化增强，主要集中在对 DevOps 和应用商店易用性的提升和问题修复。以下是一些重点特性的介绍。&lt;/p>
+&lt;h2 id="devops">DevOps&lt;/h2>
+&lt;ul>
+&lt;li>将流水线运行的结果从 annotations 挪到 configmap 中，防止复杂场景超过 annotation 大小限制的问题。&lt;/li>
+&lt;li>优化持续部署创建和使用的流程和文案。&lt;/li>
+&lt;li>中止状态的流水线支持链接查看详情。&lt;/li>
+&lt;li>优化 kubectl 命令查看 PipelineRun 时的展示，增加 ID 列。&lt;/li>
+&lt;li>优化流水线运行的生命周期，去掉 Queued 状态。&lt;/li>
+&lt;li>修复用户修改并保存流水线配置后，Webhook 配置丢失的问题。&lt;/li>
+&lt;li>修复下载流水线制品失败的问题。&lt;/li>
+&lt;li>修复因 jenkins 自动清理导致流水线变成“未运行”状态的问题。&lt;/li>
+&lt;li>修复流水线的自动清理策略，使其与 Jenkins 的清理保持一致。&lt;/li>
+&lt;/ul>
+&lt;h2 id="应用商店优化">应用商店优化&lt;/h2>
+&lt;ul>
+&lt;li>修复上传的应用程序模板上不显示图标的问题。&lt;/li>
+&lt;li>修复应用商店应用信息处没有显示应用首页的问题。&lt;/li>
+&lt;li>修复应用商店导入内置应用时导入失败的问题。&lt;/li>
+&lt;li>修复 IPv6 环境下 UUID 生成错误的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="更多细节">更多细节&lt;/h2>
+&lt;p>除了上述提到的新特性和功能增强，该版本中还有很多细节改进，例如：&lt;/p>
+&lt;ul>
+&lt;li>限制项目的网络隔离范围为当前企业空间。&lt;/li>
+&lt;li>在多集群环境中显示 system-workspace 所属集群。&lt;/li>
+&lt;li>增加了动态的 cache 配置项。&lt;/li>
+&lt;li>修复拥有集群管理权限的平台角色无法管理集群的问题。&lt;/li>
+&lt;li>修复 ks-apiserver 在 Kubernetes 1.24+ 版本中异常崩溃的问题。&lt;/li>
+&lt;/ul>
+&lt;p>可以访问下方链接来查看完整的 Release Notes：&lt;/p></description></item><item><title>KubeSphere 3.4.0 发布：支持 K8s v1.26</title><link>https://openksc.github.io/zh/news/kubesphere-3.4.0-ga-announcement/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-3.4.0-ga-announcement/</guid><description>&lt;p>2023 年 07 月 26 日，KubeSphere 开源社区激动地向大家宣布，KubeSphere 3.4.0 正式发布！&lt;/p>
+&lt;p>让我们先简单回顾下之前三个大版本的主要变化：&lt;/p>
+&lt;ul>
+&lt;li>KubeSphere 3.1.0 新增了“边缘计算”、“计量计费” 等功能，将 Kubernetes 从云端扩展至边缘；&lt;/li>
+&lt;li>KubeSphere 3.2.0 新增了对 “GPU 资源调度管理” 与 GPU 使用监控的支持，进一步增强了在云原生 AI 场景的使用体验；&lt;/li>
+&lt;li>KubeSphere 3.3.0 新增了基于 GitOps 的持续部署方案，进一步优化了 DevOps 的使用体验。&lt;/li>
+&lt;/ul>
+&lt;p>KubeSphere 3.4.0 已正式上线，该版本带来了值得大家关注的新功能以及增强：扩大对 Kubernetes 的支持范围，最新稳定性支持 1.26；重构告警策略架构，解耦为告警规则与规则组；提升集群别名展示权重，减少原集群名称不可修改导致的管理问题；升级 KubeEdge 组件到 v1.13 等。同时，还进行了多项修复、优化和增强，更进一步完善交互设计，并全面提升了用户体验。&lt;/p>
+&lt;p>在此，十分感谢该版本的所有参与者和贡献者，文末我们将列出各位贡献者的 ID，以表谢意！&lt;/p>
+&lt;h2 id="主要更新">主要更新&lt;/h2>
+&lt;h3 id="优化告警配置">优化告警配置&lt;/h3>
+&lt;p>KubeSphere 3.4.0 优化告警配置，添加了不同范围的告警规则组：&lt;/p>
+&lt;ul>
+&lt;li>原单个告警策略拆分为多个规则组，通过规则组配置告警最小执行单元&lt;/li>
+&lt;li>支持内置告警规则编辑、禁用与重置&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/rulegroup-1.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/rulegroup-2.png" alt="">&lt;/p>
+&lt;h3 id="提升集群别名展示权重">提升集群别名展示权重&lt;/h3>
+&lt;p>运维人员往往需要通过定义集群名称，来对不同定位、不同地理位置的集群进行管理。在之前的版本中，集群仅支持被纳管时进行名称定义，这无疑给运维人员带来了比较大的操作困扰。&lt;/p>
+&lt;p>针对这个问题，KubeSphere 3.4.0 做出了相应的改动，提升了集群别名展示的权重，实现集群别名与名称同级别管理，帮助用户通过别名即可完成所有原来对名称的操作，也可通过对别名修改实现集群的灵活管理。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-3.4-cluster-alias.png" alt="">&lt;/p>
+&lt;h3 id="支持设置默认镜像仓库">支持设置默认镜像仓库&lt;/h3>
+&lt;p>在私有环境下需要将默认 dockerhub 统一替换成私有仓库，在之前的版本中，不支持指定默认仓库，只能进行手动选择。如果存在多个私有仓库，用户在操作时容易忽略导致操作错误。&lt;/p>
+&lt;p>在 KubeSphere 3.4.0 中，我们支持了设置默认的镜像仓库，让用户操作更加简单方便。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-3.4-image-repo-1.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-3.4-image-repo-2.png" alt="">&lt;/p></description></item><item><title>KubeSphere 3.4.1 发布</title><link>https://openksc.github.io/zh/news/kubesphere-3.4.1-ga-announcement/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-3.4.1-ga-announcement/</guid><description>&lt;p>本次发布的 KubeSphere 3.4.1 是对 KubeSphere 3.4.0 的 patch 版本，主要集中在对 Console 和 DevOps 的提升及问题修复。&lt;/p>
+&lt;h2 id="console">Console&lt;/h2>
+&lt;ul>
+&lt;li>修复页面部分字段翻译不准确的问题。&lt;/li>
+&lt;li>修复部分页面样式显示缺失，错误，不全等问题。&lt;/li>
+&lt;li>修复部分接口 API 调用错误的问题。&lt;/li>
+&lt;li>修复项目概览页面，帮助信息丢失的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="devops">DevOps&lt;/h2>
+&lt;ul>
+&lt;li>修复流水线详情页面无法查看的问题。&lt;/li>
+&lt;li>修复 Jenkin 传参错误的问题。&lt;/li>
+&lt;li>修复 shell 脚本执行出错的问题。&lt;/li>
+&lt;li>修复清理任务报错的问题。&lt;/li>
+&lt;li>修复 devops-controller 运行报错的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="observability">Observability&lt;/h2>
+&lt;ul>
+&lt;li>修复 CPU 和内存统计图表不显示的问题。&lt;/li>
+&lt;li>修复日志接收器页面未显示的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="authentication--authorization">Authentication &amp;amp; Authorization&lt;/h2>
+&lt;ul>
+&lt;li>修复 LDAP 登录错误的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="app-store">App Store&lt;/h2>
+&lt;ul>
+&lt;li>修复页面报错的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="其他优化">其他优化&lt;/h2>
+&lt;ul>
+&lt;li>修复部分组件升级失败的问题。&lt;/li>
+&lt;/ul>
+&lt;p>可以访问下方链接来查看完整的 Release Notes：&lt;/p>
+&lt;p>&lt;a href="https://github.com/kubesphere/kubesphere/releases/tag/v3.4.1" target="_blank" rel="noopener noreferrer">https://github.com/kubesphere/kubesphere/releases/tag/v3.4.1&lt;/a>。&lt;/p></description></item><item><title>KubeSphere 4.1.3 开源版正式发布</title><link>https://openksc.github.io/zh/news/kubesphere-4.1.3-ga-announcement/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-4.1.3-ga-announcement/</guid><description>&lt;p>KubeSphere 4.1.3 开源版正式发布，本次更新包含多项功能优化和缺陷修复，进一步提升安全性与易用性。&lt;/p>
+&lt;h2 id="功能优化">功能优化&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>优化企业空间的级联删除逻辑&lt;/strong>
+企业空间级联删除策略从被动改为主动，避免误操作。&lt;/li>
+&lt;li>&lt;strong>调整部分平台角色、企业空间角色的授权规则&lt;/strong>
+进一步细化 RBAC 授权规则，安全性提升。&lt;/li>
+&lt;li>&lt;strong>优化 Pod 列表页的数据展示&lt;/strong>
+更直观的展示资源状态信息，提升易用性。&lt;/li>
+&lt;li>&lt;strong>允许用户关联多个身份提供程序&lt;/strong>
+用户可同时绑定多个身份提供程序（IdP），提升灵活性和兼容性。&lt;/li>
+&lt;li>&lt;strong>支持手动触发应用仓库更新&lt;/strong>
+用户可以主动刷新应用仓库，确保获取最新的应用版本信息。&lt;/li>
+&lt;li>&lt;strong>新增“拒绝访问”页面&lt;/strong>
+将非法的页面请求，重定向到“拒绝访问”页面。&lt;/li>
+&lt;/ul>
+&lt;h2 id="缺陷修复">缺陷修复&lt;/h2>
+&lt;ul>
+&lt;li>修复应用实例无法升级的问题&lt;/li>
+&lt;li>修复与预发布 K8s 版本号的兼容性问题&lt;/li>
+&lt;li>修复 LDAP 身份提供程序的配置问题&lt;/li>
+&lt;li>修复无法从 Docker Hub 和 Harbor 搜索镜像的问题&lt;/li>
+&lt;li>修复应用程序版本中处理特殊字符的问题&lt;/li>
+&lt;li>修复未安装网关扩展时无法创建 Ingress 的问题&lt;/li>
+&lt;/ul>
+&lt;h2 id="安装升级">安装升级&lt;/h2>
+&lt;p>&lt;strong>欢迎广大用户下载体验，并提供宝贵反馈。&lt;/strong>&lt;/p>
+&lt;h3 id="注意事项">注意事项&lt;/h3>
+&lt;p>更多更新内容，请参阅 &lt;a href="https://kubesphere.io/zh/docs/v4.1/20-release-notes/release-v413/" target="_blank" rel="noopener noreferrer">KubeSphere 4.1.3 发布说明&lt;/a>。&lt;/p>
+&lt;p>安装与升级，请参阅 &lt;a href="https://kubesphere.io/zh/docs/v4.1/03-installation-and-upgrade/" target="_blank" rel="noopener noreferrer">安装指南&lt;/a>。&lt;/p>
+&lt;p>注意：暂不支持从 v3.x 版本直接升级到 v4.x，计划在4月下旬的版本更新中支持。&lt;/p>
+&lt;h3 id="反馈渠道">反馈渠道：&lt;/h3>
+&lt;p>提交 Issue：&lt;a href="https://github.com/kubesphere/kubesphere/issues/new/choose" target="_blank" rel="noopener noreferrer">GitHub Issues&lt;/a>&lt;/p>
+&lt;p>社区讨论：&lt;a href="https://ask.kubesphere.com.cn/forum/" target="_blank" rel="noopener noreferrer">KubeSphere 论坛&lt;/a>&lt;/p>
+&lt;h2 id="未来展望">未来展望&lt;/h2>
+&lt;p>在未来的版本更新中，KubeSphere 团队将持续关注开源社区的需求与反馈。我们承诺始终不忘初心，为广大的开源用户提供更稳定、更安全、更高效的产品体验。随着 KubeSphere 的不断演进，我们将不断优化平台的性能和功能，特别是在易用性、安全性以及多云环境支持等方面，确保用户在快速变化的技术环境中保持领先。&lt;/p>
+&lt;p>感谢每一位 KubeSphere 用户的支持和贡献，我们将继续努力，为大家带来更多惊喜和实用功能。期待您在未来的版本中，依旧能与我们一同成长和进步。&lt;/p></description></item><item><title>KubeSphere MCP Server: 增强AI与KubeSphere的集成能力</title><link>https://openksc.github.io/zh/news/ks-mcp-serverzh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/ks-mcp-serverzh/</guid><description>&lt;p>在云原生和AI技术快速融合的今天，开源社区一直在寻找将 AI 能力无缝集成到云平台的高效方式。我们很高兴地宣布，KubeSphere 现已支持Model Context Protocol (MCP)，通过全新的 KubeSphere MCP Server，用户可以使用 AI 助手直接与 KubeSphere API 交互，实现更智能化的云平台管理体验。&lt;/p>
+&lt;h2 id="什么是kubesphere-mcp-server">什么是KubeSphere MCP Server？&lt;/h2>
+&lt;p>KubeSphere MCP Server是基于 &lt;strong>[Model Context Protocol (MCP)]&lt;/strong> 规范实现的服务，它提供了与KubeSphere API的无缝集成，使AI助手能够直接获取和操作KubeSphere资源。该服务主要分为四个功能模块：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>工作空间管理&lt;/strong> - 创建、查询和管理 KubeSphere 工作空间&lt;/li>
+&lt;li>&lt;strong>集群管理&lt;/strong> - 监控和管理 K8s 集群资源&lt;/li>
+&lt;li>&lt;strong>用户和角色&lt;/strong> - 管理用户权限和角色分配&lt;/li>
+&lt;li>&lt;strong>扩展中心&lt;/strong> - 扩展 KubeSphere 的功能&lt;/li>
+&lt;/ul>
+&lt;p>通过这些模块，用户可以简单地通过与 AI 助手的对话来完成原本需要在 KubeSphere 控制台或命令行中进行的操作，大大提高管理效率。&lt;/p>
+&lt;h2 id="为什么使用kubesphere-mcp-server">为什么使用KubeSphere MCP Server？&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>自然语言交互&lt;/strong>：通过 Claude、Cursor 等支持 MCP 的 AI 助手，用户可以使用自然语言与 KubeSphere 平台交互&lt;/li>
+&lt;li>&lt;strong>降低学习门槛&lt;/strong>：即使不熟悉 KubeSphere API或命令行操作，也能轻松管理资源&lt;/li>
+&lt;li>&lt;strong>高效问题诊断&lt;/strong>：AI 助手可以帮助分析集群状态，提供问题解决建议&lt;/li>
+&lt;li>&lt;strong>流程自动化&lt;/strong>：通过对话式界面自动执行多步骤操作&lt;/li>
+&lt;/ul>
+&lt;h2 id="快速上手指南">快速上手指南&lt;/h2>
+&lt;h3 id="前提条件">前提条件&lt;/h3>
+&lt;p>已部署的 KubeSphere 集群（包含访问地址、用户名和密码）&lt;/p></description></item><item><title>KubeSphere v4 开源并发布全新可插拔架构 LuBan</title><link>https://openksc.github.io/zh/news/kubesphere-v4-ga-announcement/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-v4-ga-announcement/</guid><description>&lt;p>2024 年 10 月 10 日，KubeSphere 开源社区激动地向大家宣布，KubeSphere v4（开源版）已正式发布，同时发布全新可插拔架构 KubeSphere LuBan。&lt;/p>
+&lt;p>相较于 KubeSphere 之前所有的版本，KubeSphere v4 可以说是有了颠覆性的变化。KubeSphere v4 是基于全新的云原生可扩展开放架构——KubeSphere LuBan 打造的云原生操作系统，对于 KubeSphere 而言具有非凡的意义。&lt;/p>
+&lt;h2 id="kubesphere-luban">KubeSphere LuBan&lt;/h2>
+&lt;h3 id="什么是-kubesphere-luban">什么是 KubeSphere LuBan&lt;/h3>
+&lt;p>鲁班（LuBan），是中国古代工匠的始祖。作为广大劳动人民智慧与创造力的象征，他通过工具提高劳动效率，将劳动者从原始繁重的任务中解放出来，使土木工艺呈现崭新面貌。KubeSphere 将全新微内核架构（KubeSphere Core）命名为 LuBan，借此寓意，期待为企业与开发者提供低成本、快速迭代和灵活集成的云原生产品，并带来专业、全能和极富创造力的使用与开发体验。&lt;/p>
+&lt;p>KubeSphere LuBan，是一个分布式的云原生可扩展开放架构，为扩展组件提供一个可热插拔的微内核。自此，KubeSphere 所有功能组件及第三方组件都会基于 KubeSphere LuBan，以扩展组件的方式无缝融入到 KubeSphere 控制台中，并独立维护版本，真正实现即插即用的应用级云原生操作系统。&lt;/p>
+&lt;p>KubeSphere LuBan 架构设计如下图所示。&lt;/p>
+&lt;p>&lt;img src="https://kubesphere.io/images/ks-qkcp/zh/v4.0/4.0-architecture.png" alt="">&lt;/p>
+&lt;h3 id="为什么推出-kubesphere-luban">为什么推出 KubeSphere LuBan&lt;/h3>
+&lt;p>自 2018 年以来，KubeSphere 混合多云容器管理平台已发布过十几个版本，其中包括三个重大版本。为了满足用户需求，KubeSphere 集成了众多企业级功能，如多租户管理，多集群管理，DevOps，GitOps，服务网格，微服务，可观测（包括监控、告警、日志、审计、事件、通知等），应用商店，边缘计算，网络与存储管理等。&lt;/p>
+&lt;p>虽然 KubeSphere 的一站式容器解决方案极大地提升了用户的容器使用体验，但也带来了如下挑战：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>发版周期长&lt;/strong>：在发布新版本时，需要等待所有组件完成开发、测试并通过集成测试。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>响应用户不及时&lt;/strong>：由于各组件无法单独迭代，KubeSphere 发布后，对社区和用户组件反馈处理需要等待 KubeSphere 发布新版本后才能一并交付给用户，导致响应不够及时。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>代码耦合&lt;/strong>：尽管目前已能实现单独启用/禁用特定组件，但这些组件的前后端代码仍然耦合在一起，容易互相影响，架构上不够优雅。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>系统资源占用过多&lt;/strong>：部分组件默认启用，对于没有相关需求的用户来说，可能会占用过多的系统资源。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="kubesphere-luban-的优势有哪些">KubeSphere LuBan 的优势有哪些&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>插件式的核心框架&lt;/strong>：支持独立开发和部署组件以扩展系统的功能。组件可以根据需求进行添加、升级或移除，而不需要修改核心框架的代码。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>全开放的基础 UI 组件库&lt;/strong>：组件对所有人开放，任何人都可以自由地访问、使用和扩展这些组件。用户根据自己的需求进行定制和扩展，以满足不同的设计和功能要求。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>前后端热更新、热修复&lt;/strong>：开发者可以在系统运行时对前端和后端进行实时更新和修复，提高了开发和运维的效率，同时保证了应用程序的可用性和用户体验。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>开放性扩展中心，生态共建&lt;/strong>：我们提供一个开放的平台，鼓励第三方开发者通过组件向系统添加新的功能或增强现有功能，在系统的框架内进行开发和集成，并将他们的组件与系统进行无缝连接，共同构建一个健康、繁荣的生态系统。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="基于-kubesphere-luban-可以做什么">基于 KubeSphere LuBan 可以做什么&lt;/h3>
+&lt;ol>
+&lt;li>KubeSphere 用户&lt;/li>
+&lt;/ol>
+&lt;p>KubeSphere 用户可以自由选择启用哪些 KubeSphere 扩展组件。同时还能将自己的应用无缝融入到 KubeSphere 控制台。此外，随着 KubeSphere 扩展组件生态的丰富，用户可以在 KubeSphere 扩展市场中自由选择更丰富的产品和服务，最终实现容器管理平台的千人千面的效果。&lt;/p></description></item><item><title>KubeSphere 产品生命周期管理政策公告</title><link>https://openksc.github.io/zh/news/kubesphere-product-lifecycle-policy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-product-lifecycle-policy/</guid><description>&lt;blockquote>
+&lt;p>&lt;strong>文件版本&lt;/strong>: v1.0
+&lt;strong>更新时间&lt;/strong>: 2025.07.15&lt;/p>&lt;/blockquote>
+&lt;h2 id="概述">概述&lt;/h2>
+&lt;p>在快速变化的市场环境中，青云科技针对 KubeSphere 云原生产品与服务推出了产品生命周期管理政策。该政策旨在及时调整和终止不再符合市场需求的产品，以确保我们的产品始终满足客户期望。通过清晰的产品终止方案，我们将为客户提供必要的支持与指导，降低业务风险，提升客户信任与满意度。我们致力于推动技术创新，实现持续的业务发展，为客户创造更大的价值。&lt;/p>
+&lt;h2 id="适用范围">适用范围&lt;/h2>
+&lt;p>本文中描述的 KubeSphere 产品生命周期终止政策适用于以下 KubeSphere 云原生产品与服务：&lt;/p>
+&lt;ul>
+&lt;li>KubeSphere 开源版。涉及 v1、v2、v3 及 v4 版本。&lt;/li>
+&lt;li>KubeSphere 企业版（包含更名前的青云 QKCP）。涉及 v1、v2、v3 及 v4 版本。&lt;/li>
+&lt;li>青云容器平台（可信版）。涉及所有产品版本。&lt;/li>
+&lt;/ul>
+&lt;h2 id="kubesphere-产品版本定义">KubeSphere 产品版本定义&lt;/h2>
+&lt;p>在 KubeSphere 产品版本控制中，软件版本号通常用来表示其代表的发布阶段与更新内容。其中，版本号格式包括主版本号 (Major Version)、次版本号 (Minor Version)、补丁版本号 (Patch Version) 和热修复版本号 (HotFix)。以下是这些术语的详细说明：&lt;/p>
+&lt;p>&lt;strong>1. 主版本 (Major Version)&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>主版本号的设置通常表示软件有重大更新或变化，这可能包括全新的产品架构、功能模块、操作体验或与旧版本不再兼容的变更。&lt;/li>
+&lt;li>主版本号的设置通常意味着版本号的其他部分（如：次版本号、补丁版本号）重置为零。例如，产品版本从 v3.4.1 升级到 v4.0.0。&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>2. 次版本 (Minor Version)&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>次版本号的设置表示软件有一般的更新或改进，这可能包括新增功能模块、性能改善、安全性强化或兼容性增强等。&lt;/li>
+&lt;li>次版本号的设置通常意味着补丁版本号重置为零，但主版本号保持不变。例如，产品版本从 v4.1.2 升级到 v4.2.0。&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>3. 补丁版本 (Patch Version)&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>补丁版本号的设置表示软件有较小的修复或优化，这通常用于修复错误、改进稳定性、或优化产品体验等。&lt;/li>
+&lt;li>补丁版本不会开启新的产品生命周期。例如，KSE v4.1.3 将共享 KSE v4.1 的生命周期。&lt;/li>
+&lt;li>补丁版本号的设置不会影响主版本号和次版本号。例如，产品版本从 v4.1.2 升级到 v4.1.3。&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>4. 热修复 (HotFix)&lt;/strong>&lt;/p></description></item><item><title>KubeSphere 开源社区 2021 年度回顾与致谢</title><link>https://openksc.github.io/zh/news/kubesphere-2021-year-in-review/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-2021-year-in-review/</guid><description>&lt;p>2021 年，我们见证了以容器为代表的云原生技术蓬勃发展，引领技术创新；更见证了澎湃的开源社区力量，为 KubeSphere 社区多个开源项目的发展注入了新的活力。我们在所有社区用户、贡献者、合作的共同协作中，完成了大大小小的里程碑。&lt;/p>
+&lt;p>农历新年将至，我们一起来回顾一下 KubeSphere 开源社区在过去一年的成长故事，并对所有参与过 KubeSphere 社区贡献的成员致以最诚挚的感谢与问候。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/202201282205631.png" alt="里程碑">&lt;/p>
+&lt;h2 id="开源项目发展情况">开源项目发展情况&lt;/h2>
+&lt;p>在过去 3 年里，以 KubeSphere 为中心，KubeSphere 社区衍生出了诸多新的开源项目，比如 KubeKey、OpenELB、OpenFunction 等项目都吸引了海内外开发者的关注和使用。它们不仅可以作为插件集成到 KubeSphere 中，还可以作为独立项目结合 K8s 部署使用，为云原生生态的繁荣做出了贡献。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/202201282212883.png" alt="开源项目">&lt;/p>
+&lt;p>这些开源项目在 GitHub 的 Star、Fork 和 Contributor 的数量在快速增长，此外，它们背后的社区价值和潜能却是不可估量。在 2021 年，KubeSphere 社区还将 OpenELB 负载均衡器与 Fluent Operator 日志管理项目分别捐给了 CNCF 基金会和 Fluent 社区，借助 CNCF 与上游社区的力量，为项目带来更多全球开发者的参与。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/202201282227077.png" alt="项目数据">&lt;/p>
+&lt;h2 id="企业采用情况">企业采用情况&lt;/h2>
+&lt;p>据不完全统计，目前 KubeSphere 在全球已被下载 70w 次，近 8w 个的活跃集群数，数千家企业在生产环境中使用 KubeSphere。我们看到 KubeSphere 被银行、保险、证券、互联网、能源、电信、交通、高校、零售、物流等各行各业的用户在企业中采用，并且社区中不乏有很多资深用户帮助 KubeSphere 项目提交建议或反馈，并深度参与了代码和文档的贡献。此外，我们还看到了越来越多的用户在社区活动、技术文章和社交媒体上布道和推广 KubeSphere。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/202201282152871.png" alt="企业采用情况">&lt;/p>
+&lt;h2 id="合作伙伴与应用生态">合作伙伴与应用生态&lt;/h2>
+&lt;p>应用商店与应用全生命周期管理是 KubeSphere 的特色，过去一年，我们又新增了很多合作伙伴，丰富了应用生态。例如，我们的合作伙伴已经将 6 个云原生应用（APISIX、ChaosMesh、Nocalhost、JuiceFS、EdgeMesh、fpga-operator）添加到了 KubeSphere 应用商店。除此之外，社区也收获了更多贡献企业。在此，向各贡献企业及合作伙伴致以最诚挚的谢意！&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/202201291848016.png" alt="贡献企业及合作伙伴">&lt;/p></description></item><item><title>KubeSphere 开源社区 2022 年度回顾与致谢</title><link>https://openksc.github.io/zh/news/kubesphere-2022-year-in-review/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-2022-year-in-review/</guid><description>&lt;p>2022 年，国内的云原生技术生态日趋完善，细分技术项目也不断涌现，形成了完整的支撑应用云原生化的全生命周期技术体系。基础设施即代码、微服务、Serverless 等技术，促使基础设施资源向更加灵活弹性、自动化方向发展。而开源生态也从“高速繁荣”逐步向“稳步求精”演进。&lt;/p>
+&lt;p>KubeSphere 社区在所有社区用户、贡献者、合作伙伴的共同协作中，也在稳步前进。&lt;/p>
+&lt;p>2022 年已经成为回忆，我们一起来回顾一下 KubeSphere 开源社区在过去一年的成长故事，并对所有参与过 KubeSphere 社区贡献的成员致以最诚挚的感谢与问候。&lt;/p>
+&lt;h2 id="开源项目发展情况">开源项目发展情况&lt;/h2>
+&lt;p>2022 年，KubeSphere 在稳步发展的过程中，也迈入了新的里程碑：GitHub star 数超过 10000。感谢每一位为 KubeSphere 项目做出贡献的小伙伴，无论是为项目提交代码，还是提出问题、完善文档，或者是分享关于 KubeSphere 和云原生的落地经验，你都在为 KubeSphere 的进步发挥着举足轻重的作用。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/202205311543999.png" alt="">&lt;/p>
+&lt;p>而由 KubeSphere 社区衍生出的其他开源项目，也在稳步前进。其中，&lt;strong>OpenFunction 在 2022 年 4 月份，进入 CNCF Sandbox&lt;/strong>。至此，KubeSphere 社区已有两个开源项目（OpenELB/OpenFunction）进入 CNCF Sandbox，而 Fluent Operator 也于 2021 年捐献给了上游社区 Fluent。借助 CNCF 与上游社区的力量，为项目注入新的更多的活力。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/202201282212883.png" alt="开源项目">&lt;/p>
+&lt;h2 id="合作伙伴与应用生态">合作伙伴与应用生态&lt;/h2>
+&lt;p>应用商店与应用全生命周期管理是 KubeSphere 的特色，过去一年，我们又新增了很多合作伙伴，丰富了应用生态。例如，我们的合作伙伴已经将 8 个云原生应用（极狐GitLab、Pulsar、OpenELB、Meshery、Crane、Deepflow、Databend 和 CurveFS）添加到了 KubeSphere 应用商店。在此，向所有的合作伙伴致以最诚挚的谢意！&lt;/p>
+&lt;div align=center>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/now-kubesphere-partner.png">&lt;/div>
+&lt;p>从 v4.0 开始，KubeSphere 会提供前后端可插拔的架构和框架，任何第三方合作伙伴和 ISV 都可以基于 KubeSphere 4.0 开放框架，开发扩展自己想要的功能插件，这些功能插件与 KubeSphere 有完全一致的 UI 体验，形成更强大的应用生态。这就好比 Mac OS 和 App Store 之间的关系一样，任何企业或团队都可以发布自己开发的插件到应用商店，灵活满足各类用户的需求，在社区和商业上与青云合作互利共赢。&lt;/p></description></item><item><title>KubeSphere 开源社区 2023 年度回顾与致谢</title><link>https://openksc.github.io/zh/news/kubesphere-2023-year-in-review/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-2023-year-in-review/</guid><description>&lt;p>2023 年结束了，让我们再一次一起回顾一下 KubeSphere 开源社区在过去一年的变化。更重要的是，本篇文章将会对 2023 年所有参与过 KubeSphere 社区贡献的成员致以最诚挚的感谢，快来看看有没有你！&lt;/p>
+&lt;h2 id="开源项目发展情况">开源项目发展情况&lt;/h2>
+&lt;p>2023 年，在国内外社区贡献者的参与下，KubeSphere 及 KubeSphere 社区衍生出的其他开源项目得以稳定且活跃的前进。感谢各位贡献者！&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>开源项目&lt;/th>
+ &lt;th>正式发版&lt;/th>
+ &lt;th>新增重要功能&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>KubeSphere&lt;/td>
+ &lt;td>3 个&lt;/td>
+ &lt;td>扩大对 K8s 的支持范围，最新稳定性支持 v1.26；&lt;br/>重构告警策略架构，解耦为告警规则与规则组；&lt;br/>提升集群别名展示权重，减少原集群名称不可修改导致的管理问题。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>KubeKey&lt;/td>
+ &lt;td>11 个&lt;/td>
+ &lt;td>Kubeadm 配置更新至 v1beta3，支持部署 K8s v1.27+；&lt;br/>支持部署 Hybrident 网络插件；&lt;br/> 支持自定义配置集群 DNS 参数；&lt;br/> 支持自定义配置集群 Etcd 参数。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>OpenFunction&lt;/td>
+ &lt;td>4 个&lt;/td>
+ &lt;td>集成 WasmEdge，支持 Wasm 函数和更完整的 CI/CD；&lt;br/>新增 v1beta2 API，支持 Dapr 状态管理；&lt;br/>集成 KEDA http-addon 作为同步函数运行时；&lt;br/>支持在启用 SkyWalking 跟踪时添加环境变量。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Fluent Operator&lt;/td>
+ &lt;td>9 个&lt;/td>
+ &lt;td>支持 FluentBit 部署为 StatefulSet；&lt;br/> Fluentd CRD 提供自定义插件类型；&lt;br/> 为 FluentBit daemonset 提供 namespace 级别的权限；&lt;br/>添加多个插件（如 Datadog、S3、nginx 插件等）；&lt;br/>完善helm，提供更多自定义设置完成安装；&lt;br/>支持以 DaemonSet 的方式部署 Fluentd；&lt;br/>添加禁用未使用 controller 的参数；&lt;br/>支持以 StatefulSet 的形式部署 FluentBit。&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>需要特别指出的是，Fluent Operator 已经是一个全球化的项目，其贡献者大部分来自海外，越来越受欢迎和具有影响力。&lt;/p></description></item><item><title>KubeSphere 开源社区 2024 年度回顾与致谢</title><link>https://openksc.github.io/zh/news/kubesphere-2024-year-in-review/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-2024-year-in-review/</guid><description>&lt;p>随着 2024 年圆满落幕，我们回顾 KubeSphere 社区这一年走过的每一步，感慨万千。2024 年，KubeSphere 继续领跑云原生技术的创新与发展，推动开源文化的传播，致力于为全球开发者和企业用户提供更强大的平台和解决方案。感谢每一位社区成员的辛勤付出，正是因为你们的共同努力，KubeSphere 才能不断发展壮大，成为全球云原生技术的核心力量。&lt;/p>
+&lt;p>特别值得一提的是，KubeSphere v4 的正式发布，标志着我们迈入了全新的篇章。基于全新的可插拔架构 LuBan，KubeSphere 不仅提升了平台的灵活性、模块化和扩展性，还推动了云原生技术和生态系统的创新与深化。LuBan 架构使得 KubeSphere 能够更快速、更加高效地应对多变的技术需求，并为开发者提供了更加灵活、可定制的解决方案。&lt;/p>
+&lt;h2 id="开源项目发展情况">开源项目发展情况&lt;/h2>
+&lt;p>2024 年，KubeSphere 社区在多个开源项目上取得了显著突破，为全球开发者和企业用户提供了强大的支持。通过持续的创新和优化，KubeSphere 成为云原生领域的重要工具之一，并在全球范围内得到了广泛的应用和认可。&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>开源项目&lt;/th>
+ &lt;th>正式发版&lt;/th>
+ &lt;th>新增重要功能&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>KubeSphere&lt;/td>
+ &lt;td>2 个&lt;/td>
+ &lt;td>基于全新微内核架构 KubeSphere LuBan 重构；&lt;br/>支持 UI、API 扩展；&lt;br/>支持扩展组件管理，提供 KubeSphere 扩展市场；&lt;br/>简化成员集群的纳管方式；&lt;br/>支持基于 OCI 的 Helm Chart 仓库；&lt;br/>支持 KubeSphere 服务帐户；&lt;br/>支持快捷访问功能；&lt;br/>支持通过容器终端进行文件上传和下载；&lt;br/>支手动创建持久卷。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>KubeKey&lt;/td>
+ &lt;td>8 个&lt;/td>
+ &lt;td>支持 Kubernetes 新版本至 v1.32；&lt;br/>支持部署 IPv4/IPv6 双栈集群；&lt;br/>支持部署 Hybrident 网络插件；&lt;br/> 支持自定义配置集群 DNS 参数；&lt;br/> 支持自定义配置集群 Etcd 参数；&lt;br/> 支持针对本地 Docker 导入/导出镜像；&lt;br/> 支持集群部署完成后的自定义任务执行；&lt;br/> 支持自定义创建 manifest 文件。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Fluent Operator&lt;/td>
+ &lt;td>5 个&lt;/td>
+ &lt;td>支持 Elasticsearch 数据流；&lt;br/> 新增 Kubernetes 事件输入插件；&lt;br/> 引入 WASM 插件和 LUA 插件；&lt;br/>OpenTelemetry 集成增强；&lt;br/>支持 Datadog 和其他云平台插件；&lt;br/>更新 FluentBit 到 3.1.7，更新 Fluentd 到 1.17.0。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Whizard&lt;/td>
+ &lt;td>1 个&lt;/td>
+ &lt;td>云原生化部署与运维； &lt;br/>基于租户的自动水平扩展机制；&lt;br/> 适配 K8s 多集群管理；&lt;br/> 规则计算更好的扩展性；&lt;br/>更细粒度的规则管理；&lt;br/>支持对象存储网关 Store 的按时间分片查询；&lt;br/>引入 Gateway 及 Agent Proxy 以对数据的写入与读取进行更好的控制。&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="用户和社区数据">用户和社区数据：&lt;/h3>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/star-history-2025114.png" alt="">&lt;/p></description></item><item><title>KubeSphere 迈向新的里程碑 —— 10000 Star!</title><link>https://openksc.github.io/zh/news/kubesphere-10k-stars/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-10k-stars/</guid><description>&lt;p>喜大普奔，开源项目 KubeSphere 于近期在 “云原生分布式操作系统” 的征程中迈入新的里程碑 —— GitHub Star 数量突破 &lt;strong>10,000&lt;/strong>！&lt;/p>
+&lt;p>真心感谢每一位贡献者、使用者、关注者对 KubeSphere 的信任、支持与帮助！&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/202205311720159.png" alt="">&lt;/p>
+&lt;p>KubeSphere 于 &lt;strong>2018 年开始&lt;/strong>写第一行代码，在四年的时间内迭代了十多个版本，而且每个大版本都有重大功能更新，实现了从 “追赶” 到 “超越”。&lt;/p>
+&lt;p>从最初 KubeSphere 小范围为人所知，甚至不清楚如何使用 KubeSphere 来降低 K8s 使用门槛，到如今用户遍布全球，覆盖超过了 &lt;strong>100&lt;/strong> 个国家和地区，下载量近&lt;strong>百万&lt;/strong>，拥有贡献者近 &lt;strong>300 人&lt;/strong>，主仓库在 GitHub 上 Fork 数超 &lt;strong>1500&lt;/strong>，KubeSphere 已经在开源容器领域受欢迎程度位列全球&lt;strong>第二&lt;/strong>。&lt;/p>
+&lt;p>KubeSphere 致力于成为企业落地云原生的基石，即打造一个云原生分布式操作系统，帮助用户在云、虚拟化及物理机等任何异构基础设施上完成容器平台的快速部署，实现云原生应用的敏捷开发与全生命周期管理。&lt;/p>
+&lt;p>在具体实现方面，KubeSphere 为用户提供了友好的向导式操作界面和丰富的企业级功能，包括可观测性、微服务治理、多集群与多租户管理、DevOps、应用全生命周期管理、云边协同等功能，&lt;strong>帮助用户屏蔽了底层 K8s 集群的复杂性和差异性，让所有人都能 “无差别” 地使用 K8s&lt;/strong>。&lt;/p>
+&lt;p>如今 Star 数量突破 10,000，这对于 KubeSphere 来说意义非凡，因为 KubeSphere 现在蜕变成了&lt;strong>唯一一个&lt;/strong>由中国公司发起、具有世界级影响力的开源容器平台，而这个过程可谓无比艰辛。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/202205311543999.png" alt="">&lt;/p>
+&lt;p>让我们来共同回顾 KubeSphere 项目在成长旅程中获得的成绩，诚挚地感谢所有的用户和贡献者：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>发布了多个主要版本，最新的两个主要版本是 3.1 和 3.2，包含了众多新功能。具体可参考：&lt;a href="https://kubesphere.io/zh/blogs/kubesphere-3.2.0-ga-announcement/" target="_blank" rel="noopener noreferrer">KubeSphere 3.2.0 发布：带来面向 AI 场景的 GPU 调度与更灵活的网关&lt;/a>。&lt;/p></description></item><item><title>KubeSphere 前端开源，社区架构首次公布</title><link>https://openksc.github.io/zh/news/console-opensource/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/console-opensource/</guid><description>&lt;h2 id="console-开源">Console 开源&lt;/h2>
+&lt;p>从 KubeSphere 第一行代码至今，项目经历了一年多时间的迅速发展，开源社区也这个期间完成孵化，并初具规模。为了让 KubeSphere 项目能够更好地以开源社区的形式发展和演进，让社区开发者能够方便地参与到 KubeSphere 项目的建设，社区宣布将 KubeSphere 前端项目 &lt;code>console&lt;/code> 开源，&lt;strong>当前开源的版本包含了 KubeSphere 最新发布 v2.1 所有功能的代码&lt;/strong>，前端的 Feature Map 可以通过这张图快速了解。&lt;/p>
+&lt;p>&lt;strong>Feature Map&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-docs/png/20191202112003.png" alt="">&lt;/p>
+&lt;p>前端项目的代码已在 &lt;code>github.com/kubesphere/console&lt;/code> 可见，欢迎大家 &lt;strong>Star + Fork&lt;/strong>。此前已有多位社区用户与开发者表示，希望能参与到 KubeSphere 项目的前端贡献，现在大家已经可以从 &lt;code>github.com/kubesphere/kubesphere/issues&lt;/code> 通过标签 &lt;code>area/console&lt;/code> 找到前端相关的 issue，包括 Bug、feature and design。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-docs/png/20191202111750.png" alt="">&lt;/p>
+&lt;p>至此，KubeSphere 开源社区发布的项目已涵盖了容器平台（KubeSphere）、多云应用管理平台（OpenPitrix）、网络插件（Porter LB 插件、Hostnic-CNI）、存储插件（CSI）、CI/CD（S2i-operator）、日志插件（Fluentbit-operator）、通知告警（Alert &amp;amp; Notification）、身份认证（IAM）等。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-docs/png/20191202104556.png" alt="">&lt;/p>
+&lt;h2 id="kubesphere-社区架构">KubeSphere 社区架构&lt;/h2>
+&lt;p>KubeSphere 相信 &lt;code>Community over code&lt;/code>，一个健康良好的开源社区发展必定离不开 Contributor 的参与。为了让社区相关的事情更加成体系，让社区同学更有归属感，KubeSphere 首次建立了社区架构，第一次公开的架构包括 &lt;strong>Developer Group&lt;/strong> 和 &lt;strong>User Group&lt;/strong>。&lt;/p>
+&lt;blockquote>
+&lt;p>SIG（特别兴趣小组）由开发者和用户共同组成，目前架构中暂未划分主题，未来将根据社区用户的参与和关注方向进行划分。&lt;/p>&lt;/blockquote>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-docs/png/20191202150115.png" alt="">&lt;/p>
+&lt;h3 id="developer-group">Developer Group&lt;/h3>
+&lt;p>Developer Group 将以开发者对 KubeSphere 组织下的所有开源项目的贡献数量和质量作为参考，可贡献的项目包括前后端、存储与网络插件、官网文档等项目。&lt;/p></description></item><item><title>KubeSphere 容器平台发布 2.1.1，全面支持 Kubernetes 1.17</title><link>https://openksc.github.io/zh/news/kubesphere-release-note-post/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-release-note-post/</guid><description>&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-docs/png/20200224093525.png" alt="">&lt;/p>
+&lt;p>农历二月二，KubeSphere 开源社区激动地向大家宣布，KubeSphere 容器平台 2.1.1 正式发布！&lt;/p>
+&lt;p>KubeSphere 作为 &lt;strong>开源的企业级容器平台&lt;/strong>，对 2.1.1 版本定义的是 &lt;strong>进一步增强生产可用性&lt;/strong>，修复了多个组件的 Bug，升级了内置的多个开源组件。借助 KubeSphere，您可以快速安装与管理原生的 Kubernetes，KubeSphere 2.1.1 已支持至 Kubernetes 1.17，帮助您上手 Kubernetes 新版本中新增的特性。并且，还向前兼容与支持 Kubernetes 1.17 之前的 3 个版本，您可以按需进行安装。&lt;/p>
+&lt;p>KubeSphere 能够帮助企业快速构建一个功能丰富的容器云平台。让企业在享受 Kubernetes 的弹性伸缩与敏捷部署的同时，还可以在容器平台拥有 IaaS 平台的存储与网络能力，获得与 IaaS 平台一样稳定的用户体验。比如，我们在 KubeSphere 2.1.1 新增了对阿里云与腾讯云块存储插件的集成，支持为 Pod 挂载公有云的存储，为有状态应用提供更稳定的持久化存储的能力。&lt;/p>
+&lt;p>除此之外，我们还将安装步骤再一次简化。2.1.1 简化了在已有 Kubernetes 上安装的步骤，无需再像 2.1.0 安装一样，配置集群 CA 证书路径。并且，也将 etcd 监控作为了可选安装项。真正实现了一条命令即可在已有的 Kubernetes 集群上快速安装 KubeSphere。&lt;/p>
+&lt;p>关于 2.1.1 的更新详情，请参考 &lt;a href="https://kubesphere.com.cn/docs/v2.1/zh-CN/release/release-v211/" target="_blank" rel="noopener noreferrer">Release Note&lt;/a>。&lt;/p>
+&lt;p>下面演示两种最简单的安装方法，解锁如何最快尝鲜 KubeSphere 2.1.1。&lt;/p>
+&lt;h2 id="如何在-linux-快速安装-211">如何在 Linux 快速安装 2.1.1&lt;/h2>
+&lt;ol>
+&lt;li>本文将演示 All-in-One 安装，请准备一台干净的机器（虚拟机或物理机），安装前关闭防火墙，并确保您的机器符合以下的最小要求：&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>
+&lt;p>机器配置:&lt;/p>
+&lt;ul>
+&lt;li>CPU: 最小化安装需 2 Cores；完整安装需 8 Cores&lt;/li>
+&lt;li>Memory: 最小化安装需 4 GB；完整安装需 16 GB&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>操作系统:&lt;/p></description></item><item><title>KubeSphere 社区推出播客栏目——KubeSphere Talk</title><link>https://openksc.github.io/zh/news/kubesphere-talk-podcast/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-talk-podcast/</guid><description>&lt;p>“播客”这一概念来源自苹果电脑的“iPod”与“广播”（broadcast）的合成词，其指的是一种在互联网上发布文件并允许用户订阅feed以自动接收新文件的方法，或用此方法来制作的电台节目。2004 年 9 月，美国苹果公司发布 iPodder，这一事件被看作是播客（Podcast）出现的标志。&lt;/p>
+&lt;p>博客是把自己的思想通过文字和图片的方式在互联网上广为传播，而播客则是通过制作音频甚至视频节目的方式来进行传播。从某种意义上来说，播客就是一个以互联网为载体的个人电台和电视台，但就目前而言，播客主要还是以音频为主。&lt;/p>
+&lt;h2 id="为什么推出播客">为什么推出播客？&lt;/h2>
+&lt;p>播客在近几年逐渐兴起，关于开源、云原生的播客节目也逐渐增多，在开源圈获得了一定关注。前段时间，由众多开源相关的播客节目联合组织的技术播客月，也取得了不错的效果。&lt;/p>
+&lt;p>KubeSphere 作为一个发展迅速的开源项目，在产品与社区两个方向上都稳步前进，收获了很多 Contributor 和 Ambassador。 同时，作为开源社区，KubeSphere 也一直持续在公众媒体上输出云原生领域的技术文章，为社区用户赋能。但我们不想局限于此。我们深知开源需要布道，所以我们期望输出一些不同形式的内容，帮助大家去更好的理解开源、参与开源。另外我们也希望借助于这个节目，去挖掘各个贡献者的故事和闪光点，吸引更多的人来使用 KubeSphere，来参与 KubeSphere 社区。&lt;/p>
+&lt;h2 id="kubesphere-播客聊什么">KubeSphere 播客聊什么？&lt;/h2>
+&lt;p>KubeSphere Talk 是由 KubeSphere 发起的一档访谈、聊天的音频节目。节目前期，主要邀请 KubeSphere 社区的 Ambassador、Contributor 等角色，围绕云原生、开源等热门话题展开，挖掘他们身上的故事和闪光点，为期望了解开源和云原生的各位小伙伴提供参考。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/202211291543237.png" alt="">&lt;/p>
+&lt;h2 id="在哪里可以收听">在哪里可以收听&lt;/h2>
+&lt;p>目前 KubeSphere Talk 已在小宇宙、喜马拉雅、苹果播客三个平台上线，并已发布第一期节目。&lt;strong>你可以直接在各个平台搜索，或扫描下方二维码跳转到你喜欢的平台。&lt;/strong>&lt;/p>
+&lt;div align=center>
+&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/202211291541054.png" width="200" height="200" />
+&lt;/div>
+&lt;p>第一期节目，我们邀请了 KubeSphere 社区用户委员会杭州站站长尹珉，来和他聊一聊他参与开源、参与 KubeSphere 社区的故事，以及他的所思、所想、所得。&lt;/p>
+&lt;h2 id="我想参与怎么参与">我想参与，怎么参与？&lt;/h2>
+&lt;p>目前，KubeSphere Talk 主要邀请 KubeSphere 的 Ambassador 和 Contributor 两类角色进行访谈。如果您属于这两类角色，我们非常欢迎您带着话题来参与节目。如果您不属于这两类角色，但对开源理解较深，参与开源较多，有一些见识和认识，也欢迎您带着话题来申请参与节目。&lt;/p>
+&lt;p>申请方式，在 GitHub 对应的仓库下提交 issue。&lt;/p>
+&lt;p>issue 链接：&lt;strong>&lt;a href="https://github.com/kubesphere/community/issues/new?assignees=&amp;amp;labels=area%2Fpodcast&amp;amp;template=podcast_guest.yml&amp;amp;title=REQUEST%3A&amp;#43;New&amp;#43;guest&amp;#43;on&amp;#43;KubeSphere&amp;#43;Talk" target="_blank" rel="noopener noreferrer">https://github.com/kubesphere/community/issues/new?assignees=&amp;labels=area%2Fpodcast&amp;template=podcast_guest.yml&amp;title=REQUEST%3A+New+guest+on+KubeSphere+Talk&lt;/a>&lt;/strong>&lt;/p>
+&lt;h2 id="节目的相关信息">节目的相关信息&lt;/h2>
+&lt;ul>
+&lt;li>节目名称：KubeSphere Talk（经投票产生）&lt;/li>
+&lt;li>固定主播：KubeSphere 社区经理 Fawei &amp;amp; 米开朗基杨&lt;/li>
+&lt;li>时长：1 小时左右&lt;/li>
+&lt;li>头像与封面设计：summer&lt;/li>
+&lt;li>渠道：小宇宙、喜马拉雅、苹果播客&lt;/li>
+&lt;/ul></description></item><item><title>KubeSphere 土耳其社区携手华为，助力用户全面拥抱云原生</title><link>https://openksc.github.io/zh/news/kubesphere-turkey-and-huawei-partnership/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-turkey-and-huawei-partnership/</guid><description>&lt;p>KubeSphere 容器平台正在迅速走向全球，这一次是土耳其。&lt;/p>
+&lt;p>2022 年 10 月 18 日，KubeSphere 土耳其与华为达成战略合作，在华为全联接大会 2022 · 巴黎签署战略合作协议。大会上，双方达成一致，将发挥各自技术和资源优势，为土耳其用户提供更加本土化和优质的云原生服务，共同赋能企业云原生新时代。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-turkey-huawei.jpeg" alt="">&lt;/p>
+&lt;p>华为合作伙伴与生态系统经理 Yavuz Sarı 表示，“我们期待与 KubeSphere Turkey 一起，基于两个场景来开发 PaaS 方案。 第一个是构建一个托管的、可共享的平台，帮助个人开发者和小型企业轻松使用 Kubernetes；另一个则是构建可供政府或其他附属机构使用的托管的、不可共享的平台。 我们会将这些架构都托管在华为云上。”&lt;/p>
+&lt;p>KubeSphere 土耳其地区产品经理 Halil 表示，“华为在土耳其建立的云基地对于土耳其市场以及像我们这样的全球公司来说非常有价值。 和华为这样全球一流的公司合作，并在华为云上开发服务，会使我们在市场上的前进速度比其他竞争对手快很多。我们准备和华为一起建立一个之前在土耳其从未尝试过的服务架构。”&lt;/p>
+&lt;p>作为青云科技开源的容器平台，KubeSphere 致力于成为企业落地云原生的基石，帮助用户在云、虚拟机及物理机等异构基础设施上完成容器平台的快速部署，实现云原生应用的敏捷开发与全生命周期管理。目前，KubeSphere 社区用户已遍布全球 100 多个国家和地区，下载量近百万。联合海外众多的贡献者企业，KubeSphere 目前已建立了西班牙社区和土耳其社区，未来将进一步拓展全球市场。&lt;/p>
+&lt;p>而在服务解决方案方面，华为在国内外市场都有着业界领先的水平。和华为在业务和技术方面展开更深入的交流合作，将有助于 KubeSphere 自身产品的升级，从而实现 KubeSphere 在混合云容器市场的持续领跑。未来，KubeSphere 也希望，基于自身产品服务和技术优势与华为在全球市场上展开更深层次的合作，实现共赢。&lt;/p>
+&lt;h2 id="致谢">致谢&lt;/h2>
+&lt;p>本次合作是华为、KubeSphere 土耳其和 EquoSystem 各方员工和贡献者辛苦付出的成果，在此表示由衷的感谢。 在此致谢华为执行主管 Frank Machao 和 Bobby Zhang、华为团队 Yavuz Sarı、Haldun Bozkır、Rıza Can Sevinç、Wu Yongxi 和 Lin Zelin， 以及 KubeSphere 土耳其团队 Eda Konyar、Halil BUGOL 和 Stephane Yasar 等成员的辛苦付出。&lt;/p></description></item><item><title>KubeSphere 团队将在 KubeCon China 中带来两个重磅分享</title><link>https://openksc.github.io/zh/news/kubecon-china-2023/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubecon-china-2023/</guid><description>&lt;p>由 Linux 基金会、云原生计算基金会（CNCF）主办的 KubeCon + CloudNativeCon + Open Source Summit China 2023 &lt;a href="https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/program/schedule/" target="_blank" rel="noopener noreferrer">详细日程&lt;/a>终于来了！&lt;/p>
+&lt;p>本届 KubeCon 也是时隔几年后再次于中国线下举办，将围绕云原生和开源的所有事物进行分享和交流 - 安全、服务网格、网络 + 边缘、开放 AI + 数据、WebAssembly 以及你不应错过的许多其他主题。&lt;/p>
+&lt;p>在此次技术峰会中，KubeSphere 团队将带来两个议题分享，让我们先睹为快！&lt;/p>
+&lt;h2 id="议题-1">议题 1&lt;/h2>
+&lt;h3 id="议题名称">议题名称&lt;/h3>
+&lt;p>Run Serverless Workloads on Any Infrastructure with OpenFunction&lt;/p>
+&lt;p>使用 OpenFunction 在任何基础设施上运行无服务器工作负载&lt;/p>
+&lt;h3 id="议题简介">议题简介&lt;/h3>
+&lt;p>云原生技术的崛起使得我们可以以相同的方式在公有云、私有云或本地数据中心运行应用程序或工作负载。但是，对于需要访问不同云或开源中间件的各种 BaaS 服务的无服务器工作负载来说，这并不容易。在这次演讲中，OpenFunction 维护者将详细介绍如何使用 OpenFunction 解决这个问题，以及 OpenFunction 的最新更新和路线图：&lt;/p>
+&lt;ul>
+&lt;li>使用 Dapr 将 FaaS 与 BaaS 解耦&lt;/li>
+&lt;li>使用 Dapr 代理而不是 Dapr sidecar 来加速函数启动&lt;/li>
+&lt;li>使用 Kubernetes Gateway API 构建 OpenFunction 网关&lt;/li>
+&lt;li>使用 WasmEdge 运行时运行 WebAssembly 函数&lt;/li>
+&lt;li>OpenFunction 在自动驾驶行业的应用案例&lt;/li>
+&lt;li>最新更新和路线图&lt;/li>
+&lt;/ul>
+&lt;h3 id="讲师简介">讲师简介&lt;/h3>
+&lt;ul>
+&lt;li>霍秉杰：KubeSphere 可观测性、边缘计算和 Serverless 团队负责人，Fluent Operator 和 OpenFunction 项目的创始人，还是多个可观测性开源项目包括 Kube-Events、Notification Manager 等的作者，热爱云原生技术，并贡献过 KEDA、Prometheus Operator、Thanos、Loki 和 Falco 等知名开源项目。&lt;/li>
+&lt;li>王翼飞：青云科技资深软件工程师，负责开发和维护 OpenFunction 项目。专注于 Serverless 领域的研发，对 Knative、Dapr、Keda 等开源项目有深入的了解和实践经验。&lt;/li>
+&lt;/ul>
+&lt;h3 id="分享时间">分享时间&lt;/h3>
+&lt;p>2023 年 9 月 27 日下午 3:50-4:25&lt;/p></description></item><item><title>KubeSphere 网关组件（ingress-nginx）安全漏洞公告</title><link>https://openksc.github.io/zh/news/kubesphere-gateway-component-ingress-nginx-security-zh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-gateway-component-ingress-nginx-security-zh/</guid><description>&lt;p>近期，Kubernetes 官方维护的 Ingress-Nginx 控制器被发现存在多个高危漏洞，包括权限提升、信息泄露、安全绕过和目录遍历等问题。这些漏洞影响了 KubeSphere 和 KSE 的多个版本，攻击者利用这些漏洞，可能在未经授权的情况下执行任意代码、访问敏感信息，甚至完全控制集群。&lt;/p>
+&lt;p>鉴于这些漏洞的严重性，建议受影响的用户立即采取措施，确保集群安全。&lt;/p>
+&lt;h1 id="kubesphere-网关组件ingress-nginx安全漏洞公告">KubeSphere 网关组件（ingress-nginx）安全漏洞公告&lt;/h1>
+&lt;h2 id="1-漏洞概述">1. 漏洞概述&lt;/h2>
+&lt;h3 id="影响版本">影响版本：&lt;/h3>
+&lt;ul>
+&lt;li>KubeSphere &amp;amp; KSE v3.x 所有版本&lt;/li>
+&lt;li>KubeSphere &amp;amp; KSE v4.1.x 所有版本&lt;/li>
+&lt;/ul>
+&lt;h3 id="漏洞等级严重">漏洞等级：严重&lt;/h3>
+&lt;h3 id="漏洞类型">漏洞类型：&lt;/h3>
+&lt;p>权限提升、信息泄露、安全绕过、目录遍历&lt;/p>
+&lt;h3 id="相关漏洞一览">相关漏洞一览：&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>漏洞编号&lt;/th>
+ &lt;th>类型&lt;/th>
+ &lt;th>CVSS评分&lt;/th>
+ &lt;th>简述&lt;/th>
+ &lt;th>详细信息&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>CVE-2025-1097&lt;/td>
+ &lt;td>配置注入&lt;/td>
+ &lt;td>8.8（高危）&lt;/td>
+ &lt;td>通过 &lt;code>auth-tls-match-cn&lt;/code> 注解注入恶意配置，可导致任意代码执行和信息泄露&lt;/td>
+ &lt;td>&lt;a href="https://github.com/kubernetes/kubernetes/issues/131007" target="_blank" rel="noopener noreferrer">官方链接&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>CVE-2025-24514&lt;/td>
+ &lt;td>配置注入&lt;/td>
+ &lt;td>8.8（高危）&lt;/td>
+ &lt;td>通过 &lt;code>auth-url&lt;/code> 注解注入恶意配置，可导致任意代码执行和信息泄露&lt;/td>
+ &lt;td>&lt;a href="https://github.com/kubernetes/kubernetes/issues/131006" target="_blank" rel="noopener noreferrer">官方链接&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>CVE-2025-24513&lt;/td>
+ &lt;td>目录遍历&lt;/td>
+ &lt;td>4.8（中危）&lt;/td>
+ &lt;td>Admission Controller 中的文件路径遍历，可能导致拒绝服务和信息泄露&lt;/td>
+ &lt;td>&lt;a href="https://github.com/kubernetes/kubernetes/issues/131005" target="_blank" rel="noopener noreferrer">官方链接&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>CVE-2025-1974&lt;/td>
+ &lt;td>远程代码执行&lt;/td>
+ &lt;td>9.8（严重）&lt;/td>
+ &lt;td>Pod网络可达的未授权远程代码执行漏洞，可导致完全控制集群&lt;/td>
+ &lt;td>&lt;a href="https://github.com/kubernetes/kubernetes/issues/131009" target="_blank" rel="noopener noreferrer">官方链接&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>CVE-2025-1098&lt;/td>
+ &lt;td>配置注入&lt;/td>
+ &lt;td>8.8（高危）&lt;/td>
+ &lt;td>通过&lt;code>mirror-target&lt;/code>和&lt;code>mirror-host&lt;/code>注解注入恶意配置，可导致任意代码执行和信息泄露&lt;/td>
+ &lt;td>&lt;a href="https://github.com/kubernetes/kubernetes/issues/131008" target="_blank" rel="noopener noreferrer">官方链接&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="2-漏洞影响分析">2. 漏洞影响分析&lt;/h2>
+&lt;p>这些漏洞主要通过以下方式影响系统：&lt;/p></description></item><item><title>KubeSphere 宣布开源 Thanos 的企业级发行版 Whizard</title><link>https://openksc.github.io/zh/news/announcing-whizard-as-open-source/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/announcing-whizard-as-open-source/</guid><description>&lt;p>日前，青云科技宣布开源 Thanos 的企业级发行版 Whizard，为企业带来真正高可用、可扩展、可存储与查询海量监控数据、易运维、安全的 Prometheus 长期存储方案。&lt;/p>
+&lt;p>Prometheus 已经成为云原生监控领域事实上的标准，但 Prometheus 并没有解决企业用户对高可用、可扩展、可存储与查询海量监控数据、易运维等方面的需求。Thanos 作为云原生社区主流的 Prometheus 长期存储项目，提供了 Prometheus 高可用、可存储与查询海量监控数据等能力，但也存在组件及参数众多，上手门槛较高；运维及水平扩展均需手动配置，比较繁琐且易出错；某些组件无水平扩展能力；各组件安全配置繁琐或欠缺等问题。&lt;/p>
+&lt;p>为了解决上述这些企业级用户的需求，青云科技 KubeSphere 可观测团队于 2021 年立项开始开发 Thanos 的企业级发行版 Whizard 并于 2022 年发布了第一版，至今已发布了 8 个大小版本。自 KubeSphere Enterprise v3.3.1 基于 Whizard 发布了可对海量 K8s 集群及边缘节点进行监控告警的 Whizard 可观测中心以来，经过 KubeSphere Enterprise v3.4.0，v3.5.0, v4.1.0 等多个企业版本的打磨，Whizard 已日臻成熟，具有很多独特的功能与亮点。&lt;/p>
+&lt;h2 id="功能亮点">功能亮点：&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>云原生化部署与运维&lt;/strong>：所有组件均支持以 CRD 的方式定义与维护，更易于配置与运维。包括 Thanos 的 Router, Ingester, Compactor, Store, Query, QueryFrontend, Ruler 等组件以及 Whizard 引入的 Service, Tenant, Storage 等。&lt;/li>
+&lt;li>&lt;strong>基于租户的自动水平扩展机制&lt;/strong>：基于 CPU 与 Memory 的 HPA 对于稳定性要求更高的企业级有状态工作负载并不是最好的选择，为此 Whizard 创造性地引入了基于租户的工作负载水平伸缩机制。Ingester，Compactor，Ruler 等均支持随着租户的创建与删除进行水平伸缩，保证租户工作负载稳定运行的同时，提供了租户级别的水平扩展与资源回收机制。&lt;/li>
+&lt;li>&lt;strong>适配 K8s 多集群管理&lt;/strong>：为了对 K8s 多集群监控告警提供更好的支持，Whizard 的维护者开发了 whizard-adapter ，可根据 K8s/KubeSphere 集群的创建与删除自动创建或删除 Whizard 的租户，进而触发 Thanos 有状态工作负载的自动水平伸缩。&lt;/li>
+&lt;li>&lt;strong>规则计算更好的扩展性&lt;/strong>：Thanos 原生的 Ruler 的水平扩展性并不好，无法满足海量 K8s 集群(租户)的 Alerting Rules 与 Recording Rules 的计算需求。为此 Whizard 的维护者为每个租户引入了专属的 Ruler，其可随着租户的生命周期自动创建与删除；除了租户专属的 Ruler， Whizard 的维护者还引入了全局 Ruler 的分片机制，用于满足跨海量集群(租户)的全局规则(Alerting rules or Recording Rules)计算需求; 此外 Thanos Ruler 目前尚不支持将计算后的各租户的 recording rules 分别写入各自租户的 Ingester，Whizard 的维护者为此也做了额外的支持。&lt;/li>
+&lt;li>&lt;strong>更细粒度的规则管理&lt;/strong>：目前社区流行用 PrometheusRule 来管理 Prometheus recording rules 及 alerting rules，这种方式存在的问题是 PrometheusRule 里存在属于多个规则组的多条规则，粒度过大，不宜并发编辑与维护。为了解决这个问题，Whizard 维护者引入了更细粒度的 RuleGroup 的 CRD 用于管理属于一个规则组内的所有规则；此外还引入了 3-tiers 的 RuleGroup 管理机制，RuleGroup 用于管理某一 namespace 下的规则组；ClusterRuleGroup 用于管理某一集群范围内的集群规则组；GlobalRuleGroup 用于管理扩跨多集群范围的全局规则组；在做到更细粒度规则管理的同时，满足了企业用户对不同权限范围的规则进行单独管理的需求。&lt;/li>
+&lt;li>&lt;strong>支持对象存储网关 Store 的按时间分片查询&lt;/strong>：Thanos 通过将 Prometheus 的数据写入对象存储并支持从对象存储查询海量的监控数据，如果查询的时间范围过大，会导致 Store 占用资源过多，为止 Whizard 的维护者为 Store 加入了按时间分片查询的机制，用户可以根据要查询的时间段分别创建不同的 Store CRD。&lt;/li>
+&lt;li>&lt;strong>引入 Gateway 及 Agent Proxy 以对数据的写入与读取进行更好的控制&lt;/strong>：客户端如 Prometheus Agent 或 Prometheus 无需直接与 Gateway 交互，通过 Whizard Agent Proxy 即可代理数据写入与查询请求至 Whizard Gateway，Whizard Gateway 进而可根据租户的权限放行或拒绝查询或写入请求。&lt;/li>
+&lt;li>&lt;strong>支持企业级的安全需求&lt;/strong>：企业用户通常对安全性有更高的需求。Whizard 除了支持组件间更方便的配置 tls 之外，还将 Thanos 的 WebUI 通过 Whizard Gateway 暴露出来并支持 Basic Auth 与 OAuth2-Proxy 两种认证方式，企业用户可以更安全的访问 Thanos 的 WebUI.&lt;/li>
+&lt;li>&lt;strong>更方便的 2-Tiers 组件配置&lt;/strong>：Whizard 支持 Service 与 Comopnents 两级组件配置，通用的配置可放在全局的 Servce 里做统一配置，各租户的所有组件共用；特殊的定制化配置可放在单独的 Component 里做个性化的定制。&lt;/li>
+&lt;/ul>
+&lt;h2 id="开源贡献">开源贡献：&lt;/h2>
+&lt;p>作为 Thanos 的企业级发行版，Whizard 的维护者也积极参与到了 Thanos 项目的维护中去，多次提交 PRs。&lt;/p></description></item><item><title>Notification Manager 2.0.0 发布：新增飞书通知、通知路由、通知静默</title><link>https://openksc.github.io/zh/news/notification-manager-v2.0.0-release/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/notification-manager-v2.0.0-release/</guid><description>&lt;p>&lt;a href="https://github.com/kubesphere/notification-manager" target="_blank" rel="noopener noreferrer">Notification Manager&lt;/a> 是 KubeSphere 可观测团队开源的一款 Kubernetes 平台上的&lt;strong>多租户通知管理系统&lt;/strong>，其从 Kubernetes 接收告警、事件、审计，根据用户设置的模板生成通知消息并推送给用户。&lt;/p>
+&lt;p>在过去的几个月里，社区一直在努力工作，为 Notification Manager 2.0.0 版本的发布做准备。今天，我们非常高兴地宣布 Notification Manager 2.0.0 已经正式发布了！感谢社区各位小伙伴对新功能、增强功能和错误修复的各种帮助！&lt;/p>
+&lt;p>Notification Manager 2.0.0 为您带来了许多值得关注的功能，包括新增&lt;strong>飞书通知&lt;/strong>、&lt;strong>通知路由&lt;/strong>、&lt;strong>通知静默&lt;/strong>、&lt;strong>自定义模板增强&lt;/strong>等。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/notification-manager-architecture.jpeg" alt="">&lt;/p>
+&lt;h2 id="通知">通知&lt;/h2>
+&lt;p>新增了对飞书的支持，支持通过机器人向群组发送通知，支持同时向多个用户和部门发送通知。&lt;/p>
+&lt;h2 id="路由">路由&lt;/h2>
+&lt;p>新增路由功能，用户可以通过设置路由规则，将指定的通知发送给指定的用户。在 1.x 版本中，Notification Manager 会根据通知中的 namespace 标签自动选择需要接收通知的用户。这种做法可以减化用户的配置工作，但是也使得用户无法控制通知的流向。路由功能弥补了这一缺憾，路由功能&lt;strong>赋予了用户自主控制通知流向的能力&lt;/strong>，用户可以通过路由对通知进行更细粒度的管理。&lt;/p>
+&lt;h2 id="静默">静默&lt;/h2>
+&lt;p>新增静默功能，可以通过配置静默规则，在特定的时间段屏蔽特定的通知。用户可以设置全局静默规则和租户静默规则，全局静默规则会对所有租户生效，租户静默规则只会对租户所属的通知渠道生效。静默规则有两方面的作用，一是在特定的时间段屏蔽通知，二是可以作为过滤器使用，对通知进行过滤，结合静默规则和通知过滤，用户可以实现更复杂的通知管理功能。&lt;/p>
+&lt;h2 id="模板">模板&lt;/h2>
+&lt;p>支持动态更新模板，用户更新模板文件后&lt;strong>不需要重启 Notification Manager&lt;/strong> 了。
+支持为 Receiver 设置模板，用户可以自由定义通知格式，不用担心对其他用户造成影响。&lt;/p>
+&lt;p>此外，您还可以通过&lt;a href="https://github.com/kubesphere/notification-manager/releases/tag/v2.0.0" target="_blank" rel="noopener noreferrer">发布说明&lt;/a>来了解 Notification Manager 2.0.0 的更多相关信息。&lt;/p>
+&lt;blockquote>
+&lt;p>需要说明的是，KubeSphere 3.3.0 没有集成 Notification Manager 2.0.0，但可以手动升级，参考： &lt;a href="https://github.com/kubesphere/notification-manager#install" target="_blank" rel="noopener noreferrer">https://github.com/kubesphere/notification-manager#install&lt;/a>。&lt;/p>&lt;/blockquote></description></item><item><title>OpenELB 项目进入 CNCF Sandbox，让私有化环境对外暴露服务更简单</title><link>https://openksc.github.io/zh/news/openelb-joins-cncf-sandbox-project/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/openelb-joins-cncf-sandbox-project/</guid><description>&lt;p>&lt;img src="https://kubesphere-community.pek3b.qingstor.com/images/4761636694917_.pic_hd.jpg" alt="头图">&lt;/p>
+&lt;p>11 月 10 日，云原生计算基金会 (CNCF) 宣布由青云科技 KubeSphere 团队开源的负载均衡器插件 OpenELB 正式进入 CNCF 沙箱（Sandbox）托管。&lt;/p>
+&lt;p>&lt;img src="https://kubesphere-community.pek3b.qingstor.com/images/8471636692467_.pic_hd.jpg" alt="示意图">&lt;/p>
+&lt;p>OpenELB 项目在此前命名为 PorterLB，是为物理机（Bare-metal）、边缘（Edge）和私有化环境设计的负载均衡器插件，可作为 Kubernetes、K3s、KubeSphere 的 LB 插件对集群外暴露 “LoadBalancer” 类型的服务，核心功能包括：&lt;/p>
+&lt;ul>
+&lt;li>基于 BGP 与 Layer 2 模式的负载均衡&lt;/li>
+&lt;li>基于路由器 ECMP 的负载均衡&lt;/li>
+&lt;li>IP 地址池管理&lt;/li>
+&lt;li>使用 CRD 进行 BGP 配置&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://kubesphere-community.pek3b.qingstor.com/images/8441636691354_.pic_hd.jpg" alt="架构">&lt;/p>
+&lt;h2 id="为什么发起-openelb">为什么发起 OpenELB&lt;/h2>
+&lt;p>我们起初在 KubeSphere 社区做了一项针对广大社区用户安装部署 Kubernetes 所使用环境的调研，从 5000 多份 KubeSphere 用户调研数据中发现有近 36% 的用户选择在物理机安装部署 Kubernetes，占比高居第一位。并且还有大量客户是在离线的数据中心或边缘设备安装和使用 Kubernetes 或 K3s，导致用户在私有环境对外暴露 LoadBalancer 服务比较困难。&lt;/p>
+&lt;p>&lt;img src="https://kubesphere-community.pek3b.qingstor.com/images/8401636689164_.pic.jpg" alt="用户调研">&lt;/p>
+&lt;p>我们知道，在 Kubernetes 集群中可以使用 “LoadBalancer” 类型的服务将后端工作负载暴露在外部。云厂商通常为 Kubernetes 提供云上的 LB 插件，但这需要将集群部署在特定 IaaS 平台上。然而，许多企业用户通常都将 Kubernetes 集群部署在裸机上，尤其是用于生产环境时。而且对于私有化环境特别是物理机或边缘集群，Kubernetes 并不提供 LoadBalancer 方案。&lt;/p></description></item><item><title>除夕夜，来 KubeSphere 社区领证吧！</title><link>https://openksc.github.io/zh/news/kubesphere-certificates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-certificates/</guid><description>&lt;video controls="controls" style="width: 100% !important; height: auto !important;">
+ &lt;source type="video/mp4" src="https://kubesphere-community.pek3b.qingstor.com/videos/meetup%20final%200131.mp4">
+&lt;/video>
+&lt;p>除夕夜辞旧迎新，感谢 KubeSphere 社区所有的贡献者与合作伙伴在过去一年来任何形式的合作与贡献。&lt;/p>
+&lt;p>我们非常庆幸 KubeSphere 社区到二月份总计有了近百位贡献者加入，全年诞生了 10 位 Ambassador，15 位 Talented Speaker，22 位优秀贡献者，还有 6 位具有突出贡献的活跃贡献者实力入选 KubeSphere Member，均由 KubeSphere 社区技术委员会与 KubeSphere 指导委员会投票通过。&lt;/p>
+&lt;h2 id="公开致谢">公开致谢&lt;/h2>
+&lt;p>KubeSphere 社区管理委员会向此次获得 2020 年度评选产生的 KubeSphere Member、 KubeSphere Ambassador、KubeSphere Talented Speaker、KubeSphere Contributor 成员致谢，并向所有参与过 KubeSphere 社区开源贡献的小伙伴致以 2021 春节最诚挚的问候，社区有一份专属的礼物等你来领！&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/20210211222956.png" alt="合影">&lt;/p>
+&lt;h2 id="kubesphere-member">KubeSphere Member&lt;/h2>
+&lt;p>KubeSphere Member 是授予给深度参与了 KubeSphere 社区开源贡献的成员，以下成员在社区独立完成了一个或多个功能特性开发、文档撰写以及测试，并帮助 KubeSphere 在多个社区积极布道，推广开源技术，目前已全部邀请加入了 KubeSphere 的 Github 组织。&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>姓名&lt;/th>
+ &lt;th>证书&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Jie Chen&lt;/td>
+ &lt;td>&lt;a href="https://kubesphere-community.pek3b.qingstor.com/images/certificates/member-chenjie.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Ling Li&lt;/td>
+ &lt;td>&lt;a href="https://kubesphere-community.pek3b.qingstor.com/images/certificates/member-liling.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Honglei Shen&lt;/td>
+ &lt;td>&lt;a href="https://kubesphere-community.pek3b.qingstor.com/images/certificates/member-shenhonglei.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Turtle Chang&lt;/td>
+ &lt;td>&lt;a href="https://kubesphere-community.pek3b.qingstor.com/images/certificates/member-turtlechang.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Jian Zhang&lt;/td>
+ &lt;td>&lt;a href="https://kubesphere-community.pek3b.qingstor.com/images/certificates/member-zhagnjian.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Kai Zhang&lt;/td>
+ &lt;td>&lt;a href="https://kubesphere-community.pek3b.qingstor.com/images/certificates/member-zhangkai.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="kubesphere-talented-speaker">KubeSphere Talented Speaker&lt;/h2>
+&lt;p>KubeSphere Talented Speaker 是授予在 KubeSphere 社区云原生技术直播活动、 2020 年度北京 Meetup、CNCF Webinar 上进行过公开技术分享的优秀讲师，他们是帮助 KubeSphere 社区积极布道的技术传播者，具备出色的技术演讲能力。&lt;/p></description></item><item><title>导师征集令 | 开源之夏 2022 再度来袭！</title><link>https://openksc.github.io/zh/news/ospp-2022/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/ospp-2022/</guid><description>&lt;h2 id="活动简介">活动简介&lt;/h2>
+&lt;p>“开源之夏（英文简称 OSPP）”是中科院软件所“开源软件供应链点亮计划”指导下的系列暑期活动，由软件所与 openEuler 社区共同主办。&lt;/p>
+&lt;p>开源之夏是一项主要面向高校学生的暑期开源活动，旨在鼓励在校学生积极参与开源软件的开发维护，促进优秀开源软件社区的蓬勃发展。活动联合各大开源社区，针对重要开源软件的开发与维护提供项目，并向全球高校学生开放报名。&lt;/p>
+&lt;p>学生可自主选择感兴趣的项目进行申请，并在中选后获得该软件资深维护者（社区导师）亲自指导的机会。根据项目的难易程度和完成情况，参与者还将获取开源之夏活动奖金和结项证书。&lt;/p>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/SCR-20220412-nhw.png" alt="目前已有 65 个社区参与">&lt;/p>
+&lt;p>&lt;a href="https://mp.weixin.qq.com/s/orCiHb6zJIbW02EUpdRG3w" target="_blank" rel="noopener noreferrer">去年的开源之夏，KubeSphere 作为社区（项目组织）也参与其中，完成了十个项目的开发&lt;/a>。&lt;/p>
+&lt;p>在此，感谢参与这些项目的诸位导师：Rick、JohnNiang、Zhengyi Lai、Benjamin Huo、hongming、Roland、wanjunlei、laminar、FeynmanZhou、LiuBo、Sherlock，他们不遗余力、认真负责地辅导学生；也非常感谢参与的&lt;a href="https://mp.weixin.qq.com/s/69niyBaLZCxOIWGcUShxcg" target="_blank" rel="noopener noreferrer">各位学生&lt;/a>：吴晓涵、丁梓硕、吴嘉皓、汤贤贺、龙泓杙、马朋辉、林许亚伦、张源易、刘宇乐、张杨茂、王雨晨，他们积极参与、保质保量地完成了自己负责的项目任务。&lt;/p>
+&lt;h2 id="参与方式">参与方式&lt;/h2>
+&lt;p>活动参与方主要角色为学生、社区和导师，参与方式如下：&lt;/p>
+&lt;p>学生：学生自由选择项目，与社区导师沟通实现方案并撰写项目计划书。被选中的学生将在社区导师指导下，按计划完成开发工作，并将成果贡献给社区。社区评估学生的完成度，主办方根据评估结果发放资助金额给学生。&lt;/p>
+&lt;p>社区：社区提供项目列表和描述，并安排项目对应的导师，导师与申请者沟通方案、并从申请者中选中一位承接项目。在为期三个月的开发周期中，导师指导学生进行对应项目的开发工作。在此期间，KubeSphere 社区将会以多种方式为学生提供帮助，比如微信群、双周例会等。&lt;/p>
+&lt;p>导师：社区针对每一个项目指定一个社区导师，与学生一起制定合适的开发计划和方案，指导学生按计划完成开发。&lt;/p>
+&lt;h2 id="项目奖金">项目奖金&lt;/h2>
+&lt;p>学生可获得的奖金：&lt;/p>
+&lt;ul>
+&lt;li>进阶：奖金人民币 12000 元
+&lt;ul>
+&lt;li>优化类的任务，例如提高时间、降低内存占用、提供性能等&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>基础：奖金人民币 8000 元
+&lt;ul>
+&lt;li>功能类的任务，例如为本社区开源项目增加一个或若干个重要特性等&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>难度分级由社区根据项目任务决定。&lt;/p>
+&lt;p>对于导师而言，无论何种难度，导师的奖金为每个项目税前 3000 元人民币，每位导师最多负责 1 个项目，即奖金最多为税前 3000 元人民币。&lt;/p>
+&lt;h2 id="活动日程">活动日程&lt;/h2>
+&lt;p>暑期 2021 活动里程碑。&lt;em>默认时区为北京时间（GMT+8）&lt;/em>&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>日期&lt;/th>
+ &lt;th>阶段&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>03/28-04/15&lt;/td>
+ &lt;td>社区报名&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>04/16-04/20&lt;/td>
+ &lt;td>项目数量沟通&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>04/21-05/10&lt;/td>
+ &lt;td>社区上线项目及组委会审核&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>04/21-05/20&lt;/td>
+ &lt;td>项目沟通期&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>05/21-06/04&lt;/td>
+ &lt;td>学生提交项目申请书&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>06/05-06/11&lt;/td>
+ &lt;td>项目申请审核（导师）&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>06/12-06/14&lt;/td>
+ &lt;td>项目申请审核（组委会）&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>06/15&lt;/td>
+ &lt;td>中选公示&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>06/16-06/30&lt;/td>
+ &lt;td>项目预热期&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>07/01-09/30&lt;/td>
+ &lt;td>项目开发&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>10/01-10/31&lt;/td>
+ &lt;td>结项审核&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>11 月上旬&lt;/td>
+ &lt;td>结项项目公示&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="欢迎申请成为导师">欢迎申请成为导师&lt;/h2>
+&lt;p>KubeSphere 开源社区作为项目组织已申请加入活动中。目前在项目征集阶段，也欢迎社区 Contributor、Member、Owner/Lead 作为导师参与！&lt;/p></description></item><item><title>恭贺 2021 年新晋 KubeSphere Member，快来领取证书！</title><link>https://openksc.github.io/zh/news/kubesphere-member-certificates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-member-certificates/</guid><description>&lt;p>2021 年，KubeSphere 社区又收获了逾百位的贡献者，包括代码、中英文文档、技术布道、本地化与国际化等贡献都是我们认可的贡献方式，在此我们对 KubeSphere 社区所有的贡献者与合作伙伴表示衷心的感谢！&lt;/p>
+&lt;p>社区设置了 KubeSphere Contributor 奖项作为激励多次为 KubeSphere 贡献代码的成员。上周已经&lt;a href="https://kubesphere.io/zh/news/kubesphere-contributor-certificates/" target="_blank" rel="noopener noreferrer">颁发了 2021 年度新晋的 KubeSphere Contributor 证书&lt;/a>。而对于具有突出贡献的活跃贡献者，我们还设立了专门的 KubeSphere Member 奖项作为激励。&lt;/p>
+&lt;p>从上一次&lt;a href="https://kubesphere.io/zh/news/kubesphere-certificates/" target="_blank" rel="noopener noreferrer">颁发&lt;/a>（2021 年 2 月 11 日）到现在，共有 10 位（其中 Daniel Hu 的证书已单独颁发过，此次不再颁布）突出贡献者入选了 KubeSphere Member，均由 KubeSphere 社区技术委员会与 KubeSphere 指导委员会投票通过。他们深度参与了 KubeSphere 社区开源贡献，在社区独立完成了一个或多个功能特性开发、文档撰写以及测试，并帮助 KubeSphere 在多个社区积极布道，推广开源技术，目前已全部邀请加入了 KubeSphere 的 Github 组织。&lt;/p>
+&lt;h2 id="领取证书">领取证书&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>GitHub ID 或姓名&lt;/th>
+ &lt;th>证书&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Shaohui Liu&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/member-liushaohui.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Yuanpeng Liang&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/member-liangyuanpeng.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Dhruv Kela&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/member-kela.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Bojan&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/member-bojan.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Akhil Mohan&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/member-mohan.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Wenhu Wang&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/member-wangwenhu.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Wei Xu&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/member-xuweimango.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Abdelouahab&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/member-abdelouahab.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Liuyi Chen&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/member-chenliuyi.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>证书示例：
+&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-member-certification.png" alt="">&lt;/p></description></item><item><title>关于 KubeSphere IDOR 安全漏洞 CVE-2024-46528 的声明及解决方案</title><link>https://openksc.github.io/zh/news/kubesphere-cve-2024-46528/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-cve-2024-46528/</guid><description>&lt;p>近期，有第三方平台的安全技术人员发现了在 KubeSphere 开源版 3.4.1 及 4.1.1 上存在不安全的直接对象引用（IDOR）的漏洞，该漏洞允许低权限的通过认证的攻击者在没有适当授权检查的情况下访问敏感资源。我们及时与对方进行了联系，并帮助对方解决了此问题，CVE 漏洞的详细信息及问题处理过程可以参考以下链接：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://nvd.nist.gov/vuln/detail/CVE-2024-46528" target="_blank" rel="noopener noreferrer">CVE-2024-46528&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://okankurtulus.com.tr/2024/09/09/idor-vulnerability-in-kubesphere/" target="_blank" rel="noopener noreferrer">IDOR Vulnerability in KubeSphere&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="影响范围">影响范围&lt;/h2>
+&lt;ul>
+&lt;li>KubeSphere 4.x 受影响版本: &amp;lt; 4.1.3&lt;/li>
+&lt;li>KubeSphere 3.x 受影响版本: &amp;gt;= 3.0.0, &amp;lt;= 3.4.1&lt;/li>
+&lt;li>KubeSphere Enterprise 4.x 受影响版本: &amp;lt; 4.1.3&lt;/li>
+&lt;li>KubeSphere Enterprise 3.x 受影响版本: &amp;gt;= 3.0.0, &amp;lt;= 3.5.0&lt;/li>
+&lt;/ul>
+&lt;h2 id="规避方案">规避方案&lt;/h2>
+&lt;p>移除 &lt;code>authenticated&lt;/code> 平台角色非必需的资源授权：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl patch globalrole.iam.kubesphere.io authenticated --type merge -p &lt;span style="color:#e6db74">&amp;#39;{&amp;#34;rules&amp;#34;: [{&amp;#34;apiGroups&amp;#34;:[&amp;#34;monitoring.kubesphere.io&amp;#34;,&amp;#34;metering.kubesphere.io&amp;#34;,&amp;#34;monitoring.coreos.com&amp;#34;],&amp;#34;resources&amp;#34;:[&amp;#34;cluster&amp;#34;],&amp;#34;verbs&amp;#34;:[&amp;#34;list&amp;#34;]},{&amp;#34;apiGroups&amp;#34;:[&amp;#34;resources.kubesphere.io&amp;#34;],&amp;#34;resources&amp;#34;:[&amp;#34;clusters&amp;#34;],&amp;#34;verbs&amp;#34;:[&amp;#34;get&amp;#34;,&amp;#34;list&amp;#34;]}]}&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>此变更加强了对普通用户的权限约束，普通的项目成员在打开的页面，如果要调用这些需要特权 API 的时候会有 Forbidden 弹框。&lt;/p>
+&lt;h2 id="未来的修复计划">未来的修复计划&lt;/h2>
+&lt;p>此漏洞风险等级不高，您可以通过以上规避方案解决此问题，同时，我们也会在 KubeSphere 下一个正式版本 4.1.3 中修复此问题，预计发布时间为 2025 年 1 月份。&lt;/p>
+&lt;h2 id="对安全的承诺">对安全的承诺&lt;/h2>
+&lt;p>KubeSphere 持续致力于为企业客户提供安全可靠的云原生全栈解决方案。我们重视用户对我们平台的信任，并努力确保我们的系统符合最高的安全和性能标准。
+同时，KubeSphere 社区对 &lt;a href="https://www.linkedin.com/in/okankurtuluss/" target="_blank" rel="noopener noreferrer">Okan Kurtuluş&lt;/a> 对此问题的及时发现以及与我们的积极沟通表示极大的感谢。&lt;/p></description></item><item><title>关于 KubeSphere 中 Docker 组件合规性的声明</title><link>https://openksc.github.io/zh/news/docker-components-in-kubesphere-zh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/docker-components-in-kubesphere-zh/</guid><description>&lt;h3 id="导语">导语&lt;/h3>
+&lt;p>在快速变化的市场环境中，青云科技针对 KubeSphere 云原生产品与服务推出了产品生命周期管理政策。该政策旨在及时调整和终止不再符合市场需求的产品，以确保我们的产品始终满足客户期望。通过清晰的产品终止方案，我们将为客户提供必要的支持与指导，降低业务风险，提升客户信任与满意度。我们致力于推动技术创新，实现持续的业务发展，为客户创造更大的价值。&lt;/p>
+&lt;h2 id="青云科技关于-kubesphere-中-docker-组件合规性的声明">青云科技关于 KubeSphere 中 Docker 组件合规性的声明&lt;/h2>
+&lt;p>北京青云科技集团股份有限公司（以下简称&amp;quot;青云科技&amp;quot;或&amp;quot;我司&amp;quot;）始终秉承开放透明的合作原则，致力于为用户提供安全、合规的云原生产品解决方案。为保障用户权益并明确产品责任边界，现就我司 KubeSphere 容器管理平台（以下简称&amp;quot;本平台&amp;quot;）的产品信息与 Docker 组件使用合规性作以下官方声明：&lt;/p>
+&lt;h3 id="一-产品定位与技术架构">一. 产品定位与技术架构&lt;/h3>
+&lt;p>KubeSphere 容器管理平台是由青云科技自主研发的&lt;strong>企业级容器集群调度与管理平台。&lt;/strong> 本平台基于开源 Kubernetes 技术构建，专注于为全球用户提供高效稳定的容器化应用部署、运维及全生命周期管理服务，适用于混合云、异构多云及边缘计算等复杂场景。&lt;/p>
+&lt;h3 id="二-适用范围">二. 适用范围&lt;/h3>
+&lt;p>本文就 KubeSphere 容器管理平台中 Docker 组件合规性的声明适用于以下 KubeSphere 产品版本形态：&lt;/p>
+&lt;ul>
+&lt;li>KubeSphere 开源版。&lt;/li>
+&lt;li>KubeSphere 企业版（包含更名前的青云 QKCP）。&lt;/li>
+&lt;li>青云容器平台（可信版）。&lt;/li>
+&lt;/ul>
+&lt;h3 id="三-版权与-docker-组件合规声明">三. 版权与 Docker 组件合规声明&lt;/h3>
+&lt;p>&lt;strong>1. 平台组件构成说明&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>本平台属服务器端软件，其技术实现与交付内容严格遵循开源协议规范。&lt;/li>
+&lt;li>我司提供的软件安装包及最终用户运行环境中，不包含 Docker Desktop 软件及通过 Docker Desktop 引入的任何组件。&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>2. Docker 组件使用合规性&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>本平台软件安装包内集成的 &lt;strong>Docker Community Edition (docker-ce) 与 Docker Engine&lt;/strong>，均直接从 Docker 官方渠道所列单独路径下载。依据 Docker 官方网站上该路径所含版权声明（可访问链接 &lt;a href="https://docs.docker.com/engine/" target="_blank" rel="noopener noreferrer">https://docs.docker.com/engine/&lt;/a> 获取详细信息），&lt;strong>其版本声明明确标注为&amp;quot;Docker Engine is licensed under the Apache License, Version 2.0.&amp;quot;。&lt;/strong>&lt;/li>
+&lt;li>我司对上述组件的集成行为完全符合 Apache License 2.0 协议要求，且未通过 Docker Desktop 途径获取相关技术组件。因此，&lt;strong>不受&amp;quot;for commercial use of Docker Engine obtained via Docker Desktop&amp;quot;所述范围的限制，其行为完全符合 Docker 官方规定。&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>3. 用户自主选择权&lt;/strong>&lt;/p></description></item><item><title>过渡无压力！KubeSphere v3.4.x 到 v4.x 平滑升级全攻略</title><link>https://openksc.github.io/zh/news/the-complete-guide-to-smoothly-upgrading-from-kubesphere-v3.4.x-to-v4.x/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/the-complete-guide-to-smoothly-upgrading-from-kubesphere-v3.4.x-to-v4.x/</guid><description>&lt;p>本文将为您提供从 KubeSphere v3.4.x 升级到 v4.x 的完整操作步骤，帮助您顺利完成升级过程。特别注意，如果您的 KubeSphere 版本早于 v3.4.x，您需要先将其升级至 v3.4.x，然后再进行进一步的升级。&lt;/p>
+&lt;p>升级过程分为以下三个主要步骤，请按照顺序执行：&lt;/p>
+&lt;ol>
+&lt;li>升级 host 集群并迁移扩展组件数据。&lt;/li>
+&lt;li>升级 member 集群并迁移扩展组件数据。&lt;/li>
+&lt;li>升级网关。&lt;/li>
+&lt;/ol>
+&lt;h2 id="下载升级脚本">下载升级脚本&lt;/h2>
+&lt;p>在 host 集群和 member 集群环境中下载升级脚本：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>curl -LO https://github.com/kubesphere/ks-installer/archive/refs/tags/v4.1.3.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tar -xzvf v4.1.3.tar.gz
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="修改升级配置文件">修改升级配置文件&lt;/h2>
+&lt;p>在 host 和所有的 member 集群中调整升级配置文件，配置文件路径 &lt;code>scripts/ks-core-values.yaml&lt;/code>，其中 &lt;code>upgrade&lt;/code> 部分为升级相关的配置项目，在升级之前，您需要确认要升级的组件和配置信息，通过 &lt;code>upgrade.jobs.config.&amp;lt;name&amp;gt;.enabled&lt;/code> 控制是否需要升级该组件，以下为配置示例：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">upgrade&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">image&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">registry&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">repository&lt;/span>: &lt;span style="color:#ae81ff">kubesphere/ks-upgrade&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">tag&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;v4.1.3&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">pullPolicy&lt;/span>: &lt;span style="color:#ae81ff">IfNotPresent&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">persistenceVolume&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">ks-upgrade&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">storageClassName&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">accessMode&lt;/span>: &lt;span style="color:#ae81ff">ReadWriteOnce&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">size&lt;/span>: &lt;span style="color:#ae81ff">5Gi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">config&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">storage&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">local&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">path&lt;/span>: &lt;span style="color:#ae81ff">/tmp/ks-upgrade&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">validator&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">ksVersion&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">extensionsMuseum&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">namespace&lt;/span>: &lt;span style="color:#ae81ff">kubesphere-system&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">extensions-museum&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">syncInterval&lt;/span>: &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">watchTimeout&lt;/span>: &lt;span style="color:#ae81ff">30m&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">jobs&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">network&lt;/span>: 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span> &lt;span style="color:#75715e"># 是启用并升级该扩展组件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">priority&lt;/span>: &lt;span style="color:#ae81ff">100&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">extensionRef&lt;/span>: &lt;span style="color:#75715e"># 扩展组件的版本配置，需要与 extensions-museum 中的信息一致&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;network&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">version&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;1.1.0&amp;#34;&lt;/span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">dynamicOptions&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;rerun&amp;#34;: &lt;/span>&lt;span style="color:#e6db74">&amp;#34;false&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">gateway&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">priority&lt;/span>: &lt;span style="color:#ae81ff">90&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">extensionRef&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;gateway&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">version&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;1.0.5&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>更多配置说明请参考 &lt;a href="https://github.com/kubesphere/ks-upgrade/tree/release-4.1/docs" target="_blank" rel="noopener noreferrer">扩展组件升级配置说明&lt;/a>&lt;/p></description></item><item><title>欢迎加入 KubeSphere 社区合作伙伴阵容！</title><link>https://openksc.github.io/zh/news/kubesphere-partner/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-partner/</guid><description>&lt;p>作为一个开源项目，KubeSphere 的稳步发展，得益于产品研发、社区发展等多方面，也离不开与各个合作伙伴的精诚合作。通过合作，KubeSphere 社区与合作伙伴共拓生态，共谋发展，逐步壮大。&lt;/p>
+&lt;p>目前 KubeSphere 的合作伙伴已遍布全球各地，助力全球用户全面拥抱云原生。最新加入的合作伙伴是&lt;a href="https://kubesphere.io/zh/news/kubesphere-turkey-and-huawei-partnership/" target="_blank" rel="noopener noreferrer">来自土耳其的 EquoSystem&lt;/a>，已经在当地获得了丰硕的合作成果。双方将继续发挥各自技术和资源优势，为土耳其用户提供更加本土化和优质的云原生服务，共同赋能企业云原生新时代。&lt;/p>
+&lt;p>KubeSphere 期待有更多的合作伙伴加入 KubeSphere 合作伙伴计划，以改善生态系统并发展业务。KubeSphere 可以为合作伙伴提供资源和权益，帮助他们提高专业知识、交付和推广产品，并把 KubeSphere 加入其市场策略中来实现具体业务目标。&lt;/p>
+&lt;h2 id="合作伙伴类型说明">合作伙伴类型说明&lt;/h2>
+&lt;ol>
+&lt;li>应用程序提供商&lt;/li>
+&lt;/ol>
+&lt;p>作为一个开源的、以应用为中心的容器平台，KubeSphere 在 OpenPitrix 的基础上，为用户提供了一个基于 Helm 的应用商店，用于应用生命周期管理。KubeSphere 应用商店让 ISV、开发者和用户能够在一站式服务中只需点击几下就可以上传、测试、安装和发布应用。&lt;/p>
+&lt;p>对内，KubeSphere 应用商店可以作为不同团队共享数据、中间件和办公应用的场所。对外，有利于设立构建和交付的行业标准。&lt;/p>
+&lt;p>KubeSphere 拥有数以万计的用户，所以您可以作为应用程序提供商，将应用发布到 KubeSphere 应用商店，让这些用户可以一键将您的应用部署到 Kubernetes。&lt;/p>
+&lt;ol start="2">
+&lt;li>技术合作伙伴&lt;/li>
+&lt;/ol>
+&lt;p>基于技术协作或联合解决方案为 KubeSphere 提供硬件平台、云服务或应用程序。如果您有这种解决方案，欢迎成为 KubeSphere 的技术合作伙伴，通过产品生态合作共同推动产业繁荣。&lt;/p>
+&lt;ol start="3">
+&lt;li>云提供商&lt;/li>
+&lt;/ol>
+&lt;p>如果您是基于 Kubernetes 提供解决方案的云提供商，还可以将 KubeSphere 集成到您的应用程序市场中，使用 KubeSphere 来扩展您的生态系统。&lt;/p>
+&lt;ol start="4">
+&lt;li>市场合作伙伴&lt;/li>
+&lt;/ol>
+&lt;p>如果您是开源社区或致力于推广您的开源项目，可以联合 KubeSphere 社区组织活动（比如线上直播和线下 meetup），也可以共同产出优质内容（技术博客等），或者进行丰富多样的联合推广，推动更多用户使用 KubeSphere 家族产品获得成功。&lt;/p>
+&lt;h2 id="合作伙伴权益说明">合作伙伴权益说明&lt;/h2>
+&lt;p>除了上述不同类型带来的不同权益之外，合作伙伴还有以下权益：&lt;/p>
+&lt;ul>
+&lt;li>在 KubeSphere 官网的合作伙伴页面展示 logo&lt;/li>
+&lt;li>在 KubeSphere 社区的年度或季度总结报告中露出&lt;/li>
+&lt;li>在 KubeSphere 社区相关人员参与的某些活动中展示露出（内容中展示）&lt;/li>
+&lt;li>创建合作关系后，可输出相关介绍文章，在 KubeSphere 官方媒体发布&lt;/li>
+&lt;li>技术合作伙伴与应用程序提供商，可在 KubeSphere 云原生直播间进行至少一次的技术直播（云原生技术相关话题）&lt;/li>
+&lt;/ul>
+&lt;h2 id="申请方式">申请方式&lt;/h2>
+&lt;p>如果您希望与 KubeSphere 深度合作，成为 KubeSphere 的合作伙伴，欢迎您与我们取得联系。可填写&lt;a href="https://jinshuju.net/f/WIVxeX" target="_blank" rel="noopener noreferrer">表单&lt;/a>申请。&lt;/p></description></item><item><title>欢迎加入 KubeSphere 社区用户委员会！</title><link>https://openksc.github.io/zh/news/kubesphere-user-group/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-user-group/</guid><description>&lt;p>随着容器技术的不断发展，云原生在世界范围内变得越来越受到欢迎，国内社区用户对云原生技术的热情也越来越高涨，现在完全可以说“云原生正在吞噬世界”。&lt;/p>
+&lt;p>为了让国内的云原生爱好者能够有更多的机会聚在一起面对面交流，自 2020 年起 KubeSphere 社区便组织了多场大大小小的线下 Meetup。同时，为了能够让那些狂热爱好者能够自发组织小范围的云原生技术交流和 Meetup，我们于 2021 年创立了社区用户委员会，分别成立了上海站、杭州站、成都站三个城市站，并已正常运转。&lt;/p>
+&lt;p>目前，KubeSphere 社区用户委员会&lt;a href="https://kubesphere.io/zh/user-group/" target="_blank" rel="noopener noreferrer">官网落地页&lt;/a>已上线，关于委员会的信息和分享内容，各位小伙伴均可在此页面了解（也可在官网“社区”下拉菜单下找到“用户委员会”来获取信息）。&lt;/p>
+&lt;h2 id="社区用户委员会简介">社区用户委员会简介&lt;/h2>
+&lt;p>KubeSphere 社区用户委员会，是由 KubeSphere 社区牵头发起，在某个城市当地，由活跃且愿意为 KubeSphere 社区发展而贡献的社区成员构成的组织。&lt;/p>
+&lt;p>社区会给予委员会相应的支持和授权，汇聚城市当地优秀的云原生人才，连接 KubeSphere 社区与开发者，通过丰富多样化的社区交流与线下互动活动，促进云原生技术知识的分享、推广和实践，促进 KubeSphere 社区的发展。&lt;/p>
+&lt;h2 id="成立原因和意义">成立原因和意义&lt;/h2>
+&lt;p>因 KubeSphere 社区成员和用户遍布全国各地，而社区无法定期组织如 Meetup 等相应的活动，将各地用户聚集起来交流探讨。但是在多个城市都有一批活跃的而且愿意贡献的用户，所以成立一个当地的用户组织来组织交流活动，是最合适不过的方式。&lt;/p>
+&lt;p>由社区成员自发的组织交流活动，是非常便利且有意义的形式。这种形式既能满足社区成员的交流需求，又能发展社区。最终形成“成员发展新成员，新老成员共同发展社区”这样一种正循环的情形。而在发展社区的基础上，又能促进云原生技术的交流和在各个企业的落地，可谓是一举多得。&lt;/p>
+&lt;h2 id="初始城市站及初创成员">初始城市站及初创成员&lt;/h2>
+&lt;p>在 2021 年，一共成立了三个 KubeSphere 社区用户委员会城市站，分别是上海站、杭州站、成都站。&lt;/p>
+&lt;p>2022 年和 2023 年，社区又成立了广州站和深圳站两个城市站。&lt;/p>
+&lt;p>以下是五个城市站的成员信息，具体介绍大家可在&lt;a href="https://www.kubesphere.io/zh/user-group/" target="_blank" rel="noopener noreferrer">官网&lt;/a>获取。&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>城市站&lt;/th>
+ &lt;th>站长&lt;/th>
+ &lt;th>副站长&lt;/th>
+ &lt;th>委员&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>上海&lt;/td>
+ &lt;td>张海立&lt;/td>
+ &lt;td>申红磊&lt;/td>
+ &lt;td>刘德涵、张浩飞、马永兴&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>杭州&lt;/td>
+ &lt;td>尹珉&lt;/td>
+ &lt;td>薛兴林&lt;/td>
+ &lt;td>马金晶、王伊嘉、高鹏程、张慧、崔广章、朱亚光&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>成都&lt;/td>
+ &lt;td>周正军&lt;/td>
+ &lt;td>娄举&lt;/td>
+ &lt;td>胡涛、黄世豪、何绍辉&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>广州&lt;/td>
+ &lt;td>裴振飞&lt;/td>
+ &lt;td>胡卓超&lt;/td>
+ &lt;td>刘星、符嘉阳、王静&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>深圳&lt;/td>
+ &lt;td>徐鹏&lt;/td>
+ &lt;td>郑建林&lt;/td>
+ &lt;td>蔡耀辉、吴妙勇、刘锡锋&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="社区用户委员会的运转方式和规则">社区用户委员会的运转方式和规则&lt;/h2>
+&lt;h3 id="组织架构及职责">组织架构及职责&lt;/h3>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-user-group-architecture.png" alt="">&lt;/p></description></item><item><title>欢迎新任 KubeSphere Ambassador！2023 年 KubeSphere Ambassador 申请结果公布！</title><link>https://openksc.github.io/zh/news/kubesphere-ambassador-certificates-20230920/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-ambassador-certificates-20230920/</guid><description>&lt;p>参与开源社区贡献，除了代码、中英文文档、本地化与国际化等贡献方式，还有技术布道这个重要的方式。&lt;/p>
+&lt;p>技术布道这一贡献方式包括撰写技术博客、用户案例以及在社区活动进行公开技术分享等，社区设置了 KubeSphere Ambassador 奖项作为激励多次在社区分享过 KubeSphere 落地实践案例与技术文章的成员。&lt;/p>
+&lt;p>今年有所不同的是，社区发起了一个 KubeSphere 大使计划（&lt;a href="https://github.com/kubesphere/community/tree/master/ksap-ambassadorship-program" target="_blank" rel="noopener noreferrer">KubeSphere Ambassadorship Program&lt;/a>），首次向全球的贡献者公开征集。最终，我们通过评估选出了 2023 年的 KubeSphere Ambassador。此次评选出的 KubeSphere Ambassador 任期为一年，新的选举可在明年同期举行。我们希望通过大使计划营造一个更加开放的社区环境。&lt;/p>
+&lt;p>我们很高兴地欢迎 14 位新的 KubeSphere Ambassador，他们曾多次以不同方式为 KubeSphere 社区做出贡献，帮助更多用户了解 KubeSphere 的应用场景和最佳实践。&lt;/p>
+&lt;h2 id="关于-ksap">关于 KSAP&lt;/h2>
+&lt;p>KubeSphere Ambassadorship Program（KSAP）是一项今年开启的计划，旨在把为 KubeSphere 开展社区活动及布道的成员聚集在一起。社区希望为该计划挑选出 25 名 KubeSphere Ambassador 来共同发展 KubeSphere 社区。&lt;/p>
+&lt;p>新评选出的 KubeSphere Ambassador 任期为一年（2023.9.20-2024.9.21），并且可以连选连任。社区也会为新评选出的 KubeSphere Ambassador 颁发新的证书。&lt;/p>
+&lt;h2 id="获取证书">获取证书&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Name&lt;/th>
+ &lt;th>certificate&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Onur Canoğlu&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/ambassador-2023-Onur-Canog%CC%86lu.png" target="_blank" rel="noopener noreferrer">下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Rossana Suarez&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/ambassador-2023-Rossana-Suarez.png" target="_blank" rel="noopener noreferrer">下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Jona Apelbaum&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/ambassador-2023-Jona-Apelbaum.png" target="_blank" rel="noopener noreferrer">下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Nilo Yucra Gavilan&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/ambassador-2023-Nilo-Yucra-Gavilan.png" target="_blank" rel="noopener noreferrer">下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Halil BUGOL&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/ambassador-2023-Halil-I%CC%87brahim-BUGOL.png" target="_blank" rel="noopener noreferrer">下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Eda Konyar&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/ambassador-2023-Eda-Konyar.png" target="_blank" rel="noopener noreferrer">下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>İremnur Önder&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/ambassador-2023-I%CC%87remnur-O%CC%88nder.png" target="_blank" rel="noopener noreferrer">下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Harun Eren SAT&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/ambassador-2023-Harun-Eren-SAT.png" target="_blank" rel="noopener noreferrer">下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Min Yin&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/ambassador-2023-yinmin.png" target="_blank" rel="noopener noreferrer">下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Kevin Xu&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/ambassador-2023-xupeng.png" target="_blank" rel="noopener noreferrer">下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Haili Zhang&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/ambassador-2023-zhanghaili.png" target="_blank" rel="noopener noreferrer">下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Zhengjun Zhou&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/ambassador-2023-zhouzhengjun.png" target="_blank" rel="noopener noreferrer">下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Zhenfei Pei&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/ambassador-2023-peizhenfei.png" target="_blank" rel="noopener noreferrer">下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Jianlin Zheng&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/ambassador-2023-zhengjianlin.png" target="_blank" rel="noopener noreferrer">下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="关于-kubesphere-大使计划电子邮件使用的重要更新">关于 KubeSphere 大使计划电子邮件使用的重要更新&lt;/h2>
+&lt;p>我们一直在努力维护 KubeSphere 大使计划的完整性和宗旨，作为努力的一部分，我们将介绍有关使用 &lt;strong>kubesphere.io 邮箱&lt;/strong>的重要更新。&lt;/p></description></item><item><title>开源之夏 2023 KubeSphere 社区项目总结</title><link>https://openksc.github.io/zh/news/ospp-2023-summary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/ospp-2023-summary/</guid><description>&lt;p>开源之夏是由中科院软件所“开源软件供应链点亮计划”发起并长期支持的一项暑期开源活动，旨在鼓励在校学生积极参与开源软件的开发维护，培养和发掘更多优秀的开发者，促进优秀开源软件社区的蓬勃发展，助力开源软件供应链建设。11 月 9 日，官方完成最终审核，并发布结果。&lt;/p>
+&lt;p>KubeSphere 参加了&amp;quot;开源之夏 2023&amp;quot;活动，作为导师，共获得了 6 个官方赞助名额。最终对学生开放如下任务：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2023/openfunction-nodejs-function-framework-upgrade_zh-CN.md" target="_blank" rel="noopener noreferrer">OpenFunction 的 Node.js 函数框架支持 Dapr 状态管理&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2023/fluent-operator-input-plugin-development.md" target="_blank" rel="noopener noreferrer">Fluent Operator Collector 输入组件开发&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2023/openelb-eip-binding-namespaces.md" target="_blank" rel="noopener noreferrer">OpenELB EIP 分配到 Namespace&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2023/openfunction-function-trigger.md" target="_blank" rel="noopener noreferrer">OpenFunction 函数触发器&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2023/kubekey-console_zh-CN.md" target="_blank" rel="noopener noreferrer">KubeKey 可视化界面开发&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2023/kubesphere-s2i-upgrade-with-buildpacks_zh-CN.md" target="_blank" rel="noopener noreferrer">基于 Shipwright+Buildpacks 改造 KubeSphere-S2I&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>经过 3 个月的开发，社区评审，导师评审，OSPP 官方委员会评审多个步骤，最终 6 个项目全部顺利结项，在此恭贺各位同学。&lt;/p>
+&lt;blockquote>
+&lt;p>中选学生介绍见之前&lt;a href="https://kubesphere.io/zh/news/ospp-2023-selected-students/" target="_blank" rel="noopener noreferrer">动态&lt;/a>。&lt;/p>&lt;/blockquote>
+&lt;h2 id="项目结果">项目结果&lt;/h2>
+&lt;h3 id="openfunction-的-nodejs-函数框架支持-dapr-状态管理">OpenFunction 的 Node.js 函数框架支持 Dapr 状态管理&lt;/h3>
+&lt;ul>
+&lt;li>学生：董文龙&lt;/li>
+&lt;li>学校：电子科技大学&lt;/li>
+&lt;li>导师：&lt;a href="https://github.com/webup" target="_blank" rel="noopener noreferrer">Haili Zhang&lt;/a>&lt;/li>
+&lt;li>合并 PR：
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/OpenFunction/functions-framework-nodejs/pull/189" target="_blank" rel="noopener noreferrer">✨ feat: support state store by yi-ge-dian · Pull Request #189&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/OpenFunction/functions-framework-nodejs/pull/205" target="_blank" rel="noopener noreferrer">✨ feature(test): finish kind based e2e testing by yi-ge-dian · Pull Request #205&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/webup/openfunction-talks/pull/39" target="_blank" rel="noopener noreferrer">✨ feat: add ospp 20230905 by yi-ge-dian · Pull Request #39&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="fluent-operator-collector-输入组件开发">Fluent Operator Collector 输入组件开发&lt;/h3>
+&lt;ul>
+&lt;li>学生：刘帅军&lt;/li>
+&lt;li>学校：四川大学&lt;/li>
+&lt;li>导师：&lt;a href="https://github.com/wenchajun" target="_blank" rel="noopener noreferrer">wenchajun&lt;/a>&lt;/li>
+&lt;li>合并 PR：
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/fluent/fluent-operator/pull/890" target="_blank" rel="noopener noreferrer">[summerospp]add fluentbit opentelemetry plugin&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/fluent/fluent-operator/pull/904" target="_blank" rel="noopener noreferrer">[summerospp]add fluentbit http plugin&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/fluent/fluent-operator/pull/911" target="_blank" rel="noopener noreferrer">[summerospp]add fluentbit mqtt plugin&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/fluent/fluent-operator/pull/914" target="_blank" rel="noopener noreferrer">[summerospp]add fluentbit collectd plugin&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/fluent/fluent-operator/pull/924" target="_blank" rel="noopener noreferrer">[summerospp]add fluentbit nginx plugin&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/fluent/fluent-operator/pull/925" target="_blank" rel="noopener noreferrer">[summerospp]add fluentbit statsd plugin &lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/fluent/fluent-operator/pull/931" target="_blank" rel="noopener noreferrer">[summerospp]add fluentbit syslog plugin&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/fluent/fluent-operator/pull/936" target="_blank" rel="noopener noreferrer">[summerospp]add fluentbit tcp plugin&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="openelb-eip-分配到-namespace">OpenELB EIP 分配到 Namespace&lt;/h3>
+&lt;ul>
+&lt;li>学生：郭辰英&lt;/li>
+&lt;li>学校：电子科技大学&lt;/li>
+&lt;li>导师：&lt;a href="https://github.com/renyunkang/" target="_blank" rel="noopener noreferrer">renyunkang&lt;/a>&lt;/li>
+&lt;li>合并 PR：
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/openelb/openelb/pull/348" target="_blank" rel="noopener noreferrer">remove default eip webhook &lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/openelb/openelb/pull/352" target="_blank" rel="noopener noreferrer">allocate eip to specified namespace&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/openelb/openelb/pull/357" target="_blank" rel="noopener noreferrer">add test case&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/openelb/website/pull/86" target="_blank" rel="noopener noreferrer">allocate eip to specified namespace&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="openfunction-函数触发器">OpenFunction 函数触发器&lt;/h3>
+&lt;ul>
+&lt;li>学生：张冠璟&lt;/li>
+&lt;li>学校：苏州科技大学&lt;/li>
+&lt;li>导师：&lt;a href="https://github.com/tpiperatgod/" target="_blank" rel="noopener noreferrer">Fang Tian &lt;/a>&lt;/li>
+&lt;li>合并 PR：&lt;a href="https://github.com/OpenFunction/OpenFunction/pull/483" target="_blank" rel="noopener noreferrer">Integrating KEDA http-addon&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="kubekey-可视化界面开发">KubeKey 可视化界面开发&lt;/h3>
+&lt;ul>
+&lt;li>学生：史继林&lt;/li>
+&lt;li>学校：华东师范大学&lt;/li>
+&lt;li>导师：&lt;a href="https://github.com/liangzai006" target="_blank" rel="noopener noreferrer">Xiao liu&lt;/a>&lt;/li>
+&lt;li>合并 PR：&lt;a href="https://github.com/kubesphere/kubekey/pull/2007" target="_blank" rel="noopener noreferrer">feat: Kubekey Web Console&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="基于-shipwrightbuildpacks-改造-kubesphere-s2i">基于 Shipwright+Buildpacks 改造 KubeSphere-S2I&lt;/h3>
+&lt;ul>
+&lt;li>学生：甘秉坤&lt;/li>
+&lt;li>学校：东南大学&lt;/li>
+&lt;li>导师：&lt;a href="https://github.com/yudong2015" target="_blank" rel="noopener noreferrer">yudong&lt;/a>&lt;/li>
+&lt;li>合并 PR：
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/kubesphere/ks-devops/pull/999" target="_blank" rel="noopener noreferrer">add image build apis base on shipwright&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/kubesphere-sigs/image-builder/pull/2" target="_blank" rel="noopener noreferrer">helm chart of shipwright and buildpacks&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/kubesphere/console/pull/4203" target="_blank" rel="noopener noreferrer">feat: Add imagebuilder in DevOps module&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>后续情况说明：调整优化细节之后 S2I 功能即可在 DevOps 模块中正式上线了。&lt;/li>
+&lt;/ul>
+&lt;h2 id="结语">结语&lt;/h2>
+&lt;p>今年是 KubeSphere 社区第三次参与开源之夏活动，与去年一样，我们召集了社区里的多位 contributor 和 maintainer 参与其中，涉及 KubeSphere 社区的多个开源项目：KubeSphere、KubeKey、OpenFunction、OpenELB、Fluent Operator。&lt;/p></description></item><item><title>开源之夏 2024 KubeSphere 社区项目总结</title><link>https://openksc.github.io/zh/news/ospp-2024-summary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/ospp-2024-summary/</guid><description>&lt;p>开源之夏是由中科院软件所“开源软件供应链点亮计划”发起并长期支持的一项暑期开源活动，旨在鼓励在校学生积极参与开源软件的开发维护，培养和发掘更多优秀的开发者，促进优秀开源软件社区的蓬勃发展，助力开源软件供应链建设。11 月 9 日，官方完成最终审核，并发布结果。&lt;/p>
+&lt;p>KubeSphere 社区积极参与本次活动，作为导师，共获得了 4个官方赞助名额。最终对学生开放如下任务：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2024/pod-state-analysis-tool-based-on-langchain_zh-CN.md" target="_blank" rel="noopener noreferrer">基于 LangChain 实现的 Pod 状态分析工具&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2024/integrating-fluent-bit-3.0-into-fluent-operator_zh-CN.md" target="_blank" rel="noopener noreferrer">Fluent Operator 集成 Fluent-bit 3.0&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2024/openelb-support-ipv6_zh-CN.md" target="_blank" rel="noopener noreferrer">OpenELB 支持 IPV6&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2024/upgrading-cluster-api-kubekey-provider_zh-CN.md" target="_blank" rel="noopener noreferrer">cluster-api-kubekey-provider 升级&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>经过 3 个月的开发，社区评审，导师评审，OSPP 官方委员会评审多个步骤，最终 4 个项目全部顺利结项，在此恭贺各位同学。&lt;/p>
+&lt;blockquote>
+&lt;p>中选学生介绍见之前&lt;a href="https://kubesphere.io/zh/news/ospp-2024-selected-students/" target="_blank" rel="noopener noreferrer">动态&lt;/a>。&lt;/p>&lt;/blockquote>
+&lt;h2 id="项目结果">项目结果&lt;/h2>
+&lt;h3 id="基于-langchain-实现的-pod-状态分析工具">基于 LangChain 实现的 Pod 状态分析工具&lt;/h3>
+&lt;ul>
+&lt;li>学生：张豈明&lt;/li>
+&lt;li>学校：华东师范大学&lt;/li>
+&lt;li>导师：&lt;a href="https://github.com/webup" target="_blank" rel="noopener noreferrer">Haili Zhang&lt;/a>&lt;/li>
+&lt;li>合并 PR：
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/kubesphere-extensions/ks-extensions-contrib/pull/1" target="_blank" rel="noopener noreferrer">基础静态前端界面&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/kubesphere-extensions/ks-extensions-contrib/pull/2" target="_blank" rel="noopener noreferrer">pod信息自动获取&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/kubesphere-extensions/ks-extensions-contrib/pull/3" target="_blank" rel="noopener noreferrer">LLM能力接入&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/kubesphere-extensions/ks-extensions-contrib/pull/5" target="_blank" rel="noopener noreferrer">完善Readme文档&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/kubesphere-extensions/ks-extensions-contrib/pull/6" target="_blank" rel="noopener noreferrer">完善Deployment相关内容&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="fluent-operator-集成-fluent-bit-30">Fluent Operator 集成 Fluent-bit 3.0&lt;/h3>
+&lt;ul>
+&lt;li>学生：李梓玄&lt;/li>
+&lt;li>学校：福州大学&lt;/li>
+&lt;li>导师：&lt;a href="https://github.com/wenchajun" target="_blank" rel="noopener noreferrer">程德昊&lt;/a>&lt;/li>
+&lt;li>合并 PR：
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/fluent/fluent-operator/pull/1251" target="_blank" rel="noopener noreferrer">Updates multiple dependencie of k8s&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/fluent/fluent-operator/pull/1282" target="_blank" rel="noopener noreferrer">Update fluentbit to v3.1.4&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/fluent/fluent-operator/pull/1286" target="_blank" rel="noopener noreferrer">config-reload Enhancements&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/fluent/fluent-operator/pull/1325" target="_blank" rel="noopener noreferrer">add wasm filter piugin&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/fluent/fluent-operator/pull/1326" target="_blank" rel="noopener noreferrer">add exec wasi input plugin&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/fluent/fluent-operator/pull/1329" target="_blank" rel="noopener noreferrer">update fluentbit to 3.1.7&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/fluent/fluent-operator/pull/1355" target="_blank" rel="noopener noreferrer">Update the module path to github.com/fluent/fluent-operator/v3&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/fluent/fluent-operator/pull/1348" target="_blank" rel="noopener noreferrer">Add option to disable operator resources in Helm chart&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="openelb-支持-ipv6">OpenELB 支持 IPV6&lt;/h3>
+&lt;ul>
+&lt;li>学生：邬宇祺&lt;/li>
+&lt;li>学校：中国科学院大学&lt;/li>
+&lt;li>导师：&lt;a href="https://github.com/renyunkang/" target="_blank" rel="noopener noreferrer">任云康&lt;/a>&lt;/li>
+&lt;li>合并 PR：
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/openelb/openelb/pull/442" target="_blank" rel="noopener noreferrer">Add test for IPv6 allocation by IPAM&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/openelb/openelb/pull/443" target="_blank" rel="noopener noreferrer">Remove the resolveIP of arp_announcer&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/openelb/openelb/pull/445" target="_blank" rel="noopener noreferrer">Add NDP announcer for layer2-speaker&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/openelb/openelb/pull/446" target="_blank" rel="noopener noreferrer">Bug fix&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/openelb/openelb/pull/448" target="_blank" rel="noopener noreferrer">Change the IP prefix in BGP mode&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/openelb/openelb/pull/449" target="_blank" rel="noopener noreferrer">Avoid service get IP from EIP which is different family&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="cluster-api-kubekey-provider-升级">cluster-api-kubekey-provider 升级&lt;/h3>
+&lt;ul>
+&lt;li>学生：丁永亮&lt;/li>
+&lt;li>学校：华东师范大学&lt;/li>
+&lt;li>导师：&lt;a href="https://github.com/ImitationImmortal" target="_blank" rel="noopener noreferrer">刘健&lt;/a>&lt;/li>
+&lt;li>合并 PR：
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/kubesphere/kubekey/pull/2409" target="_blank" rel="noopener noreferrer">创建CRD资源&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/kubesphere/kubekey/pull/2419" target="_blank" rel="noopener noreferrer">工作集群生命周期管理&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/kubesphere/kubekey/pull/2418" target="_blank" rel="noopener noreferrer">任务流程模板&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="结语">结语&lt;/h2>
+&lt;p>今年是 KubeSphere 社区第四次参与开源之夏活动。与去年一样，我们邀请了多位社区中的 contributor 和 maintainer 共同参与，涵盖了多个核心开源项目，包括 KubeSphere、KubeKey、OpenELB 和 Fluent Operator。&lt;/p></description></item><item><title>年度 KubeSphere Ambassador 揭晓！快来领取证书！</title><link>https://openksc.github.io/zh/news/kubesphere-ambassador-certificates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-ambassador-certificates/</guid><description>&lt;p>2021 年，KubeSphere 社区又收获了逾百位的贡献者，包括代码、中英文文档、技术布道、本地化与国际化等贡献都是我们认可的贡献方式，在此我们对 KubeSphere 社区所有的贡献者与合作伙伴表示衷心的感谢！&lt;/p>
+&lt;p>技术布道的贡献方式包括撰写技术博客、用户案例、在社区活动进行公开技术分享等方式，社区设置了 KubeSphere Ambassador 奖项作为激励多次在社区分享过 KubeSphere 落地实践案例与技术文章的成员。&lt;/p>
+&lt;p>此外，KubeSphere 社区今年还成立了用户委员会，每个城市站的站长肩负起了组织线下交流活动，推广和布道 KubeSphere 的责任。10 月 23 日，由 KubeSphere 社区用户委员会杭州站站长尹珉发起和组织的云原生技术交流 Meetup-杭州站，在杭州圆满落下帷幕。关于本次活动的回顾，可以参考本篇文章：&lt;a href="https://kubesphere.io/zh/live/meetup-hangzhou1023/" target="_blank" rel="noopener noreferrer">云原生技术交流 Meetup 杭州站（10.23）回放视频 + PPT 分享&lt;/a>。&lt;/p>
+&lt;p>当然，他们也会采取其他方式比如文章来积极地推广 KubeSphere，帮助更多社区用户熟悉 KubeSphere 的应用场景和最佳实践。&lt;/p>
+&lt;p>从上一次&lt;a href="https://kubesphere.io/zh/news/kubesphere-certificates/" target="_blank" rel="noopener noreferrer">颁发&lt;/a>（2021 年 2 月 11 日）到现在，共诞生了 4 位 KubeSphere Ambassador，他们在社区都曾多次通过文章等形式推广和布道 KubeSphere。&lt;/p>
+&lt;h2 id="领取证书">领取证书&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>姓名&lt;/th>
+ &lt;th>证书&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Lijie Jiang&lt;/td>
+ &lt;td>&lt;a href="https://kubesphere-community.pek3b.qingstor.com/images/ambassador-jianglijie.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Min Yin&lt;/td>
+ &lt;td>&lt;a href="https://kubesphere-community.pek3b.qingstor.com/images/ambassador-yinmin.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Zhengjun Zhou&lt;/td>
+ &lt;td>&lt;a href="https://kubesphere-community.pek3b.qingstor.com/images/ambassador-zhouzhengjun.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Shuai Li&lt;/td>
+ &lt;td>&lt;a href="https://kubesphere-community.pek3b.qingstor.com/images/ambassador-lishuai.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>有很多朋友目前正在或者计划在未来进行类似的分享。所以，KubeSphere 社区开启了 &lt;a href="https://github.com/kubesphere/community/issues/365" target="_blank" rel="noopener noreferrer">issue&lt;/a> 和&lt;a href="https://jinshuju.net/f/Npcqwi" target="_blank" rel="noopener noreferrer">表单&lt;/a>来长期公开征集。&lt;/p>
+&lt;p>如果在 2021 年，您也多次在社区或者互联网平台分享过 KubeSphere 相关的案例实践、技术文章或者相关的视频，但没有获得该证书也并未出现在上述公开名单中，就可以回复 issue 或者填写表单，一经确认，即可为您制作证书和寄送周边礼物。&lt;/p></description></item><item><title>年度 KubeSphere Talented Speaker 揭晓！快来领取证书！</title><link>https://openksc.github.io/zh/news/kubesphere-speaker-certificates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-speaker-certificates/</guid><description>&lt;p>2021 年，KubeSphere 社区又收获了逾百位的贡献者，包括代码、中英文文档、技术布道、本地化与国际化等贡献都是我们认可的贡献方式，在此我们对 KubeSphere 社区所有的贡献者与合作伙伴表示衷心的感谢！
+技术布道的贡献方式包括撰写技术博客、用户案例、在社区活动进行公开技术分享等方式，社区设置了 KubeSphere Talented Speaker 奖项作为激励参与社区活动公开技术分享的讲师。&lt;/p>
+&lt;p>从上一次&lt;a href="https://kubesphere.io/zh/news/kubesphere-certificates/" target="_blank" rel="noopener noreferrer">颁发&lt;/a>（2021 年 2 月 11 日）到现在，共诞生了 26 位 Talented Speaker，他们都参与过 2021 年 KubeSphere 社区组织的 KubeSphere Meetup 及云原生技术直播活动：&lt;/p>
+&lt;p>&lt;a href="https://kubesphere.io/zh/live/meetup-shanghai/" target="_blank" rel="noopener noreferrer">KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——上海站&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://kubesphere.io/zh/live/meetup-hangzhou/" target="_blank" rel="noopener noreferrer">KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——杭州站&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://kubesphere.io/zh/live/meetup-chengdu/" target="_blank" rel="noopener noreferrer">KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——成都站&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://kubesphere.io/zh/live/meetup-beijing/" target="_blank" rel="noopener noreferrer">KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——北京站&lt;/a>&lt;/p></description></item><item><title>抢先体验 KubeSphere 3.3.0 RC 版，支持 Argo CD</title><link>https://openksc.github.io/zh/news/kubesphere-3.3.0-rc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-3.3.0-rc/</guid><description>&lt;p>距离 KubeSphere 3.2.1 GA 已经过去 4 个月了，现在 KubeSphere 3.3.0 RC 版终于发布了，带来了很多比较重量级的功能，例如：&lt;/p>
+&lt;h3 id="devops">DevOps&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>提供了基于 GitOps 的持续部署方案，底层支持 Argo CD；&lt;/strong>&lt;/li>
+&lt;li>支持持续部署白名单配置；&lt;/li>
+&lt;li>持续部署状态统计；&lt;/li>
+&lt;li>支持代码仓库集中管理；&lt;/li>
+&lt;li>新增多款基于 CRD 的内置流水线模板；&lt;/li>
+&lt;li>支持添加只允许执行流水线的自定义角色。&lt;/li>
+&lt;/ul>
+&lt;h3 id="存储">存储&lt;/h3>
+&lt;ul>
+&lt;li>新增 volumesnapshotcontent 管理；&lt;/li>
+&lt;li>支持 volumesnapshotclass 管理；&lt;/li>
+&lt;li>新增 StorageClass 权限控制；&lt;/li>
+&lt;li>新增 PVC 自动扩容；&lt;/li>
+&lt;li>增加单块硬盘占用率数据显示。&lt;/li>
+&lt;/ul>
+&lt;h3 id="其他优化">其他优化&lt;/h3>
+&lt;ul>
+&lt;li>多集群场景下 Member 集群支持上传更新 Kubeconfig 文件；&lt;/li>
+&lt;li>支持多集群下集群 kubeconfig 到期提示；&lt;/li>
+&lt;li>支持应用整个配置字典；&lt;/li>
+&lt;li>支持容器生命周期管理；&lt;/li>
+&lt;li>&lt;strong>支持节点终端，可以直接在 UI 上登陆集群节点&lt;/strong>；&lt;/li>
+&lt;li>启用 Istio 支持 CNI 等更细化的配置；&lt;/li>
+&lt;li>&lt;strong>优化了 clusterconfiguration 配置机制，无需重启 ks-apiserver/ks-controller-manager&lt;/strong>。&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>每个功能的具体细节会在正式版本发布之后在 Release Notes 中详述，GA 日期在 5 月份&lt;/strong>。想尝鲜的同学可通过以下两种方式部署和测试，欢迎大家帮助测试并提交 GitHub Issue，部署方式如下：&lt;/p></description></item><item><title>新 KubeSphere Talented Speaker 揭晓！快来领取你的专属证书！</title><link>https://openksc.github.io/zh/news/kubesphere-speaker-certificates-20220715/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-speaker-certificates-20220715/</guid><description>&lt;p>2021 年 8 月份，KubeSphere 社区重启了每周四晚间的线上云原生直播间，邀请云原生领域的各位技术专家、贡献者和最终用户等等，分享他们在云原生领域的实践经验、技术前沿和发展动态。自开播后，每期都有数百人观看，截至目前已组织了近四十期。同时，KubeSphere 社区也在北京、上海、杭州、成都、长沙等多个城市组织了多场线下的交流活动，输出了数十篇优质演讲内容。&lt;/p>
+&lt;p>为了激励和感谢在这些社区活动中公开分享的讲师，社区设置了 KubeSphere Talented Speaker 奖项。社区&lt;a href="https://kubesphere.io/zh/news/kubesphere-speaker-certificates/" target="_blank" rel="noopener noreferrer">上次颁发&lt;/a>这个奖项是去年十月份，如今社区又诞生了 47 位 Talented Speaker。这其中有一部分主动参与了其他社区组织的活动，促进 KubeSphere 等云原生技术在不同行业进行更广泛地传播。&lt;/p>
+&lt;h2 id="证书说明">证书说明&lt;/h2>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/certification-kubesphere-speaker.png" alt="">&lt;/p>
+&lt;p>KubeSphere Talented Speaker 主要授予：&lt;/p>
+&lt;ul>
+&lt;li>参与了 KubeSphere 社区主办或联合主办的技术活动（比如线上直播、Meetup 等），公开分享了云原生领域的技术（不局限于 KubeSphere）&lt;/li>
+&lt;li>参与了其他社区或组织举办的技术活动（比如 KubeCon、Qcon 等峰会及其他技术活动），公开分享了 KubeSphere 相关的实践经验或发展动态&lt;/li>
+&lt;/ul>
+&lt;p>通过这些 Talented Speaker 的积极布道，越来越多的人去学习了解 KubeSphere 以及各种云原生技术。得益于他们的分享，大批的社区用户，尤其是云原生领域的新人，在学习云原生的道路上更进一步。&lt;/p>
+&lt;h2 id="meetup-回顾">Meetup 回顾&lt;/h2>
+&lt;p>在每场活动结束后，社区都将活动中的演讲内容（PPT + 直播回放视频）公开分享给了大家：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://kubesphere.io/zh/live/meetup-shanghai/" target="_blank" rel="noopener noreferrer">KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——上海站&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://kubesphere.io/zh/live/meetup-hangzhou/" target="_blank" rel="noopener noreferrer">KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——杭州站&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://kubesphere.io/zh/live/meetup-chengdu/" target="_blank" rel="noopener noreferrer">KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——成都站&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://kubesphere.io/zh/live/meetup-beijing/" target="_blank" rel="noopener noreferrer">KubeSphere and Friends | Kubernetes and Cloud Native Meetup ——北京站&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://kubesphere.io/zh/live/meetup-hangzhou1023/" target="_blank" rel="noopener noreferrer">云原生技术交流 Meetup 杭州站&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://kubesphere.io/zh/live/meetup-changsha-20220312/" target="_blank" rel="noopener noreferrer">云原生技术交流 Meetup 长沙站&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://kubesphere.io/zh/live/meetup-chengdu-20220514/" target="_blank" rel="noopener noreferrer">云原生技术交流 Meetup 成都站&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://kubesphere.io/zh/live/pulsar-kubesphere-meetup0625/" target="_blank" rel="noopener noreferrer">Apache Pulsar x KubeSphere 在线 Meetup&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>以上 Meetup 以及周四的云原生直播活动回顾，都可以浏览官网的&lt;a href="https://kubesphere.io/zh/live/" target="_blank" rel="noopener noreferrer">社区活动&lt;/a>页面进行回顾。&lt;/p></description></item><item><title>致谢新 KubeSphere Ambassador！快来领取你的专属证书！</title><link>https://openksc.github.io/zh/news/kubesphere-ambassador-certificates-20220727/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-ambassador-certificates-20220727/</guid><description>&lt;p>参与开源社区贡献，除了代码、中英文文档、本地化与国际化等贡献方式，还有技术布道这个重要的方式。&lt;/p>
+&lt;p>技术布道这一贡献方式包括撰写技术博客、用户案例以及在社区活动进行公开技术分享等，社区设置了 KubeSphere Ambassador 奖项作为激励多次在社区分享过 KubeSphere 落地实践案例与技术文章的成员。&lt;/p>
+&lt;p>从上一次&lt;a href="https://kubesphere.io/zh/news/kubesphere-ambassador-certificates/" target="_blank" rel="noopener noreferrer">颁发&lt;/a>到现在，社区又诞生了 5 位 KubeSphere Ambassador，他们在社区都曾多次通过自己的方式来推广和布道 KubeSphere。&lt;/p>
+&lt;h2 id="证书说明">证书说明&lt;/h2>
+&lt;p>KubeSphere Ambassador 主要授予：&lt;/p>
+&lt;ul>
+&lt;li>在一年时间内写过 3 篇及以上 KubeSphere 相关的优质技术博客&lt;/li>
+&lt;li>在一年时间内参与过 3 个及以上活动分享 KubeSphere 落地实践案例&lt;/li>
+&lt;li>通过其他方式多次宣传推广 KubeSphere 并取得一定效果&lt;/li>
+&lt;li>KubeSphere 社区用户委员会城市站站长&lt;/li>
+&lt;/ul>
+&lt;p>只要满足以上条件之一或者混搭方式（需超过 3 次，如 1 次技术分享 + 2 篇技术博客）即可获得该证书。&lt;/p>
+&lt;h2 id="领取证书">领取证书&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>姓名&lt;/th>
+ &lt;th>证书&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Halil ibrahim BUGOL&lt;/td>
+ &lt;td>&lt;a href="https://kubesphere-community.pek3b.qingstor.com/images/ambassador-halil.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Yanying Zhang&lt;/td>
+ &lt;td>&lt;a href="https://kubesphere-community.pek3b.qingstor.com/images/ambassador-zhangyanying.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>scwang18&lt;/td>
+ &lt;td>&lt;a href="https://kubesphere-community.pek3b.qingstor.com/images/ambassador-scwang18.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Zongwei Tan&lt;/td>
+ &lt;td>&lt;a href="https://kubesphere-community.pek3b.qingstor.com/images/ambassador-tanzongwei.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Zhenfei Pei&lt;/td>
+ &lt;td>&lt;a href="https://kubesphere-community.pek3b.qingstor.com/images/ambassador-peizhenfei.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>以上排名不分先后，下面一一为大家介绍下他们所做的贡献。&lt;/p>
+&lt;h3 id="halil-ibrahim-bugol">Halil ibrahim BUGOL&lt;/h3>
+&lt;p>Halil 来自土耳其，从去年开始，他一直在积极地帮助 KubeSphere 在土耳其开拓社区生态。他与 KubeSphere 社区以及来自土耳其和中东的用户合作，为 KubeSphere 的进一步发展提供本地化、转化和支持。&lt;/p></description></item><item><title>致谢新 KubeSphere Contributor！这里有一份证书等你领取！</title><link>https://openksc.github.io/zh/news/kubesphere-contributor-certificates-20220721/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/kubesphere-contributor-certificates-20220721/</guid><description>&lt;p>KubeSphere 于 2018 年发起，在四年的时间里迭代了十多个版本，收获了 10000+ star 和上百万下载量。这得益于各位 Contributor 的参与和贡献。截止到目前，KubeSphere Contributor 已接近 300 人。&lt;/p>
+&lt;p>为了感谢和激励 KubeSphere Contributor，社区设置了对应的奖项。从上一次&lt;a href="https://kubesphere.io/zh/news/kubesphere-contributor-certificates/" target="_blank" rel="noopener noreferrer">颁发&lt;/a>到现在，社区又诞生了 101 位新的 Contributor。&lt;/p>
+&lt;h2 id="证书说明">证书说明&lt;/h2>
+&lt;p>&lt;img src="https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-certification-contributor.png" alt="">&lt;/p>
+&lt;p>KubeSphere Contributor 主要授予：&lt;/p>
+&lt;ul>
+&lt;li>在 KubeSphere 任何仓库贡献过代码，包括项目、文档、网站等&lt;/li>
+&lt;li>在 KubeSphere 官方媒体渠道发布过优质的 KubeSphere 技术博客&lt;/li>
+&lt;/ul>
+&lt;h2 id="领取证书">领取证书&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>GitHub ID 或姓名&lt;/th>
+ &lt;th>证书&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>2hangchen&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-2hangchen.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>aking&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-aking.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Arhell&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-Arhell.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Bennu-Li&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-Bennu-Li.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>besscroft&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-besscroft.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>brandan-schmitz&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-brandan-schmitz1.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Ccnc-k&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-Ccnc-k.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>chaunceyjiang&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-chaunceyjiang.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>chengleqi&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-chengleqi.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ciiiii&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-ciiiii.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ComradeProgrammer&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-ComradeProgrammer.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>cqiang1993&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-cqiang1993.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ctrought&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-ctrought.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>deveshk0&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-deveshk0.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>doudouzh&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-doudouzh.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>east4ming&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-east4ming.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>EliChen95&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-EliChen95.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>eltociear&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-eltociear.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Fatpa&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-Fatpa.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>frankgreco&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-frankgreco.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>frezes&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-frezes.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Frost713&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-Frost713.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>gaffeyQiu&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-gaffeyQiu.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Gerrylinux&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-Gerrylinux.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>gmarkey&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-gmarkey.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Hansyangxingxiang&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-Hansyangxingxiang.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>hellocn9&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-hellocn9.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>hostalp&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-hostalp.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ifgao&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-ifgao.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>iNineku&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-iNineku.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>itbac&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-itbac.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>jerry-jibu&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-jerry-jibu.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>JetSquirrel&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-JetSquirrel.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>jim3ma&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-jim3ma.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>karnatisrinivas&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-karnatisrinivas.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>kethavathsivanaik&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-kethavathsivanaik.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>larryliuqing&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-larryliuqing.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Lei Xue&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-xuelei.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>LeonDevLifeLog&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-LeonDevLifeLog.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>leonharetd&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-leonharetd.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>life-&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-life-.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>lining2020x&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-lining2020x.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>lixd&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-lixd.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>lvillis&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-lvillis.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>lvwkpt&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-lvwkpt.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>lynxcat&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-lynxcat.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>majinghe&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-majinghe.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>mgw2168&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-mgw2168.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>milasuperstar&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-milasuperstar.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>mzmuer&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-mzmuer.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>najib-houcine&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-najib-houcine.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>nioshield&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-nioshield.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>nlamirault&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-nlamirault.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>nuclearwu&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-nuclearwu.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>oldthreefeng&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-oldthreefeng.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ONE7live&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-ONE7live.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>panzhen6668&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-panzhen6668.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>pavo976&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-pavo976.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>perfiffer&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-perfiffer.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>peter-svensson&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-peter-svensson.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>polym&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-polym.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Poorunga&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-Poorunga.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>PrajwalBorkar&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-PrajwalBorkar.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>qingwave&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-qingwave.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>qiuchudong&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-qiuchudong.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>qiuming520&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-qiuming520.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>qmhu&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-qmhu.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>renyunkang&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-renyunkang.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>rramadoss4&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-rramadoss4.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Santosh1176&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-Santosh1176.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>scwang18&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-scwang18.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>showjason&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-showjason.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>SinTod&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-SinTod.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>sivanaikk&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-sivanaikk.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>songf0011&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-songf0011.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>specialvan&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-specialvan.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>suchen-sci&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-suchen-sci.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>suwliang3&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-suwliang3.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>tal66&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-tal66.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>tanguofu&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-tanguofu.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>TheApeMachine&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-TheApeMachine.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>TOKdawn&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-TOKdawn.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>tpiperatgod&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-tpiperatgod.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>tracer1023&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-tracer1023.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>usernameisnull&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-usernameisnull.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>wangxiaoyang-dev&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-wangxiaoyang-dev.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Wenlong Xue&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-xuewenlong.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>xiaoming688&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-xiaoming688.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>xiaoping378&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-xiaoping378.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>yangkaa&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-yangkaa.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Yanying Zhang&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-zhangyanying.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>yeya24&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-yeya24.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>yinheli&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-yinheli.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>yjqg6666&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-yjqg6666.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Yuanchang Xie&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-xieyuanchang.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Yufu Niu&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-niuyufu.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>yuzhiquan&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-yuzhiquan.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>zaunist&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-zaunist.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ZengIan&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-ZengIan.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>zhaohuiweixiao&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-zhaohuiweixiao.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>zhou1203&lt;/td>
+ &lt;td>&lt;a href="https://pek3b.qingstor.com/kubesphere-community/images/contributor-zhou1203.png" target="_blank" rel="noopener noreferrer">点击查看下载证书&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;blockquote>
+&lt;p>以上名单大部分都是从 GitHub 仓库导出，所以大部分证书都是以 GitHub ID 进行制作的，如果您希望以自己的真实姓名制作证书，请联系小 kk（微信搜索 kubesphere），进行二次制作。&lt;/p></description></item><item><title>祝贺开源之夏 2022 KubeSphere 社区项目中选学生！</title><link>https://openksc.github.io/zh/news/ospp-2022-selected-students/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/ospp-2022-selected-students/</guid><description>&lt;p>日前，开源之夏 2022 所有中选结果已出炉，在此祝贺各位中选的同学！&lt;/p>
+&lt;h2 id="活动简介">活动简介&lt;/h2>
+&lt;p>“开源之夏（英文简称 OSPP）”是中科院软件所“开源软件供应链点亮计划”指导下的系列暑期活动，由软件所与 openEuler 社区共同主办。&lt;/p>
+&lt;p>开源之夏是一项主要面向高校学生的暑期开源活动，旨在鼓励在校学生积极参与开源软件的开发维护，促进优秀开源软件社区的蓬勃发展。活动联合各大开源社区，针对重要开源软件的开发与维护提供项目，并向全球高校学生开放报名。&lt;/p>
+&lt;p>学生可自主选择感兴趣的项目进行申请，并在中选后获得该软件资深维护者（社区导师）亲自指导的机会。根据项目的难易程度和完成情况，参与者还将获取开源之夏活动奖金和结项证书。&lt;/p>
+&lt;h2 id="项目简介">项目简介&lt;/h2>
+&lt;p>本次活动，KubeSphere 社区共提交了 6 个开发类项目课题，涉及 KubeSphere、KubeKey、KubeEye、OpenFunction 等开源项目。以下是项目简介：&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>项目&lt;/th>
+ &lt;th>领域&lt;/th>
+ &lt;th>技能&lt;/th>
+ &lt;th>难 度&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2022/kubesphere-sharing-secret-plugin_zh-CN.md" target="_blank" rel="noopener noreferrer">KubeSphere Sharing Secret 插件开发&lt;/a> &lt;br/>在 KubeSphere 可插拔框架的基础之上开发 Sharing Secret 插件。&lt;br/>导师： &lt;a href="https://github.com/wansir/" target="_blank" rel="noopener noreferrer">Hongming&lt;/a>&lt;/td>
+ &lt;td>Pluggable&lt;/td>
+ &lt;td>React，TypeScript，HTML，CSS，Helm，Kubernetes&lt;/td>
+ &lt;td>基础&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2022/kubekey-phase-run_zh-CN.md" target="_blank" rel="noopener noreferrer">KubeKey Phase Run 阶段运行功能开发&lt;/a>&lt;br/>在 KubeKey 当前模块化架构基础上拆分流水线实现阶段运行功能。&lt;br/>导师： &lt;a href="https://github.com/24sama/" target="_blank" rel="noopener noreferrer">24sama&lt;/a>&lt;/td>
+ &lt;td>command-line&lt;/td>
+ &lt;td>Kubernetes, golang, Linux&lt;/td>
+ &lt;td>基础&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2022/ks-devops-fluxcd-integrations_zh-CN.md" target="_blank" rel="noopener noreferrer">KubeSphere-DevOps 对接 FluxCD&lt;/a> &lt;br/>通过对接 FluxCD 增强 KubeSphere 多集群应用发布与管理能力。&lt;br/>导师： &lt;a href="https://github.com/lxm" target="_blank" rel="noopener noreferrer">LXM&lt;/a>&lt;/td>
+ &lt;td>DevOps&lt;/td>
+ &lt;td>Golang，Kubernetes，FluxCD，React&lt;/td>
+ &lt;td>基础&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2022/openfunction-nodejs-function-framework-upgrade_zh-CN.md" target="_blank" rel="noopener noreferrer">OpenFunction 的 Node.js 函数框架升级&lt;/a> &lt;br/>升级现有的 OpenFunction Node.js Function Framework（函数框架），使之对齐 OpenFunction 0.6.0 两大主体功能 —— 函数插件和可观测能力。&lt;br/>导师： &lt;a href="https://github.com/webup" target="_blank" rel="noopener noreferrer">Haili Zhang&lt;/a>&lt;/td>
+ &lt;td>Functions-as-a-Service&lt;/td>
+ &lt;td>Node.js，Kubernetes，CloudEvent，OpenFunction，Cloud Native Buildpacks，Dapr、Knative（可选）&lt;/td>
+ &lt;td>基础&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2022/openfunction-dapr-elastic-app-runtime_zh-CN.md" target="_blank" rel="noopener noreferrer">OpenFunction 弹性应用运行时&lt;/a> &lt;br/>为 OpenFunction 添加弹性应用运行时，支持直接运行 Dapr 应用， 支持使用 Keda 进行动态伸缩。&lt;br/>导师： &lt;a href="https://github.com/wanjunlei" target="_blank" rel="noopener noreferrer">雷万钧&lt;/a>&lt;/td>
+ &lt;td>Functions-as-a-Service&lt;/td>
+ &lt;td>Kubernetes，OpenFunction，Dapr，Golang，Keda&lt;/td>
+ &lt;td>基础&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2022/kubeeye-console-v2.0_zh-CN.md" target="_blank" rel="noopener noreferrer">KubeEye Console 2.0 前端页面开发&lt;/a> &lt;br/>开发 KubeEye Console 2.0 插件管理功能的前端页面。&lt;br/>导师： &lt;a href="https://github.com/chenz24" target="_blank" rel="noopener noreferrer">chenzhen&lt;/a>&lt;/td>
+ &lt;td>Observability&lt;/td>
+ &lt;td>JavaScript，TypeScript，HTML，CSS，React，Docker，Kubernetes&lt;/td>
+ &lt;td>基础&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>您还可以通过开源之夏官网 &lt;a href="https://summer-ospp.ac.cn/#/org/orgdetail/669ff0b7-2366-4bf3-8ffb-10f79089a45a/" target="_blank" rel="noopener noreferrer">KubeSphere 社区项目列表页&lt;/a>或 &lt;a href="https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2022" target="_blank" rel="noopener noreferrer">KubeSphere 官网开源之夏页面&lt;/a>了解这些项目的详情。&lt;/p></description></item><item><title>祝贺开源之夏 2023 KubeSphere 社区项目中选学生！</title><link>https://openksc.github.io/zh/news/ospp-2023-selected-students/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/ospp-2023-selected-students/</guid><description>&lt;p>开源之夏 2023 所有中选结果已出炉，在此祝贺各位中选的同学！&lt;/p>
+&lt;h2 id="活动简介">活动简介&lt;/h2>
+&lt;p>开源之夏是由中科院软件所“开源软件供应链点亮计划”发起并长期支持的一项暑期开源活动，旨在鼓励在校学生积极参与开源软件的开发维护，培养和发掘更多优秀的开发者，促进优秀开源软件社区的蓬勃发展，助力开源软件供应链建设。&lt;/p>
+&lt;p>开源之夏联合国内外开源社区，针对重要开源软件的开发与维护提供项目任务，面向全球高校学生开放报名。中选学生将在项目资深开发者（项目导师）的指导下，参与开源贡献，完成开发工作并贡献给开源社区。&lt;/p>
+&lt;p>学生可自主选择感兴趣的项目进行申请，并在中选后获得该软件资深维护者（社区导师）亲自指导的机会。根据项目的难易程度和完成情况，参与者还将获取开源之夏活动奖金和结项证书。&lt;/p>
+&lt;p>今年，是 KubeSphere 社区第三次参与开源之夏活动。&lt;/p>
+&lt;h2 id="项目简介">项目简介&lt;/h2>
+&lt;p>本次活动，KubeSphere 社区共提交了 6 个开发类项目课题，涉及 KubeSphere、KubeKey、Fluent Operator、OpenFunction 等开源项目。以下是项目简介：&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>项目&lt;/th>
+ &lt;th>领域&lt;/th>
+ &lt;th>技能&lt;/th>
+ &lt;th>难 度&lt;/th>
+ &lt;th>学生&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2023/openfunction-nodejs-function-framework-upgrade_zh-CN.md" target="_blank" rel="noopener noreferrer">OpenFunction 的 Node.js 函数框架支持 Dapr 状态管理&lt;/a> &lt;br/>升级现有的 OpenFunction Node.js Functions Framework（函数框架），使之支持在函数中使用 Dapr 状态管理的能力。&lt;br/>导师： &lt;a href="https://github.com/webup" target="_blank" rel="noopener noreferrer">Haili Zhang&lt;/a>&lt;/td>
+ &lt;td>Functions-as-a-Service&lt;/td>
+ &lt;td>Node.js，Kubernetes，KinD，OpenFunction，Dapr&lt;/td>
+ &lt;td>基础&lt;/td>
+ &lt;td>董文龙&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2023/fluent-operator-input-plugin-development.md" target="_blank" rel="noopener noreferrer">Fluent Operator Collector 输入组件开发&lt;/a> &lt;br/>完成 Fluent Operator 中多个输入插件的开发并集成到 Fluent Operator 中。&lt;br/>导师： &lt;a href="https://github.com/wenchajun" target="_blank" rel="noopener noreferrer">wenchajun&lt;/a>&lt;/td>
+ &lt;td>Observability&lt;/td>
+ &lt;td>Golang，Kubernetes，Fluent-bit，Fluentd&lt;/td>
+ &lt;td>基础&lt;/td>
+ &lt;td>刘帅军&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2023/openelb-eip-binding-namespaces.md" target="_blank" rel="noopener noreferrer">OpenELB EIP 分配到 Namespace&lt;/a> &lt;br/>实现 OpenELB EIP 分配到匹配的一个或者多个 Namespace 的功能。&lt;br/>导师： &lt;a href="https://github.com/renyunkang/" target="_blank" rel="noopener noreferrer">renyunkang&lt;/a>&lt;/td>
+ &lt;td>loadbalance&lt;/td>
+ &lt;td>Golang，Kubernetes，OpenELB&lt;/td>
+ &lt;td>基础&lt;/td>
+ &lt;td>郭辰英&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2023/openfunction-function-trigger.md" target="_blank" rel="noopener noreferrer">OpenFunction 函数触发器&lt;/a> &lt;br/>设计 OpenFunction 函数触发模式，提高用户的函数触发体验。&lt;br/>导师： &lt;a href="https://github.com/tpiperatgod/" target="_blank" rel="noopener noreferrer">Fang Tian &lt;/a>&lt;/td>
+ &lt;td>Functions-as-a-Service&lt;/td>
+ &lt;td>Kubernetes，Dapr，OpenFunction，Keda，Golang，Knative[可选]&lt;/td>
+ &lt;td>基础&lt;/td>
+ &lt;td>张冠璟&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2023/kubekey-console_zh-CN.md" target="_blank" rel="noopener noreferrer">KubeKey 可视化界面开发&lt;/a> &lt;br/>开发 KubeKey Console，支持界面可视化集群管理。&lt;br/>导师： &lt;a href="https://github.com/liangzai006" target="_blank" rel="noopener noreferrer">JunWei Chen&lt;/a>&lt;/td>
+ &lt;td>Kubernetes&lt;/td>
+ &lt;td>JavaScript、TypeScript、HTML、CSS、Go；React；Docker、Kubernetes&lt;/td>
+ &lt;td>基础&lt;/td>
+ &lt;td>史继林&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2023/kubesphere-s2i-upgrade-with-buildpacks_zh-CN.md" target="_blank" rel="noopener noreferrer">基于 Shipwright+Buildpacks 改造 KubeSphere-S2I&lt;/a> &lt;br/>KubeSphere 上基于 Shipwright+Buildpacks 的 SourceToImage 功能。。&lt;br/>导师： &lt;a href="https://github.com/yudong2015" target="_blank" rel="noopener noreferrer">yudong&lt;/a>&lt;/td>
+ &lt;td>DevOps&lt;/td>
+ &lt;td>Golang，Kubernetes，Buildpacks，Shipwright，React&lt;/td>
+ &lt;td>基础&lt;/td>
+ &lt;td>甘秉坤&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>您还可以通过开源之夏官网 &lt;a href="https://summer-ospp.ac.cn/org/orgdetail/669ff0b7-2366-4bf3-8ffb-10f79089a45a?lang=zh" target="_blank" rel="noopener noreferrer">KubeSphere 社区项目列表页&lt;/a>或 &lt;a href="https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2023" target="_blank" rel="noopener noreferrer">KubeSphere 官网开源之夏页面&lt;/a>了解这些项目的详情。&lt;/p></description></item><item><title>祝贺开源之夏 2024 KubeSphere 社区项目中选学生！</title><link>https://openksc.github.io/zh/news/ospp-2024-selected-students/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/news/ospp-2024-selected-students/</guid><description>&lt;p>开源之夏 2024 所有中选结果已出炉，在此祝贺各位中选的同学！&lt;/p>
+&lt;h2 id="活动简介">活动简介&lt;/h2>
+&lt;p>开源之夏是中国科学院软件研究所发起的“开源软件供应链点亮计划”系列暑期活动，旨在鼓励高校学生积极参与开源软件的开发维护，促进优秀开源软件社区的蓬勃发展。活动联合各大开源社区，针对重要开源软件的开发与维护提供项目开发任务，并向全球高校学生开放报名。&lt;/p>
+&lt;p>学生可自主选择感兴趣的项目进行申请，中选后在项目开发者（社区导师）的指导下进行开发。根据项目的难易程度和完成情况，结项者将获取开源之夏活动奖金和结项证书。&lt;/p>
+&lt;h2 id="项目简介">项目简介&lt;/h2>
+&lt;p>本次活动，KubeSphere 社区共提交了 4 个开发类项目课题，涉及 KubeSphere、KubeKey、Fluent Operator、OpenELB 等开源项目。以下是项目简介：&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>项目&lt;/th>
+ &lt;th>领域&lt;/th>
+ &lt;th>技能&lt;/th>
+ &lt;th>难 度&lt;/th>
+ &lt;th>学生&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2024/pod-state-analysis-tool-based-on-langchain_zh-CN.md" target="_blank" rel="noopener noreferrer">基于 LangChain 实现的 Pod 状态分析工具&lt;/a> &lt;br/>基于 LangChain.js 和 Ollama 开发一套可分析 K8s Pod 状态的轻量级分析工具，并将其集成到 KubeSphere 的容器状态观测页面中。&lt;br/>导师： &lt;a href="https://github.com/webup" target="_blank" rel="noopener noreferrer">张海立&lt;/a>&lt;/td>
+ &lt;td>Kubernetes，AI&lt;/td>
+ &lt;td>前端技术: JavaScript、TypeScript、HTML、CSS、React&lt;br/>分析工具接口: Ollama 提供的 API 接口&lt;br/>容器平台: Kubernetes、KubeSphere&lt;/td>
+ &lt;td>进阶&lt;/td>
+ &lt;td>张豈明&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2024/integrating-fluent-bit-3.0-into-fluent-operator_zh-CN.md" target="_blank" rel="noopener noreferrer">Fluent Operator 集成 Fluent-bit 3.0&lt;/a> &lt;br/>将 Fluent-bit 3.0 集成到 Fluent Operator 中开发并集成其部分特性。&lt;br/>导师： &lt;a href="https://github.com/wenchajun" target="_blank" rel="noopener noreferrer">程德昊&lt;/a>&lt;/td>
+ &lt;td>Observability&lt;/td>
+ &lt;td>Golang，Kubernetes，Fluent-bit，Fluentd&lt;/td>
+ &lt;td>基础&lt;/td>
+ &lt;td>李梓玄&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2024/openelb-support-ipv6_zh-CN.md" target="_blank" rel="noopener noreferrer">OpenELB 支持 IPV6&lt;/a> &lt;br/>controller 支持 ipv6 的 ipam；speaker 不同的模式支持 ipv6 的宣告。&lt;br/>导师： &lt;a href="https://github.com/renyunkang/" target="_blank" rel="noopener noreferrer">任云康&lt;/a>&lt;/td>
+ &lt;td>loadbalance&lt;/td>
+ &lt;td>Golang，Kubernetes，OpenELB，Network，Gobgp，NDP(Neighbor Discovery Protocol)，keepalived&lt;/td>
+ &lt;td>基础&lt;/td>
+ &lt;td>邬宇祺&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2024/upgrading-cluster-api-kubekey-provider_zh-CN.md" target="_blank" rel="noopener noreferrer">cluster-api-kubekey-provider 升级&lt;/a> &lt;br/>使⽤框架与任务分离架构升级 cluster-api-kubekey-provider。&lt;br/>导师：&lt;a href="https://github.com/ImitationImmortal" target="_blank" rel="noopener noreferrer">刘健&lt;/a>&lt;/td>
+ &lt;td>Kubernetes&lt;/td>
+ &lt;td>后端语⾔：golang，shell&lt;br/>流程语法：ansible，pongo2&lt;br/>Kubernenetes 集群：Kubernetes，helm，cluster-api，autoscaler&lt;/td>
+ &lt;td>基础&lt;/td>
+ &lt;td>丁永亮&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>您还可以通过开源之夏官网 &lt;a href="https://summer-ospp.ac.cn/org/orgdetail/669ff0b7-2366-4bf3-8ffb-10f79089a45a?lang=zh" target="_blank" rel="noopener noreferrer">KubeSphere 社区项目列表页&lt;/a>或 &lt;a href="https://github.com/kubesphere/community/blob/master/sig-advocacy-and-outreach/ospp-2024/README_zh-CN.md" target="_blank" rel="noopener noreferrer">KubeSphere GitHub 开源之夏页面&lt;/a>了解这些项目的详情。&lt;/p></description></item></channel></rss>

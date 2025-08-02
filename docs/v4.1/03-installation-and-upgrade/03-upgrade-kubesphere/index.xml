@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Upgrade KubeSphere on</title><link>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/03-upgrade-kubesphere/</link><description>Recent content in Upgrade KubeSphere on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/03-upgrade-kubesphere/index.xml" rel="self" type="application/rss+xml"/><item><title>Upgrade from v4.1.x to v4.1.3</title><link>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/03-upgrade-kubesphere/02-upgrade-kubesphere-from-v4.1.x/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/03-upgrade-kubesphere/02-upgrade-kubesphere-from-v4.1.x/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to upgrade KubeSphere from v4.1.x to v4.1.3 while maintaining your current Kubernetes version.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Ensure your current KubeSphere version is v4.1.x.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Ensure your current Kubernetes version is v1.21.x ~ v1.30.x.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If extensions have custom configurations, back them up by downloading configuration files from the &amp;#34;Extension Config&amp;#34; dialog.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Back up all critical data to prevent data loss.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_upgrade_kubesphere">Upgrade KubeSphere&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>KubeSphere v4.1+ uses Helm for upgrading ks-core.&lt;/p>
+&lt;/div>
+&lt;div class="sect2">
+&lt;h3 id="_upgrade_host_cluster">Upgrade Host Cluster&lt;/h3>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Verify the target cluster:&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">kubectl get node -o wide&lt;/code>&lt;/pre>
+&lt;/div></description></item><item><title>Upgrade from v3.4.x to v4.1.3</title><link>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/03-upgrade-kubesphere/03-upgrade-kubesphere-from-v3.4.x/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/03-upgrade-kubesphere/03-upgrade-kubesphere-from-v3.4.x/</guid><description>&lt;div class="paragraph">
+&lt;p>The following procedures outline the steps required to upgrade KubeSphere from v3.4.x to v4.1.3.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Prerequisite: Your KubeSphere must be v3.4.x before proceeding with this upgrade to v4.1.3.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="paragraph">
+&lt;p>The upgrade process consists of three critical phases that must be executed in strict sequence:&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Upgrade the host cluster and migrate extension data&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Upgrade all member clusters and migrate extension data&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Upgrade the gateway components&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item></channel></rss>

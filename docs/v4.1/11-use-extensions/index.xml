@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Extension User Guide on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/</link><description>Recent content in Extension User Guide on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/00-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/00-overview/</guid><description>&lt;div class="paragraph">
+&lt;p>KubeSphere extensions are built on top of KubeSphere LuBan to extend and enhance KubeSphere’s product capabilities, further meeting the various business needs. After KubeSphere is installed, it only includes the essential basic functions. It is recommended that you install extensions to fully utilize the features of KubeSphere.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>After understanding and installing extensions, please refer to the extension tutorials in this guide to learn how to access, configure, and use each extension.&lt;/p>
+&lt;/div></description></item></channel></rss>

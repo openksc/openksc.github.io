@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rule Groups on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/</link><description>Recent content in Rule Groups on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/index.xml" rel="self" type="application/rss+xml"/><item><title>Create a Rule Group</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/01-create-a-rule-group/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/01-create-a-rule-group/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to create an alert rule group.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>The monitoring and alerting functions of KubeSphere are implemented based on Prometheus. Each rule group can contain multiple alert rules. You can create alert rules using the rule templates provided by the system or manually enter PromQL expressions to create alert rules. For more information, see the &lt;a href="https://prometheus.io/docs/prometheus/latest/querying/basics/">Prometheus Documentation&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The &lt;strong>WhizardTelemetry Alerting&lt;/strong> extension must be installed and enabled on the KubeSphere platform.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a cluster or a project and have the &lt;strong>Rule Group Management&lt;/strong> permission within the cluster or the project. For more information, refer to &amp;#34;Cluster Roles&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>View Rule Group List</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/02-view-a-rule-group-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/02-view-a-rule-group-list/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to view the alert rule group list.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The &lt;strong>WhizardTelemetry Alerting&lt;/strong> extension must be installed and enabled on the KubeSphere platform.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a cluster or a project and have the &lt;strong>Rule Group Viewing&lt;/strong> permission within the cluster or the project. For more information, refer to &amp;#34;Cluster Roles&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Rule Group Viewing&lt;/strong> permission and enter your cluster or project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Monitoring &amp;amp; Alerting &amp;gt; Rule Groups&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Rule Groups&lt;/strong> page, click &lt;strong>Custom Rule Groups&lt;/strong> or &lt;strong>Built-in Rule Groups&lt;/strong> to open the rule group list.&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The rule group list provides the following information:&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Name&lt;/p>
+&lt;/div></description></item><item><title>View Rule Group Details</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/03-view-rule-group-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/03-view-rule-group-details/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to view the details of an alert rule group.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The &lt;strong>WhizardTelemetry Alerting&lt;/strong> extension must be installed and enabled on the KubeSphere platform.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a cluster or a project and have the &lt;strong>Rule Group Viewing&lt;/strong> permission within the cluster or the project. For more information, refer to &amp;#34;Cluster Roles&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Rule Group Viewing&lt;/strong> permission and enter your cluster or project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Monitoring &amp;amp; Alerting &amp;gt; Rule Groups&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Rule Groups&lt;/strong> page, click &lt;strong>Custom Rule Groups&lt;/strong> or &lt;strong>Built-in Rule Groups&lt;/strong>, then click the name of a rule group in the list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>View the resource attributes of the rule group in the &lt;strong>Attributes&lt;/strong> area on the left side of the details page.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Rule Group Status&lt;/p>
+&lt;/div></description></item><item><title>Edit Rule Group Information</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/04-edit-rule-group-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/04-edit-rule-group-information/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to edit the information of an alert rule group.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>You can edit the alias, check interval, and description of the alert rule group. KubeSphere does not support editing the name of a rule group.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The &lt;strong>WhizardTelemetry Alerting&lt;/strong> extension must be installed and enabled on the KubeSphere platform.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a cluster or a project and have the &lt;strong>Rule Group Management&lt;/strong> permission within the cluster or the project. For more information, refer to &amp;#34;Cluster Roles&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Edit Alert Rules</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/05-edit-alert-rules/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/05-edit-alert-rules/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to edit alert rules in a rule group.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>KubeSphere only supports editing custom rule groups, not built-in rule groups.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>WhizardTelemetry Alerting&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a cluster or a project and have the &lt;strong>Rule Group Management&lt;/strong> permission within the cluster or the project. For more information, refer to &amp;#34;Cluster Roles&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Disable and Enable Rule Groups</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/06-disable-and-enable-rule-groups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/06-disable-and-enable-rule-groups/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to enable and disable alerting rule groups. After a rule group is disabled, the system will no longer generate alerts based on the rule group.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>WhizardTelemetry Alerting&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a cluster or a project and have the &lt;strong>Rule Group Management&lt;/strong> permission within the cluster or the project. For more information, refer to &amp;#34;Cluster Roles&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_disable_and_enable_a_single_rule_group">Disable and Enable a Single Rule Group&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Rule Group Management&lt;/strong> permission and enter your cluster or project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Monitoring Alerting &amp;gt; Rule Groups&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Rule Groups&lt;/strong> page, click &lt;strong>Custom Rule Groups&lt;/strong> or &lt;strong>Built-in Rule Groups&lt;/strong> to open the rule group list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span> on the right side of the rule group you need to disable, and then select &lt;strong>Disable&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Disable Rule Group&lt;/strong> dialog, enter the name of the rule group, and then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span> on the right side of the disabled rule group, and then select &lt;strong>Enable&lt;/strong> from the dropdown list to enable the rule group.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>Delete Rule Groups</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/07-delete-rule-groups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/07-delete-rule-groups/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to delete alert rule groups.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>KubeSphere only supports deleting custom rule groups, not built-in rule groups.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Warning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Rule groups cannot be recovered after deletion, so please proceed with caution.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>WhizardTelemetry Alerting&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a cluster or a project and have the &lt;strong>Rule Group Management&lt;/strong> permission within the cluster or the project. For more information, refer to &amp;#34;Cluster Roles&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Reset Built-in Rule Groups</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/08-reset-built-in-rule-groups/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/06-alerting/03-rule-groups/08-reset-built-in-rule-groups/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to reset built-in rule groups.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere only supports resetting built-in rule groups, not custom rule groups.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>There are no built-in rule groups in projects.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Warning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Rule groups cannot be recovered after resetting, so please proceed with caution.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>WhizardTelemetry Alerting&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a cluster and have the &lt;strong>Rule Group Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Add and Remove Cluster Nodes on</title><link>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/05-add-and-delete-cluster-nodes/</link><description>Recent content in Add and Remove Cluster Nodes on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/05-add-and-delete-cluster-nodes/index.xml" rel="self" type="application/rss+xml"/><item><title>Add Cluster Nodes</title><link>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/05-add-and-delete-cluster-nodes/01-add-cluster-nodes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/05-add-and-delete-cluster-nodes/01-add-cluster-nodes/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to add KubeSphere cluster nodes.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>The open-source tool KubeKey will be used during the process. For more information about KubeKey, please visit &lt;a href="https://github.com/kubesphere/kubekey">GitHub KubeKey repository&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>The node addition method described in this section is only applicable to Kubernetes installed through KubeKey. If your Kubernetes is not installed via KubeKey, please refer to &lt;a href="https://kubernetes.io/zh/docs/concepts/architecture/nodes/">Kubernetes Documentation&lt;/a> to add nodes.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The operating system and version of the cluster nodes must be Ubuntu 16.04, Ubuntu 18.04, Ubuntu 20.04, Ubuntu 22.04, Debian 9, Debian 10, CentOS 7, CentOS Stream, RHEL 7, RHEL 8, SLES 15, or openSUSE Leap 15. The operating systems of multiple servers can be different. For support of other operating systems and versions, please contact KubeSphere technical support.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In a production environment, to ensure the cluster has sufficient computing and storage resources, it is recommended that each cluster node be configured with at least 8 CPU cores, 16 GB of memory, and 200 GB of disk space. In addition, it is recommended to mount an additional 200 GB of disk space in the &lt;strong>/var/lib/docker&lt;/strong> (for Docker) or &lt;strong>/var/lib/containerd&lt;/strong> (for containerd) directory of each cluster node for storing container runtime data.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In a production environment, it is recommended to configure high availability for the KubeSphere cluster in advance to avoid service interruption in the event of a single control plane node failure. For more information, please refer to the &lt;a href="../../../03-installation-and-upgrade/01-preparations/02-configure-high-availability/02-configure-k8s-high-availability/">Configure High Availability&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Remove Cluster Nodes</title><link>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/05-add-and-delete-cluster-nodes/02-delete-cluster-nodes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/05-add-and-delete-cluster-nodes/02-delete-cluster-nodes/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to delete KubeSphere cluster nodes.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>The open-source tool KubeKey will be used during the process. For more information about KubeKey, please visit &lt;a href="https://github.com/kubesphere/kubekey">GitHub KubeKey repository&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>The node deletion method described in this section is only applicable to Kubernetes installed through KubeKey. If your Kubernetes is not installed via KubeKey, please refer to &lt;a href="https://kubernetes.io/zh/docs/concepts/architecture/nodes/">Kubernetes Documentation&lt;/a> to delete nodes.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Warning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Do not delete control plane nodes, otherwise the cluster may encounter errors.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Please ensure that after node deletion, the remaining resources in the cluster are still sufficient to run existing services. Otherwise, service interruption may occur after the node is deleted.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

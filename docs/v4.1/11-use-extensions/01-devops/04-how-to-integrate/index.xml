@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tool Integration on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/04-how-to-integrate/</link><description>Recent content in Tool Integration on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/04-how-to-integrate/index.xml" rel="self" type="application/rss+xml"/><item><title>Integrate SonarQube into Pipelines</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/04-how-to-integrate/01-sonarqube/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/04-how-to-integrate/01-sonarqube/</guid><description>&lt;div class="paragraph">
+&lt;p>&lt;a href="https://www.sonarqube.org/">SonarQube&lt;/a> is a mainstream tool for continuous inspection of code quality, which can be used for static and dynamic analysis of code repositories. After SonarQube is integrated into pipelines, common code issues detected in running pipelines, such as bugs, will be displayed directly on the dashboard.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This document demonstrates how to integrate SonarQube into pipelines. Before &lt;a href="../../03-how-to-use/02-pipelines/02-create-a-pipeline-using-jenkinsfile/">creating a pipeline using a Jenkinsfile&lt;/a>, please read this document.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>&lt;strong>DevOps&lt;/strong> must have been installed and enabled.&lt;/p>
+&lt;/div></description></item><item><title>Integrate Harbor into Pipelines</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/04-how-to-integrate/02-harbor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/01-devops/04-how-to-integrate/02-harbor/</guid><description>&lt;div class="paragraph">
+&lt;p>This document demonstrates how to integrate Harbor into KubeSphere pipelines.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>DevOps&lt;/strong> must have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>A workspace, a DevOps project, and a user (e.g. &lt;strong>project-regular&lt;/strong>) have been created, and the user has been invited to the DevOps project with the &lt;strong>operator&lt;/strong> role.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_install_harbor">Install Harbor&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>Run the following command to install Harbor using Helm 3.&lt;/p>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">helm repo add harbor https://helm.goharbor.io
+
+# For a quick installation, you can expose Harbor through NodePort and disable TLS.
+# Set externalURL to one of your node IPs and ensure Jenkins can access it.
+helm install harbor-release harbor/harbor --set expose.type=nodePort,externalURL=http://$ip:30002,expose.tls.enabled=false&lt;/code>&lt;/pre>
+&lt;/div></description></item></channel></rss>

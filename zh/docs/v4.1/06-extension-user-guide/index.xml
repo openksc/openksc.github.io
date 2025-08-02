@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>扩展组件管理 on</title><link>https://openksc.github.io/zh/docs/v4.1/06-extension-user-guide/</link><description>Recent content in 扩展组件管理 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/06-extension-user-guide/index.xml" rel="self" type="application/rss+xml"/><item><title>安装扩展组件</title><link>https://openksc.github.io/zh/docs/v4.1/06-extension-user-guide/01-install-extensions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/06-extension-user-guide/01-install-extensions/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何安装扩展组件。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>有关如何访问、配置及使用各个扩展组件，请参阅&lt;a href="../../11-use-extensions/">扩展组件使用指南&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>您需要在 KubeSphere 平台具有 &lt;strong>platform-admin&lt;/strong> 角色。有关更多信息，请参阅&lt;a href="../../05-users-and-roles/01-users/">用户&lt;/a>和&lt;a href="../../05-users-and-roles/02-platform-roles/">平台角色&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_安装步骤">安装步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有 &lt;strong>platform-admin&lt;/strong> 角色的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>扩展中心&lt;/strong>，搜索您要安装的扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击扩展组件名称，然后点击&lt;strong>安装&lt;/strong>，进入组件安装页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在组件安装对话框的&lt;strong>版本选择&lt;/strong>页签，选择扩展组件的版本号，并安装好所有必装组件（若有），点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>安装检测时，会识别扩展组件是否有依赖组件。依赖组件分为必装组件和选装组件。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>若必装组件的状态为&lt;strong>未就绪&lt;/strong>，您需要先行安装正确版本的必装组件，以确保扩展组件的正常使用。而选装组件不会影响扩展组件的安装。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>扩展组件安装&lt;/strong>页签，修改扩展组件的配置后（可选），点击&lt;strong>开始安装&lt;/strong>，开始安装扩展组件。&lt;/p>
+&lt;div class="paragraph">
+&lt;p>&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/v4.0/install-extensions.png" alt="install extensions" width="100%"/>&lt;/span>&lt;/p>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>待安装完成后，点击&lt;strong>下一步&lt;/strong>，配置集群 Agent。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>集群选择&lt;/strong>页签，根据名称、标识选择集群（可选择多个集群），以便在目标集群中开启扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>差异化配置&lt;/strong>页签，分别编辑选中集群的 YAML 配置，也可不修改，使用初始默认配置。点击&lt;strong>确定&lt;/strong>，开始安装集群 Agent，等待完成即可。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>安装完成后，默认启用扩展组件。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>部分扩展组件不需要安装集群 Agent（即没有&lt;strong>集群选择&lt;/strong>和&lt;strong>差异化配置&lt;/strong>页签），请以实际页面为准。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>升级扩展组件</title><link>https://openksc.github.io/zh/docs/v4.1/06-extension-user-guide/03-upgrade-extensions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/06-extension-user-guide/03-upgrade-extensions/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何升级扩展组件。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>在升级扩展组件之前，您需要先更新扩展组件仓库以获取最新扩展组件。可以通过以下命令更新 &lt;code>ks-core&lt;/code> 的扩展组件仓库：&lt;/p>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">bash -c &amp;#39;#!/bin/bash
+set -e # Exit immediately if a command exits with a non-zero status
+set -o pipefail # Fail the entire pipeline if any command fails
+
+# If CHART_VERSION is not set via environment variable, fetch it from the installed release
+if [ -z &amp;#34;$CHART_VERSION&amp;#34; ]; then
+ CHART_VERSION=$(helm -n kubesphere-system get metadata ks-core -o json | jq -r &amp;#39;.version&amp;#39;)
+
+ if [[ -z &amp;#34;$CHART_VERSION&amp;#34; || &amp;#34;$CHART_VERSION&amp;#34; == &amp;#34;null&amp;#34; ]]; then
+ echo &amp;#34;❌ Failed to retrieve the Chart version of ks-core. Aborting.&amp;#34;
+ exit 1
+ fi
+fi
+
+# Construct the Chart URL
+CHART_URL=&amp;#34;https://charts.kubesphere.io/main/ks-core-$CHART_VERSION.tgz&amp;#34;
+
+# If EXTENSION_REPOSITORY_VERSION is not set via environment variable, fetch it from GitHub
+if [ -z &amp;#34;$EXTENSION_REPOSITORY_VERSION&amp;#34; ]; then
+ EXTENSION_REPOSITORY_VERSION=$(curl -s https://api.github.com/repos/kubesphere-extensions/ks-extensions/releases/latest | jq -r &amp;#39;.tag_name&amp;#39;)
+
+ if [[ -z &amp;#34;$EXTENSION_REPOSITORY_VERSION&amp;#34; || &amp;#34;$EXTENSION_REPOSITORY_VERSION&amp;#34; == &amp;#34;null&amp;#34; ]]; then
+ echo &amp;#34;❌ Failed to retrieve the latest version of ks-extensions. Aborting.&amp;#34;
+ echo &amp;#34;You can manually visit the GitHub releases page to find the latest version: https://github.com/kubesphere-extensions/ks-extensions/releases&amp;#34;
+ exit 1
+ fi
+fi
+
+# Upgrade ks-core using the retrieved or provided versions
+echo &amp;#34;✅ Preparing to upgrade ks-core to version $CHART_VERSION using extension repository version $EXTENSION_REPOSITORY_VERSION&amp;#34;
+helm -n kubesphere-system upgrade ks-core &amp;#34;$CHART_URL&amp;#34; \
+ --set ksExtensionRepository.image.tag=&amp;#34;$EXTENSION_REPOSITORY_VERSION&amp;#34; \
+ --wait --debug&amp;#39;&lt;/code>&lt;/pre>
+&lt;/div></description></item><item><title>卸载扩展组件</title><link>https://openksc.github.io/zh/docs/v4.1/06-extension-user-guide/04-uninstall-extensions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/06-extension-user-guide/04-uninstall-extensions/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何卸载扩展组件。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>您可以在扩展中心的组件详情页中卸载扩展组件。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>对于多集群环境，卸载时会先卸载集群 Agent，再卸载组件。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>您需要在 KubeSphere 平台具有 &lt;strong>platform-admin&lt;/strong> 角色。有关更多信息，请参阅&lt;a href="../../../05-users-and-roles/01-users/">用户&lt;/a>和&lt;a href="../../../05-users-and-roles/02-platform-roles/">平台角色&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有 &lt;strong>platform-admin&lt;/strong> 角色的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>扩展中心&lt;/strong>，进入扩展中心页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击已安装的组件名称，进入组件详情页。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击组件图标下的&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，选择&lt;strong>卸载&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>输入扩展组件的名称，点击&lt;strong>确定&lt;/strong>开始卸载。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

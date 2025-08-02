@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>访问控制和帐户管理 on</title><link>https://openksc.github.io/zh/docs/v3.4/faq/access-control/</link><description>Recent content in 访问控制和帐户管理 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v3.4/faq/access-control/index.xml" rel="self" type="application/rss+xml"/><item><title>重置帐户密码</title><link>https://openksc.github.io/zh/docs/v3.4/faq/access-control/forgot-password/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/faq/access-control/forgot-password/</guid><description>&lt;h2 id="重置普通用户密码">重置普通用户密码&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>使用具有用户管理权限的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击左上角的&lt;strong>平台管理&lt;/strong>，选择&lt;strong>访问&lt;/strong>控制。点击&lt;strong>用户&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>用户&lt;/strong>页面，点击需要修改密码的用户进入详情页。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在用户的详情页，点击&lt;strong>更多操作&lt;/strong>并选择&lt;strong>修改密码&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在出现的对话框中，输入新的密码并重复输入新的密码。完成后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="重置管理员密码">重置管理员密码&lt;/h2>
+&lt;p>在 Host 集群执行以下命令修改指定帐户的密码：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl patch users &amp;lt;USERNAME&amp;gt; -p &lt;span style="color:#e6db74">&amp;#39;{&amp;#34;spec&amp;#34;:{&amp;#34;password&amp;#34;:&amp;#34;&amp;lt;YOURPASSWORD&amp;gt;&amp;#34;}}&amp;#39;&lt;/span> --type&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;merge&amp;#39;&lt;/span> &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> kubectl annotate users &amp;lt;USERNAME&amp;gt; iam.kubesphere.io/password-encrypted-
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>请将命令中的 &lt;code>&amp;lt;USERNAME&amp;gt;&lt;/code> 修改为实际的用户名，将 &lt;code>&amp;lt;YOURPASSWORD&amp;gt;&lt;/code> 修改为实际的新密码。&lt;/div>
+&lt;/div></description></item><item><title>会话超时</title><link>https://openksc.github.io/zh/docs/v3.4/faq/access-control/session-timeout/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/faq/access-control/session-timeout/</guid><description>&lt;p>当用户登录 KubeSphere 的控制台时会话开始。当会话过期时，您会看到信息“&lt;strong>会话超时或此帐户在其他地方登录，请重新登录&lt;/strong>”。&lt;/p>
+&lt;h2 id="会话超时">会话超时&lt;/h2>
+&lt;p>您可以控制会话超时时间，默认超时时间为两小时，即达到会话超时时间后，用户会从控制台自动登出。您可以为会话超时配置 &lt;a href="../../../access-control-and-account-management/external-authentication/set-up-external-authentication">accessTokenMaxAge 和 accessTokenInactivityTimeout&lt;/a>。&lt;/p>
+&lt;h2 id="签名校验失败">签名校验失败&lt;/h2>
+&lt;p>在&lt;a href="../../../multicluster-management/enable-multicluster/direct-connection/#prepare-a-member-cluster">多集群环境&lt;/a>下，您必须正确设置 &lt;code>clusterRole&lt;/code> 和 &lt;code>jwtSecret&lt;/code>。&lt;/p>
+&lt;h2 id="节点时钟偏移">节点时钟偏移&lt;/h2>
+&lt;p>节点时钟偏移会影响时间敏感性操作，例如用户令牌 (Token) 过期时间的验证。您可以将服务器时间和 NTP 服务器进行同步。&lt;a href="../../../access-control-and-account-management/external-authentication/set-up-external-authentication">MaximumClockSkew&lt;/a> 也可设置，默认为 10 秒。&lt;/p></description></item><item><title>添加现有 Kubernetes 命名空间至 KubeSphere 企业空间</title><link>https://openksc.github.io/zh/docs/v3.4/faq/access-control/add-kubernetes-namespace-to-kubesphere-workspace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/faq/access-control/add-kubernetes-namespace-to-kubesphere-workspace/</guid><description>&lt;p>Kubernetes 命名空间即 KubeSphere 项目。如果您不是在 KubeSphere 控制台创建命名空间对象，则该命名空间不会直接在企业空间中显示。不过，集群管理员依然可以在&lt;strong>集群管理&lt;/strong>页面查看该命名空间。同时，您也可以将该命名空间添加至企业空间。&lt;/p>
+&lt;p>本教程演示如何添加现有 Kubernetes 命名空间至 KubeSphere 企业空间。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>您需要有一个具有&lt;strong>集群管理&lt;/strong>权限的用户。例如，您可以直接以 &lt;code>admin&lt;/code> 身份登录控制台，或者创建一个具有该权限的新角色并将其分配至一个用户。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您需要有一个可用的企业空间，以便将命名空间分配至该企业空间。有关更多信息，请参见&lt;a href="../../../quick-start/create-workspace-and-project/">创建企业空间、项目、用户和角色&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="创建-kubernetes-命名空间">创建 Kubernetes 命名空间&lt;/h2>
+&lt;p>首先，创建一个示例 Kubernetes 命名空间，以便稍后将其添加至企业空间。执行以下命令：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl create ns demo-namespace
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>有关创建 Kubernetes 命名空间的更多信息，请参见&lt;a href="https://kubernetes.io/zh/docs/tasks/administer-cluster/namespaces-walkthrough/" target="_blank" rel="noopener noreferrer">命名空间演练&lt;/a>。&lt;/p>
+&lt;h2 id="添加命名空间至-kubesphere-企业空间">添加命名空间至 KubeSphere 企业空间&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>以 &lt;code>admin&lt;/code> 身份登录 KubeSphere 控制台，转到&lt;strong>集群管理&lt;/strong>页面。点击&lt;strong>项目&lt;/strong>，您可以查看在当前集群中运行的所有项目），包括前述刚刚创建的项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>通过 kubectl 创建的命名空间不属于任何企业空间。请点击右侧的 &lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/faq/access-control-and-account-management/add-kubernetes-namespace-to-kubesphere-workspace/three-dots.png" height="20px">，选择&lt;strong>分配企业空间&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框中，为该项目选择一个&lt;strong>企业空间&lt;/strong>和&lt;strong>项目管理员&lt;/strong>，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>转到您的企业空间，可以在&lt;strong>项目&lt;/strong>页面看到该项目已显示。&lt;/p>
+&lt;/li>
+&lt;/ol></description></item><item><title>用户无法登录</title><link>https://openksc.github.io/zh/docs/v3.4/faq/access-control/cannot-login/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/faq/access-control/cannot-login/</guid><description>&lt;p>KubeSphere 安装时会自动创建默认用户 (&lt;code>admin/P@88w0rd&lt;/code>)，密码错误或者用户状态不是&lt;strong>活跃&lt;/strong>会导致无法登录。&lt;/p>
+&lt;p>下面是用户无法登录时，一些常见的问题：&lt;/p>
+&lt;h2 id="account-not-active">Account Not Active&lt;/h2>
+&lt;p>登录失败时，您可能看到以下提示。请根据以下步骤排查并解决问题：&lt;/p>
+&lt;p>&lt;img src="https://openksc.github.io/images/docs/v3.x/faq/access-control-and-account-management/cannot-login/account-not-active.png" alt="account-not-active">&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>执行以下命令检查用户状态：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ kubectl get users
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NAME EMAIL STATUS
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>admin admin@kubesphere.io Active
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>检查 &lt;code>ks-controller-manager&lt;/code> 是否正常运行，是否有异常日志：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl -n kubesphere-system logs -l app&lt;span style="color:#f92672">=&lt;/span>ks-controller-manager
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;p>以下是导致此问题的可能原因。&lt;/p>
+&lt;h3 id="kubernetes-119-中的-admission-webhook-无法正常工作">Kubernetes 1.19 中的 admission webhook 无法正常工作&lt;/h3>
+&lt;p>Kubernetes 1.19 使用了 Golang 1.15 进行编译，需要更新 admission webhook 用到的证书，该问题导致 &lt;code>ks-controller&lt;/code> admission webhook 无法正常使用。&lt;/p>
+&lt;p>相关错误日志：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Internal error occurred: failed calling webhook &lt;span style="color:#e6db74">&amp;#34;validating-user.kubesphere.io&amp;#34;&lt;/span>: Post &lt;span style="color:#e6db74">&amp;#34;https://ks-controller-manager.kubesphere-system.svc:443/validate-email-iam-kubesphere-io-v1alpha2-user?timeout=30s&amp;#34;&lt;/span>: x509: certificate relies on legacy Common Name field, use SANs or temporarily enable Common Name matching with GODEBUG&lt;span style="color:#f92672">=&lt;/span>x509ignoreCN&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>有关该问题和解决方式的更多信息，请参见&lt;a href="https://github.com/kubesphere/kubesphere/issues/2928" target="_blank" rel="noopener noreferrer">此 GitHub Issue&lt;/a>。&lt;/p></description></item></channel></rss>

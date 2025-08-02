@@ -1,0 +1,845 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Release Notes on</title><link>https://openksc.github.io/docs/v3.4/release/</link><description>Recent content in Release Notes on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v3.4/release/index.xml" rel="self" type="application/rss+xml"/><item><title>Release Notes for 3.4.1</title><link>https://openksc.github.io/docs/v3.4/release/release-v341/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.4/release/release-v341/</guid><description>&lt;h2 id="app-store">App Store&lt;/h2>
+&lt;h3 id="bug-fixes">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix the error on the application repository page.&lt;/li>
+&lt;li>Fix the error in the application approval process.&lt;/li>
+&lt;li>Support &amp;quot;select&amp;quot; in Appdeploy schemaform.&lt;/li>
+&lt;/ul>
+&lt;h2 id="console">Console&lt;/h2>
+&lt;h3 id="bug-fixes-1">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix the issue of losing status when modifying a CRD.&lt;/li>
+&lt;li>Fix the incorrect style for IsolateInfo and RuleInfo in the Network Policy panel.&lt;/li>
+&lt;li>Fix inaccurate Chinese translations on some pages.&lt;/li>
+&lt;li>Fix the resource creation failure issue in higher versions of Kubernetes.&lt;/li>
+&lt;li>Fix the issue in the dashboard where the names in Recently Access are obscured.&lt;/li>
+&lt;li>Fix the issue on the list page where the Customize Columns button displays incomplete content.&lt;/li>
+&lt;li>Fix the display error of pod status.&lt;/li>
+&lt;li>Fix the issue on the PVC page where the capacity selection numbers are displayed incorrectly.&lt;/li>
+&lt;li>Fix the issue when adding containers on the Create Deployment page, using tags to search for images is not working.&lt;/li>
+&lt;li>Support building ARM64 images.&lt;/li>
+&lt;/ul>
+&lt;h2 id="multi-cluster">Multi Cluster&lt;/h2>
+&lt;h3 id="bug-fixes-2">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix the issue where CD-related clusters are displayed incorrectly in a multi-cluster environment.&lt;/li>
+&lt;li>Fix the issue of mistakenly adding a host cluster as a member cluster of another cluster.&lt;/li>
+&lt;/ul>
+&lt;h2 id="observability">Observability&lt;/h2>
+&lt;h3 id="bug-fixes-3">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix the issue that CPU and memory statistics charts are not displaying.&lt;/li>
+&lt;li>Fix API call errors on the notification channel page.&lt;/li>
+&lt;li>Fix the blank log receiver page.&lt;/li>
+&lt;li>Fix the issue on the new notification channel page where conditional filtering values are missing.&lt;/li>
+&lt;/ul>
+&lt;h2 id="authentication--authorization">Authentication &amp;amp; Authorization&lt;/h2>
+&lt;h3 id="bug-fixes-4">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix LDAP login failure.&lt;/li>
+&lt;/ul>
+&lt;h2 id="devops">DevOps&lt;/h2>
+&lt;h3 id="bug-fixes-5">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix the issue where shell is not effective in graphical editing.&lt;/li>
+&lt;li>When a cluster is not ready or does not install DevOps, DevOps projects are unavailable.&lt;/li>
+&lt;li>Fix the incorrect parameter passing in Jenkins.&lt;/li>
+&lt;li>Fix the issue that clicking the replay button pops up an error prompt.&lt;/li>
+&lt;li>Fix the issue that the details of a pipeline cannot be viewed.&lt;/li>
+&lt;li>Fix the run error due to the large DevOps pipeline logs.&lt;/li>
+&lt;li>Fix Jenkins image vulnerability.&lt;/li>
+&lt;li>Fix the issue that failed to upgrade DevOps to 3.4.0.&lt;/li>
+&lt;li>Fix the error in the cleanup task.&lt;/li>
+&lt;li>Fix the failure to set a timeout.&lt;/li>
+&lt;li>Fix the bug with downloading multi-branch-pipeline artifacts.&lt;/li>
+&lt;li>Fix the issue that disabling discarded history pipelineruns doesn't work.&lt;/li>
+&lt;li>Fix the issue that some application resources are not deleted when cascade deleting multiple applications.&lt;/li>
+&lt;/ul>
+&lt;h3 id="enhancements--updates">Enhancements &amp;amp; Updates&lt;/h3>
+&lt;ul>
+&lt;li>Display the git repo link on the Pipeline page.&lt;/li>
+&lt;li>Improve the API documentation for DevOps.&lt;/li>
+&lt;/ul>
+&lt;h2 id="user-experience">User Experience&lt;/h2>
+&lt;h3 id="bug-fixes-6">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix the issue on the Statefuls page where the Pod Grace Period parameter is missing.&lt;/li>
+&lt;li>Fix the issue where the cluster gateway is not displayed in cluster management.&lt;/li>
+&lt;li>Fix the error when creating an application route.&lt;/li>
+&lt;li>Add pagination for listing repository tags.&lt;/li>
+&lt;/ul>
+&lt;h2 id="monitoring">Monitoring&lt;/h2>
+&lt;h3 id="bug-fixes-7">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix the issue that the Monitoring Target field is displayed blank.&lt;/li>
+&lt;/ul>
+&lt;p>For more information about issues and contributors of KubeSphere 3.4.1, see &lt;a href="https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.4.1.md" target="_blank" rel="noopener noreferrer">GitHub&lt;/a>.&lt;/p></description></item><item><title>Release Notes for 3.4.0</title><link>https://openksc.github.io/docs/v3.4/release/release-v340/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.4/release/release-v340/</guid><description>&lt;h2 id="devops">DevOps&lt;/h2>
+&lt;h3 id="enhancements--updates">Enhancements &amp;amp; Updates&lt;/h3>
+&lt;ul>
+&lt;li>Support user-defined pipeline configuration steps.&lt;/li>
+&lt;li>Optimize the devops-jenkins JVM memory configuration.&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix the issue of removing ArgoCD resources without cascade parameters.&lt;/li>
+&lt;li>Fix the issue that downloading artifacts for multi-branch pipelines fails.&lt;/li>
+&lt;li>Fix the issue that the pipeline running status is inconsistent with Jenkins (Add retry for pipelinerun annotation update).&lt;/li>
+&lt;li>Fix the issue that the running of a pipeline created by a new user is pending.&lt;/li>
+&lt;/ul>
+&lt;h2 id="storage">Storage&lt;/h2>
+&lt;h3 id="bug-fixes-1">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix the issue that pvc cannot be deleted.&lt;/li>
+&lt;/ul>
+&lt;h2 id="gateway-and-microservice">Gateway and Microservice&lt;/h2>
+&lt;h3 id="features">Features&lt;/h3>
+&lt;ul>
+&lt;li>Gateway supports the configuration of forwarding TCP/UDP traffic.&lt;/li>
+&lt;/ul>
+&lt;h3 id="enhancements--updates-1">Enhancements &amp;amp; Updates&lt;/h3>
+&lt;ul>
+&lt;li>Upgrade ingress nginx: v1.1.0 -&amp;gt; v1.3.1.&lt;/li>
+&lt;li>Upgrade servicemesh:
+istio: 1.11.1 -&amp;gt; 1.14.6; kiali: v1.38.1 -&amp;gt; v1.50.1; jaeger: 1.27 -&amp;gt; 1.29.&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-2">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix the issue that the returned cluster gateways duplicate.&lt;/li>
+&lt;li>Fix the verification error when upgrading the gateway.&lt;/li>
+&lt;li>Fix the abnormal display of cluster gateway log and resource status after changing gateway namespace configuration.&lt;/li>
+&lt;/ul>
+&lt;h2 id="observability">Observability&lt;/h2>
+&lt;h3 id="features-1">Features&lt;/h3>
+&lt;ul>
+&lt;li>Add CRDs such as RuleGroup, ClusterRuleGroup, GlobalRuleGroup to support Alerting v2beta1 APIs.&lt;/li>
+&lt;li>Add admission webhook for RuleGroup, ClusterRuleGroup, GlobalRuleGroup.&lt;/li>
+&lt;li>Add controllers to sync RuleGroup, ClusterRuleGroup, GlobalRuleGroup resources to PrometheusRule resources.&lt;/li>
+&lt;li>Add Alerting v2beta1 APIs.&lt;/li>
+&lt;li>The ks-apiserver of Kubesphere integrates the v1 and v2 versions of opensearch, and users can use the external or built-in opensearch cluster for log storage and query. (Currently the built-in opensearch version of Kubesphere is v2).&lt;/li>
+&lt;li>ks-installer integrates the opensearch dashboard, which should be enabled by users.&lt;/li>
+&lt;/ul>
+&lt;h3 id="enhancements--updates-2">Enhancements &amp;amp; Updates&lt;/h3>
+&lt;ul>
+&lt;li>Upgrade Prometheus stack dependencies.&lt;/li>
+&lt;li>Support configuring the maximum number of logs that can be exported.&lt;/li>
+&lt;li>The monitoring component supports Kubernetes PDB Apiversion changes.&lt;/li>
+&lt;li>Upgrade Notification Manager to v2.3.0.&lt;/li>
+&lt;li>Support cleaning up notification configuration in member clusters when a member cluster is deleted.&lt;/li>
+&lt;li>Support switching notification languages.&lt;/li>
+&lt;li>Support route notifications to specified users.&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-3">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix the issue that Goroutine leaks when getting audit event sender times out.&lt;/li>
+&lt;li>Fix the promql statement of ingress P95 delay.&lt;/li>
+&lt;/ul>
+&lt;h2 id="multi-tenancy-and-multi-cluster">Multi-tenancy and Multi-cluster&lt;/h2>
+&lt;h3 id="enhancements--updates-3">Enhancements &amp;amp; Updates&lt;/h3>
+&lt;ul>
+&lt;li>Check the cluster ID (kube-system UID) when updating the cluster.&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-4">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Make sure the cluster is Ready when cleaning up notifications.&lt;/li>
+&lt;li>Fix the webhook validation issue for new clusters.&lt;/li>
+&lt;li>Fix the incorrect cluster status.&lt;/li>
+&lt;li>Fix the issue of potentially duplicated entries for granted clusters in the workspace.&lt;/li>
+&lt;/ul>
+&lt;h2 id="app-store">App Store&lt;/h2>
+&lt;h3 id="bug-fixes-5">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix the ID generation failure in IPv6-only environment.&lt;/li>
+&lt;li>Fix the missing Home field in app templates.&lt;/li>
+&lt;li>Fix the issue that the uploaded app templates do not show icons.&lt;/li>
+&lt;li>Fix missing maintainers in Helm apps.&lt;/li>
+&lt;li>Fix the issue that Helm applications in a failed status cannot be upgraded again.&lt;/li>
+&lt;li>Fix the wrong &amp;quot;applicationId&amp;quot; parameter.&lt;/li>
+&lt;li>Fix the infinite loop after app installation failure.&lt;/li>
+&lt;li>FIx the wrong status of application repository.&lt;/li>
+&lt;/ul>
+&lt;h2 id="network">Network&lt;/h2>
+&lt;h3 id="enhancements--updates-4">Enhancements &amp;amp; Updates&lt;/h3>
+&lt;ul>
+&lt;li>Upgrade dependencies.&lt;/li>
+&lt;/ul>
+&lt;h2 id="authentication-and-authorization">Authentication and Authorization&lt;/h2>
+&lt;h3 id="features-2">Features&lt;/h3>
+&lt;ul>
+&lt;li>Add inmemory cache.&lt;/li>
+&lt;li>Add Resource Getter v1beta1.&lt;/li>
+&lt;li>Add write operation for Resource Manager.&lt;/li>
+&lt;/ul>
+&lt;h3 id="enhancements--updates-5">Enhancements &amp;amp; Updates&lt;/h3>
+&lt;ul>
+&lt;li>Add iam.kubesphere/v1beta1 RoleTemplate.&lt;/li>
+&lt;li>Update the password minimum length to 8.&lt;/li>
+&lt;li>Update Version API.&lt;/li>
+&lt;li>Update identityProvider API.&lt;/li>
+&lt;li>Add IAM v1beta1 APIs.&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-6">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix the issue that the enableMultiLogin configuration does not take effect.&lt;/li>
+&lt;/ul>
+&lt;h2 id="api-changes">API Changes&lt;/h2>
+&lt;ul>
+&lt;li>Use autoscaling/v2 API.&lt;/li>
+&lt;li>Use batch/v1 API.&lt;/li>
+&lt;li>Update health check API.&lt;/li>
+&lt;li>Fix the ks-apiserver crash issue in K8s v1.25.&lt;/li>
+&lt;/ul>
+&lt;h2 id="user-experience">User Experience&lt;/h2>
+&lt;h3 id="features-3">Features&lt;/h3>
+&lt;ul>
+&lt;li>Resource API supports searching alias in annotations.&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-7">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix the potential Websocket link leakage issue.&lt;/li>
+&lt;/ul>
+&lt;h3 id="enhancements--updates-6">Enhancements &amp;amp; Updates&lt;/h3>
+&lt;ul>
+&lt;li>Use Helm action package instead of using Helm binary.&lt;/li>
+&lt;li>Adjust the priority of bash and sh in the kubectl terminal.&lt;/li>
+&lt;li>Fix the issue that ks-apiserver cannot start due to DiscoveryAPI exception.&lt;/li>
+&lt;li>Fix the issue that the pod status is inconsistent with the filtered status when filtering by status on the pod list page.&lt;/li>
+&lt;li>Support querying the secret list according to the secret type by supporting fieldSelector filtering.&lt;/li>
+&lt;/ul>
+&lt;p>For more information about issues and contributors of KubeSphere 3.4.0, see &lt;a href="https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.4.0.md" target="_blank" rel="noopener noreferrer">GitHub&lt;/a>.&lt;/p></description></item><item><title>Release Notes for 3.3.2</title><link>https://openksc.github.io/docs/v3.4/release/release-v332/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.4/release/release-v332/</guid><description>&lt;h2 id="devops">DevOps&lt;/h2>
+&lt;h3 id="enhancements--upgrades">Enhancements &amp;amp; Upgrades&lt;/h3>
+&lt;ul>
+&lt;li>Add the latest GitHub Actions.&lt;/li>
+&lt;li>Save the PipelineRun results to the configmap.&lt;/li>
+&lt;li>Modify the Chinese description of the status of ArgoCD applications.&lt;/li>
+&lt;li>Add more information to continuous deployment parameters.&lt;/li>
+&lt;li>Add a link for PipelineRun in the aborted state.&lt;/li>
+&lt;li>Add an ID column for PipelineRun, and the ID will be displayed when users run kubectl commands.&lt;/li>
+&lt;li>Remove the queued state from PipelineRun.&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix an issue where webhook configurations are missing after users change and save pipeline configurations.&lt;/li>
+&lt;li>Fix an issue where downloading DevOps pipeline artifacts fails.&lt;/li>
+&lt;li>Fix an issue where the image address does not match when a service is created by using a JAR/WAR file.&lt;/li>
+&lt;li>Fix an issue where the status of PipelineRun changes from &lt;code>Cancelled&lt;/code> to &lt;code>Not-Running&lt;/code>.&lt;/li>
+&lt;li>Fix the automatic cleaning behavior of pipelines to keep it consistent with the cleaning configurations of Jenkins.&lt;/li>
+&lt;/ul>
+&lt;h2 id="app-store">App Store&lt;/h2>
+&lt;h3 id="bug-fixes-1">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix an issue where the application icon is not displayed on the uploaded application template.&lt;/li>
+&lt;li>Fix an issue where the homepage of an application is not displayed on the application information page.&lt;/li>
+&lt;li>Fix an issue where importing built-in applications fails.&lt;/li>
+&lt;li>Fix a UUID generation error in an IPv6-only environment.&lt;/li>
+&lt;/ul>
+&lt;h2 id="observability">Observability&lt;/h2>
+&lt;h3 id="bug-fixes-2">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix a parsing error in the configuration file of logsidecar-injector.&lt;/li>
+&lt;/ul>
+&lt;h2 id="service-mesh">Service Mesh&lt;/h2>
+&lt;h3 id="bug-fixes-3">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix an issue that application governance of Bookinfo projects without service mesh enabled is not disabled by default.&lt;/li>
+&lt;li>Fix an issue where the delete button is missing on the blue-green deployment details page.&lt;/li>
+&lt;/ul>
+&lt;h2 id="network">Network&lt;/h2>
+&lt;h3 id="bug-fixes-4">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Restrict network isolation of projects within the current workspace.&lt;/li>
+&lt;/ul>
+&lt;h2 id="storage">Storage&lt;/h2>
+&lt;h3 id="enhancements--upgrades-1">Enhancements &amp;amp; Upgrades&lt;/h3>
+&lt;ul>
+&lt;li>Display the cluster to which system-workspace belongs in multi-cluster environments.&lt;/li>
+&lt;li>Rename route to ingress.&lt;/li>
+&lt;/ul>
+&lt;h2 id="authentication--authorization">Authentication &amp;amp; Authorization&lt;/h2>
+&lt;h3 id="enhancements--upgrades-2">Enhancements &amp;amp; Upgrades&lt;/h3>
+&lt;ul>
+&lt;li>Add dynamic options for cache.&lt;/li>
+&lt;li>Remove the &amp;quot;Alerting Message Management&amp;quot; permission.&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-5">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix an issue where platform roles with platform management permisions cannot manage clusters.&lt;/li>
+&lt;/ul>
+&lt;h2 id="development--testing">Development &amp;amp; Testing&lt;/h2>
+&lt;h3 id="bug-fixes-6">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix an issue where some data is in the &lt;code>Out of sync&lt;/code> state after the live-reload feature is introduced.&lt;/li>
+&lt;li>Fix an issue where the ks-apiserver fails when it is reloaded multiple times.&lt;/li>
+&lt;li>Fix an issue where caching resources fails if some required CRDs are missing.&lt;/li>
+&lt;li>Fix an issue where the ks-apiserver crashes in Kubernetes 1.24+ versions.&lt;/li>
+&lt;li>Fix an issue where Goroutine leaks occur when the audit event sender times out.&lt;/li>
+&lt;/ul>
+&lt;h2 id="user-experience">User Experience&lt;/h2>
+&lt;ul>
+&lt;li>Limit the length of cluster names.&lt;/li>
+&lt;li>Fix an issue where pod replicas of a federated service are not automatically refreshed.&lt;/li>
+&lt;li>Fix an issue where related pods are not deleted after users delete a service.&lt;/li>
+&lt;li>Fix an issue where the number of nodes and roles are incorrectly displayed when there is only one node.&lt;/li>
+&lt;/ul>
+&lt;p>For more information about issues and contributors of KubeSphere 3.3.2, see &lt;a href="https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.2.md" target="_blank" rel="noopener noreferrer">GitHub&lt;/a>.&lt;/p></description></item><item><title>Release Notes for 3.3.1</title><link>https://openksc.github.io/docs/v3.4/release/release-v331/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.4/release/release-v331/</guid><description>&lt;h2 id="devops">DevOps&lt;/h2>
+&lt;h3 id="enhancements--updates">Enhancements &amp;amp; Updates&lt;/h3>
+&lt;ul>
+&lt;li>Add support for editing the kubeconfig binding mode on the pipeline UI.&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix an issue where users fail to check the CI/CD template.&lt;/li>
+&lt;li>Remove the &lt;code>Deprecated&lt;/code> tag from the CI/CD template and replace &lt;code>kubernetesDeploy&lt;/code> with &lt;code>kubeconfig binding&lt;/code> at the deployment phase.&lt;/li>
+&lt;/ul>
+&lt;h2 id="network">Network&lt;/h2>
+&lt;h3 id="bug-fixes-1">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix an issue where users fail to create routing rules in IPv6 and IPv4 dual-stack environments.&lt;/li>
+&lt;/ul>
+&lt;h2 id="storage">Storage&lt;/h2>
+&lt;h3 id="bug-fixes-2">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Set &lt;code>hostpath&lt;/code> as a required option when users are mounting volumes.&lt;/li>
+&lt;/ul>
+&lt;h2 id="authentication--authorization">Authentication &amp;amp; Authorization&lt;/h2>
+&lt;h3 id="bug-fixes-3">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Delete roles &lt;code>users-manager&lt;/code> and &lt;code>workspace-manager&lt;/code>.&lt;/li>
+&lt;li>Add role &lt;code>platform-self-provisioner&lt;/code>.&lt;/li>
+&lt;li>Block some permissions of custom roles.&lt;/li>
+&lt;/ul>
+&lt;h2 id="user-experience">User Experience&lt;/h2>
+&lt;ul>
+&lt;li>Add support for changing the number of items displayed on each page of a table.&lt;/li>
+&lt;li>Add support for batch stopping workloads.&lt;/li>
+&lt;/ul>
+&lt;p>For more information about issues and contributors of KubeSphere 3.3.1, see &lt;a href="https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.1.md" target="_blank" rel="noopener noreferrer">GitHub&lt;/a>.&lt;/p></description></item><item><title>Release Notes for 3.3.0</title><link>https://openksc.github.io/docs/v3.4/release/release-v330/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.4/release/release-v330/</guid><description>&lt;h2 id="devops">DevOps&lt;/h2>
+&lt;h3 id="features">Features&lt;/h3>
+&lt;ul>
+&lt;li>Add the Continuous Deployment feature, which supports GitOps and uses Argo CD as the backend, and users can view the status of continuous deployments in real time.&lt;/li>
+&lt;li>Add the allowlist feature on the &lt;strong>Basic Information&lt;/strong> page of a DevOps project to restrict the target repository and deployment location for continuous deployments.&lt;/li>
+&lt;li>Add support for importing and managing code repositories.&lt;/li>
+&lt;li>Add support for built-in CRD-based pipeline templates and parameter customization.&lt;/li>
+&lt;li>Add support for viewing pipeline events.&lt;/li>
+&lt;/ul>
+&lt;h2 id="storage">Storage&lt;/h2>
+&lt;h3 id="features-1">Features&lt;/h3>
+&lt;ul>
+&lt;li>Add support for tenant-level storage class permission management.&lt;/li>
+&lt;li>Add the volume snapshot content management and volume snapshot class management features.&lt;/li>
+&lt;li>Add support for automatic restart of deployments and statefulsets after a PVC has been changed.&lt;/li>
+&lt;li>Add the PVC auto expansion feature, which automatically expands PVCs when remaining capacity is insufficient.&lt;/li>
+&lt;/ul>
+&lt;h2 id="multi-tenancy-and-multi-cluster">Multi-tenancy and Multi-cluster&lt;/h2>
+&lt;h3 id="features-2">Features&lt;/h3>
+&lt;ul>
+&lt;li>Add a notification to remind users when the kubeconfig certificate of a cluster is about to expire.&lt;/li>
+&lt;li>Add the kubesphere-config configmap, which provides the name of the current cluster.&lt;/li>
+&lt;li>Add support for cluster-level member and role management.&lt;/li>
+&lt;/ul>
+&lt;h2 id="observability">Observability&lt;/h2>
+&lt;h3 id="features-3">Features&lt;/h3>
+&lt;ul>
+&lt;li>Add process and thread monitoring metrics for containers.&lt;/li>
+&lt;li>Add disk monitoring metrics that provide usage of each disk.&lt;/li>
+&lt;li>Add support for importing Grafana templates to create custom monitoring dashboards of a namespace scope.&lt;/li>
+&lt;li>Add support for defining separate data retention periods for container logs, resource events, and audit logs.&lt;/li>
+&lt;/ul>
+&lt;h3 id="enhancements--updates">Enhancements &amp;amp; Updates&lt;/h3>
+&lt;ul>
+&lt;li>Upgrade Alertmanager from v0.21.0 to v0.23.0.&lt;/li>
+&lt;li>Upgrade Grafana from 7.4.3 to 8.3.3.&lt;/li>
+&lt;li>Upgrade kube-state-metrics from v1.9.7 to v2.3.0.&lt;/li>
+&lt;li>Upgrade node-exporter from v0.18.1 to v1.3.1.&lt;/li>
+&lt;li>Upgrade Prometheus from v2.26.0 to v2.34.0.&lt;/li>
+&lt;li>Upgrade Prometheus Operator from v0.43.2 to v0.55.1.&lt;/li>
+&lt;li>Upgrade kube-rbac-proxy from v0.8.0 to v0.11.0.&lt;/li>
+&lt;li>Upgrade configmap-reload from v0.3.0 to v0.5.0.&lt;/li>
+&lt;li>Upgrade Thanos from v0.18.0 to v0.25.2.&lt;/li>
+&lt;li>Upgrade kube-events from v0.3.0 to v0.4.0.&lt;/li>
+&lt;li>Upgrade Fluent Bit Operator from v0.11.0 to v0.13.0.&lt;/li>
+&lt;li>Upgrade Fluent Bit from v1.8.3 to v1.8.11.&lt;/li>
+&lt;/ul>
+&lt;h2 id="kubeedge-integration">KubeEdge Integration&lt;/h2>
+&lt;h3 id="features-4">Features&lt;/h3>
+&lt;ul>
+&lt;li>Add support for logging in to common cluster nodes and edge nodes from the KubeSphere web console.&lt;/li>
+&lt;/ul>
+&lt;h3 id="enhancements--updates-1">Enhancements &amp;amp; Updates&lt;/h3>
+&lt;ul>
+&lt;li>Upgrade KubeEdge from v1.7.2 to v1.9.2.&lt;/li>
+&lt;li>Remove EdgeWatcher.&lt;/li>
+&lt;/ul>
+&lt;h2 id="network">Network&lt;/h2>
+&lt;h3 id="enhancements--updates-2">Enhancements &amp;amp; Updates&lt;/h3>
+&lt;ul>
+&lt;li>Integrate OpenELB with KubeSphere for exposing LoadBalancer services.&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix an issue where the gateway of a project is not deleted after the project is deleted.&lt;/li>
+&lt;/ul>
+&lt;h2 id="app-store">App Store&lt;/h2>
+&lt;h3 id="bug-fixes-1">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix a ks-controller-manager crash caused by Helm controller NPE errors.&lt;/li>
+&lt;/ul>
+&lt;h2 id="authentication--authorization">Authentication &amp;amp; Authorization&lt;/h2>
+&lt;h3 id="features-5">Features&lt;/h3>
+&lt;ul>
+&lt;li>Add support for manually disabling and enabling users.&lt;/li>
+&lt;/ul>
+&lt;h2 id="user-experience">User Experience&lt;/h2>
+&lt;ul>
+&lt;li>Add a prompt when the audit log of Kubernetes has been enabled.&lt;/li>
+&lt;li>Add the lifecycle management feature for containers.&lt;/li>
+&lt;li>Add support for creating container environment variables in batches from secrets and configmaps.&lt;/li>
+&lt;li>Add a time range selector on the &lt;strong>Traffic Monitoring&lt;/strong> tab page.&lt;/li>
+&lt;li>Add a message in the &lt;strong>Audit Log Search&lt;/strong> dialog box, which prompts users to enable the audit logs feature.&lt;/li>
+&lt;li>Add more Istio parameters in &lt;code>ClusterConfiguration&lt;/code>.&lt;/li>
+&lt;li>Add support for more languages, for example, Turkish.&lt;/li>
+&lt;li>Set the &lt;strong>Token&lt;/strong> parameter on the webhook settings page as mandatory.&lt;/li>
+&lt;li>Prevent passwords without uppercase letters set through the backend CLI.&lt;/li>
+&lt;li>Fix an issue where no data is displayed on the &lt;strong>Traffic Management&lt;/strong> and &lt;strong>Tracing&lt;/strong> tab pages in a multi-cluster project.&lt;/li>
+&lt;li>Fix an app installation failure, which occurs when users click buttons too fast.&lt;/li>
+&lt;li>Fix an issue where container probes are still displayed after they are deleted.&lt;/li>
+&lt;li>Fix an issue where statefulset creation fails when a volume is mounted to an init container.&lt;/li>
+&lt;li>Prevent ks-apiserver and ks-controller-manager from restarting when the cluster configuration is changed.&lt;/li>
+&lt;li>Optimize some UI texts.&lt;/li>
+&lt;li>Optimize display of the service topology on the &lt;strong>Service&lt;/strong> page.&lt;/li>
+&lt;/ul>
+&lt;p>For more information about issues and contributors of KubeSphere 3.3.0, see &lt;a href="https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.md" target="_blank" rel="noopener noreferrer">GitHub&lt;/a>.&lt;/p></description></item><item><title>Release Notes for 3.2.1</title><link>https://openksc.github.io/docs/v3.4/release/release-v321/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.4/release/release-v321/</guid><description>&lt;h2 id="enhancements-and-bug-fixes">Enhancements and Bug Fixes&lt;/h2>
+&lt;h3 id="enhancements">Enhancements&lt;/h3>
+&lt;ul>
+&lt;li>Add support for filtering Pods by status. (&lt;a href="https://github.com/kubesphere/kubesphere/pull/4434" target="_blank" rel="noopener noreferrer">#4434&lt;/a>, &lt;a href="https://github.com/iawia002" target="_blank" rel="noopener noreferrer">@iawia002&lt;/a>, &lt;a href="https://github.com/kubesphere/console/pull/2620" target="_blank" rel="noopener noreferrer">#2620&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;li>Add a tip in the image builder creation dialog box, which indicates that containerd is not supported. (&lt;a href="https://github.com/kubesphere/console/pull/2734" target="_blank" rel="noopener noreferrer">#2734&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;li>Add information about available quotas in the &lt;strong>Edit Project Quotas&lt;/strong> dialog box. (&lt;a href="https://github.com/kubesphere/console/pull/2619" target="_blank" rel="noopener noreferrer">#2619&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Change the password verification rules to prevent passwords without uppercase letters. (&lt;a href="https://github.com/kubesphere/kubesphere/pull/4481" target="_blank" rel="noopener noreferrer">#4481&lt;/a>, &lt;a href="https://github.com/live77" target="_blank" rel="noopener noreferrer">@live77&lt;/a>)&lt;/li>
+&lt;li>Fix a login issue, where a user from an LDAP identity provider cannot log in if information about the user does not exist on KubeSphere. (&lt;a href="https://github.com/kubesphere/kubesphere/pull/4436" target="_blank" rel="noopener noreferrer">#4436&lt;/a>, &lt;a href="https://github.com/RolandMa1986" target="_blank" rel="noopener noreferrer">@RolandMa1986&lt;/a>)&lt;/li>
+&lt;li>Fix an issue where cluster gateway metrics cannot be obtained. (&lt;a href="https://github.com/kubesphere/kubesphere/pull/4457" target="_blank" rel="noopener noreferrer">#4457&lt;/a>, &lt;a href="https://github.com/RolandMa1986" target="_blank" rel="noopener noreferrer">@RolandMa1986&lt;/a>)&lt;/li>
+&lt;li>Fix incorrect access modes displayed in the volume list. (&lt;a href="https://github.com/kubesphere/console/pull/2686" target="_blank" rel="noopener noreferrer">#2686&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;li>Remove the &lt;strong>Update&lt;/strong> button on the &lt;strong>Gateway Settings&lt;/strong> page. (&lt;a href="https://github.com/kubesphere/console/pull/2608" target="_blank" rel="noopener noreferrer">#2608&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;li>Fix a display error of the time range selection drop-down list. (&lt;a href="https://github.com/kubesphere/console/pull/2715" target="_blank" rel="noopener noreferrer">#2715&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;li>Fix an issue where Secret data text is not displayed correctly when the text is too long. (&lt;a href="https://github.com/kubesphere/console/pull/2600" target="_blank" rel="noopener noreferrer">#2600&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;li>Fix an issue where StatefulSet creation fails when a volume template is mounted. (&lt;a href="https://github.com/kubesphere/console/pull/2730" target="_blank" rel="noopener noreferrer">#2730&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;li>Fix an issue where cluster gateway information fails to be obtained when the user does not have permission to view cluster information. (&lt;a href="https://github.com/kubesphere/console/pull/2695" target="_blank" rel="noopener noreferrer">#2695&lt;/a>, &lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>)&lt;/li>
+&lt;li>Fix an issue where status and run records of pipelines are not automatically updated. (&lt;a href="https://github.com/kubesphere/console/pull/2594" target="_blank" rel="noopener noreferrer">#2594&lt;/a>, &lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>)&lt;/li>
+&lt;li>Add a tip for the kubernetesDeploy pipeline step, which indicates that the step is about to be deprecated. (&lt;a href="https://github.com/kubesphere/console/pull/2660" target="_blank" rel="noopener noreferrer">#2660&lt;/a>, &lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>)&lt;/li>
+&lt;li>Fix an issue where HTTP registry addresses of image registry Secrets cannot be validated. (&lt;a href="https://github.com/kubesphere/console/pull/2795" target="_blank" rel="noopener noreferrer">#2795&lt;/a>, &lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>)&lt;/li>
+&lt;li>Fix the incorrect URL of the Harbor image. (&lt;a href="https://github.com/kubesphere/console/pull/2784" target="_blank" rel="noopener noreferrer">#2784&lt;/a>, &lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>)&lt;/li>
+&lt;li>Fix a display error of log search results. (&lt;a href="https://github.com/kubesphere/console/pull/2598" target="_blank" rel="noopener noreferrer">#2598&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;li>Fix an error in the volume instance YAML configuration. (&lt;a href="https://github.com/kubesphere/console/pull/2629" target="_blank" rel="noopener noreferrer">#2629&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;li>Fix incorrect available workspace quotas displayed in the &lt;strong>Edit Project Quotas&lt;/strong> dialog box. (&lt;a href="https://github.com/kubesphere/console/pull/2613" target="_blank" rel="noopener noreferrer">#2613&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;li>Fix an issue in the &lt;strong>Monitoring&lt;/strong> dialog box, where the time range selection drop-down list does not function properly. (&lt;a href="https://github.com/kubesphere/console/pull/2722" target="_blank" rel="noopener noreferrer">#2722&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;li>Fix incorrect available quotas displayed in the Deployment creation page. (&lt;a href="https://github.com/kubesphere/console/pull/2668" target="_blank" rel="noopener noreferrer">#2668&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;li>Change the documentation address to &lt;a href="https://kubesphere.io/" target="_blank" rel="noopener noreferrer">kubesphere.io&lt;/a> and &lt;a href="https://kubesphere.com.cn/" target="_blank" rel="noopener noreferrer">kubesphere.com.cn&lt;/a>. (&lt;a href="https://github.com/kubesphere/console/pull/2628" target="_blank" rel="noopener noreferrer">#2628&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;li>Fix an issue where Deployment volume settings cannot be modified. (&lt;a href="https://github.com/kubesphere/console/pull/2656" target="_blank" rel="noopener noreferrer">#2656&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;li>Fix an issue where the container terminal cannot be accessed when the browser language is not English, Simplified Chinese, or Traditional Chinese. (&lt;a href="https://github.com/kubesphere/console/pull/2702" target="_blank" rel="noopener noreferrer">#2702&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;li>Fix incorrect volume status displayed in the Deployment editing dialog box. (&lt;a href="https://github.com/kubesphere/console/pull/2622" target="_blank" rel="noopener noreferrer">#2622&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;li>Remove labels displayed on the credential details page. (&lt;a href="https://github.com/kubesphere/console/pull/2621" target="_blank" rel="noopener noreferrer">#2621&lt;/a>, &lt;a href="https://github.com/123liubao" target="_blank" rel="noopener noreferrer">@123liubao&lt;/a>)&lt;/li>
+&lt;li>Fix the problem caused by non-ASCII branch names. (&lt;a href="https://github.com/kubesphere/ks-devops/pull/399" target="_blank" rel="noopener noreferrer">#399&lt;/a>)&lt;/li>
+&lt;li>Fix the wrong handling of the choice parameter in Pipeline. (&lt;a href="https://github.com/kubesphere/ks-devops/pull/378" target="_blank" rel="noopener noreferrer">#378&lt;/a>)&lt;/li>
+&lt;li>Fix the problem that could not proceed or break the pipeline created by others. &lt;a href="https://github.com/kubesphere/ks-devops/pull/408" target="_blank" rel="noopener noreferrer">#408&lt;/a>&lt;/li>
+&lt;li>Fix messy sequence of pipeline run records. &lt;a href="https://github.com/kubesphere/ks-devops/pull/394" target="_blank" rel="noopener noreferrer">#394&lt;/a>&lt;/li>
+&lt;li>Fix pipeline triggered by non-admin user but still display &amp;quot;Started by user admin&amp;quot;. &lt;a href="https://github.com/kubesphere/ks-devops/pull/384" target="_blank" rel="noopener noreferrer">#384&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Release Notes for 3.2.0</title><link>https://openksc.github.io/docs/v3.4/release/release-v320/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.4/release/release-v320/</guid><description>&lt;h2 id="multi-tenancy--multi-cluster">Multi-tenancy &amp;amp; Multi-cluster&lt;/h2>
+&lt;h3 id="new-features">New Features&lt;/h3>
+&lt;ul>
+&lt;li>Add support for setting the host cluster name in multi-cluster scenarios, which defaults to &lt;code>host&lt;/code>. (&lt;a href="https://github.com/kubesphere/kubesphere/pull/4211" target="_blank" rel="noopener noreferrer">#4211&lt;/a>, &lt;a href="https://github.com/yuswift" target="_blank" rel="noopener noreferrer">@yuswift&lt;/a>)&lt;/li>
+&lt;li>Add support for setting the cluster name in single-cluster scenarios. (&lt;a href="https://github.com/kubesphere/kubesphere/pull/4220" target="_blank" rel="noopener noreferrer">#4220&lt;/a>, &lt;a href="https://github.com/yuswift" target="_blank" rel="noopener noreferrer">@yuswift&lt;/a>)&lt;/li>
+&lt;li>Add support for initializing the default cluster name by using globals.config. (&lt;a href="https://github.com/kubesphere/console/pull/2283" target="_blank" rel="noopener noreferrer">#2283&lt;/a>, &lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>)&lt;/li>
+&lt;li>Add support for scheduling Pod replicas across multiple clusters when creating a Deployment. (&lt;a href="https://github.com/kubesphere/console/pull/2191" target="_blank" rel="noopener noreferrer">#2191&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;li>Add support for changing cluster weights on the project details page. (&lt;a href="https://github.com/kubesphere/console/pull/2192" target="_blank" rel="noopener noreferrer">#2192&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix an issue in the &lt;strong>Create Deployment&lt;/strong> dialog box in &lt;strong>Cluster Management&lt;/strong>, where a multiple-cluster project can be selected by directly entering the project name. (&lt;a href="https://github.com/kubesphere/console/pull/2125" target="_blank" rel="noopener noreferrer">#2125&lt;/a>, &lt;a href="https://github.com/fuchunlan" target="_blank" rel="noopener noreferrer">@fuchunlan&lt;/a>)&lt;/li>
+&lt;li>Fix an error that occurs when workspace or cluster basic information is edited. (&lt;a href="https://github.com/kubesphere/console/pull/2188" target="_blank" rel="noopener noreferrer">#2188&lt;/a>, &lt;a href="https://github.com/xuliwenwenwen" target="_blank" rel="noopener noreferrer">@xuliwenwenwen&lt;/a>)&lt;/li>
+&lt;li>Remove information about deleted clusters on the &lt;strong>Basic Information&lt;/strong> page of the host cluster. (&lt;a href="https://github.com/kubesphere/console/pull/2211" target="_blank" rel="noopener noreferrer">#2211&lt;/a>, &lt;a href="https://github.com/fuchunlan" target="_blank" rel="noopener noreferrer">@fuchunlan&lt;/a>)&lt;/li>
+&lt;li>Add support for sorting Services and editing Service settings in multi-cluster projects. (&lt;a href="https://github.com/kubesphere/console/pull/2167" target="_blank" rel="noopener noreferrer">#2167&lt;/a>, &lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>)&lt;/li>
+&lt;li>Refactor the gateway feature of multi-cluster projects. (&lt;a href="https://github.com/kubesphere/console/pull/2275" target="_blank" rel="noopener noreferrer">#2275&lt;/a>, &lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>)&lt;/li>
+&lt;li>Fix an issue where multi-cluster projects cannot be deleted after the workspace is deleted. (&lt;a href="https://github.com/kubesphere/kubesphere/pull/4365" target="_blank" rel="noopener noreferrer">#4365&lt;/a>, &lt;a href="https://github.com/wansir" target="_blank" rel="noopener noreferrer">@wansir&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h2 id="observability">Observability&lt;/h2>
+&lt;h3 id="new-features-1">New Features&lt;/h3>
+&lt;ul>
+&lt;li>Add support for HTTPS communication with Elasticsearch. (&lt;a href="https://github.com/kubesphere/kubesphere/pull/4176" target="_blank" rel="noopener noreferrer">#4176&lt;/a>, &lt;a href="https://github.com/wanjunlei" target="_blank" rel="noopener noreferrer">@wanjunlei&lt;/a>)&lt;/li>
+&lt;li>Add support for setting GPU types when scheduling GPU workloads. (&lt;a href="https://github.com/kubesphere/kubesphere/pull/4225" target="_blank" rel="noopener noreferrer">#4225&lt;/a>, &lt;a href="https://github.com/zhu733756" target="_blank" rel="noopener noreferrer">@zhu733756&lt;/a>)&lt;/li>
+&lt;li>Add support for validating notification settings. (&lt;a href="https://github.com/kubesphere/kubesphere/pull/4216" target="_blank" rel="noopener noreferrer">#4216&lt;/a>, &lt;a href="https://github.com/wenchajun" target="_blank" rel="noopener noreferrer">@wenchajun&lt;/a>)&lt;/li>
+&lt;li>Add support for importing Grafana dashboards by specifying a dashboard URL or by uploading a Grafana dashboard JSON file. KubeSphere automatically converts Grafana dashboards into KubeSphere cluster dashboards. (&lt;a href="https://github.com/kubesphere/kubesphere/pull/4194" target="_blank" rel="noopener noreferrer">#4194&lt;/a>, &lt;a href="https://github.com/zhu733756" target="_blank" rel="noopener noreferrer">@zhu733756&lt;/a>)&lt;/li>
+&lt;li>Add support for creating Grafana dashboards in &lt;strong>Custom Monitoring&lt;/strong>. (&lt;a href="https://github.com/kubesphere/console/pull/2214" target="_blank" rel="noopener noreferrer">#2214&lt;/a>, &lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>)&lt;/li>
+&lt;li>Optimize the &lt;strong>Notification Configuration&lt;/strong> feature. (&lt;a href="https://github.com/kubesphere/console/pull/2261" target="_blank" rel="noopener noreferrer">#2261&lt;/a>, &lt;a href="https://github.com/xuliwenwenwen" target="_blank" rel="noopener noreferrer">@xuliwenwenwen&lt;/a>)&lt;/li>
+&lt;li>Add support for setting a GPU limit in the &lt;strong>Edit Default Container Quotas&lt;/strong> dialog box. (&lt;a href="https://github.com/kubesphere/console/pull/2253" target="_blank" rel="noopener noreferrer">#2253&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;li>Add a default GPU monitoring dashboard.（&lt;a href="https://github.com/kubesphere/console/pull/2580" target="_blank" rel="noopener noreferrer">#2580&lt;/a>, &lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>）&lt;/li>
+&lt;li>Add the &lt;strong>Leader&lt;/strong> tag to the etcd leader on the etcd monitoring page. (&lt;a href="https://github.com/kubesphere/console/pull/2445" target="_blank" rel="noopener noreferrer">#2445&lt;/a>, &lt;a href="https://github.com/xuliwenwenwen" target="_blank" rel="noopener noreferrer">@xuliwenwenwen&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-1">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix the incorrect Pod information displayed on the &lt;strong>Alerting Messages&lt;/strong> page and alerting policy details page. (&lt;a href="https://github.com/kubesphere/console/pull/2215" target="_blank" rel="noopener noreferrer">#2215&lt;/a>, &lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h2 id="authentication--authorization">Authentication &amp;amp; Authorization&lt;/h2>
+&lt;h3 id="new-features-2">New Features&lt;/h3>
+&lt;ul>
+&lt;li>Add a built-in OAuth 2.0 server that supports OpenID Connect. (&lt;a href="https://github.com/kubesphere/kubesphere/pull/3525" target="_blank" rel="noopener noreferrer">#3525&lt;/a>, &lt;a href="https://github.com/wansir" target="_blank" rel="noopener noreferrer">@wansir&lt;/a>)&lt;/li>
+&lt;li>Remove information confirmation required when an external identity provider is used. (&lt;a href="https://github.com/kubesphere/kubesphere/pull/4238" target="_blank" rel="noopener noreferrer">#4238&lt;/a>, &lt;a href="https://github.com/wansir" target="_blank" rel="noopener noreferrer">@wansir&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-2">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix incorrect source IP addresses in the login history. (&lt;a href="https://github.com/kubesphere/kubesphere/pull/4331" target="_blank" rel="noopener noreferrer">#4331&lt;/a>, &lt;a href="https://github.com/wansir" target="_blank" rel="noopener noreferrer">@wansir&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h2 id="storage">Storage&lt;/h2>
+&lt;h3 id="new-features-3">New Features&lt;/h3>
+&lt;ul>
+&lt;li>Change the parameters that determine whether volume clone, volume snapshot, and volume expansion are allowed. (&lt;a href="https://github.com/kubesphere/console/pull/2199" target="_blank" rel="noopener noreferrer">#2199&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;li>Add support for setting the volume binding mode during storage class creation. (&lt;a href="https://github.com/kubesphere/console/pull/2220" target="_blank" rel="noopener noreferrer">#2220&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;li>Add the volume instance management feature. (&lt;a href="https://github.com/kubesphere/console/pull/2226" target="_blank" rel="noopener noreferrer">#2226&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;li>Add support for multiple snapshot classes. Users are allowed to select a snapshot type when creating a snapshot. (&lt;a href="https://github.com/kubesphere/console/pull/2218" target="_blank" rel="noopener noreferrer">#2218&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-3">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Change the volume access mode options on the &lt;strong>Storage Settings&lt;/strong> tab page. (&lt;a href="https://github.com/kubesphere/console/pull/2348" target="_blank" rel="noopener noreferrer">#2348&lt;/a>, &lt;a href="https://github.com/live77" target="_blank" rel="noopener noreferrer">@live77&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h2 id="network">Network&lt;/h2>
+&lt;h3 id="new-features-4">New Features&lt;/h3>
+&lt;ul>
+&lt;li>Add the Route sorting, routing rule editing, and annotation editing features on the Route list page. (&lt;a href="https://github.com/kubesphere/console/pull/2165" target="_blank" rel="noopener noreferrer">#2165&lt;/a>, &lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>)&lt;/li>
+&lt;li>Refactor the cluster gateway and project gateway features. (&lt;a href="https://github.com/kubesphere/console/pull/2262" target="_blank" rel="noopener noreferrer">#2262&lt;/a>, &lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>)&lt;/li>
+&lt;li>Add the service name auto-completion feature in routing rule creation. (&lt;a href="https://github.com/kubesphere/console/pull/2196" target="_blank" rel="noopener noreferrer">#2196&lt;/a>, &lt;a href="https://github.com/wengzhisong-hz" target="_blank" rel="noopener noreferrer">@wengzhisong-hz&lt;/a>)&lt;/li>
+&lt;li>DNS optimizations for ks-console:
+&lt;ul>
+&lt;li>Use the name of the ks-apiserver Service directly instead of &lt;code>ks-apiserver.kubesphere-system.svc&lt;/code> as the API URL.&lt;/li>
+&lt;li>Add a DNS cache plugin (dnscache) for caching DNS results. (&lt;a href="https://github.com/kubesphere/console/pull/2435" target="_blank" rel="noopener noreferrer">#2435&lt;/a>, &lt;a href="https://github.com/live77" target="_blank" rel="noopener noreferrer">@live77&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-4">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Add a &lt;strong>Cancel&lt;/strong> button in the &lt;strong>Enable Gateway&lt;/strong> dialog box. (&lt;a href="https://github.com/kubesphere/console/pull/2245" target="_blank" rel="noopener noreferrer">#2245&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h2 id="apps--app-store">Apps &amp;amp; App Store&lt;/h2>
+&lt;h3 id="new-features-5">New Features&lt;/h3>
+&lt;ul>
+&lt;li>Add support for setting a synchronization interval during app repository creation and editing. (&lt;a href="https://github.com/kubesphere/console/pull/2311" target="_blank" rel="noopener noreferrer">#2311&lt;/a>, &lt;a href="https://github.com/xuliwenwenwen" target="_blank" rel="noopener noreferrer">@xuliwenwenwen&lt;/a>)&lt;/li>
+&lt;li>Add a disclaimer in the App Store. (&lt;a href="https://github.com/kubesphere/console/pull/2173" target="_blank" rel="noopener noreferrer">#2173&lt;/a>, &lt;a href="https://github.com/xuliwenwenwen" target="_blank" rel="noopener noreferrer">@xuliwenwenwen&lt;/a>)&lt;/li>
+&lt;li>Add support for dynamically loading community-developed Helm charts into the App Store. (&lt;a href="https://github.com/kubesphere/kubesphere/pull/4250" target="_blank" rel="noopener noreferrer">#4250&lt;/a>, &lt;a href="https://github.com/xyz-li" target="_blank" rel="noopener noreferrer">@xyz-li&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-5">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix an issue where the value of &lt;code>kubesphere_app_template_count&lt;/code> is always &lt;code>0&lt;/code> when &lt;code>GetKubeSphereStats&lt;/code> is called. (&lt;a href="https://github.com/kubesphere/kubesphere/pull/4130" target="_blank" rel="noopener noreferrer">#4130&lt;/a>, &lt;a href="https://github.com/ks-ci-bohttps://github.com/x893675" target="_blank" rel="noopener noreferrer">@Hanamichi&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h2 id="devops">DevOps&lt;/h2>
+&lt;h3 id="new-features-6">New Features&lt;/h3>
+&lt;ul>
+&lt;li>Set the system to hide the &lt;strong>Branch&lt;/strong> column on the &lt;strong>Run Records&lt;/strong> tab page when the current pipeline is not a multi-branch pipeline. (&lt;a href="https://github.com/kubesphere/console/pull/2379" target="_blank" rel="noopener noreferrer">#2379&lt;/a>, &lt;a href="https://github.com/live77" target="_blank" rel="noopener noreferrer">@live77&lt;/a>)&lt;/li>
+&lt;li>Add the feature of automatically loading Jenkins configurations from ConfigMaps. (&lt;a href="https://github.com/kubesphere/ks-devops/pull/75" target="_blank" rel="noopener noreferrer">#75&lt;/a>, &lt;a href="https://github.com/JohnNiang" target="_blank" rel="noopener noreferrer">@JohnNiang&lt;/a>)&lt;/li>
+&lt;li>Add support for triggering pipelines by manipulating CRDs instead of calling Jenkins APIs. (&lt;a href="https://github.com/kubesphere/ks-devops/issues/41" target="_blank" rel="noopener noreferrer">#41&lt;/a>, &lt;a href="https://github.com/LinuxSuRen" target="_blank" rel="noopener noreferrer">@rick&lt;/a>)&lt;/li>
+&lt;li>Add support for containerd-based pipelines. (&lt;a href="https://github.com/kubesphere/ks-devops/pull/171" target="_blank" rel="noopener noreferrer">#171&lt;/a>, &lt;a href="https://github.com/LinuxSuRen" target="_blank" rel="noopener noreferrer">@rick&lt;/a>)&lt;/li>
+&lt;li>Add Jenkins job metadata into pipeline annotations. (&lt;a href="https://github.com/kubesphere/ks-devops/issues/254" target="_blank" rel="noopener noreferrer">#254&lt;/a>, &lt;a href="https://github.com/JohnNiang" target="_blank" rel="noopener noreferrer">@JohnNiang&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-6">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix an issue where credential creation and update fails when the value length of a parameter is too long. (&lt;a href="https://github.com/kubesphere/ks-devops/pull/123" target="_blank" rel="noopener noreferrer">#123&lt;/a>, &lt;a href="https://github.com/shihaoH" target="_blank" rel="noopener noreferrer">@shihh&lt;/a>)&lt;/li>
+&lt;li>Fix an issue where ks-apiserver crashes when the &lt;strong>Run Records&lt;/strong> tab page of a parallel pipeline is opened. (&lt;a href="https://github.com/kubesphere/ks-devops/pull/93" target="_blank" rel="noopener noreferrer">#93&lt;/a>, &lt;a href="https://github.com/JohnNiang" target="_blank" rel="noopener noreferrer">@JohnNiang&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h3 id="dependency-upgrades">Dependency Upgrades&lt;/h3>
+&lt;ul>
+&lt;li>Upgrade the version of Configuration as Code to 1.53. (&lt;a href="https://github.com/kubesphere/ks-jenkins/pull/42" target="_blank" rel="noopener noreferrer">#42&lt;/a>, &lt;a href="https://github.com/LinuxSuRen" target="_blank" rel="noopener noreferrer">@rick&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h2 id="installation">Installation&lt;/h2>
+&lt;h3 id="new-features-7">New Features&lt;/h3>
+&lt;ul>
+&lt;li>Add support for Kubernetes v1.21.5 and v1.22.1. (&lt;a href="https://github.com/kubesphere/kubekey/pull/634" target="_blank" rel="noopener noreferrer">#634&lt;/a>, &lt;a href="https://github.com/pixiake" target="_blank" rel="noopener noreferrer">@pixiake&lt;/a>)&lt;/li>
+&lt;li>Add support for automatically setting the container runtime. (&lt;a href="https://github.com/kubesphere/kubekey/pull/738" target="_blank" rel="noopener noreferrer">#738&lt;/a>, &lt;a href="https://github.com/pixiake" target="_blank" rel="noopener noreferrer">@pixiake&lt;/a>)&lt;/li>
+&lt;li>Add support for automatically updating Kubernetes certificates. (&lt;a href="https://github.com/kubesphere/kubekey/pull/705" target="_blank" rel="noopener noreferrer">#705&lt;/a>, &lt;a href="https://github.com/pixiake" target="_blank" rel="noopener noreferrer">@pixiake&lt;/a>)&lt;/li>
+&lt;li>Add support for installing Docker and conatinerd using a binary file. (&lt;a href="https://github.com/kubesphere/kubekey/pull/657" target="_blank" rel="noopener noreferrer">#657&lt;/a>, &lt;a href="https://github.com/pixiake" target="_blank" rel="noopener noreferrer">@pixiake&lt;/a>)&lt;/li>
+&lt;li>Add support for Flannel VxLAN and direct routing. (&lt;a href="https://github.com/kubesphere/kubekey/pull/606" target="_blank" rel="noopener noreferrer">#606&lt;/a>, &lt;a href="https://github.com/kinglong08" target="_blank" rel="noopener noreferrer">@kinglong08&lt;/a>)&lt;/li>
+&lt;li>Add support for deploying etcd using a binary file. (&lt;a href="https://github.com/kubesphere/kubekey/pull/634" target="_blank" rel="noopener noreferrer">#634&lt;/a>, &lt;a href="https://github.com/pixiake" target="_blank" rel="noopener noreferrer">@pixiake&lt;/a>)&lt;/li>
+&lt;li>Add an internal load balancer for deploying a high availability system. (&lt;a href="https://github.com/kubesphere/kubekey/pull/567" target="_blank" rel="noopener noreferrer">#567&lt;/a>, &lt;a href="https://github.com/24sama" target="_blank" rel="noopener noreferrer">@24sama&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-7">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix a runtime.RawExtension serialization error. (&lt;a href="https://github.com/kubesphere/kubekey/pull/731" target="_blank" rel="noopener noreferrer">#731&lt;/a>, &lt;a href="https://github.com/pixiake" target="_blank" rel="noopener noreferrer">@pixiake&lt;/a>)&lt;/li>
+&lt;li>Fix the nil pointer error during cluster upgrade. (&lt;a href="https://github.com/kubesphere/kubekey/pull/684" target="_blank" rel="noopener noreferrer">#684&lt;/a>, &lt;a href="https://github.com/24sama" target="_blank" rel="noopener noreferrer">@24sama&lt;/a>)&lt;/li>
+&lt;li>Add support for updating certificates of Kubernetes v1.20.0 and later. (&lt;a href="https://github.com/kubesphere/kubekey/pull/690" target="_blank" rel="noopener noreferrer">#690&lt;/a>, &lt;a href="https://github.com/24sama" target="_blank" rel="noopener noreferrer">@24sama&lt;/a>)&lt;/li>
+&lt;li>Fix a DNS address configuration error. (&lt;a href="https://github.com/kubesphere/kubekey/pull/637" target="_blank" rel="noopener noreferrer">#637&lt;/a>, &lt;a href="https://github.com/pixiake" target="_blank" rel="noopener noreferrer">@pixiake&lt;/a>)&lt;/li>
+&lt;li>Fix a cluster creation error that occurs when no default gateway address exists. (&lt;a href="https://github.com/kubesphere/kubekey/pull/661" target="_blank" rel="noopener noreferrer">#661&lt;/a>, &lt;a href="https://github.com/liulangwa" target="_blank" rel="noopener noreferrer">@liulangwa&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h2 id="user-experience">User Experience&lt;/h2>
+&lt;ul>
+&lt;li>Fix language mistakes and optimize wording. (&lt;a href="https://github.com/Patrick-LuoYu" target="_blank" rel="noopener noreferrer">@Patrick-LuoYu&lt;/a>, &lt;a href="https://github.com/Felixnoo" target="_blank" rel="noopener noreferrer">@Felixnoo&lt;/a>, &lt;a href="https://github.com/serenashe" target="_blank" rel="noopener noreferrer">@serenashe&lt;/a>)&lt;/li>
+&lt;li>Fix incorrect function descriptions. (&lt;a href="https://github.com/Patrick-LuoYu" target="_blank" rel="noopener noreferrer">@Patrick-LuoYu&lt;/a>, &lt;a href="https://github.com/Felixnoo" target="_blank" rel="noopener noreferrer">@Felixnoo&lt;/a>, &lt;a href="https://github.com/serenashe" target="_blank" rel="noopener noreferrer">@serenashe&lt;/a>)&lt;/li>
+&lt;li>Remove hard-coded and concatenated UI strings to better support UI localization and internationalization. (&lt;a href="https://github.com/Patrick-LuoYu" target="_blank" rel="noopener noreferrer">@Patrick-LuoYu&lt;/a>, &lt;a href="https://github.com/Felixnoo" target="_blank" rel="noopener noreferrer">@Felixnoo&lt;/a>, &lt;a href="https://github.com/serenashe" target="_blank" rel="noopener noreferrer">@serenashe&lt;/a>)&lt;/li>
+&lt;li>Add conditional statements to display correct English singular and plural forms. (&lt;a href="https://github.com/Patrick-LuoYu" target="_blank" rel="noopener noreferrer">@Patrick-LuoYu&lt;/a>, &lt;a href="https://github.com/Felixnoo" target="_blank" rel="noopener noreferrer">@Felixnoo&lt;/a>, &lt;a href="https://github.com/serenashe" target="_blank" rel="noopener noreferrer">@serenashe&lt;/a>)&lt;/li>
+&lt;li>Optimize the &lt;strong>Pod Scheduling Rules&lt;/strong> area in the &lt;strong>Create Deployment&lt;/strong> dialog box. (&lt;a href="https://github.com/kubesphere/console/pull/2170" target="_blank" rel="noopener noreferrer">#2170&lt;/a>, &lt;a href="https://github.com/qinyueshang" target="_blank" rel="noopener noreferrer">@qinyueshang&lt;/a>)&lt;/li>
+&lt;li>Fix an issue in the &lt;strong>Edit Project Quotas&lt;/strong> dialog box, where the quota value changes to 0 when it is set to infinity. (&lt;a href="https://github.com/kubesphere/console/pull/2118" target="_blank" rel="noopener noreferrer">#2118&lt;/a>, &lt;a href="https://github.com/fuchunlan" target="_blank" rel="noopener noreferrer">@fuchunlan&lt;/a>)&lt;/li>
+&lt;li>Fix an issue in the &lt;strong>Create ConfigMap&lt;/strong> dialog box, where the position of the hammer icon is incorrect when the data entry is empty. (&lt;a href="https://github.com/kubesphere/console/pull/2206" target="_blank" rel="noopener noreferrer">#2206&lt;/a>, &lt;a href="https://github.com/fuchunlan" target="_blank" rel="noopener noreferrer">@fuchunlan&lt;/a>)&lt;/li>
+&lt;li>Fix the incorrect default value of the time range drop-down list on the &lt;strong>Overview&lt;/strong> page of projects. (&lt;a href="https://github.com/kubesphere/console/pull/2340" target="_blank" rel="noopener noreferrer">#2340&lt;/a>, &lt;a href="https://github.com/fuchunlan" target="_blank" rel="noopener noreferrer">@fuchunlan&lt;/a>)&lt;/li>
+&lt;li>Fix an error that occurs during login redirection, where redirection fails if the referer URL contains an ampersand (&amp;amp;). (&lt;a href="https://github.com/kubesphere/console/pull/2194" target="_blank" rel="noopener noreferrer">#2194&lt;/a>, &lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>)&lt;/li>
+&lt;li>Change &lt;strong>1 hours&lt;/strong> to &lt;strong>1 hour&lt;/strong> on the custom monitoring dashboard creation page. (&lt;a href="https://github.com/kubesphere/console/pull/2276" target="_blank" rel="noopener noreferrer">#2276&lt;/a>, &lt;a href="https://github.com/live77" target="_blank" rel="noopener noreferrer">@live77&lt;/a>)&lt;/li>
+&lt;li>Fix the incorrect Service types on the Service list page. (&lt;a href="https://github.com/kubesphere/console/pull/2178" target="_blank" rel="noopener noreferrer">#2178&lt;/a>, &lt;a href="https://github.com/xuliwenwenwen" target="_blank" rel="noopener noreferrer">@xuliwenwenwen&lt;/a>)&lt;/li>
+&lt;li>Fix the incorrect traffic data displayed in grayscale release job details. (&lt;a href="https://github.com/kubesphere/console/pull/2422" target="_blank" rel="noopener noreferrer">#2422&lt;/a>, &lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>)&lt;/li>
+&lt;li>Fix an issue in the &lt;strong>Edit Project Quotas&lt;/strong> dialog box, where values with two decimal places and values greater than 8 cannot be set. (&lt;a href="https://github.com/kubesphere/console/pull/2127" target="_blank" rel="noopener noreferrer">#2127&lt;/a>, &lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>)&lt;/li>
+&lt;li>Allow the &lt;strong>About&lt;/strong> dialog box to be closed by clicking other areas of the window. (&lt;a href="https://github.com/kubesphere/console/pull/2114" target="_blank" rel="noopener noreferrer">#2114&lt;/a>, &lt;a href="https://github.com/fuchunlan" target="_blank" rel="noopener noreferrer">@fuchunlan&lt;/a>)&lt;/li>
+&lt;li>Optimize the project title so that the cursor is changed into a hand when hovering over the project title. (&lt;a href="https://github.com/kubesphere/console/pull/2128" target="_blank" rel="noopener noreferrer">#2128&lt;/a>, &lt;a href="https://github.com/fuchunlan" target="_blank" rel="noopener noreferrer">@fuchunlan&lt;/a>)&lt;/li>
+&lt;li>Add support for creating ConfigMaps and Secrets in the &lt;strong>Environment Variables&lt;/strong> area of the &lt;strong>Create Deployment&lt;/strong> dialog box. (&lt;a href="https://github.com/kubesphere/console/pull/2227" target="_blank" rel="noopener noreferrer">#2227&lt;/a>, &lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>)&lt;/li>
+&lt;li>Add support for setting Pod annotations in the &lt;strong>Create Deployment&lt;/strong> dialog box. (&lt;a href="https://github.com/kubesphere/console/pull/2129" target="_blank" rel="noopener noreferrer">#2129&lt;/a>, &lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>)&lt;/li>
+&lt;li>Allow domain names to start with an asterisk (*). (&lt;a href="https://github.com/kubesphere/console/pull/2432" target="_blank" rel="noopener noreferrer">#2432&lt;/a>, &lt;a href="https://github.com/wengzhisong-hz" target="_blank" rel="noopener noreferrer">@wengzhisong-hz&lt;/a>)&lt;/li>
+&lt;li>Add support for searching for Harbor images in the &lt;strong>Create Deployment&lt;/strong> dialog box. (&lt;a href="https://github.com/kubesphere/console/pull/2132" target="_blank" rel="noopener noreferrer">#2132&lt;/a>, &lt;a href="https://github.com/wengzhisong-hz" target="_blank" rel="noopener noreferrer">@wengzhisong-hz&lt;/a>)&lt;/li>
+&lt;li>Add support for mounting volumes to init containers. (&lt;a href="https://github.com/kubesphere/console/pull/2166" target="_blank" rel="noopener noreferrer">#2166&lt;/a>, &lt;a href="https://github.com/Sigboom" target="_blank" rel="noopener noreferrer">@Sigboom&lt;/a>)&lt;/li>
+&lt;li>Remove the workload auto-restart feature in volume expansion. (&lt;a href="https://github.com/kubesphere/kubesphere/pull/4121" target="_blank" rel="noopener noreferrer">#4121&lt;/a>, &lt;a href="https://github.com/wenhuwang" target="_blank" rel="noopener noreferrer">@wenhuwang&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h2 id="apis">APIs&lt;/h2>
+&lt;ul>
+&lt;li>Deprecate router API version v1alpha2. (&lt;a href="https://github.com/kubesphere/kubesphere/pull/4193" target="_blank" rel="noopener noreferrer">#4193&lt;/a>, &lt;a href="https://github.com/RolandMa1986" target="_blank" rel="noopener noreferrer">@RolandMa1986&lt;/a>)&lt;/li>
+&lt;li>Upgrade the pipeline API version from v2 to v3. (&lt;a href="https://github.com/kubesphere/console/pull/2323" target="_blank" rel="noopener noreferrer">#2323&lt;/a>, &lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>)&lt;/li>
+&lt;li>Change the Secret verification API. (&lt;a href="https://github.com/kubesphere/console/pull/2368" target="_blank" rel="noopener noreferrer">#2368&lt;/a>, &lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>)&lt;/li>
+&lt;li>Client credential is required for OAuth2 Token endpoint.（&lt;a href="https://github.com/kubesphere/kubesphere/pull/3525" target="_blank" rel="noopener noreferrer">#3525&lt;/a>，&lt;a href="https://github.com/wansir" target="_blank" rel="noopener noreferrer">@wansir&lt;/a>）&lt;/li>
+&lt;/ul>
+&lt;h2 id="component-changes">Component Changes&lt;/h2>
+&lt;ul>
+&lt;li>kubefed: v0.7.0 -&amp;gt; v0.8.1&lt;/li>
+&lt;li>prometheus-operator: v0.42.1 -&amp;gt; v0.43.2&lt;/li>
+&lt;li>notification-manager: v1.0.0 -&amp;gt; v1.4.0&lt;/li>
+&lt;li>fluent-bit: v1.6.9 -&amp;gt; v1.8.3&lt;/li>
+&lt;li>kube-events: v0.1.0 -&amp;gt; v0.3.0&lt;/li>
+&lt;li>kube-auditing: v0.1.2 -&amp;gt; v0.2.0&lt;/li>
+&lt;li>istio: 1.6.10 -&amp;gt; 1.11.1&lt;/li>
+&lt;li>jaeger: 1.17 -&amp;gt; 1.27&lt;/li>
+&lt;li>kiali: v1.26.1 -&amp;gt; v1.38&lt;/li>
+&lt;li>KubeEdge: v1.6.2 -&amp;gt; 1.7.2&lt;/li>
+&lt;/ul></description></item><item><title>Release Notes for 3.1.1</title><link>https://openksc.github.io/docs/v3.4/release/release-v311/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.4/release/release-v311/</guid><description>&lt;h2 id="user-experience">User Experience&lt;/h2>
+&lt;h3 id="enhancements">Enhancements&lt;/h3>
+&lt;ul>
+&lt;li>Add the function of deleting related resources in batches during workload deletion. &lt;a href="https://github.com/kubesphere/console/pull/1933" target="_blank" rel="noopener noreferrer">kubesphere/console#1933&lt;/a>&lt;/li>
+&lt;li>Optimize dialog boxes. &lt;a href="https://github.com/kubesphere/console/pull/2016" target="_blank" rel="noopener noreferrer">kubesphere/console#2016&lt;/a>&lt;/li>
+&lt;li>Add the container terminal function to projects in the &lt;code>system-workspace&lt;/code> workspace. &lt;a href="https://github.com/kubesphere/console/pull/1921" target="_blank" rel="noopener noreferrer">kubesphere/console#1921&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Remove the function of editing external network access of headless Services on the Service management page. &lt;a href="https://github.com/kubesphere/console/issues/2055" target="_blank" rel="noopener noreferrer">kubesphere/console#2055&lt;/a>&lt;/li>
+&lt;li>Fix the incorrect environment variable placeholders displayed in workload creation. &lt;a href="https://github.com/kubesphere/console/pull/2008" target="_blank" rel="noopener noreferrer">kubesphere/console#2008&lt;/a>&lt;/li>
+&lt;li>Fix an issue where the login page is not displayed when users log out from certain pages. &lt;a href="https://github.com/kubesphere/console/pull/2009" target="_blank" rel="noopener noreferrer">kubesphere/console#2009&lt;/a>&lt;/li>
+&lt;li>Fix an issue on the Pod template editing page, where the protocol drop-down list is not completely displayed. &lt;a href="https://github.com/kubesphere/console/pull/1944" target="_blank" rel="noopener noreferrer">kubesphere/console#1944&lt;/a>&lt;/li>
+&lt;li>Fix a probe format verification issue in workload creation. &lt;a href="https://github.com/kubesphere/console/pull/1941" target="_blank" rel="noopener noreferrer">kubesphere/console#1941&lt;/a>&lt;/li>
+&lt;li>Fix the incorrect DevOps project list displayed on the workspace member details page. &lt;a href="https://github.com/kubesphere/console/pull/1936" target="_blank" rel="noopener noreferrer">#1936&lt;/a>&lt;/li>
+&lt;li>Fix incorrect and missing UI text. &lt;a href="https://github.com/kubesphere/console/pull/1879" target="_blank" rel="noopener noreferrer">kubesphere/console#1879&lt;/a> &lt;a href="https://github.com/kubesphere/console/pull/1880" target="_blank" rel="noopener noreferrer">kubesphere/console#1880&lt;/a> &lt;a href="https://github.com/kubesphere/console/pull/1895" target="_blank" rel="noopener noreferrer">kubesphere/console#1895&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="observability">Observability&lt;/h2>
+&lt;h3 id="enhancements-1">Enhancements&lt;/h3>
+&lt;ul>
+&lt;li>Optimize port format restrictions in notification settings. &lt;a href="https://github.com/kubesphere/console/pull/1885" target="_blank" rel="noopener noreferrer">#1885&lt;/a>&lt;/li>
+&lt;li>Add the function of specifying an existing Prometheus stack during installation. &lt;a href="https://github.com/kubesphere/ks-installer/pull/1528" target="_blank" rel="noopener noreferrer">#1528&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-1">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix the mail server synchronization error. &lt;a href="https://github.com/kubesphere/console/pull/1969" target="_blank" rel="noopener noreferrer">#1969&lt;/a>&lt;/li>
+&lt;li>Fix an issue where the notification manager is reset after installer restart. &lt;a href="https://github.com/kubesphere/ks-installer/pull/1564" target="_blank" rel="noopener noreferrer">#1564&lt;/a>&lt;/li>
+&lt;li>Fix an issue where the alerting policy cannot be deleted after the monitored object is deleted. &lt;a href="https://github.com/kubesphere/console/pull/2045" target="_blank" rel="noopener noreferrer">#2045&lt;/a>&lt;/li>
+&lt;li>Add a default template for monitoring resource creation. &lt;a href="https://github.com/kubesphere/console/pull/2029" target="_blank" rel="noopener noreferrer">#2029&lt;/a>&lt;/li>
+&lt;li>Fix an issue where containers display only outdated logs. &lt;a href="https://github.com/kubesphere/console/issues/1972" target="_blank" rel="noopener noreferrer">#1972&lt;/a>&lt;/li>
+&lt;li>Fix the incorrect timestamp in alerting information. &lt;a href="https://github.com/kubesphere/console/pull/1978" target="_blank" rel="noopener noreferrer">#1978&lt;/a>&lt;/li>
+&lt;li>Optimize parameter rules in alerting policy creation. &lt;a href="https://github.com/kubesphere/console/pull/1958" target="_blank" rel="noopener noreferrer">#1958&lt;/a>&lt;/li>
+&lt;li>Fix an issue in custom monitoring, where metrics are not completely displayed due to the incorrect height of the view area. &lt;a href="https://github.com/kubesphere/console/pull/1989" target="_blank" rel="noopener noreferrer">#1989&lt;/a>&lt;/li>
+&lt;li>Adjust the limits of the node exporter and kube-state-metrics. &lt;a href="https://github.com/kubesphere/ks-installer/pull/1537" target="_blank" rel="noopener noreferrer">#1537&lt;/a>&lt;/li>
+&lt;li>Adjust the selector of the etcdHighNumberOfFailedGRPCRequests rule to prevent incorrect etcd alerts. &lt;a href="https://github.com/kubesphere/ks-installer/pull/1540" target="_blank" rel="noopener noreferrer">#1540&lt;/a>&lt;/li>
+&lt;li>Fix an issue during system upgrade, where the events ruler component is not upgraded to the latest version. &lt;a href="https://github.com/kubesphere/ks-installer/pull/1594" target="_blank" rel="noopener noreferrer">#1594&lt;/a>&lt;/li>
+&lt;li>Fix bugs of the kube_node_status_allocatable_memory_bytes and kube_resourcequota selectors. &lt;a href="https://github.com/kubesphere/ks-installer/pull/1560" target="_blank" rel="noopener noreferrer">#1560&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="service-mesh">Service Mesh&lt;/h2>
+&lt;h3 id="enhancements-2">Enhancements&lt;/h3>
+&lt;ul>
+&lt;li>Add a time range selector to the Tracing tab. &lt;a href="https://github.com/kubesphere/console/pull/2022" target="_blank" rel="noopener noreferrer">#2022&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-2">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix an issue where the Tracing tab is incorrectly displayed. &lt;a href="https://github.com/kubesphere/console/pull/1890" target="_blank" rel="noopener noreferrer">kubesphere/console#1890&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="devops">DevOps&lt;/h2>
+&lt;h3 id="enhancements-3">Enhancements&lt;/h3>
+&lt;ul>
+&lt;li>Add the function of filtering branches by branch name in GitLab multi-branch pipelines. &lt;a href="https://github.com/kubesphere/console/pull/2077" target="_blank" rel="noopener noreferrer">kubesphere/console#2077&lt;/a>&lt;/li>
+&lt;li>Rename the &lt;strong>Rerun&lt;/strong> button on the b2i page to &lt;strong>Run&lt;/strong>. &lt;a href="https://github.com/kubesphere/console/pull/1981" target="_blank" rel="noopener noreferrer">kubesphere/console#1981&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-3">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix an issue where credential status cannot be synchronized. &lt;a href="https://github.com/kubesphere/console/pull/1956" target="_blank" rel="noopener noreferrer">kubesphere/console#1956&lt;/a>&lt;/li>
+&lt;li>Fix incorrect image tags in CI automatic image pushing. &lt;a href="https://github.com/kubesphere/console/pull/2037" target="_blank" rel="noopener noreferrer">kubesphere/console#2037&lt;/a>&lt;/li>
+&lt;li>Fix an issue on the pipeline details page, where users cannot return to the previous page. &lt;a href="https://github.com/kubesphere/console/pull/1996" target="_blank" rel="noopener noreferrer">kubesphere/console#1996&lt;/a>&lt;/li>
+&lt;li>Fix the inconsistent dialog box names of the image builder. &lt;a href="https://github.com/kubesphere/console/pull/1922" target="_blank" rel="noopener noreferrer">kubesphere/console#1922&lt;/a>&lt;/li>
+&lt;li>Fix an issue in DevOps projects, where the updates are reset when kubeconfig credentials are created. &lt;a href="https://github.com/kubesphere/console/pull/1990" target="_blank" rel="noopener noreferrer">kubesphere/console#1990&lt;/a>&lt;/li>
+&lt;li>Fix incorrect trusted users in multi-branch pipelines. &lt;a href="https://github.com/kubesphere/console/pull/1987" target="_blank" rel="noopener noreferrer">kubesphere/console#1987&lt;/a>&lt;/li>
+&lt;li>Fix an issue in DevOps project pipelines, where stage labels are reset when other settings are changed but not saved. &lt;a href="https://github.com/kubesphere/console/pull/1979" target="_blank" rel="noopener noreferrer">kubesphere/console#1979&lt;/a>&lt;/li>
+&lt;li>Fix the incorrect shell and labels displayed in pipelines. &lt;a href="https://github.com/kubesphere/console/pull/1970" target="_blank" rel="noopener noreferrer">kubesphere/console#1970&lt;/a>&lt;/li>
+&lt;li>Fix incorrect information displayed in the pipeline basic information dialog box. &lt;a href="https://github.com/kubesphere/console/pull/1955" target="_blank" rel="noopener noreferrer">kubesphere/console#1955&lt;/a>&lt;/li>
+&lt;li>Fix the API error generated when multi-branch pipelines are run. &lt;a href="https://github.com/kubesphere/console/pull/1954" target="_blank" rel="noopener noreferrer">kubesphere/console#1954&lt;/a>&lt;/li>
+&lt;li>Fix an issue in pipelines, where webhook pushing settings do not take effect. &lt;a href="https://github.com/kubesphere/console/pull/1953" target="_blank" rel="noopener noreferrer">kubesphere/console#1953&lt;/a>&lt;/li>
+&lt;li>Optimize the UI text of the drag-and-drop function in the pipeline editor. &lt;a href="https://github.com/kubesphere/console/pull/1949" target="_blank" rel="noopener noreferrer">kubesphere/console#1949&lt;/a>&lt;/li>
+&lt;li>Add default build environment settings for service build from source code. &lt;a href="https://github.com/kubesphere/console/pull/1993" target="_blank" rel="noopener noreferrer">kubesphere/console#1993&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="authentication-and-authorization">Authentication and Authorization&lt;/h2>
+&lt;h3 id="bug-fixes-4">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix the incorrect last login time of users. &lt;a href="https://github.com/kubesphere/console/pull/1881" target="_blank" rel="noopener noreferrer">kubesphere/console#1881&lt;/a>&lt;/li>
+&lt;li>Fix an issue in workspaces, where the &lt;code>admin&lt;/code> user cannot view resource quotas. &lt;a href="https://github.com/kubesphere/ks-installer/pull/1551" target="_blank" rel="noopener noreferrer">kubesphere/ks-installer#1551&lt;/a> &lt;a href="https://github.com/kubesphere/console/pull/2062" target="_blank" rel="noopener noreferrer">kubesphere/console#2062&lt;/a>&lt;/li>
+&lt;li>Fix an issue where project members cannot connect to container terminals. &lt;a href="https://github.com/kubesphere/console/pull/2002" target="_blank" rel="noopener noreferrer">kubesphere/console#2002&lt;/a>&lt;/li>
+&lt;li>Fix an issue where the administrator cannot be specified when a project is assigned to a workspace. &lt;a href="https://github.com/kubesphere/console/pull/1961" target="_blank" rel="noopener noreferrer">kubesphere/console#1961&lt;/a>&lt;/li>
+&lt;li>Fix the duplicate permission names in workspace role creation. &lt;a href="https://github.com/kubesphere/console/pull/1945" target="_blank" rel="noopener noreferrer">kubesphere/console#1945&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="multi-tenant-management">Multi-tenant Management&lt;/h2>
+&lt;h3 id="bug-fixes-5">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix an issue where deleted roles can be associated with user groups. &lt;a href="https://github.com/kubesphere/console/pull/1899" target="_blank" rel="noopener noreferrer">#1899&lt;/a> &lt;a href="https://github.com/kubesphere/kubesphere/pull/3897" target="_blank" rel="noopener noreferrer">#3897&lt;/a>&lt;/li>
+&lt;li>Fix an issue where deletion of long usernames can cause system collapse. &lt;a href="https://github.com/kubesphere/ks-installer/pull/1450" target="_blank" rel="noopener noreferrer">kubesphere/ks-installer#1450&lt;/a> &lt;a href="https://github.com/kubesphere/kubesphere/pull/3796" target="_blank" rel="noopener noreferrer">kubesphere/kubesphere#3796&lt;/a>&lt;/li>
+&lt;li>Fix an error generated when project roles are bound to user groups. &lt;a href="https://github.com/kubesphere/console/pull/1967" target="_blank" rel="noopener noreferrer">kubesphere/console#1967&lt;/a>&lt;/li>
+&lt;li>Fix incorrect workspace quotas displayed in multi-cluster environments. &lt;a href="https://github.com/kubesphere/console/pull/2013" target="_blank" rel="noopener noreferrer">kubesphere/console#2013&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="multi-cluster-management">Multi-cluster Management&lt;/h2>
+&lt;h3 id="enhancements-4">Enhancements&lt;/h3>
+&lt;ul>
+&lt;li>Optimize the error message generated when the configuration of a member cluster is incorrect. &lt;a href="https://github.com/kubesphere/console/pull/2084" target="_blank" rel="noopener noreferrer">kubesphere/console#2084&lt;/a> &lt;a href="https://github.com/kubesphere/console/pull/1965" target="_blank" rel="noopener noreferrer">kubesphere/console#1965&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-6">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix an issue where node labels in member clusters cannot be obtained. &lt;a href="https://github.com/kubesphere/console/pull/1927" target="_blank" rel="noopener noreferrer">kubesphere/console#1927&lt;/a>&lt;/li>
+&lt;li>Fix an issue on the project list page, where multi-cluster projects are not correctly identified. &lt;a href="https://github.com/kubesphere/console/pull/2059" target="_blank" rel="noopener noreferrer">kubesphere/console#2059&lt;/a>&lt;/li>
+&lt;li>Fix the incorrect gateway status displayed in multi-cluster projects. &lt;a href="https://github.com/kubesphere/console/pull/1939" target="_blank" rel="noopener noreferrer">kubesphere/console#1939&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="metering-and-billing">Metering and Billing&lt;/h2>
+&lt;h3 id="enhancements-5">Enhancements&lt;/h3>
+&lt;ul>
+&lt;li>Optimize the metering and billing UI. &lt;a href="https://github.com/kubesphere/console/pull/1896" target="_blank" rel="noopener noreferrer">#1896&lt;/a>&lt;/li>
+&lt;li>Change the color of a button on the metering and billing page. &lt;a href="https://github.com/kubesphere/console/pull/1934" target="_blank" rel="noopener noreferrer">#1934&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-7">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix an issue where OpenPitrix resources are not included in metering and billing. &lt;a href="https://github.com/kubesphere/kubesphere/pull/3871" target="_blank" rel="noopener noreferrer">#3871&lt;/a>&lt;/li>
+&lt;li>Fix an error generated in metering and billing for the &lt;code>system-workspace&lt;/code> workspace. &lt;a href="https://github.com/kubesphere/console/pull/2083" target="_blank" rel="noopener noreferrer">#2083&lt;/a>&lt;/li>
+&lt;li>Fix an issue where projects are not completely displayed in the multi-cluster metering and billing list. &lt;a href="https://github.com/kubesphere/console/pull/2066" target="_blank" rel="noopener noreferrer">#2066&lt;/a>&lt;/li>
+&lt;li>Fix an error on the billing page generated when a dependent cluster is not loaded. &lt;a href="https://github.com/kubesphere/console/pull/2054" target="_blank" rel="noopener noreferrer">#2054&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="app-store">App Store&lt;/h2>
+&lt;h3 id="enhancements-6">Enhancements&lt;/h3>
+&lt;ul>
+&lt;li>Optimize the UI layout and text on the app template creation page. &lt;a href="https://github.com/kubesphere/console/pull/2012" target="_blank" rel="noopener noreferrer">kubesphere/console#2012&lt;/a> &lt;a href="https://github.com/kubesphere/console/pull/2063" target="_blank" rel="noopener noreferrer">kubesphere/console#2063&lt;/a>&lt;/li>
+&lt;li>Optimize the app template import function. &lt;a href="https://github.com/kubesphere/openpitrix-jobs/pull/18" target="_blank" rel="noopener noreferrer">kubesphere/openpitrix-jobs#18&lt;/a>&lt;/li>
+&lt;li>Add the RadonDB PostgreSQL app to the App Store. &lt;a href="https://github.com/kubesphere/openpitrix-jobs/pull/17" target="_blank" rel="noopener noreferrer">kubesphere/openpitrix-jobs#17&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="security">Security&lt;/h2>
+&lt;h3 id="enhancements-7">Enhancements&lt;/h3>
+&lt;ul>
+&lt;li>Switch the branch of jwt-go to fix CVE-2020-26160. &lt;a href="https://github.com/kubesphere/kubesphere/pull/3991" target="_blank" rel="noopener noreferrer">#3991&lt;/a>&lt;/li>
+&lt;li>Upgrade the Protobuf version to v1.3.2 to fix CVE-2021-3121. &lt;a href="https://github.com/kubesphere/kubesphere/pull/3944" target="_blank" rel="noopener noreferrer">#3944&lt;/a>&lt;/li>
+&lt;li>Upgrade the Crypto version to the latest version to fix CVE-2020-29652. &lt;a href="https://github.com/kubesphere/kubesphere/pull/3997" target="_blank" rel="noopener noreferrer">#3997&lt;/a>&lt;/li>
+&lt;li>Remove the &lt;code>yarn.lock&lt;/code> file to prevent incorrect CVE bug reports. &lt;a href="https://github.com/kubesphere/console/pull/2024" target="_blank" rel="noopener noreferrer">#2024&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-8">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix an issue where container terminal can be accessed without authorization. &lt;a href="https://github.com/kubesphere/kubesphere/pull/3956" target="_blank" rel="noopener noreferrer">kubesphere/kubesphere#3956&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="storage">Storage&lt;/h2>
+&lt;h3 id="enhancements-8">Enhancements&lt;/h3>
+&lt;ul>
+&lt;li>Improve the concurrency performance of the S3 uploader. &lt;a href="https://github.com/kubesphere/kubesphere/pull/4011" target="_blank" rel="noopener noreferrer">#4011&lt;/a>&lt;/li>
+&lt;li>Add preset CSI Provisioner CR settings. &lt;a href="https://github.com/kubesphere/ks-installer/pull/1536" target="_blank" rel="noopener noreferrer">#1536&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-9">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Remove the invalid function of automatic storage class detection. &lt;a href="https://github.com/kubesphere/kubesphere/pull/3947" target="_blank" rel="noopener noreferrer">#3947&lt;/a>&lt;/li>
+&lt;li>Fix incorrect storage resource units of project quotas.&lt;a href="https://github.com/kubesphere/kubesphere/issues/3973" target="_blank" rel="noopener noreferrer">#3973&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="kubeedge-integration">KubeEdge Integration&lt;/h2>
+&lt;h3 id="enhancements-9">Enhancements&lt;/h3>
+&lt;ul>
+&lt;li>Add support for KubeEdge v1.6.2. &lt;a href="https://github.com/kubesphere/ks-installer/pull/1527" target="_blank" rel="noopener noreferrer">#1527&lt;/a> &lt;a href="https://github.com/kubesphere/ks-installer/pull/1542" target="_blank" rel="noopener noreferrer">#1542&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-10">Bug Fixes&lt;/h3>
+&lt;ul>
+&lt;li>Fix the incorrect &lt;code>advertiseAddress&lt;/code> setting of the KubeEdge CloudCore component. &lt;a href="https://github.com/kubesphere/ks-installer/pull/1561" target="_blank" rel="noopener noreferrer">#1561&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Release Notes for 3.1.0</title><link>https://openksc.github.io/docs/v3.4/release/release-v310/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.4/release/release-v310/</guid><description>&lt;h2 id="how-to-install-v310">How to Install v3.1.0&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/kubesphere/kubekey" target="_blank" rel="noopener noreferrer">Install KubeSphere v3.1.0 on Linux&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/kubesphere/ks-installer" target="_blank" rel="noopener noreferrer">Install KubeSphere v3.1.0 on an existing Kubernetes cluster&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="new-features-and-enhancements">New Features and Enhancements&lt;/h2>
+&lt;h3 id="multi-cluster-management">Multi-cluster management&lt;/h3>
+&lt;ul>
+&lt;li>Simplified the steps to import Member Clusters with configuration validation (for example, &lt;code>jwtSecret&lt;/code>) added. (&lt;a href="https://github.com/kubesphere/kubesphere/issues/3232" target="_blank" rel="noopener noreferrer">#3232&lt;/a>)&lt;/li>
+&lt;li>Refactored the cluster controller and optimized the logic. (&lt;a href="https://github.com/kubesphere/kubesphere/issues/3234" target="_blank" rel="noopener noreferrer">#3234&lt;/a>)&lt;/li>
+&lt;li>Upgraded the built-in web Kubectl, the version of which is now consistent with your Kubernetes cluster version. (&lt;a href="https://github.com/kubesphere/kubesphere/issues/3103" target="_blank" rel="noopener noreferrer">#3103&lt;/a>)&lt;/li>
+&lt;li>Support customized resynchronization period of cluster controller. (&lt;a href="https://github.com/kubesphere/kubesphere/issues/3213" target="_blank" rel="noopener noreferrer">#3213&lt;/a>)&lt;/li>
+&lt;li>Support lightweight installation of Member Clusters without components such as Redis and OpenLDAP. (&lt;a href="https://github.com/kubesphere/kubesphere/issues/3056" target="_blank" rel="noopener noreferrer">#3056&lt;/a>)&lt;/li>
+&lt;li>Support high availability of Tower agent and server. (&lt;a href="https://github.com/kubesphere/tower/issues/31" target="_blank" rel="noopener noreferrer">#31&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h3 id="kubeedge-integration">KubeEdge integration&lt;/h3>
+&lt;p>You can now enable KubeEdge in your cluster and manage edge nodes on the KubeSphere console. (&lt;a href="https://github.com/kubesphere/kubesphere/issues/3070" target="_blank" rel="noopener noreferrer">#3070&lt;/a>)&lt;/p></description></item><item><title>Release Notes for 3.0.0</title><link>https://openksc.github.io/docs/v3.4/release/release-v300/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.4/release/release-v300/</guid><description>&lt;h2 id="how-to-get-v300">How to get v3.0.0&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="../../installing-on-linux/">Install KubeSphere v3.0.0 on Linux&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../installing-on-kubernetes/">Install KubeSphere v3.0.0 on existing Kubernetes&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="release-notes">Release Notes&lt;/h2>
+&lt;h2 id="installer">&lt;strong>Installer&lt;/strong>&lt;/h2>
+&lt;h3 id="features">FEATURES&lt;/h3>
+&lt;ul>
+&lt;li>A brand-new installer: &lt;a href="https://github.com/kubesphere/kubekey" target="_blank" rel="noopener noreferrer">KubeKey&lt;/a>, v1.0.0, which is a turnkey solution to installing Kubernetes with KubeSphere on different platforms. It is more easy to use and reduces the dependency on OS environment&lt;/li>
+&lt;/ul>
+&lt;h3 id="upgrades--enhancements">UPGRADES &amp;amp; ENHANCEMENTS&lt;/h3>
+&lt;ul>
+&lt;li>Be compatible with Kubernetes 1.15.x, 1.16.x, 1.17.x and 1.18.x for &lt;a href="https://github.com/kubesphere/ks-installer" target="_blank" rel="noopener noreferrer">ks-installer&lt;/a>, v3.0.0&lt;/li>
+&lt;li>&lt;a href="https://github.com/kubesphere/kubekey" target="_blank" rel="noopener noreferrer">KubeKey&lt;/a> officially supports Kubernetes 1.15.12, 1.16.13, 1.17.9 and 1.18.6 (Please avoid using KubeKey to install Kubernetes 1.15 to 1.15.5 and 1.16 to 1.16.2, because Kubernetes has an &lt;a href="https://github.com/kubernetes/kubernetes/issues/83778" target="_blank" rel="noopener noreferrer">API validation issue&lt;/a>)&lt;/li>
+&lt;li>Add support for EulerOS, UOS and KylinOS&lt;/li>
+&lt;li>Add support for Kunpeng and Phytium CPU&lt;/li>
+&lt;li>Use ClusterConfiguration CRD to store ks-installer's configuration instead of ConfigMap&lt;/li>
+&lt;/ul>
+&lt;h2 id="cluster-management">&lt;strong>Cluster Management&lt;/strong>&lt;/h2>
+&lt;h3 id="features-1">FEATURES&lt;/h3>
+&lt;ul>
+&lt;li>Support management of multiple Kubernetes clusters&lt;/li>
+&lt;li>Support Federated Deployment and Federated StatefulSet across multiple clusters&lt;/li>
+&lt;/ul>
+&lt;h2 id="observability">&lt;strong>Observability&lt;/strong>&lt;/h2>
+&lt;h3 id="features-2">FEATURES&lt;/h3>
+&lt;ul>
+&lt;li>Support custom monitoring for 3rd-party application metrics in KubeSphere console&lt;/li>
+&lt;li>Add Kubernetes and KubeSphere auditing support, including audit event archiving, searching and alerting&lt;/li>
+&lt;li>Add Kubernetes event management support, including Kubernetes event archiving, searching and alerting based by &lt;a href="https://github.com/kubesphere/kube-events" target="_blank" rel="noopener noreferrer">kube-events&lt;/a>&lt;/li>
+&lt;li>Add tenant control to auditing and support Kubernetes event searching. A tenant user can only search his or her own auditing logs and Kubernetes events&lt;/li>
+&lt;li>Support archiving auditing logs and Kubernetes events to Elasticsearch, Kafka or Fluentd&lt;/li>
+&lt;li>Add multi-tenant notification support by &lt;a href="https://github.com/kubesphere/notification-manager" target="_blank" rel="noopener noreferrer">Notification Manager&lt;/a>&lt;/li>
+&lt;li>Support Alertmanager v0.21.0&lt;/li>
+&lt;/ul>
+&lt;h3 id="upgrades--enhancements-1">UPGRADES &amp;amp; ENHANCEMENTS&lt;/h3>
+&lt;ul>
+&lt;li>Upgrade Prometheus Operator to v0.38.3 (KubeSphere customized version )&lt;/li>
+&lt;li>Upgrade Prometheus to v2.20.1&lt;/li>
+&lt;li>Upgrade Node Exporter to v0.18.1&lt;/li>
+&lt;li>Upgrade kube-state-metrics to v1.9.6&lt;/li>
+&lt;li>Upgrade metrics server to v0.3.7&lt;/li>
+&lt;li>metrics-server is enabled by default (Disabled if KubeSphere is installed on existing Kubernetes)&lt;/li>
+&lt;li>Upgrade Fluent Bit Operator to v0.2.0&lt;/li>
+&lt;li>Upgrade Fluent Bit to v1.4.6&lt;/li>
+&lt;li>Significantly improve log searching performance&lt;/li>
+&lt;li>Allow platform admins to view pod logs from deleted namespaces&lt;/li>
+&lt;li>Adjust the display style of log searching results in Toolbox&lt;/li>
+&lt;li>Optimize log collection configuration for log files on pod's volume&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes">BUG FIXES&lt;/h3>
+&lt;ul>
+&lt;li>Fix time skew in metric graphs for newly created namespaces (#&lt;a href="https://github.com/kubesphere/kubesphere/issues/2868" target="_blank" rel="noopener noreferrer">2868&lt;/a>)&lt;/li>
+&lt;li>Fix workload-level alerting not working as expected (#&lt;a href="https://github.com/kubesphere/kubesphere/issues/2834" target="_blank" rel="noopener noreferrer">2834&lt;/a>)&lt;/li>
+&lt;li>Fix no metric data for NotReady nodes&lt;/li>
+&lt;/ul>
+&lt;h2 id="devops">&lt;strong>DevOps&lt;/strong>&lt;/h2>
+&lt;h3 id="features-3">FEATURES&lt;/h3>
+&lt;ul>
+&lt;li>Refactor DevOps framework, and use CRDs to manage DevOps resources&lt;/li>
+&lt;/ul>
+&lt;h3 id="upgrades--enhancements-2">UPGRADES &amp;amp; ENHANCEMENTS&lt;/h3>
+&lt;ul>
+&lt;li>Remove Sonarqube from installer default packages, and support for external Sonarqube&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-1">BUG FIXES&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Fix the issue that DevOps permission data is missing in a very limited number of cases&lt;/p></description></item></channel></rss>

@@ -1,0 +1,339 @@
+<!doctype html><html lang=en-US><head><meta charset=utf-8><title>Calico 路由反射模式权威指南</title><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="作为 Kubernetes 最长使用的一种网络插件，Calico 具有很强的扩展性，较优的资源利用和较少的依赖，相较于 Flannel 插件采用 Overlay 的网络，Calico 可以通过三层路由的方式采用性能更佳的 Underlay 网络，Calico 网络插件的转发效率是所有方案中较高的。"><meta name=keywords content="Kubernetes,KubeSphere,Calico,网络插件,CNI"><meta property="og:type" content="article"><meta property="og:title" content="Calico 路由反射模式权威指南"><meta property="og:description" content="作为 Kubernetes 最长使用的一种网络插件，Calico 具有很强的扩展性，较优的资源利用和较少的依赖，相较于 Flannel 插件采用 Overlay 的网络，Calico 可以通过三层路由的方式采用性能更佳的 Underlay 网络，Calico 网络插件的转发效率是所有方案中较高的。"><meta property="og:image" content="https://pek3b.qingstor.com/kubesphere-community/images/calico-cover.png"><meta property="og:url" content="https://openksc.github.io/zh/blogs/calico-guide/"><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@KubeSphere"><meta property="twitter:image" content="https://pek3b.qingstor.com/kubesphere-community/images/calico-cover.png"><meta name=docsearch:language content="zh-CN"><meta name=docsearch:version content><link rel=canonical href=https://kubesphere.io/zh/blogs/calico-guide/><link rel="shortcut icon" href=/images/favicons/favicon.ico><link rel=apple-touch-icon href=/images/favicons/apple-touch-icon.png sizes=180x180><link rel=icon type=image/png href=/images/favicons/favicon-16x16.png sizes=16x16><link rel=icon type=image/png href=/images/favicons/favicon-32x32.png sizes=32x32><link rel=icon type=image/svg+xml href=/images/favicons/favicon.svg><link rel=icon type=image/png href=/images/favicons/favicon.png><link rel=manifest href=/images/favicons/site.webmanifest><link rel=mask-icon href=/images/favicons/safari-pinned-tab.svg color=#00ad6e><meta name=msapplication-config content='/images/favicons/browserconfig.xml'><meta name=msapplication-TileColor content="#ffffff"><meta name=theme-color content="#ffffff"><link rel=stylesheet href=/fonts/Roboto/stylesheet.css><link rel=stylesheet href=/fonts/ProximaNova/stylesheet.css><link rel=stylesheet href=/css/jquery.modal.min.css><link rel=stylesheet href=/css/viewer.min.css><link rel=stylesheet href=/swiper/swiper-bundle.min.css><link rel=stylesheet href=/scss/common.min.0c3fdcc05ec210321169846714f74b11c4a1baf09a1833fa9273b2347c81e636.css><script src=/js/jquery-3.7.1.min.js></script><script src=/js/viewer.min.js></script><script src=/js/jquery.modal.min.js></script><script src=/swiper/swiper-bundle.min.js></script><script>var _hmt=_hmt||[];(function(){var e,t=document.createElement("script");t.src="https://hm.baidu.com/hm.js?0888981f1fa45d241b1fb6962da2963e",e=document.getElementsByTagName("script")[0],e.parentNode.insertBefore(t,e)})()</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-YYCVN36HT5"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-YYCVN36HT5")</script><script type=text/javascript>!function(e,t,n,s,o){e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},n=t.createElement("script"),tag=t.getElementsByTagName("script")[0],n.async=1,n.src=("https:"==document.location.protocol?"https://":"http://")+s,tag.parentNode.insertBefore(n,tag)}(window,document,"script","assets.giocdn.com/2.1/gio.js","gio"),gio("init","8a24ae300cbf8b8c",{}),gio("send")</script><link rel=stylesheet href=/scss/content.min.f73b326fbf8c5bd331900b0de21c7dde608a4926f482f6465f9ae1d9049b83ad.css><link rel=stylesheet href=/scss/markdown.min.db47186481122431dffae72d17dbbd51f90b66f022cc163458645709924e4eac.css></head><body><header class=navigation><div class=join-div><div class=content>🚀 KubeSphere v4.1.3 发布，多项优化与改进，欢迎体验！<a href=/zh/docs/v4.1/20-release-notes/release-v413/ target=_blank rel="noopener noreferrer">请查看 Release notes →</a>
+<img id=close-join src=/images/header/close.svg alt=close></div></div><div class=common-layout><div class=header-container><a href=/zh/ aria-label=logo><img src=/images/header/logo.svg alt class=logo></a><ul class=nav><li class=menu-li><span class=menu-span>应用场景</span><ul class="dropdown-menu menu-2"><li><a href=/zh/devops/>拥抱一站式 DevOps 工作流</a></li><li><a href=/zh/service-mesh/>在 Kubernetes 运行微服务</a></li><li><a href=/zh/observability/>构建丰富的云原生可观测性</a></li></ul></li><li class=menu-li><span class=menu-span>资源</span><ul class="dropdown-menu menu-3"><li><a href=/zh/projects/>开源项目</a></li><li><a href=/zh/conferences/>开源峰会</a></li><li><a href=/zh/blogs/>技术博客</a></li><li><a href=/zh/videos/>视频资源</a></li><li><a href=/zh/learn/>云原生实战</a></li></ul></li><li class=menu-li><span class=menu-span>文档中心</span><ul class="dropdown-menu menu-4"><li><a href=/zh/docs/v4.1>v4.1 <img src=/images/header/star.svg alt=star></a></li><li><a href=/zh/docs/v3.4>v3.4</a></li><li><a href=/zh/docs/v3.3>v3.3</a></li><li><a href=https://dev-guide.kubesphere.io/extension-dev-guide/zh/ target=_blank rel="noopener noreferrer">扩展组件开发</a></li><li><a href=https://kube.design/ target=_blank rel="noopener noreferrer">Kube Design</a></li></ul></li><li class=menu-li><span class=menu-span>开源社区</span><ul class="dropdown-menu menu-5"><li><a href=/zh/contribution/>参与贡献</a></li><li><a href=/zh/live/>社区活动</a></li><li><a href=/zh/case/>案例学习</a></li><li><a href=/zh/partner/>合作伙伴</a></li><li><a href=/zh/user-group/>用户委员会</a></li><li><a href=/zh/news/>动态</a></li><li><a href=https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md target=_blank rel="noopener noreferrer">版本计划</a></li><li><a href=https://www.kubesphere.io/zh/ target=_blank rel="noopener noreferrer">中国站</a></li><li><a href=https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2025 target=_blank rel="noopener noreferrer">开源之夏 2025</a></li></ul></li><li><a data-docs=用户论坛 href=https://ask.kubesphere.io/forum target=_blank rel="noopener noreferrer">用户论坛</a></li><li><a data-docs=认证 href=https://kubesphere.cloud/certification/ target=_blank rel="noopener noreferrer">认证</a></li></ul><div class=right-menu><ul><li class=language-menu><div><img src=/images/header/black.svg alt>
+<span>简体中文</span></div><ul class=dropdown-menu><li onclick='handleLangClick("zh","/zh/blogs/calico-guide/")'>简体中文</li></ul></li><li class=github-li><div class=github-star><a class=star-btn href=https://github.com/kubesphere/kubesphere rel="noopener noreferrer" target=_blank><span class=star-img></span>&nbsp;<span>Star</span>
+</a><a class=social-count href=https://github.com/kubesphere/kubesphere/stargazers rel="noopener noreferrer" target=_blank></a></div></li><li class=menu-icon><img src=/images/header/menu.svg alt></li></ul></div></div></div><div id=modal-for-menu class=modal><ul class=nav><li data-check=0 class=menu-li><span class=menu-span>应用场景</span><ul class=dropdown-menu><li><a href=/zh/devops/>拥抱一站式 DevOps 工作流</a></li><li><a href=/zh/service-mesh/>在 Kubernetes 运行微服务</a></li><li><a href=/zh/observability/>构建丰富的云原生可观测性</a></li></ul></li><li data-check=0 class=menu-li><span class=menu-span>资源</span><ul class=dropdown-menu><li><a href=/zh/projects/>开源项目</a></li><li><a href=/zh/conferences/>开源峰会</a></li><li><a href=/zh/blogs/>技术博客</a></li><li><a href=/zh/videos/>视频资源</a></li><li><a href=/zh/learn/>云原生实战</a></li></ul></li><li data-check=0 class=menu-li><span class=menu-span>文档中心</span><ul class=dropdown-menu><li><a href=/zh/docs/v4.1>v4.1 <img src=/images/header/star.svg alt=star></a></li><li><a href=/zh/docs/v3.4>v3.4</a></li><li><a href=/zh/docs/v3.3>v3.3</a></li><li><a href=https://dev-guide.kubesphere.io/extension-dev-guide/zh/>扩展组件开发</a></li><li><a href=https://kube.design/>Kube Design</a></li></ul></li><li data-check=0 class=menu-li><span class=menu-span>开源社区</span><ul class=dropdown-menu><li><a href=/zh/contribution/>参与贡献</a></li><li><a href=/zh/live/>社区活动</a></li><li><a href=/zh/case/>案例学习</a></li><li><a href=/zh/partner/>合作伙伴</a></li><li><a href=/zh/user-group/>用户委员会</a></li><li><a href=/zh/news/>动态</a></li><li><a href=https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md>版本计划</a></li><li><a href=https://www.kubesphere.io/zh/>中国站</a></li><li><a href=https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2025>开源之夏 2025</a></li></ul></li><li><a data-docs=用户论坛 href=https://ask.kubesphere.io/forum>用户论坛</a></li><li><a data-docs=认证 href=https://kubesphere.cloud/certification/>认证</a></li></ul><div class=link-div><a href=https://join.slack.com/t/kubesphere/shared_invite/zt-2b4t6rdb4-ico_4UJzCln_S2c1pcrIpQ target=_blank rel="noopener noreferrer" aria-label=slack><img src=/images/header/slack-hover.svg alt>
+</a><a href=https://x.com/KubeSphere target=_blank rel="noopener noreferrer" aria-label=twitter><img src=/images/header/twitter-hover.svg alt>
+</a><a href=https://github.com/kubesphere/kubesphere target=_blank rel="noopener noreferrer" aria-label=github><img src=/images/header/github-hover.svg alt></a></div></div></header><script>var bindNavMouseEvent,bindScrollChangeHeader,bindClickShowMenu,bindClickModalLi,bindClickClose,language,handleLangClick,githubApiLink="https://api.github.com/repos/kubesphere/kubesphere",getStar=function(){$(".social-count").hide(),$.getJSON(githubApiLink,function(e){$(".social-count").show().html(e.stargazers_count)})};getStar(),bindNavMouseEvent=function(e,t){t||(t=$(e));var n=!1;t.mouseenter(function(){if(n)return!1;n=!0,$(this).find(".dropdown-menu").fadeIn(200,function(){n=!1})}),t.mouseleave(function(){$(this).find(".dropdown-menu").fadeOut(200)})},bindScrollChangeHeader=function(){var t=100,e=$("header");window.addEventListener("scroll",function(){var t=window.scrollY;t>0?e.addClass("navigationScroll"):e.removeClass("navigationScroll")})},bindClickShowMenu=function(){$(".menu-icon").click(function(){$("#modal-for-menu").modal()})},bindClickModalLi=function(){$(".modal .menu-li").click(function(){var e=$(this).data("check");e===0?($(this).data("check",1),$(this).find(".dropdown-menu").slideDown(200)):($(this).data("check",0),$(this).find(".dropdown-menu").slideUp(200)),$(this).find(".menu-span").toggleClass("up")})},bindClickClose=function(){$("#close-join").click(function(){$(".navigation .join-div").hide(),$(".main-section").removeClass("padding")})},language="zh",bindClickClose(),bindScrollChangeHeader(),$(".header-container .menu-li").each(function(){bindNavMouseEvent("",$(this))}),bindNavMouseEvent(".header-container .language-menu"),bindNavMouseEvent(".header-container .btn-li"),bindClickShowMenu(),bindClickModalLi(),handleLangClick=function(e,t){try{localStorage.setItem("lang",e)}catch{}location.href=t}</script><section class=main-section><div class=common-layout><div class=breadcrumb><span><a href=/zh/blogs/>技术博客</a> > </span><span>Calico 路由反射模式权威指南</span></div><div class='main-div middle-div'><div class=author>武献雨</div><span class=date>发布于：2021-06-02</span>&nbsp;&nbsp;&nbsp;
+<span style=font-size:14px;color:#919aa3 id=busuanzi_container_page_pv>本文总阅读量：<span id=busuanzi_value_page_pv></span></span><h1>Calico 路由反射模式权威指南</h1><div class=share-1><div class=share><a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fcalico-guide%2f&text=Calico%20%e8%b7%af%e7%94%b1%e5%8f%8d%e5%b0%84%e6%a8%a1%e5%bc%8f%e6%9d%83%e5%a8%81%e6%8c%87%e5%8d%97" target=_blank rel="noopener noreferrer"><img src=/images/share/Twitter.svg alt="twitter icon">
+</a><a href="https://reddit.com/submit?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fcalico-guide%2f&title=Calico%20%e8%b7%af%e7%94%b1%e5%8f%8d%e5%b0%84%e6%a8%a1%e5%bc%8f%e6%9d%83%e5%a8%81%e6%8c%87%e5%8d%97" target=_blank rel="noopener noreferrer"><img src=/images/share/Reddit.svg alt="reddit icon">
+</a><a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fcalico-guide%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Facebook.svg alt="facebook icon">
+</a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fcalico-guide%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Linkedin.svg alt="linkedin icon">
+</a><a href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fcalico-guide%2f&t=Calico%20%e8%b7%af%e7%94%b1%e5%8f%8d%e5%b0%84%e6%a8%a1%e5%bc%8f%e6%9d%83%e5%a8%81%e6%8c%87%e5%8d%97" target=_blank rel="noopener noreferrer"><img src=/images/share/HackerNews.svg alt="hackernews icon"></a></div></div><div class=content><div class=md-body><h2 id=概述>概述</h2><p>作为 Kubernetes 最长使用的一种网络插件，Calico 具有很强的扩展性，较优的资源利用和较少的依赖，相较于 Flannel 插件采用 Overlay 的网络，Calico 可以通过三层路由的方式采用性能更佳的 Underlay 网络，Calico 网络插件的转发效率是所有方案中较高的。</p><p>在使用 Calico 网络插件的实际生产环境当中，为了提高网络的性能和灵活性，需要将 K8s 的工作节点和物理网络中的 leaf 交换机建立 BGP 邻居关系，同步 BGP 路由信息，可以将 pod 网络的路由发布到物理网络中。Calico 给出了三种类型的 BGP 互联方案，分别是 <strong>Full-mesh</strong>、<strong>Route reflectors</strong> 和 <strong>Top of Rack (ToR)</strong>。</p><h3 id=full-mesh>Full-mesh</h3><p>全互联模式，启用了 BGP 之后，Calico 的默认行为是在每个节点彼此对等的情况下创建完整的内部 BGP（iBGP）连接，这使 Calico 可以在任何 L2 网络（无论是公有云还是私有云）上运行，或者说（如果配了 IPIP）可以在任何不禁止 IPIP 流量的网络上作为 Overlay 运行。对于 vxlan overlay，Calico 不使用 BGP。</p><p>Full-mesh 模式对于 100 个以内的工作节点或更少节点的中小规模部署非常有用，但是在较大的规模上，Full-mesh 模式效率会降低，较大规模情况下，Calico 官方建议使用 Route reflectors。</p><h3 id=route-reflectors>Route reflectors</h3><p>如果想构建内部 BGP（iBGP）大规模集群，可以使用 BGP 路由反射器来减少每个节点上使用 BGP 对等体的数量。在此模型中，某些节点充当路由反射器，并配置为在它们之间建立完整的网格。然后，将其他节点配置为与这些路由反射器的子集（通常为冗余，通常为 2 个）进行对等，从而与全网格相比减少了 BGP 对等连接的总数。</p><h3 id=top-of-racktor>Top of Rack（ToR）</h3><p>在本地部署中，可以将 Calico 配置为直接与物理网络基础结构对等。通常，这需要涉及到禁用 Calico 的默认 Full-mesh 行为，将所有 Calico 节点与 L3 ToR 路由器对等。</p><p>本篇文章重点会介绍如何在 BGP 网络环境下配置 Calico 路由反射器，本篇主要介绍将 K8S 工作节点作为路由反射器和物理交换机建立 BGP 连接。配置环境拓扑如下：</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/20210602104325.png alt></p><p>在本次环境中，分别有一台 spine 交换机和两台 leaf 交换机来建立 EBGP 连接。所有 leaf 交换机都属于一个独立的自治系统，所有 leaf 交换机下的 node 都属于一个独立的自治系统。Kubernetes 集群节点中每个 leaf 下由两台工作节点作为 CalicoRR（路由反射器），之所以用两台 node 作为路由反射器是考虑冗余性，所有 Calico RR 都跟自己上联的 leaf 交换机建立 EBGP 连接。Calico RR 和自己所属的 node 之间建立 iBGP 连接。</p><h2 id=安装-calicoctl>安装 calicoctl</h2><p>Calico RR 所有配置操作都需要通过 calicoctl 工具来完成， calicoctl 允许从命令创建，读取，更新和删除 Calico 对象，所以我们首先需要在 Kubernetes 所有的工作节点上安装 calicoctl 工具。</p><p>采用二进制方式安装 calicoctl 工具。</p><p>登录到主机，打开终端提示符，然后导航到安装二进制文件位置，一般情况下 calicoctl 安装到 /usr/local/bin/。</p><p>使用以下命令下载 calicoctl 二进制文件，版本号选择自己 Calico 的版本。</p><pre tabindex=0><code>$ curl -O -L  https://github.com/projectcalico/calicoctl/releases/download/v3.17.2/calicoctl
+</code></pre><p>将文件设置为可执行文件。</p><pre tabindex=0><code>$ chmod +x calicoctl
+</code></pre><p>每次执行 calicoctl 之前需要设置环境变量。</p><pre tabindex=0><code>$ export DATASTORE_TYPE=kubernetes
+$ export KUBECONFIG=~/.kube/config
+</code></pre><p>如果不希望每次执行 calicoctl 之前都需要设置环境变量，可以将环境变量信息写到永久写入到 /etc/calico/calicoctl.cfg 文件里，calicoctl.cfg 配置文件编辑如下：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>projectcalico.org/v3</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>CalicoAPIConfig</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>datastoreType</span>: <span style=color:#e6db74>&#34;kubernetes&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>kubeconfig</span>: <span style=color:#e6db74>&#34;/root/.kube/config&#34;</span>
+</span></span></code></pre></div><p>命令使用：</p><pre tabindex=0><code>[root@node1 ~]# calicoctl -h
+Usage:
+  calicoctl [options] &lt;command&gt; [&lt;args&gt;...]
+
+    create       Create a resource by filename or stdin.
+    replace      Replace a resource by filename or stdin.
+    apply        Apply a resource by filename or stdin.  This creates a resource
+                 if it does not exist, and replaces a resource if it does exists.
+    patch        Patch a pre-exisiting resource in place.
+    delete       Delete a resource identified by file, stdin or resource type and
+                 name.
+    get          Get a resource identified by file, stdin or resource type and
+                 name.
+    label        Add or update labels of resources.
+    convert      Convert config files between different API versions.
+    ipam         IP address management.
+    node         Calico node management.
+    version      Display the version of calicoctl.
+    export       Export the Calico datastore objects for migration
+    import       Import the Calico datastore objects for migration
+    datastore    Calico datastore management.
+
+Options:
+  -h --help               Show this screen.
+  -l --log-level=&lt;level&gt;  Set the log level (one of panic, fatal, error,
+                          warn, info, debug) [default: panic]
+
+Description:
+  The calicoctl command line tool is used to manage Calico network and security
+  policy, to view and manage endpoint configuration, and to manage a Calico
+  node instance.
+
+  See &#39;calicoctl &lt;command&gt; --help&#39; to read about a specific subcommand.
+</code></pre><h2 id=关闭-full-mesh-模式>关闭 Full-mesh 模式</h2><p>Calico 默认是 Full-mesh 全互联模式，Calico 集群中的的节点之间都会建立连接，进行路由交换。但是随着集群规模的扩大，mesh 模式将形成一个巨大服务网格，连接数成倍增加。这时就需要使用 Route Reflector（路由器反射）模式解决这个问题。确定一个或多个 Calico 节点充当路由反射器，让其他节点从这个 RR 节点获取路由信息。</p><p>关闭 node-to-node BGP 网络，具体操作步骤如下：</p><p>添加 default BGP 配置，调整 nodeToNodeMeshEnabled 和 asNumber：</p><pre tabindex=0><code>[root@node1 calico]# cat bgpconf.yaml
+apiVersion: projectcalico.org/v3
+kind: BGPConfiguration
+metadata:
+  name: default
+spec:
+  logSeverityScreen: Info
+  nodeToNodeMeshEnabled: false
+  asNumber: 64512
+</code></pre><p>直接应用一下，应用之后会马上禁用 Full-mesh：</p><pre tabindex=0><code>[root@node1 calico]# calicoctl apply -f bgpconf.yaml
+Successfully applied 1 &#39;BGPConfiguration&#39; resource(s)
+</code></pre><p>查看 bgp 网络配置情况，false 为关闭：</p><pre tabindex=0><code>[root@node1 calico]# calicoctl get bgpconfig
+NAME      LOGSEVERITY   MESHENABLED   ASNUMBER
+default   Info          false         64512
+</code></pre><h2 id=修改工作节点的-calico-配置>修改工作节点的 Calico 配置</h2><p>通过 calicoctl get nodes --output=wide 可以获取各节点的 ASN 号：</p><pre tabindex=0><code>[root@node1 calico]# calicoctl get nodes --output=wide
+NAME    ASN      IPV4             IPV6
+node1   (64512)   172.20.0.11/24
+node2   (64512)   172.20.0.12/24
+node3   (64512)   172.20.0.13/24
+node4   (64512)   173.20.0.11/24
+node5   (64512)   173.20.0.12/24
+node6   (64512)   173.20.0.13/24
+</code></pre><p>可以看到获取的 ASN 号都是“（64512）”，这是因为如果不给每个节点指定 ASN 号，默认都是 64512。我们可以按照拓扑图配置各个节点的 ASN 号，不同 leaf 交换机下的节点，ASN 号不一样，每个 leaf 交换机下的工作节点都是一个独立自治系统。</p><p>通过如下命令，获取工作节点的 Calico 配置信息：</p><pre tabindex=0><code>$ calicoctl get node node1 -o yaml &gt; node1.yaml
+</code></pre><p>每一个工作节点的 Calico 配置信息都需要获取一下，输出为 yaml 文件，“node1”为 Calico 节点的名称。</p><p>按照如下格式进行修改：</p><pre tabindex=0><code>[root@node1 calico]# cat node1.yaml
+apiVersion: projectcalico.org/v3
+kind: Node
+metadata:
+  annotations:
+    projectcalico.org/kube-labels: &#39;{&#34;beta.kubernetes.io/arch&#34;:&#34;amd64&#34;,&#34;beta.kubernetes.io/os&#34;:&#34;linux&#34;,&#34;kubernetes.io/arch&#34;:&#34;amd64&#34;,&#34;kubernetes.io/hostname&#34;:&#34;node1&#34;,&#34;kubernetes.io/os&#34;:&#34;linux&#34;,&#34;node-role.kubernetes.io/master&#34;:&#34;&#34;,&#34;node-role.kubernetes.io/worker&#34;:&#34;&#34;,&#34;rr-group&#34;:&#34;rr1&#34;,&#34;rr-id&#34;:&#34;rr1&#34;}&#39;
+  creationTimestamp: null
+  labels:
+    beta.kubernetes.io/arch: amd64
+    beta.kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+    kubernetes.io/hostname: node1
+    kubernetes.io/os: linux
+    node-role.kubernetes.io/master: &#34;&#34;
+    node-role.kubernetes.io/worker: &#34;&#34;
+  name: node1
+spec:
+  bgp:
+    asNumber: 64512                           ## asNumber根据自己需要进行修改
+
+    ipv4Address: 172.20.0.11/24
+    routeReflectorClusterID: 172.20.0.11      ## routeReflectorClusterID一般改成自己节点的IP地址
+  orchRefs:
+  - nodeName: node1
+    orchestrator: k8s
+status:
+  podCIDRs:
+  - &#34;&#34;
+  - 10.233.64.0/24
+</code></pre><p>将所有节点的 Calico 配置信息全部修改之后，通过 calicoctl get nodes -o wide 命令获取到的节点信息如下：</p><pre tabindex=0><code>[root@node1 calico]# calicoctl get nodes -o wide
+NAME    ASN     IPV4             IPV6
+node1   64512   172.20.0.11/24
+node2   64512   172.20.0.12/24
+node3   64512   172.20.0.13/24
+node4   64513   173.20.0.11/24
+node5   64513   173.20.0.12/24
+node6   64513   173.20.0.13/24
+</code></pre><p>上面可以可以看到所有的 ASN 好都已变为手动指定的，不在是全局默认的。</p><h2 id=为-node-节点进行分组添加-label>为 node 节点进行分组（添加 label）</h2><p>为方便让 BGPPeer 轻松选择节点，在 Kubernetes 集群中，我们需要将所有节点通过打 label 的方式进行分组，这里，我们将 label 标签分为下面几种：</p><ul><li>rr-group 这里定义为节点所属的 Calico RR 组，主要有 rr1 和 rr2 两种，为不同 leaf 交换机下的 Calico RR</li><li>rr-id 这里定义为所属 Calico RR 的 ID，节点添加了该标签说明该节点作为了路由反射器，主要有 rr1 和 rr2 两种，为不同 leaf 交换机下的 Calico RR</li></ul><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/20210602104444.png alt></p><p>通过以下命令为每个节点添加 label：</p><pre tabindex=0><code>$ kubectl label nodes node1 rr-group=rr1
+$ kubectl label nodes node1 rr-id=rr1
+</code></pre><p>查看最终设置情况：</p><pre tabindex=0><code>[root@node1 calico]# kubectl get nodes --show-labels
+NAME         STATUS           ROLES            AGE          VERSION         LABELS
+node1   Ready    master,worker   31d   v1.17.9   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/arch=amd64,kubernetes.io/hostname=node1,kubernetes.io/os=linux,node-role.kubernetes.io/master=,node-role.kubernetes.io/worker=,rr-group=rr1,rr-id=rr1
+node2   Ready    master,worker   31d   v1.17.9   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/arch=amd64,kubernetes.io/hostname=node2,kubernetes.io/os=linux,node-role.kubernetes.io/master=,node-role.kubernetes.io/worker=,rr-group=rr1,rr-id=rr1
+node3   Ready    master,worker   31d   v1.17.9   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/arch=amd64,kubernetes.io/hostname=node3,kubernetes.io/os=linux,node-role.kubernetes.io/master=,node-role.kubernetes.io/worker=,rr-group=rr1
+node4   Ready    worker          16d   v1.17.9   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/arch=amd64,kubernetes.io/hostname=node4,kubernetes.io/os=linux,node-role.kubernetes.io/worker=,rr-group=rr2,rr-id=rr2
+node5   Ready    worker          16d   v1.17.9   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/arch=amd64,kubernetes.io/hostname=node5,kubernetes.io/os=linux,node-role.kubernetes.io/worker=,rr-group=rr2,rr-id=rr2
+node6   Ready    worker          16d   v1.17.9   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/arch=amd64,kubernetes.io/hostname=node5,kubernetes.io/os=linux,node-role.kubernetes.io/worker=,rr-group=rr2,rr-id=rr2
+</code></pre><h2 id=配置-bgppeer>配置 BGPPeer</h2><p>在配置 BGPPeer 之前，我们可以先查看一下各个 node BGP 的节点状态，因为已经禁用了 Full-mesh，并且现在还没有配置 BGPPeer，所以所有节点里的信息都是空的。</p><pre tabindex=0><code>[root@node3 ~]# calicoctl node status
+Calico process is running.
+
+IPv4 BGP status
+No IPv4 peers found.
+
+IPv6 BGP status
+No IPv6 peers found.
+</code></pre><p>根据环境拓扑，node1 和 node2 作为 Calico RR，需要和 leaf01 交换机建立 BGP 连接；node4 和 node5 作为 Calico RR 需要和 leaf02 交换机建立 BGP 连接；node1、node2 和 node3 需要和 RR1 建立 BGP 连接；node4、node5 和 node6 需要和 RR2 建立 BGP 连接。按照下面步骤依次配置：</p><ol><li>RR1 和 leaf01 建立 BGP 连接</li></ol><p>编写配置文件，取名为“rr1-to-leaf1-peer.yaml”，配置文件编辑如下：</p><pre tabindex=0><code>[root@node1 calico]# cat rr1-to-leaf1-peer.yaml
+apiVersion: projectcalico.org/v3
+kind: BGPPeer
+metadata:
+  name: rr1-to-leaf1-peer        ## 给BGPPeer取一个名称，方便识别
+
+spec:
+  nodeSelector: rr-id == &#39;rr1&#39;   ## 通过节点选择器添加有rr-id == &#39;rr1&#39;标签的节点
+
+  peerIP: 172.20.0.254           ##  leaf01交换机的地址
+  asNumber: 65009                ##  leaf01交换机的AS号
+</code></pre><p>应用该配置：</p><pre tabindex=0><code>[root@node1 calico]# calicoctl apply -f rr1-to-leaf1-peer.yaml
+Successfully applied 1 &#39;BGPPeer&#39; resource(s)
+</code></pre><ol start=2><li>RR1 和自己所属的节点建立 BGP 连接</li></ol><p>RR1 所属的节点主要有 node1、node2 和 node3，也就是打了 rr-group=rr1 标签的节点，配置文件编写如下：</p><pre tabindex=0><code>[root@node1 calico]# cat rr1-to-node-peer.yaml
+apiVersion: projectcalico.org/v3
+kind: BGPPeer
+metadata:
+  name: rr1-to-node-peer              ## 给BGPPeer取一个名称，方便识别
+
+spec:
+  nodeSelector: rr-group == &#39;rr1&#39;     ## 通过节点选择器添加有rr-group == ‘rr1’标签的节点
+
+  peerSelector: rr-id  == &#39;rr1&#39;       ## 通过peer选择器添加有rr-id == ‘rr1’标签的路由反射器
+</code></pre><p>应用该配置：</p><pre tabindex=0><code>[root@node1 calico]# calicoctl apply -f rr1-to-node-peer.yaml
+Successfully applied 1 &#39;BGPPeer&#39; resource(s)
+</code></pre><ol start=3><li>在 leaf01 交换机上操作，建立 leaf01 交换机和 RR1 的 BGP 连接，交换机配置完成后，可以查看交换机 bgp peer 的连接状态</li></ol><pre tabindex=0><code>[leaf01]show bgp peer ipv4
+
+ BGP local router ID: 2.2.2.2
+ Local AS number: 65009
+ Total number of peers: 3		  Peers in established state: 3
+
+  * - Dynamically created peer
+  Peer                    AS  MsgRcvd  MsgSent OutQ PrefRcv Up/Down  State
+
+  100.0.0.1            65008     1696     1677    0       8 23:52:28 Established
+  172.20.0.11          64512     1648     1506    0       4 23:51:50 Established
+  172.20.0.12          64512     1647     1659    0       4 23:51:44 Established
+</code></pre><p>上面 172.20.0.11 和 172.20.0.12 是 node1 和 node2 节点，也就是 RR1。状态显示为“Established“说明 BGP 连结已建立。</p><ol start=4><li>RR2 和 leaf02 建立 BGP 连接</li></ol><p>编写配置文件，取名为“rr2-to-leaf2-peer.yaml”，配置文件编辑如下：</p><pre tabindex=0><code>[root@node1 calico]# cat rr2-to-leaf2-peer.yaml
+apiVersion: projectcalico.org/v3
+kind: BGPPeer
+metadata:
+  name: rr2-to-leaf2-peer        ## 给BGPPeer取一个名称，方便识别
+
+spec:
+  nodeSelector: rr-id == &#39;rr2&#39;   ## 通过节点选择器添加有rr-id == &#39;rr2&#39;标签的节点
+  peerIP: 173.20.0.254           ##  leaf02交换机的地址
+  asNumber: 65010                ##  leaf02交换机的AS号
+</code></pre><p>应用该配置：</p><pre tabindex=0><code>[root@node1 calico]# calicoctl apply -f rr2-to-leaf2-peer.yaml
+Successfully applied 1 &#39;BGPPeer&#39; resource(s)
+</code></pre><ol start=5><li>RR2 和自己所属的节点建立 BGP 连接</li></ol><p>RR2 所属的节点主要有 node4、node5 和 node6，也就是打了 rr-group=rr2 标签的节点，配置文件编写如下：</p><pre tabindex=0><code>[root@node1 calico]# cat rr2-to-node-peer.yaml
+apiVersion: projectcalico.org/v3
+kind: BGPPeer
+metadata:
+  name: rr2-to-node-peer              ## 给BGPPeer取一个名称，方便识别
+
+spec:
+  nodeSelector: rr-group == &#39;rr2&#39;     ## 通过节点选择器添加有rr-group == ‘rr2’标签的节点
+  peerSelector: rr-id  == &#39;rr2&#39;       ## 通过peer选择器添加有rr-id == ‘rr2’标签的路由反射器
+</code></pre><p>应用该配置：</p><pre tabindex=0><code>[root@node1 calico]# calicoctl apply -f rr2-to-node-peer.yaml
+Successfully applied 1 &#39;BGPPeer&#39; resource(s)
+</code></pre><ol start=6><li>在 leaf02 交换机上操作，建立 leaf02 交换机和 RR2 的 BGP 连接</li></ol><p>交换机配置完成后，可以查看交换机 bgp peer 的连接状态：</p><pre tabindex=0><code>&lt;leaf02&gt;sys
+System View: return to User View with Ctrl+Z.
+[leaf02]show bgp peer ipv4
+
+ BGP local router ID: 3.3.3.3
+ Local AS number: 65010
+ Total number of peers: 3		  Peers in established state: 3
+
+  * - Dynamically created peer
+  Peer                    AS  MsgRcvd  MsgSent OutQ PrefRcv Up/Down  State
+
+  100.0.0.5            65008     1561     1686    0      11 24:01:03 Established
+  173.20.0.11          64513     1655     1650    0       2 23:59:44 Established
+  173.20.0.12          64513     1661     1883    0       2 23:59:56 Established
+</code></pre><p>上面 173.20.0.11 和 173.20.0.12 是 node4 和 node5 节点，也就是 RR2。状态显示为“Established“说明 BGP 连结已建立。</p><p>最后，我们可以通过 calicoctl get bgppeer 命令来查看所有的 BGPPeer 配置条目：</p><pre tabindex=0><code>[root@node1 calico]# calicoctl get bgppeer
+NAME                PEERIP         NODE                ASN
+rr1-to-leaf1-peer   172.20.0.254   rr-id == &#39;rr1&#39;      65009
+rr1-to-node-peer                   rr-group == &#39;rr1&#39;   0
+rr2-to-leaf2-peer   173.20.0.254   rr-id == &#39;rr2&#39;      65010
+rr2-to-node-peer                   rr-group == &#39;rr2&#39;   0
+</code></pre><p>如果想删除某个 BGPPeer 条目，可以通过下面的命令：</p><pre tabindex=0><code>$ calicoctl delete bgppeer rr2-to-node-peer
+</code></pre><h2 id=工作节点配置验证>工作节点配置验证</h2><p>至此，BGPPeer 配置已完成，可以在各个节点里再次查看 BGPPeer 状态信息。</p><p>在 node1 节点操作：</p><pre tabindex=0><code>[root@node1 calico]# calicoctl node status
+Calico process is running.
+
+IPv4 BGP status
++--------------+---------------+-------+------------+-------------+
+| PEER ADDRESS |   PEER TYPE   | STATE |   SINCE    |    INFO     |
++--------------+---------------+-------+------------+-------------+
+| 172.20.0.12  | node specific | up    | 2021-02-16 | Established |
+| 172.20.0.13  | node specific | up    | 2021-02-16 | Established |
+| 172.20.0.254 | node specific | up    | 2021-02-16 | Established |
++--------------+---------------+-------+------------+-------------+
+
+IPv6 BGP status
+No IPv6 peers found.
+</code></pre><p>可以看到该节点已经和 leaf01 交换机、node2 和 node3 节点建立了 BGP 连接。</p><p>在 node2 节点操作：</p><pre tabindex=0><code>[root@node2 ~]# calicoctl node status
+Calico process is running.
+
+IPv4 BGP status
++--------------+---------------+-------+------------+-------------+
+| PEER ADDRESS |   PEER TYPE   | STATE |   SINCE    |    INFO     |
++--------------+---------------+-------+------------+-------------+
+| 172.20.0.11  | node specific | up    | 2021-02-16 | Established |
+| 172.20.0.13  | node specific | up    | 2021-02-16 | Established |
+| 172.20.0.254 | node specific | up    | 2021-02-16 | Established |
++--------------+---------------+-------+------------+-------------+
+
+IPv6 BGP status
+No IPv6 peers found.
+</code></pre><p>可以看到该节点已经和 leaf01 交换机、node1 和 node3 节点建立了 BGP 连接。</p><p>在 node3 节点操作：</p><pre tabindex=0><code>[root@node3 ~]# calicoctl node status
+Calico process is running.
+
+IPv4 BGP status
++--------------+---------------+-------+------------+-------------+
+| PEER ADDRESS |   PEER TYPE   | STATE |   SINCE    |    INFO     |
++--------------+---------------+-------+------------+-------------+
+| 172.20.0.11  | node specific | up    | 2021-02-16 | Established |
+| 172.20.0.12  | node specific | up    | 2021-02-16 | Established |
++--------------+---------------+-------+------------+-------------+
+
+IPv6 BGP status
+No IPv6 peers found.
+</code></pre><p>可以看到该节点已经和 node1 和 node2 节点建立了 BGP 连接，因为该节点不作为路由反射器节点，所以并为与 leaf01 交换机建立 BGP 连接。</p><p>在 node4 节点操作：</p><pre tabindex=0><code>[root@node4 ~]# calicoctl node status
+Calico process is running.
+
+IPv4 BGP status
++--------------+---------------+-------+------------+-------------+
+| PEER ADDRESS |   PEER TYPE   | STATE |   SINCE    |    INFO     |
++--------------+---------------+-------+------------+-------------+
+| 173.20.0.12  | node specific | up    | 2021-02-16 | Established |
+| 173.20.0.13  | node specific | up    | 2021-02-16 | Established |
+| 173.20.0.254 | node specific | up    | 2021-02-16 | Established |
++--------------+---------------+-------+------------+-------------+
+
+IPv6 BGP status
+No IPv6 peers found.
+</code></pre><p>可以看到该节点已经和 leaf02 交换机、node5 和 node6 节点建立了 BGP 连接。</p><p>在 node5 节点操作：</p><pre tabindex=0><code>[root@node5 ~]# calicoctl node status
+Calico process is running.
+
+IPv4 BGP status
++--------------+---------------+-------+------------+-------------+
+| PEER ADDRESS |   PEER TYPE   | STATE |   SINCE    |    INFO     |
++--------------+---------------+-------+------------+-------------+
+| 173.20.0.11  | node specific | up    | 2021-02-16 | Established |
+| 173.20.0.13  | node specific | up    | 2021-02-16 | Established |
+| 173.20.0.254 | node specific | up    | 2021-02-16 | Established |
++--------------+---------------+-------+------------+-------------+
+
+IPv6 BGP status
+No IPv6 peers found.
+</code></pre><p>可以看到该节点已经和 leaf02 交换机、node4 和 node6 节点建立了 BGP 连接。</p><p>在 node6 节点操作：</p><pre tabindex=0><code>[root@node6 ~]# calicoctl node status
+Calico process is running.
+
+IPv4 BGP status
++--------------+---------------+-------+------------+-------------+
+| PEER ADDRESS |   PEER TYPE   | STATE |   SINCE    |    INFO     |
++--------------+---------------+-------+------------+-------------+
+| 173.20.0.11  | node specific | up    | 2021-02-16 | Established |
+| 173.20.0.12  | node specific | up    | 2021-02-16 | Established |
++--------------+---------------+-------+------------+-------------+
+
+IPv6 BGP status
+No IPv6 peers found.
+</code></pre><p>可以看到该节点已经和 node4 和 node5 节点建立了 BGP 连接，因为该节点不作为路由反射器节点，所以并为与 leaf02 交换机建立 BGP 连接。</p><h2 id=交换机配置验证>交换机配置验证</h2><p>我们可以在所有交换机里去查看 BGP 同步的路由信息有没有署于 pod 的路由地址。</p><p>Spine 交换机操作：</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/20210602104537.png alt></p><p>Leaf01 交换机操作：</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/20210602104556.png alt></p><p>Leaf02 交换机操作：</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/20210602104612.png alt></p><p>在上面交换机操作截图中，10.233 开头的地址段都是 pod 地址段的路由信息。</p><h2 id=将-service-地址路由同步到物理网络>将 Service 地址路由同步到物理网络</h2><p>有些时候不光需要 Pod 地址可以在现网可被路由，Service 地址也会有这个需求，我们可以通过修改 bgpconfig 配置来实现 Service 地址的路由同步。</p><p>首先检查是否具有默认的 BGP 配置：</p><pre tabindex=0><code>[root@node1 ~]# calicoctl get bgpconfig default
+NAME      LOGSEVERITY   MESHENABLED   ASNUMBER
+default   Info          false         64512
+</code></pre><p>默认的 BGP 配置是存在的，更新 BGP 配置：</p><pre tabindex=0><code>[root@node1 ~]# calicoctl patch BGPConfig default --patch \
+&gt; &#39;{&#34;spec&#34;: {&#34;serviceClusterIPs&#34;: [{&#34;cidr&#34;: &#34;10.233.0.0/18&#34;}]}}&#39;
+Successfully patched 1 &#39;BGPConfiguration&#39; resource
+</code></pre><p>注意将上面 10.233.0.0./18 地址段修改为 Service 的地址段。</p><p>上述配置完成之后，便可以在交换机里看到已经同步过来的 Service 地址段的路由信息。</p><h2 id=文档参考链接>文档参考链接</h2><p>绝大多数配置都可以通过 Calico 官方文档获取，以下就是撰写本文参考的主要官方文档链接：</p><ul><li><a href=https://docs.projectcalico.org/networking/bgp title=https://docs.projectcalico.org/networking/bgp target=_blank rel="noopener noreferrer">https://docs.projectcalico.org/networking/bgp</a></li><li><a href=https://docs.projectcalico.org/getting-started/clis/calicoctl/install title=https://docs.projectcalico.org/getting-started/clis/calicoctl/install target=_blank rel="noopener noreferrer">https://docs.projectcalico.org/getting-started/clis/calicoctl/install</a></li><li><a href=https://docs.projectcalico.org/networking/advertise-service-ips#advertise-service-cluster-ip-addresses title=https://docs.projectcalico.org/networking/advertise-service-ips#advertise-service-cluster-ip-addresses target=_blank rel="noopener noreferrer">https://docs.projectcalico.org/networking/advertise-service-ips#advertise-service-cluster-ip-addresses</a></li></ul></div></div><div class=share-2><div class=share><a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fcalico-guide%2f&text=Calico%20%e8%b7%af%e7%94%b1%e5%8f%8d%e5%b0%84%e6%a8%a1%e5%bc%8f%e6%9d%83%e5%a8%81%e6%8c%87%e5%8d%97" target=_blank rel="noopener noreferrer"><img src=/images/share/Twitter.svg alt="twitter icon">
+</a><a href="https://reddit.com/submit?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fcalico-guide%2f&title=Calico%20%e8%b7%af%e7%94%b1%e5%8f%8d%e5%b0%84%e6%a8%a1%e5%bc%8f%e6%9d%83%e5%a8%81%e6%8c%87%e5%8d%97" target=_blank rel="noopener noreferrer"><img src=/images/share/Reddit.svg alt="reddit icon">
+</a><a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fcalico-guide%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Facebook.svg alt="facebook icon">
+</a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fcalico-guide%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Linkedin.svg alt="linkedin icon">
+</a><a href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fcalico-guide%2f&t=Calico%20%e8%b7%af%e7%94%b1%e5%8f%8d%e5%b0%84%e6%a8%a1%e5%bc%8f%e6%9d%83%e5%a8%81%e6%8c%87%e5%8d%97" target=_blank rel="noopener noreferrer"><img src=/images/share/HackerNews.svg alt="hackernews icon"></a></div></div></div><div class=aside><div class=inner-div><div class=title>目录</div><div class=tabs><nav id=TableOfContents><ul><li><a href=#概述>概述</a><ul><li><a href=#full-mesh>Full-mesh</a></li><li><a href=#route-reflectors>Route reflectors</a></li><li><a href=#top-of-racktor>Top of Rack（ToR）</a></li></ul></li><li><a href=#安装-calicoctl>安装 calicoctl</a></li><li><a href=#关闭-full-mesh-模式>关闭 Full-mesh 模式</a></li><li><a href=#修改工作节点的-calico-配置>修改工作节点的 Calico 配置</a></li><li><a href=#为-node-节点进行分组添加-label>为 node 节点进行分组（添加 label）</a></li><li><a href=#配置-bgppeer>配置 BGPPeer</a></li><li><a href=#工作节点配置验证>工作节点配置验证</a></li><li><a href=#交换机配置验证>交换机配置验证</a></li><li><a href=#将-service-地址路由同步到物理网络>将 Service 地址路由同步到物理网络</a></li><li><a href=#文档参考链接>文档参考链接</a></li></ul></nav></div></div></div></div></section><div class=SubscribeForm><div class=innerBox><img class=close src=/images/home/close.svg alt=close><p class=description>通过邮件接收 KubeSphere 最新的技术博客与产品更新的通知</p><div id=blog_formAddress data-actionaddress="https://www.sendcloud.net/v3/api/subInvite/subscription?invitecode=1dc5a4fb-894c-4470-b01d-ca7fa9d47a46" data-usesendcloud=true data-lang=zh><input name=EMAIL id=email-input-blog type=text placeholder>
+<button id=email-submit-blog>订阅</button>
+<span id=message_blog data-message1=请提供您的邮箱 data-message2=请输入有效的邮箱地址! data-message3=邮箱地址已经存在 style=color:red></span><span id=message1_blog style=color:#00a971 data-success=订阅成功啦，我们保证不会给你发垃圾邮件的啦></span></div></div></div><footer><div class=footer><div class="footer-main common-layout"><div class=up-main><div class=left-div><img src=/images/logo.svg alt class=foot-logo><p>通过邮件接收 KubeSphere 最新的技术博客与产品更新的通知</p><div id=formAddress data-actionaddress="https://www.sendcloud.net/v3/api/subInvite/subscription?invitecode=1dc5a4fb-894c-4470-b01d-ca7fa9d47a46" data-usesendcloud=true data-lang=zh><input name=EMAIL id=email-input type=text placeholder=请输入您的邮箱地址>
+<button id=email-submit>订阅</button></div><span id=message data-message1=请提供您的邮箱 data-message2=请输入有效的邮箱地址! data-message3=邮箱地址已经存在></span><span id=message1 style=color:#00a971 data-success=订阅成功啦，我们保证不会给你发垃圾邮件的啦></span><script>var bindSubmit=function(){var e=$("#email-input");$("#email-submit").click(function(t){t.stopPropagation();var s,o,n=e.val(),i=$("#message").data("message1"),a=$("#message").data("message2"),r=$("#message").data("message3"),c=$("#message1").data("success");if(n)if(validateEmail(n)){if(s=$("#formAddress").data("usesendcloud"),!s)return;o=$("#formAddress").data("actionaddress"),$.post({type:"post",url:o,data:{email:$("#email-input").val().toString()},success:function(){showSuccessMessage(c),setTimeout(function(){$("#email-input").val("")},1e3)},error:function(){showMessage(r)}})}else t.preventDefault(),showMessage(a);else t.preventDefault(),showMessage(i)})},validateEmail=function(e){var t=/^[A-Za-z0-9]+([_.][A-Za-z0-9]+)*@([A-Za-z0-9-]+\.)+[A-Za-z]{2,6}$/;return t.test(e)},showMessage=function(e){$("#message").html(e).show()},showSuccessMessage=function(e){$("#message1").html(e).show()},bindHideMessage=function(){$(window).click(function(){$("#message").hide(),$("#message1").hide()})},bindClose=function(){$(".formBox .close").click(function(e){e.stopPropagation(),$(".formBox").fadeOut()})};bindSubmit(),bindClose(),bindHideMessage()</script><span id=message data-message1=请提供您的邮箱 data-message2=请输入有效的邮箱地址!></span></div><div class=right-div><ul class=common-flex-layout><li class=nowrap-li><div class=h3>应用场景</div><a href=/zh/devops/>拥抱一站式 DevOps</a>
+<a href=/zh/service-mesh/>在 K8s 运行微服务</a>
+<a href=/zh/observability/>构建云原生可观测性</a>
+<a href=https://github.com/kubesphere/kubekey target=_blank rel="noopener noreferrer">K8s 一键部署与运维</a>
+<a href=https://github.com/OpenFunction/OpenFunction target=_blank rel="noopener noreferrer">构建 FaaS 平台与 Serverless 架构</a>
+<a href=https://github.com/openpitrix/openpitrix target=_blank rel="noopener noreferrer">多云应用管理平台</a></li><li class=nowrap-li><div class=h3>资源</div><a href=/zh/projects/>开源项目</a>
+<a href=/zh/blogs/>技术博客</a>
+<a href=/zh/conferences/>开源峰会</a>
+<a href=/zh/videos/>视频资源</a>
+<a href=/zh/learn/>云原生实战</a></li><li class=nowrap-li><div class=h3>文档中心</div><a href=/zh/docs/v4.1/01-intro/01-introduction/>产品介绍</a>
+<a href=/zh/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere/>如何安装</a>
+<a href=/zh/docs/v4.1/02-quickstart/>快速入门</a>
+<a href=/zh/docs/v3.4/reference/api-docs/>API 文档</a></li><li class=nowrap-li><div class=h3>开源社区</div><a href=/zh/contribution/>参与贡献</a>
+<a href=/zh/live/>社区活动</a>
+<a href=/zh/case/>案例学习</a>
+<a href=/zh/partner/>合作伙伴</a>
+<a href=/zh/user-group/>用户委员会</a>
+<a href=https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md target=_blank rel="noopener noreferrer">版本计划</a>
+<a href=https://kubesphere.com.cn/ target=_blank rel="noopener noreferrer">中国站</a>
+<a href=https://ask.kubesphere.io/forum target=_blank rel="noopener noreferrer">中文论坛</a>
+<a href=https://kubesphere.io target=_blank rel="noopener noreferrer">全球站</a></li><li class=nowrap-li><div class=h3>产品与服务</div><a href=https://aws.amazon.com/cn/quickstart/architecture/qingcloud-kubesphere/ target=_blank rel="noopener noreferrer">KubeSphere on AWS</a>
+<a href=https://market.azure.cn/marketplace/apps/qingcloud.kubesphere target=_blank rel="noopener noreferrer">KubeSphere on Azure</a>
+<a href=https://marketplace.digitalocean.com/apps/kubesphere target=_blank rel="noopener noreferrer">KubeSphere on DigitalOcean</a>
+<a href=https://www.qingcloud.com/products/kubesphereqke target=_blank rel="noopener noreferrer">KubeSphere on QingCloud(QKE)</a>
+<a href=https://kubesphere.com.cn/kse/ target=_blank rel="noopener noreferrer">KubeSphere 企业版</a>
+<a href=https://kubesphere.cloud/ksv/ target=_blank rel="noopener noreferrer">KubeSphere 虚拟化平台</a>
+<a href=https://kubesphere.com.cn/marketplace/ target=_blank rel="noopener noreferrer">云原生扩展组件市场</a>
+<a href=https://kubesphere.cloud target=_blank rel="noopener noreferrer">云原生应用服务平台</a>
+<a href=https://m.qingcloud.com/p/aec50 target=_blank rel="noopener noreferrer">了解商业产品与咨询合作</a></li></ul></div></div><div class=down-main><div class=img-div><a class=wechat href=javascript:void(0); aria-label=wechat><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28"><defs><path id="a" d="M0 0h15.673v12.156H0z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="13" cy="13" r="13" stroke="#B6C2CD"/><g transform="translate(5 7)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="currentColor" d="M15.673 7.898c0-2.061-2.173-3.74-4.619-3.74-2.59.0-4.625 1.679-4.625 3.74.0 2.066 2.035 3.738 4.625 3.738.542.0 1.09-.13 1.632-.256l1.493.776-.408-1.29c1.09-.776 1.902-1.81 1.902-2.968zm-6.119-.645c-.27.0-.541-.257-.541-.514.0-.256.27-.514.541-.514.41.0.681.258.681.514.0.257-.271.514-.681.514zm2.994.0c-.27.0-.541-.257-.541-.514.0-.256.27-.514.54-.514.41.0.681.258.681.514.0.257-.277.514-.68.514z" mask="url(#b)"/><path fill="currentColor" d="M10.602 3.674c.177.0.356.011.533.029C10.657 1.576 8.27.0 5.543.0 2.498.0.0 1.974.0 4.485c0 1.45.829 2.64 2.216 3.564l-.552 1.588 1.94-.929c.693.129 1.251.263 1.94.263.17.0.343-.005.515-.022a3.68 3.68.0 01-.172-1.104c0-2.302 2.081-4.171 4.715-4.171zM7.618 2.243c.417.0.693.263.693.66s-.276.66-.693.66c-.418.0-.835-.263-.835-.66.006-.398.423-.66.835-.66zm-3.88 1.319c-.417.0-.834-.263-.834-.66s.417-.66.834-.66c.418.0.695.263.695.66.0.392-.277.66-.695.66z" mask="url(#b)"/></g></g></svg><div class=hide-div><img src=/images/home/wechat.svg alt></div></a><a class=facebook-a href=https://www.facebook.com/kubesphere target=_blank aria-label=facebook></a><a class=twitter-a href=https://x.com/KubeSphere target=_blank aria-label=twitter rel="noopener noreferrer"></a><a class=linkedin-a href=https://www.linkedin.com/company/kubesphere/ target=_blank aria-label=linkedin rel="noopener noreferrer"></a><a class=bilibili-a href=https://space.bilibili.com/438908638 target=_blank aria-label=bilibili rel="noopener noreferrer"></a><a class=slack-a href=https://join.slack.com/t/kubesphere/shared_invite/zt-2b4t6rdb4-ico_4UJzCln_S2c1pcrIpQ target=_blank aria-label=slack rel="noopener noreferrer"></a><a class=github-a href=https://github.com/kubesphere/kubesphere target=_blank aria-label=github rel="noopener noreferrer"></a><a class=medium-a href=https://itnext.io/@kubesphere target=_blank aria-label=medium rel="noopener noreferrer"></a></div><p class=p1></p><p class=case><a href=http://www.beian.miit.gov.cn/ target=_blank rel="noopener noreferrer"><span>京ICP备13019086号</span>
+</a><a target=_blank rel="noopener noreferrer" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502041003"><img src=/images/footer/case-icon.png alt=备案图标>
+<span>京公网安备 11010502041003号</span></a></p></div></div></div><div class=cookie><div class=common-layout><p>您的隐私对我们很重要。我们使用Cookie来记住订阅详细信息，优化网站功能并交付根据您的兴趣量身定制的内容。要了解更多信息，请参阅我们的<a href=/zh/privacy>隐私政策</a>.</p><button>
+接受并继续</button></div></div></footer><script>var lazyLoad=function(e,t){for(var n,o,i,s=0;s<t;s++){if(n=e.eq(s),o=n.attr("data-loaded"),o)continue;n.offset().top<parseInt($(window).height())+parseInt($(window).scrollTop())&&(i=n.attr("src"),n.attr("src",i),n.attr("data-loaded",!0))}},bindLayLoad=function(){var e=$("img"),t=e.length;lazyLoad(e,t),$(window).scroll(function(){lazyLoad(e,t)})},bindAddPadding=function(){var e=$("#close-join");e.length>0&&$(".main-section").addClass("padding")},docCookies={getItem:function(e){return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*"+encodeURIComponent(e).replace(/[-.+*]/g,"\\$&")+"\\s*\\=\\s*([^;]*).*$)|^.*$"),"$1"))||null},setItem:function(e,t){return!!e&&!/^(?:expires|max-age|path|domain|secure)$/i.test(e)&&(document.cookie=encodeURIComponent(e)+"="+encodeURIComponent(t),!0)}},bindHideCookie=function(){var t=docCookies.getItem("hasAuth"),e=$(".cookie");t?e.hide():e.show(),e.find("button").on("click",function(){docCookies.setItem("hasAuth","1"),e.hide()})};bindAddPadding(),bindHideCookie()</script><script type=text/javascript src=/js/aside.2d6977c0f16aef4ed3e886dd66675ce74bd0efcd467c2b2bcdb30b92d5e7c7c0e5c6e0c9d8f09a883c22f58df9e6b0b6347fcdd3c9a920b7faba6d7f91a201c3.js integrity="sha512-LWl3wPFq707T6IbdZmdc50vQ781GfCsrzbMLktXnx8DlxuDJ2PCaiDwi9Y355rC2NH/N08mpILf6um1/kaIBww=="></script><script type=text/javascript src=/js/markdown-tab.17f9f46b021adebc7250ce1b07134a577b307e7a436daa4aaf388f218e8463966f53770b26a64817c06c168738a887672d47fb4c29615adfc446e11d09a344cf.js integrity="sha512-F/n0awIa3rxyUM4bBxNKV3swfnpDbapKrziPIY6EY5ZvU3cLJqZIF8BsFoc4qIdnLUf7TClhWt/ERuEdCaNEzw=="></script><script>let forbidForm=!1;var viewer=new Viewer(document.querySelector(".md-body"),{url:"src"}),blogBindSubmit=function(){var e=$("#email-input-blog");$("#email-submit-blog").click(function(t){t.stopPropagation();var s,o,n=e.val(),i=$("#message_blog").data("message1"),a=$("#message_blog").data("message2"),r=$("#message_blog").data("message3"),c=$("#message1_blog").data("success");if(n)if(validateEmail(n)){if(s=$("#blog_formAddress").data("usesendcloud"),!s)return;o=$("#blog_formAddress").data("actionaddress"),$.post({type:"post",url:o,data:{email:n.toString()},success:function(){showSuccessMessage_blog(c),setTimeout(function(){window.onscroll="",$(".SubscribeForm").hide(),$("#email-input-blog").val("")},5e3)},error:function(){showMessage_blog(r)}})}else t.preventDefault(),$("#message_blog").html(a).show();else t.preventDefault(),$("#message_blog").html(i).show()})},validateEmail=function(e){var t=/^[A-Za-z0-9]+([_.][A-Za-z0-9]+)*@([A-Za-z0-9-]+\.)+[A-Za-z]{2,6}$/;return t.test(e)},bindHideMessageBlog=function(){$(window).click(function(){$("#message_blog").hide()})},bindCloseBlog=function(){$(".SubscribeForm .close").click(function(e){e.stopPropagation(),$(".SubscribeForm").fadeOut(),window.onscroll=""})},showMessage_blog=function(e){$("#message_blog").html(e).show()},showSuccessMessage_blog=function(e){$("#message1_blog").html(e).show()};window.onscroll=()=>{var e=document.documentElement.scrollTop||document.body.scrollTop,t=document.documentElement.clientHeight||document.body.clientHeight,n=document.documentElement.scrollHeight||document.body.scrollHeight;forbidForm&&(window.onscroll=""),e+t>n-710?$(".SubscribeForm").hide():$(".SubscribeForm").show()},blogBindSubmit(),bindCloseBlog(),bindHideMessageBlog()</script><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script></body></html>

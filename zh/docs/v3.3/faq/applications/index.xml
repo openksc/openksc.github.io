@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>应用程序 on</title><link>https://openksc.github.io/zh/docs/v3.3/faq/applications/</link><description>Recent content in 应用程序 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v3.3/faq/applications/index.xml" rel="self" type="application/rss+xml"/><item><title>移除 KubeSphere 中的内置应用</title><link>https://openksc.github.io/zh/docs/v3.3/faq/applications/remove-built-in-apps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/faq/applications/remove-built-in-apps/</guid><description>&lt;p>作为一个以应用为中心的开源容器平台，KubeSphere 在基于 &lt;a href="https://github.com/openpitrix/openpitrix" target="_blank" rel="noopener noreferrer">OpenPitrix&lt;/a> 的应用商店中集成了应用。这些应用可供企业空间内的所有租户使用，但您也可以将这些应用从应用商店中移除。本教程为您演示怎样从应用商店中移除内置应用。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;ul>
+&lt;li>您需要在本教程中使用具有 &lt;code>platform-admin&lt;/code> 角色的用户（例如：&lt;code>admin&lt;/code>）。&lt;/li>
+&lt;li>您需要&lt;a href="../../../pluggable-components/app-store/">启用应用商店&lt;/a>。&lt;/li>
+&lt;/ul>
+&lt;h2 id="移除内置应用">移除内置应用&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>以 &lt;code>admin&lt;/code> 身份登录 Web 控制台，点击左上角&lt;strong>平台管理&lt;/strong>，然后选择&lt;strong>应用商店管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>应用&lt;/strong>页面，您可以看到列表中展示的应用。选择您想要从应用商店中移除的应用，例如，点击 &lt;strong>Tomcat&lt;/strong> 跳转到其详情页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在 Tomcat 的详情页面，点击&lt;strong>下架应用&lt;/strong>以移除应用。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在出现的对话框中，点击&lt;strong>确定&lt;/strong>以确认您的操作。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>若要让该应用在应用商店中再次可用，请点击&lt;strong>上架应用&lt;/strong>，然后点击&lt;strong>确定&lt;/strong>以确认您的操作。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>您也可以根据自己的需要，来创建包含必须角色的新用户。有关更多在 KubeSphere 中管理应用的信息，请参考&lt;a href="../../../application-store/app-lifecycle-management/">应用程序生命周期管理&lt;/a>。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol></description></item></channel></rss>

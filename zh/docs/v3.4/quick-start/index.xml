@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>快速入门 on</title><link>https://openksc.github.io/zh/docs/v3.4/quick-start/</link><description>Recent content in 快速入门 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v3.4/quick-start/index.xml" rel="self" type="application/rss+xml"/><item><title>在 Linux 上以 All-in-One 模式安装 KubeSphere</title><link>https://openksc.github.io/zh/docs/v3.4/quick-start/all-in-one-on-linux/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/quick-start/all-in-one-on-linux/</guid><description>&lt;p>对于刚接触 KubeSphere 并想快速上手该&lt;a href="https://kubesphere.io/" target="_blank" rel="noopener noreferrer">容器平台&lt;/a>的用户，All-in-One 安装模式是最佳的选择，它能够帮助您零配置快速部署 KubeSphere 和 Kubernetes。&lt;/p>
+&lt;h2 id="视频演示">视频演示&lt;/h2>
+&lt;video controls="controls" style="width: 100% !important; height: auto !important;">
+ &lt;source type="video/mp4" src="https://kubesphere-docs.pek3b.qingstor.com/website/docs-v3.0/KS3.0%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2_1_All-in-one%20Installation%20on%20Linux.mp4">
+&lt;/video>
+&lt;h2 id="步骤-1准备-linux-机器">步骤 1：准备 Linux 机器&lt;/h2>
+&lt;p>若要以 All-in-One 模式进行安装，您仅需参考以下对机器硬件和操作系统的要求准备一台主机。&lt;/p>
+&lt;h3 id="硬件推荐配置">硬件推荐配置&lt;/h3>
+&lt;table>
+ &lt;tbody>
+ &lt;tr>
+ &lt;th width='320'>操作系统&lt;/th>
+ &lt;th>最低配置&lt;/th>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;b>Ubuntu&lt;/b> &lt;i>16.04&lt;/i>, &lt;i>18.04&lt;/i>, &lt;i>20.04&lt;/i>, &lt;i>22.04&lt;/i>&lt;/td>
+ &lt;td>2 核 CPU，4 GB 内存，40 GB 磁盘空间&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;b>Debian&lt;/b> &lt;i>Buster&lt;/i>, &lt;i>Stretch&lt;/i>&lt;/td>
+ &lt;td>2 核 CPU，4 GB 内存，40 GB 磁盘空间&lt;/td>
+ &lt;/tr>&lt;tr>
+ &lt;td>&lt;b>CentOS&lt;/b> &lt;i>7.x&lt;/i>&lt;/td>
+ &lt;td>2 核 CPU，4 GB 内存，40 GB 磁盘空间&lt;/td>
+ &lt;/tr>&lt;tr>
+ &lt;td>&lt;b>Red Hat Enterprise Linux 7&lt;/b>&lt;/td>
+ &lt;td>2 核 CPU，4 GB 内存，40 GB 磁盘空间&lt;/td>
+ &lt;/tr>&lt;tr>
+ &lt;td>&lt;b>SUSE Linux Enterprise Server 15/openSUSE Leap 15.2&lt;/b>&lt;/td>
+ &lt;td>2 核 CPU，4 GB 内存，40 GB 磁盘空间&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p></description></item><item><title>在 Kubernetes 上最小化安装 KubeSphere</title><link>https://openksc.github.io/zh/docs/v3.4/quick-start/minimal-kubesphere-on-k8s/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/quick-start/minimal-kubesphere-on-k8s/</guid><description>&lt;p>除了在 Linux 机器上安装 KubeSphere 之外，您还可以将其直接部署在现有的 Kubernetes 集群上。本快速入门指南将引导您完成在 Kubernetes 上最小化安装 KubeSphere 的一般性步骤。有关更多信息，请参见&lt;a href="../../installing-on-kubernetes/">在 Kubernetes 上安装 KubeSphere&lt;/a>。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;ul>
+&lt;li>您的 Kubernetes 版本必须为：v1.20.x、v1.21.x、v1.22.x、v1.23.x、* v1.24.x、* v1.25.x 和 * v1.26.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.23.x。&lt;/li>
+&lt;li>确保您的机器满足最低硬件要求：CPU &amp;gt; 1 核，内存 &amp;gt; 2 GB。&lt;/li>
+&lt;li>在安装之前，需要配置 Kubernetes 集群中的&lt;strong>默认&lt;/strong>存储类型。&lt;/li>
+&lt;/ul>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>&lt;ul>
+&lt;li>当使用 &lt;code>--cluster-signing-cert-file&lt;/code> 和 &lt;code>--cluster-signing-key-file&lt;/code> 参数启动时，在 &lt;code>kube-apiserver&lt;/code> 中会激活 CSR 签名功能。请参见 &lt;a href="https://github.com/kubesphere/kubesphere/issues/1925#issuecomment-591698309" target="_blank" rel="noopener noreferrer">RKE 安装问题&lt;/a>。&lt;/li>
+&lt;li>有关在 Kubernetes 上安装 KubeSphere 的准备工作，请参见&lt;a href="../../installing-on-kubernetes/introduction/prerequisites/">准备工作&lt;/a>。&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="部署-kubesphere">部署 KubeSphere&lt;/h2>
+&lt;p>确保您的机器满足安装的前提条件之后，可以按照以下步骤安装 KubeSphere。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>执行以下命令开始安装：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.4.1/kubesphere-installer.yaml
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.4.1/cluster-configuration.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>检查安装日志：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl logs -n kubesphere-system &lt;span style="color:#66d9ef">$(&lt;/span>kubectl get pod -n kubesphere-system -l &lt;span style="color:#e6db74">&amp;#39;app in (ks-install, ks-installer)&amp;#39;&lt;/span> -o jsonpath&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;{.items[0].metadata.name}&amp;#39;&lt;/span>&lt;span style="color:#66d9ef">)&lt;/span> -f
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>使用 &lt;code>kubectl get pod --all-namespaces&lt;/code> 查看所有 Pod 是否在 KubeSphere 的相关命名空间中正常运行。如果是，请通过以下命令检查控制台的端口（默认为 &lt;code>30880&lt;/code>）：&lt;/p></description></item><item><title>创建企业空间、项目、用户和平台角色</title><link>https://openksc.github.io/zh/docs/v3.4/quick-start/create-workspace-and-project/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/quick-start/create-workspace-and-project/</guid><description>&lt;p>本快速入门演示如何创建企业空间、用户和平台角色。同时，您将学习如何在企业空间中创建项目和 DevOps 项目，用于运行工作负载。完成本教程后，您将熟悉 KubeSphere 的多租户管理系统，并使用本教程中创建的资源（例如企业空间和帐户等）完成其他教程中的操作。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;p>KubeSphere 需要安装在您的机器中。&lt;/p>
+&lt;h2 id="架构">架构&lt;/h2>
+&lt;p>KubeSphere 的多租户系统分&lt;strong>三个&lt;/strong>层级，即集群、企业空间和项目。KubeSphere 中的项目等同于 Kubernetes 的&lt;a href="https://kubernetes.io/zh/docs/concepts/overview/working-with-objects/namespaces/" target="_blank" rel="noopener noreferrer">命名空间&lt;/a>。&lt;/p>
+&lt;p>您需要创建一个新的&lt;a href="../../workspace-administration/what-is-workspace/">企业空间&lt;/a>进行操作，而不是使用系统企业空间，系统企业空间中运行着系统资源，绝大部分仅供查看。出于安全考虑，强烈建议给不同的租户授予不同的权限在企业空间中进行协作。&lt;/p>
+&lt;p>您可以在一个 KubeSphere 集群中创建多个企业空间，每个企业空间下可以创建多个项目。KubeSphere 为每个级别默认设有多个内置角色。此外，您还可以创建拥有自定义权限的角色。KubeSphere 多层次结构适用于具有不同团队或组织以及每个团队中需要不同角色的企业用户。&lt;/p>
+&lt;h2 id="动手实验">动手实验&lt;/h2>
+&lt;h3 id="步骤-1创建用户">步骤 1：创建用户&lt;/h3>
+&lt;p>安装 KubeSphere 之后，您需要向平台添加具有不同角色的用户，以便他们可以针对自己授权的资源在不同的层级进行工作。一开始，系统默认只有一个用户 &lt;code>admin&lt;/code>，具有 &lt;code>platform-admin&lt;/code> 角色。在本步骤中，您将创建一个示例用户 &lt;code>ws-manager&lt;/code>。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>以 &lt;code>admin&lt;/code> 身份使用默认帐户和密码 (&lt;code>admin/P@88w0rd&lt;/code>) 登录 Web 控制台。&lt;/p>
+&lt;div class="notices tip">
+ 
+ &lt;p>提示&lt;/p>
+ &lt;div>出于安全考虑，强烈建议您在首次登录控制台时更改密码。若要更改密码，在右上角的下拉列表中选择&lt;strong>用户设置&lt;/strong>，在&lt;strong>密码设置&lt;/strong>中设置新密码，您也可以在&lt;strong>用户设置&lt;/strong> &amp;gt; &lt;strong>基本信息&lt;/strong>中修改控制台语言。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>点击左上角的&lt;strong>平台管理&lt;/strong>，然后选择&lt;strong>访问控制&lt;/strong>。在左侧导航栏中，选择&lt;strong>平台角色&lt;/strong>。内置角色的描述信息如下表所示。&lt;/p>
+&lt;table>
+ &lt;tbody>
+ &lt;tr>
+ &lt;th width='160'>内置角色&lt;/th>
+ &lt;th>描述&lt;/th>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>platform-self-provisioner&lt;/code>&lt;/td>
+ &lt;td>创建企业空间并成为所创建企业空间的管理员。&lt;/td>
+ &lt;/tr>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>platform-regular&lt;/code>&lt;/td>
+ &lt;td>平台普通用户，在被邀请加入企业空间或集群之前没有任何资源操作权限。&lt;/td>
+ &lt;/tr>
+&lt;tr>
+ &lt;td>&lt;code>platform-admin&lt;/code>&lt;/td>
+ &lt;td>平台管理员，可以管理平台内的所有资源。&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>内置角色由 KubeSphere 自动创建，无法编辑或删除。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>用户&lt;/strong>中，点击&lt;strong>创建&lt;/strong>。在弹出的对话框中，提供所有必要信息（带有*标记）。在&lt;strong>平台角色&lt;/strong>下拉列表，选择&lt;strong>platform-self-provisioner&lt;/strong>。&lt;/p>
+&lt;p>完成后，点击&lt;strong>确定&lt;/strong>。新创建的用户将显示在&lt;strong>用户&lt;/strong>页面。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>如果您在此处未指定&lt;strong>平台角色&lt;/strong>，该用户将无法执行任何操作。您需要在创建企业空间后，将该用户邀请至企业空间。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>重复以上的步骤创建新用户，这些用户将在其他的教程中使用。&lt;/p>
+&lt;div class="notices tip">
+ 
+ &lt;p>提示&lt;/p>
+ &lt;div>&lt;ul>
+&lt;li>帐户登出请点击右上角的用户名，然后选择&lt;strong>登出&lt;/strong>。&lt;/li>
+&lt;li>下面仅为示例用户名，请根据实际情况修改。&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;table>
+ &lt;tbody>
+ &lt;tr>
+ &lt;th width='140'>用户&lt;/th>
+ &lt;th> 指定的平台角色&lt;/th>
+ &lt;th width='300'>用户权限&lt;/th>
+ &lt;/tr>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>ws-admin&lt;/code>&lt;/td>
+ &lt;td>&lt;code>platform-regular&lt;/code>&lt;/td>
+ &lt;td>被邀请到企业空间后，管理该企业空间中的所有资源（在此示例中，此用户用于邀请新成员加入该企业空间）。&lt;/td>
+ &lt;/tr>&lt;tr>
+ &lt;td>&lt;code>project-admin&lt;/code>&lt;/td>
+ &lt;td>&lt;code>platform-regular&lt;/code>&lt;/td>
+ &lt;td>创建和管理项目以及 DevOps 项目，并邀请新成员加入项目。&lt;/td>
+ &lt;/tr>&lt;tr>
+ &lt;td>&lt;code>project-regular&lt;/code>&lt;/td>
+ &lt;td>&lt;code>platform-regular&lt;/code>&lt;/td>
+ &lt;td>&lt;code>project-regular&lt;/code> 将由 &lt;code>project-admin&lt;/code> 邀请至项目或 DevOps 项目。该用户将用于在指定项目中创建工作负载、流水线和其他资源。&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>用户&lt;/strong>页面，查看创建的用户。&lt;/p></description></item><item><title>部署并访问 Bookinfo</title><link>https://openksc.github.io/zh/docs/v3.4/quick-start/deploy-bookinfo-to-k8s/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/quick-start/deploy-bookinfo-to-k8s/</guid><description>&lt;p>作为开源的服务网格解决方案，&lt;a href="https://istio.io/" target="_blank" rel="noopener noreferrer">Istio&lt;/a> 为微服务提供了强大的流量管理功能。以下是 &lt;a href="https://istio.io/latest/zh/docs/concepts/traffic-management/" target="_blank" rel="noopener noreferrer">Istio&lt;/a> 官方网站上关于流量管理的简介：&lt;/p>
+&lt;p>&lt;em>Istio 的流量路由规则可以让您很容易地控制服务之间的流量和 API 调用。Istio 简化了服务级别属性的配置，比如熔断器、超时、重试等，并且能轻松地设置重要的任务，如 A/B 测试、金丝雀发布、基于流量百分比切分的概率发布等。它还提供了开箱即用的故障恢复特性，有助于增强应用的健壮性，从而更好地应对被依赖的服务或网络发生故障的情况。&lt;/em>&lt;/p>
+&lt;p>为了给用户提供管理微服务的一致体验，KubeSphere 在容器平台上集成了 Istio。本教程演示了如何部署由四个独立的微服务组成的示例应用程序 Bookinfo，以及如何通过 NodePort 访问该应用。&lt;/p>
+&lt;h2 id="视频演示">视频演示&lt;/h2>
+&lt;video controls="controls" style="width: 100% !important; height: auto !important;">
+ &lt;source type="video/mp4" src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeSphere-v3.1.x-tutorial-videos/zh/KS311_200P004C202109_%E9%83%A8%E7%BD%B2%E5%B9%B6%E8%AE%BF%E9%97%AE%20Bookinfo.mp4">
+&lt;/video>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>您需要启用 &lt;a href="../../pluggable-components/service-mesh/">KubeSphere 服务网格&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您需要完成&lt;a href="../create-workspace-and-project/">创建企业空间、项目、用户和角色&lt;/a>中的所有任务。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您需要启用&lt;strong>链路追踪&lt;/strong>。有关更多信息，请参见&lt;a href="../../project-administration/project-gateway/#%e8%ae%be%e7%bd%ae%e7%bd%91%e5%85%b3">设置网关&lt;/a>。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>您需要启用&lt;strong>链路追踪&lt;/strong>以使用追踪功能。启用后若无法访问路由 (Ingress)，请检查您的路由是否已经添加注释（例如：&lt;code>nginx.ingress.kubernetes.io/service-upstream: true&lt;/code>）。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="什么是-bookinfo-应用">什么是 Bookinfo 应用&lt;/h2>
+&lt;p>Bookinfo 应用由以下四个独立的微服务组成，其中 &lt;strong>reviews&lt;/strong> 微服务有三个版本。&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>productpage&lt;/strong> 微服务会调用 &lt;strong>details&lt;/strong> 和 &lt;strong>reviews&lt;/strong> 用来生成页面。&lt;/li>
+&lt;li>&lt;strong>details&lt;/strong> 微服务中包含了书籍的信息。&lt;/li>
+&lt;li>&lt;strong>reviews&lt;/strong> 微服务中包含了书籍相关的评论，它还会调用 &lt;strong>ratings&lt;/strong> 微服务。&lt;/li>
+&lt;li>&lt;strong>ratings&lt;/strong> 微服务中包含了由书籍评价组成的评级信息。&lt;/li>
+&lt;/ul>
+&lt;p>这个应用的端到端架构如下所示。有关更多详细信息，请参见 &lt;a href="https://istio.io/latest/zh/docs/examples/bookinfo/" target="_blank" rel="noopener noreferrer">Bookinfo 应用&lt;/a>。&lt;/p>
+&lt;p>&lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/quickstart/deploy-bookinfo-to-k8s/bookinfo.png" alt="bookinfo">&lt;/p>
+&lt;h2 id="动手实验">动手实验&lt;/h2>
+&lt;h3 id="步骤-1部署-bookinfo">步骤 1：部署 Bookinfo&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>使用帐户 &lt;code>project-regular&lt;/code> 登录控制台并访问项目 (&lt;code>demo-project&lt;/code>)。前往&lt;strong>应用负载&lt;/strong>下的&lt;strong>应用&lt;/strong>，点击右侧的&lt;strong>部署示例应用&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在出现的对话框中点击&lt;strong>下一步&lt;/strong>，其中必填字段已经预先填好，相关组件也已经设置完成。您无需修改设置，只需在最后一页（&lt;strong>路由设置&lt;/strong>）点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p></description></item><item><title>创建并部署 WordPress</title><link>https://openksc.github.io/zh/docs/v3.4/quick-start/wordpress-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/quick-start/wordpress-deployment/</guid><description>&lt;h2 id="wordpress-简介">WordPress 简介&lt;/h2>
+&lt;p>WordPress（使用 PHP 语言编写）是免费、开源的内容管理系统，用户可以使用 WordPress 搭建自己的网站。完整的 WordPress 应用程序包括以下 Kubernetes 对象，由 MySQL 作为后端数据库。&lt;/p>
+&lt;p>&lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/quickstart/wordpress-deployment/WordPress.png" alt="WordPress">&lt;/p>
+&lt;h2 id="目的">目的&lt;/h2>
+&lt;p>本教程演示了如何在 KubeSphere 中创建应用程序（以 WordPress 为例）并在集群外进行访问。&lt;/p>
+&lt;h2 id="视频演示">视频演示&lt;/h2>
+&lt;video controls="controls" style="width: 100% !important; height: auto !important;">
+ &lt;source type="video/mp4" src="https://kubesphere-community.pek3b.qingstor.com/videos/KubeSphere-v3.1.x-tutorial-videos/zh/KS311_200P006C202109_%E5%88%9B%E5%BB%BA%E5%B9%B6%E9%83%A8%E7%BD%B2%20WordPress.mp4">
+&lt;/video>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;p>您需要准备一个 &lt;code>project regular&lt;/code> 帐户，并在一个项目中赋予该帐户 &lt;code>operator&lt;/code> 角色（该用户已被邀请参加该项目）。有关更多信息，请参见&lt;a href="../create-workspace-and-project/">创建企业空间、项目、用户和角色&lt;/a>。&lt;/p>
+&lt;h2 id="预计操作时间">预计操作时间&lt;/h2>
+&lt;p>大约 15 分钟。&lt;/p>
+&lt;h2 id="动手实验">动手实验&lt;/h2>
+&lt;h3 id="步骤-1创建密钥">步骤 1：创建密钥&lt;/h3>
+&lt;h4 id="创建-mysql-密钥">创建 MySQL 密钥&lt;/h4>
+&lt;p>环境变量 &lt;code>WORDPRESS_DB_PASSWORD&lt;/code> 是连接到 WordPress 数据库的密码。在此步骤中，您需要创建一个密钥来保存将在 MySQL Pod 模板中使用的环境变量。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>使用 &lt;code>project-regular&lt;/code> 帐户登录 KubeSphere 控制台，访问 &lt;code>demo-project&lt;/code> 的详情页并导航到&lt;strong>配置&lt;/strong>。在&lt;strong>保密字典&lt;/strong>中，点击右侧的&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>输入基本信息（例如，将其命名为 &lt;code>mysql-secret&lt;/code>）并点击&lt;strong>下一步&lt;/strong>。在下一页中，选择&lt;strong>类型&lt;/strong>为 &lt;strong>Opaque（默认）&lt;/strong>，然后点击&lt;strong>添加数据&lt;/strong>来添加键值对。输入如下所示的键 (Key) &lt;code>MYSQL_ROOT_PASSWORD&lt;/code> 和值 (Value) &lt;code>123456&lt;/code>，点击右下角 &lt;strong>√&lt;/strong> 进行确认。完成后，点击&lt;strong>创建&lt;/strong>按钮以继续。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h4 id="创建-wordpress-密钥">创建 WordPress 密钥&lt;/h4>
+&lt;p>按照以上相同的步骤创建一个名为 &lt;code>wordpress-secret&lt;/code> 的 WordPress 密钥，输入键 (Key) &lt;code>WORDPRESS_DB_PASSWORD&lt;/code> 和值 (Value) &lt;code>123456&lt;/code>。创建的密钥显示在列表中。&lt;/p></description></item><item><title>启用可插拔组件</title><link>https://openksc.github.io/zh/docs/v3.4/quick-start/enable-pluggable-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/quick-start/enable-pluggable-components/</guid><description>&lt;p>本教程演示如何在安装前或安装后启用 KubeSphere 的可插拔组件。请参照下表了解 KubeSphere 的全部可插拔组件。&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>配置项&lt;/th>
+ &lt;th>功能组件&lt;/th>
+ &lt;th>描述&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;code>alerting&lt;/code>&lt;/td>
+ &lt;td>KubeSphere 告警系统&lt;/td>
+ &lt;td>可以为工作负载和节点自定义告警策略。告警策略被触发后，告警消息会通过不同的渠道（例如，邮件和 Slack）发送至接收人。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>auditing&lt;/code>&lt;/td>
+ &lt;td>KubeSphere 审计日志系统&lt;/td>
+ &lt;td>提供一套与安全相关并按时间顺序排列的记录，记录平台上不同租户的活动。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>devops&lt;/code>&lt;/td>
+ &lt;td>KubeSphere DevOps 系统&lt;/td>
+ &lt;td>基于 Jenkins 提供开箱即用的 CI/CD 功能，提供一站式 DevOps 方案、内置 Jenkins 流水线与 B2I &amp;amp; S2I。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>events&lt;/code>&lt;/td>
+ &lt;td>KubeSphere 事件系统&lt;/td>
+ &lt;td>提供一个图形化的 Web 控制台，用于导出、过滤和警告多租户 Kubernetes 集群中的 Kubernetes 事件。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>logging&lt;/code>&lt;/td>
+ &lt;td>KubeSphere 日志系统&lt;/td>
+ &lt;td>在统一的控制台中提供灵活的日志查询、收集和管理功能。可以添加第三方日志收集器，例如 Elasticsearch、Kafka 和 Fluentd。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>metrics_server&lt;/code>&lt;/td>
+ &lt;td>HPA&lt;/td>
+ &lt;td>根据设定指标对 Pod 数量进行动态伸缩，使运行在上面的服务对指标的变化有一定的自适应能力。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>networkpolicy&lt;/code>&lt;/td>
+ &lt;td>网络策略&lt;/td>
+ &lt;td>可以在同一个集群内部之间设置网络策略（比如限制或阻止某些实例 Pod 之间的网络请求）。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>kubeedge&lt;/code>&lt;/td>
+ &lt;td>KubeEdge&lt;/td>
+ &lt;td>为集群添加边缘节点并在这些节点上运行工作负载。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>openpitrix&lt;/code>&lt;/td>
+ &lt;td>KubeSphere 应用商店&lt;/td>
+ &lt;td>基于 Helm 的应用程序商店，允许用户管理应用的整个生命周期。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>servicemesh&lt;/code>&lt;/td>
+ &lt;td>KubeSphere 服务网格 (基于 Istio)&lt;/td>
+ &lt;td>提供细粒度的流量治理、可观测性、流量追踪以及可视化流量拓扑图。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>ippool&lt;/code>&lt;/td>
+ &lt;td>容器组 IP 池&lt;/td>
+ &lt;td>创建容器组 IP 池并从 IP 池中分配 IP 地址到 Pod。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>topology&lt;/code>&lt;/td>
+ &lt;td>服务拓扑图&lt;/td>
+ &lt;td>集成 &lt;a href="https://www.weave.works/oss/scope/" target="_blank" rel="noopener noreferrer">Weave Scope&lt;/a> 以查看应用和容器的服务间通信（拓扑图）。&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>有关每个组件的更多信息，请参见&lt;a href="../../pluggable-components/overview/">启用可插拔组件概述&lt;/a>。&lt;/p></description></item></channel></rss>

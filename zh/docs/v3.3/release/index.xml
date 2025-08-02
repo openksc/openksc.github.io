@@ -1,0 +1,1024 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Release Notes on</title><link>https://openksc.github.io/zh/docs/v3.3/release/</link><description>Recent content in Release Notes on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v3.3/release/index.xml" rel="self" type="application/rss+xml"/><item><title>3.3.2 版本说明</title><link>https://openksc.github.io/zh/docs/v3.3/release/release-v332/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/release/release-v332/</guid><description>&lt;h2 id="devops">DevOps&lt;/h2>
+&lt;h3 id="优化增强">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>添加最新的 GitHub Actions。&lt;/li>
+&lt;li>将 PipelineRun 的结果保存到 configmap 中。&lt;/li>
+&lt;li>修改持续部署应用程序状态的中文描述。&lt;/li>
+&lt;li>为持续部署参数添加更丰富的信息。&lt;/li>
+&lt;li>为处于中止状态的 PipelineRun 添加链接。&lt;/li>
+&lt;li>为 PipelineRun 增加 ID 列，用于执行 kubectl 命令时展示。&lt;/li>
+&lt;li>PipelineRun 生命周期中去掉 Queued 状态。&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复用户修改并保存流水线配置后 Webhook 配置丢失的问题。&lt;/li>
+&lt;li>修复下载 DevOps 流水线制品失败的问题。&lt;/li>
+&lt;li>修复使用 JAR/WAR 文件创建服务时，镜像地址不匹配的问题。&lt;/li>
+&lt;li>修复 PipelineRun 从“取消”状态变成“未运行”状态的问题。&lt;/li>
+&lt;li>修复 Pipeline 的自动清理策略，使其与 Jenkins 的清理保持一致。&lt;/li>
+&lt;/ul>
+&lt;h2 id="app-store">App Store&lt;/h2>
+&lt;h3 id="问题修复-1">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复上传的应用程序模板上不显示图标的问题。&lt;/li>
+&lt;li>修复应用商店应用信息处没有显示应用首页的问题。&lt;/li>
+&lt;li>修复应用商店导入内置应用时导入失败的问题。&lt;/li>
+&lt;li>修复 IPv6 环境下 UUID 生成错误的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="可观测性">可观测性&lt;/h2>
+&lt;h3 id="问题修复-2">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复 logsidecar-injector 配置文件中的解析问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="微服务">微服务&lt;/h2>
+&lt;h3 id="问题修复-3">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复未启用 service mesh 时创建的 Bookinfo 项目没有默认关闭应用治理的问题。&lt;/li>
+&lt;li>修复蓝绿部署发布模式下线按钮缺失的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="网络">网络&lt;/h2>
+&lt;h3 id="优化增强-1">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>限制项目的网络隔离范围为当前企业空间。&lt;/li>
+&lt;/ul>
+&lt;h2 id="存储">存储&lt;/h2>
+&lt;h3 id="优化增强-2">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>在多集群环境中显示 system-workspace 所属集群。&lt;/li>
+&lt;li>将“应用路由”的英文词条由 “route” 修改为 “ingress”。&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复-4">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复编辑联邦项目中的持久卷声明存储类错误的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="验证和授权">验证和授权&lt;/h2>
+&lt;h3 id="优化增强-3">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>增加了动态的 cache 配置项。&lt;/li>
+&lt;li>移除“告警消息管理”权限。&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复-5">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复拥有集群管理权限的平台角色无法管理集群的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="开发--测试">开发 &amp;amp; 测试&lt;/h2>
+&lt;h3 id="问题修复-6">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复引入热加载功能后部分数据后处于“不同步”状态的问题。&lt;/li>
+&lt;li>修复 ks-apiserver 多次重载后崩溃的问题。&lt;/li>
+&lt;li>修复缺少必要的 CRD 造成的资源缓存失败问题。&lt;/li>
+&lt;li>修复 ks-apiserver 在 Kubernetes 1.24+ 版本中异常崩溃的问题。&lt;/li>
+&lt;li>修复审计功能中协程泄露的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="用户体验">用户体验&lt;/h2>
+&lt;ul>
+&lt;li>限制集群名称长度。&lt;/li>
+&lt;li>修复 pod 副本不能自动刷新的问题。&lt;/li>
+&lt;li>修复删除服务时，相关的 pod 没有删除的问题。&lt;/li>
+&lt;li>修复只有一个节点时，节点数量和角色显示错误的问题。&lt;/li>
+&lt;/ul>
+&lt;p>有关 KubeSphere 3.3.2 的 Issue 和贡献者详细信息，请参阅 &lt;a href="https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.2.md" target="_blank" rel="noopener noreferrer">GitHub&lt;/a>。&lt;/p></description></item><item><title>3.3.1 版本说明</title><link>https://openksc.github.io/zh/docs/v3.3/release/release-v331/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/release/release-v331/</guid><description>&lt;h2 id="devops">DevOps&lt;/h2>
+&lt;h3 id="优化增强">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>支持通过 UI 编辑流水线中 kubeconfig 文件绑定方式。&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复用户查看 CI/CD 模板失败的问题。&lt;/li>
+&lt;li>将 &lt;code>Deprecated&lt;/code> 标签从 CI/CD 模版中移除，并将部署环节由 &lt;code>kubernetesDeploy&lt;/code> 修改为 kubeconfig 绑定方式。&lt;/li>
+&lt;/ul>
+&lt;h2 id="网络">网络&lt;/h2>
+&lt;h3 id="问题修复-1">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复 IPv4/IPv6 双栈模式下用户创建路由规则失败的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="存储">存储&lt;/h2>
+&lt;h3 id="问题修复-2">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>当用户使用 &lt;code>hostpath&lt;/code> 作为存储时，必须填写主机路径。&lt;/li>
+&lt;/ul>
+&lt;h2 id="验证和授权">验证和授权&lt;/h2>
+&lt;h3 id="问题修复-3">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>删除角色 &lt;code>users-manager&lt;/code> 和 &lt;code>workspace-manager&lt;/code>。&lt;/li>
+&lt;li>新增角色 &lt;code>platform-self-provisioner&lt;/code>。&lt;/li>
+&lt;li>屏蔽用户自定义角色的部分权限。&lt;/li>
+&lt;/ul>
+&lt;h2 id="用户体验">用户体验&lt;/h2>
+&lt;ul>
+&lt;li>支持修改每页列表的展示数量。&lt;/li>
+&lt;li>新增对 statefulset 和 deamonset 批量停止的支持&lt;/li>
+&lt;/ul>
+&lt;p>有关 KubeSphere 3.3.1 的 Issue 和贡献者详细信息，请参阅 &lt;a href="https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.1.md" target="_blank" rel="noopener noreferrer">GitHub&lt;/a>。&lt;/p></description></item><item><title>3.3.0 版本说明</title><link>https://openksc.github.io/zh/docs/v3.3/release/release-v330/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/release/release-v330/</guid><description>&lt;h2 id="devops">DevOps&lt;/h2>
+&lt;h3 id="新特性">新特性&lt;/h3>
+&lt;ul>
+&lt;li>提供了基于 GitOps 的持续部署方案，底层支持 Argo CD，可以实时查看持续部署的状态。&lt;/li>
+&lt;li>支持配置持续部署白名单，限制持续部署的目标代码仓库和部署位置。&lt;/li>
+&lt;li>支持导入并管理代码仓库。&lt;/li>
+&lt;li>新增多款基于 CRD 的内置流水线模板，支持参数自定义。&lt;/li>
+&lt;li>支持查看流水线事件。&lt;/li>
+&lt;/ul>
+&lt;h2 id="存储">存储&lt;/h2>
+&lt;h3 id="新特性-1">新特性&lt;/h3>
+&lt;ul>
+&lt;li>支持租户级存储类权限管理。&lt;/li>
+&lt;li>新增卷快照内容和卷快照类管理。&lt;/li>
+&lt;li>支持 deployment 与 statefulSet 资源调整存储卷声明修改后自动重启。&lt;/li>
+&lt;li>支持存储卷声明设定使用阈值自动扩容。&lt;/li>
+&lt;/ul>
+&lt;h2 id="多租户和多集群">多租户和多集群&lt;/h2>
+&lt;h3 id="新特性-2">新特性&lt;/h3>
+&lt;ul>
+&lt;li>支持 kubeconfig 证书到期提示。&lt;/li>
+&lt;li>支持 kubesphere-config configmap 以显示当前集群的名称。&lt;/li>
+&lt;li>支持集群层级的成员管理。&lt;/li>
+&lt;/ul>
+&lt;h2 id="可观察性">可观察性&lt;/h2>
+&lt;h3 id="新特性-3">新特性&lt;/h3>
+&lt;ul>
+&lt;li>增加容器进程/线程监控指标。&lt;/li>
+&lt;li>支持监控节点用量。&lt;/li>
+&lt;li>支持导入 Grafana 模板实现自定义监控看板。&lt;/li>
+&lt;li>支持为容器日志、资源事件和审计日志指定不同的数据保存时间。&lt;/li>
+&lt;/ul>
+&lt;h3 id="优化增强">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>Alertmanager 从 v0.21.0 升级至 v0.23.0。&lt;/li>
+&lt;li>Grafana 从 7.4.3 升级至 8.3.3。&lt;/li>
+&lt;li>kube-state-metrics 从 v1.9.7 升级至 v2.3.0。&lt;/li>
+&lt;li>node-exporter 从 v0.18.1 升级至 v1.3.1。&lt;/li>
+&lt;li>Prometheus 从 v2.26.0 升级至 v2.34.0。&lt;/li>
+&lt;li>Prometheus Operator 从 v0.43.2 升级至 v0.55.1。&lt;/li>
+&lt;li>kube-rbac-proxy 从 v0.8.0 升级至 v0.11.0。&lt;/li>
+&lt;li>configmap-reload 从 v0.3.0 升级至 v0.5.0。&lt;/li>
+&lt;li>Thanos 从 v0.18.0 升级至 v0.25.2。&lt;/li>
+&lt;li>kube-events 从 v0.3.0 升级至 v0.4.0。&lt;/li>
+&lt;li>Fluent Bit Operator 从 v0.11.0 升级至 v0.13.0。&lt;/li>
+&lt;li>Fluent Bit 从 v1.8.3 升级至 v1.8.11。&lt;/li>
+&lt;/ul>
+&lt;h2 id="kubeedge-集成">KubeEdge 集成&lt;/h2>
+&lt;h3 id="新特性-4">新特性&lt;/h3>
+&lt;ul>
+&lt;li>支持节点终端，可以直接在 UI 上登陆集群节点，包括边缘节点。&lt;/li>
+&lt;/ul>
+&lt;h3 id="优化增强-1">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>KubeEdge 版本从v1.7.2 升级到 v1.9.2。&lt;/li>
+&lt;li>移除 EdgeWatcher。&lt;/li>
+&lt;/ul>
+&lt;h2 id="网络">网络&lt;/h2>
+&lt;h3 id="优化增强-2">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>负载均衡类型选择新增 OpenELB。&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复了删除项目后项目网关遗留的问题。&lt;/li>
+&lt;/ul>
+&lt;h2 id="app-store">App Store&lt;/h2>
+&lt;h3 id="问题修复-1">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复 Helm Controller NPE 错误引起的 ks-controller-manager 崩溃。&lt;/li>
+&lt;/ul>
+&lt;h2 id="验证和授权">验证和授权&lt;/h2>
+&lt;h3 id="新特性-5">新特性&lt;/h3>
+&lt;ul>
+&lt;li>支持手动启用/禁用用户。&lt;/li>
+&lt;/ul>
+&lt;h2 id="用户体验">用户体验&lt;/h2>
+&lt;ul>
+&lt;li>新增 Kubernetes 审计日志开启提示。&lt;/li>
+&lt;li>支持容器生命周期管理。&lt;/li>
+&lt;li>支持应用整个配置字典或保密字典文件。&lt;/li>
+&lt;li>支持在&lt;strong>流量监控&lt;/strong>页签选择时间段。&lt;/li>
+&lt;li>新增在&lt;strong>审计日志搜索&lt;/strong> 对话框提醒用户开启审计日志的功能。&lt;/li>
+&lt;li>支持通过 &lt;code>ClusterConfiguration&lt;/code> 配置更多 Istio 参数。&lt;/li>
+&lt;li>新增多语言支持，如土耳其语。&lt;/li>
+&lt;li>支持用户密码合规性检查。&lt;/li>
+&lt;li>新增在 webhook 设置页面将&lt;strong>访问令牌&lt;/strong>设置为必填项的功能。&lt;/li>
+&lt;li>修复&lt;strong>服务拓扑&lt;/strong>页面的服务详情区域数据未自动更新的问题。&lt;/li>
+&lt;li>修复“修改有状态服务时未显示服务名称”问题。&lt;/li>
+&lt;li>修复用户点击按钮过快造成的应用安装失败问题。&lt;/li>
+&lt;li>修复容器组探针删除后仍然显示的问题。&lt;/li>
+&lt;li>修复存储卷挂载到 init 容器时 statefulset 创建失败的问题。&lt;/li>
+&lt;li>优化了服务拓扑图详情展示窗口。&lt;/li>
+&lt;li>优化了 ClusterConfiguration 更新机制，无需重启 ks-apiserver、ks-controller-manager。&lt;/li>
+&lt;li>优化了部分页面文案描述。&lt;/li>
+&lt;/ul>
+&lt;p>有关 KubeSphere 3.3.0 的 Issue 和贡献者详细信息，请参阅 &lt;a href="https://github.com/kubesphere/kubesphere/blob/master/CHANGELOG/CHANGELOG-3.3.md" target="_blank" rel="noopener noreferrer">GitHub&lt;/a>。&lt;/p></description></item><item><title>3.2.1 版本说明</title><link>https://openksc.github.io/zh/docs/v3.3/release/release-v321/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/release/release-v321/</guid><description>&lt;h2 id="功能优化与问题修复">功能优化与问题修复&lt;/h2>
+&lt;h3 id="功能优化">功能优化&lt;/h3>
+&lt;ul>
+&lt;li>新增支持按状态过滤容器组。（&lt;a href="https://github.com/kubesphere/kubesphere/pull/4434" target="_blank" rel="noopener noreferrer">#4434&lt;/a>，&lt;a href="https://github.com/iawia002" target="_blank" rel="noopener noreferrer">@iawia002&lt;/a>，&lt;a href="https://github.com/kubesphere/console/pull/2620" target="_blank" rel="noopener noreferrer">#2620&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;li>在镜像构建器创建对话框中增加不支持 containerd 的提示。（&lt;a href="https://github.com/kubesphere/console/pull/2734" target="_blank" rel="noopener noreferrer">#2734&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;li>在&lt;strong>编辑项目配额&lt;/strong>对话框中增加可用配额信息。（&lt;a href="https://github.com/kubesphere/console/pull/2619" target="_blank" rel="noopener noreferrer">#2619&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>更改密码校验规则以阻止不包含大写字母的密码。（&lt;a href="https://github.com/kubesphere/kubesphere/pull/4481" target="_blank" rel="noopener noreferrer">#4481&lt;/a>，&lt;a href="https://github.com/live77" target="_blank" rel="noopener noreferrer">@live77&lt;/a>）&lt;/li>
+&lt;li>修复 KubeSphere 上不存在相关用户信息时，无法使用来自 LDAP 的用户登录的问题。（&lt;a href="https://github.com/kubesphere/kubesphere/pull/4436" target="_blank" rel="noopener noreferrer">#4436&lt;/a>，&lt;a href="https://github.com/RolandMa1986" target="_blank" rel="noopener noreferrer">@RolandMa1986&lt;/a>）&lt;/li>
+&lt;li>修复无法获取集群网关指标信息的问题。（&lt;a href="https://github.com/kubesphere/kubesphere/pull/4457" target="_blank" rel="noopener noreferrer">#4457&lt;/a>，&lt;a href="https://github.com/RolandMa1986" target="_blank" rel="noopener noreferrer">@RolandMa1986&lt;/a>）&lt;/li>
+&lt;li>修复存储卷列表访问模式显示不正确的问题。（&lt;a href="https://github.com/kubesphere/console/pull/2686" target="_blank" rel="noopener noreferrer">#2686&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;li>移除&lt;strong>网关设置&lt;/strong>页面的&lt;strong>更新&lt;/strong>按钮。（&lt;a href="https://github.com/kubesphere/console/pull/2608" target="_blank" rel="noopener noreferrer">#2608&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;li>修复时间范围选择下拉列表显示错误的问题。（&lt;a href="https://github.com/kubesphere/console/pull/2715" target="_blank" rel="noopener noreferrer">#2715&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;li>修复保密字典数据文本过长时文本显示不正确的问题。（&lt;a href="https://github.com/kubesphere/console/pull/2600" target="_blank" rel="noopener noreferrer">#2600&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;li>修复挂载存储卷模板时有状态副本集创建失败的问题。（&lt;a href="https://github.com/kubesphere/console/pull/2730" target="_blank" rel="noopener noreferrer">#2730&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;li>修复用户没有查看群集信息的权限时系统无法获取集群网关信息的问题。（&lt;a href="https://github.com/kubesphere/console/pull/2695" target="_blank" rel="noopener noreferrer">#2695&lt;/a>，&lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>）&lt;/li>
+&lt;li>修复流水线状态和运行记录无法自动更新的问题。（&lt;a href="https://github.com/kubesphere/console/pull/2594" target="_blank" rel="noopener noreferrer">#2594&lt;/a>，&lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>）&lt;/li>
+&lt;li>对 kubernetesDeply 流水线步骤增加该步骤将被弃用的提示。（&lt;a href="https://github.com/kubesphere/console/pull/2660" target="_blank" rel="noopener noreferrer">#2660&lt;/a>，&lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>）&lt;/li>
+&lt;li>修复镜像仓库保密字典使用 HTTP 仓库地址时无法通过验证的问题。（&lt;a href="https://github.com/kubesphere/console/pull/2795" target="_blank" rel="noopener noreferrer">#2795&lt;/a>，&lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>）&lt;/li>
+&lt;li>修复 Harbor 镜像 URL 错误的问题。（&lt;a href="https://github.com/kubesphere/console/pull/2784" target="_blank" rel="noopener noreferrer">#2784&lt;/a>，&lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>）&lt;/li>
+&lt;li>修复日志搜索结果显示错误的问题。（&lt;a href="https://github.com/kubesphere/console/pull/2598" target="_blank" rel="noopener noreferrer">#2598&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;li>修复存储卷实例 YAML 配置中的错误。（&lt;a href="https://github.com/kubesphere/console/pull/2629" target="_blank" rel="noopener noreferrer">#2629&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;li>修复&lt;strong>编辑项目配额&lt;/strong>对话框中可用企业空间配额显示不正确的问题。（&lt;a href="https://github.com/kubesphere/console/pull/2613" target="_blank" rel="noopener noreferrer">#2613&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;li>修复&lt;strong>监控&lt;/strong>对话框中时间范围选择下拉列表功能不正常的问题。（&lt;a href="https://github.com/kubesphere/console/pull/2722" target="_blank" rel="noopener noreferrer">#2722&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;li>修复部署创建页面可用配额显示不正确的问题。（&lt;a href="https://github.com/kubesphere/console/pull/2668" target="_blank" rel="noopener noreferrer">#2668&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;li>将文档地址更改为 &lt;a href="http://kubesphere.io" target="_blank" rel="noopener noreferrer">kubesphere.io&lt;/a> 和 &lt;a href="http://kubesphere.io" target="_blank" rel="noopener noreferrer">kubesphere.com.cn&lt;/a>。（&lt;a href="https://github.com/kubesphere/console/pull/2628" target="_blank" rel="noopener noreferrer">#2628&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;li>修复无法修改部署存储卷设置的问题。（&lt;a href="https://github.com/kubesphere/console/pull/2656" target="_blank" rel="noopener noreferrer">#2656&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;li>修复浏览器语言必须为英文、简体中文或繁体中文时才能访问容器终端的问题。（&lt;a href="https://github.com/kubesphere/console/pull/2702" target="_blank" rel="noopener noreferrer">#2702&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;li>修复部署编辑对话框中存储卷状态显示不正确的问题。（&lt;a href="https://github.com/kubesphere/console/pull/2622" target="_blank" rel="noopener noreferrer">#2622&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;li>移除凭证详情页面显示的标签。（&lt;a href="https://github.com/kubesphere/console/pull/2621" target="_blank" rel="noopener noreferrer">#2621&lt;/a>，&lt;a href="https://github.com/123liubao" target="_blank" rel="noopener noreferrer">@123liubao&lt;/a>）&lt;/li>
+&lt;/ul></description></item><item><title>3.2.0 版本说明</title><link>https://openksc.github.io/zh/docs/v3.3/release/release-v320/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/release/release-v320/</guid><description>&lt;h2 id="多租户和多集群">多租户和多集群&lt;/h2>
+&lt;h3 id="新特性">新特性&lt;/h3>
+&lt;ul>
+&lt;li>新增支持在多集群场景设置主集群名称（默认值为 &lt;code>host&lt;/code>）。（&lt;a href="https://github.com/kubesphere/kubesphere/pull/4211" target="_blank" rel="noopener noreferrer">#4211&lt;/a>，&lt;a href="https://github.com/yuswift" target="_blank" rel="noopener noreferrer">@yuswift&lt;/a>）&lt;/li>
+&lt;li>新增支持在单集群场景设置集群名称。（&lt;a href="https://github.com/kubesphere/kubesphere/pull/4220" target="_blank" rel="noopener noreferrer">#4220&lt;/a>，&lt;a href="https://github.com/yuswift" target="_blank" rel="noopener noreferrer">@yuswift&lt;/a>）&lt;/li>
+&lt;li>新增支持使用 &lt;code>globals.config&lt;/code> 初始化默认集群名称。（&lt;a href="https://github.com/kubesphere/console/pull/2283" target="_blank" rel="noopener noreferrer">#2283&lt;/a>，&lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>）&lt;/li>
+&lt;li>新增支持创建部署时跨多个集群调度容器组副本。（&lt;a href="https://github.com/kubesphere/console/pull/2191" target="_blank" rel="noopener noreferrer">#2191&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;li>新增支持在项目详情页面修改集群权重。（&lt;a href="https://github.com/kubesphere/console/pull/2192" target="_blank" rel="noopener noreferrer">#2192&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复&lt;strong>集群管理&lt;/strong>的&lt;strong>创建部署&lt;/strong>对话框中可以通过输入项目名称选择多集群项目的问题。（&lt;a href="https://github.com/kubesphere/console/pull/2125" target="_blank" rel="noopener noreferrer">#2125&lt;/a>，&lt;a href="https://github.com/fuchunlan" target="_blank" rel="noopener noreferrer">@fuchunlan&lt;/a>）&lt;/li>
+&lt;li>修复编辑企业空间或集群基本信息时发生的错误。（&lt;a href="https://github.com/kubesphere/console/pull/2188" target="_blank" rel="noopener noreferrer">#2188&lt;/a>, &lt;a href="https://github.com/xuliwenwenwen" target="_blank" rel="noopener noreferrer">@xuliwenwenwen&lt;/a>）&lt;/li>
+&lt;li>移除主集群&lt;strong>基本信息&lt;/strong>页面上有关已删除集群的信息。（&lt;a href="https://github.com/kubesphere/console/pull/2211" target="_blank" rel="noopener noreferrer">#2211&lt;/a>，&lt;a href="https://github.com/fuchunlan" target="_blank" rel="noopener noreferrer">@fuchunlan&lt;/a>）&lt;/li>
+&lt;li>新增支持在多集群项目中对服务进行排序和编辑。（&lt;a href="https://github.com/kubesphere/console/pull/2167" target="_blank" rel="noopener noreferrer">#2167&lt;/a>，&lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>）&lt;/li>
+&lt;li>重构多集群项目的网关功能。（&lt;a href="https://github.com/kubesphere/console/pull/2275" target="_blank" rel="noopener noreferrer">#2275&lt;/a>，&lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>）&lt;/li>
+&lt;li>修复删除企业空间后多集群项目无法删除的问题。（&lt;a href="https://github.com/kubesphere/kubesphere/pull/4365" target="_blank" rel="noopener noreferrer">#4365&lt;/a>，&lt;a href="https://github.com/wansir" target="_blank" rel="noopener noreferrer">@wansir&lt;/a>）&lt;/li>
+&lt;/ul>
+&lt;h2 id="可观察性">可观察性&lt;/h2>
+&lt;h3 id="新特性-1">新特性&lt;/h3>
+&lt;ul>
+&lt;li>新增支持与 Elasticsearch 进行 HTTPS 通信。（&lt;a href="https://github.com/kubesphere/kubesphere/pull/4176" target="_blank" rel="noopener noreferrer">#4176&lt;/a>，&lt;a href="https://github.com/wanjunlei" target="_blank" rel="noopener noreferrer">@wanjunlei&lt;/a>）&lt;/li>
+&lt;li>新增支持调度 GPU 工作负载设置 GPU 类型。（&lt;a href="https://github.com/kubesphere/kubesphere/pull/4225" target="_blank" rel="noopener noreferrer">#4225&lt;/a>，&lt;a href="https://github.com/zhu733756" target="_blank" rel="noopener noreferrer">@zhu733756&lt;/a>）&lt;/li>
+&lt;li>新增支持验证通知设置。（&lt;a href="https://github.com/kubesphere/kubesphere/pull/4216" target="_blank" rel="noopener noreferrer">#4216&lt;/a>，&lt;a href="https://github.com/wenchajun" target="_blank" rel="noopener noreferrer">@wenchajun&lt;/a>）&lt;/li>
+&lt;li>新增支持通过指定监控面板 URL 或上传 Grafana 监控面板 JSON 配置文件导入 Grafana 监控面板。KubeSphere 自动将 Grafana 监控面板转换为 KubeSphere 集群监控面板。（&lt;a href="https://github.com/kubesphere/kubesphere/pull/4194" target="_blank" rel="noopener noreferrer">#4194&lt;/a>，&lt;a href="https://github.com/zhu733756" target="_blank" rel="noopener noreferrer">@zhu733756&lt;/a>）&lt;/li>
+&lt;li>新增支持在&lt;strong>自定义监控&lt;/strong>页面创建 Grafana 监控面板。（&lt;a href="https://github.com/kubesphere/console/pull/2214" target="_blank" rel="noopener noreferrer">#2214&lt;/a>，&lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>）&lt;/li>
+&lt;li>优化&lt;strong>通知配置&lt;/strong>功能。（&lt;a href="https://github.com/kubesphere/console/pull/2261" target="_blank" rel="noopener noreferrer">#2261&lt;/a>, &lt;a href="https://github.com/xuliwenwenwen" target="_blank" rel="noopener noreferrer">@xuliwenwenwen&lt;/a>）&lt;/li>
+&lt;li>新增支持在&lt;strong>编辑默认容器配额&lt;/strong>对话框中设置 GPU 限制。（&lt;a href="https://github.com/kubesphere/console/pull/2253" target="_blank" rel="noopener noreferrer">#2253&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;li>新增默认 GPU 监控面板。（&lt;a href="https://github.com/kubesphere/console/pull/2580" target="_blank" rel="noopener noreferrer">#2580&lt;/a>，&lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>）&lt;/li>
+&lt;li>在 etcd 监控页面对 etcd leader 增加 &lt;strong>Leader&lt;/strong> 标签。（&lt;a href="https://github.com/kubesphere/console/pull/2445" target="_blank" rel="noopener noreferrer">#2445&lt;/a>, &lt;a href="https://github.com/xuliwenwenwen" target="_blank" rel="noopener noreferrer">@xuliwenwenwen&lt;/a>）&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复-1">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复&lt;strong>告警消息&lt;/strong>页面和告警策略详情页面容器组信息错误的问题。（&lt;a href="https://github.com/kubesphere/console/pull/2215" target="_blank" rel="noopener noreferrer">#2215&lt;/a>，&lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>）&lt;/li>
+&lt;/ul>
+&lt;h2 id="验证和授权">验证和授权&lt;/h2>
+&lt;h3 id="新特性-2">新特性&lt;/h3>
+&lt;ul>
+&lt;li>新增内置 OAuth 2.0 服务器（支持 OpenID Connect）。（&lt;a href="https://github.com/kubesphere/kubesphere/pull/3525" target="_blank" rel="noopener noreferrer">#3525&lt;/a>，&lt;a href="https://github.com/wansir" target="_blank" rel="noopener noreferrer">@wansir&lt;/a>）&lt;/li>
+&lt;li>移除使用外部身份认证提供者时所需的信息确认过程。（&lt;a href="https://github.com/kubesphere/kubesphere/pull/4238" target="_blank" rel="noopener noreferrer">#4238&lt;/a>，&lt;a href="https://github.com/wansir" target="_blank" rel="noopener noreferrer">@wansir&lt;/a>）&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复-2">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复登录历史记录中源 IP 地址错误的问题。（&lt;a href="https://github.com/kubesphere/kubesphere/pull/4331" target="_blank" rel="noopener noreferrer">#4331&lt;/a>，&lt;a href="https://github.com/wansir" target="_blank" rel="noopener noreferrer">@wansir&lt;/a>）&lt;/li>
+&lt;/ul>
+&lt;h2 id="存储">存储&lt;/h2>
+&lt;h3 id="新特性-3">新特性&lt;/h3>
+&lt;ul>
+&lt;li>变更用于确定是否允许存储卷克隆、存储卷快照和存储卷扩展的参数。（&lt;a href="https://github.com/kubesphere/console/pull/2199" target="_blank" rel="noopener noreferrer">#2199&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;li>新增支持创建存储卷时设置存储卷绑定模式。（&lt;a href="https://github.com/kubesphere/console/pull/2220" target="_blank" rel="noopener noreferrer">#2220&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;li>新增存储卷实例管理功能。（&lt;a href="https://github.com/kubesphere/console/pull/2226" target="_blank" rel="noopener noreferrer">#2226&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;li>新增支持多个存储卷快照类型。用户可以在创建存储卷快照时选择快照类型。（&lt;a href="https://github.com/kubesphere/console/pull/2218" target="_blank" rel="noopener noreferrer">#2218&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复-3">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>更改&lt;strong>存储卷设置&lt;/strong>页签上存储卷访问模式的可选项。（&lt;a href="https://github.com/kubesphere/console/pull/2348" target="_blank" rel="noopener noreferrer">#2348&lt;/a>，&lt;a href="https://github.com/live77" target="_blank" rel="noopener noreferrer">@live77&lt;/a>）&lt;/li>
+&lt;/ul>
+&lt;h2 id="网络">网络&lt;/h2>
+&lt;h3 id="新特性-4">新特性&lt;/h3>
+&lt;ul>
+&lt;li>在应用路由列表页面新增应用路由排序、路由规则编辑和注解编辑功能。（&lt;a href="https://github.com/kubesphere/console/pull/2165" target="_blank" rel="noopener noreferrer">#2165&lt;/a>，&lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>）&lt;/li>
+&lt;li>重构集群网关和项目网关功能。（&lt;a href="https://github.com/kubesphere/console/pull/2262" target="_blank" rel="noopener noreferrer">#2262&lt;/a>，&lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>）&lt;/li>
+&lt;li>在路由规则创建过程中新增服务名称自动补全功能。（&lt;a href="https://github.com/kubesphere/console/pull/2196" target="_blank" rel="noopener noreferrer">#2196&lt;/a>，&lt;a href="https://github.com/wengzhisong-hz" target="_blank" rel="noopener noreferrer">@wengzhisong-hz&lt;/a>）&lt;/li>
+&lt;li>对 ks-console 进行了以下 DNS 优化：
+&lt;ul>
+&lt;li>直接使用 ks-apiserver 服务的名称作为 API URL，不再使用 &lt;code>ks-apiserver.kubesphere-system.svc&lt;/code>。&lt;/li>
+&lt;li>新增 DNS 缓存插件 (dnscache) 用于缓存 DNS 结果。（&lt;a href="https://github.com/kubesphere/console/pull/2435" target="_blank" rel="noopener noreferrer">#2435&lt;/a>，&lt;a href="https://github.com/live77" target="_blank" rel="noopener noreferrer">@live77&lt;/a>）&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复-4">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>在&lt;strong>启用网关&lt;/strong>对话框中新增&lt;strong>取消&lt;/strong>按钮。（&lt;a href="https://github.com/kubesphere/console/pull/2245" target="_blank" rel="noopener noreferrer">#2245&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;/ul>
+&lt;h2 id="应用和应用商店">应用和应用商店&lt;/h2>
+&lt;h3 id="新特性-5">新特性&lt;/h3>
+&lt;ul>
+&lt;li>新增支持在应用仓库创建和编辑过程中设置同步时间间隔。（&lt;a href="https://github.com/kubesphere/console/pull/2311" target="_blank" rel="noopener noreferrer">#2311&lt;/a>, &lt;a href="https://github.com/xuliwenwenwen" target="_blank" rel="noopener noreferrer">@xuliwenwenwen&lt;/a>）&lt;/li>
+&lt;li>在应用商店增加免责声明。（&lt;a href="https://github.com/kubesphere/console/pull/2173" target="_blank" rel="noopener noreferrer">#2173&lt;/a>, &lt;a href="https://github.com/xuliwenwenwen" target="_blank" rel="noopener noreferrer">@xuliwenwenwen&lt;/a>）&lt;/li>
+&lt;li>新增支持将社区开发的 Helm chart 动态加载到应用商店。（&lt;a href="https://github.com/kubesphere/kubesphere/pull/4250" target="_blank" rel="noopener noreferrer">#4250&lt;/a>，&lt;a href="https://github.com/xyz-li" target="_blank" rel="noopener noreferrer">@xyz-li&lt;/a>）&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复-5">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复调用 &lt;code>GetKubeSphereStats&lt;/code> 时 &lt;code>kubesphere_app_template_count&lt;/code> 的值始终为 &lt;code>0&lt;/code> 的问题。（&lt;a href="https://github.com/kubesphere/kubesphere/pull/4130" target="_blank" rel="noopener noreferrer">#4130&lt;/a>，&lt;a href="https://github.com/ks-ci-bohttps://github.com/x893675" target="_blank" rel="noopener noreferrer">@Hanamichi&lt;/a>）&lt;/li>
+&lt;/ul>
+&lt;h2 id="devops">DevOps&lt;/h2>
+&lt;h3 id="新特性-6">新特性&lt;/h3>
+&lt;ul>
+&lt;li>设置系统在当前流水线不是多分支流水线时隐藏&lt;strong>运行记录&lt;/strong>页签的&lt;strong>分支&lt;/strong>列。（&lt;a href="https://github.com/kubesphere/console/pull/2379" target="_blank" rel="noopener noreferrer">#2379&lt;/a>，&lt;a href="https://github.com/live77" target="_blank" rel="noopener noreferrer">@live77&lt;/a>）&lt;/li>
+&lt;li>新增自动从 ConfigMaps 加载 Jenkins 配置的功能。（&lt;a href="https://github.com/kubesphere/ks-devops/pull/75" target="_blank" rel="noopener noreferrer">#75&lt;/a>，&lt;a href="https://github.com/JohnNiang" target="_blank" rel="noopener noreferrer">@JohnNiang&lt;/a>）&lt;/li>
+&lt;li>新增支持通过操纵 CRD 而不是调用 Jenkins API 来触发流水线。（&lt;a href="https://github.com/kubesphere/ks-devops/issues/41" target="_blank" rel="noopener noreferrer">#41&lt;/a>, &lt;a href="https://github.com/LinuxSuRen" target="_blank" rel="noopener noreferrer">@rick&lt;/a>）&lt;/li>
+&lt;li>新增支持基于 containerd 的流水线。（&lt;a href="https://github.com/kubesphere/ks-devops/pull/171" target="_blank" rel="noopener noreferrer">#171&lt;/a>, &lt;a href="https://github.com/LinuxSuRen" target="_blank" rel="noopener noreferrer">@rick&lt;/a>）&lt;/li>
+&lt;li>将 Jenkins 任务元数据添加流水线注解中。（&lt;a href="https://github.com/kubesphere/ks-devops/issues/254" target="_blank" rel="noopener noreferrer">#254&lt;/a>，&lt;a href="https://github.com/JohnNiang" target="_blank" rel="noopener noreferrer">@JohnNiang&lt;/a>）&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复-6">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复参数值过长时凭证创建和更新失败的问题。（&lt;a href="https://github.com/kubesphere/ks-devops/pull/123" target="_blank" rel="noopener noreferrer">#123&lt;/a>，&lt;a href="https://github.com/shihaoH" target="_blank" rel="noopener noreferrer">@shihh&lt;/a>）&lt;/li>
+&lt;li>修复打开并行流水线&lt;strong>运行记录&lt;/strong>页签时 ks-apiserver 崩溃的问题。（&lt;a href="https://github.com/kubesphere/ks-devops/pull/93" target="_blank" rel="noopener noreferrer">#93&lt;/a>，&lt;a href="https://github.com/JohnNiang" target="_blank" rel="noopener noreferrer">@JohnNiang&lt;/a>）&lt;/li>
+&lt;/ul>
+&lt;h3 id="依赖项升级">依赖项升级&lt;/h3>
+&lt;ul>
+&lt;li>升级 Configuration as Code 版本到 1.53。（&lt;a href="https://github.com/kubesphere/ks-jenkins/pull/42" target="_blank" rel="noopener noreferrer">#42&lt;/a>, &lt;a href="https://github.com/LinuxSuRen" target="_blank" rel="noopener noreferrer">@rick&lt;/a>）&lt;/li>
+&lt;/ul>
+&lt;h2 id="安装">安装&lt;/h2>
+&lt;h3 id="新特性-7">新特性&lt;/h3>
+&lt;ul>
+&lt;li>新增支持 Kubernetes 1.21.5 和 1.22.1，Kubernetes最低版本要求为1.19。（&lt;a href="https://github.com/kubesphere/kubekey/pull/634" target="_blank" rel="noopener noreferrer">#634&lt;/a>，&lt;a href="https://github.com/pixiake" target="_blank" rel="noopener noreferrer">@pixiake&lt;/a>）&lt;/li>
+&lt;li>新增支持自动设置容器运行时。（&lt;a href="https://github.com/kubesphere/kubekey/pull/738" target="_blank" rel="noopener noreferrer">#738&lt;/a>，&lt;a href="https://github.com/pixiake" target="_blank" rel="noopener noreferrer">@pixiake&lt;/a>）&lt;/li>
+&lt;li>新增支持自动更新 Kubernetes 证书。（&lt;a href="https://github.com/kubesphere/kubekey/pull/705" target="_blank" rel="noopener noreferrer">#705&lt;/a>，&lt;a href="https://github.com/pixiake" target="_blank" rel="noopener noreferrer">@pixiake&lt;/a>）&lt;/li>
+&lt;li>新增支持使用二进制文件安装 Docker 和 conatinerd。（&lt;a href="https://github.com/kubesphere/kubekey/pull/657" target="_blank" rel="noopener noreferrer">#657&lt;/a>，&lt;a href="https://github.com/pixiake" target="_blank" rel="noopener noreferrer">@pixiake&lt;/a>）&lt;/li>
+&lt;li>新增支持 Flannel VxLAN 和直接路由。（&lt;a href="https://github.com/kubesphere/kubekey/pull/606" target="_blank" rel="noopener noreferrer">#606&lt;/a>，&lt;a href="https://github.com/kinglong08" target="_blank" rel="noopener noreferrer">@kinglong08&lt;/a>）&lt;/li>
+&lt;li>新增支持使用二进制文件部署 etcd。（&lt;a href="https://github.com/kubesphere/kubekey/pull/634" target="_blank" rel="noopener noreferrer">#634&lt;/a>，&lt;a href="https://github.com/pixiake" target="_blank" rel="noopener noreferrer">@pixiake&lt;/a>）&lt;/li>
+&lt;li>新增内部负载均衡器用于部署高可用系统。（&lt;a href="https://github.com/kubesphere/kubekey/pull/567" target="_blank" rel="noopener noreferrer">#567&lt;/a>，&lt;a href="https://github.com/24sama" target="_blank" rel="noopener noreferrer">@24sama&lt;/a>）&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复-7">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复 &lt;code>runtime.RawExtension&lt;/code> 序列化错误。（&lt;a href="https://github.com/kubesphere/kubekey/pull/731" target="_blank" rel="noopener noreferrer">#731&lt;/a>，&lt;a href="https://github.com/pixiake" target="_blank" rel="noopener noreferrer">@pixiake&lt;/a>）&lt;/li>
+&lt;li>修复集群升级期间出现的空指针错误。（&lt;a href="https://github.com/kubesphere/kubekey/pull/684" target="_blank" rel="noopener noreferrer">#684&lt;/a>，&lt;a href="https://github.com/24sama" target="_blank" rel="noopener noreferrer">@24sama&lt;/a>）&lt;/li>
+&lt;li>新增支持更新 Kubernetes 1.20.0 及以上版本的证书。（&lt;a href="https://github.com/kubesphere/kubekey/pull/690" target="_blank" rel="noopener noreferrer">#690&lt;/a>，&lt;a href="https://github.com/24sama" target="_blank" rel="noopener noreferrer">@24sama&lt;/a>）&lt;/li>
+&lt;li>修复 DNS 地址配置错误。（&lt;a href="https://github.com/kubesphere/kubekey/pull/637" target="_blank" rel="noopener noreferrer">#637&lt;/a>，&lt;a href="https://github.com/pixiake" target="_blank" rel="noopener noreferrer">@pixiake&lt;/a>）&lt;/li>
+&lt;li>修复缺少默认网关地址时出现的集群创建错误。（&lt;a href="https://github.com/kubesphere/kubekey/pull/661" target="_blank" rel="noopener noreferrer">#661&lt;/a>，&lt;a href="https://github.com/liulangwa" target="_blank" rel="noopener noreferrer">@liulangwa&lt;/a>）&lt;/li>
+&lt;/ul>
+&lt;h2 id="用户体验">用户体验&lt;/h2>
+&lt;ul>
+&lt;li>修复语言错误并优化措辞。（&lt;a href="https://github.com/Patrick-LuoYu" target="_blank" rel="noopener noreferrer">@Patrick-LuoYu&lt;/a>、&lt;a href="https://github.com/Felixnoo" target="_blank" rel="noopener noreferrer">@Felixnoo&lt;/a>、&lt;a href="https://github.com/serenashe" target="_blank" rel="noopener noreferrer">@serenashe&lt;/a>）&lt;/li>
+&lt;li>修复错误的功能说明。（&lt;a href="https://github.com/Patrick-LuoYu" target="_blank" rel="noopener noreferrer">@Patrick-LuoYu&lt;/a>、&lt;a href="https://github.com/Felixnoo" target="_blank" rel="noopener noreferrer">@Felixnoo&lt;/a>、&lt;a href="https://github.com/serenashe" target="_blank" rel="noopener noreferrer">@serenashe&lt;/a>）&lt;/li>
+&lt;li>删除硬编码和拼接 UI 字符串，以更好地支持 UI 本地化和国际化。（&lt;a href="https://github.com/Patrick-LuoYu" target="_blank" rel="noopener noreferrer">@Patrick-LuoYu&lt;/a>、&lt;a href="https://github.com/Felixnoo" target="_blank" rel="noopener noreferrer">@Felixnoo&lt;/a>、&lt;a href="https://github.com/serenashe" target="_blank" rel="noopener noreferrer">@serenashe&lt;/a>）&lt;/li>
+&lt;li>添加条件语句以显示正确的英文单复数形式。（&lt;a href="https://github.com/Patrick-LuoYu" target="_blank" rel="noopener noreferrer">@Patrick-LuoYu&lt;/a>、&lt;a href="https://github.com/Felixnoo" target="_blank" rel="noopener noreferrer">@Felixnoo&lt;/a>、&lt;a href="https://github.com/serenashe" target="_blank" rel="noopener noreferrer">@serenashe&lt;/a>）&lt;/li>
+&lt;li>优化&lt;strong>创建部署&lt;/strong>对话框中的&lt;strong>容器组调度规则&lt;/strong>区域。（&lt;a href="https://github.com/kubesphere/console/pull/2170" target="_blank" rel="noopener noreferrer">#2170&lt;/a>，&lt;a href="https://github.com/qinyueshang" target="_blank" rel="noopener noreferrer">@qinyueshang&lt;/a>）&lt;/li>
+&lt;li>修复&lt;strong>编辑项目配额&lt;/strong>中配额值设置为无穷大时值变为 &lt;code>0&lt;/code> 的问题。（&lt;a href="https://github.com/kubesphere/console/pull/2118" target="_blank" rel="noopener noreferrer">#2118&lt;/a>，&lt;a href="https://github.com/fuchunlan" target="_blank" rel="noopener noreferrer">@fuchunlan&lt;/a>）&lt;/li>
+&lt;li>修复&lt;strong>创建配置字典&lt;/strong>对话框中数据条目为空时锤子图标位置不正确的问题。（&lt;a href="https://github.com/kubesphere/console/pull/2206" target="_blank" rel="noopener noreferrer">#2206&lt;/a>，&lt;a href="https://github.com/fuchunlan" target="_blank" rel="noopener noreferrer">@fuchunlan&lt;/a>）&lt;/li>
+&lt;li>修复项目&lt;strong>概览&lt;/strong>页面时间范围下拉列表默认值显示错误的问题。（&lt;a href="https://github.com/kubesphere/console/pull/2340" target="_blank" rel="noopener noreferrer">#2340&lt;/a>，&lt;a href="https://github.com/fuchunlan" target="_blank" rel="noopener noreferrer">@fuchunlan&lt;/a>）&lt;/li>
+&lt;li>修复 &lt;code>referer&lt;/code> URL 包含 &amp;amp; 字符时登录重定向失败的问题。（&lt;a href="https://github.com/kubesphere/console/pull/2194" target="_blank" rel="noopener noreferrer">#2194&lt;/a>，&lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>）&lt;/li>
+&lt;li>在自定义监控面板创建页面将 &lt;strong>1 hours&lt;/strong> 修改为 &lt;strong>1 hour&lt;/strong>。（&lt;a href="https://github.com/kubesphere/console/pull/2276" target="_blank" rel="noopener noreferrer">#2276&lt;/a>，&lt;a href="https://github.com/live77" target="_blank" rel="noopener noreferrer">@live77&lt;/a>）&lt;/li>
+&lt;li>修复服务列表页面服务类型显示错误的问题。（&lt;a href="https://github.com/kubesphere/console/pull/2178" target="_blank" rel="noopener noreferrer">#2178&lt;/a>, &lt;a href="https://github.com/xuliwenwenwen" target="_blank" rel="noopener noreferrer">@xuliwenwenwen&lt;/a>）&lt;/li>
+&lt;li>修复灰度发布任务详细信息中流量数据显示错误的问题。（&lt;a href="https://github.com/kubesphere/console/pull/2422" target="_blank" rel="noopener noreferrer">#2422&lt;/a>，&lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>）&lt;/li>
+&lt;li>解决&lt;strong>编辑项目配额&lt;/strong>对话框中无法设置带两位小数或大于 8 的值的问题。（&lt;a href="https://github.com/kubesphere/console/pull/2127" target="_blank" rel="noopener noreferrer">#2127&lt;/a>，&lt;a href="https://github.com/weili520" target="_blank" rel="noopener noreferrer">@weili520&lt;/a>）&lt;/li>
+&lt;li>允许通过单击窗口其他区域关闭&lt;strong>关于&lt;/strong>对话框。（&lt;a href="https://github.com/kubesphere/console/pull/2114" target="_blank" rel="noopener noreferrer">#2114&lt;/a>，&lt;a href="https://github.com/fuchunlan" target="_blank" rel="noopener noreferrer">@fuchunlan&lt;/a>）&lt;/li>
+&lt;li>优化项目标题，使光标悬停在项目标题上时变为手形。（&lt;a href="https://github.com/kubesphere/console/pull/2128" target="_blank" rel="noopener noreferrer">#2128&lt;/a>，&lt;a href="https://github.com/fuchunlan" target="_blank" rel="noopener noreferrer">@fuchunlan&lt;/a>）&lt;/li>
+&lt;li>新增支持在&lt;strong>创建部署&lt;/strong>对话框的&lt;strong>环境变量&lt;/strong>区域创建配置字典和保密字典。（&lt;a href="https://github.com/kubesphere/console/pull/2227" target="_blank" rel="noopener noreferrer">#2227&lt;/a>，&lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>）&lt;/li>
+&lt;li>新增支持在&lt;strong>创建部署&lt;/strong>对话框中设置容器组注解。（&lt;a href="https://github.com/kubesphere/console/pull/2129" target="_blank" rel="noopener noreferrer">#2129&lt;/a>，&lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>）&lt;/li>
+&lt;li>允许域名以星号（*）开头。（&lt;a href="https://github.com/kubesphere/console/pull/2432" target="_blank" rel="noopener noreferrer">#2432&lt;/a>，&lt;a href="https://github.com/wengzhisong-hz" target="_blank" rel="noopener noreferrer">@wengzhisong-hz&lt;/a>）&lt;/li>
+&lt;li>新增支持在&lt;strong>创建部署&lt;/strong>对话框搜索 Harbor 镜像。（&lt;a href="https://github.com/kubesphere/console/pull/2132" target="_blank" rel="noopener noreferrer">#2132&lt;/a>，&lt;a href="https://github.com/wengzhisong-hz" target="_blank" rel="noopener noreferrer">@wengzhisong-hz&lt;/a>）&lt;/li>
+&lt;li>新增支持为初始化容器挂载存储卷。（&lt;a href="https://github.com/kubesphere/console/pull/2166" target="_blank" rel="noopener noreferrer">#2166&lt;/a>，&lt;a href="https://github.com/Sigboom" target="_blank" rel="noopener noreferrer">@Sigboom&lt;/a>）&lt;/li>
+&lt;li>移除存储卷扩展中过程中工作负载自动重新启动的功能。（&lt;a href="https://github.com/kubesphere/kubesphere/pull/4121" target="_blank" rel="noopener noreferrer">#4121&lt;/a>，&lt;a href="https://github.com/wenhuwang" target="_blank" rel="noopener noreferrer">@wenhuwang&lt;/a>）&lt;/li>
+&lt;/ul>
+&lt;h2 id="api">API&lt;/h2>
+&lt;ul>
+&lt;li>弃用 router API v1alpha2 版本。（&lt;a href="https://github.com/kubesphere/kubesphere/pull/4193" target="_blank" rel="noopener noreferrer">#4193&lt;/a>，&lt;a href="https://github.com/RolandMa1986" target="_blank" rel="noopener noreferrer">@RolandMa1986&lt;/a>）&lt;/li>
+&lt;li>将流水线 API 版本从 v2 升级到 v3。（&lt;a href="https://github.com/kubesphere/console/pull/2323" target="_blank" rel="noopener noreferrer">#2323&lt;/a>，&lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>）&lt;/li>
+&lt;li>更改保密字典校验 API。（&lt;a href="https://github.com/kubesphere/console/pull/2368" target="_blank" rel="noopener noreferrer">#2368&lt;/a>，&lt;a href="https://github.com/harrisonliu5" target="_blank" rel="noopener noreferrer">@harrisonliu5&lt;/a>）&lt;/li>
+&lt;li>OAuth2 Token endpoint 需要客户端凭证。（&lt;a href="https://github.com/kubesphere/kubesphere/pull/3525" target="_blank" rel="noopener noreferrer">#3525&lt;/a>，&lt;a href="https://github.com/wansir" target="_blank" rel="noopener noreferrer">@wansir&lt;/a>）&lt;/li>
+&lt;/ul>
+&lt;h2 id="组件更改">组件更改&lt;/h2>
+&lt;ul>
+&lt;li>kubefed: v0.7.0 -&amp;gt; v0.8.1&lt;/li>
+&lt;li>prometheus-operator: v0.42.1 -&amp;gt; v0.43.2&lt;/li>
+&lt;li>notification-manager: v1.0.0 -&amp;gt; v1.4.0&lt;/li>
+&lt;li>fluent-bit: v1.6.9 -&amp;gt; v1.8.3&lt;/li>
+&lt;li>kube-events: v0.1.0 -&amp;gt; v0.3.0&lt;/li>
+&lt;li>kube-auditing: v0.1.2 -&amp;gt; v0.2.0&lt;/li>
+&lt;li>istio: 1.6.10 -&amp;gt; 1.11.1&lt;/li>
+&lt;li>jaeger: 1.17 -&amp;gt; 1.27&lt;/li>
+&lt;li>kiali: v1.26.1 -&amp;gt; v1.38&lt;/li>
+&lt;li>KubeEdge: v1.6.2 -&amp;gt; 1.7.2&lt;/li>
+&lt;/ul></description></item><item><title>Release Notes for 3.1.1</title><link>https://openksc.github.io/zh/docs/v3.3/release/release-v311/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/release/release-v311/</guid><description>&lt;h2 id="用户体验">用户体验&lt;/h2>
+&lt;h3 id="优化增强">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>删除工作负载时支持批量删除关联资源 &lt;a href="https://github.com/kubesphere/console/pull/1933" target="_blank" rel="noopener noreferrer">kubesphere/console#1933&lt;/a>&lt;/li>
+&lt;li>优化页面弹框 &lt;a href="https://github.com/kubesphere/console/pull/2016" target="_blank" rel="noopener noreferrer">kubesphere/console#2016&lt;/a>&lt;/li>
+&lt;li>允许在 system-workspace 下的项目中使用容器终端 &lt;a href="https://github.com/kubesphere/console/pull/1921" target="_blank" rel="noopener noreferrer">kubesphere/console#1921&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>移除服务管理页面中 headless service 编辑外网访问功能 &lt;a href="https://github.com/kubesphere/console/issues/2055" target="_blank" rel="noopener noreferrer">kubesphere/console#2055&lt;/a>&lt;/li>
+&lt;li>修复了创建工作负载时环境变量中占位符无法正确展示的问题 &lt;a href="https://github.com/kubesphere/console/pull/2008" target="_blank" rel="noopener noreferrer">kubesphere/console#2008&lt;/a>&lt;/li>
+&lt;li>修复了在特定页面登出时无法正确重定向至登录页面的问题 &lt;a href="https://github.com/kubesphere/console/pull/2009" target="_blank" rel="noopener noreferrer">kubesphere/console#2009&lt;/a>&lt;/li>
+&lt;li>修复了容器组模板编辑页面中协议下拉框显示不全的问题 &lt;a href="https://github.com/kubesphere/console/pull/1944" target="_blank" rel="noopener noreferrer">kubesphere/console#1944&lt;/a>&lt;/li>
+&lt;li>修复了工作负载创建时探针格式校验的问题 &lt;a href="https://github.com/kubesphere/console/pull/1941" target="_blank" rel="noopener noreferrer">kubesphere/console#1941&lt;/a>&lt;/li>
+&lt;li>修复了企业空间成员详情页面中 DevOps 项目列表展示错误的问题 &lt;a href="https://github.com/kubesphere/console/pull/1936" target="_blank" rel="noopener noreferrer">#1936&lt;/a>&lt;/li>
+&lt;li>修复文案错误、缺失的问题 &lt;a href="https://github.com/kubesphere/console/pull/1879" target="_blank" rel="noopener noreferrer">kubesphere/console#1879&lt;/a> &lt;a href="https://github.com/kubesphere/console/pull/1880" target="_blank" rel="noopener noreferrer">kubesphere/console#1880&lt;/a> &lt;a href="https://github.com/kubesphere/console/pull/1895" target="_blank" rel="noopener noreferrer">kubesphere/console#1895&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="可观测性">可观测性&lt;/h2>
+&lt;h3 id="优化增强-1">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>优化了通知设置中端口号的格式限制&lt;a href="https://github.com/kubesphere/console/pull/1885" target="_blank" rel="noopener noreferrer">#1885&lt;/a>&lt;/li>
+&lt;li>支持安装时指定使用已有的 Prometheus. &lt;a href="https://github.com/kubesphere/ks-installer/pull/1528" target="_blank" rel="noopener noreferrer">#1528&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复-1">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复邮件服务器同步错误 &lt;a href="https://github.com/kubesphere/console/pull/1969" target="_blank" rel="noopener noreferrer">#1969&lt;/a>&lt;/li>
+&lt;li>修复重启 installer 后 notification manager 会被重置的问题 &lt;a href="https://github.com/kubesphere/ks-installer/pull/1564" target="_blank" rel="noopener noreferrer">#1564&lt;/a>&lt;/li>
+&lt;li>修复了删除监测对象后不能删除其告警策略的问题 &lt;a href="https://github.com/kubesphere/console/pull/2045" target="_blank" rel="noopener noreferrer">#2045&lt;/a>&lt;/li>
+&lt;li>修复了增加监控资源无默认模板的问题 &lt;a href="https://github.com/kubesphere/console/pull/2029" target="_blank" rel="noopener noreferrer">#2029&lt;/a>&lt;/li>
+&lt;li>修复了容器只显示老日志的问题&lt;a href="https://github.com/kubesphere/console/issues/1972" target="_blank" rel="noopener noreferrer">#1972&lt;/a>&lt;/li>
+&lt;li>修复了告警信息时间显示错误的问题 &lt;a href="https://github.com/kubesphere/console/pull/1978" target="_blank" rel="noopener noreferrer">#1978&lt;/a>&lt;/li>
+&lt;li>完善了一些创建告警规则时的输入规则 &lt;a href="https://github.com/kubesphere/console/pull/1958" target="_blank" rel="noopener noreferrer">#1958&lt;/a>&lt;/li>
+&lt;li>修复了自定义监控因可视区的高度导致级联选择无法完全显示指标的问题 &lt;a href="https://github.com/kubesphere/console/pull/1989" target="_blank" rel="noopener noreferrer">#1989&lt;/a>&lt;/li>
+&lt;li>调整了 node exporter 和 kube-state-metrics 的 limit &lt;a href="https://github.com/kubesphere/ks-installer/pull/1537" target="_blank" rel="noopener noreferrer">#1537&lt;/a>&lt;/li>
+&lt;li>微调了对 etcdHighNumberOfFailedGRPCRequests 规则的选择器，来避免错误的 etcd 告警 &lt;a href="https://github.com/kubesphere/ks-installer/pull/1540" target="_blank" rel="noopener noreferrer">#1540&lt;/a>&lt;/li>
+&lt;li>修复升级时 events ruler 组件未升到新版本的问题 &lt;a href="https://github.com/kubesphere/ks-installer/pull/1594" target="_blank" rel="noopener noreferrer">#1594&lt;/a>&lt;/li>
+&lt;li>修复规则选择器：kube_node_status_allocatable_memory_bytes, kube_resourcequota &lt;a href="https://github.com/kubesphere/ks-installer/pull/1560" target="_blank" rel="noopener noreferrer">#1560&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="微服务治理">微服务治理&lt;/h2>
+&lt;h3 id="优化增强-2">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>优化 trace 页面增加时间选择器 &lt;a href="https://github.com/kubesphere/console/pull/2022" target="_blank" rel="noopener noreferrer">#2022&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复-2">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复 trace 选项卡无法正常展示的问题 &lt;a href="https://github.com/kubesphere/console/pull/1890" target="_blank" rel="noopener noreferrer">kubesphere/console#1890&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="devops">DevOps&lt;/h2>
+&lt;h3 id="优化增强-3">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>支持 GitLab 多分支流水线按分支名筛选过滤 &lt;a href="https://github.com/kubesphere/console/pull/2077" target="_blank" rel="noopener noreferrer">kubesphere/console#2077&lt;/a>&lt;/li>
+&lt;li>更改了 b2i 页面的“重新执行”按钮为“执行”&lt;a href="https://github.com/kubesphere/console/pull/1981" target="_blank" rel="noopener noreferrer">kubesphere/console#1981&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复-3">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复凭证状态无法同步的问题 &lt;a href="https://github.com/kubesphere/console/pull/1956" target="_blank" rel="noopener noreferrer">kubesphere/console#1956&lt;/a>&lt;/li>
+&lt;li>修复了 CI 自动推送镜像时 tag 错误的问题 &lt;a href="https://github.com/kubesphere/console/pull/2037" target="_blank" rel="noopener noreferrer">kubesphere/console#2037&lt;/a>&lt;/li>
+&lt;li>修复了在流水线详情页不能返回上一个页面的问题 &lt;a href="https://github.com/kubesphere/console/pull/1996" target="_blank" rel="noopener noreferrer">kubesphere/console#1996&lt;/a>&lt;/li>
+&lt;li>修复了镜像构建器弹窗名称不一致的问题 &lt;a href="https://github.com/kubesphere/console/pull/1922" target="_blank" rel="noopener noreferrer">kubesphere/console#1922&lt;/a>&lt;/li>
+&lt;li>修复了在 DevOps 项目中创建 kubeconfig 类型的证书更新被重置的问题 &lt;a href="https://github.com/kubesphere/console/pull/1990" target="_blank" rel="noopener noreferrer">kubesphere/console#1990&lt;/a>&lt;/li>
+&lt;li>修复了多分支流水线中信任用户错误的问题 &lt;a href="https://github.com/kubesphere/console/pull/1987" target="_blank" rel="noopener noreferrer">kubesphere/console#1987&lt;/a>&lt;/li>
+&lt;li>修复了 DevOps 项目中流水线 stage label 在配置其他项不保存后被重置的问题 &lt;a href="https://github.com/kubesphere/console/pull/1979" target="_blank" rel="noopener noreferrer">kubesphere/console#1979&lt;/a>&lt;/li>
+&lt;li>修复了 shell 和 lable 在流水线中显示不准确的问题 &lt;a href="https://github.com/kubesphere/console/pull/1970" target="_blank" rel="noopener noreferrer">kubesphere/console#1970&lt;/a>&lt;/li>
+&lt;li>修复了流水线基础信息对话框显示信息混乱的问题 &lt;a href="https://github.com/kubesphere/console/pull/1955" target="_blank" rel="noopener noreferrer">kubesphere/console#1955&lt;/a>&lt;/li>
+&lt;li>修复了多分支流水线运行 API 错误的问题 &lt;a href="https://github.com/kubesphere/console/pull/1954" target="_blank" rel="noopener noreferrer">kubesphere/console#1954&lt;/a>&lt;/li>
+&lt;li>修复了流水线中 webhook 推送设置无效的问题 &lt;a href="https://github.com/kubesphere/console/pull/1953" target="_blank" rel="noopener noreferrer">kubesphere/console#1953&lt;/a>&lt;/li>
+&lt;li>修复了流水线编辑器中关于拖拽功能的文案 &lt;a href="https://github.com/kubesphere/console/pull/1949" target="_blank" rel="noopener noreferrer">kubesphere/console#1949&lt;/a>&lt;/li>
+&lt;li>修复了从源码构建服务中构建环境中无默认选项的问题 &lt;a href="https://github.com/kubesphere/console/pull/1993" target="_blank" rel="noopener noreferrer">kubesphere/console#1993&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="认证与鉴权">认证与鉴权&lt;/h2>
+&lt;h3 id="问题修复-4">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复用户最近登录时间错误的问题 &lt;a href="https://github.com/kubesphere/console/pull/1881" target="_blank" rel="noopener noreferrer">kubesphere/console#1881&lt;/a>&lt;/li>
+&lt;li>修复企业空间 admin 用户无法查看资源配额的问题 &lt;a href="https://github.com/kubesphere/ks-installer/pull/1551" target="_blank" rel="noopener noreferrer">kubesphere/ks-installer#1551&lt;/a> &lt;a href="https://github.com/kubesphere/console/pull/2062" target="_blank" rel="noopener noreferrer">kubesphere/console#2062&lt;/a>&lt;/li>
+&lt;li>修复项目成员无法连接容器终端的问题 &lt;a href="https://github.com/kubesphere/console/pull/2002" target="_blank" rel="noopener noreferrer">kubesphere/console#2002&lt;/a>&lt;/li>
+&lt;li>修复为项目分配企业空间时无法指定管理员的问题 &lt;a href="https://github.com/kubesphere/console/pull/1961" target="_blank" rel="noopener noreferrer">kubesphere/console#1961&lt;/a>&lt;/li>
+&lt;li>修复创建企业空间角色时权限项名称重复的问题 &lt;a href="https://github.com/kubesphere/console/pull/1945" target="_blank" rel="noopener noreferrer">kubesphere/console#1945&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="多租户管理">多租户管理&lt;/h2>
+&lt;h3 id="问题修复-5">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复用户组可以关联已删除角色的问题 &lt;a href="https://github.com/kubesphere/console/pull/1899" target="_blank" rel="noopener noreferrer">#1899&lt;/a> &lt;a href="https://github.com/kubesphere/kubesphere/pull/3897" target="_blank" rel="noopener noreferrer">#3897&lt;/a>&lt;/li>
+&lt;li>修复了删除长用户名用户引起的系统崩溃问题 &lt;a href="https://github.com/kubesphere/ks-installer/pull/1450" target="_blank" rel="noopener noreferrer">kubesphere/ks-installer#1450&lt;/a> &lt;a href="https://github.com/kubesphere/kubesphere/pull/3796" target="_blank" rel="noopener noreferrer">kubesphere/kubesphere#3796&lt;/a>&lt;/li>
+&lt;li>修复用户组绑定项目角色提示出错的问题 &lt;a href="https://github.com/kubesphere/console/pull/1967" target="_blank" rel="noopener noreferrer">kubesphere/console#1967&lt;/a>&lt;/li>
+&lt;li>修复多集群环境企业空间配额展示错误的问题 &lt;a href="https://github.com/kubesphere/console/pull/2013" target="_blank" rel="noopener noreferrer">kubesphere/console#2013&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="多集群管理">多集群管理&lt;/h2>
+&lt;h3 id="优化增强-4">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>优化了 member 集群配置错误时的提示信息 &lt;a href="https://github.com/kubesphere/console/pull/2084" target="_blank" rel="noopener noreferrer">kubesphere/console#2084&lt;/a> &lt;a href="https://github.com/kubesphere/console/pull/1965" target="_blank" rel="noopener noreferrer">kubesphere/console#1965&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复-6">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复了不能获取 member 集群中节点标签的问题 &lt;a href="https://github.com/kubesphere/console/pull/1927" target="_blank" rel="noopener noreferrer">kubesphere/console#1927&lt;/a>&lt;/li>
+&lt;li>修复项目列表页面未正确区分多集群项目的问题 &lt;a href="https://github.com/kubesphere/console/pull/2059" target="_blank" rel="noopener noreferrer">kubesphere/console#2059&lt;/a>&lt;/li>
+&lt;li>修复多集群项目下网关开启状态展示错误的问题 &lt;a href="https://github.com/kubesphere/console/pull/1939" target="_blank" rel="noopener noreferrer">kubesphere/console#1939&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="计量计费">计量计费&lt;/h2>
+&lt;h3 id="优化增强-5">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>计量计费部分的 UI 调整 &lt;a href="https://github.com/kubesphere/console/pull/1896" target="_blank" rel="noopener noreferrer">kubesphere/console#1896&lt;/a>&lt;/li>
+&lt;li>修改了计量计费按钮的颜色 &lt;a href="https://github.com/kubesphere/console/pull/1934" target="_blank" rel="noopener noreferrer">kubesphere/console#1934&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复-7">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复了计量计费无法涵盖 OpenPitrix 资源的问题 &lt;a href="https://github.com/kubesphere/kubesphere/pull/3871" target="_blank" rel="noopener noreferrer">kubesphere/console#3871&lt;/a>&lt;/li>
+&lt;li>修复了 system-workspace 计量计费中的报错问题 &lt;a href="https://github.com/kubesphere/console/pull/2083" target="_blank" rel="noopener noreferrer">kubesphere/console#2083&lt;/a>&lt;/li>
+&lt;li>修复了多集群计量计费列表中未显示所有项目的问题 &lt;a href="https://github.com/kubesphere/console/pull/2066" target="_blank" rel="noopener noreferrer">kubesphere/console#2066&lt;/a>&lt;/li>
+&lt;li>修复了由于所依赖的集群未加载导致的计费页面报错 &lt;a href="https://github.com/kubesphere/console/pull/2054" target="_blank" rel="noopener noreferrer">kubesphere/console#2054&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="应用商店">应用商店&lt;/h2>
+&lt;h3 id="优化增强-6">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>优化应用模板创建页面提示文案与页面布局 &lt;a href="https://github.com/kubesphere/console/pull/2012" target="_blank" rel="noopener noreferrer">kubesphere/console#2012&lt;/a> &lt;a href="https://github.com/kubesphere/console/pull/2063" target="_blank" rel="noopener noreferrer">kubesphere/console#2063&lt;/a>&lt;/li>
+&lt;li>优化应用导入功能 &lt;a href="https://github.com/kubesphere/openpitrix-jobs/pull/18" target="_blank" rel="noopener noreferrer">kubesphere/openpitrix-jobs#18&lt;/a>&lt;/li>
+&lt;li>应用商店中新增 RadonDB PostgreSQL 应用 &lt;a href="https://github.com/kubesphere/openpitrix-jobs/pull/17" target="_blank" rel="noopener noreferrer">kubesphere/openpitrix-jobs#17&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="安全">安全&lt;/h2>
+&lt;h3 id="优化增强-7">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>切换 jwt-go 的分支，用于修复 CVE-2020-26160 &lt;a href="https://github.com/kubesphere/kubesphere/pull/3991" target="_blank" rel="noopener noreferrer">#3991&lt;/a>&lt;/li>
+&lt;li>升级 protobuf 版本至 v1.3.2 用于修复 CVE-2021-3121 &lt;a href="https://github.com/kubesphere/kubesphere/pull/3944" target="_blank" rel="noopener noreferrer">#3944&lt;/a>&lt;/li>
+&lt;li>升级 crypto 至最新版用于修复 CVE-2020-29652 &lt;a href="https://github.com/kubesphere/kubesphere/pull/3997" target="_blank" rel="noopener noreferrer">#3997&lt;/a>&lt;/li>
+&lt;li>移除了 yarn.lock 文件以避免一些 CVE 漏洞误报 &lt;a href="https://github.com/kubesphere/console/pull/2024" target="_blank" rel="noopener noreferrer">#2024&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复-8">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复了容器终端越权访问的问题 &lt;a href="https://github.com/kubesphere/kubesphere/pull/3956" target="_blank" rel="noopener noreferrer">kubesphere/kubesphere#3956&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="存储">存储&lt;/h2>
+&lt;h3 id="优化增强-8">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>提升了 s3 uploader 并发性能 &lt;a href="https://github.com/kubesphere/kubesphere/pull/4011" target="_blank" rel="noopener noreferrer">#4011&lt;/a>&lt;/li>
+&lt;li>增加预置的 CSI Provisioner CR 配置 &lt;a href="https://github.com/kubesphere/ks-installer/pull/1536" target="_blank" rel="noopener noreferrer">#1536&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复-9">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>移除了无效的自动探测存储类的功能 &lt;a href="https://github.com/kubesphere/kubesphere/pull/3947" target="_blank" rel="noopener noreferrer">#3947&lt;/a>&lt;/li>
+&lt;li>修复关于项目配额存储资源单位错误引导的问题 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3973" target="_blank" rel="noopener noreferrer">#3973&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="kubeedge-集成">KubeEdge 集成&lt;/h2>
+&lt;h3 id="优化增强-9">优化增强&lt;/h3>
+&lt;ul>
+&lt;li>支持 KubeEdge v1.6.2 &lt;a href="https://github.com/kubesphere/ks-installer/pull/1527" target="_blank" rel="noopener noreferrer">#1527&lt;/a> &lt;a href="https://github.com/kubesphere/ks-installer/pull/1542" target="_blank" rel="noopener noreferrer">#1542&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="问题修复-10">问题修复&lt;/h3>
+&lt;ul>
+&lt;li>修复了 KubeEdge CloudCore 组件 advertiseAddress 配置错误的问题 &lt;a href="https://github.com/kubesphere/ks-installer/pull/1561" target="_blank" rel="noopener noreferrer">#1561&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Release Notes for 3.1.0</title><link>https://openksc.github.io/zh/docs/v3.3/release/release-v310/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/release/release-v310/</guid><description>&lt;h2 id="如何获取-v310">如何获取 v3.1.0&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/kubesphere/kubekey" target="_blank" rel="noopener noreferrer">Install KubeSphere v3.1.0 on Linux&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/kubesphere/ks-installer" target="_blank" rel="noopener noreferrer">Install KubeSphere v3.1.0 on existing Kubernetes&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="新功能及增强">新功能及增强&lt;/h2>
+&lt;h3 id="多集群管理">多集群管理&lt;/h3>
+&lt;ul>
+&lt;li>Member 集群管理服务轻量化，移除 Redis、OpenLDAP 等组件 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3056" target="_blank" rel="noopener noreferrer">#3056&lt;/a>&lt;/li>
+&lt;li>简化添加集群的操作，并验证集群配置（如 jwtSecret）有效性 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3232" target="_blank" rel="noopener noreferrer">#3232&lt;/a>&lt;/li>
+&lt;li>可按需配置集群控制器同步时间段 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3213" target="_blank" rel="noopener noreferrer">#3213&lt;/a>&lt;/li>
+&lt;li>重构集群控制器，优化逻辑 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3234" target="_blank" rel="noopener noreferrer">#3234&lt;/a>&lt;/li>
+&lt;li>支持以高可用方式运行 Tower 管理和代理服务 &lt;a href="https://github.com/kubesphere/tower/issues/31" target="_blank" rel="noopener noreferrer">#31&lt;/a>&lt;/li>
+&lt;li>升级工具箱中的 Kubectl 且与 Kubernetes 集群版本保持一致 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3103" target="_blank" rel="noopener noreferrer">#3103&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="边缘节点管理">边缘节点管理&lt;/h3>
+&lt;h4 id="集成-kubeedge-3070">集成 KubeEdge &lt;a href="https://github.com/kubesphere/kubesphere/issues/3070" target="_blank" rel="noopener noreferrer">#3070&lt;/a>&lt;/h4>
+&lt;ul>
+&lt;li>支持 KubeEdge 云端组件的安装部署&lt;/li>
+&lt;li>支持 KubeEdge 边缘节点的添加&lt;/li>
+&lt;li>支持边缘节点的日志和监控数据采集&lt;/li>
+&lt;li>支持边缘节点网络配置自动化的加入和退出&lt;/li>
+&lt;li>边缘节点在加入集群时，支持自动添加污点&lt;/li>
+&lt;li>支持通过添加 nodeAffinity 禁止云端工作负载（如 DaemonSet）调度到边缘节点 &lt;a href="https://github.com/kubesphere/ks-installer/pull/1295" target="_blank" rel="noopener noreferrer">#1295&lt;/a> &lt;a href="https://github.com/kubesphere/ks-installer/pull/1297" target="_blank" rel="noopener noreferrer">#1297&lt;/a> &lt;a href="https://github.com/kubesphere/ks-installer/pull/1300" target="_blank" rel="noopener noreferrer">1300&lt;/a>&lt;/li>
+&lt;li>支持调度工作负载至边缘节点&lt;/li>
+&lt;/ul>
+&lt;h3 id="认证和权限管理">认证和权限管理&lt;/h3>
+&lt;ul>
+&lt;li>新用户首次登录，提示修改初始密码&lt;/li>
+&lt;li>通过第三方平台登录 KubeSphere，需确认帐户信息&lt;/li>
+&lt;li>支持 &lt;a href="https://apereo.github.io/cas/5.0.x/protocol/CAS-Protocol-Specification.html" target="_blank" rel="noopener noreferrer">CAS&lt;/a> 身份提供商 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3047" target="_blank" rel="noopener noreferrer">#3047&lt;/a>&lt;/li>
+&lt;li>支持 &lt;a href="https://openid.net/specs/openid-connect-core-1_0.html" target="_blank" rel="noopener noreferrer">OIDC&lt;/a> 身份提供商 &lt;a href="https://github.com/kubesphere/kubesphere/issues/2941" target="_blank" rel="noopener noreferrer">#2941&lt;/a>&lt;/li>
+&lt;li>支持 IDaaS (Alibaba Cloud Identity as a Service) 身份提供商 &lt;a href="https://github.com/kubesphere/kubesphere/pull/2997" target="_blank" rel="noopener noreferrer">#2997&lt;/a>&lt;/li>
+&lt;li>支持 Service Account 管理 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3211" target="_blank" rel="noopener noreferrer">#3211&lt;/a>&lt;/li>
+&lt;li>改善 LDAP 认证插件，支持 LDAPS 和搜索过滤 &lt;a href="https://github.com/kubesphere/kubesphere/issues/2970" target="_blank" rel="noopener noreferrer">#2970&lt;/a> &lt;a href="https://github.com/kubesphere/kubesphere/issues/3766" target="_blank" rel="noopener noreferrer">#3766&lt;/a>&lt;/li>
+&lt;li>改善认证插件，简化身份提供商的配置方式 &lt;a href="https://github.com/kubesphere/kubesphere/issues/2970" target="_blank" rel="noopener noreferrer">#2970&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="多租户管理">多租户管理&lt;/h3>
+&lt;ul>
+&lt;li>支持用户组管理，可将用户组添加至企业空间或项目参与协同 &lt;a href="https://github.com/kubesphere/kubesphere/issues/2940" target="_blank" rel="noopener noreferrer">#2940&lt;/a>&lt;/li>
+&lt;li>支持企业空间配额，可限制企业空间的资源用量 &lt;a href="https://github.com/kubesphere/kubesphere/issues/2939" target="_blank" rel="noopener noreferrer">#2939&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="网络">网络&lt;/h3>
+&lt;ul>
+&lt;li>新增支持 Kube-OVN 插件&lt;/li>
+&lt;li>支持 Calico IP 池管理 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3057" target="_blank" rel="noopener noreferrer">#3057&lt;/a>&lt;/li>
+&lt;li>支持网络可视化 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3061" target="_blank" rel="noopener noreferrer">#3061&lt;/a> &lt;a href="https://github.com/kubesphere/kubesphere/issues/583" target="_blank" rel="noopener noreferrer">#583&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="可观测性">可观测性&lt;/h3>
+&lt;ul>
+&lt;li>优化集成已有 Prometheus 服务对接方式 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3068" target="_blank" rel="noopener noreferrer">#3068&lt;/a> &lt;a href="https://github.com/kubesphere/ks-installer/pull/1164" target="_blank" rel="noopener noreferrer">#1164&lt;/a> &lt;a href="https://openksc.github.io/docs/v3.3/faq/observability/byop/">Guide&lt;/a>&lt;/li>
+&lt;li>新增 Thanos Ruler (Thanos v0.18.0) 用于新版告警&lt;/li>
+&lt;li>升级 Prometheus 至 v2.26.0&lt;/li>
+&lt;li>升级 Prometheus Operator 至 v0.42.1&lt;/li>
+&lt;li>升级 kube-state-metrics 至 v1.9.7&lt;/li>
+&lt;li>升级 metrics-server 至 v0.4.2&lt;/li>
+&lt;li>升级 Notification Manager 至 v1.0.0 &lt;a href="https://github.com/kubesphere/notification-manager/releases" target="_blank" rel="noopener noreferrer">Releases&lt;/a>&lt;/li>
+&lt;li>升级 FluentBit Operator 至 v0.5.0 &lt;a href="https://github.com/kubesphere/fluentbit-operator/releases" target="_blank" rel="noopener noreferrer">Releases&lt;/a>&lt;/li>
+&lt;li>升级 FluentBit 至 v1.6.9&lt;/li>
+&lt;li>升级 KubeEvents 至 v0.2.0&lt;/li>
+&lt;li>升级 Kube-Auditing 至 v0.1.2&lt;/li>
+&lt;/ul>
+&lt;h4 id="监控">监控&lt;/h4>
+&lt;ul>
+&lt;li>支持图形化方式配置 ServiceMonitor &lt;a href="https://github.com/kubesphere/console/pull/1301" target="_blank" rel="noopener noreferrer">#1031&lt;/a>&lt;/li>
+&lt;li>支持 PromQL Auto-completion 和 Syntax Highlighting &lt;a href="https://github.com/kubesphere/console/pull/1307" target="_blank" rel="noopener noreferrer">#1307&lt;/a>&lt;/li>
+&lt;li>支持集群层级的自定义监控 &lt;a href="https://github.com/kubesphere/kubesphere/pull/3193" target="_blank" rel="noopener noreferrer">#3193&lt;/a>&lt;/li>
+&lt;li>kube-scheduler 与 kube-controller-manager 数据抓取由 HTTP 端口 10251/10252 改为 HTTPS 端口 10259/10257 &lt;a href="https://github.com/kubesphere/ks-installer/pull/1367" target="_blank" rel="noopener noreferrer">#1367&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="告警">告警&lt;/h4>
+&lt;ul>
+&lt;li>支持 Prometheus 风格的告警规则配置管理 &lt;a href="https://github.com/kubesphere/kubesphere/pull/3181" target="_blank" rel="noopener noreferrer">#3181&lt;/a>&lt;/li>
+&lt;li>支持平台及项目层级的告警规则 &lt;a href="https://github.com/kubesphere/kubesphere/pull/3181" target="_blank" rel="noopener noreferrer">#3181&lt;/a>&lt;/li>
+&lt;li>支持显示告警规则的实时告警状态 &lt;a href="https://github.com/kubesphere/kubesphere/pull/3181" target="_blank" rel="noopener noreferrer">#3181&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="通知管理">通知管理&lt;/h4>
+&lt;ul>
+&lt;li>新增钉钉、企业微信、Slack 和 Webhook 通知方式，提供图形化管理 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3066" target="_blank" rel="noopener noreferrer">#3066&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h4 id="日志">日志&lt;/h4>
+&lt;ul>
+&lt;li>支持将日志输出到 &lt;a href="https://github.com/kubesphere/fluentbit-operator/blob/master/docs/plugins/output/loki.md" target="_blank" rel="noopener noreferrer">Loki&lt;/a> &lt;a href="https://github.com/kubesphere/fluentbit-operator/pull/39" target="_blank" rel="noopener noreferrer">#39&lt;/a>&lt;/li>
+&lt;li>支持收集 kubelet/docker/containerd 的日志 &lt;a href="https://github.com/kubesphere/fluentbit-operator/pull/38" target="_blank" rel="noopener noreferrer">#38&lt;/a>&lt;/li>
+&lt;li>支持收集 &lt;a href="https://github.com/kubesphere/fluentbit-operator#auditd" target="_blank" rel="noopener noreferrer">auditd&lt;/a> 的日志 &lt;a href="https://github.com/kubesphere/fluentbit-operator/pull/45" target="_blank" rel="noopener noreferrer">#45&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="devops">DevOps&lt;/h3>
+&lt;ul>
+&lt;li>支持 GitLab 多分支流水线 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3100" target="_blank" rel="noopener noreferrer">#3100&lt;/a>&lt;/li>
+&lt;li>可同时启动并运行多条流水线 &lt;a href="https://github.com/kubesphere/kubesphere/issues/1811" target="_blank" rel="noopener noreferrer">#1811&lt;/a>&lt;/li>
+&lt;li>支持流水线复制 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3053" target="_blank" rel="noopener noreferrer">#3053&lt;/a>&lt;/li>
+&lt;li>新增权限可控的流水线审核机制 &lt;a href="https://github.com/kubesphere/kubesphere/issues/2483" target="_blank" rel="noopener noreferrer">#2483&lt;/a> &lt;a href="https://github.com/kubesphere/kubesphere/issues/3006" target="_blank" rel="noopener noreferrer">#3006&lt;/a>&lt;/li>
+&lt;li>访问 DevOps 项目首页可查看流水线运行状态 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3007" target="_blank" rel="noopener noreferrer">#3007&lt;/a>&lt;/li>
+&lt;li>支持通过流水线 Tag 触发流水线运行 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3051" target="_blank" rel="noopener noreferrer">#3051&lt;/a>&lt;/li>
+&lt;li>支持 S2I Webhook &lt;a href="https://github.com/kubesphere/s2ioperator/issues/6" target="_blank" rel="noopener noreferrer">#6&lt;/a>&lt;/li>
+&lt;li>优化在输入错误的流水线定时参数时的提示信息 &lt;a href="https://github.com/kubesphere/kubesphere/issues/2919" target="_blank" rel="noopener noreferrer">#2919&lt;/a>&lt;/li>
+&lt;li>优化创建流水线的交互体验 &lt;a href="https://github.com/kubesphere/console/issues/1283" target="_blank" rel="noopener noreferrer">#1283&lt;/a>&lt;/li>
+&lt;li>优化 S2I 错误提示信息 &lt;a href="https://github.com/kubesphere/s2ioperator/issues/140" target="_blank" rel="noopener noreferrer">#140&lt;/a>&lt;/li>
+&lt;li>升级 Jenkins 至 2.249.1 &lt;a href="https://github.com/kubesphere/kubesphere/issues/2618" target="_blank" rel="noopener noreferrer">#2618&lt;/a>&lt;/li>
+&lt;li>调整 Jenkins 部署方式为 Jenkins Distribution &lt;a href="https://github.com/kubesphere/kubesphere/issues/2182" target="_blank" rel="noopener noreferrer">#2182&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="应用商店及应用">应用商店及应用&lt;/h3>
+&lt;ul>
+&lt;li>新增 MySQL 高可用集群应用：&lt;a href="https://github.com/radondb/xenondb" target="_blank" rel="noopener noreferrer">XenonDB&lt;/a>&lt;/li>
+&lt;li>支持修改已部署的应用模板&lt;/li>
+&lt;li>支持查看应用模板部署失败的原因 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3036" target="_blank" rel="noopener noreferrer">#3036&lt;/a> &lt;a href="https://github.com/kubesphere/kubesphere/issues/3001" target="_blank" rel="noopener noreferrer">#3001&lt;/a> &lt;a href="https://github.com/kubesphere/kubesphere/issues/2951" target="_blank" rel="noopener noreferrer">#2951&lt;/a>&lt;/li>
+&lt;li>支持批量删除应用模板&lt;/li>
+&lt;/ul>
+&lt;h3 id="微服务治理">微服务治理&lt;/h3>
+&lt;ul>
+&lt;li>支持图形化流量方向检测，图像化方式显示应用 (Composing App) 流量的流入/流出 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3153" target="_blank" rel="noopener noreferrer">#3153&lt;/a>&lt;/li>
+&lt;li>支持 Kiali 附加组件，用户可以通过 Kiali 直接管理 Istio &lt;a href="https://github.com/kubesphere/kubesphere/issues/3106" target="_blank" rel="noopener noreferrer">#3106&lt;/a>&lt;/li>
+&lt;li>支持 NGINX Ingress Gateway 的监控，新增 NGINX Ingress Controller 的监控指标 &lt;a href="https://github.com/kubesphere/ks-installer/pull/1205" target="_blank" rel="noopener noreferrer">#1205&lt;/a>&lt;/li>
+&lt;li>支持在创建应用时添加应用路由 &lt;a href="https://github.com/kubesphere/console/issues/1426" target="_blank" rel="noopener noreferrer">#1426&lt;/a>&lt;/li>
+&lt;li>升级 Istio 至 1.6.10 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3236" target="_blank" rel="noopener noreferrer">#3326&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="计量计费">计量计费&lt;/h3>
+&lt;ul>
+&lt;li>支持集群、企业空间和应用级别的应用消耗量统计 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3062" target="_blank" rel="noopener noreferrer">#3062&lt;/a>&lt;/li>
+&lt;li>通过 ConfigMap 方式可为计量资源配置计费单价&lt;/li>
+&lt;/ul>
+&lt;h3 id="ui-页面优化">UI 页面优化&lt;/h3>
+&lt;ul>
+&lt;li>优化首页的 Loading 效果&lt;/li>
+&lt;li>优化 kubectl 为独立页面&lt;/li>
+&lt;li>优化可视化流水线的配置显示&lt;/li>
+&lt;li>优化流水线的运行状态的错误显示&lt;/li>
+&lt;li>优化代码仓库的筛选方式&lt;/li>
+&lt;li>优化节点调度策略的设置方式&lt;/li>
+&lt;li>优化部署模式的设置方式&lt;/li>
+&lt;/ul>
+&lt;h2 id="重要的技术调整">重要的技术调整&lt;/h2>
+&lt;ul>
+&lt;li>升级 Kubernetes 版本依赖，从 v1.17 调整至 v1.18 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3274" target="_blank" rel="noopener noreferrer">#3274&lt;/a>&lt;/li>
+&lt;li>升级 Prometheus client_golang 版本依赖至 v1.5.1，升级 Prometheus 版本依赖至 v1.8.2 &lt;a href="https://github.com/kubesphere/kubesphere/pull/3097" target="_blank" rel="noopener noreferrer">3097&lt;/a>&lt;/li>
+&lt;li>基于 CRD 重构应用管理框架 OpenPitrix 并修复原有架构导致的问题 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3036" target="_blank" rel="noopener noreferrer">#3036&lt;/a> &lt;a href="https://github.com/kubesphere/kubesphere/issues/3001" target="_blank" rel="noopener noreferrer">#3001&lt;/a> &lt;a href="https://github.com/kubesphere/kubesphere/issues/2995" target="_blank" rel="noopener noreferrer">#2995&lt;/a> &lt;a href="https://github.com/kubesphere/kubesphere/issues/2981" target="_blank" rel="noopener noreferrer">#2981&lt;/a> &lt;a href="https://github.com/kubesphere/kubesphere/issues/2954" target="_blank" rel="noopener noreferrer">#2954&lt;/a> &lt;a href="https://github.com/kubesphere/kubesphere/issues/2951" target="_blank" rel="noopener noreferrer">#2951&lt;/a> &lt;a href="https://github.com/kubesphere/kubesphere/issues/2783" target="_blank" rel="noopener noreferrer">#2783&lt;/a> &lt;a href="https://github.com/kubesphere/kubesphere/issues/2713" target="_blank" rel="noopener noreferrer">#2713&lt;/a> &lt;a href="https://github.com/kubesphere/kubesphere/issues/2700" target="_blank" rel="noopener noreferrer">#2700&lt;/a> &lt;a href="https://github.com/kubesphere/kubesphere/issues/1903" target="_blank" rel="noopener noreferrer">#1903&lt;/a>&lt;/li>
+&lt;li>告警架构调整，不再使用 MySQL、Redis 和 etcd 等组件以及旧版告警规则格式。改为使用 Thanos Ruler 配合 Prometheus 内置告警规则进行告警管理，新版告警兼容 Prometheus 告警规则。KubeSphere v3.0.0 中旧版告警规则会在升级到 v3.1.0 后自动迁移为新版告警规则&lt;/li>
+&lt;li>通知架构调整，不再使用 MySQL、Redis 和 etcd 等组件。改为使用 &lt;a href="https://github.com/kubesphere/notification-manager/" target="_blank" rel="noopener noreferrer">Notification Manager&lt;/a> 以 CRD 的方式配置通知渠道。通知渠道设置由告警规则级别调整为集群级别，且多集群仅需设置一次通知渠道&lt;/li>
+&lt;/ul>
+&lt;h2 id="废弃或移除的功能">废弃或移除的功能&lt;/h2>
+&lt;ul>
+&lt;li>依赖 MySQL、Redis 和 etcd 等组件的旧版告警与通知被新版告警与通知替代&lt;/li>
+&lt;li>容器终端 WebSocket API 发生变更 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3041" target="_blank" rel="noopener noreferrer">#3041&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="问题修复">问题修复&lt;/h2>
+&lt;ul>
+&lt;li>修复帐户无法登录的问题 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3132" target="_blank" rel="noopener noreferrer">#3132&lt;/a> &lt;a href="https://github.com/kubesphere/kubesphere/issues/3357" target="_blank" rel="noopener noreferrer">3357&lt;/a>&lt;/li>
+&lt;li>修复容器日志不支持ANSI Color的问题 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3044" target="_blank" rel="noopener noreferrer">#1322&lt;/a>&lt;/li>
+&lt;li>修复以 &lt;code>kube&lt;/code> 起始命名的项目（即 Namespace）下的微服务应用无法获取 Istio 相关的监控数据的问题 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3162" target="_blank" rel="noopener noreferrer">#3126&lt;/a>&lt;/li>
+&lt;li>修复 Viewer 可进入容器终端的安全隐患 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3041" target="_blank" rel="noopener noreferrer">#3041&lt;/a>&lt;/li>
+&lt;li>修复级联资源无法被删除的问题 &lt;a href="https://github.com/kubesphere/kubesphere/issues/2912" target="_blank" rel="noopener noreferrer">#2912&lt;/a>&lt;/li>
+&lt;li>修复 Kubernetes 1.19 及以上版本无法正常使用的问题 &lt;a href="https://github.com/kubesphere/kubesphere/issues/2928" target="_blank" rel="noopener noreferrer">#2928&lt;/a> &lt;a href="https://github.com/kubesphere/kubesphere/issues/2928" target="_blank" rel="noopener noreferrer">#2928&lt;/a>&lt;/li>
+&lt;li>修复微服务应用&lt;strong>监控&lt;/strong>按钮无效的问题 &lt;a href="https://github.com/kubesphere/console/issues/1394" target="_blank" rel="noopener noreferrer">#1394&lt;/a>&lt;/li>
+&lt;li>修复灰度发布的服务名不能与微服务应用的标签名相同的问题 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3128" target="_blank" rel="noopener noreferrer">#3128&lt;/a>&lt;/li>
+&lt;li>修复微服务应用状态无法更新的问题 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3241" target="_blank" rel="noopener noreferrer">#3241&lt;/a>&lt;/li>
+&lt;li>修复 Host 和 Member 集群在有同名企业空间的情况下，Member 集群下的企业空间被删除的问题 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3169" target="_blank" rel="noopener noreferrer">#3169&lt;/a>&lt;/li>
+&lt;li>修复通过 Proxy 方式下联邦多集群连接断开的问题 &lt;a href="https://github.com/kubesphere/kubesphere/pull/3203" target="_blank" rel="noopener noreferrer">#3202&lt;/a>&lt;/li>
+&lt;li>修正多集群状态显示问题 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3135" target="_blank" rel="noopener noreferrer">#3135&lt;/a>&lt;/li>
+&lt;li>修复 DevOps 流水线中无法部署工作负载的问题 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3112" target="_blank" rel="noopener noreferrer">#3112&lt;/a>&lt;/li>
+&lt;li>修复 DevOps 项目管理员无法下载 Artifact 的问题 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3083" target="_blank" rel="noopener noreferrer">#3088&lt;/a>&lt;/li>
+&lt;li>修复 DevOps 无法创建流水线的问题 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3105" target="_blank" rel="noopener noreferrer">#3105&lt;/a>&lt;/li>
+&lt;li>修复多集群下流水线触发的问题 &lt;a href="https://ask.kubesphere.io/forum/d/2626-webhook-jenkins" target="_blank" rel="noopener noreferrer">#2626&lt;/a>&lt;/li>
+&lt;li>修复某些情况下编辑流水线时导致的数据丢失问题 &lt;a href="https://github.com/kubesphere/console/issues/1270" target="_blank" rel="noopener noreferrer">#1270&lt;/a>&lt;/li>
+&lt;li>修复点击 &lt;strong>Docker Container Registry Credentials&lt;/strong> 时的报错问题 &lt;a href="https://github.com/kubesphere/console/issues/1269" target="_blank" rel="noopener noreferrer">#1269&lt;/a>&lt;/li>
+&lt;li>修复英文控制台显示中文代码质量检查结果的问题 &lt;a href="https://github.com/kubesphere/console/issues/1278" target="_blank" rel="noopener noreferrer">#1278&lt;/a>&lt;/li>
+&lt;li>修复 Jenkinsfile 中包含布尔值时的显示报错问题 &lt;a href="https://github.com/kubesphere/kubesphere/issues/3043" target="_blank" rel="noopener noreferrer">#3043&lt;/a>&lt;/li>
+&lt;li>修复当 PVC 不含有 &lt;code>StorageClassName&lt;/code> 时存储管理页面无法显示的问题 &lt;a href="https://github.com/kubesphere/ks-installer/issues/1109" target="_blank" rel="noopener noreferrer">#1109&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Release Notes for 3.0.0</title><link>https://openksc.github.io/zh/docs/v3.3/release/release-v300/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/release/release-v300/</guid><description>&lt;h2 id="how-to-get-v300">How to get v3.0.0&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="../../installing-on-linux/">Install KubeSphere v3.0.0 on Linux&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../../installing-on-kubernetes/">Install KubeSphere v3.0.0 on existing Kubernetes&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="release-notes">Release Notes&lt;/h2>
+&lt;h2 id="installer">&lt;strong>Installer&lt;/strong>&lt;/h2>
+&lt;h3 id="features">FEATURES&lt;/h3>
+&lt;ul>
+&lt;li>A brand-new installer: &lt;a href="https://github.com/kubesphere/kubekey" target="_blank" rel="noopener noreferrer">KubeKey&lt;/a>, v1.0.0, which is a turnkey solution to installing Kubernetes with KubeSphere on different platforms. It is more easy to use and reduces the dependency on OS environment&lt;/li>
+&lt;/ul>
+&lt;h3 id="upgrades--enhancements">UPGRADES &amp;amp; ENHANCEMENTS&lt;/h3>
+&lt;ul>
+&lt;li>Be compatible with Kubernetes 1.15.x, 1.16.x, 1.17.x and 1.18.x for &lt;a href="https://github.com/kubesphere/ks-installer" target="_blank" rel="noopener noreferrer">ks-installer&lt;/a>, v3.0.0&lt;/li>
+&lt;li>Add support for EulerOS, UOS and KylinOS&lt;/li>
+&lt;li>Add support for Kunpeng and Phytium CPU&lt;/li>
+&lt;li>Use ClusterConfiguration CRD to store ks-installer's configuration instead of ConfigMap&lt;/li>
+&lt;/ul>
+&lt;h2 id="cluster-management">&lt;strong>Cluster Management&lt;/strong>&lt;/h2>
+&lt;h3 id="features-1">FEATURES&lt;/h3>
+&lt;ul>
+&lt;li>Support management of multiple Kubernetes clusters&lt;/li>
+&lt;li>Support Federated Deployment and Federated StatefulSet across multiple clusters&lt;/li>
+&lt;/ul>
+&lt;h2 id="observability">&lt;strong>Observability&lt;/strong>&lt;/h2>
+&lt;h3 id="features-2">FEATURES&lt;/h3>
+&lt;ul>
+&lt;li>Support custom monitoring for 3rd-party application metrics in KubeSphere console&lt;/li>
+&lt;li>Add Kubernetes and KubeSphere auditing support, including audit event archiving, searching and alerting&lt;/li>
+&lt;li>Add Kubernetes event management support, including Kubernetes event archiving, searching and alerting based by &lt;a href="https://github.com/kubesphere/kube-events" target="_blank" rel="noopener noreferrer">kube-events&lt;/a>&lt;/li>
+&lt;li>Add tenant control to auditing and support Kubernetes event searching. A tenant user can only search his or her own auditing logs and Kubernetes events&lt;/li>
+&lt;li>Support archiving auditing logs and Kubernetes events to Elasticsearch, Kafka or Fluentd&lt;/li>
+&lt;li>Add multi-tenant notification support by &lt;a href="https://github.com/kubesphere/notification-manager" target="_blank" rel="noopener noreferrer">Notification Manager&lt;/a>&lt;/li>
+&lt;li>Support Alertmanager v0.21.0&lt;/li>
+&lt;/ul>
+&lt;h3 id="upgrades--enhancements-1">UPGRADES &amp;amp; ENHANCEMENTS&lt;/h3>
+&lt;ul>
+&lt;li>Upgrade Prometheus Operator to v0.38.3 (KubeSphere customized version )&lt;/li>
+&lt;li>Upgrade Prometheus to v2.20.1&lt;/li>
+&lt;li>Upgrade Node Exporter to v0.18.1&lt;/li>
+&lt;li>Upgrade kube-state-metrics to v1.9.6&lt;/li>
+&lt;li>Upgrade metrics server to v0.3.7&lt;/li>
+&lt;li>metrics-server is enabled by default (Disabled if KubeSphere is installed on existing Kubernetes)&lt;/li>
+&lt;li>Upgrade Fluent Bit Operator to v0.2.0&lt;/li>
+&lt;li>Upgrade Fluent Bit to v1.4.6&lt;/li>
+&lt;li>Significantly improve log searching performance&lt;/li>
+&lt;li>Allow platform admins to view pod logs from deleted namespaces&lt;/li>
+&lt;li>Adjust the display style of log searching results in Toolbox&lt;/li>
+&lt;li>Optimize log collection configuration for log files on pod's volume&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes">BUG FIXES&lt;/h3>
+&lt;ul>
+&lt;li>Fix time skew in metric graphs for newly created namespaces (#&lt;a href="https://github.com/kubesphere/kubesphere/issues/2868" target="_blank" rel="noopener noreferrer">2868&lt;/a>)&lt;/li>
+&lt;li>Fix workload-level alerting not working as expected (#&lt;a href="https://github.com/kubesphere/kubesphere/issues/2834" target="_blank" rel="noopener noreferrer">2834&lt;/a>)&lt;/li>
+&lt;li>Fix no metric data for NotReady nodes&lt;/li>
+&lt;/ul>
+&lt;h2 id="devops">&lt;strong>DevOps&lt;/strong>&lt;/h2>
+&lt;h3 id="features-3">FEATURES&lt;/h3>
+&lt;ul>
+&lt;li>Refactor DevOps framework, and use CRDs to manage DevOps resources&lt;/li>
+&lt;/ul>
+&lt;h3 id="upgrades--enhancements-2">UPGRADES &amp;amp; ENHANCEMENTS&lt;/h3>
+&lt;ul>
+&lt;li>Remove Sonarqube from installer default packages, and support for external Sonarqube&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-1">BUG FIXES&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Fix the issue that DevOps permission data is missing in a very limited number of cases&lt;/p></description></item><item><title>Release Notes for 2.1.1</title><link>https://openksc.github.io/zh/docs/v3.3/release/release-v211/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/release/release-v211/</guid><description>&lt;p>KubeSphere 2.1.1 was released on Feb 23rd, 2020, which has fixed known bugs and brought some enhancements. For the users who have installed versions of 2.0.x or 2.1.0, make sure to read the user manual carefully about how to upgrade before doing that, and feel free to raise any questions on &lt;a href="https://github.com/kubesphere/kubesphere/issues" target="_blank" rel="noopener noreferrer">GitHub&lt;/a>.&lt;/p>
+&lt;h2 id="whats-new-in-211">What's New in 2.1.1&lt;/h2>
+&lt;h2 id="installer">Installer&lt;/h2>
+&lt;h3 id="upgrade--enhancement">UPGRADE &amp;amp; ENHANCEMENT&lt;/h3>
+&lt;ul>
+&lt;li>Support Kubernetes v1.14.x、v1.15.x、v1.16.x、v1.17.x，also solve the issue of Kubernetes API Compatibility#&lt;a href="https://github.com/kubesphere/kubesphere/issues/1829" target="_blank" rel="noopener noreferrer">1829&lt;/a>&lt;/li>
+&lt;li>Simplify the steps of installation on existing Kubernetes, and remove the step of specifying cluster's CA certification, also specifying Etcd certification is no longer mandatory step if users don't need Etcd monitoring metrics&lt;/li>
+&lt;li>Backup the configuration of CoreDNS before upgrading&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes">BUG FIXES&lt;/h3>
+&lt;ul>
+&lt;li>Fix the issue of importing apps to App Store&lt;/li>
+&lt;/ul>
+&lt;h2 id="app-store">App Store&lt;/h2>
+&lt;h3 id="upgrade--enhancement-1">UPGRADE &amp;amp; ENHANCEMENT&lt;/h3>
+&lt;ul>
+&lt;li>Upgrade OpenPitrix to v0.4.8&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-1">BUG FIXES&lt;/h3>
+&lt;ul>
+&lt;li>Fix the latest version display issue for the published app #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1130" target="_blank" rel="noopener noreferrer">1130&lt;/a>&lt;/li>
+&lt;li>Fix the column name display issue in app approval list page #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1498" target="_blank" rel="noopener noreferrer">1498&lt;/a>&lt;/li>
+&lt;li>Fix the searching issue by app name/workspace #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1497" target="_blank" rel="noopener noreferrer">1497&lt;/a>&lt;/li>
+&lt;li>Fix the issue of failing to create app with the same name of previously deleted app #&lt;a href="https://github.com/kubesphere/kubesphere/pull/1821" target="_blank" rel="noopener noreferrer">1821&lt;/a> #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1564" target="_blank" rel="noopener noreferrer">1564&lt;/a>&lt;/li>
+&lt;li>Fix the issue of failing to deploy apps in some cases #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1619" target="_blank" rel="noopener noreferrer">1619&lt;/a> #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1730" target="_blank" rel="noopener noreferrer">1730&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="storage">Storage&lt;/h2>
+&lt;h3 id="upgrade--enhancement-2">UPGRADE &amp;amp; ENHANCEMENT&lt;/h3>
+&lt;ul>
+&lt;li>Support CSI plugins of Alibaba Cloud and Tencent Cloud&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-2">BUG FIXES&lt;/h3>
+&lt;ul>
+&lt;li>Fix the paging issue of storage class list page #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1583" target="_blank" rel="noopener noreferrer">1583&lt;/a> #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1591" target="_blank" rel="noopener noreferrer">1591&lt;/a>&lt;/li>
+&lt;li>Fix the issue that the value of imageFeatures parameter displays '2' when creating ceph storage class #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1593" target="_blank" rel="noopener noreferrer">1593&lt;/a>&lt;/li>
+&lt;li>Fix the issue that search filter fails to work in persistent volumes list page #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1582" target="_blank" rel="noopener noreferrer">1582&lt;/a>&lt;/li>
+&lt;li>Fix the display issue for abnormal persistent volume #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1581" target="_blank" rel="noopener noreferrer">1581&lt;/a>&lt;/li>
+&lt;li>Fix the display issue for the persistent volumes which associated storage class is deleted #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1580" target="_blank" rel="noopener noreferrer">1580&lt;/a> #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1579" target="_blank" rel="noopener noreferrer">1579&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="observability">Observability&lt;/h2>
+&lt;h3 id="upgrade--enhancement-3">UPGRADE &amp;amp; ENHANCEMENT&lt;/h3>
+&lt;ul>
+&lt;li>Upgrade Fluent Bit to v1.3.5 #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1505" target="_blank" rel="noopener noreferrer">1505&lt;/a>&lt;/li>
+&lt;li>Upgrade Kube-state-metrics to v1.7.2&lt;/li>
+&lt;li>Upgrade Elastic Curator to v5.7.6 #&lt;a href="https://github.com/kubesphere/ks-installer/issues/517" target="_blank" rel="noopener noreferrer">517&lt;/a>&lt;/li>
+&lt;li>Fluent Bit Operator support to detect the location of soft linked docker log folder dynamically on host machines&lt;/li>
+&lt;li>Fluent Bit Operator support to manage the instance of Fluent Bit by declarative configuration through updating the ConfigMap of Operator&lt;/li>
+&lt;li>Fix the issue of sort orders in alert list page #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1397" target="_blank" rel="noopener noreferrer">1397&lt;/a>&lt;/li>
+&lt;li>Adjust the metric of container memory usage with 'container_memory_working_set_bytes'&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-3">BUG FIXES&lt;/h3>
+&lt;ul>
+&lt;li>Fix the lag issue of container logs #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1650" target="_blank" rel="noopener noreferrer">1650&lt;/a>&lt;/li>
+&lt;li>Fix the display issue that some replicas of workload have no logs on container detail log page #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1505" target="_blank" rel="noopener noreferrer">1505&lt;/a>&lt;/li>
+&lt;li>Fix the compatibility issue of Curator to support ElasticSearch 7.x #&lt;a href="https://github.com/kubesphere/ks-installer/issues/517" target="_blank" rel="noopener noreferrer">517&lt;/a>&lt;/li>
+&lt;li>Fix the display issue of container log page during container initialization #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1518" target="_blank" rel="noopener noreferrer">1518&lt;/a>&lt;/li>
+&lt;li>Fix the blank node issue when these nodes are resized #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1464" target="_blank" rel="noopener noreferrer">1464&lt;/a>&lt;/li>
+&lt;li>Fix the display issue of components status in monitor center, to keep them up-to date #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1858" target="_blank" rel="noopener noreferrer">1858&lt;/a>&lt;/li>
+&lt;li>Fix the wrong monitoring targets number in alert detail page #&lt;a href="https://github.com/kubesphere/console/issues/61" target="_blank" rel="noopener noreferrer">61&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="devops">DevOps&lt;/h2>
+&lt;h3 id="bug-fixes-4">BUG FIXES&lt;/h3>
+&lt;ul>
+&lt;li>Fix the issue of UNSTABLE state not visible in the pipeline #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1428" target="_blank" rel="noopener noreferrer">1428&lt;/a>&lt;/li>
+&lt;li>Fix the format issue of KubeConfig in DevOps pipeline #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1529" target="_blank" rel="noopener noreferrer">1529&lt;/a>&lt;/li>
+&lt;li>Fix the image repo compatibility issue in B2I, to support image repo of Alibaba Cloud #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1500" target="_blank" rel="noopener noreferrer">1500&lt;/a>&lt;/li>
+&lt;li>Fix the paging issue in DevOps pipelines' branches list page #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1517" target="_blank" rel="noopener noreferrer">1517&lt;/a>&lt;/li>
+&lt;li>Fix the issue of failing to display pipeline configuration after modifying it #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1522" target="_blank" rel="noopener noreferrer">1522&lt;/a>&lt;/li>
+&lt;li>Fix the issue of failing to download generated artifact in S2I job #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1547" target="_blank" rel="noopener noreferrer">1547&lt;/a>&lt;/li>
+&lt;li>Fix the issue of &lt;a href="https://ask.kubesphere.io/forum/d/283-jenkins" target="_blank" rel="noopener noreferrer">data loss occasionally after restarting Jenkins&lt;/a>&lt;/li>
+&lt;li>Fix the issue that only 'PR-HEAD' is fetched when binding pipeline with GitHub #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1780" target="_blank" rel="noopener noreferrer">1780&lt;/a>&lt;/li>
+&lt;li>Fix 414 issue when updating DevOps credential #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1824" target="_blank" rel="noopener noreferrer">1824&lt;/a>&lt;/li>
+&lt;li>Fix wrong s2ib/s2ir naming issue from B2I/S2I #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1840" target="_blank" rel="noopener noreferrer">1840&lt;/a>&lt;/li>
+&lt;li>Fix the issue of failing to drag and drop tasks on pipeline editing page #&lt;a href="https://github.com/kubesphere/console/issues/62" target="_blank" rel="noopener noreferrer">62&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="authentication-and-authorization">Authentication and Authorization&lt;/h2>
+&lt;h3 id="upgrade--enhancement-4">UPGRADE &amp;amp; ENHANCEMENT&lt;/h3>
+&lt;ul>
+&lt;li>Generate client certification through CSR #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1449" target="_blank" rel="noopener noreferrer">1449&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-5">BUG FIXES&lt;/h3>
+&lt;ul>
+&lt;li>Fix content loss issue in KubeConfig token file #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1529" target="_blank" rel="noopener noreferrer">1529&lt;/a>&lt;/li>
+&lt;li>Fix the issue that users with different permission fail to log in on the same browser #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1600" target="_blank" rel="noopener noreferrer">1600&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="user-experience">User Experience&lt;/h2>
+&lt;h3 id="upgrade--enhancement-5">UPGRADE &amp;amp; ENHANCEMENT&lt;/h3>
+&lt;ul>
+&lt;li>Support to edit SecurityContext in workload editing page #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1530" target="_blank" rel="noopener noreferrer">1530&lt;/a>&lt;/li>
+&lt;li>Support to configure init container in workload editing page #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1488" target="_blank" rel="noopener noreferrer">1488&lt;/a>&lt;/li>
+&lt;li>Add support of startupProbe, also add periodSeconds, successThreshold, failureThreshold parameters in probe editing page #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1487" target="_blank" rel="noopener noreferrer">1487&lt;/a>&lt;/li>
+&lt;li>Optimize the status update display of Pods #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1187" target="_blank" rel="noopener noreferrer">1187&lt;/a>&lt;/li>
+&lt;li>Optimize the error message report on console #&lt;a href="https://github.com/kubesphere/console/issues/43" target="_blank" rel="noopener noreferrer">43&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="bug-fixes-6">BUG FIXES&lt;/h3>
+&lt;ul>
+&lt;li>Fix the status display issue for the Pods that are not under running status #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1187" target="_blank" rel="noopener noreferrer">1187&lt;/a>&lt;/li>
+&lt;li>Fix the issue that the added annotation can't be deleted when creating service of QingCloud LoadBalancer #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1395" target="_blank" rel="noopener noreferrer">1395&lt;/a>&lt;/li>
+&lt;li>Fix the display issue when selecting workload on service editing page #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1596" target="_blank" rel="noopener noreferrer">1596&lt;/a>&lt;/li>
+&lt;li>Fix the issue of failing to edit configuration file when editing 'Job' #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1521" target="_blank" rel="noopener noreferrer">1521&lt;/a>&lt;/li>
+&lt;li>Fix the issue of failing to update the service of 'StatefulSet' #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1513" target="_blank" rel="noopener noreferrer">1513&lt;/a>&lt;/li>
+&lt;li>Fix the issue of image searching for QingCloud and Alibaba Cloud image repos #&lt;a href="https://github.com/kubesphere/kubesphere/issues/1627" target="_blank" rel="noopener noreferrer">1627&lt;/a>&lt;/li>
+&lt;li>Fix resource ordering issue with the same creation timestamp #&lt;a href="https://github.com/kubesphere/kubesphere/pull/1750" target="_blank" rel="noopener noreferrer">1750&lt;/a>&lt;/li>
+&lt;li>Fix the issue of failing to edit configuration file when editing service #&lt;a href="https://github.com/kubesphere/console/issues/41" target="_blank" rel="noopener noreferrer">41&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Release Notes for 2.1.0</title><link>https://openksc.github.io/zh/docs/v3.3/release/release-v210/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/release/release-v210/</guid><description>&lt;p>KubeSphere 2.1.0 was released on Nov 11th, 2019, which fixes known bugs, adds some new features and brings some enhancement. If you have installed versions of 2.0.x, please upgrade it and enjoy the better user experience of v2.1.0.&lt;/p>
+&lt;h2 id="installer-enhancement">Installer Enhancement&lt;/h2>
+&lt;ul>
+&lt;li>Decouple some components and make components including DevOps, service mesh, app store, logging, alerting and notification optional and pluggable&lt;/li>
+&lt;li>Add Grafana (v5.2.4) as the optional component&lt;/li>
+&lt;li>Upgrade Kubernetes to 1.15.5. It is also compatible with 1.14.x and 1.13.x&lt;/li>
+&lt;li>Upgrade &lt;a href="https://github.com/openpitrix/openpitrix" target="_blank" rel="noopener noreferrer">OpenPitrix&lt;/a> to v0.4.5&lt;/li>
+&lt;li>Upgrade the log forwarder Fluent Bit to v1.3.2&lt;/li>
+&lt;li>Upgrade Jenkins to v2.176.2&lt;/li>
+&lt;li>Upgrade Istio to 1.3.3&lt;/li>
+&lt;li>Optimize the high availability for core components&lt;/li>
+&lt;/ul>
+&lt;h2 id="app-store">App Store&lt;/h2>
+&lt;h3 id="features">Features&lt;/h3>
+&lt;p>Support upload / test / review / deploy / publish/ classify / upgrade / deploy and delete apps, and provide nine built-in applications&lt;/p></description></item><item><title>Release Notes for 2.0.2</title><link>https://openksc.github.io/zh/docs/v3.3/release/release-v202/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/release/release-v202/</guid><description>&lt;p>KubeSphere 2.0.2 was released on July 9, 2019, which fixes known bugs and enhances existing feature. If you have installed versions of 1.0.x, 2.0.0 or 2.0.1, please download KubeSphere installer v2.0.2 to upgrade.&lt;/p>
+&lt;h2 id="whats-new-in-202">What's New in 2.0.2&lt;/h2>
+&lt;h3 id="enhanced-features">Enhanced Features&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="../../reference/api-docs/">API docs&lt;/a> are available on the official website.&lt;/li>
+&lt;li>Block brute-force attacks.&lt;/li>
+&lt;li>Standardize the maximum length of resource names.&lt;/li>
+&lt;li>Upgrade the gateway of project (Ingress Controller) to the version of 0.24.1. Support Ingress grayscale release.&lt;/li>
+&lt;/ul>
+&lt;h2 id="list-of-fixed-bugs">List of Fixed Bugs&lt;/h2>
+&lt;ul>
+&lt;li>Fix the issue that traffic topology displays resources outside of this project.&lt;/li>
+&lt;li>Fix the extra service component issue from traffic topology under specific circumstances.&lt;/li>
+&lt;li>Fix the execution issue when &amp;quot;Source to Image&amp;quot; reconstructs images under specific circumstances.&lt;/li>
+&lt;li>Fix the page display problem when &amp;quot;Source to Image&amp;quot; job fails.&lt;/li>
+&lt;li>Fix the log checking problem when Pod status is abnormal.&lt;/li>
+&lt;li>Fix the issue that disk monitor cannot detect some types of volume mounting, such as LVM volume.&lt;/li>
+&lt;li>Fix the problem of detecting deployed applications.&lt;/li>
+&lt;li>Fix incorrect status of application component.&lt;/li>
+&lt;li>Fix host node's number calculation errors.&lt;/li>
+&lt;li>Fix input data loss caused by switching reference configuration buttons when adding environmental variables.&lt;/li>
+&lt;li>Fix the rerun job issue that the Operator role cannot execute.&lt;/li>
+&lt;li>Fix the initialization issue on IPv4 environment uuid.&lt;/li>
+&lt;li>Fix the issue that the log detail page cannot be scrolled down to check past logs.&lt;/li>
+&lt;li>Fix wrong APIServer addresses in KubeConfig files.&lt;/li>
+&lt;li>Fix the issue that DevOps project's name cannot be changed.&lt;/li>
+&lt;li>Fix the issue that container logs cannot specify query time.&lt;/li>
+&lt;li>Fix the saving problem on relevant repository's secrets under certain circumstances.&lt;/li>
+&lt;li>Fix the issue that application's service component creation page does not have image registry's secrets.&lt;/li>
+&lt;/ul></description></item><item><title>Release Notes for 2.0.1</title><link>https://openksc.github.io/zh/docs/v3.3/release/release-v201/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/release/release-v201/</guid><description>&lt;p>KubeSphere 2.0.1 was released on &lt;strong>June 9th, 2019&lt;/strong>.&lt;/p>
+&lt;h2 id="bug-fix">Bug Fix&lt;/h2>
+&lt;ul>
+&lt;li>Fix the issue that CI/CD pipeline cannot recognize correct special characters in the code branch.&lt;/li>
+&lt;li>Fix CI/CD pipeline's issue of being unable to check logs.&lt;/li>
+&lt;li>Fix no-log data output problem caused by index document fragmentation abnormity during the log query.&lt;/li>
+&lt;li>Fix prompt exceptions when searching for logs that do not exist.&lt;/li>
+&lt;li>Fix the line-overlap problem on traffic governance topology and fixed invalid image strategy application.&lt;/li>
+&lt;li>Many more bugfix&lt;/li>
+&lt;/ul></description></item><item><title>Release Notes for 2.0.0</title><link>https://openksc.github.io/zh/docs/v3.3/release/release-v200/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/release/release-v200/</guid><description>&lt;p>KubeSphere 2.0.0 was released on &lt;strong>May 18th, 2019&lt;/strong>.&lt;/p>
+&lt;h2 id="whats-new-in-200">What's New in 2.0.0&lt;/h2>
+&lt;h3 id="component-upgrades">Component Upgrades&lt;/h3>
+&lt;ul>
+&lt;li>Support Kubernetes &lt;a href="https://github.com/kubernetes/kubernetes/releases/tag/v1.13.5" target="_blank" rel="noopener noreferrer">Kubernetes 1.13.5&lt;/a>&lt;/li>
+&lt;li>Integrate &lt;a href="https://github.com/yunify/qingcloud-cloud-controller-manager" target="_blank" rel="noopener noreferrer">QingCloud Cloud Controller&lt;/a>. After installing load balancer, QingCloud load balancer can be created through KubeSphere console and the backend workload is bound automatically. &lt;/li>
+&lt;li>Integrate &lt;a href="https://github.com/yunify/qingstor-csi/tree/v0.3.0" target="_blank" rel="noopener noreferrer">QingStor CSI v0.3.0&lt;/a> storage plugin and support physical NeonSAN storage system. Support SAN storage service with high availability and high performance.&lt;/li>
+&lt;li>Integrate &lt;a href="https://github.com/yunify/qingcloud-csi/tree/v0.2.1" target="_blank" rel="noopener noreferrer">QingCloud CSI v0.2.1&lt;/a> storage plugin and support many types of volume to create QingCloud block services.&lt;/li>
+&lt;li>Harbor is upgraded to 1.7.5.&lt;/li>
+&lt;li>GitLab is upgraded to 11.8.1.&lt;/li>
+&lt;li>Prometheus is upgraded to 2.5.0.&lt;/li>
+&lt;/ul>
+&lt;h3 id="microservice-governance">Microservice Governance&lt;/h3>
+&lt;ul>
+&lt;li>Integrate Istio 1.1.1 and support visualization of service mesh management.&lt;/li>
+&lt;li>Enable the access to the project's external websites and the application traffic governance.&lt;/li>
+&lt;li>Provide built-in sample microservice &lt;a href="https://istio.io/docs/examples/bookinfo/" target="_blank" rel="noopener noreferrer">Bookinfo Application&lt;/a>.&lt;/li>
+&lt;li>Support traffic governance.&lt;/li>
+&lt;li>Support traffic images.&lt;/li>
+&lt;li>Provide load balancing of microservice based on Istio.&lt;/li>
+&lt;li>Support canary release.&lt;/li>
+&lt;li>Enable blue-green deployment.&lt;/li>
+&lt;li>Enable circuit breaking.&lt;/li>
+&lt;li>Enable microservice tracing.&lt;/li>
+&lt;/ul>
+&lt;h3 id="devops-cicd-pipeline">DevOps (CI/CD Pipeline)&lt;/h3>
+&lt;ul>
+&lt;li>CI/CD pipeline provides email notification and supports the email notification during construction.&lt;/li>
+&lt;li>Enhance CI/CD graphical editing pipelines, and more pipelines for common plugins and execution conditions.&lt;/li>
+&lt;li>Provide source code vulnerability scanning based on SonarQube 7.4.&lt;/li>
+&lt;li>Support &lt;a href="https://github.com/kubesphere/s2ioperator" target="_blank" rel="noopener noreferrer">Source to Image&lt;/a> feature.&lt;/li>
+&lt;/ul>
+&lt;h3 id="monitoring">Monitoring&lt;/h3>
+&lt;ul>
+&lt;li>Provide Kubernetes component independent monitoring page including etcd, kube-apiserver and kube-scheduler.&lt;/li>
+&lt;li>Optimize several monitoring algorithm.&lt;/li>
+&lt;li>Optimize monitoring resources. Reduce Prometheus storage and the disk usage up to 80%.&lt;/li>
+&lt;/ul>
+&lt;h3 id="logging">Logging&lt;/h3>
+&lt;ul>
+&lt;li>Provide unified log console in terms of tenant.&lt;/li>
+&lt;li>Enable accurate and fuzzy retrieval.&lt;/li>
+&lt;li>Support real-time and history logs.&lt;/li>
+&lt;li>Support combined log query based on namespace, workload, Pod, container, key words and time limit.  &lt;/li>
+&lt;li>Support detail page of single and direct logs. Pods and containers can be switched.&lt;/li>
+&lt;li>&lt;a href="https://github.com/kubesphere/fluentbit-operator" target="_blank" rel="noopener noreferrer">FluentBit Operator&lt;/a> supports logging gathering settings: ElasticSearch, Kafka and Fluentd can be added, activated or turned off as log collectors. Before sending to log collectors, you can configure filtering conditions for needed logs.&lt;/li>
+&lt;/ul>
+&lt;h3 id="alerting-and-notifications">Alerting and Notifications&lt;/h3>
+&lt;ul>
+&lt;li>Email notifications are available for cluster nodes and workload resources. &lt;/li>
+&lt;li>Notification rules: combined multiple monitoring resources are available. Different warning levels, detection cycle, push times and threshold can be configured.&lt;/li>
+&lt;li>Time and notifiers can be set.&lt;/li>
+&lt;li>Enable notification repeating rules for different levels.&lt;/li>
+&lt;/ul>
+&lt;h3 id="security-enhancement">Security Enhancement&lt;/h3>
+&lt;ul>
+&lt;li>Fix RunC Container Escape Vulnerability &lt;a href="https://log.qingcloud.com/archives/5127" target="_blank" rel="noopener noreferrer">Runc container breakout&lt;/a>&lt;/li>
+&lt;li>Fix Alpine Docker's image Vulnerability &lt;a href="https://www.alpinelinux.org/posts/Docker-image-vulnerability-CVE-2019-5021.html" target="_blank" rel="noopener noreferrer">Alpine container shadow breakout&lt;/a>&lt;/li>
+&lt;li>Support single and multi-login configuration items.&lt;/li>
+&lt;li>Verification code is required after multiple invalid logins.&lt;/li>
+&lt;li>Enhance passwords' policy and prevent weak passwords.&lt;/li>
+&lt;li>Others security enhancements.&lt;/li>
+&lt;/ul>
+&lt;h3 id="interface-optimization">Interface Optimization&lt;/h3>
+&lt;ul>
+&lt;li>Optimize multiple user experience of console, such as the switch between DevOps project and other projects.&lt;/li>
+&lt;li>Optimize many Chinese-English webpages.&lt;/li>
+&lt;/ul>
+&lt;h3 id="others">Others&lt;/h3>
+&lt;ul>
+&lt;li>Support Etcd backup and recovery.&lt;/li>
+&lt;li>Support regular cleanup of the docker's image.&lt;/li>
+&lt;/ul>
+&lt;h2 id="bugs-fixes">Bugs Fixes&lt;/h2>
+&lt;ul>
+&lt;li>Fix delay updates of the resource and deleted pages.&lt;/li>
+&lt;li>Fix the left dirty data after deleting the HPA workload.&lt;/li>
+&lt;li>Fix incorrect Job status display.&lt;/li>
+&lt;li>Correct resource quota, Pod usage and storage metrics algorithm.&lt;/li>
+&lt;li>Adjust CPU usage percentages.&lt;/li>
+&lt;li>many more bugfix&lt;/li>
+&lt;/ul></description></item></channel></rss>

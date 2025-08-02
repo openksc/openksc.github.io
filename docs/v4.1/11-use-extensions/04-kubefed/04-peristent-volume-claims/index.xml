@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Persistent Volume Claims on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/04-kubefed/04-peristent-volume-claims/</link><description>Recent content in Persistent Volume Claims on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/04-kubefed/04-peristent-volume-claims/index.xml" rel="self" type="application/rss+xml"/><item><title>Create Persistent Volume Claims</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/04-kubefed/04-peristent-volume-claims/01-create-a-persistent-volume-claim/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/04-kubefed/04-peristent-volume-claims/01-create-a-persistent-volume-claim/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to create a Persistent Volume Claim.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Application Management for Cluster Federation&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a multi-cluster project and have the &lt;strong>Federated Project Management&lt;/strong> permission within the project.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Federated Project Management&lt;/strong> permission, and access your multi-cluster project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Persistent Volume Claim&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Create&lt;/strong> on the page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Basic Information&lt;/strong> tab, set the basic information for the persistent volume claim, then click &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Name&lt;/p>
+&lt;/div></description></item><item><title>View Persistent Volume Claim List</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/04-kubefed/04-peristent-volume-claims/02-view-a-persistent-volume-claim-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/04-kubefed/04-peristent-volume-claims/02-view-a-persistent-volume-claim-list/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to view the list of Persistent Volume Claims.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Application Management for Cluster Federation&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a multi-cluster project and have the &lt;strong>Federated Project Viewing&lt;/strong> permission within the project.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Federated Project Viewing&lt;/strong> permission, and access your multi-cluster project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Persistent Volume Claim&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The Persistent Volume Claim list provides the following information:&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Name&lt;/p>
+&lt;/div></description></item><item><title>View Persistent Volume Claim Details</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/04-kubefed/04-peristent-volume-claims/03-view-persistent-volume-claim-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/04-kubefed/04-peristent-volume-claims/03-view-persistent-volume-claim-details/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to view details of a Persistent Volume Claim.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Application Management for Cluster Federation&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a multi-cluster project and have the &lt;strong>Federated Project Viewing&lt;/strong> permission within the project.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Federated Project Viewing&lt;/strong> permission, and access your multi-cluster project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Persistent Volume Claim&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the name of a Persistent Volume Claim in the list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the details page, view the resource attributes of the persistent volume claim in the &lt;strong>Attributes&lt;/strong> area on the left.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Project&lt;/p>
+&lt;/div></description></item><item><title>Edit Persistent Volume Claim Information</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/04-kubefed/04-peristent-volume-claims/04-edit-persistent-volume-claim-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/04-kubefed/04-peristent-volume-claims/04-edit-persistent-volume-claim-information/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to edit Persistent Volume Claim information.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>You can edit the alias and description of the Persistent Volume Claim. KubeSphere does not support editing the name of an already created Persistent Volume Claim.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Application Management for Cluster Federation&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a multi-cluster project and have the &lt;strong>Federated Project Management&lt;/strong> permission within the project.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Federated Project Management&lt;/strong> permission, and access your multi-cluster project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Persistent Volume Claims&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span> on the right of the Persistent Volume Claim you want to edit, then choose &lt;strong>Edit Information&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Edit Information&lt;/strong> dialog, set the alias and description for the Persistent Volume Claim, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Alias&lt;/p>
+&lt;/div></description></item><item><title>Delete Persistent Volume Claims</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/04-kubefed/04-peristent-volume-claims/05-delete-persistent-volume-claims/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/04-kubefed/04-peristent-volume-claims/05-delete-persistent-volume-claims/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to delete a Persistent Volume Claim.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Warning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Deleting a Persistent Volume Claim is irreversible, and by default, the Persistent Volume associated with the Persistent Volume Claim will also be deleted. Please proceed with caution to avoid data loss.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Application Management for Cluster Federation&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a multi-cluster project and have the &lt;strong>Federated Project Management&lt;/strong> permission within the project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Please backup data in the backend storage area in advance to avoid data loss.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

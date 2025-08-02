@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>集群网关 on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/03-cluster-gateway/</link><description>Recent content in 集群网关 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/03-cluster-gateway/index.xml" rel="self" type="application/rss+xml"/><item><title>启用集群网关</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/03-cluster-gateway/01-enable-a-cluster-gateway/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/03-cluster-gateway/01-enable-a-cluster-gateway/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何启用集群网关。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon attention">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">注意&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>若未启用企业空间网关或项目网关，启用集群网关后，将不能再启用企业空间网关和项目网关。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 网关&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>您需要加入一个集群并在集群中具有 &lt;strong>cluster-admin&lt;/strong> 角色。有关更多信息，请参阅&lt;a href="../../../../07-cluster-management/09-cluster-settings/03-cluster-members/">集群成员&lt;/a>和&lt;a href="../../../../07-cluster-management/09-cluster-settings/04-cluster-roles/">集群角色&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有 &lt;strong>cluster-admin&lt;/strong> 角色的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>集群设置 &amp;gt; 网关设置&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右侧点击&lt;strong>启用网关&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框，设置网关的参数，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Nginx Ingress 版本&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Nginx Ingress 的版本。KubeSphere 网关扩展组件基于 Nginx Ingress 提供网关管理功能。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>IngressClassName&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>IngressClass 的名称。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>容器组副本数量&lt;/p>
+&lt;/div></description></item><item><title>查看网关信息</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/03-cluster-gateway/02-view-gateway-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/03-cluster-gateway/02-view-gateway-information/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看网关信息。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 网关&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>您需要加入一个集群并在集群中具有 &lt;strong>cluster-admin&lt;/strong> 角色。有关更多信息，请参阅&lt;a href="../../../../07-cluster-management/09-cluster-settings/03-cluster-members/">集群成员&lt;/a>和&lt;a href="../../../../07-cluster-management/09-cluster-settings/04-cluster-roles/">集群角色&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有 &lt;strong>cluster-admin&lt;/strong> 角色的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>集群设置 &amp;gt; 网关设置&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>网关设置&lt;/strong>页面，点击&lt;strong>集群网关&lt;/strong>，查看集群网关的信息。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>类型&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>网关的类型。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>创建者&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>启用网关的用户。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>创建时间&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>网关的启用时间。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>访问模式&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>网关服务的外部访问模式。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>NodePort&lt;/strong>：系统将节点的端口映射到服务端口，可通过节点的 IP 地址和节点端口访问服务。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>LoadBalancer&lt;/strong>：系统在 NodePort 服务的基础上为服务分配一个外部 IP 地址，并将外部 IP 地址与一个外部负载均衡器绑定。外部负载均衡器监听服务对应的节点端口，从而可以通过外部 IP 地址访问服务。为实现上述功能，LoadBalancer 类型的服务需要负载均衡器插件和基础设施环境提供支持，并且需要设置相关注解。有关更多信息，请联系您的基础设施环境提供商。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>查看集群网关详情</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/03-cluster-gateway/03-view-cluster-gateway-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/03-cluster-gateway/03-view-cluster-gateway-details/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看集群网关详情。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 网关&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>您需要加入一个集群并在集群中具有 &lt;strong>cluster-admin&lt;/strong> 角色。有关更多信息，请参阅&lt;a href="../../../../07-cluster-management/09-cluster-settings/03-cluster-members/">集群成员&lt;/a>和&lt;a href="../../../../07-cluster-management/09-cluster-settings/04-cluster-roles/">集群角色&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有 &lt;strong>cluster-admin&lt;/strong> 角色的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>集群设置 &amp;gt; 网关设置&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右侧选择&lt;strong>管理 &amp;gt; 查看详情&lt;/strong>打开网关详情页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在网关详情页面左侧的&lt;strong>属性&lt;/strong>区域查看网关的资源属性。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>集群&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>网关所属的集群。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>创建时间&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>网关的创建时间。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>更新时间&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>网关的更新时间&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>创建者&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>启用网关的用户。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在网关详情页面右侧点击&lt;strong>配置选项&lt;/strong>查看网关的配置选项。KubeSphere 的网关功能底层基于 Nginx Ingress Controller 实现，有关网关配置选项的更多信息，请参阅 &lt;a href="https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/">Nginx Ingress Controller 官方文档&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右侧的&lt;strong>监控&lt;/strong>页签查看网关的请求数据。&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>如需使用网关监控功能，KubeSphere 平台需要安装并启用 &lt;strong>WhizardTelemetry 监控&lt;/strong>扩展组件。&lt;/p>
+&lt;/div></description></item><item><title>编辑集群网关设置</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/03-cluster-gateway/04-edit-cluster-gateway-settings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/03-cluster-gateway/04-edit-cluster-gateway-settings/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何编辑集群网关设置。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 网关&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>您需要加入一个集群并在集群中具有 &lt;strong>cluster-admin&lt;/strong> 角色。有关更多信息，请参阅&lt;a href="../../../../07-cluster-management/09-cluster-settings/03-cluster-members/">集群成员&lt;/a>和&lt;a href="../../../../07-cluster-management/09-cluster-settings/04-cluster-roles/">集群角色&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有 &lt;strong>cluster-admin&lt;/strong> 角色的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>集群设置 &amp;gt; 网关设置&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右侧选择&lt;strong>管理 &amp;gt; 编辑&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框，修改网关的参数，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>IngressClassName&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>IngressClass 的名称。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>容器组副本数量&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>期望的容器组副本数量。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>访问模式&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>网关服务的外部访问模式。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>NodePort&lt;/strong>：系统将节点的端口映射到服务端口，可通过节点的 IP 地址和节点端口访问服务。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>LoadBalancer&lt;/strong>：系统在 NodePort 服务的基础上为服务分配一个外部 IP 地址，并将外部 IP 地址与一个外部负载均衡器绑定。外部负载均衡器监听服务对应的节点端口，从而可以通过外部 IP 地址访问服务。为实现上述功能，LoadBalancer 类型的服务需要负载均衡器插件和基础设施环境提供支持，并且需要设置相关注解。有关更多信息，请联系您的基础设施环境提供商。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>禁用集群网关</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/03-cluster-gateway/05-disable-a-cluster-gateway/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/03-cluster-gateway/05-disable-a-cluster-gateway/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何禁用集群网关。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">警告&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>网关禁用后客户端将无法访问由网关反向代理的服务，相关业务可能会中断，请谨慎执行此操作。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>KubeSphere 网关&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>您需要加入一个集群并在集群中具有 &lt;strong>cluster-admin&lt;/strong> 角色。有关更多信息，请参阅&lt;a href="../../../../07-cluster-management/09-cluster-settings/03-cluster-members/">集群成员&lt;/a>和&lt;a href="../../../../07-cluster-management/09-cluster-settings/04-cluster-roles/">集群角色&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有 &lt;strong>cluster-admin&lt;/strong> 角色的用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>集群设置 &amp;gt; 网关设置&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右侧选择&lt;strong>管理 &amp;gt; 禁用&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>附录：member 集群网关日志无数据的解决办法</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/03-cluster-gateway/07-issue-no-gateway-log-in-member/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/12-gateway/03-cluster-gateway/07-issue-no-gateway-log-in-member/</guid><description>&lt;div class="paragraph">
+&lt;p>若 member 集群的“集群网关”详情页中，“网关日志”页签不显示数据，可采用以下方法解决。&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>启用 host 集群上 whizard-telemetry-apiserver 服务的 NodePort 访问模式。&lt;/p>
+&lt;div class="olist loweralpha">
+&lt;ol class="loweralpha" type="a">
+&lt;li>
+&lt;p>在 host 集群的&lt;strong>应用负载&lt;/strong>菜单下，点击&lt;strong>服务&lt;/strong>进入服务页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>搜索服务 &lt;code>whizard-telemetry-apiserver&lt;/code>，点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span> &amp;gt; &lt;strong>编辑外部访问&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>编辑外部访问&lt;/strong>对话框，选择 NodePort，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>修改 KubeSphere 网关的扩展组件配置，将 &lt;code>backend.config.gateway.logSearchEndpoint&lt;/code> 设置为 host 集群上 whizard-telemetry-apiserver 服务的访问地址。&lt;/p>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-yaml" data-lang="yaml">backend:
+ enabled: true
+ config:
+ gateway:
+ namespace: kubesphere-controls-system
+ valuesOverride:
+ controller:
+ image:
+ registry: &amp;#34;&amp;#34;
+ image: kubesphereio/nginx-ingress-controller
+ tag: &amp;#34;v1.4.0&amp;#34;
+ pullPolicy: IfNotPresent
+ digest: &amp;#34;&amp;#34;
+ exposeNodeLabelKey: &amp;#34;node-role.kubernetes.io/control-plane&amp;#34;
+ versionConstraint: &amp;#34;&amp;gt;= 4.3.0, &amp;lt; 4.5.0&amp;#34;
+ logSearchEndpoint: &amp;#34;http://whizard-telemetry-apiserver.extension-whizard-telemetry.svc:9090&amp;#34; # 替换为 http://&amp;lt;node-ip&amp;gt;:&amp;lt;whizard-telemetry-apiserver-nodeport&amp;gt;&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在 member 集群上，重启网关 &lt;code>gateway-agent-backend-apiserver&lt;/code>。&lt;/p>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash">kubectl -n extension-gateway rollout restart deploy gateway-agent-backend-apiserver&lt;/code>&lt;/pre>
+&lt;/div></description></item></channel></rss>

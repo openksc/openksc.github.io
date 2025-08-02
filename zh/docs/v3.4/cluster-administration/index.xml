@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>集群管理 on</title><link>https://openksc.github.io/zh/docs/v3.4/cluster-administration/</link><description>Recent content in 集群管理 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v3.4/cluster-administration/index.xml" rel="self" type="application/rss+xml"/><item><title>KubeSphere 日志图表</title><link>https://openksc.github.io/zh/docs/v3.4/cluster-administration/logs-dashboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/cluster-administration/logs-dashboard/</guid><description>&lt;p>作为一个开源的、以应用为中心的容器平台，KubeSphere 在 3.4 版本后默认使用 &lt;a href="https://opensearch.org/" target="_blank" rel="noopener noreferrer">OpenSearch&lt;/a> 作为日志/事件/审计存储后端，用以代替 ElasticSearch，默认我们可以使用 KubeSphere 页面右下角自带的查询工具来检索日志，查询事件和审计记录。&lt;/p>
+&lt;p>如果您想获得类似 Kibana 页面的体验，如日志图表绘制等，我们可以启用该功能，也就是 OpenSearch Dashboard。&lt;/p>
+&lt;h2 id="在安装前启用日志图表">在安装前启用日志图表&lt;/h2>
+&lt;h3 id="在-linux-上安装">在 Linux 上安装&lt;/h3>
+&lt;p>当您在 Linux 上安装多节点 KubeSphere 时，首先需要创建一个配置文件，该文件列出了所有 KubeSphere 组件。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;a href="../../installing-on-linux/introduction/multioverview/">在 Linux 上安装 KubeSphere&lt;/a> 时，您需要创建一个默认文件 &lt;code>config-sample.yaml&lt;/code>，通过执行以下命令修改该文件：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vi config-sample.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>启用 OpenSearch Dashboard 前，您需要启用组件 &lt;code>logging&lt;/code>、&lt;code>opensearch&lt;/code>、&lt;code>events&lt;/code> 或 &lt;code>auditing&lt;/code>。本示例启用&lt;code>events&lt;/code>，如下：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">opensearch&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">basicAuth&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">password&lt;/span>: &lt;span style="color:#ae81ff">admin&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">username&lt;/span>: &lt;span style="color:#ae81ff">admin&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">dashboard&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span> &lt;span style="color:#75715e"># 将“false”更改为“true”。&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span> &lt;span style="color:#75715e"># 将“false”更改为“true”。&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">externalOpensearchHost&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">externalOpensearchPort&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">logMaxAge&lt;/span>: &lt;span style="color:#ae81ff">7&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">opensearchPrefix&lt;/span>: &lt;span style="color:#ae81ff">whizard &lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">logging&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span> &lt;span style="color:#75715e"># 将“false”更改为“true”。&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">logsidecar&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">replicas&lt;/span>: &lt;span style="color:#ae81ff">2&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">events&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span> &lt;span style="color:#75715e"># 将“false”更改为“true”。&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">ruler&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">replicas&lt;/span>: &lt;span style="color:#ae81ff">2&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>执行以下命令使用该配置文件创建集群：&lt;/p></description></item><item><title>节点管理</title><link>https://openksc.github.io/zh/docs/v3.4/cluster-administration/nodes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/cluster-administration/nodes/</guid><description>&lt;p>Kubernetes 将容器放入容器组（Pod）中并在节点上运行，从而运行工作负载。取决于具体的集群环境，节点可以是虚拟机，也可以是物理机。每个节点都包含运行容器组所需的服务，这些服务由控制平面管理。有关节点的更多信息，请参阅&lt;a href="https://kubernetes.io/zh/docs/concepts/architecture/nodes/" target="_blank" rel="noopener noreferrer"> Kubernetes 官方文档&lt;/a>。&lt;/p>
+&lt;p>本教程介绍集群管理员可查看的集群节点信息和可执行的操作。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;p>您需要一个被授予&lt;strong>集群管理&lt;/strong>权限的用户。例如，您可以直接用 &lt;code>admin&lt;/code> 用户登录控制台，或创建一个具有&lt;strong>集群管理&lt;/strong>权限的角色然后将此角色授予一个用户。&lt;/p>
+&lt;h2 id="节点状态">节点状态&lt;/h2>
+&lt;p>只有集群管理员可以访问集群节点。由于一些节点指标对集群非常重要，集群管理员应监控这些指标并确保节点可用。请按照以下步骤查看节点状态。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>点击左上角的&lt;strong>平台管理&lt;/strong>，然后选择&lt;strong>集群管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果您已启用了&lt;a href="../../multicluster-management/">多集群功能&lt;/a>并已导入了成员集群，您可以选择一个特定集群以查看其节点信息。如果尚未启用该功能，请直接进行下一步。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏中选择&lt;strong>节点&lt;/strong>下的&lt;strong>集群节点&lt;/strong>，查看节点的状态详情。&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>名称&lt;/strong>：节点的名称和子网 IP 地址。&lt;/li>
+&lt;li>&lt;strong>状态&lt;/strong>：节点的当前状态，标识节点是否可用。&lt;/li>
+&lt;li>&lt;strong>角色&lt;/strong>：节点的角色，标识节点是工作节点还是主节点。&lt;/li>
+&lt;li>&lt;strong>CPU 用量&lt;/strong>：节点的实时 CPU 用量。&lt;/li>
+&lt;li>&lt;strong>内存用量&lt;/strong>：节点的实时内存用量。&lt;/li>
+&lt;li>&lt;strong>容器组&lt;/strong>：节点的实时容器组用量。&lt;/li>
+&lt;li>&lt;strong>已分配 CPU&lt;/strong>：该指标根据节点上容器组的总 CPU 请求数计算得出。它表示节点上为工作负载预留的 CPU 资源。工作负载实际正在使用 CPU 资源可能低于该数值。该指标对于 Kubernetes 调度器 (kube-scheduler) 非常重要。在大多数情况下，调度器在调度容器组时会偏向配得 CPU 资源较少的节点。有关更多信息，请参阅&lt;a href="https://kubernetes.io/zh/docs/concepts/configuration/manage-resources-containers/" target="_blank" rel="noopener noreferrer">为容器管理资源&lt;/a>。&lt;/li>
+&lt;li>&lt;strong>已分配内存&lt;/strong>：该指标根据节点上容器组的总内存请求计算得出。它表示节点上为工作负载预留的内存资源。工作负载实际正在使用内存资源可能低于该数值。&lt;/li>
+&lt;/ul>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>在大多数情况下，&lt;strong>CPU&lt;/strong> 和&lt;strong>已分配 CPU&lt;/strong> 的数值不同，&lt;strong>内存&lt;/strong>和&lt;strong>已分配内存&lt;/strong>的数值也不同，这是正常现象。集群管理员需要同时关注一对指标。最佳实践是根据节点的实际使用情况为每个节点设置资源请求和限制。资源分配不足可能导致集群资源利用率过低，而过度分配资源可能导致集群压力过大从而处于不健康状态。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="节点管理">节点管理&lt;/h2>
+&lt;p>在&lt;strong>集群节点&lt;/strong>页面，您可以执行以下操作：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>停止调度/启用调度&lt;/strong>：点击集群节点右侧的 &lt;img src="https://openksc.github.io/images/docs/v3.x/common-icons/three-dots.png" width="15" />，然后点击&lt;strong>停止调度&lt;/strong>或&lt;strong>启用调度&lt;/strong>停止或启用调度节点。您可以在节点重启或维护期间将节点标记为不可调度。Kubernetes 调度器不会将新容器组调度到标记为不可调度的节点。但这不会影响节点上现有工作负载。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>打开终端&lt;/strong>：点击集群节点右侧的 &lt;img src="https://openksc.github.io/images/docs/v3.x/common-icons/three-dots.png" width="15" />,然后点击&lt;strong>打开终端&lt;/strong>。该功能让您更加便捷地管理节点，如修改节点配置、下载镜像等。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>编辑污点&lt;/strong>：污点允许节点排斥一些容器组。勾选目标节点前的复选框，在上方弹出的按钮中点击&lt;strong>编辑污点&lt;/strong>。在弹出的&lt;strong>编辑污点&lt;/strong>对话框，您可以添加或删除污点。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>同时，您也可以点击列表中的某个节点打开节点详情页面。除了&lt;strong>停止调度/启用调度&lt;/strong>和&lt;strong>编辑污点&lt;/strong>外，您还可以执行以下操作：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>编辑标签&lt;/strong>：您可以利用节点标签将容器组分配给特定节点。首先标记节点（例如，用 &lt;code>node-role.kubernetes.io/gpu-node&lt;/code> 标记 GPU 节点），然后在&lt;a href="../../project-user-guide/application-workloads/deployments/#%e6%ad%a5%e9%aa%a4-5%e9%85%8d%e7%bd%ae%e9%ab%98%e7%ba%a7%e8%ae%be%e7%bd%ae">创建工作负载&lt;/a>时在&lt;strong>高级设置&lt;/strong>中添加此标签，从而使容器组在 GPU 节点上运行。要添加节点标签，请点击&lt;strong>更多操作&lt;/strong> &amp;gt; &lt;strong>编辑标签&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>查看节点运行状态、容器组、元数据、监控和事件。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>请谨慎添加污点，因为它们可能会导致意外行为从而导致服务不可用。有关更多信息，请参阅&lt;a href="https://kubernetes.io/zh/docs/concepts/scheduling-eviction/taint-and-toleration/" target="_blank" rel="noopener noreferrer">污点和容忍度&lt;/a>。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="添加和删除节点">添加和删除节点&lt;/h2>
+&lt;p>当前版本不支持通过 KubeSphere 控制台添加或删除节点。您可以使用 &lt;a href="https://github.com/kubesphere/kubekey" target="_blank" rel="noopener noreferrer">KubeKey&lt;/a> 来进行此类操作。有关更多信息，请参阅&lt;a href="../../installing-on-linux/cluster-operation/add-new-nodes/">添加新节点&lt;/a>和&lt;a href="../../installing-on-linux/cluster-operation/remove-nodes/">删除节点&lt;/a>。&lt;/p></description></item><item><title>集群状态监控</title><link>https://openksc.github.io/zh/docs/v3.4/cluster-administration/cluster-status-monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/cluster-administration/cluster-status-monitoring/</guid><description>&lt;p>KubeSphere 支持对集群 CPU、内存、网络和磁盘等资源的相关指标进行监控。在&lt;strong>集群状态&lt;/strong>页面，您可以查看历史监控数据并根据不同资源的使用率对节点进行排序。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;p>您需要一个被授予&lt;strong>集群管理&lt;/strong>权限的用户。例如，您可以直接用 &lt;code>admin&lt;/code> 用户登录控制台，或创建一个具有&lt;strong>集群管理&lt;/strong>权限的角色然后将此角色授予一个用户。&lt;/p>
+&lt;h2 id="集群状态监控">集群状态监控&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>点击左上角的&lt;strong>平台管理&lt;/strong>，然后选择&lt;strong>集群管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果您已启用了&lt;a href="../../multicluster-management/">多集群功能&lt;/a>并已导入了成员集群，您可以选择一个特定集群以查看其应用程序资源。如果尚未启用该功能，请直接进行下一步。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>监控告警&lt;/strong>下的&lt;strong>集群状态&lt;/strong>以查看集群状态概览，包括&lt;strong>集群节点状态&lt;/strong>、&lt;strong>组件状态&lt;/strong>、&lt;strong>集群资源用量&lt;/strong>、&lt;strong>etcd 监控&lt;/strong>和&lt;strong>服务组件监控&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="集群节点状态">集群节点状态&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>集群节点状态&lt;/strong>显示在线节点和所有节点的数量。您可以点击&lt;strong>节点在线状态&lt;/strong>跳转到&lt;strong>集群节点&lt;/strong>页面以查看所有节点的实时资源使用情况。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>集群节点&lt;/strong>页面，点击节点名称可打开&lt;strong>运行状态&lt;/strong>页面查看&lt;strong>资源用量&lt;/strong>，&lt;strong>已分配资源&lt;/strong>和&lt;strong>健康状态&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>监控&lt;/strong>选项卡，可以查看节点在特定时间范围内的各种运行指标，包括 &lt;strong>CPU 用量&lt;/strong>、&lt;strong>CPU 平均负载&lt;/strong>、&lt;strong>内存用量&lt;/strong>、&lt;strong>磁盘用量&lt;/strong>、&lt;strong>Inode 用量&lt;/strong>、&lt;strong>IOPS&lt;/strong>、&lt;strong>磁盘吞吐&lt;/strong>和&lt;strong>网络带宽&lt;/strong>。&lt;/p>
+&lt;div class="notices tip">
+ 
+ &lt;p>提示&lt;/p>
+ &lt;div>您可以在右上角的下拉列表中自定义时间范围查看历史数据。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="组件状态">组件状态&lt;/h3>
+&lt;p>KubeSphere 监控集群中各种服务组件的健康状态。当关键组件发生故障时，系统可能会变得不可用。KubeSphere 的监控机制确保平台可以在组件出现故障时将所有问题通知租户，以便快速定位问题并采取相应的措施。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>在&lt;strong>集群状态&lt;/strong>页面，点击&lt;strong>组件状态&lt;/strong>区域的组件可查看其状态。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>系统组件&lt;/strong>页面列出了所有的组件。标记为绿色的组件是正常运行的组件，标记为橙色的组件存在问题，需要特别关注。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;div class="notices tip">
+ 
+ &lt;p>提示&lt;/p>
+ &lt;div>标记为橙色的组件可能会由于各种原因在一段时间后变为绿色，例如重试拉取镜像或重新创建实例。您可以点击一个组件查看其服务详情。&lt;/div>
+&lt;/div>
+&lt;h3 id="集群资源用量">集群资源用量&lt;/h3>
+&lt;p>&lt;strong>集群资源用量&lt;/strong>显示集群中所有节点的 &lt;strong>CPU 用量&lt;/strong>、&lt;strong>内存用量&lt;/strong>、&lt;strong>磁盘用量&lt;/strong>和&lt;strong>容器组数量&lt;/strong>。您可以点击左侧的饼图切换指标。右侧的曲线图显示一段时间内指示的变化趋势。&lt;/p>
+&lt;h2 id="物理资源监控">物理资源监控&lt;/h2>
+&lt;p>您可以利用&lt;strong>物理资源监控&lt;/strong>页面提供的数据更好地掌控物理资源状态，并建立正常资源和集群性能的标准。KubeSphere 允许用户查看最近 7 天的集群监控数据，包括 &lt;strong>CPU 用量&lt;/strong>、&lt;strong>内存用量&lt;/strong>、&lt;strong>CPU 平均负载（1 分钟/5 分钟/15 分钟）&lt;/strong>、&lt;strong>磁盘用量&lt;/strong>、&lt;strong>Inode 用量&lt;/strong>、&lt;strong>磁盘吞吐（读写）&lt;/strong>、&lt;strong>IOPS（读写）&lt;/strong>、&lt;strong>网络带宽&lt;/strong>和&lt;strong>容器组状态&lt;/strong>。您可以在 KubeSphere 中自定义时间范围和时间间隔以查看物理资源的历史监控数据。以下简要介绍每个监控指标。&lt;/p>
+&lt;h3 id="cpu-用量">CPU 用量&lt;/h3>
+&lt;p>&lt;strong>CPU 用量&lt;/strong>显示一段时间内 CPU 资源的用量。如果某一时间段的 CPU 用量急剧上升，您首先需要定位占用 CPU 资源最多的进程。例如，Java 应用程序代码中的内存泄漏或无限循环可能会导致 CPU 用量急剧上升。&lt;/p>
+&lt;h3 id="内存用量">内存用量&lt;/h3>
+&lt;p>内存是机器上的重要组件之一，是与 CPU 通信的桥梁。因此，内存对机器的性能有很大影响。当程序运行时，数据加载、线程并发和 I/O 缓冲都依赖于内存。可用内存的大小决定了程序能否正常运行以及如何运行。&lt;strong>内存使用情况&lt;/strong>反映了集群内存资源的整体用量，显示为特定时刻内存占用的百分比。&lt;/p>
+&lt;h3 id="cpu-平均负载">CPU 平均负载&lt;/h3>
+&lt;p>CPU 平均负载是单位时间内系统中处于可运行状态和非中断状态的平均进程数（亦即活动进程的平均数量）。CPU 平均负载和 CPU 利用率之间没有直接关系。理想情况下，平均负载应该等于 CPU 的数量。因此，在查看平均负载时，需要考虑 CPU 的数量。只有当平均负载大于 CPU 数量时，系统才会超载。&lt;/p></description></item><item><title>应用资源监控</title><link>https://openksc.github.io/zh/docs/v3.4/cluster-administration/application-resources-monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/cluster-administration/application-resources-monitoring/</guid><description>&lt;p>除了在物理资源级别监控数据外，集群管理员还需要密切跟踪整个平台上的应用资源，例如项目和 DevOps 项目的数量，以及特定类型的工作负载和服务的数量。&lt;strong>应用资源&lt;/strong>提供了平台的资源使用情况和应用级趋势的汇总信息。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;p>您需要一个被授予&lt;strong>集群管理&lt;/strong>权限的用户。例如，您可以直接用 &lt;code>admin&lt;/code> 用户登录控制台，或创建一个具有&lt;strong>集群管理&lt;/strong>权限的角色然后将此角色授予一个用户。&lt;/p>
+&lt;h2 id="使用情况">使用情况&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>点击左上角的&lt;strong>平台管理&lt;/strong>，然后选择&lt;strong>集群管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果您已启用了&lt;a href="../../multicluster-management/">多集群功能&lt;/a>并已导入了成员集群，您可以选择一个集群以查看其应用程序资源。如果尚未启用该功能，请直接进行下一步。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>监控告警&lt;/strong>下的&lt;strong>应用资源&lt;/strong>以查看应用资源概览，包括集群中所有资源使用情况的汇总信息。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>集群资源用量&lt;/strong>和&lt;strong>应用资源用量&lt;/strong>提供最近 7 天的监控数据，并支持自定义时间范围查询。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击特定资源以查看特定时间段内的使用详情和趋势，例如&lt;strong>集群资源用量&lt;/strong>下的 &lt;strong>CPU&lt;/strong>。在详情页面，您可以按项目查看特定的监控数据，以及自定义时间范围查看资源的确切使用情况。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="用量排行">用量排行&lt;/h2>
+&lt;p>&lt;strong>用量排行&lt;/strong>支持按照资源使用情况对项目进行排序，帮助平台管理员了解当前集群中每个项目的资源使用情况，包括 &lt;strong>CPU 用量&lt;/strong>、&lt;strong>内存用量&lt;/strong>、&lt;strong>容器组数量&lt;/strong>、&lt;strong>网络流出速率&lt;/strong>和&lt;strong>网络流入速率&lt;/strong>。您可以选择下拉列表中的任一指标对项目按升序或降序进行排序。此功能可以帮助您快速定位大量消耗 CPU 或内存资源的应用程序（容器组）。&lt;/p></description></item><item><title>存储类</title><link>https://openksc.github.io/zh/docs/v3.4/cluster-administration/storageclass/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/cluster-administration/storageclass/</guid><description>&lt;p>本教程演示集群管理员如何管理 KubeSphere 中的存储类。&lt;/p>
+&lt;h2 id="介绍">介绍&lt;/h2>
+&lt;p>PV 是集群中的一块存储，可以由管理员事先供应，或者使用存储类来动态供应。和卷 (Volume) 一样，PV 通过卷插件实现，但是它的生命周期独立于任何使用该 PV 的容器组。PV 可以&lt;a href="https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/#static" target="_blank" rel="noopener noreferrer">静态&lt;/a>供应或&lt;a href="https://kubernetes.io/zh/docs/concepts/storage/persistent-volumes/#dynamic" target="_blank" rel="noopener noreferrer">动态&lt;/a>供应。&lt;/p>
+&lt;p>PVC 是用户对存储的请求。它与容器组类似，容器组会消耗节点资源，而 PVC 消耗 PV 资源。&lt;/p>
+&lt;p>KubeSphere 支持基于存储类的&lt;a href="https://kubernetes.io/zh/docs/concepts/storage/dynamic-provisioning/" target="_blank" rel="noopener noreferrer">动态卷供应&lt;/a>，以创建 PV。&lt;/p>
+&lt;p>&lt;a href="https://kubernetes.io/zh/docs/concepts/storage/storage-classes/" target="_blank" rel="noopener noreferrer">存储类&lt;/a>是管理员描述其提供的存储类型的一种方式。不同的类型可能会映射到不同的服务质量等级或备份策略，或由集群管理员制定的任意策略。每个存储类都有一个 Provisioner，用于决定使用哪个卷插件来供应 PV。该字段必须指定。有关使用哪一个值，请参阅 &lt;a href="https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#provisioner" target="_blank" rel="noopener noreferrer">Kubernetes 官方文档&lt;/a>或与您的存储管理员确认。&lt;/p>
+&lt;p>下表总结了各种 Provisioner（存储系统）常用的卷插件。&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>类型&lt;/th>
+ &lt;th>描述信息&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>In-tree&lt;/td>
+ &lt;td>内置并作为 Kubernetes 的一部分运行，例如 &lt;a href="https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#ceph-rbd" target="_blank" rel="noopener noreferrer">RBD&lt;/a> 和 &lt;a href="https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#glusterfs" target="_blank" rel="noopener noreferrer">GlusterFS&lt;/a>。有关此类插件的更多信息，请参见 &lt;a href="https://kubernetes.io/zh/docs/concepts/storage/storage-classes/#provisioner" target="_blank" rel="noopener noreferrer">Provisioner&lt;/a>。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>External-provisioner&lt;/td>
+ &lt;td>独立于 Kubernetes 部署，但运行上类似于树内 (in-tree) 插件，例如 &lt;a href="https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/" target="_blank" rel="noopener noreferrer">NFS 客户端&lt;/a>。有关此类插件的更多信息，请参见 &lt;a href="https://github.com/kubernetes-retired/external-storage" target="_blank" rel="noopener noreferrer">External Storage&lt;/a>。&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>CSI&lt;/td>
+ &lt;td>容器存储接口，一种将存储资源暴露给 CO（例如 Kubernetes）上的工作负载的标准，例如 &lt;a href="https://github.com/yunify/qingcloud-csi" target="_blank" rel="noopener noreferrer">QingCloud-CSI&lt;/a> 和 &lt;a href="https://github.com/ceph/ceph-csi" target="_blank" rel="noopener noreferrer">Ceph-CSI&lt;/a>。有关此类插件的更多信息，请参见 &lt;a href="https://kubernetes-csi.github.io/docs/drivers.html" target="_blank" rel="noopener noreferrer">Drivers&lt;/a>。&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;p>您需要一个拥有&lt;strong>集群管理&lt;/strong>权限的帐户。例如，您可以直接以 &lt;code>admin&lt;/code> 身份登录控制台，或者创建一个拥有该权限的新角色并将它分配至一个用户。&lt;/p>
+&lt;h2 id="创建存储类">创建存储类&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>点击左上角的&lt;strong>平台管理&lt;/strong>，然后选择&lt;strong>集群管理&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果您启用了&lt;a href="../../multicluster-management/">多集群功能&lt;/a>并导入了成员集群，可以选择一个特定集群。如果您未启用该功能，请直接参考下一步。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>集群管理&lt;/strong>页面，点击&lt;strong>存储 &amp;gt; 存储类&lt;/strong>。&lt;/p></description></item><item><title>卷快照类</title><link>https://openksc.github.io/zh/docs/v3.4/cluster-administration/snapshotclass/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/cluster-administration/snapshotclass/</guid><description>&lt;p>卷快照类（Volume Snapshot Class）用于定义卷快照的存储种类。本教程演示如何创建和使用卷快照类。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>您需要创建一个企业空间、一个项目和一个用户（例如 &lt;code>project-regular&lt;/code>）。该用户必须已邀请至该项目，并具有 &lt;code>operator&lt;/code> 角色。有关更多信息，请参阅&lt;a href="../../quick-start/create-workspace-and-project/">创建企业空间、项目、用户和角色&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您需要确保 Kubernetes 版本为 1.17 或更新版本。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您需要确保底层存储插件支持快照。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="操作步骤">操作步骤&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>以 &lt;code>project-regular&lt;/code> 用户登录 KubeSphere Web 控制台并进入项目。在左侧导航栏选择&lt;strong>存储&lt;/strong>下的&lt;strong>卷快照类&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在右侧的&lt;strong>卷快照类&lt;/strong>页面，点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在弹出的对话框中，设置卷快照类的名称，点击&lt;strong>下一步&lt;/strong>。您也可以设置别名和添加描述信息。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>卷快照类设置&lt;/strong>页签，选择供应者和删除策略。&lt;/p>
+&lt;p>删除策略目前支持以下两种：&lt;/p>
+&lt;ul>
+&lt;li>Delete：底层的存储快照会和 VolumeSnapshotContent 对象一起删除。&lt;/li>
+&lt;li>Retain：底层快照和 VolumeSnapshotContent 对象都会被保留。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol></description></item><item><title>关闭和重启集群</title><link>https://openksc.github.io/zh/docs/v3.4/cluster-administration/shut-down-and-restart-cluster-gracefully/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/cluster-administration/shut-down-and-restart-cluster-gracefully/</guid><description>&lt;p>您可能需要临时关闭集群进行维护。本文介绍平稳关闭集群的流程以及如何重新启动集群。&lt;/p>
+&lt;div class="notices warning">
+ 
+ &lt;p>警告&lt;/p>
+ &lt;div>关闭集群是非常危险的操作。您必须完全了解该操作及其后果。请先进行 etcd 备份，然后再继续。通常情况下，建议您逐个维护节点，而不是重新启动整个集群。&lt;/div>
+&lt;/div>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;ul>
+&lt;li>请先进行 &lt;a href="https://etcd.io/docs/current/op-guide/recovery/#snapshotting-the-keyspace" target="_blank" rel="noopener noreferrer">etcd 备份&lt;/a>，再关闭集群。&lt;/li>
+&lt;li>主机之间已设置 SSH &lt;a href="https://man.openbsd.org/ssh.1#AUTHENTICATION" target="_blank" rel="noopener noreferrer">免密登录&lt;/a>。&lt;/li>
+&lt;/ul>
+&lt;h2 id="关闭集群">关闭集群&lt;/h2>
+&lt;div class="notices tip">
+ 
+ &lt;p>提示&lt;/p>
+ &lt;div>&lt;ul>
+&lt;li>关闭集群前，请您务必备份 etcd 数据，以便在重新启动集群时如果遇到任何问题，可以通过 etcd 还原集群。&lt;/li>
+&lt;li>使用本教程中的方法可以平稳关闭集群，但数据损坏的可能性仍然存在。&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="步骤-1获取节点列表">步骤 1：获取节点列表&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nodes&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">$(&lt;/span>kubectl get nodes -o name&lt;span style="color:#66d9ef">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="步骤-2关闭所有节点">步骤 2：关闭所有节点&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> node in &lt;span style="color:#e6db74">${&lt;/span>nodes[@]&lt;span style="color:#e6db74">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo &lt;span style="color:#e6db74">&amp;#34;==== Shut down &lt;/span>$node&lt;span style="color:#e6db74"> ====&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssh $node sudo shutdown -h &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">done&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后，您可以关闭其他的集群依赖项，例如外部存储。&lt;/p>
+&lt;h2 id="平稳重启集群">平稳重启集群&lt;/h2>
+&lt;p>平稳关闭集群后，您可以平稳重启集群。&lt;/p>
+&lt;h3 id="准备工作-1">准备工作&lt;/h3>
+&lt;p>您已平稳关闭集群。&lt;/p>
+&lt;div class="notices tip">
+ 
+ &lt;p>提示&lt;/p>
+ &lt;div>&lt;p>通常情况下，重新启动集群后可以继续正常使用，但是由于意外情况，该集群可能不可用。例如：&lt;/p>
+&lt;ul>
+&lt;li>关闭集群过程中 etcd 数据损坏。&lt;/li>
+&lt;li>节点故障。&lt;/li>
+&lt;li>不可预期的网络错误。&lt;/li>
+&lt;/ul>&lt;/div>
+&lt;/div>
+&lt;h3 id="步骤-1检查所有集群依赖项的状态">步骤 1：检查所有集群依赖项的状态&lt;/h3>
+&lt;p>确保所有集群依赖项均已就绪，例如外部存储。&lt;/p>
+&lt;h3 id="步骤-2打开集群主机电源">步骤 2：打开集群主机电源&lt;/h3>
+&lt;p>等待集群启动并运行，这可能需要大约 10 分钟。&lt;/p></description></item></channel></rss>

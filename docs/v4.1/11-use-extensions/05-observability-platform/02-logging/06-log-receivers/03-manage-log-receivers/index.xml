@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Manage Log Receivers on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/</link><description>Recent content in Manage Log Receivers on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/index.xml" rel="self" type="application/rss+xml"/><item><title>Add Log Receivers</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/01-add-a-log-receiver/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/01-add-a-log-receiver/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to add log receivers.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>KubeSphere supports using Elasticsearch, OpenSearch, and Kafka as log receivers.&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Only one log receiver of each type can be added.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>KubeSphere defaults to using OpenSearch and provides log analysis tools, which you can use in the toolbox of the KubeSphere web console to query logs collected by OpenSearch.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>KubeSphere does not install Kafka by default and currently does not provide log analysis tools for Kafka. KubeSphere only provides the function of connecting with Kafka. If you need to use Kafka as a log receiver, you need to refer to the &lt;a href="https://kafka.apache.org/documentation/">Kafka Documentation&lt;/a> to install Kafka.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>View Log Receiver List</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/02-view-a-log-receiver-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/02-view-a-log-receiver-list/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to view the log receiver list.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a cluster and have the &lt;strong>Cluster Settings Viewing&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>A log receiver has been added.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Cluster Settings Viewing&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Cluster Settings &amp;gt; Log Receivers&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Log Receivers&lt;/strong> page, click &lt;strong>Container Logs&lt;/strong>, &lt;strong>Resource Events&lt;/strong>, &lt;strong>Audit Logs&lt;/strong>, or &lt;strong>Notification History&lt;/strong> to open the log receiver list.&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The log receiver list provides the following information:&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Name&lt;/p>
+&lt;/div></description></item><item><title>View Log Receiver Details</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/03-view-log-receiver-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/03-view-log-receiver-details/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to view log receiver details.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a cluster and have the &lt;strong>Cluster Settings Viewing&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>A log receiver has been added.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Cluster Settings Viewing&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Cluster Settings &amp;gt; Log Receivers&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Log Receivers&lt;/strong> page, click &lt;strong>Container Logs&lt;/strong>, &lt;strong>Resource Events&lt;/strong>, &lt;strong>Audit Logs&lt;/strong>, or &lt;strong>Notification History&lt;/strong>, then click the name of a log receiver in the list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the details page, view whether the log receiver is enabled in the &lt;strong>Attributes&lt;/strong> area on the left.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the details page, view the settings of the log receiver in the &lt;strong>Resource Status&lt;/strong> tab on the right.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Address&lt;/p>
+&lt;/div></description></item><item><title>Edit Log Receiver Settings</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/04-edit-log-receiver-settings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/04-edit-log-receiver-settings/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to edit log receiver settings.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a cluster and have the &lt;strong>Cluster Settings Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>A log receiver has been added.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Cluster Settings Management&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Cluster Settings &amp;gt; Log Receivers&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Log Receivers&lt;/strong> page, click &lt;strong>Container Logs&lt;/strong>, &lt;strong>Resource Events&lt;/strong>, &lt;strong>Audit Logs&lt;/strong>, or &lt;strong>Notification History&lt;/strong>, then click the name of a log receiver in the list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Edit&lt;/strong> in the upper left corner of the details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Modify the settings of the log receiver in the pop-up dialog, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Address&lt;/p>
+&lt;/div></description></item><item><title>Enable and Disable Log Receivers</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/05-enable-and-disable-log-receiver/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/05-enable-and-disable-log-receiver/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to enable and disable log receivers.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a cluster and have the &lt;strong>Cluster Settings Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>A log receiver has been added.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Cluster Settings Management&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Cluster Settings &amp;gt; Log Receivers&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Log Receivers&lt;/strong> page, click &lt;strong>Container Logs&lt;/strong>, &lt;strong>Resource Events&lt;/strong>, &lt;strong>Audit Logs&lt;/strong>, or &lt;strong>Notification History&lt;/strong>, then click the name of a log receiver in the list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>More &amp;gt; Change Status&lt;/strong> in the upper left corner of the details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the pop-up dialog, select &lt;strong>Enable&lt;/strong> or &lt;strong>Disable&lt;/strong>, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>Delete Log Receivers</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/06-delete-a-log-receiver/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/02-logging/06-log-receivers/03-manage-log-receivers/06-delete-a-log-receiver/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to delete log receivers.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a cluster and have the &lt;strong>Cluster Settings Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>A log receiver has been added.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Cluster Settings Management&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Cluster Settings &amp;gt; Log Receivers&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Log Receivers&lt;/strong> page, click &lt;strong>Container Logs&lt;/strong>, &lt;strong>Resource Events&lt;/strong>, &lt;strong>Audit Logs&lt;/strong>, or &lt;strong>Notification History&lt;/strong>, then click the name of a log receiver in the list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>More &amp;gt; Delete&lt;/strong> in the upper left corner of the details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the pop-up dialog, enter the name of the log receiver, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item></channel></rss>

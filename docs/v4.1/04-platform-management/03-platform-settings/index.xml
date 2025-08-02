@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Platform Settings on</title><link>https://openksc.github.io/docs/v4.1/04-platform-management/03-platform-settings/</link><description>Recent content in Platform Settings on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/04-platform-management/03-platform-settings/index.xml" rel="self" type="application/rss+xml"/><item><title>View Platform Information</title><link>https://openksc.github.io/docs/v4.1/04-platform-management/03-platform-settings/01-view-and-customize-platform-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/04-platform-management/03-platform-settings/01-view-and-customize-platform-information/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to view information of the KubeSphere web console.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_operation_steps">Operation Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/cogwheel.svg" alt="cogwheel" width="18" height="18"/>&lt;/span> in the top right corner of the page to access the &lt;strong>Platform Settings&lt;/strong> page.&lt;/p>
+&lt;div class="paragraph">
+&lt;p>The &lt;strong>Platform Information&lt;/strong> page displays the platform’s access address, identifier, title, and description.&lt;/p>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>Configure KubeSphere as an OIDC Identity Provider</title><link>https://openksc.github.io/docs/v4.1/04-platform-management/03-platform-settings/04-ks-as-oidc-identity-provider/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/04-platform-management/03-platform-settings/04-ks-as-oidc-identity-provider/</guid><description>&lt;div class="paragraph">
+&lt;p>OpenID Connect is an interoperable authentication protocol based on the OAuth 2.0 framework (IETF RFC 6749 and 6750). KubeSphere v4.1.3 implements the &lt;a href="https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth">Authorization Code Flow&lt;/a> of &lt;a href="https://openid.net/developers/how-connect-works/">OpenID Connect&lt;/a> protocol for extensions to integrate with KubeSphere’s account system. This tutorial uses &lt;a href="https://goharbor.io/">Harbor&lt;/a> as an OIDC client - after configuration, you can use KubeSphere accounts to log in to Harbor.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_sso_implementation_flow_via_oidc">SSO Implementation Flow via OIDC&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/v4.1.3/oidc-flow.png" alt="oidc flow" width="70%"/>&lt;/span>&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>End user &lt;strong>navigates to a website or web application&lt;/strong> via a browser.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>End user &lt;strong>clicks sign-in&lt;/strong> and types their username and password.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The RP (Client) &lt;strong>sends a request&lt;/strong> to the OpenID Provider (OP).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The OP &lt;strong>authenticates the User&lt;/strong> and obtains authorization.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The OP &lt;strong>responds with an Identity Token&lt;/strong> and usually an &lt;strong>Access Token&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The RP can &lt;strong>send a request&lt;/strong> with the Access Token to the User device.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The UserInfo Endpoint &lt;strong>returns Claims&lt;/strong> about the End-User.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item></channel></rss>

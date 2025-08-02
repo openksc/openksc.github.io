@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>使用 DevOps on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/</link><description>Recent content in 使用 DevOps on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/index.xml" rel="self" type="application/rss+xml"/><item><title>创建和管理 DevOps 项目</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/01-devops-project-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/01-devops-project-management/</guid><description>&lt;div class="paragraph">
+&lt;p>本节演示如何创建和管理 DevOps 项目。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>已创建一个企业空间和一个用户 (&lt;strong>project-admin&lt;/strong>)，需要邀请该用户至该企业空间并赋予 &lt;strong>workspace-self-provisioner&lt;/strong> 角色。有关更多信息，请参阅&lt;a href="../../../../02-quickstart/04-control-user-permissions">控制用户权限&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>DevOps&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_创建_devops_项目">创建 DevOps 项目&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以 &lt;strong>project-admin&lt;/strong> 用户登录 KubeSphere Web 控制台，进入一个企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击 &lt;strong>DevOps 项目&lt;/strong>，然后点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>输入 DevOps 项目的基本信息，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>名称&lt;/strong>：DevOps 项目的简明名称，便于用户识别，例如 &lt;strong>demo-devops&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>别名&lt;/strong>：DevOps 项目的别名。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>描述信息&lt;/strong>：DevOps 项目的简要介绍。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>集群设置&lt;/strong>：在当前版本中，DevOps 项目无法同时跨多个集群运行。如果有多个集群，则必须选择一个集群来运行 DevOps 项目。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>DevOps 项目创建后，会显示在 DevOps 项目页面的列表中。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_查看_devops_项目">查看 DevOps 项目&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>点击刚刚创建的 DevOps 项目，转到其详情页面。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>在 DevOps 项目中，用户可以创建 CI/CD 流水线、凭证，以及管理项目成员和角色。根据权限不同，用户在 DevOps 项目中可以执行的操作也不同。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>流水线&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>流水线是一系列插件的集合，支持持续地集成、测试和构建代码。流水线将持续集成 (CI) 和持续交付 (CD) 进行结合，提供精简的工作流，使您的代码可以自动交付给任何目标。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>凭证&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>具有相应权限的 DevOps 项目用户可以为流水线配置凭证，以便与外部环境进行交互。用户在 DevOps 项目中添加凭证后，DevOps 项目就可以使用这些凭证与第三方应用程序（例如 GitHub、GitLab 和 Docker Hub）进行交互。有关更多信息，请参阅&lt;a href="../../03-how-to-use/05-devops-settings/01-credential-management/">凭证管理&lt;/a>。&lt;/p>
+&lt;/div></description></item><item><title>使用 GitOps 实现应用持续部署</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/03-use-gitops-for-continous-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/03-use-gitops-for-continous-deployment/</guid><description>&lt;div class="paragraph">
+&lt;p>KubeSphere 引入了一种为云原生应用实现持续部署的理念 – GitOps。GitOps 的核心思想是拥有一个 Git 仓库，并将应用系统的申明式基础架构和应用程序存放在 Git 仓库中进行版本控制。GitOps 结合 Kubernetes 能够利用自动交付流水线将更改应用到指定的任意多个集群中，从而解决跨云部署的一致性问题。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>本文档演示如何创建持续部署以实现应用的部署。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>DevOps&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已有一个企业空间、一个 DevOps 项目和一个用户 (例如 &lt;strong>project-regular&lt;/strong>)，并已邀请该用户至 DevOps 项目且授予 &lt;strong>operator&lt;/strong> 角色。请参阅&lt;a href="../05-devops-settings/02-role-and-member-management">角色和成员管理&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_导入代码仓库">导入代码仓库&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以 &lt;strong>project-regular&lt;/strong> 用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>企业空间管理&lt;/strong>并进入您的 DevOps 项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏，点击&lt;strong>代码仓库&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在右侧的代码仓库页面，点击&lt;strong>添加&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>导入代码仓库&lt;/strong>对话框，输入代码仓库名称，如 &lt;strong>open-podcasts&lt;/strong>，点击选择代码仓库。您也可以为代码仓库设置别名和添加描述信息。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>选择代码仓库&lt;/strong>对话框，点击 &lt;strong>Git&lt;/strong>，在&lt;strong>代码仓库地址&lt;/strong>区域，输入代码仓库地址，如 &lt;a href="https://github.com/kubesphere-sigs/open-podcasts" class="bare">https://github.com/kubesphere-sigs/open-podcasts&lt;/a>，点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>此处导入的是公共仓库，因此不需要创建凭证。如果您添加的是私有仓库，则需要创建凭证。有关如何添加凭证的更多信息，请参阅&lt;a href="../05-devops-settings/01-credential-management/">凭证管理&lt;/a>。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_创建持续部署">创建持续部署&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>在左侧导航栏，点击&lt;strong>持续部署&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在右侧的&lt;strong>持续部署&lt;/strong>页面，点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>基本信息&lt;/strong>页签，输入持续部署名称，如 &lt;strong>open-podcasts&lt;/strong>。在&lt;strong>部署位置&lt;/strong>区域，选择持续部署的部署集群和项目。点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>代码仓库设置&lt;/strong>页签，选择上一步创建的代码仓库，设置代码仓库的分支或标签以及 Kustomization 清单文件路径。点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 25%;"/>
+&lt;col style="width: 75%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>修订版本&lt;/p>
+&lt;/div></description></item><item><title>导入代码仓库</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/04-import-code-repositories/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/01-devops/03-how-to-use/04-import-code-repositories/</guid><description>&lt;div class="paragraph">
+&lt;p>KubeSphere 支持导入 GitHub、GitLab、Bitbucket 或其它基于 Git 的代码仓库，如 Gitee。下面以 Github 仓库为例，展示如何导入代码仓库。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>DevOps&lt;/strong> 扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已有一个企业空间、一个 DevOps 项目和一个用户 (例如 &lt;strong>project-regular&lt;/strong>)，并已邀请该用户至 DevOps 项目且授予 &lt;strong>operator&lt;/strong> 角色。请参阅&lt;a href="../05-devops-settings/02-role-and-member-management">角色和成员管理&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以 &lt;strong>project-regular&lt;/strong> 用户登录 KubeSphere Web 控制台。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>企业空间管理&lt;/strong>并进入您的 DevOps 项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏，点击&lt;strong>代码仓库&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在右侧的代码仓库页面，点击&lt;strong>添加&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>导入代码仓库&lt;/strong>对话框，输入代码仓库名称，点击选择代码仓库。您也可以为代码仓库设置别名和添加描述信息。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>下表列举了支持导入的代码仓库和参数设置项。以下步骤以 GitHub 为例。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>GitHub&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>&lt;strong>凭证&lt;/strong>：选择访问代码仓库的凭证。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>GitLab&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>GitLab 服务器地址&lt;/strong>：选择 GitLab 服务器地址，默认值为 &lt;a href="https://gitlab.com" class="bare">https://gitlab.com&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>项目组/所有者&lt;/strong>：输入 GitLab 账号。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>凭证&lt;/strong>：选择访问代码仓库的凭证。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>代码仓库&lt;/strong>：选择代码仓库。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>WhizardTelemetry Monitoring on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/</link><description>Recent content in WhizardTelemetry Monitoring on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/index.xml" rel="self" type="application/rss+xml"/><item><title>Edit a Metrics Exporter</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/08-edit-a-metrics-exporter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/08-edit-a-metrics-exporter/</guid><description>&lt;div class="paragraph">
+&lt;p>This section introduces how to edit a metrics exporter.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>A metrics exporter is used to monitor applications. The monitoring and alerting functions of KubeSphere are implemented through Prometheus at the bottom layer. To monitor the running status of applications, you need to perform the following operations:&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Configure applications running in containers to expose monitoring metrics that conform to the Prometheus specification at a certain service endpoint. For more information, see the &lt;a href="https://prometheus.io/docs/instrumenting/clientlibs/">Prometheus Documentation&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the KubeSphere web console, set up a monitoring exporter on the service exposing the workload to declare the path providing application monitoring metrics. KubeSphere will get the application’s monitoring metrics based on the relevant parameters of the monitoring exporter.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the KubeSphere web console, create rule groups or custom monitoring dashboards using monitoring metrics to monitor the running status of applications.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Grayscale Release on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/</link><description>Recent content in Grayscale Release on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/index.xml" rel="self" type="application/rss+xml"/><item><title>Create Grayscale Release Tasks</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/01-create-a-grayscale-release-task/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/01-create-a-grayscale-release-task/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to create a grayscale release task.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a project and have the &lt;strong> Service Mesh Management&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Service Mesh&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Prepare the new version container image in advance and upload it to the container image service, ensuring that the container image service has normal network connectivity with KubeSphere.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>View Grayscale Release Task List</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/02-view-a-grayscale-release-task-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/02-view-a-grayscale-release-task-list/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to view the grayscale release task list.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a project and have the &lt;strong> Service Mesh View&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Service Mesh&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong> Service Mesh View&lt;/strong> permission, and access your project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Service Mesh &amp;gt; Grayscale Release&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Grayscale Release&lt;/strong> page, click &lt;strong>Release Tasks&lt;/strong> to open the grayscale release task list.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>The grayscale release task list provides the following information:&lt;/p>
+&lt;/div></description></item><item><title>View Grayscale Release Task Details</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/03-view-grayscale-release-task-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/03-view-grayscale-release-task-details/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to view the grayscale release task details.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a project and have the &lt;strong> Service Mesh View&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Service Mesh&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong> Service Mesh View&lt;/strong> permission, and access your project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Service Mesh &amp;gt; Grayscale Release&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Grayscale Release&lt;/strong> page, click &lt;strong>Release Tasks&lt;/strong>, then click the name of a grayscale release task to open its details page.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>The task details page provides the following information:&lt;/p>
+&lt;/div></description></item><item><title>Switch Online Version (Blue-Green Deployment)</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/04-switch-versions-blue-green-deployment/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/04-switch-versions-blue-green-deployment/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to switch the online version for a blue-green deployment task.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Based on business needs, you can set the new or old version in a blue-green deployment task to immediately take over all business traffic with one click.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a project and have the &lt;strong> Service Mesh Management&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Service Mesh&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Adjust Traffic Distribution Ratio (Canary Release)</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/05-adjust-traffic-distribution-ratio-canary-release/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/05-adjust-traffic-distribution-ratio-canary-release/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to adjust the traffic distribution ratio for a canary release task.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>Based on business needs, you can manually adjust the traffic distribution ratio between the new and old versions in a canary release task.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a project and have the &lt;strong> Service Mesh Management&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Service Mesh&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Edit Grayscale Release Task Settings</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/06-edit-settings-of-a-grayscale-release-task/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/06-edit-settings-of-a-grayscale-release-task/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to edit grayscale release task settings.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a project and have the &lt;strong> Service Mesh Management&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Service Mesh&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong> Service Mesh Management&lt;/strong> permission, and access your project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Service Mesh &amp;gt; Grayscale Release&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Grayscale Release&lt;/strong> page, click &lt;strong>Release Tasks&lt;/strong>, then click the name of a grayscale release task to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Versions&lt;/strong> area, click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span> in the top-right corner of the new version, then select &lt;strong>Edit&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>New Version Settings&lt;/strong> tab, click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/chevron-up.svg" alt="chevron-up" width="18" height="18"/>&lt;/span>/&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/chevron-down.svg" alt="chevron-down" width="18" height="18"/>&lt;/span> to increase/decrease the number of pod replicas.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Grayscale release does not support modifying the version number and container image of the new version.&lt;/p>
+&lt;/div></description></item><item><title>Delete Grayscale Release Tasks</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/07-delete-a-grayscale-release-task/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/03-service-mesh/02-grayscale-release/07-delete-a-grayscale-release-task/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to delete a grayscale release task.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Warning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>A grayscale release task can only be deleted when one of the new or old versions has taken over all business traffic. After the grayscale release task is deleted, the version (includes services, workloads, and pods) that has not taken over the business traffic will also be deleted.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a project and have the &lt;strong> Service Mesh Management&lt;/strong> permission within the project. For more information, refer to &amp;#34;Project Members&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Service Mesh&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>One of the new or old versions has taken over all business traffic. For more information, see &lt;a href="../04-switch-versions-blue-green-deployment/">Switch Online Version (Blue-Green Deployment)&lt;/a> and &lt;a href="../05-adjust-traffic-distribution-ratio-canary-release/">Adjust Traffic Distribution Ratio (Canary Release)&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

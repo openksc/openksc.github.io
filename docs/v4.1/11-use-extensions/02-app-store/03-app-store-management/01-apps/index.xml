@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Applications on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/</link><description>Recent content in Applications on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/index.xml" rel="self" type="application/rss+xml"/><item><title>View Application Template List</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/01-view-an-app-template-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/01-view-an-app-template-list/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to view the application template list in the App Store.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should have the &lt;strong>App Store Management&lt;/strong> permission on the KubeSphere platform. For more information, refer to &amp;#34;Platform Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere App Store Management&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>App Store Management&lt;/strong> permission.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/grid.svg" alt="grid" width="18" height="18"/>&lt;/span> in the top-right corner of the page, then select &lt;strong>App Store Management&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Apps&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The &lt;strong>Apps&lt;/strong> page displays the application templates in the App Store and provides the following information:&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Name&lt;/p>
+&lt;/div></description></item><item><title>View Application Template Details</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/02-view-app-template-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/02-view-app-template-details/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to view the application template details.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should have the &lt;strong>App Store Management&lt;/strong> permission on the KubeSphere platform. For more information, refer to &amp;#34;Platform Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere App Store Management&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>App Store Management&lt;/strong> permission.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/grid.svg" alt="grid" width="18" height="18"/>&lt;/span> in the top-right corner of the page, then select &lt;strong>App Store Management&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Apps&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the name of an application template in the list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Attributes&lt;/strong> area on the left side of the details page, view the resource attributes of the application template.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>App ID&lt;/p>
+&lt;/div></description></item><item><title>Edit Application Templates</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/04-edit-an-app-template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/04-edit-an-app-template/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to edit information for application templates in the App Store.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should have the &lt;strong>App Store Management&lt;/strong> permission on the KubeSphere platform. For more information, refer to &amp;#34;Platform Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere App Store Management&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>App Store Management&lt;/strong> permission.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/grid.svg" alt="grid" width="18" height="18"/>&lt;/span> in the top-right corner of the page, then select &lt;strong>App Store Management&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Apps&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span> on the right side of the application template you want to edit, then select &lt;strong>Edit&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Set the parameters for the application template in the &lt;strong>Edit Information&lt;/strong> dialog, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Alias&lt;/p>
+&lt;/div></description></item><item><title>Publish Application Templates</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/06-publish-an-app-template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/06-publish-an-app-template/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to publish an application template.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon attention">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Attention&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Before listing the application template, at least one of its application versions must be in the &lt;strong>Published&lt;/strong> status.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should have the &lt;strong>App Store Management&lt;/strong> permission on the KubeSphere platform. For more information, refer to &amp;#34;Platform Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere App Store Management&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>App Store Management&lt;/strong> permission.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/grid.svg" alt="grid" width="18" height="18"/>&lt;/span> in the top-right corner of the page, then select &lt;strong>App Store Management&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Apps&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the name of an application template in the list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Listing&lt;/strong> in the top-left corner of the details page.&lt;/p>
+&lt;div class="paragraph">
+&lt;p>After the application is successfully listed, you can view the application in the &lt;strong>App Store&lt;/strong> in the top-left corner. All projects in KubeSphere can install this application.&lt;/p>
+&lt;/div></description></item><item><title>Unpublish an App Version</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/08-cancel-release-an-app-version/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/08-cancel-release-an-app-version/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to unpublish an application version.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>After an application template is listed, if an application version within it is unpublished, the version will be removed from the App Store. If all application versions in the application template are in the &lt;strong>Unpublished&lt;/strong> status, the application template will be automatically delisted from the App Store.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>After an application version is unpublished, both the App Store administrator and workspace members can delete the application version.&lt;/p>
+&lt;/div></description></item><item><title>Delete an App Version</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/09-delete-an-app-version/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/09-delete-an-app-version/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to delete an app version in the App Store.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should have the &lt;strong>App Store Management&lt;/strong> permission on the KubeSphere platform. For more information, refer to &amp;#34;Platform Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere App Store Management&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>App Store Management&lt;/strong> permission.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/grid.svg" alt="grid" width="18" height="18"/>&lt;/span> in the upper-right corner and select &lt;strong>App Store Management&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Apps&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the name of an application template in the list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Versions&lt;/strong> tab on the right side of the details page, click the application version you want to delete, click &lt;strong>Delete&lt;/strong>, and click &lt;strong>OK&lt;/strong> in the pop-up dialog.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>Remove App Templates</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/10-suspend-an-app-template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/10-suspend-an-app-template/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to remove an app template from the App Store.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>After an app template is removed, the app template and all its app versions will be removed from the App Store. Additionally, App Store administrators and workspace members can delete the entire app template or a specific app version.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should have the &lt;strong>App Store Management&lt;/strong> permission on the KubeSphere platform. For more information, refer to &amp;#34;Platform Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere App Store Management&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Delete App Templates</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/12-delete-an-app-template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/03-app-store-management/01-apps/12-delete-an-app-template/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to delete an app template in the App Store.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should have the &lt;strong>App Store Management&lt;/strong> permission on the KubeSphere platform. For more information, refer to &amp;#34;Platform Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere App Store Management&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>App Store Management&lt;/strong> permission.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/grid.svg" alt="grid" width="18" height="18"/>&lt;/span> in the upper-right corner and select &lt;strong>App Store Management&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Apps&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span> on the right side of the app template you want to delete, then select &lt;strong>Delete&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Delete App Template&lt;/strong> dialog, enter the name of the app template, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item></channel></rss>

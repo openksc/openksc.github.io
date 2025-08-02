@@ -1,0 +1,675 @@
+<!doctype html><html lang=en-US><head><meta charset=utf-8><title>Fluent Operator 入门教程</title><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Fluent Operator 可以单独部署 Fluent Bit 或者 Fluentd，并不会强制要求使用 Fluent Bit 或 Fluentd，同时还支持使用 Fluentd 接收 Fluent Bit 转发的日志流进行多租户日志隔离，这极大地增加了部署的灵活性和多样性。"><meta name=keywords content="Kubernetes,KubeSphere,Fluent Operator,日志采集,日志查询"><meta property="og:type" content="article"><meta property="og:title" content="Fluent Operator 入门教程"><meta property="og:description" content="Fluent Operator 可以单独部署 Fluent Bit 或者 Fluentd，并不会强制要求使用 Fluent Bit 或 Fluentd，同时还支持使用 Fluentd 接收 Fluent Bit 转发的日志流进行多租户日志隔离，这极大地增加了部署的灵活性和多样性。"><meta property="og:image" content="https://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-logging-cover.png"><meta property="og:url" content="https://openksc.github.io/zh/blogs/fluent-operator-logging/"><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@KubeSphere"><meta property="twitter:image" content="https://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-logging-cover.png"><meta name=docsearch:language content="zh-CN"><meta name=docsearch:version content><link rel=canonical href=https://kubesphere.io/zh/blogs/fluent-operator-logging/><link rel="shortcut icon" href=/images/favicons/favicon.ico><link rel=apple-touch-icon href=/images/favicons/apple-touch-icon.png sizes=180x180><link rel=icon type=image/png href=/images/favicons/favicon-16x16.png sizes=16x16><link rel=icon type=image/png href=/images/favicons/favicon-32x32.png sizes=32x32><link rel=icon type=image/svg+xml href=/images/favicons/favicon.svg><link rel=icon type=image/png href=/images/favicons/favicon.png><link rel=manifest href=/images/favicons/site.webmanifest><link rel=mask-icon href=/images/favicons/safari-pinned-tab.svg color=#00ad6e><meta name=msapplication-config content='/images/favicons/browserconfig.xml'><meta name=msapplication-TileColor content="#ffffff"><meta name=theme-color content="#ffffff"><link rel=stylesheet href=/fonts/Roboto/stylesheet.css><link rel=stylesheet href=/fonts/ProximaNova/stylesheet.css><link rel=stylesheet href=/css/jquery.modal.min.css><link rel=stylesheet href=/css/viewer.min.css><link rel=stylesheet href=/swiper/swiper-bundle.min.css><link rel=stylesheet href=/scss/common.min.0c3fdcc05ec210321169846714f74b11c4a1baf09a1833fa9273b2347c81e636.css><script src=/js/jquery-3.7.1.min.js></script><script src=/js/viewer.min.js></script><script src=/js/jquery.modal.min.js></script><script src=/swiper/swiper-bundle.min.js></script><script>var _hmt=_hmt||[];(function(){var e,t=document.createElement("script");t.src="https://hm.baidu.com/hm.js?0888981f1fa45d241b1fb6962da2963e",e=document.getElementsByTagName("script")[0],e.parentNode.insertBefore(t,e)})()</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-YYCVN36HT5"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-YYCVN36HT5")</script><script type=text/javascript>!function(e,t,n,s,o){e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},n=t.createElement("script"),tag=t.getElementsByTagName("script")[0],n.async=1,n.src=("https:"==document.location.protocol?"https://":"http://")+s,tag.parentNode.insertBefore(n,tag)}(window,document,"script","assets.giocdn.com/2.1/gio.js","gio"),gio("init","8a24ae300cbf8b8c",{}),gio("send")</script><link rel=stylesheet href=/scss/content.min.f73b326fbf8c5bd331900b0de21c7dde608a4926f482f6465f9ae1d9049b83ad.css><link rel=stylesheet href=/scss/markdown.min.db47186481122431dffae72d17dbbd51f90b66f022cc163458645709924e4eac.css></head><body><header class=navigation><div class=join-div><div class=content>🚀 KubeSphere v4.1.3 发布，多项优化与改进，欢迎体验！<a href=/zh/docs/v4.1/20-release-notes/release-v413/ target=_blank rel="noopener noreferrer">请查看 Release notes →</a>
+<img id=close-join src=/images/header/close.svg alt=close></div></div><div class=common-layout><div class=header-container><a href=/zh/ aria-label=logo><img src=/images/header/logo.svg alt class=logo></a><ul class=nav><li class=menu-li><span class=menu-span>应用场景</span><ul class="dropdown-menu menu-2"><li><a href=/zh/devops/>拥抱一站式 DevOps 工作流</a></li><li><a href=/zh/service-mesh/>在 Kubernetes 运行微服务</a></li><li><a href=/zh/observability/>构建丰富的云原生可观测性</a></li></ul></li><li class=menu-li><span class=menu-span>资源</span><ul class="dropdown-menu menu-3"><li><a href=/zh/projects/>开源项目</a></li><li><a href=/zh/conferences/>开源峰会</a></li><li><a href=/zh/blogs/>技术博客</a></li><li><a href=/zh/videos/>视频资源</a></li><li><a href=/zh/learn/>云原生实战</a></li></ul></li><li class=menu-li><span class=menu-span>文档中心</span><ul class="dropdown-menu menu-4"><li><a href=/zh/docs/v4.1>v4.1 <img src=/images/header/star.svg alt=star></a></li><li><a href=/zh/docs/v3.4>v3.4</a></li><li><a href=/zh/docs/v3.3>v3.3</a></li><li><a href=https://dev-guide.kubesphere.io/extension-dev-guide/zh/ target=_blank rel="noopener noreferrer">扩展组件开发</a></li><li><a href=https://kube.design/ target=_blank rel="noopener noreferrer">Kube Design</a></li></ul></li><li class=menu-li><span class=menu-span>开源社区</span><ul class="dropdown-menu menu-5"><li><a href=/zh/contribution/>参与贡献</a></li><li><a href=/zh/live/>社区活动</a></li><li><a href=/zh/case/>案例学习</a></li><li><a href=/zh/partner/>合作伙伴</a></li><li><a href=/zh/user-group/>用户委员会</a></li><li><a href=/zh/news/>动态</a></li><li><a href=https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md target=_blank rel="noopener noreferrer">版本计划</a></li><li><a href=https://www.kubesphere.io/zh/ target=_blank rel="noopener noreferrer">中国站</a></li><li><a href=https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2025 target=_blank rel="noopener noreferrer">开源之夏 2025</a></li></ul></li><li><a data-docs=用户论坛 href=https://ask.kubesphere.io/forum target=_blank rel="noopener noreferrer">用户论坛</a></li><li><a data-docs=认证 href=https://kubesphere.cloud/certification/ target=_blank rel="noopener noreferrer">认证</a></li></ul><div class=right-menu><ul><li class=language-menu><div><img src=/images/header/black.svg alt>
+<span>简体中文</span></div><ul class=dropdown-menu><li onclick='handleLangClick("zh","/zh/blogs/fluent-operator-logging/")'>简体中文</li></ul></li><li class=github-li><div class=github-star><a class=star-btn href=https://github.com/kubesphere/kubesphere rel="noopener noreferrer" target=_blank><span class=star-img></span>&nbsp;<span>Star</span>
+</a><a class=social-count href=https://github.com/kubesphere/kubesphere/stargazers rel="noopener noreferrer" target=_blank></a></div></li><li class=menu-icon><img src=/images/header/menu.svg alt></li></ul></div></div></div><div id=modal-for-menu class=modal><ul class=nav><li data-check=0 class=menu-li><span class=menu-span>应用场景</span><ul class=dropdown-menu><li><a href=/zh/devops/>拥抱一站式 DevOps 工作流</a></li><li><a href=/zh/service-mesh/>在 Kubernetes 运行微服务</a></li><li><a href=/zh/observability/>构建丰富的云原生可观测性</a></li></ul></li><li data-check=0 class=menu-li><span class=menu-span>资源</span><ul class=dropdown-menu><li><a href=/zh/projects/>开源项目</a></li><li><a href=/zh/conferences/>开源峰会</a></li><li><a href=/zh/blogs/>技术博客</a></li><li><a href=/zh/videos/>视频资源</a></li><li><a href=/zh/learn/>云原生实战</a></li></ul></li><li data-check=0 class=menu-li><span class=menu-span>文档中心</span><ul class=dropdown-menu><li><a href=/zh/docs/v4.1>v4.1 <img src=/images/header/star.svg alt=star></a></li><li><a href=/zh/docs/v3.4>v3.4</a></li><li><a href=/zh/docs/v3.3>v3.3</a></li><li><a href=https://dev-guide.kubesphere.io/extension-dev-guide/zh/>扩展组件开发</a></li><li><a href=https://kube.design/>Kube Design</a></li></ul></li><li data-check=0 class=menu-li><span class=menu-span>开源社区</span><ul class=dropdown-menu><li><a href=/zh/contribution/>参与贡献</a></li><li><a href=/zh/live/>社区活动</a></li><li><a href=/zh/case/>案例学习</a></li><li><a href=/zh/partner/>合作伙伴</a></li><li><a href=/zh/user-group/>用户委员会</a></li><li><a href=/zh/news/>动态</a></li><li><a href=https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md>版本计划</a></li><li><a href=https://www.kubesphere.io/zh/>中国站</a></li><li><a href=https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2025>开源之夏 2025</a></li></ul></li><li><a data-docs=用户论坛 href=https://ask.kubesphere.io/forum>用户论坛</a></li><li><a data-docs=认证 href=https://kubesphere.cloud/certification/>认证</a></li></ul><div class=link-div><a href=https://join.slack.com/t/kubesphere/shared_invite/zt-2b4t6rdb4-ico_4UJzCln_S2c1pcrIpQ target=_blank rel="noopener noreferrer" aria-label=slack><img src=/images/header/slack-hover.svg alt>
+</a><a href=https://x.com/KubeSphere target=_blank rel="noopener noreferrer" aria-label=twitter><img src=/images/header/twitter-hover.svg alt>
+</a><a href=https://github.com/kubesphere/kubesphere target=_blank rel="noopener noreferrer" aria-label=github><img src=/images/header/github-hover.svg alt></a></div></div></header><script>var bindNavMouseEvent,bindScrollChangeHeader,bindClickShowMenu,bindClickModalLi,bindClickClose,language,handleLangClick,githubApiLink="https://api.github.com/repos/kubesphere/kubesphere",getStar=function(){$(".social-count").hide(),$.getJSON(githubApiLink,function(e){$(".social-count").show().html(e.stargazers_count)})};getStar(),bindNavMouseEvent=function(e,t){t||(t=$(e));var n=!1;t.mouseenter(function(){if(n)return!1;n=!0,$(this).find(".dropdown-menu").fadeIn(200,function(){n=!1})}),t.mouseleave(function(){$(this).find(".dropdown-menu").fadeOut(200)})},bindScrollChangeHeader=function(){var t=100,e=$("header");window.addEventListener("scroll",function(){var t=window.scrollY;t>0?e.addClass("navigationScroll"):e.removeClass("navigationScroll")})},bindClickShowMenu=function(){$(".menu-icon").click(function(){$("#modal-for-menu").modal()})},bindClickModalLi=function(){$(".modal .menu-li").click(function(){var e=$(this).data("check");e===0?($(this).data("check",1),$(this).find(".dropdown-menu").slideDown(200)):($(this).data("check",0),$(this).find(".dropdown-menu").slideUp(200)),$(this).find(".menu-span").toggleClass("up")})},bindClickClose=function(){$("#close-join").click(function(){$(".navigation .join-div").hide(),$(".main-section").removeClass("padding")})},language="zh",bindClickClose(),bindScrollChangeHeader(),$(".header-container .menu-li").each(function(){bindNavMouseEvent("",$(this))}),bindNavMouseEvent(".header-container .language-menu"),bindNavMouseEvent(".header-container .btn-li"),bindClickShowMenu(),bindClickModalLi(),handleLangClick=function(e,t){try{localStorage.setItem("lang",e)}catch{}location.href=t}</script><section class=main-section><div class=common-layout><div class=breadcrumb><span><a href=/zh/blogs/>技术博客</a> > </span><span>Fluent Operator 入门教程</span></div><div class='main-div middle-div'><div class=author>程德昊</div><span class=date>发布于：2022-04-14</span>&nbsp;&nbsp;&nbsp;
+<span style=font-size:14px;color:#919aa3 id=busuanzi_container_page_pv>本文总阅读量：<span id=busuanzi_value_page_pv></span></span><h1>Fluent Operator 入门教程</h1><div class=share-1><div class=share><a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2ffluent-operator-logging%2f&text=Fluent%20Operator%20%e5%85%a5%e9%97%a8%e6%95%99%e7%a8%8b" target=_blank rel="noopener noreferrer"><img src=/images/share/Twitter.svg alt="twitter icon">
+</a><a href="https://reddit.com/submit?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2ffluent-operator-logging%2f&title=Fluent%20Operator%20%e5%85%a5%e9%97%a8%e6%95%99%e7%a8%8b" target=_blank rel="noopener noreferrer"><img src=/images/share/Reddit.svg alt="reddit icon">
+</a><a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2ffluent-operator-logging%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Facebook.svg alt="facebook icon">
+</a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2ffluent-operator-logging%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Linkedin.svg alt="linkedin icon">
+</a><a href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2ffluent-operator-logging%2f&t=Fluent%20Operator%20%e5%85%a5%e9%97%a8%e6%95%99%e7%a8%8b" target=_blank rel="noopener noreferrer"><img src=/images/share/HackerNews.svg alt="hackernews icon"></a></div></div><div class=content><div class=md-body><h2 id=fluent-operator-介绍>Fluent Operator​ 介绍</h2><p>随着云原生技术的快速发展，技术的不断迭代，对于日志的采集、处理及转发提出了更高的要求。云原生架构下的日志方案相比基于物理机或者是虚拟机场景的日志架构设计存在很大差别。作为 CNCF 的毕业项目，Fluent Bit 无疑为解决云环境中的日志记录问题的首选解决方案之一。但是在 Kubernetes 中安装部署以及配置 Fluent Bit 都具有一定的门槛，加大了用户的使用成本。</p><p><strong>2019 年 1 月 21 日</strong>，KubeSphere 社区为了满足以云原生的方式管理 Fluent Bit 的需求开发了 <strong>Fluentbit Operator</strong>，并在 2020 年 2 月 17 日发布了 v0.1.0 版本。此后产品不断迭代，在 <strong>2021 年 8 月 4 日</strong> 正式将 Fluentbit Operator 捐献给 Fluent 社区。</p><p>Fluentbit Operator 降低了 Fluent Bit 的使用门槛，能高效、快捷的处理日志信息，但是 Fluent Bit 处理日志的能力稍弱，我们还没有集成日志处理工具，比如 Fluentd，它有更多的插件可供使用。基于以上需求，Fluentbit Operator 集成了 Fluentd，旨在将 Fluentd 集成为一个可选的日志聚合和转发层，并重新命名为 <strong>Fluent Operator（GitHub 地址： <a href=https://github.com/fluent/fluent-operator target=_blank rel="noopener noreferrer">https://github.com/fluent/fluent-operator</a>）</strong>。在 2022 年 3 月 25 日 Fluent Operator 发布了 v1.0.0 版本，并将继续迭代 Fluentd Operator，预计在 2022 年第 2 季度发布 v1.1.0 版本，增加更多的功能与亮点。</p><p>使用 Fluent Operator 可以灵活且方便地部署、配置及卸载 Fluent Bit 以及 Fluentd。同时, 社区还提供支持 Fluentd 以及 Fluent Bit 的海量插件，用户可以根据实际情况进行定制化配置。官方文档提供了详细的示例，极易上手，大大降低了 Fluent Bit 以及 Fluentd 的使用门槛。</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-2022-1.png alt></p><h3 id=日志流水线的各个阶段>日志流水线的各个阶段</h3><p>Fluent Operator 可以单独部署 Fluent Bit 或者 Fluentd，并不会强制要求使用 Fluent Bit 或 Fluentd，同时还支持使用 Fluentd 接收 Fluent Bit 转发的日志流进行多租户日志隔离，这极大地增加了部署的灵活性和多样性。 为了更全面的了解 Fluent Operator，下图以完整的日志流水线为例，将流水线分为三部分：采集和转发、过滤以及输出。</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-2022-2.png alt></p><h4 id=采集和转发>采集和转发</h4><p>Fluent Bit 与 Fluentd 均可以采集日志。</p><p>单独部署时，可以通过 Fluent Bit 的 intput 插件或者 Fluentd 的 forward 以及 http 等插件来满足对日志收集的需求。两者结合时，Fluentd 可使用 forward 接受 Fluent Bit 的日志流转发。</p><p>在性能方面，Fluent Bit 相比 Fluentd 更轻量，内存消耗更小（约为 650KB），所以主要由 Fluent Bit 负责采集与转发日志。在各个节点上通过以 DaemonSet 形式安装的 Fluent Bit 来收集和转发日志。</p><h4 id=过滤>过滤</h4><p>日志收集的数据往往过于杂乱与冗余，这要求日志处理中间件提供对日志信息进行过滤和处理的能力。Fluent Bit 或 Fluentd 均支持 filter 插件，用户可以根据自身需求，整合和定制日志数据。</p><h4 id=输出>输出</h4><p>Fluent Bit output 或 Fluentd output 插件将处理后的日志信息输出到多个目的地，目的地可以是 Kafka、Elasticsearch 等第三方组件。</p><h3 id=crd-简介>CRD 简介</h3><p>Fluent Operator 为 Fluent Bit 和 Fluentd 分别定义了两个 Group：fluentbit.fluent.io 和 fluentd.fluent.io。</p><h4 id=fluentbitfluentio>fluentbit.fluent.io</h4><p>fluentbit.fluent.io​ 分组下包含以下 6 个 CRDs：</p><ul><li>Fluentbit CRD 定义了 Fluent Bit 的属性，比如镜像版本、污点、亲和性等参数。</li><li>ClusterFluentbitConfig CRD 定义了 Fluent Bit 的配置文件。</li><li>ClusterInput CRD 定义了 Fluent Bit 的 input 插件，即输入插件。通过该插件，用户可以自定义采集何种日志。</li><li>ClusterFilter CRD 定义了 Fluent Bit 的 filter 插件，该插件主要负责过滤以及处理 fluentbit 采集到的信息。</li><li>ClusterParser CRD 定义了 Fluent Bit 的 parser 插件，该插件主要负责解析日志信息，可以将日志信息解析为其他格式。</li><li>ClusterOutput CRD 定义了 Fluent Bit 的 output 插件，该插件主要负责将处理后的日志信息转发到目的地。</li></ul><h5 id=fluentdfluentio>fluentd.fluent.io</h5><p>fluentd.fluent.io​ 分组下包含以下 7 个 CRDs：</p><ul><li>Fluentd CRD 定义了 Fluentd 的属性，比如镜像版本、污点、亲和性等参数。</li><li>ClusterFluentdConfig CRD 定义了 Fluentd 集群级别的配置文件。</li><li>FluentdConfig CRD 定义了 Fluentd 的 namespace 范围的配置文件。</li><li>ClusterFilter CRD 定义了 Fluentd 集群范围的 filter 插件，该插件主要负责过滤以及处理 Fluentd 采集到的信息。如果安装了 Fluent Bit，则可以更进一步的处理日志信息。</li><li>Filter CRD 该 CRD 定义了 Fluentd namespace 的 filter 插件，该插件主要负责过滤以及处理 Fluentd 采集到的信息。如果安装了 Fluent Bit，则可以更进一步的处理日志信息。</li><li>ClusterOutput CRD 该 CRD 定义了 Fluentd 的集群范围的 output 插件，该插件主要负责将处理后的日志信息转发到目的地。</li><li>Output CRD 该 CRD 定义了 Fluentd 的 namespace 范围的 output 插件，该插件主要负责将处理后的日志信息转发到目的地。</li></ul><h3 id=编排原理简介-instance--mounted-secret--crd-的抽象能力>编排原理简介 (instance + mounted secret + CRD 的抽象能力)</h3><p>尽管 Fluent Bit 与 Fluentd 都有收集、处理（解析和过滤）以及输出日志的能力，但它们有着不同的优点。Fluent Bit 相对 Fluentd 更为轻量与高效，而 Fluentd 插件更为丰富。</p><p>为了兼顾这些优点，Fluent Operator 允许用户以多种方式灵活地使用 Fluent Bit 和 Fluentd：</p><ul><li>Fluent Bit only 模式：如果您只需要在收集日志并在简单处理后将日志发送到最终目的地，您只需要 Fluent Bit。</li><li>Fluentd only 模式：如果需要通过网络以 HTTP 或 Syslog 等方式接收日志，然后将日志处理并发送到最终的目的地，则只需要 Fluentd。</li><li>Fluent Bit + Fluentd 模式：如果你还需要对收集到的日志进行一些高级处理或者发送到更多的 sink，那么你可以组合使用 Fluent Bit 和 Fluentd。</li></ul><p>Fluent Operator 允许您根据需要在上述 3 种模式下配置日志处理管道。Fluentd 与 Fluent Bit 具有丰富的插件以满足用户的各种自定义化需求，由于 Fluentd 与 Fluent Bit 的配置挂载方式相似，所以以 Fluent Bit 配置文件的挂载方式来进行简单介绍。</p><p>在 Fluent Bit CRD 中每个 ClusterInput, ClusterParser, ClusterFilter,ClusterOutput 代表一个 Fluent Bit 配置部分，由 ClusterFluentBitConfig 标签选择器选择。Fluent Operator 监视这些对象，构建最终配置，最后创建一个 Secret 来存储安装到 Fluent Bit DaemonSet 中的配置。整个工作流程如下所示：</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-2022-3.svg alt></p><p>因为 Fluent Bit 本身没有重新加载接口（详细信息请参阅此<a href=https://github.com/fluent/fluent-bit/issues/365 title=已知问题 target=_blank rel="noopener noreferrer">已知问题</a>），为了使 Fluent Bit 能够在 Fluent Bit 配置更改时获取并使用最新配置，添加了一个名为 fluentbit watcher 的包装器，以便在检测到 Fluent Bit 配置更改时立即重新启动 Fluent Bit 进程。这样，无需重新启动 Fluent Bit pod 即可重新加载新配置。</p><p>为了使用户配置更为方便，我们基于 CRD 强大的抽象能力将应用以及配置的参数提取出来。用户可以通过定义的 CRD 来对 Fluent Bit 以及 Fluentd 进行配置。Fluent Operator 监控这些对象的变化从而更改 Fluent Bit 以及 Fluentd 的状态及配置。特别是插件的定义，为了使用户更为平滑地过渡，我们在命名上基本与 Fluent Bit 原有的字段保持一致，降低使用的门槛。</p><h3 id=如何实现多租户日志隔离>如何实现多租户日志隔离</h3><p>Fluent Bit 可以高效的采集日志，但是如果需要对日志信息进行复杂处理，Fluent Bit 则稍显力不从心，而 Fluentd 则可以借助其丰富的插件完成对日志信息的高级处理。fluent-operator 为此抽象了 Fluentd 的各种插件，以便可以对日志信息进行处理来满足用户的自定义需求。</p><p>从上面 CRD 的定义可以看出，我们将 Fluentd 的 config 及插件的 CRD 分成了 cluster 级别与 namespace 级别的 CRD。通过将 CRD 定义为两种范围，借助 Fluentd 的 label router 插件，就可以达到多租户隔离的效果。</p><p>我们在 clusterfluentconfig 添加了 watchNamespace 字段，用户可以根据自己的需求选择监听哪些 namespace，如果为空，则表示监控所有的 namespace。而 namesapce 级别的 fluentconfig 只能监听自己所位于的 namespace 中的 CR 及全局级别的配置。所以 namespace 级别的日志既可以输出到该 namespace 中的 output，也可以输出到 clsuter 级别的 output，从而达到多租户隔离的目的。</p><h2 id=fluent-operator-vs-logging-operator>Fluent Operator vs logging-operator</h2><h3 id=差别>差别</h3><ul><li>两者皆可自动部署 Fluent Bit 与 Fluentd。logging-operator 需要同时部署 Fluent Bit 和 Fluentd，而 Fluent Operator 支持可插拔部署 Fluent Bit 与 Fluentd，非强耦合，用户可以根据自己的需要自行选择部署 Fluentd 或者是 Fluent Bit，更为灵活。</li><li>在 logging-operator 中 Fluent Bit 收集的日志都必须经过 Fluentd 才能输出到最终的目的地，而且如果数据量过大，那么 Fluentd 存在单点故障隐患。Fluent Operator 中 Fluent Bit 可以直接将日志信息发送到目的地，从而规避单点故障的隐患。</li><li>logging-operator 定义了 loggings，outputs，flows，clusteroutputs 以及 clusterflows 四种 CRD,而 Fluent Operator 定义了 13 种 CRD。相较于 logging-operator，Fluent Operator 在 CRD 定义上更加多样，用户可以根据需要更灵活的对 Fluentd 以及 Fluent Bit 进行配置。同时在定义 CRD 时，选取与 Fluentd 以及 Fluent Bit 配置类似的命名，力求命名更加清晰，以符合原生的组件定义。</li><li>两者均借鉴了 Fluentd 的 label router 插件实现多租户日志隔离。</li></ul><h3 id=展望>展望</h3><ul><li>支持 HPA 自动伸缩；</li><li>完善 Helm Chart，如收集 metrics 信息；</li><li>...</li></ul><h2 id=用法详解>用法详解</h2><p>借助 Fluent Operator 可以对日志进行复杂处理，在这里我们可以通过 <a href=https://github.com/kubesphere-sigs/fluent-operator-walkthrough title=fluent-operator-walkthrough target=_blank rel="noopener noreferrer">fluent-operator-walkthrough</a> 中将日志输出到 elasticsearch 与 kafka 的例子对 Fluent Operator 的实际功能进行介绍。要获得 Fluent Operator 的一些实际操作经验，您需要一个 Kind 集群。同时你还需要在这种类型的集群中设置一个 Kafka 集群和一个 Elasticsearch 集群。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 创建一个 kind 的集群并命名为 fluent</span>
+</span></span><span style=display:flex><span>./create-kind-cluster.sh
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 在 Kafka namespace 下创建一个 Kafka 集群</span>
+</span></span><span style=display:flex><span>./deploy-kafka.sh
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 在 elastic namespace 下创建一个 Elasticsearch 集群</span>
+</span></span><span style=display:flex><span>./deploy-es.sh
+</span></span></code></pre></div><p>Fluent Operator 控制 Fluent Bit 和 Fluentd 的生命周期。您可以使用以下脚本在 Fluent 命名空间中启动 Fluent Operator：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>./deploy-fluent-operator.sh
+</span></span></code></pre></div><p>Fluent Bit 和 Fluentd 都已被定义为 Fluent Operator 中的 CRD，您可以通过声明 FluentBit 或 Fluentd 的 CR 来创建 Fluent Bit DaemonSet 或 Fluentd StatefulSet。</p><h3 id=fluent-bit-only-模式>Fluent Bit Only 模式</h3><p>Fluent Bit Only 将只启用轻量级的 Fluent Bit 对日志进行采集、处理以及转发。</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-2022-4.png alt></p><h4 id=使用-fluent-bit-收集-kubelet-的日志并输出到-elasticsearch>使用 Fluent Bit 收集 kubelet 的日志并输出到 Elasticsearch</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#ae81ff>cat &lt;&lt;EOF | kubectl apply -f -</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentbit.fluent.io/v1alpha2</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>FluentBit</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>fluent-bit</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>fluent</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app.kubernetes.io/name</span>: <span style=color:#ae81ff>fluent-bit</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>image</span>: <span style=color:#ae81ff>kubesphere/fluent-bit:v1.8.11</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>positionDB</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>hostPath</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>path</span>: <span style=color:#ae81ff>/var/lib/fluent-bit/</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>resources</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>requests</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>cpu</span>: <span style=color:#ae81ff>10m</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>memory</span>: <span style=color:#ae81ff>25Mi</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>limits</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>cpu</span>: <span style=color:#ae81ff>500m</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>memory</span>: <span style=color:#ae81ff>200Mi</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>fluentBitConfigName</span>: <span style=color:#ae81ff>fluent-bit-only-config</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>tolerations</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>operator</span>: <span style=color:#ae81ff>Exists</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentbit.fluent.io/v1alpha2</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ClusterFluentBitConfig</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>fluent-bit-only-config</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app.kubernetes.io/name</span>: <span style=color:#ae81ff>fluent-bit</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>service</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>parsersFile</span>: <span style=color:#ae81ff>parsers.conf</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>inputSelector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>fluentbit.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>fluentbit.fluent.io/mode</span>: <span style=color:#e6db74>&#34;fluentbit-only&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>filterSelector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>fluentbit.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>fluentbit.fluent.io/mode</span>: <span style=color:#e6db74>&#34;fluentbit-only&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>outputSelector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>fluentbit.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>fluentbit.fluent.io/mode</span>: <span style=color:#e6db74>&#34;fluentbit-only&#34;</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentbit.fluent.io/v1alpha2</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ClusterInput</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>kubelet</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>fluentbit.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>fluentbit.fluent.io/mode</span>: <span style=color:#e6db74>&#34;fluentbit-only&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>systemd</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>tag</span>: <span style=color:#ae81ff>service.kubelet</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>path</span>: <span style=color:#ae81ff>/var/log/journal</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>db</span>: <span style=color:#ae81ff>/fluent-bit/tail/kubelet.db</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>dbSync</span>: <span style=color:#ae81ff>Normal</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>systemdFilter</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#ae81ff>_SYSTEMD_UNIT=kubelet.service</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentbit.fluent.io/v1alpha2</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ClusterFilter</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>systemd</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>fluentbit.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>fluentbit.fluent.io/mode</span>: <span style=color:#e6db74>&#34;fluentbit-only&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>match</span>: <span style=color:#ae81ff>service.*</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>filters</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>lua</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>script</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>key</span>: <span style=color:#ae81ff>systemd.lua</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>name</span>: <span style=color:#ae81ff>fluent-bit-lua</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>call</span>: <span style=color:#ae81ff>add_time</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>timeAsTable</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>data</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>systemd.lua</span>: |<span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    function add_time(tag, timestamp, record)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      new_record = {}
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      timeStr = os.date(&#34;!*t&#34;, timestamp[&#34;sec&#34;])
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      t = string.format(&#34;%4d-%02d-%02dT%02d:%02d:%02d.%sZ&#34;,
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    		timeStr[&#34;year&#34;], timeStr[&#34;month&#34;], timeStr[&#34;day&#34;],
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    		timeStr[&#34;hour&#34;], timeStr[&#34;min&#34;], timeStr[&#34;sec&#34;],
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    		timestamp[&#34;nsec&#34;])
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      kubernetes = {}
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      kubernetes[&#34;pod_name&#34;] = record[&#34;_HOSTNAME&#34;]
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      kubernetes[&#34;container_name&#34;] = record[&#34;SYSLOG_IDENTIFIER&#34;]
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      kubernetes[&#34;namespace_name&#34;] = &#34;kube-system&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      new_record[&#34;time&#34;] = t
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      new_record[&#34;log&#34;] = record[&#34;MESSAGE&#34;]
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      new_record[&#34;kubernetes&#34;] = kubernetes
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      return 1, timestamp, new_record
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    end</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ConfigMap</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app.kubernetes.io/component</span>: <span style=color:#ae81ff>operator</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app.kubernetes.io/name</span>: <span style=color:#ae81ff>fluent-bit-lua</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>fluent-bit-lua</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>fluent</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentbit.fluent.io/v1alpha2</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ClusterOutput</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>es</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>fluentbit.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>fluentbit.fluent.io/mode</span>: <span style=color:#e6db74>&#34;fluentbit-only&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>matchRegex</span>: <span style=color:#ae81ff>(?:kube|service)\.(.*)</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>es</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>host</span>: <span style=color:#ae81ff>elasticsearch-master.elastic.svc</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>port</span>: <span style=color:#ae81ff>9200</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>generateID</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>logstashPrefix</span>: <span style=color:#ae81ff>fluent-log-fb-only</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>logstashFormat</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>timeKey</span>: <span style=color:#e6db74>&#34;@timestamp&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>EOF</span>
+</span></span></code></pre></div><h4 id=使用-fluent-bit-收集-kubernetes-的应用日志并输出到-kafka>使用 Fluent Bit 收集 kubernetes 的应用日志并输出到 Kafka</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#ae81ff>cat &lt;&lt;EOF | kubectl apply -f -</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentbit.fluent.io/v1alpha2</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>FluentBit</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>fluent-bit</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>fluent</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app.kubernetes.io/name</span>: <span style=color:#ae81ff>fluent-bit</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>image</span>: <span style=color:#ae81ff>kubesphere/fluent-bit:v1.8.11</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>positionDB</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>hostPath</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>path</span>: <span style=color:#ae81ff>/var/lib/fluent-bit/</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>resources</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>requests</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>cpu</span>: <span style=color:#ae81ff>10m</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>memory</span>: <span style=color:#ae81ff>25Mi</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>limits</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>cpu</span>: <span style=color:#ae81ff>500m</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>memory</span>: <span style=color:#ae81ff>200Mi</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>fluentBitConfigName</span>: <span style=color:#ae81ff>fluent-bit-config</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>tolerations</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>operator</span>: <span style=color:#ae81ff>Exists</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentbit.fluent.io/v1alpha2</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ClusterFluentBitConfig</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>fluent-bit-config</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app.kubernetes.io/name</span>: <span style=color:#ae81ff>fluent-bit</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>service</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>parsersFile</span>: <span style=color:#ae81ff>parsers.conf</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>inputSelector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>fluentbit.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>fluentbit.fluent.io/mode</span>: <span style=color:#e6db74>&#34;k8s&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>filterSelector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>fluentbit.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>fluentbit.fluent.io/mode</span>: <span style=color:#e6db74>&#34;k8s&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>outputSelector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>fluentbit.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>fluentbit.fluent.io/mode</span>: <span style=color:#e6db74>&#34;k8s&#34;</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentbit.fluent.io/v1alpha2</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ClusterInput</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>tail</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>fluentbit.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>fluentbit.fluent.io/mode</span>: <span style=color:#e6db74>&#34;k8s&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>tail</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>tag</span>: <span style=color:#ae81ff>kube.*</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>path</span>: <span style=color:#ae81ff>/var/log/containers/*.log</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>parser</span>: <span style=color:#ae81ff>docker</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>refreshIntervalSeconds</span>: <span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>memBufLimit</span>: <span style=color:#ae81ff>5MB</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>skipLongLines</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>db</span>: <span style=color:#ae81ff>/fluent-bit/tail/pos.db</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>dbSync</span>: <span style=color:#ae81ff>Normal</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentbit.fluent.io/v1alpha2</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ClusterFilter</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>kubernetes</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>fluentbit.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>fluentbit.fluent.io/mode</span>: <span style=color:#e6db74>&#34;k8s&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>match</span>: <span style=color:#ae81ff>kube.*</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>filters</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>kubernetes</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>kubeURL</span>: <span style=color:#ae81ff>https://kubernetes.default.svc:443</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>kubeCAFile</span>: <span style=color:#ae81ff>/var/run/secrets/kubernetes.io/serviceaccount/ca.crt</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>kubeTokenFile</span>: <span style=color:#ae81ff>/var/run/secrets/kubernetes.io/serviceaccount/token</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>labels</span>: <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>annotations</span>: <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>nest</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>operation</span>: <span style=color:#ae81ff>lift</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>nestedUnder</span>: <span style=color:#ae81ff>kubernetes</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>addPrefix</span>: <span style=color:#ae81ff>kubernetes_</span>
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>modify</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>rules</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>remove</span>: <span style=color:#ae81ff>stream</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>remove</span>: <span style=color:#ae81ff>kubernetes_pod_id</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>remove</span>: <span style=color:#ae81ff>kubernetes_host</span>
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>remove</span>: <span style=color:#ae81ff>kubernetes_container_hash</span>
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>nest</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>operation</span>: <span style=color:#ae81ff>nest</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>wildcard</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#ae81ff>kubernetes_*</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>nestUnder</span>: <span style=color:#ae81ff>kubernetes</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>removePrefix</span>: <span style=color:#ae81ff>kubernetes_</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentbit.fluent.io/v1alpha2</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ClusterOutput</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>kafka</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>fluentbit.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;false&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>fluentbit.fluent.io/mode</span>: <span style=color:#e6db74>&#34;k8s&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>matchRegex</span>: <span style=color:#ae81ff>(?:kube|service)\.(.*)</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>kafka</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>brokers</span>: <span style=color:#ae81ff>my-cluster-kafka-bootstrap.kafka.svc:9091,my-cluster-kafka-bootstrap.kafka.svc:9092,my-cluster-kafka-bootstrap.kafka.svc:9093</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>topics</span>: <span style=color:#ae81ff>fluent-log</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>EOF</span>
+</span></span></code></pre></div><h3 id=fluent-bit--fluentd-模式>Fluent Bit + Fluentd 模式</h3><p>凭借 Fluentd 丰富的插件，Fluentd 可以充当日志聚合层，执行更高级的日志处理。您可以使用 Fluent Operator 轻松地将日志从 Fluent Bit 转发到 Fluentd。</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-2022-5.png alt></p><h4 id=将日志从-fluent-bit-转发到-fluentd>将日志从 Fluent Bit 转发到 Fluentd</h4><p>要将日志从 Fluent Bit 转发到 Fluentd，您需要启用 Fluent Bit 的 forward 插件，如下所示：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#ae81ff>cat &lt;&lt;EOF | kubectl apply -f -</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentbit.fluent.io/v1alpha2</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ClusterOutput</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>fluentd</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>fluentbit.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>fluentbit.fluent.io/component</span>: <span style=color:#ae81ff>logging</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>matchRegex</span>: <span style=color:#ae81ff>(?:kube|service)\.(.*)</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>forward</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>host</span>: <span style=color:#ae81ff>fluentd.fluent.svc</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>port</span>: <span style=color:#ae81ff>24224</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>EOF</span>
+</span></span></code></pre></div><h4 id=部署-fluentd>部署 Fluentd</h4><p>Fluentd forward Input 插件会在部署 Fluentd 时默认启用，因此你只需要部署下列 yaml 来部署 Fluentd：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentd.fluent.io/v1alpha1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Fluentd</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>fluentd</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>fluent</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app.kubernetes.io/name</span>: <span style=color:#ae81ff>fluentd</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>globalInputs</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>forward</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>bind</span>: <span style=color:#ae81ff>0.0.0.0</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>port</span>: <span style=color:#ae81ff>24224</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>image</span>: <span style=color:#ae81ff>kubesphere/fluentd:v1.14.4</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>fluentdCfgSelector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>config.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span></code></pre></div><h4 id=clusterfluentdconfig-fluentd-集群范围的配置>ClusterFluentdConfig: Fluentd 集群范围的配置</h4><p>如果你定义了 ClusterFluentdConfig，那么你可以收集任意或者所有 namespace 下的日志。我么可以通过 watchedNamespaces 字段来选择所需要采集日志的 namespace。以下配置是采集 <code>kube-system</code> 以及 <code>default</code> namespace 下的日志：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#ae81ff>cat &lt;&lt;EOF | kubectl apply -f -</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentd.fluent.io/v1alpha1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ClusterFluentdConfig</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>cluster-fluentd-config</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>config.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>watchedNamespaces</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#ae81ff>kube-system</span>
+</span></span><span style=display:flex><span>  - <span style=color:#ae81ff>default</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>clusterOutputSelector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>output.fluentd.fluent.io/scope</span>: <span style=color:#e6db74>&#34;cluster&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>output.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentd.fluent.io/v1alpha1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ClusterOutput</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>cluster-fluentd-output-es</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>output.fluentd.fluent.io/scope</span>: <span style=color:#e6db74>&#34;cluster&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>output.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>outputs</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>elasticsearch</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>host</span>: <span style=color:#ae81ff>elasticsearch-master.elastic.svc</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>port</span>: <span style=color:#ae81ff>9200</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>logstashFormat</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>logstashPrefix</span>: <span style=color:#ae81ff>fluent-log-cluster-fd</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>EOF</span>
+</span></span></code></pre></div><h4 id=fluentdconfig-fluentd-namespace-范围的配置>FluentdConfig: Fluentd namespace 范围的配置</h4><p>如果你定义了 FluentdConfig，那么你只能将与该 FluentdConfig 同一 namespace 下的日志发送到 Output，通过这种方式实现了不同 namespace 下的日志隔离。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#ae81ff>cat &lt;&lt;EOF | kubectl apply -f -</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentd.fluent.io/v1alpha1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>FluentdConfig</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>namespace-fluentd-config</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>fluent</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>config.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>outputSelector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>output.fluentd.fluent.io/scope</span>: <span style=color:#e6db74>&#34;namespace&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>output.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentd.fluent.io/v1alpha1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Output</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>namespace-fluentd-output-es</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>fluent</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>output.fluentd.fluent.io/scope</span>: <span style=color:#e6db74>&#34;namespace&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>output.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>outputs</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>elasticsearch</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>host</span>: <span style=color:#ae81ff>elasticsearch-master.elastic.svc</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>port</span>: <span style=color:#ae81ff>9200</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>logstashFormat</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>logstashPrefix</span>: <span style=color:#ae81ff>fluent-log-namespace-fd</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>EOF</span>
+</span></span></code></pre></div><h4 id=根据-namespace-将日志路由到不同的-kafka-topic>根据 namespace 将日志路由到不同的 Kafka topic</h4><p>同样您可以使用 Fluentd 的 filter 插件根据不同的 namespace 将日志分发到不同的 topic。在这里我们包含在 Fluentd 内核中的插件 recordTransformer，该插件可以对事件进行增删改查。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#ae81ff>cat &lt;&lt;EOF | kubectl apply -f -</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentd.fluent.io/v1alpha1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ClusterFluentdConfig</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>cluster-fluentd-config-kafka</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>config.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>watchedNamespaces</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#ae81ff>kube-system</span>
+</span></span><span style=display:flex><span>  - <span style=color:#ae81ff>default</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>clusterFilterSelector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>filter.fluentd.fluent.io/type</span>: <span style=color:#e6db74>&#34;k8s&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>filter.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>clusterOutputSelector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>output.fluentd.fluent.io/type</span>: <span style=color:#e6db74>&#34;kafka&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>output.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentd.fluent.io/v1alpha1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ClusterFilter</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>cluster-fluentd-filter-k8s</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>filter.fluentd.fluent.io/type</span>: <span style=color:#e6db74>&#34;k8s&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>filter.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>filters</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>recordTransformer</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>enableRuby</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>records</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>key</span>: <span style=color:#ae81ff>kubernetes_ns</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>value</span>: <span style=color:#ae81ff>${record[&#34;kubernetes&#34;][&#34;namespace_name&#34;]}</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentd.fluent.io/v1alpha1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ClusterOutput</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>cluster-fluentd-output-kafka</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>output.fluentd.fluent.io/type</span>: <span style=color:#e6db74>&#34;kafka&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>output.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>outputs</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>kafka</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>brokers</span>: <span style=color:#ae81ff>my-cluster-kafka-bootstrap.default.svc:9091,my-cluster-kafka-bootstrap.default.svc:9092,my-cluster-kafka-bootstrap.default.svc:9093</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>useEventTime</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>topicKey</span>: <span style=color:#ae81ff>kubernetes_ns</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>EOF</span>
+</span></span></code></pre></div><h4 id=同时使用集群范围与-namespace-范围的-fluentdconfig>同时使用集群范围与 namespace 范围的 FluentdConfig</h4><p>当然，你可以像下面一样同时使用 ClusterFluentdConfig 与 FluentdConfig。FluentdConfig 会将 <code>fluent</code> namespace 下的日志发送到 ClusterOutput，而 ClusterFluentdConfig 同时也会将 watchedNamespaces 字段下的 namespace（即 kube-system 以及 default 两个 namespace）发送到 ClusterOutput。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#ae81ff>cat &lt;&lt;EOF | kubectl apply -f -</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentd.fluent.io/v1alpha1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ClusterFluentdConfig</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>cluster-fluentd-config-hybrid</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>config.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>watchedNamespaces</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#ae81ff>kube-system</span>
+</span></span><span style=display:flex><span>  - <span style=color:#ae81ff>default</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>clusterOutputSelector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>output.fluentd.fluent.io/scope</span>: <span style=color:#e6db74>&#34;hybrid&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>output.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentd.fluent.io/v1alpha1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>FluentdConfig</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>namespace-fluentd-config-hybrid</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>fluent</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>config.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>clusterOutputSelector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>output.fluentd.fluent.io/scope</span>: <span style=color:#e6db74>&#34;hybrid&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>output.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentd.fluent.io/v1alpha1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ClusterOutput</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>cluster-fluentd-output-es-hybrid</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>output.fluentd.fluent.io/scope</span>: <span style=color:#e6db74>&#34;hybrid&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>output.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>outputs</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>elasticsearch</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>host</span>: <span style=color:#ae81ff>elasticsearch-master.elastic.svc</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>port</span>: <span style=color:#ae81ff>9200</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>logstashFormat</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>logstashPrefix</span>: <span style=color:#ae81ff>fluent-log-hybrid-fd</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>EOF</span>
+</span></span></code></pre></div><h4 id=在多租户场景下同时使用集群范围与-namespace-范围的-fluentdconfig>在多租户场景下同时使用集群范围与 namespace 范围的 FluentdConfig</h4><p>在多租户场景下，我们可以同时使用集群范围与 namespace 范围的 FluentdConfig 达到日志隔离的效果。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#ae81ff>cat &lt;&lt;EOF | kubectl apply -f -</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentd.fluent.io/v1alpha1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>FluentdConfig</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>namespace-fluentd-config-user1</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>fluent</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>config.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>outputSelector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>output.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>output.fluentd.fluent.io/user</span>: <span style=color:#e6db74>&#34;user1&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>clusterOutputSelector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>output.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>output.fluentd.fluent.io/user</span>: <span style=color:#e6db74>&#34;user1&#34;</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentd.fluent.io/v1alpha1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ClusterFluentdConfig</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>cluster-fluentd-config-cluster-only</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>config.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>watchedNamespaces</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#ae81ff>kube-system</span>
+</span></span><span style=display:flex><span>  - <span style=color:#ae81ff>kubesphere-system</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>clusterOutputSelector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>output.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>output.fluentd.fluent.io/scope</span>: <span style=color:#e6db74>&#34;cluster-only&#34;</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentd.fluent.io/v1alpha1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Output</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>namespace-fluentd-output-user1</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>fluent</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>output.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>output.fluentd.fluent.io/user</span>: <span style=color:#e6db74>&#34;user1&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>outputs</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>elasticsearch</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>host</span>: <span style=color:#ae81ff>elasticsearch-master.elastic.svc</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>port</span>: <span style=color:#ae81ff>9200</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>logstashFormat</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>logstashPrefix</span>: <span style=color:#ae81ff>fluent-log-user1-fd</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentd.fluent.io/v1alpha1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ClusterOutput</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>cluster-fluentd-output-user1</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>output.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>output.fluentd.fluent.io/user</span>: <span style=color:#e6db74>&#34;user1&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>outputs</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>elasticsearch</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>host</span>: <span style=color:#ae81ff>elasticsearch-master.elastic.svc</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>port</span>: <span style=color:#ae81ff>9200</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>logstashFormat</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>logstashPrefix</span>: <span style=color:#ae81ff>fluent-log-cluster-user1-fd</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentd.fluent.io/v1alpha1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ClusterOutput</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>cluster-fluentd-output-cluster-only</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>output.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>output.fluentd.fluent.io/scope</span>: <span style=color:#e6db74>&#34;cluster-only&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>outputs</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>elasticsearch</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>host</span>: <span style=color:#ae81ff>elasticsearch-master.elastic.svc</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>port</span>: <span style=color:#ae81ff>9200</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>logstashFormat</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>logstashPrefix</span>: <span style=color:#ae81ff>fluent-log-cluster-only-fd</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>EOF</span>
+</span></span></code></pre></div><h4 id=为-fluentd-输出使用缓冲区>为 Fluentd 输出使用缓冲区</h4><p>您可以添加一个缓冲区来缓存 output 插件的日志。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#ae81ff>cat &lt;&lt;EOF | kubectl apply -f -</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentd.fluent.io/v1alpha1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ClusterFluentdConfig</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>cluster-fluentd-config-buffer</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>config.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>watchedNamespaces</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#ae81ff>kube-system</span>
+</span></span><span style=display:flex><span>  - <span style=color:#ae81ff>default</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>clusterFilterSelector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>filter.fluentd.fluent.io/type</span>: <span style=color:#e6db74>&#34;buffer&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>filter.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>clusterOutputSelector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>output.fluentd.fluent.io/type</span>: <span style=color:#e6db74>&#34;buffer&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>output.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentd.fluent.io/v1alpha1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ClusterFilter</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>cluster-fluentd-filter-buffer</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>filter.fluentd.fluent.io/type</span>: <span style=color:#e6db74>&#34;buffer&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>filter.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>filters</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>recordTransformer</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>enableRuby</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>records</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>key</span>: <span style=color:#ae81ff>kubernetes_ns</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>value</span>: <span style=color:#ae81ff>${record[&#34;kubernetes&#34;][&#34;namespace_name&#34;]}</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentd.fluent.io/v1alpha1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ClusterOutput</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>cluster-fluentd-output-buffer</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>output.fluentd.fluent.io/type</span>: <span style=color:#e6db74>&#34;buffer&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>output.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>outputs</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>stdout</span>: {}
+</span></span><span style=display:flex><span>    <span style=color:#f92672>buffer</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>type</span>: <span style=color:#ae81ff>file</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>path</span>: <span style=color:#ae81ff>/buffers/stdout.log</span>
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>elasticsearch</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>host</span>: <span style=color:#ae81ff>elasticsearch-master.elastic.svc</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>port</span>: <span style=color:#ae81ff>9200</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>logstashFormat</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>logstashPrefix</span>: <span style=color:#ae81ff>fluent-log-buffer-fd</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>buffer</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>type</span>: <span style=color:#ae81ff>file</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>path</span>: <span style=color:#ae81ff>/buffers/es.log</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>EOF</span>
+</span></span></code></pre></div><h3 id=fluentd-only-模式>Fluentd Only 模式</h3><p>你同样可以开启 Fluentd Only 模式，该模式只会部署 Fluentd statefulset。</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/fluent-operator-2022-6.png alt></p><h4 id=使用-fluentd-从-http-接收日志并输出到标准输出>使用 Fluentd 从 HTTP 接收日志并输出到标准输出</h4><p>如果你想单独开启 Fluentd 插件，你可以通过 HTTP 来接收日志。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#ae81ff>cat &lt;&lt;EOF | kubectl apply -f -</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentd.fluent.io/v1alpha1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Fluentd</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>fluentd-http</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>fluent</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app.kubernetes.io/name</span>: <span style=color:#ae81ff>fluentd</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>globalInputs</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>http</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>bind</span>: <span style=color:#ae81ff>0.0.0.0</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>port</span>: <span style=color:#ae81ff>9880</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>image</span>: <span style=color:#ae81ff>kubesphere/fluentd:v1.14.4</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>fluentdCfgSelector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>config.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentd.fluent.io/v1alpha1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>FluentdConfig</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>fluentd-only-config</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>fluent</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>config.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>filterSelector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>filter.fluentd.fluent.io/mode</span>: <span style=color:#e6db74>&#34;fluentd-only&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>filter.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>outputSelector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>output.fluentd.fluent.io/mode</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>output.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentd.fluent.io/v1alpha1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Filter</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>fluentd-only-filter</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>fluent</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>filter.fluentd.fluent.io/mode</span>: <span style=color:#e6db74>&#34;fluentd-only&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>filter.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>filters</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>stdout</span>: {}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>fluentd.fluent.io/v1alpha1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Output</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>fluentd-only-stdout</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>fluent</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>output.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>output.fluentd.fluent.io/enabled</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>outputs</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>stdout</span>: {}
+</span></span><span style=display:flex><span><span style=color:#ae81ff>EOF</span>
+</span></span></code></pre></div></div></div><div class=share-2><div class=share><a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2ffluent-operator-logging%2f&text=Fluent%20Operator%20%e5%85%a5%e9%97%a8%e6%95%99%e7%a8%8b" target=_blank rel="noopener noreferrer"><img src=/images/share/Twitter.svg alt="twitter icon">
+</a><a href="https://reddit.com/submit?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2ffluent-operator-logging%2f&title=Fluent%20Operator%20%e5%85%a5%e9%97%a8%e6%95%99%e7%a8%8b" target=_blank rel="noopener noreferrer"><img src=/images/share/Reddit.svg alt="reddit icon">
+</a><a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2ffluent-operator-logging%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Facebook.svg alt="facebook icon">
+</a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2ffluent-operator-logging%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Linkedin.svg alt="linkedin icon">
+</a><a href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2ffluent-operator-logging%2f&t=Fluent%20Operator%20%e5%85%a5%e9%97%a8%e6%95%99%e7%a8%8b" target=_blank rel="noopener noreferrer"><img src=/images/share/HackerNews.svg alt="hackernews icon"></a></div></div></div><div class=aside><div class=inner-div><div class=title>目录</div><div class=tabs><nav id=TableOfContents><ul><li><a href=#fluent-operator-介绍>Fluent Operator​ 介绍</a><ul><li><a href=#日志流水线的各个阶段>日志流水线的各个阶段</a></li><li><a href=#crd-简介>CRD 简介</a></li><li><a href=#编排原理简介-instance--mounted-secret--crd-的抽象能力>编排原理简介 (instance + mounted secret + CRD 的抽象能力)</a></li><li><a href=#如何实现多租户日志隔离>如何实现多租户日志隔离</a></li></ul></li><li><a href=#fluent-operator-vs-logging-operator>Fluent Operator vs logging-operator</a><ul><li><a href=#差别>差别</a></li><li><a href=#展望>展望</a></li></ul></li><li><a href=#用法详解>用法详解</a><ul><li><a href=#fluent-bit-only-模式>Fluent Bit Only 模式</a></li><li><a href=#fluent-bit--fluentd-模式>Fluent Bit + Fluentd 模式</a></li><li><a href=#fluentd-only-模式>Fluentd Only 模式</a></li></ul></li></ul></nav></div></div></div></div></section><div class=SubscribeForm><div class=innerBox><img class=close src=/images/home/close.svg alt=close><p class=description>通过邮件接收 KubeSphere 最新的技术博客与产品更新的通知</p><div id=blog_formAddress data-actionaddress="https://www.sendcloud.net/v3/api/subInvite/subscription?invitecode=1dc5a4fb-894c-4470-b01d-ca7fa9d47a46" data-usesendcloud=true data-lang=zh><input name=EMAIL id=email-input-blog type=text placeholder>
+<button id=email-submit-blog>订阅</button>
+<span id=message_blog data-message1=请提供您的邮箱 data-message2=请输入有效的邮箱地址! data-message3=邮箱地址已经存在 style=color:red></span><span id=message1_blog style=color:#00a971 data-success=订阅成功啦，我们保证不会给你发垃圾邮件的啦></span></div></div></div><footer><div class=footer><div class="footer-main common-layout"><div class=up-main><div class=left-div><img src=/images/logo.svg alt class=foot-logo><p>通过邮件接收 KubeSphere 最新的技术博客与产品更新的通知</p><div id=formAddress data-actionaddress="https://www.sendcloud.net/v3/api/subInvite/subscription?invitecode=1dc5a4fb-894c-4470-b01d-ca7fa9d47a46" data-usesendcloud=true data-lang=zh><input name=EMAIL id=email-input type=text placeholder=请输入您的邮箱地址>
+<button id=email-submit>订阅</button></div><span id=message data-message1=请提供您的邮箱 data-message2=请输入有效的邮箱地址! data-message3=邮箱地址已经存在></span><span id=message1 style=color:#00a971 data-success=订阅成功啦，我们保证不会给你发垃圾邮件的啦></span><script>var bindSubmit=function(){var e=$("#email-input");$("#email-submit").click(function(t){t.stopPropagation();var s,o,n=e.val(),i=$("#message").data("message1"),a=$("#message").data("message2"),r=$("#message").data("message3"),c=$("#message1").data("success");if(n)if(validateEmail(n)){if(s=$("#formAddress").data("usesendcloud"),!s)return;o=$("#formAddress").data("actionaddress"),$.post({type:"post",url:o,data:{email:$("#email-input").val().toString()},success:function(){showSuccessMessage(c),setTimeout(function(){$("#email-input").val("")},1e3)},error:function(){showMessage(r)}})}else t.preventDefault(),showMessage(a);else t.preventDefault(),showMessage(i)})},validateEmail=function(e){var t=/^[A-Za-z0-9]+([_.][A-Za-z0-9]+)*@([A-Za-z0-9-]+\.)+[A-Za-z]{2,6}$/;return t.test(e)},showMessage=function(e){$("#message").html(e).show()},showSuccessMessage=function(e){$("#message1").html(e).show()},bindHideMessage=function(){$(window).click(function(){$("#message").hide(),$("#message1").hide()})},bindClose=function(){$(".formBox .close").click(function(e){e.stopPropagation(),$(".formBox").fadeOut()})};bindSubmit(),bindClose(),bindHideMessage()</script><span id=message data-message1=请提供您的邮箱 data-message2=请输入有效的邮箱地址!></span></div><div class=right-div><ul class=common-flex-layout><li class=nowrap-li><div class=h3>应用场景</div><a href=/zh/devops/>拥抱一站式 DevOps</a>
+<a href=/zh/service-mesh/>在 K8s 运行微服务</a>
+<a href=/zh/observability/>构建云原生可观测性</a>
+<a href=https://github.com/kubesphere/kubekey target=_blank rel="noopener noreferrer">K8s 一键部署与运维</a>
+<a href=https://github.com/OpenFunction/OpenFunction target=_blank rel="noopener noreferrer">构建 FaaS 平台与 Serverless 架构</a>
+<a href=https://github.com/openpitrix/openpitrix target=_blank rel="noopener noreferrer">多云应用管理平台</a></li><li class=nowrap-li><div class=h3>资源</div><a href=/zh/projects/>开源项目</a>
+<a href=/zh/blogs/>技术博客</a>
+<a href=/zh/conferences/>开源峰会</a>
+<a href=/zh/videos/>视频资源</a>
+<a href=/zh/learn/>云原生实战</a></li><li class=nowrap-li><div class=h3>文档中心</div><a href=/zh/docs/v4.1/01-intro/01-introduction/>产品介绍</a>
+<a href=/zh/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere/>如何安装</a>
+<a href=/zh/docs/v4.1/02-quickstart/>快速入门</a>
+<a href=/zh/docs/v3.4/reference/api-docs/>API 文档</a></li><li class=nowrap-li><div class=h3>开源社区</div><a href=/zh/contribution/>参与贡献</a>
+<a href=/zh/live/>社区活动</a>
+<a href=/zh/case/>案例学习</a>
+<a href=/zh/partner/>合作伙伴</a>
+<a href=/zh/user-group/>用户委员会</a>
+<a href=https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md target=_blank rel="noopener noreferrer">版本计划</a>
+<a href=https://kubesphere.com.cn/ target=_blank rel="noopener noreferrer">中国站</a>
+<a href=https://ask.kubesphere.io/forum target=_blank rel="noopener noreferrer">中文论坛</a>
+<a href=https://kubesphere.io target=_blank rel="noopener noreferrer">全球站</a></li><li class=nowrap-li><div class=h3>产品与服务</div><a href=https://aws.amazon.com/cn/quickstart/architecture/qingcloud-kubesphere/ target=_blank rel="noopener noreferrer">KubeSphere on AWS</a>
+<a href=https://market.azure.cn/marketplace/apps/qingcloud.kubesphere target=_blank rel="noopener noreferrer">KubeSphere on Azure</a>
+<a href=https://marketplace.digitalocean.com/apps/kubesphere target=_blank rel="noopener noreferrer">KubeSphere on DigitalOcean</a>
+<a href=https://www.qingcloud.com/products/kubesphereqke target=_blank rel="noopener noreferrer">KubeSphere on QingCloud(QKE)</a>
+<a href=https://kubesphere.com.cn/kse/ target=_blank rel="noopener noreferrer">KubeSphere 企业版</a>
+<a href=https://kubesphere.cloud/ksv/ target=_blank rel="noopener noreferrer">KubeSphere 虚拟化平台</a>
+<a href=https://kubesphere.com.cn/marketplace/ target=_blank rel="noopener noreferrer">云原生扩展组件市场</a>
+<a href=https://kubesphere.cloud target=_blank rel="noopener noreferrer">云原生应用服务平台</a>
+<a href=https://m.qingcloud.com/p/aec50 target=_blank rel="noopener noreferrer">了解商业产品与咨询合作</a></li></ul></div></div><div class=down-main><div class=img-div><a class=wechat href=javascript:void(0); aria-label=wechat><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28"><defs><path id="a" d="M0 0h15.673v12.156H0z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="13" cy="13" r="13" stroke="#B6C2CD"/><g transform="translate(5 7)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="currentColor" d="M15.673 7.898c0-2.061-2.173-3.74-4.619-3.74-2.59.0-4.625 1.679-4.625 3.74.0 2.066 2.035 3.738 4.625 3.738.542.0 1.09-.13 1.632-.256l1.493.776-.408-1.29c1.09-.776 1.902-1.81 1.902-2.968zm-6.119-.645c-.27.0-.541-.257-.541-.514.0-.256.27-.514.541-.514.41.0.681.258.681.514.0.257-.271.514-.681.514zm2.994.0c-.27.0-.541-.257-.541-.514.0-.256.27-.514.54-.514.41.0.681.258.681.514.0.257-.277.514-.68.514z" mask="url(#b)"/><path fill="currentColor" d="M10.602 3.674c.177.0.356.011.533.029C10.657 1.576 8.27.0 5.543.0 2.498.0.0 1.974.0 4.485c0 1.45.829 2.64 2.216 3.564l-.552 1.588 1.94-.929c.693.129 1.251.263 1.94.263.17.0.343-.005.515-.022a3.68 3.68.0 01-.172-1.104c0-2.302 2.081-4.171 4.715-4.171zM7.618 2.243c.417.0.693.263.693.66s-.276.66-.693.66c-.418.0-.835-.263-.835-.66.006-.398.423-.66.835-.66zm-3.88 1.319c-.417.0-.834-.263-.834-.66s.417-.66.834-.66c.418.0.695.263.695.66.0.392-.277.66-.695.66z" mask="url(#b)"/></g></g></svg><div class=hide-div><img src=/images/home/wechat.svg alt></div></a><a class=facebook-a href=https://www.facebook.com/kubesphere target=_blank aria-label=facebook></a><a class=twitter-a href=https://x.com/KubeSphere target=_blank aria-label=twitter rel="noopener noreferrer"></a><a class=linkedin-a href=https://www.linkedin.com/company/kubesphere/ target=_blank aria-label=linkedin rel="noopener noreferrer"></a><a class=bilibili-a href=https://space.bilibili.com/438908638 target=_blank aria-label=bilibili rel="noopener noreferrer"></a><a class=slack-a href=https://join.slack.com/t/kubesphere/shared_invite/zt-2b4t6rdb4-ico_4UJzCln_S2c1pcrIpQ target=_blank aria-label=slack rel="noopener noreferrer"></a><a class=github-a href=https://github.com/kubesphere/kubesphere target=_blank aria-label=github rel="noopener noreferrer"></a><a class=medium-a href=https://itnext.io/@kubesphere target=_blank aria-label=medium rel="noopener noreferrer"></a></div><p class=p1></p><p class=case><a href=http://www.beian.miit.gov.cn/ target=_blank rel="noopener noreferrer"><span>京ICP备13019086号</span>
+</a><a target=_blank rel="noopener noreferrer" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502041003"><img src=/images/footer/case-icon.png alt=备案图标>
+<span>京公网安备 11010502041003号</span></a></p></div></div></div><div class=cookie><div class=common-layout><p>您的隐私对我们很重要。我们使用Cookie来记住订阅详细信息，优化网站功能并交付根据您的兴趣量身定制的内容。要了解更多信息，请参阅我们的<a href=/zh/privacy>隐私政策</a>.</p><button>
+接受并继续</button></div></div></footer><script>var lazyLoad=function(e,t){for(var n,o,i,s=0;s<t;s++){if(n=e.eq(s),o=n.attr("data-loaded"),o)continue;n.offset().top<parseInt($(window).height())+parseInt($(window).scrollTop())&&(i=n.attr("src"),n.attr("src",i),n.attr("data-loaded",!0))}},bindLayLoad=function(){var e=$("img"),t=e.length;lazyLoad(e,t),$(window).scroll(function(){lazyLoad(e,t)})},bindAddPadding=function(){var e=$("#close-join");e.length>0&&$(".main-section").addClass("padding")},docCookies={getItem:function(e){return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*"+encodeURIComponent(e).replace(/[-.+*]/g,"\\$&")+"\\s*\\=\\s*([^;]*).*$)|^.*$"),"$1"))||null},setItem:function(e,t){return!!e&&!/^(?:expires|max-age|path|domain|secure)$/i.test(e)&&(document.cookie=encodeURIComponent(e)+"="+encodeURIComponent(t),!0)}},bindHideCookie=function(){var t=docCookies.getItem("hasAuth"),e=$(".cookie");t?e.hide():e.show(),e.find("button").on("click",function(){docCookies.setItem("hasAuth","1"),e.hide()})};bindAddPadding(),bindHideCookie()</script><script type=text/javascript src=/js/aside.2d6977c0f16aef4ed3e886dd66675ce74bd0efcd467c2b2bcdb30b92d5e7c7c0e5c6e0c9d8f09a883c22f58df9e6b0b6347fcdd3c9a920b7faba6d7f91a201c3.js integrity="sha512-LWl3wPFq707T6IbdZmdc50vQ781GfCsrzbMLktXnx8DlxuDJ2PCaiDwi9Y355rC2NH/N08mpILf6um1/kaIBww=="></script><script type=text/javascript src=/js/markdown-tab.17f9f46b021adebc7250ce1b07134a577b307e7a436daa4aaf388f218e8463966f53770b26a64817c06c168738a887672d47fb4c29615adfc446e11d09a344cf.js integrity="sha512-F/n0awIa3rxyUM4bBxNKV3swfnpDbapKrziPIY6EY5ZvU3cLJqZIF8BsFoc4qIdnLUf7TClhWt/ERuEdCaNEzw=="></script><script>let forbidForm=!1;var viewer=new Viewer(document.querySelector(".md-body"),{url:"src"}),blogBindSubmit=function(){var e=$("#email-input-blog");$("#email-submit-blog").click(function(t){t.stopPropagation();var s,o,n=e.val(),i=$("#message_blog").data("message1"),a=$("#message_blog").data("message2"),r=$("#message_blog").data("message3"),c=$("#message1_blog").data("success");if(n)if(validateEmail(n)){if(s=$("#blog_formAddress").data("usesendcloud"),!s)return;o=$("#blog_formAddress").data("actionaddress"),$.post({type:"post",url:o,data:{email:n.toString()},success:function(){showSuccessMessage_blog(c),setTimeout(function(){window.onscroll="",$(".SubscribeForm").hide(),$("#email-input-blog").val("")},5e3)},error:function(){showMessage_blog(r)}})}else t.preventDefault(),$("#message_blog").html(a).show();else t.preventDefault(),$("#message_blog").html(i).show()})},validateEmail=function(e){var t=/^[A-Za-z0-9]+([_.][A-Za-z0-9]+)*@([A-Za-z0-9-]+\.)+[A-Za-z]{2,6}$/;return t.test(e)},bindHideMessageBlog=function(){$(window).click(function(){$("#message_blog").hide()})},bindCloseBlog=function(){$(".SubscribeForm .close").click(function(e){e.stopPropagation(),$(".SubscribeForm").fadeOut(),window.onscroll=""})},showMessage_blog=function(e){$("#message_blog").html(e).show()},showSuccessMessage_blog=function(e){$("#message1_blog").html(e).show()};window.onscroll=()=>{var e=document.documentElement.scrollTop||document.body.scrollTop,t=document.documentElement.clientHeight||document.body.clientHeight,n=document.documentElement.scrollHeight||document.body.scrollHeight;forbidForm&&(window.onscroll=""),e+t>n-710?$(".SubscribeForm").hide():$(".SubscribeForm").show()},blogBindSubmit(),bindCloseBlog(),bindHideMessageBlog()</script><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script></body></html>

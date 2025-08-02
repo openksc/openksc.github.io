@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>升级 on</title><link>https://openksc.github.io/zh/docs/v3.4/upgrade/</link><description>Recent content in 升级 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v3.4/upgrade/index.xml" rel="self" type="application/rss+xml"/><item><title>概述</title><link>https://openksc.github.io/zh/docs/v3.4/upgrade/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/upgrade/overview/</guid><description>&lt;h2 id="确定您的升级方案">确定您的升级方案&lt;/h2>
+&lt;p>KubeSphere 3.4 与 Kubernetes 1.19.x、1.20.x、1.21.x、* 1.22.x、* 1.23.x、* 1.24.x 兼容：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>在您升级集群至 KubeSphere 3.4 之前，您的 KubeSphere 集群版本必须为 v3.3.x。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您可选择只将 KubeSphere 升级到 3.4 或者同时升级 Kubernetes（到更高版本）和 KubeSphere（到 3.4）。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>带星号的 Kubernetes 版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 Kubernetes v1.21.x 及之前的版本。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="升级前">升级前&lt;/h2>
+&lt;div class="notices warning">
+ 
+ &lt;p>警告&lt;/p>
+ &lt;div>&lt;ul>
+&lt;li>您应该先在测试环境中实施升级模拟。在测试环境中成功升级并且所有应用程序都正常运行之后，再在生产环境中升级您的集群。&lt;/li>
+&lt;li>在升级过程中，应用程序可能会短暂中断（尤其是单副本容器组），请安排合理的升级时间。&lt;/li>
+&lt;li>建议在生产环境中升级之前备份 etcd 和有状态应用程序。您可以使用 &lt;a href="https://velero.io/" target="_blank" rel="noopener noreferrer">Velero&lt;/a> 来备份和迁移 Kubernetes 资源以及持久化存储卷。&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="升级工具">升级工具&lt;/h2>
+&lt;p>根据您已有集群的搭建方式，您可以使用 KubeKey 或 ks-installer 升级集群。如果您的集群由 KubeKey 搭建，&lt;a href="../upgrade-with-kubekey/">建议您使用 KubeKey 升级集群&lt;/a>。如果您通过其他方式搭建集群，&lt;a href="../upgrade-with-ks-installer/">请使用 ks-installer 升级集群&lt;/a>。&lt;/p></description></item><item><title>使用 KubeKey 升级</title><link>https://openksc.github.io/zh/docs/v3.4/upgrade/upgrade-with-kubekey/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/upgrade/upgrade-with-kubekey/</guid><description>&lt;p>对于 KubeSphere 和 Kubernetes 都由 &lt;a href="../../installing-on-linux/introduction/kubekey/">KubeKey&lt;/a> 部署的用户，推荐使用 KubeKey 升级。如果您的 Kubernetes 集群由云厂商托管或自行配置，请参考&lt;a href="../upgrade-with-ks-installer/">使用 ks-installer 升级&lt;/a>。&lt;/p>
+&lt;p>本教程演示如何使用 KubeKey 升级集群。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;ul>
+&lt;li>您需要有一个运行 KubeSphere v3.3.x 的集群。如果您的 KubeSphere 是 v3.2.x 或更早的版本，请先升级至 v3.3.x。&lt;/li>
+&lt;li>请仔细阅读 &lt;a href="../../../v3.4/release/release-v341/">3.4.1 版本说明&lt;/a>。&lt;/li>
+&lt;li>提前备份所有重要的组件。&lt;/li>
+&lt;li>确定您的升级方案。本文档中提供 &lt;a href="#all-in-one-%e9%9b%86%e7%be%a4">All-in-One 集群&lt;/a>和&lt;a href="#%e5%a4%9a%e8%8a%82%e7%82%b9%e9%9b%86%e7%be%a4">多节点集群&lt;/a>的两种升级场景。&lt;/li>
+&lt;/ul>
+&lt;h2 id="重要提示">重要提示&lt;/h2>
+&lt;p>KubeSphere 3.4 对内置角色和自定义角色的授权项做了一些调整。在您升级到 KubeSphere 3.4 时，请注意以下几点：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>内置角色调整：移除了平台级内置角色 &lt;code>users-manager&lt;/code>(用户管理员)和 &lt;code>workspace-manager&lt;/code>（企业空间管理员），如果已有用户绑定了 &lt;code>users-manager&lt;/code> 或 &lt;code>workspace-manager&lt;/code>，他们的角色将会在升级之后变更为 &lt;code>platform-regular&lt;/code>。增加了平台级内置角色 &lt;code>platform-self-provisioner&lt;/code>。关于平台角色的具体描述，请参见&lt;a href="../../quick-start/create-workspace-and-project/#%e5%88%9b%e5%bb%ba%e7%94%a8%e6%88%b7">创建用户&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>自定义角色授权项调整：&lt;/p>
+&lt;ul>
+&lt;li>移除平台层级自定义角色授权项：用户管理，角色管理，企业空间管理。&lt;/li>
+&lt;li>移除企业空间层级自定义角色授权项：成员管理，角色管理，用户组管理。&lt;/li>
+&lt;li>移除命名空间层级自定义角色授权项：成员管理，角色管理。&lt;/li>
+&lt;li>升级到 KubeSphere 3.4 后，自定义角色会被保留，但是其包含的已被移除的授权项会被删除。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="下载-kubekey">下载 KubeKey&lt;/h2>
+&lt;p>升级集群前执行以下命令下载 KubeKey。&lt;/p>
+&lt;div class="code-tabs">
+ &lt;ul class="nav nav-tabs">&lt;/ul>
+ &lt;div class="tab-content">
+
+&lt;div class="tab-pane" title="如果您能正常访问 GitHub/Googleapis">
+ &lt;p>从 &lt;a href="https://github.com/kubesphere/kubekey/releases" target="_blank" rel="noopener noreferrer">GitHub 发布页面&lt;/a>下载 KubeKey 或直接使用以下命令。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>curl -sfL https://get-kk.kubesphere.io | VERSION&lt;span style="color:#f92672">=&lt;/span>v3.0.13 sh -
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+
+&lt;div class="tab-pane" title="如果您访问 GitHub/Googleapis 受限">
+ &lt;p>先执行以下命令以确保您从正确的区域下载 KubeKey。&lt;/p></description></item><item><title>使用 ks-installer 升级</title><link>https://openksc.github.io/zh/docs/v3.4/upgrade/upgrade-with-ks-installer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/upgrade/upgrade-with-ks-installer/</guid><description>&lt;p>对于 Kubernetes 集群不是通过 &lt;a href="../../installing-on-linux/introduction/kubekey/">KubeKey&lt;/a> 部署而是由云厂商托管或自行搭建的用户，推荐使用 ks-installer 升级。本教程&lt;strong>仅用于升级 KubeSphere&lt;/strong>。集群运维员应负责提前升级 Kubernetes。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;ul>
+&lt;li>您需要有一个运行 KubeSphere v3.3.x 的集群。如果您的 KubeSphere 是 v3.2.0 或更早的版本，请先升级至 v3.3.x。&lt;/li>
+&lt;li>请仔细阅读 &lt;a href="../../../v3.4/release/release-v341/">3.4.1 版本说明&lt;/a>。&lt;/li>
+&lt;li>提前备份所有重要的组件。&lt;/li>
+&lt;li>KubeSphere 3.4 支持的 Kubernetes 版本：v1.20.x、v1.21.x、v1.22.x、v1.23.x、* v1.24.x、* v1.25.x 和 * v1.26.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.23.x。&lt;/li>
+&lt;/ul>
+&lt;h2 id="重要提示">重要提示&lt;/h2>
+&lt;p>KubeSphere 3.4 对内置角色和自定义角色的授权项做了一些调整。在您升级到 KubeSphere 3.4 时，请注意以下几点：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>内置角色调整：移除了平台级内置角色 &lt;code>users-manager&lt;/code>(用户管理员)和 &lt;code>workspace-manager&lt;/code>（企业空间管理员），如果已有用户绑定了 &lt;code>users-manager&lt;/code> 或 &lt;code>workspace-manager&lt;/code>，他们的角色将会在升级之后变更为 &lt;code>platform-regular&lt;/code>。增加了平台级内置角色 &lt;code>platform-self-provisioner&lt;/code>。关于平台角色的具体描述，请参见&lt;a href="../../quick-start/create-workspace-and-project/#%e5%88%9b%e5%bb%ba%e7%94%a8%e6%88%b7">创建用户&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>自定义角色授权项调整：&lt;/p>
+&lt;ul>
+&lt;li>移除平台层级自定义角色授权项：用户管理，角色管理，企业空间管理。&lt;/li>
+&lt;li>移除企业空间层级自定义角色授权项：成员管理，角色管理，用户组管理。&lt;/li>
+&lt;li>移除命名空间层级自定义角色授权项：成员管理，角色管理。&lt;/li>
+&lt;li>升级到 KubeSphere 3.4 后，自定义角色会被保留，但是其包含的已被移除的授权项会被删除。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="应用-ks-installer">应用 ks-installer&lt;/h2>
+&lt;p>运行以下命令升级集群：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl apply -f https://github.com/kubesphere/ks-installer/releases/download/v3.4.1/kubesphere-installer.yaml --force
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="启用可插拔组件">启用可插拔组件&lt;/h2>
+&lt;p>您可以在升级后启用 KubeSphere 3.4 的&lt;a href="../../pluggable-components/overview/">可插拔组件&lt;/a>以体验该容器平台的更多功能。&lt;/p></description></item><item><title>使用 KubeKey 离线升级</title><link>https://openksc.github.io/zh/docs/v3.4/upgrade/air-gapped-upgrade-with-kubekey/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/upgrade/air-gapped-upgrade-with-kubekey/</guid><description>&lt;p>对于 KubeSphere 和 Kubernetes 都是通过 &lt;a href="../../installing-on-linux/introduction/kubekey/">KubeKey&lt;/a> 部署的用户，推荐使用 KubeKey 离线升级。如果您的 Kubernetes 集群由云厂商托管或自行配置，请参考&lt;a href="../air-gapped-upgrade-with-ks-installer/">使用 ks-installer 离线升级&lt;/a>。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;ul>
+&lt;li>您需要有一个运行 KubeSphere v3.3.x 的集群。如果您的 KubeSphere 是 v3.2.0 或更早的版本，请先升级至 v3.3.x。&lt;/li>
+&lt;li>您的 Kubernetes 版本必须为 v1.20.x、v1.21.x、v1.22.x，v1.23.x，v1.24.x，v1.25.x 或 v1.26.x。&lt;/li>
+&lt;li>请仔细阅读 &lt;a href="../../../v3.4/release/release-v341/">3.4.1 版本说明&lt;/a>。&lt;/li>
+&lt;li>提前备份所有重要的组件。&lt;/li>
+&lt;li>Docker 仓库。您需要有一个 Harbor 或其他 Docker 仓库。&lt;/li>
+&lt;li>请确保每个节点都可以从该 Docker 仓库拉取镜像或向其推送镜像。&lt;/li>
+&lt;/ul>
+&lt;h2 id="重要提示">重要提示&lt;/h2>
+&lt;p>KubeSphere 3.4 对内置角色和自定义角色的授权项做了一些调整。在您升级到 KubeSphere 3.4 时，请注意以下几点：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>内置角色调整：移除了平台级内置角色 &lt;code>users-manager&lt;/code>(用户管理员)和 &lt;code>workspace-manager&lt;/code>（企业空间管理员），如果已有用户绑定了 &lt;code>users-manager&lt;/code> 或 &lt;code>workspace-manager&lt;/code>，他们的角色将会在升级之后变更为 &lt;code>platform-regular&lt;/code>。增加了平台级内置角色 &lt;code>platform-self-provisioner&lt;/code>。关于平台角色的具体描述，请参见&lt;a href="../../quick-start/create-workspace-and-project/#%e5%88%9b%e5%bb%ba%e7%94%a8%e6%88%b7">创建用户&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>自定义角色授权项调整：&lt;/p>
+&lt;ul>
+&lt;li>移除平台层级自定义角色授权项：用户管理，角色管理，企业空间管理。&lt;/li>
+&lt;li>移除企业空间层级自定义角色授权项：成员管理，角色管理，用户组管理。&lt;/li>
+&lt;li>移除命名空间层级自定义角色授权项：成员管理，角色管理。&lt;/li>
+&lt;li>升级到 KubeSphere 3.4 后，自定义角色会被保留，但是其包含的已被移除的授权项会被删除。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="升级-kubesphere-和-kubernetes">升级 KubeSphere 和 Kubernetes&lt;/h2>
+&lt;p>单节点集群 (All-in-One) 和多节点集群的升级步骤不同。&lt;/p></description></item><item><title>使用 ks-installer 离线升级</title><link>https://openksc.github.io/zh/docs/v3.4/upgrade/air-gapped-upgrade-with-ks-installer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/upgrade/air-gapped-upgrade-with-ks-installer/</guid><description>&lt;p>对于 Kubernetes 集群不是通过 &lt;a href="../../installing-on-linux/introduction/kubekey/">KubeKey&lt;/a> 部署而是由云厂商托管或自行部署的用户，推荐使用 ks-installer。本教程&lt;strong>只用于升级 KubeSphere&lt;/strong>。集群运维员应负责提前升级 Kubernetes。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;ul>
+&lt;li>您需要有一个运行 KubeSphere v3.3.x 的集群。如果您的 KubeSphere 是 v3.2.0 或更早的版本，请先升级至 v3.3.x。&lt;/li>
+&lt;li>请仔细阅读 &lt;a href="../../../v3.4/release/release-v341/">3.4.1 版本说明&lt;/a>。&lt;/li>
+&lt;li>提前备份所有重要的组件。&lt;/li>
+&lt;li>Docker 仓库。您需要有一个 Harbor 或其他 Docker 仓库。有关更多信息，请参见&lt;a href="../../installing-on-linux/introduction/air-gapped-installation/#%e6%ad%a5%e9%aa%a4-2%e5%87%86%e5%a4%87%e4%b8%80%e4%b8%aa%e7%a7%81%e6%9c%89%e9%95%9c%e5%83%8f%e4%bb%93%e5%ba%93">准备一个私有镜像仓库&lt;/a>。&lt;/li>
+&lt;li>KubeSphere 3.4 支持的 Kubernetes 版本：v1.20.x、v1.21.x、v1.22.x、v1.23.x、* v1.24.x、* v1.25.x 和 * v1.26.x。带星号的版本可能出现边缘节点部分功能不可用的情况。因此，如需使用边缘节点，推荐安装 v1.23.x。&lt;/li>
+&lt;/ul>
+&lt;h2 id="重要提示">重要提示&lt;/h2>
+&lt;p>KubeSphere 3.4 对内置角色和自定义角色的授权项做了一些调整。在您升级到 KubeSphere 3.4 时，请注意以下几点：&lt;/p>
+&lt;ul>
+&lt;li>内置角色调整：移除了平台级内置角色 &lt;code>users-manager&lt;/code>(用户管理员)和 &lt;code>workspace-manager&lt;/code>（企业空间管理员），如果已有用户绑定了 &lt;code>users-manager&lt;/code> 或 &lt;code>workspace-manager&lt;/code>，他们的角色将会在升级之后变更为 &lt;code>platform-regular&lt;/code>。增加了平台级内置角色 &lt;code>platform-self-provisioner&lt;/code>。关于平台角色的具体描述，请参见&lt;a href="../../quick-start/create-workspace-and-project/#%e5%88%9b%e5%bb%ba%e7%94%a8%e6%88%b7">创建用户&lt;/a>。&lt;/li>
+&lt;li>自定义角色授权项调整：
+&lt;ul>
+&lt;li>移除平台层级自定义角色授权项：用户管理，角色管理，企业空间管理。&lt;/li>
+&lt;li>移除企业空间层级自定义角色授权项：成员管理，角色管理，用户组管理。&lt;/li>
+&lt;li>移除命名空间层级自定义角色授权项：成员管理，角色管理。&lt;/li>
+&lt;li>升级到 KubeSphere 3.4 后，自定义角色会被保留，但是其包含的已被移除的授权项会被删除。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="步骤-1准备安装镜像">步骤 1：准备安装镜像&lt;/h2>
+&lt;p>当您在离线环境中安装 KubeSphere 时，需要事先准备一个包含所有必需镜像的镜像包。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>使用以下命令从能够访问互联网的机器上下载镜像清单文件 &lt;code>images-list.txt&lt;/code>：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>curl -L -O https://github.com/kubesphere/ks-installer/releases/download/v3.4.1/images-list.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p></description></item><item><title>升级后的变更</title><link>https://openksc.github.io/zh/docs/v3.4/upgrade/what-changed/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/upgrade/what-changed/</guid><description>&lt;p>本文说明先前版本现有设置在升级后的变更。如果您想了解 KubeSphere 3.4 的所有新功能和优化，请直接参阅 &lt;a href="../../../v3.4/release/release-v341/">3.4.1 版本说明&lt;/a>。&lt;/p></description></item></channel></rss>

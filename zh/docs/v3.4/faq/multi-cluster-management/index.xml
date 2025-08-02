@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>多集群管理 on</title><link>https://openksc.github.io/zh/docs/v3.4/faq/multi-cluster-management/</link><description>Recent content in 多集群管理 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v3.4/faq/multi-cluster-management/index.xml" rel="self" type="application/rss+xml"/><item><title>在 KubeSphere 上管理多集群环境</title><link>https://openksc.github.io/zh/docs/v3.4/faq/multi-cluster-management/manage-multi-cluster/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/faq/multi-cluster-management/manage-multi-cluster/</guid><description>&lt;p>KubeSphere 提供了易于使用的多集群功能，帮助您&lt;a href="../../../multicluster-management/">在 KubeSphere 上构建多集群环境&lt;/a>。本指南说明如何在 KubeSphere 上管理多集群环境。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;ul>
+&lt;li>请确保您的 Kubernetes 集群在用作主集群和成员集群之前已安装 KubeSphere。&lt;/li>
+&lt;li>请确保主集群和成员集群分别设置了正确的集群角色，并且在主集群和成员集群上的 &lt;code>jwtSecret&lt;/code> 也相同。&lt;/li>
+&lt;li>建议成员集群在导入主集群之前是干净环境，即没有创建任何资源。&lt;/li>
+&lt;/ul>
+&lt;h2 id="管理-kubesphere-多集群环境">管理 KubeSphere 多集群环境&lt;/h2>
+&lt;p>当您在 KubeSphere 上创建多集群环境之后，您可以通过主集群的中央控制平面管理该环境。在创建资源的时候，您可以选择一个特定的集群，但是需要避免您的主集群过载。不建议您登录成员集群的 KubeSphere Web 控制台去创建资源，因为部分资源（例如：企业空间）将不会同步到您的主集群进行管理。&lt;/p>
+&lt;h3 id="资源管理">资源管理&lt;/h3>
+&lt;p>不建议您将主集群转换为成员集群，或将成员集群转换成主集群。如果一个成员集群曾经被导入进主集群，您将该成员集群从先前的主集群解绑后，再导入进新的主集群时必须使用相同的集群名称。&lt;/p>
+&lt;p>如果您想在将成员集群导入新的主集群时保留现有项目，请按照以下步骤进行操作。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>在成员集群上运行以下命令将需要保留的项目从企业空间解绑。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl label ns &amp;lt;namespace&amp;gt; kubesphere.io/workspace- &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> kubectl patch ns &amp;lt;namespace&amp;gt; -p &lt;span style="color:#e6db74">&amp;#39;{&amp;#34;metadata&amp;#34;:{&amp;#34;ownerReferences&amp;#34;:[]}}&amp;#39;&lt;/span> --type&lt;span style="color:#f92672">=&lt;/span>merge
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>在成员集群运行以下命令清除您的企业空间。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl delete workspacetemplate &amp;lt;workspace name&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>当您在主集群中创建新的企业空间，并将成员集群分配到这个企业空间时，请在成员集群运行以下命令将保留的项目绑定至新的企业空间。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kuebctl label ns &amp;lt;namespace&amp;gt; kubesphere.io/workspace&lt;span style="color:#f92672">=&lt;/span>&amp;lt;workspace name&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h3 id="用户管理">用户管理&lt;/h3>
+&lt;p>您通过主集群的中央控制平面创建的用户会被同步至成员集群。&lt;/p>
+&lt;p>如果您希望让不同的用户访问不同的集群，您可以创建企业空间并&lt;a href="../../../cluster-administration/cluster-settings/cluster-visibility-and-authorization/">赋予他们不同的集群&lt;/a>。 在此之后，您可以根据这些用户的访问要求，邀请不同的用户至这些企业空间。&lt;/p>
+&lt;h3 id="kubesphere-组件管理">KubeSphere 组件管理&lt;/h3>
+&lt;p>KubeSphere 提供了一些可插拔组件，您可以根据需要去启用。在多集群环境下，您可以在主集群或成员集群上启用这些组件。&lt;/p>
+&lt;p>例如，您只需在主集群上启用应用商店，就可以直接在成员集群上使用与应用商店相关的功能。对于其他组件，当您在主集群上启用它们时，仍然需要在成员集群上手动启用相同组件以实现相同的功能。此外，您还可以仅在成员集群上启用组件，以便仅在成员集群上实现相应的功能。&lt;/p>
+&lt;p>有关如何启用可插拔组件的更多信息，请参考&lt;a href="../../../pluggable-components/">启用可插拔组件&lt;/a>。&lt;/p></description></item><item><title>恢复主集群对成员集群的访问权限</title><link>https://openksc.github.io/zh/docs/v3.4/faq/multi-cluster-management/host-cluster-access-member-cluster/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/faq/multi-cluster-management/host-cluster-access-member-cluster/</guid><description>&lt;p>&lt;a href="../../../multicluster-management/introduction/kubefed-in-kubesphere/">多集群管理&lt;/a>是 KubeSphere 的一大特色，拥有必要权限的租户（通常是集群管理员）能够从主集群访问中央控制平面，以管理全部成员集群。强烈建议您通过主集群管理整个集群的资源。&lt;/p>
+&lt;p>本教程演示如何恢复主集群对成员集群的访问权限。&lt;/p>
+&lt;h2 id="可能出现的错误信息">可能出现的错误信息&lt;/h2>
+&lt;p>如果您无法从中央控制平面访问成员集群，并且浏览器一直将您重新定向到 KubeSphere 的登录页面，请在该成员集群上运行以下命令来获取 ks-apiserver 的日志。&lt;/p>
+&lt;pre tabindex="0">&lt;code>kubectl -n kubesphere-system logs ks-apiserver-7c9c9456bd-qv6bs
+&lt;/code>&lt;/pre>&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>&lt;code>ks-apiserver-7c9c9456bd-qv6bs&lt;/code> 指的是该成员集群上的容器组 ID。请确保您使用自己的容器组 ID。&lt;/div>
+&lt;/div>
+&lt;p>您可能会看到以下错误信息：&lt;/p>
+&lt;pre tabindex="0">&lt;code>E0305 03:46:42.105625 1 token.go:65] token not found in cache
+E0305 03:46:42.105725 1 jwt_token.go:45] token not found in cache
+E0305 03:46:42.105759 1 authentication.go:60] Unable to authenticate the request due to error: token not found in cache
+E0305 03:46:52.045964 1 token.go:65] token not found in cache
+E0305 03:46:52.045992 1 jwt_token.go:45] token not found in cache
+E0305 03:46:52.046004 1 authentication.go:60] Unable to authenticate the request due to error: token not found in cache
+E0305 03:47:34.502726 1 token.go:65] token not found in cache
+E0305 03:47:34.502751 1 jwt_token.go:45] token not found in cache
+E0305 03:47:34.502764 1 authentication.go:60] Unable to authenticate the request due to error: token not found in cache
+&lt;/code>&lt;/pre>&lt;h2 id="解决方案">解决方案&lt;/h2>
+&lt;h3 id="步骤-1验证-jwtsecret">步骤 1：验证 jwtSecret&lt;/h3>
+&lt;p>分别在主集群和成员集群上运行以下命令，确认它们的 jwtSecret 是否相同。&lt;/p></description></item></channel></rss>

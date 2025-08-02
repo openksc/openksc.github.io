@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>自定义监控 on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/</link><description>Recent content in 自定义监控 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/index.xml" rel="self" type="application/rss+xml"/><item><title>创建自定义监控面板</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/01-create-a-custom-monitoring-dashboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/01-create-a-custom-monitoring-dashboard/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何创建自定义监控面板。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+您需要加入一个集群或项目，并在集群或项目中具有&lt;strong>监控管理&lt;/strong>权限。有关更多信息，请参阅“集群角色”和“项目角色”。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>您需要配置运行在容器中的应用程序将符合 Prometheus 规范的监控指标暴露在某个服务端路径下。有关更多信息，请参阅 &lt;a href="https://prometheus.io/docs/instrumenting/clientlibs/">Prometheus 官方文档&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您需要在用于暴露工作负载的服务上设置监控导出器以声明提供应用程序监控指标的路径。KubeSphere 将根据监控导出器的相关参数获取应用程序的监控指标。有关更多信息，请参阅&lt;a href="../../08-edit-a-metrics-exporter/">编辑监控导出器&lt;/a>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>监控管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群或项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>监控告警 &amp;gt; 自定义监控&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面点击&lt;strong>创建&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>创建自定义监控面板&lt;/strong>对话框，设置监控面板的名称、描述和模板，然后点击&lt;strong>下一步&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>名称&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>自定义监控面板的名称。名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 63 个字符。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>描述&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>自定义监控面板的描述信息。描述可包含任意字符，最长 256 个字符。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>模板&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>自定义监控面板的模板。&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 提供预置了 Elasticsearch、MySQL、Redis、Jenkins 和 GPU 自定义监控面板的模板。每个模板都提供了一些预置的监控指标和监控图，您可以在模板的基础上进行定制以减少操作。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如需使用 Grafana 监控面板，您需要上传 Grafana 监控面板配置文件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您也可以使用选择&lt;strong>自定义&lt;/strong>使用空模板。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在自定义监控面板编辑页面，根据需要设置监控图和以文本显示的监控指标。&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>在页面左侧点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/add-dark.svg" alt="add-dark" width="18" height="18"/>&lt;/span>，设置指标参数，然后点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/check-dark.svg" alt="check-dark" width="18" height="18"/>&lt;/span>可创建以文本显示的监控指标。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>图表名称&lt;/p>
+&lt;/div></description></item><item><title>查看自定义监控面板</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/02-view-a-custom-monitoring-dashboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/02-view-a-custom-monitoring-dashboard/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何查看自定义监控面板。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>您需要加入一个集群或项目，并在集群或项目中具有&lt;strong>监控查看&lt;/strong>权限。有关更多信息，请参阅“集群角色”和“项目角色”。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>监控查看&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群或项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>监控告警 &amp;gt; 自定义监控&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在列表中点击一个自定义监控面板的名称打开监控面板。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>在页面左侧区域可查看以文本显示的监控指标。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面中间区域可查看监控指标折线图或柱状图。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右侧点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/chevron-right.svg" alt="chevron-right" width="18" height="18"/>&lt;/span>可查看每个监控指标的子指标及其在指定时间范围内的最大值、最小值、平均值和最后采样值。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面上方点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/theme.svg" alt="theme" width="18" height="18"/>&lt;/span>可切换浅色和深色主题。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面上方点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/calendar-dark.svg" alt="calendar-dark" width="18" height="18"/>&lt;/span>可设置数据的时间范围。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面上方点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/refresh-dark.svg" alt="refresh-dark" width="18" height="18"/>&lt;/span>可设置数据的刷新间隔。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右上角点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/close-dark.svg" alt="close" width="18" height="18"/>&lt;/span>可返回自定义监控面板列表。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>编辑自定义监控面板信息</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/03-edit-custom-monitoring-dashboard-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/03-edit-custom-monitoring-dashboard-information/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何编辑自定义监控面板的信息。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>您可以编辑自定义监控面板的别名和描述。KubeSphere 不支持编辑自定义监控面板的名称。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>您需要加入一个集群或项目，并在集群或项目中具有&lt;strong>监控管理&lt;/strong>权限。有关更多信息，请参阅“集群角色”和“项目角色”。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>监控管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群或项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>监控告警 &amp;gt; 自定义监控&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在需要操作的自定义监控面板右侧点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，然后在下拉列表中选择&lt;strong>编辑信息&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>编辑信息&lt;/strong>对话框，设置自定义监控面板的别名和描述，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>别名&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>自定义监控面板的别名。不同自定义监控面板的别名可以相同。别名只能包含中文、字母、数字和连字符（-），不得以连字符（-）开头或结尾，最长 63 个字符。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>描述&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>自定义监控面板的描述信息。描述可包含任意字符，最多包含 256 个字符。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>编辑自定义监控面板</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/04-edit-a-custom-monitoring-dashboard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/04-edit-a-custom-monitoring-dashboard/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何编辑自定义监控面板。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>您需要加入一个集群或项目，并在集群或项目中具有&lt;strong>监控管理&lt;/strong>权限。有关更多信息，请参阅“集群角色”和“项目角色”。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>监控管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群或项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>监控告警 &amp;gt; 自定义监控&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在列表中点击一个自定义监控面板的名称打开自定义监控面板，然后在页面右上角点击&lt;strong>编辑模板&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在页面左侧设置以文本显示的监控指标。&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/add-dark.svg" alt="add-dark" width="18" height="18"/>&lt;/span>可添加监控指标。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>图表名称&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>监控指标的名称。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>单位&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>指标数据的单位。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>精确位&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>指标数据的有效小数位数。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>监控指标&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>应用程序暴露的监控指标。您可以点击&lt;strong>监控指标&lt;/strong>然后在下拉列表中选择监控指标，也可以手动输入 PromQL 语句。请确保您已配置应用程序暴露监控指标，并已配置监控导出器。有关 PromQL 表达式的更多信息，请参阅 &lt;a href="https://prometheus.io/docs/prometheus/latest/querying/basics/">Prometheus 官方文档&lt;/a>。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>将光标悬停在监控指标上，然后点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/trash-dark.svg" alt="trash-dark" width="18" height="18"/>&lt;/span>可删除监控指标。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>将光标悬停在监控指标上，然后点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/pen-dark.svg" alt="pen-dark" width="18" height="18"/>&lt;/span>可编辑监控指标。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在页面右侧的监控图列表设置监控图。&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>点击&lt;strong>添加监控项&lt;/strong>可添加监控图。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">参数&lt;/th>
+&lt;th class="tableblock halign-left valign-top">描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>图例类型&lt;/p>
+&lt;/div></description></item><item><title>删除自定义监控面板</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/05-delete-custom-monitoring-dashboards/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/05-monitoring/05-custom-monitoring/05-delete-custom-monitoring-dashboards/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何删除自定义监控面板。&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">警告&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>自定义监控面板删除后无法恢复，请谨慎执行此操作。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>您需要加入一个集群或项目，并在集群或项目中具有&lt;strong>监控管理&lt;/strong>权限。有关更多信息，请参阅“集群角色”和“项目角色”。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_删除单个自定义监控面板">删除单个自定义监控面板&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>监控管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群或项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>监控告警 &amp;gt; 自定义监控&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在需要删除的自定义监控面板右侧点击&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/icons/more.svg" alt="more" width="18" height="18"/>&lt;/span>，然后在下拉列表中选择&lt;strong>删除&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>删除自定义监控面板&lt;/strong>对话框，输入自定义监控面板的名称，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_批量删除自定义监控面板">批量删除自定义监控面板&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>以具有&lt;strong>监控管理&lt;/strong>权限的用户登录 KubeSphere Web 控制台并进入您的集群或项目。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>监控告警 &amp;gt; 自定义监控&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>选择需要删除的自定义监控面板左侧的复选框，然后在自定义监控面板列表上方点击&lt;strong>删除&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>批量删除自定义监控面板&lt;/strong>对话框，输入自定义监控面板的名称，然后点击&lt;strong>确定&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>请使用半角逗号（,）和空格分隔多个名称。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

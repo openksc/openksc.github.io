@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Grafana Loki for WhizardTelemetry on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/17-loki/</link><description>Recent content in Grafana Loki for WhizardTelemetry on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/17-loki/index.xml" rel="self" type="application/rss+xml"/><item><title>可视化 Loki 中的数据</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/17-loki/01-display-loki-data/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/17-loki/01-display-loki-data/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何在 Grafana 控制台可视化存储到 Loki 的 KubeSphere 日志、审计、事件及通知历史数据。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用 &lt;strong>WhizardTelemetry 平台服务&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已通过 Grafana for WhizardTelemetry 扩展组件或其他方法部署一个 Grafana 控制台。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>安装 Grafana Loki for WhizardTelemetry 扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在集群的&lt;strong>应用负载 &amp;gt; 服务&lt;/strong>页面，查找 &lt;code>loki-agent-gateway&lt;/code>，&lt;strong>编辑外部访问&lt;/strong>，开启 NodePort。&lt;/p>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>取决于您的网络环境，您可能需要配置流量转发规则并在防火墙中放行该 NodePort 端口。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/li>
+&lt;li>
+&lt;p>安装 WhizardTelemetry 数据流水线，并配置 Loki 信息。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-yaml" data-lang="yaml"> sinks:
+ loki:
+ endpoint: http://&amp;lt;loki-gateway-ip&amp;gt;:&amp;lt;loki-gateway-port&amp;gt;&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>示例如下：&lt;/p>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-yaml" data-lang="yaml"> sinks:
+ loki:
+ endpoint: http://172.31.19.250:30858&lt;/code>&lt;/pre>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>安装 WhizardTelemetry 日志、审计、事件、通知（按需安装），修改扩展组件配置，启用 Loki。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-yaml" data-lang="yaml"> sinks:
+ loki:
+ enabled: true&lt;/code>&lt;/pre>
+&lt;/div></description></item></channel></rss>

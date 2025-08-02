@@ -1,0 +1,480 @@
+<!doctype html><html lang=en-US><head><meta charset=utf-8><title>基于云原生的私有化 PaaS 平台交付实践</title><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="本文将解读如何利用云原生解决私有化交付中的问题，进而打造一个 PaaS 平台，提升业务平台的复用性。"><meta name=keywords content="KubeSphere,微服务,Kubernetes,云原生,PaaS"><meta property="og:type" content="article"><meta property="og:title" content="基于云原生的私有化 PaaS 平台交付实践"><meta property="og:description" content="本文将解读如何利用云原生解决私有化交付中的问题，进而打造一个 PaaS 平台，提升业务平台的复用性。"><meta property="og:image" content="https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-paas-cover.png"><meta property="og:url" content="https://openksc.github.io/zh/blogs/cloudnative-paas/"><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@KubeSphere"><meta property="twitter:image" content="https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-paas-cover.png"><meta name=docsearch:language content="zh-CN"><meta name=docsearch:version content><link rel=canonical href=https://kubesphere.io/zh/blogs/cloudnative-paas/><link rel="shortcut icon" href=/images/favicons/favicon.ico><link rel=apple-touch-icon href=/images/favicons/apple-touch-icon.png sizes=180x180><link rel=icon type=image/png href=/images/favicons/favicon-16x16.png sizes=16x16><link rel=icon type=image/png href=/images/favicons/favicon-32x32.png sizes=32x32><link rel=icon type=image/svg+xml href=/images/favicons/favicon.svg><link rel=icon type=image/png href=/images/favicons/favicon.png><link rel=manifest href=/images/favicons/site.webmanifest><link rel=mask-icon href=/images/favicons/safari-pinned-tab.svg color=#00ad6e><meta name=msapplication-config content='/images/favicons/browserconfig.xml'><meta name=msapplication-TileColor content="#ffffff"><meta name=theme-color content="#ffffff"><link rel=stylesheet href=/fonts/Roboto/stylesheet.css><link rel=stylesheet href=/fonts/ProximaNova/stylesheet.css><link rel=stylesheet href=/css/jquery.modal.min.css><link rel=stylesheet href=/css/viewer.min.css><link rel=stylesheet href=/swiper/swiper-bundle.min.css><link rel=stylesheet href=/scss/common.min.0c3fdcc05ec210321169846714f74b11c4a1baf09a1833fa9273b2347c81e636.css><script src=/js/jquery-3.7.1.min.js></script><script src=/js/viewer.min.js></script><script src=/js/jquery.modal.min.js></script><script src=/swiper/swiper-bundle.min.js></script><script>var _hmt=_hmt||[];(function(){var e,t=document.createElement("script");t.src="https://hm.baidu.com/hm.js?0888981f1fa45d241b1fb6962da2963e",e=document.getElementsByTagName("script")[0],e.parentNode.insertBefore(t,e)})()</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-YYCVN36HT5"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-YYCVN36HT5")</script><script type=text/javascript>!function(e,t,n,s,o){e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},n=t.createElement("script"),tag=t.getElementsByTagName("script")[0],n.async=1,n.src=("https:"==document.location.protocol?"https://":"http://")+s,tag.parentNode.insertBefore(n,tag)}(window,document,"script","assets.giocdn.com/2.1/gio.js","gio"),gio("init","8a24ae300cbf8b8c",{}),gio("send")</script><link rel=stylesheet href=/scss/content.min.f73b326fbf8c5bd331900b0de21c7dde608a4926f482f6465f9ae1d9049b83ad.css><link rel=stylesheet href=/scss/markdown.min.db47186481122431dffae72d17dbbd51f90b66f022cc163458645709924e4eac.css></head><body><header class=navigation><div class=join-div><div class=content>🚀 KubeSphere v4.1.3 发布，多项优化与改进，欢迎体验！<a href=/zh/docs/v4.1/20-release-notes/release-v413/ target=_blank rel="noopener noreferrer">请查看 Release notes →</a>
+<img id=close-join src=/images/header/close.svg alt=close></div></div><div class=common-layout><div class=header-container><a href=/zh/ aria-label=logo><img src=/images/header/logo.svg alt class=logo></a><ul class=nav><li class=menu-li><span class=menu-span>应用场景</span><ul class="dropdown-menu menu-2"><li><a href=/zh/devops/>拥抱一站式 DevOps 工作流</a></li><li><a href=/zh/service-mesh/>在 Kubernetes 运行微服务</a></li><li><a href=/zh/observability/>构建丰富的云原生可观测性</a></li></ul></li><li class=menu-li><span class=menu-span>资源</span><ul class="dropdown-menu menu-3"><li><a href=/zh/projects/>开源项目</a></li><li><a href=/zh/conferences/>开源峰会</a></li><li><a href=/zh/blogs/>技术博客</a></li><li><a href=/zh/videos/>视频资源</a></li><li><a href=/zh/learn/>云原生实战</a></li></ul></li><li class=menu-li><span class=menu-span>文档中心</span><ul class="dropdown-menu menu-4"><li><a href=/zh/docs/v4.1>v4.1 <img src=/images/header/star.svg alt=star></a></li><li><a href=/zh/docs/v3.4>v3.4</a></li><li><a href=/zh/docs/v3.3>v3.3</a></li><li><a href=https://dev-guide.kubesphere.io/extension-dev-guide/zh/ target=_blank rel="noopener noreferrer">扩展组件开发</a></li><li><a href=https://kube.design/ target=_blank rel="noopener noreferrer">Kube Design</a></li></ul></li><li class=menu-li><span class=menu-span>开源社区</span><ul class="dropdown-menu menu-5"><li><a href=/zh/contribution/>参与贡献</a></li><li><a href=/zh/live/>社区活动</a></li><li><a href=/zh/case/>案例学习</a></li><li><a href=/zh/partner/>合作伙伴</a></li><li><a href=/zh/user-group/>用户委员会</a></li><li><a href=/zh/news/>动态</a></li><li><a href=https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md target=_blank rel="noopener noreferrer">版本计划</a></li><li><a href=https://www.kubesphere.io/zh/ target=_blank rel="noopener noreferrer">中国站</a></li><li><a href=https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2025 target=_blank rel="noopener noreferrer">开源之夏 2025</a></li></ul></li><li><a data-docs=用户论坛 href=https://ask.kubesphere.io/forum target=_blank rel="noopener noreferrer">用户论坛</a></li><li><a data-docs=认证 href=https://kubesphere.cloud/certification/ target=_blank rel="noopener noreferrer">认证</a></li></ul><div class=right-menu><ul><li class=language-menu><div><img src=/images/header/black.svg alt>
+<span>简体中文</span></div><ul class=dropdown-menu><li onclick='handleLangClick("zh","/zh/blogs/cloudnative-paas/")'>简体中文</li></ul></li><li class=github-li><div class=github-star><a class=star-btn href=https://github.com/kubesphere/kubesphere rel="noopener noreferrer" target=_blank><span class=star-img></span>&nbsp;<span>Star</span>
+</a><a class=social-count href=https://github.com/kubesphere/kubesphere/stargazers rel="noopener noreferrer" target=_blank></a></div></li><li class=menu-icon><img src=/images/header/menu.svg alt></li></ul></div></div></div><div id=modal-for-menu class=modal><ul class=nav><li data-check=0 class=menu-li><span class=menu-span>应用场景</span><ul class=dropdown-menu><li><a href=/zh/devops/>拥抱一站式 DevOps 工作流</a></li><li><a href=/zh/service-mesh/>在 Kubernetes 运行微服务</a></li><li><a href=/zh/observability/>构建丰富的云原生可观测性</a></li></ul></li><li data-check=0 class=menu-li><span class=menu-span>资源</span><ul class=dropdown-menu><li><a href=/zh/projects/>开源项目</a></li><li><a href=/zh/conferences/>开源峰会</a></li><li><a href=/zh/blogs/>技术博客</a></li><li><a href=/zh/videos/>视频资源</a></li><li><a href=/zh/learn/>云原生实战</a></li></ul></li><li data-check=0 class=menu-li><span class=menu-span>文档中心</span><ul class=dropdown-menu><li><a href=/zh/docs/v4.1>v4.1 <img src=/images/header/star.svg alt=star></a></li><li><a href=/zh/docs/v3.4>v3.4</a></li><li><a href=/zh/docs/v3.3>v3.3</a></li><li><a href=https://dev-guide.kubesphere.io/extension-dev-guide/zh/>扩展组件开发</a></li><li><a href=https://kube.design/>Kube Design</a></li></ul></li><li data-check=0 class=menu-li><span class=menu-span>开源社区</span><ul class=dropdown-menu><li><a href=/zh/contribution/>参与贡献</a></li><li><a href=/zh/live/>社区活动</a></li><li><a href=/zh/case/>案例学习</a></li><li><a href=/zh/partner/>合作伙伴</a></li><li><a href=/zh/user-group/>用户委员会</a></li><li><a href=/zh/news/>动态</a></li><li><a href=https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md>版本计划</a></li><li><a href=https://www.kubesphere.io/zh/>中国站</a></li><li><a href=https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2025>开源之夏 2025</a></li></ul></li><li><a data-docs=用户论坛 href=https://ask.kubesphere.io/forum>用户论坛</a></li><li><a data-docs=认证 href=https://kubesphere.cloud/certification/>认证</a></li></ul><div class=link-div><a href=https://join.slack.com/t/kubesphere/shared_invite/zt-2b4t6rdb4-ico_4UJzCln_S2c1pcrIpQ target=_blank rel="noopener noreferrer" aria-label=slack><img src=/images/header/slack-hover.svg alt>
+</a><a href=https://x.com/KubeSphere target=_blank rel="noopener noreferrer" aria-label=twitter><img src=/images/header/twitter-hover.svg alt>
+</a><a href=https://github.com/kubesphere/kubesphere target=_blank rel="noopener noreferrer" aria-label=github><img src=/images/header/github-hover.svg alt></a></div></div></header><script>var bindNavMouseEvent,bindScrollChangeHeader,bindClickShowMenu,bindClickModalLi,bindClickClose,language,handleLangClick,githubApiLink="https://api.github.com/repos/kubesphere/kubesphere",getStar=function(){$(".social-count").hide(),$.getJSON(githubApiLink,function(e){$(".social-count").show().html(e.stargazers_count)})};getStar(),bindNavMouseEvent=function(e,t){t||(t=$(e));var n=!1;t.mouseenter(function(){if(n)return!1;n=!0,$(this).find(".dropdown-menu").fadeIn(200,function(){n=!1})}),t.mouseleave(function(){$(this).find(".dropdown-menu").fadeOut(200)})},bindScrollChangeHeader=function(){var t=100,e=$("header");window.addEventListener("scroll",function(){var t=window.scrollY;t>0?e.addClass("navigationScroll"):e.removeClass("navigationScroll")})},bindClickShowMenu=function(){$(".menu-icon").click(function(){$("#modal-for-menu").modal()})},bindClickModalLi=function(){$(".modal .menu-li").click(function(){var e=$(this).data("check");e===0?($(this).data("check",1),$(this).find(".dropdown-menu").slideDown(200)):($(this).data("check",0),$(this).find(".dropdown-menu").slideUp(200)),$(this).find(".menu-span").toggleClass("up")})},bindClickClose=function(){$("#close-join").click(function(){$(".navigation .join-div").hide(),$(".main-section").removeClass("padding")})},language="zh",bindClickClose(),bindScrollChangeHeader(),$(".header-container .menu-li").each(function(){bindNavMouseEvent("",$(this))}),bindNavMouseEvent(".header-container .language-menu"),bindNavMouseEvent(".header-container .btn-li"),bindClickShowMenu(),bindClickModalLi(),handleLangClick=function(e,t){try{localStorage.setItem("lang",e)}catch{}location.href=t}</script><section class=main-section><div class=common-layout><div class=breadcrumb><span><a href=/zh/blogs/>技术博客</a> > </span><span>基于云原生的私有化 PaaS 平台交付实践</span></div><div class='main-div middle-div'><div class=author>牛玉富</div><span class=date>发布于：2022-09-05</span>&nbsp;&nbsp;&nbsp;
+<span style=font-size:14px;color:#919aa3 id=busuanzi_container_page_pv>本文总阅读量：<span id=busuanzi_value_page_pv></span></span><h1>基于云原生的私有化 PaaS 平台交付实践</h1><div class=share-1><div class=share><a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fcloudnative-paas%2f&text=%e5%9f%ba%e4%ba%8e%e4%ba%91%e5%8e%9f%e7%94%9f%e7%9a%84%e7%a7%81%e6%9c%89%e5%8c%96%20PaaS%20%e5%b9%b3%e5%8f%b0%e4%ba%a4%e4%bb%98%e5%ae%9e%e8%b7%b5" target=_blank rel="noopener noreferrer"><img src=/images/share/Twitter.svg alt="twitter icon">
+</a><a href="https://reddit.com/submit?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fcloudnative-paas%2f&title=%e5%9f%ba%e4%ba%8e%e4%ba%91%e5%8e%9f%e7%94%9f%e7%9a%84%e7%a7%81%e6%9c%89%e5%8c%96%20PaaS%20%e5%b9%b3%e5%8f%b0%e4%ba%a4%e4%bb%98%e5%ae%9e%e8%b7%b5" target=_blank rel="noopener noreferrer"><img src=/images/share/Reddit.svg alt="reddit icon">
+</a><a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fcloudnative-paas%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Facebook.svg alt="facebook icon">
+</a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fcloudnative-paas%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Linkedin.svg alt="linkedin icon">
+</a><a href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fcloudnative-paas%2f&t=%e5%9f%ba%e4%ba%8e%e4%ba%91%e5%8e%9f%e7%94%9f%e7%9a%84%e7%a7%81%e6%9c%89%e5%8c%96%20PaaS%20%e5%b9%b3%e5%8f%b0%e4%ba%a4%e4%bb%98%e5%ae%9e%e8%b7%b5" target=_blank rel="noopener noreferrer"><img src=/images/share/HackerNews.svg alt="hackernews icon"></a></div></div><div class=content><div class=md-body><blockquote><p>作者：牛玉富，某知名互联网公司专家工程师。喜欢开源，热衷分享，对 K8s 及 golang 网关有较深入研究。</p></blockquote><p>本文将解读如何利用云原生解决私有化交付中的问题，进而打造一个 PaaS 平台，提升业务平台的复用性。在进入正题之前，有必要先明确两个关键词：</p><ul><li><strong>PaaS 平台</strong>：多个核心业务服务作为一个整体平台去封装，以平台形式提供服务。</li><li><strong>私有化交付</strong>：平台需要部署私有云环境中，要面对无网情况下依然可以运转。</li></ul><h2 id=传统交付痛点>传统交付痛点</h2><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/1fe2f401861442089a1a41056bfec05f.png alt></p><p>如上图：私有云会有明确的安全性要求</p><ol><li>私有云服务无法连接外网，数据只能通过单向网闸形式进行摆渡到内网私有云。</li><li>源代码只能存储在公司机房中，私有云只部署编译文件。</li><li>服务会不定期迭代，另外为了保证服务稳定性需要自建独立业务监控。</li></ol><p>基于以上要求面临的挑战大概有几点：</p><ol><li>架构可迁移性差：服务之间配置复杂，多种异构语言需要修改配置文件，无固定服务 DNS。</li><li>部署运维成本高：服务依赖环境需支持离线安装，服务更新需本地运维人员手动完成，复杂场景下，完整一次部署大概需要 数人 / 月 的时间。</li><li>监控运维成本高：监控需支持系统级 / 服务级 / 业务级监控，通知方式需支持短信、Webhook 等多种类型。</li></ol><h2 id=架构方案>架构方案</h2><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/bdf9b1640d1049d99cb66b1d91d3368e.png alt></p><p>我们的原则是 拥抱云原生和复用已有能力，近可能使用业界已存在且成熟技术方案。
+我们采用 KubeSphere+K8S 作为服务编排，处于安全性及简洁性考虑对 Syncd 进行二次开发完整 DevOps 能力，监控系统上采用 Nightingale+Prometheus 方案。</p><p>如上图架构图</p><ol><li>蓝色框内是我们底层 PaaS 集群，我们对业务服务通用服务统一进行了服务编排升级，用以解决架构迁移性差问题。</li><li>红色框内，监控系统作为一种编排服务形式存在，所有监控项交付前配置好。用以解决监控系统运维成本高问题。</li><li>紫色框内，服务容器可以实现跨网段自动拉取并自动化部署。用以解决服务服务部署成本高问题。</li></ol><p>下面我们针对这三部分做下介绍。</p><h2 id=服务编排kubesphere>服务编排：KubeSphere</h2><p>KubeSphere 的愿景是打造一个以 K8s 为内核的云原生分布式操作系统，它的架构可以非常方便地使第三方应用与云原生生态组件进行即插即用（plug-and-play）的集成，支持云原生应用在多云与多集群的统一分发和运维管理，同时它还拥有活跃的社区。</p><p>KubeSphere 选型理由有以下几点：</p><h3 id=基于制品的方式定制自己的私有化交付方案>基于制品的方式定制自己的私有化交付方案</h3><h4 id=私有化镜像文件打包>私有化镜像文件打包</h4><p>创建制品清单 :</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>kubekey.kubesphere.io/v1alpha2</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Manifest</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>sample</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>arches</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#ae81ff>amd64</span>
+</span></span><span style=display:flex><span>...
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>type</span>: <span style=color:#ae81ff>kubernetes</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>version</span>: <span style=color:#ae81ff>v1.21.5</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>components</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>helm</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>version</span>: <span style=color:#ae81ff>v3.6.3</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>cni</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>version</span>: <span style=color:#ae81ff>v0.9.1</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>etcd</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>version</span>: <span style=color:#ae81ff>v3.4.13</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>containerRuntimes</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>type</span>: <span style=color:#ae81ff>docker</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>version</span>: <span style=color:#ae81ff>20.10.8</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>crictl</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>version</span>: <span style=color:#ae81ff>v1.22.0</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>harbor</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>version</span>: <span style=color:#ae81ff>v2.4.1</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>docker-compose</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>version</span>: <span style=color:#ae81ff>v2.2.2</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>images</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#ae81ff>dockerhub.kubekey.local/kubesphere/kube-apiserver:v1.22.1</span>
+</span></span><span style=display:flex><span>...
+</span></span></code></pre></div><p>然后我们就可以通过命令进行导出了。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ ./kk artifact export -m manifest-sample.yaml -o kubesphere.tar.gz
+</span></span></code></pre></div><h4 id=私有化部署>私有化部署</h4><p>创建部署清单：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>kubekey.kubesphere.io/v1alpha2</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Cluster</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>sample</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>hosts</span>:
+</span></span><span style=display:flex><span>  - {<span style=color:#f92672>name: kubesphere01.ys, address: 10.89.3.12, internalAddress: 10.89.3.12, user: kubesphere, password</span>: <span style=color:#e6db74>&#34;Kubesphere123&#34;</span>}
+</span></span><span style=display:flex><span>  - {<span style=color:#f92672>name: kubesphere02.ys, address: 10.74.3.25, internalAddress: 10.74.3.25, user: kubesphere, password</span>: <span style=color:#e6db74>&#34;Kubesphere123&#34;</span>}
+</span></span><span style=display:flex><span>  - {<span style=color:#f92672>name: kubesphere03.ys, address: 10.86.3.66, internalAddress: 10.86.3.66, user: kubesphere, password</span>: <span style=color:#e6db74>&#34;Kubesphere123&#34;</span>}
+</span></span><span style=display:flex><span>  - {<span style=color:#f92672>name: kubesphere04.ys, address: 10.86.3.67, internalAddress: 10.86.3.67, user: kubesphere, password</span>: <span style=color:#e6db74>&#34;Kubesphere123&#34;</span>}
+</span></span><span style=display:flex><span>  - {<span style=color:#f92672>name: kubesphere05.ys, address: 10.86.3.11, internalAddress: 10.86.3.11, user: kubesphere, password</span>: <span style=color:#e6db74>&#34;Kubesphere123&#34;</span>}
+</span></span><span style=display:flex><span>  <span style=color:#f92672>roleGroups</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>etcd</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#ae81ff>kubesphere01.py</span>
+</span></span><span style=display:flex><span>    - <span style=color:#ae81ff>kubesphere02.py</span>
+</span></span><span style=display:flex><span>    - <span style=color:#ae81ff>kubesphere03.py</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>control-plane</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#ae81ff>kubesphere01.py</span>
+</span></span><span style=display:flex><span>    - <span style=color:#ae81ff>kubesphere02.py</span>
+</span></span><span style=display:flex><span>    - <span style=color:#ae81ff>kubesphere03.py</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>worker</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#ae81ff>kubesphere05.py</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>registry</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#ae81ff>kubesphere04.py</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>controlPlaneEndpoint</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>internalLoadbalancer</span>: <span style=color:#ae81ff>haproxy</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>domain</span>: <span style=color:#ae81ff>lb.kubesphere.local</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>address</span>: <span style=color:#e6db74>&#34;&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>port</span>: <span style=color:#ae81ff>6443</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>kubernetes</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>version</span>: <span style=color:#ae81ff>v1.21.5</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>clusterName</span>: <span style=color:#ae81ff>cluster.local</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>network</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>plugin</span>: <span style=color:#ae81ff>calico</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>kubePodsCIDR</span>: <span style=color:#ae81ff>10.233.64.0</span><span style=color:#ae81ff>/18</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>kubeServiceCIDR</span>: <span style=color:#ae81ff>10.233.0.0</span><span style=color:#ae81ff>/18</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>multusCNI</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>enabled</span>: <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>registry</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>type</span>: <span style=color:#ae81ff>harbor</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>auths</span>:
+</span></span><span style=display:flex><span>      <span style=color:#e6db74>&#34;dockerhub.kubekey.local&#34;</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>username</span>: <span style=color:#ae81ff>admin</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>password</span>: <span style=color:#ae81ff>Kubesphere123</span>
+</span></span><span style=display:flex><span>...
+</span></span></code></pre></div><p>执行安装部署：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ ./kk create cluster -f config-sample.yaml -a kubesphere.tar.gz --with-packages --with-kubesphere --skip-push-images
+</span></span></code></pre></div><p>原来大量复杂的 K8s 部署、高可用方案、Harbor 私有化镜像仓库等，均可以完成自动化安装，极大的简化了私有化交付场景下 K8s 组件部署难度。</p><h3 id=可视化界面极大简化操作流程>可视化界面极大简化操作流程</h3><ul><li>创建部署：流水线式创建一个容器服务的部署、存储、服务访问。</li></ul><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/453858e863a448ab938740da68af9414.png alt></p><ul><li>资源限制：限制容器的资源利用率 & 限制租户资源利用率。</li></ul><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/e7ac6d6ead0149c992aa3d8babbd37ab.png alt></p><ul><li>远程登陆：容器远程登陆功能。</li></ul><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/e6f24ad92f204856946a8ac0f9e6d21b.png alt></p><h3 id=基于-kubesphere-的业务部署经验分享>基于 KubeSphere 的业务部署经验分享</h3><p>私有化场景构建高可用服务实例部署，保障单实例挂掉不影响整体使用，我们要保证以下几点。</p><p><strong>1</strong>、由于服务都需要有固定的网络标识和存储，所以我们需要创建 “有状态副本集部署”。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>apps/v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>StatefulSet</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>project</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>${env_project_name}</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app</span>: <span style=color:#ae81ff>${env_project_name}</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>serviceName</span>: <span style=color:#ae81ff>${env_project_name}</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>selector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>app</span>: <span style=color:#ae81ff>${env_project_name}</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>template</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>app</span>: <span style=color:#ae81ff>${env_project_name}</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>containers</span>:
+</span></span><span style=display:flex><span>        - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>${env_project_name}</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>image</span>: <span style=color:#ae81ff>${env_image_path}</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>imagePullPolicy</span>: <span style=color:#ae81ff>IfNotPresent</span>
+</span></span></code></pre></div><p><strong>2</strong>、有状态副本集使用 host 反亲和性保证服务分散到不同 host 中。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span>...<span style=color:#ae81ff>.</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>affinity</span>:
+</span></span><span style=display:flex><span>   <span style=color:#f92672>podAntiAffinity</span>:
+</span></span><span style=display:flex><span>     <span style=color:#f92672>preferredDuringSchedulingIgnoredDuringExecution</span>:
+</span></span><span style=display:flex><span>       - <span style=color:#f92672>weight</span>: <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>         <span style=color:#f92672>podAffinityTerm</span>:
+</span></span><span style=display:flex><span>           <span style=color:#f92672>labelSelector</span>:
+</span></span><span style=display:flex><span>             <span style=color:#f92672>matchExpressions</span>:
+</span></span><span style=display:flex><span>               - <span style=color:#f92672>key</span>: <span style=color:#ae81ff>app</span>
+</span></span><span style=display:flex><span>                 <span style=color:#f92672>operator</span>: <span style=color:#ae81ff>In</span>
+</span></span><span style=display:flex><span>                 <span style=color:#f92672>values</span>:
+</span></span><span style=display:flex><span>                   - <span style=color:#ae81ff>${env_project_name}</span>
+</span></span><span style=display:flex><span>           <span style=color:#f92672>topologyKey</span>: <span style=color:#ae81ff>kubernetes.io/hostname</span>
+</span></span><span style=display:flex><span>...<span style=color:#ae81ff>.</span>
+</span></span></code></pre></div><p><strong>3</strong>、服务与服务之间互相调用均使用 K8s 底层的 DNS 进行配置。</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/d7cdb30f4484495cb02236d7802670fd.png alt></p><p><strong>4</strong>、集群内部依赖外部资源时需要设置为 Service，然后在内部提供服务。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Endpoints</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>redis-cluster</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>project</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>subsets</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>addresses</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>ip</span>: <span style=color:#ae81ff>10.86.67.11</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>ports</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>port</span>: <span style=color:#ae81ff>6379</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Service</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>redis-cluster</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>project</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>ports</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>protocol</span>: <span style=color:#ae81ff>TCP</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>port</span>: <span style=color:#ae81ff>6379</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>targetPort</span>: <span style=color:#ae81ff>6379</span>
+</span></span></code></pre></div><p><strong>5</strong>、借助 nip.io 域名实现服务动态域名解析调试。
+nip.io 可以自动根据请求的域名中设置 IP 信息，完成响应的 IP 信息映射。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ nslookup abc-service.project.10.86.67.11.nip.io
+</span></span><span style=display:flex><span>Server:         169.254.25.10
+</span></span><span style=display:flex><span>Address:        169.254.25.10:53
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Non-authoritative answer:
+</span></span><span style=display:flex><span>Name:   abc-service.project.10.86.67.11.nip.io
+</span></span><span style=display:flex><span>Address: 10.86.67.11
+</span></span></code></pre></div><p>因此我们可以在构建 Ingress 时直接使用该域名：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Ingress</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>networking.k8s.io/v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>gatekeeper</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>project</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>rules</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>host</span>: <span style=color:#ae81ff>gatekeeper.project.10.86.67.11.nip.io</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>http</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>paths</span>:
+</span></span><span style=display:flex><span>          - <span style=color:#f92672>path</span>: <span style=color:#ae81ff>/</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>pathType</span>: <span style=color:#ae81ff>ImplementationSpecific</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>backend</span>:
+</span></span><span style=display:flex><span>              <span style=color:#f92672>service</span>:
+</span></span><span style=display:flex><span>                <span style=color:#f92672>name</span>: <span style=color:#ae81ff>gatekeeper</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>port</span>:
+</span></span><span style=display:flex><span>                  <span style=color:#f92672>number</span>: <span style=color:#ae81ff>8000</span>
+</span></span></code></pre></div><p><strong>6</strong>、挂载目录到宿主机，有时候需要容器直接关联宿主机目录具体操作如下。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span>...
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>...
+</span></span><span style=display:flex><span>          <span style=color:#f92672>volumeMounts</span>:
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>vol-data</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>mountPath</span>: <span style=color:#ae81ff>/home/user/data1</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>volumes</span>:
+</span></span><span style=display:flex><span>        - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>vol-data</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>hostPath</span>:
+</span></span><span style=display:flex><span>            <span style=color:#f92672>path</span>: <span style=color:#ae81ff>/data0</span>
+</span></span></code></pre></div><p><strong>7</strong>、有状态部署工作负载，主要涉及 StatefulSet、Service、volumeClaimTemplates、Ingress，示例如下：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>apps/v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>StatefulSet</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>project</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>gatekeeper</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app</span>: <span style=color:#ae81ff>gatekeeper</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>serviceName</span>: <span style=color:#ae81ff>gatekeeper</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>selector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>app</span>: <span style=color:#ae81ff>gatekeeper</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>template</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>app</span>: <span style=color:#ae81ff>gatekeeper</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>containers</span>:
+</span></span><span style=display:flex><span>        - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>gatekeeper</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>image</span>: <span style=color:#ae81ff>dockerhub.kubekey.local/project/gatekeeper:v362</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>imagePullPolicy</span>: <span style=color:#ae81ff>IfNotPresent</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>ports</span>:
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>http-8000</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>containerPort</span>: <span style=color:#ae81ff>8000</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>protocol</span>: <span style=color:#ae81ff>TCP</span>
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>http-8080</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>containerPort</span>: <span style=color:#ae81ff>8080</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>protocol</span>: <span style=color:#ae81ff>TCP</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>resources</span>:
+</span></span><span style=display:flex><span>            <span style=color:#f92672>limits</span>:
+</span></span><span style=display:flex><span>              <span style=color:#f92672>cpu</span>: <span style=color:#e6db74>&#39;2&#39;</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>memory</span>: <span style=color:#ae81ff>4Gi</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>volumeMounts</span>:
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>vol-data</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>mountPath</span>: <span style=color:#ae81ff>/home/user/data1</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>affinity</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>podAntiAffinity</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>preferredDuringSchedulingIgnoredDuringExecution</span>:
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>weight</span>: <span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>podAffinityTerm</span>:
+</span></span><span style=display:flex><span>                <span style=color:#f92672>labelSelector</span>:
+</span></span><span style=display:flex><span>                  <span style=color:#f92672>matchExpressions</span>:
+</span></span><span style=display:flex><span>                    - <span style=color:#f92672>key</span>: <span style=color:#ae81ff>app</span>
+</span></span><span style=display:flex><span>                      <span style=color:#f92672>operator</span>: <span style=color:#ae81ff>In</span>
+</span></span><span style=display:flex><span>                      <span style=color:#f92672>values</span>:
+</span></span><span style=display:flex><span>                        - <span style=color:#ae81ff>gatekeeper</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>topologyKey</span>: <span style=color:#ae81ff>kubernetes.io/hostname</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>volumeClaimTemplates</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>name</span>: <span style=color:#ae81ff>vol-data</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>accessModes</span>: [ <span style=color:#e6db74>&#34;ReadWriteOnce&#34;</span> ]
+</span></span><span style=display:flex><span>        <span style=color:#f92672>resources</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>requests</span>:
+</span></span><span style=display:flex><span>            <span style=color:#f92672>storage</span>: <span style=color:#ae81ff>10Gi</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Service</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>gatekeeper</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>project</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app</span>: <span style=color:#ae81ff>gatekeeper</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>ports</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>name</span>: <span style=color:#e6db74>&#34;http-8000&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>protocol</span>: <span style=color:#ae81ff>TCP</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>port</span>: <span style=color:#ae81ff>8000</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>targetPort</span>: <span style=color:#ae81ff>8000</span>
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>name</span>: <span style=color:#e6db74>&#34;http-8080&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>protocol</span>: <span style=color:#ae81ff>TCP</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>port</span>: <span style=color:#ae81ff>8080</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>targetPort</span>: <span style=color:#ae81ff>8080</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>selector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app</span>: <span style=color:#ae81ff>gatekeeper</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>type</span>: <span style=color:#ae81ff>NodePort</span>
+</span></span><span style=display:flex><span>---
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Ingress</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>networking.k8s.io/v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>gatekeeper</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>namespace</span>: <span style=color:#ae81ff>project</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>rules</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>host</span>: <span style=color:#ae81ff>gatekeeper.project.10.86.67.11.nip.io</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>http</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>paths</span>:
+</span></span><span style=display:flex><span>          - <span style=color:#f92672>path</span>: <span style=color:#ae81ff>/</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>pathType</span>: <span style=color:#ae81ff>ImplementationSpecific</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>backend</span>:
+</span></span><span style=display:flex><span>              <span style=color:#f92672>service</span>:
+</span></span><span style=display:flex><span>                <span style=color:#f92672>name</span>: <span style=color:#ae81ff>gatekeeper</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>port</span>:
+</span></span><span style=display:flex><span>                  <span style=color:#f92672>number</span>: <span style=color:#ae81ff>8000</span>
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>host</span>: <span style=color:#ae81ff>gatekeeper.project.10.86.68.66.nip.io</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>http</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>paths</span>:
+</span></span><span style=display:flex><span>          - <span style=color:#f92672>path</span>: <span style=color:#ae81ff>/</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>pathType</span>: <span style=color:#ae81ff>ImplementationSpecific</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>backend</span>:
+</span></span><span style=display:flex><span>              <span style=color:#f92672>service</span>:
+</span></span><span style=display:flex><span>                <span style=color:#f92672>name</span>: <span style=color:#ae81ff>gatekeeper</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>port</span>:
+</span></span><span style=display:flex><span>                  <span style=color:#f92672>number</span>: <span style=color:#ae81ff>8080</span>
+</span></span></code></pre></div><h2 id=devops基于-syncd-构建服务自动化交付>DevOps：基于 Syncd 构建服务自动化交付</h2><p>DevOps 选型有很多，这里我们没有采用 Jenkins、GitRunner 等等，而是使用了我们团队内部比较熟悉的 Syncd 进行二次开发。原因有两点：</p><ol><li>处于安全考虑：我们的源码无法在本地存放，所以基于 gitlab 构建打包的方案，对我们用处不是很大，使用是一种资源浪费。</li><li>功能简洁性：虽然 Syncd 已经停更 2 年多但是，但其核心的 CICD 功能比较完善且前后端拓展性强，我们可以很轻松拓展相应的功能。</li></ol><p>Syncd 核心思路：</p><ol><li>从使用本地工具链构建打包镜像，这里可以把 docker push 当作 git push 理解。</li><li>通过 Syncd 拉取镜像包完成部署流程打包上线操作，通过打包时设置版本号便于服务回滚。</li></ol><h3 id=构建本地工具链>构建本地工具链</h3><p><strong>1</strong>、基于项目创建目录</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e>#创建目录</span>
+</span></span><span style=display:flex><span>cd /Users/niuyufu/goproject/abc-service
+</span></span><span style=display:flex><span>mkdir -p devops
+</span></span><span style=display:flex><span>cd devops
+</span></span></code></pre></div><p><strong>2</strong>、导入 Dockerfile，大家可基于业务自行创建。
+<strong>3</strong>、创建 tool.sh 文件</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>cat &gt;&gt; tool.sh <span style=color:#e6db74>&lt;&lt; EOF
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>#!/bin/sh
+</span></span></span><span style=display:flex><span><span style=color:#e6db74> 
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>###########配置区域##############
+</span></span></span><span style=display:flex><span><span style=color:#e6db74> 
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>#模块名称，可变更
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>module=abc-service
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>#项目名称
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>project=project1
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>#容器名称
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>container_name=${project}&#34;_&#34;${module}
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>#镜像名称
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>image_name=${project}&#34;/&#34;${module}
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>#服务端口映射：宿主机端口:容器端口，多个逗号间隔
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>port_mapping=8032:8032
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>#镜像hub地址
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>image_hub=dockerhub.kubekey.local
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>#镜像tag
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>image_tag=latest
+</span></span></span><span style=display:flex><span><span style=color:#e6db74> 
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>###########配置区域##############
+</span></span></span><span style=display:flex><span><span style=color:#e6db74> 
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>#构建工具
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>action=$1
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>case $action in
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;docker_push&#34;)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  image_path=${image_hub}/${image_name}:${image_tag}
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  docker tag ${image_name}:${image_tag} ${image_path}
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  docker push ${image_path}
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  echo &#34;镜像推送完毕，image_path: &#34;${image_path}
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  ;;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;docker_login&#34;)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  container_id=$(docker ps -a | grep ${container_name} | awk &#39;{print $1}&#39;)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  docker exec -it ${container_id} /bin/sh
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  ;;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;docker_stop&#34;)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  docker ps -a | grep ${container_name} | awk &#39;{print $1}&#39; | xargs docker stop
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  container_id=`docker ps -a | grep ${container_name} | awk &#39;{print $1}&#39; | xargs docker rm`
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  if [ &#34;$container_id&#34; != &#34;&#34; ];then
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    echo &#34;容器已关闭，container_id: &#34;${container_id}
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  fi
+</span></span></span><span style=display:flex><span><span style=color:#e6db74> 
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  if [ &#34;$images_id&#34; != &#34;&#34; ];then
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    docker rmi ${images_id}
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  fi
+</span></span></span><span style=display:flex><span><span style=color:#e6db74> 
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  ;;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;docker_run&#34;)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  docker ps -a | grep ${container_name} | awk &#39;{print $1}&#39; | xargs docker stop
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  docker ps -a | grep ${container_name} | awk &#39;{print $1}&#39; | xargs docker rm
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  port_mapping_array=(${port_mapping//,/ })
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  # shellcheck disable=SC2068
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  for var in ${port_mapping_array[@]}; do
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    port_mapping_str=${mapping_str}&#34; -p &#34;${var}
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  done
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  container_id=$(docker run -d ${port_mapping_str} --name=${container_name} ${image_name})
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  echo &#34;容器已启动，container_id: &#34;${container_id}
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  ;;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;docker_build&#34;)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  if [ ! -d &#34;../output&#34; ]; then
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    echo &#34;../output 文件夹不存在，请先执行 ../build.sh&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    exit 1
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  fi
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  cp -rf ../output ./
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  docker build -f Dockerfile -t ${image_name} .
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  rm -rf ./output
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  echo &#34;镜像编译成功，images_name: &#34;${image_name}
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  ;;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>*)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  echo &#34;可运行命令:
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>docker_build    镜像编译，依赖../output 文件夹
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>docker_run      容器启动，依赖 docker_build
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>docker_login    容器登陆，依赖 docker_run
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>docker_push     镜像推送，依赖 docker_build&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  exit 1
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>  ;;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>esac
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>EOF</span>
+</span></span></code></pre></div><p><strong>4</strong>、执行项目打包，请确保产出物在 ./output 中</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$cd ~/goproject/abc-service/
+</span></span><span style=display:flex><span>$sh build.sh
+</span></span><span style=display:flex><span>abc-service build ok
+</span></span><span style=display:flex><span>make output ok
+</span></span><span style=display:flex><span>build <span style=color:#66d9ef>done</span>
+</span></span></code></pre></div><p><strong>5</strong>、利用 tool.sh 工具进行服务调试</p><p>tools.sh 执行顺序一般是这样的：./output 产出物→docker_build→docker_run→docker_login→docker_push</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$cd devops
+</span></span><span style=display:flex><span>$chmod +x tool.sh
+</span></span><span style=display:flex><span><span style=color:#75715e>#查看可运行命令</span>
+</span></span><span style=display:flex><span>$sh tool.sh
+</span></span><span style=display:flex><span>可运行命令:
+</span></span><span style=display:flex><span>docker_build    镜像编译，依赖../output 文件夹
+</span></span><span style=display:flex><span>docker_run      容器启动，依赖 docker_build
+</span></span><span style=display:flex><span>docker_login    容器登陆，依赖 docker_run
+</span></span><span style=display:flex><span>docker_push     镜像推送，依赖 docker_build
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span><span style=color:#75715e>#docker_build举例：</span>
+</span></span><span style=display:flex><span>$sh tool.sh docker_build
+</span></span><span style=display:flex><span><span style=color:#f92672>[</span>+<span style=color:#f92672>]</span> Building 1.9s <span style=color:#f92672>(</span>10/10<span style=color:#f92672>)</span> FINISHED
+</span></span><span style=display:flex><span> <span style=color:#f92672>=</span>&gt; <span style=color:#f92672>[</span>internal<span style=color:#f92672>]</span> load build definition from Dockerfile                                                                                      0.1s
+</span></span><span style=display:flex><span> <span style=color:#f92672>=</span>&gt; <span style=color:#f92672>=</span>&gt; transferring dockerfile: 37B                                                                                                       0.0s
+</span></span><span style=display:flex><span> <span style=color:#f92672>=</span>&gt; <span style=color:#f92672>[</span>internal<span style=color:#f92672>]</span> load .dockerignore                                                                                                         0.0s
+</span></span><span style=display:flex><span> <span style=color:#f92672>=</span>&gt; <span style=color:#f92672>=</span>&gt; transferring context: 2B
+</span></span><span style=display:flex><span>...                                                                   0.0s
+</span></span><span style=display:flex><span> <span style=color:#f92672>=</span>&gt; exporting to image                                                                                                                    0.0s
+</span></span><span style=display:flex><span> <span style=color:#f92672>=</span>&gt; <span style=color:#f92672>=</span>&gt; exporting layers                                                                                                                   0.0s
+</span></span><span style=display:flex><span> <span style=color:#f92672>=</span>&gt; <span style=color:#f92672>=</span>&gt; writing image sha256:0a1fba79684a1a74fa200b71efb1669116c8dc388053143775aa7514391cdabf                                              0.0s
+</span></span><span style=display:flex><span> <span style=color:#f92672>=</span>&gt; <span style=color:#f92672>=</span>&gt; naming to docker.io/project/abc-service                                                                                         0.0s
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>Use <span style=color:#e6db74>&#39;docker scan&#39;</span> to run Snyk tests against images to find vulnerabilities and learn how to fix them
+</span></span><span style=display:flex><span>镜像编译成功，images_name: project/abc-service
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span><span style=color:#75715e>#docker_run举例:</span>
+</span></span><span style=display:flex><span>$ sh tool.sh docker_run
+</span></span><span style=display:flex><span>6720454ce9b6
+</span></span><span style=display:flex><span>6720454ce9b6
+</span></span><span style=display:flex><span>容器已启动，container_id: e5d7c87fa4de9c091e184d98e98f0a21fd9265c73953af06025282fcef6968a5
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span><span style=color:#75715e>#可以使用 docker_login 登陆容器进行代码调试：</span>
+</span></span><span style=display:flex><span>$ sh tool.sh docker_login
+</span></span><span style=display:flex><span>sh-4.2# sudo -i
+</span></span><span style=display:flex><span>root@e5d7c87fa4de:~$
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span><span style=color:#75715e>#docker_push举例：</span>
+</span></span><span style=display:flex><span>$sh tool.sh docker_push                                                                                                              <span style=color:#ae81ff>130</span> ↵
+</span></span><span style=display:flex><span>The push refers to repository <span style=color:#f92672>[</span>dockerhub.kubekey.local/citybrain/gatekeeper<span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span>4f3c543c4f39: Pushed
+</span></span><span style=display:flex><span>54c83eb651e3: Pushed
+</span></span><span style=display:flex><span>e4df065798ff: Pushed
+</span></span><span style=display:flex><span>26f8c87cc369: Pushed
+</span></span><span style=display:flex><span>1fcdf9b8f632: Pushed
+</span></span><span style=display:flex><span>c02b40d00d6f: Pushed
+</span></span><span style=display:flex><span>8d07545b8ecc: Pushed
+</span></span><span style=display:flex><span>ccccb24a63f4: Pushed
+</span></span><span style=display:flex><span>30fe9c138e8b: Pushed
+</span></span><span style=display:flex><span>6ceb20e477f1: Pushed
+</span></span><span style=display:flex><span>76fbea184065: Pushed
+</span></span><span style=display:flex><span>471cc0093e14: Pushed
+</span></span><span style=display:flex><span>616b2700922d: Pushed
+</span></span><span style=display:flex><span>c4af1604d3f2: Pushed
+</span></span><span style=display:flex><span>latest: digest: sha256:775e7fbabffd5c8a4f6a7c256ab984519ba2f90b1e7ba924a12b704fc07ea7eb size: <span style=color:#ae81ff>3251</span>
+</span></span><span style=display:flex><span>镜像推送完毕，image_path: dockerhub.kubekey.local/citybrain/gatekeeper:latest
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#最后登陆Harbor测试镜像是否上传</span>
+</span></span><span style=display:flex><span>https://dockerhub.kubekey.local/harbor/projects/52/repositories/gatekeeper
+</span></span></code></pre></div><h3 id=基于-syncd-进行服务打包构建>基于 Syncd 进行服务打包构建</h3><p><strong>1</strong>、项目配置</p><p>新增项目</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/3ec3d257462840bea59a24fe1f8b544d.png alt></p><p>设置 tool.sh 中生成的镜像地址。</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/116b18e2fe774be6bf4338db8fcd3c07.png alt></p><p>设置构建脚本。</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/c03433124f874e03ab2690c93135f7af.png alt></p><p>参照有状态工作负载填写构建脚本。</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/1eadd29faa264a58b6a61fa7f09419c9.png alt></p><p><strong>2</strong>、创建上线单</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/2e60a6497f9149c9bfef6126b9e9f675.png alt></p><p><strong>3</strong>、构建部署包执行部署</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/2f8147923744463aab172a406a5a358f.png alt></p><p><strong>4</strong>、切换到 KubeSphere 查看部署效果。</p><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/4a111048a4854c87bd06e34dcb3fef78.png alt></p><p>至此已完成 DevOps 与 KubeSphere 的功能打通。</p><h2 id=服务监控基于-nightingale-构建企业级监控>服务监控：基于 Nightingale 构建企业级监控</h2><h3 id=选型理由>选型理由</h3><ol><li>可视化引擎：内置模板，开箱即用。</li></ol><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/ea11bbd2f965477d890e7da34a4081c9.png alt></p><ol start=2><li>告警分析引擎：灵活管理、告警自愈、开箱即用。</li></ol><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/536279029b0344818d1e953c19c8a7d2.png alt></p><ol start=3><li>支持 Helm Chart 一键完成应用及服务部署，私有化场景中我们只需要关心容器融合本地化即可。</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ git clone https://github.com/flashcatcloud/n9e-helm.git
+</span></span><span style=display:flex><span>$ helm install nightingale ./n9e-helm -n n9e --create-namespace
+</span></span></code></pre></div><h3 id=实际规则配置演示>实际规则配置演示</h3><ol><li>配置告警规则，无缝支持 PromQL 灵活编写各种规则。</li></ol><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/37d444ca9f3d445d924432c8e0ce0ca1.png alt></p><ol start=2><li>配置告警接收组</li></ol><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/c306cde5b3a24820af47bc971f45c63b.png alt></p><ol start=3><li>实际接收告警消息及恢复消息</li></ol><p><img src=https://pek3b.qingstor.com/kubesphere-community/images/94c8db77b1244fb69c1e341395fe8823.png alt>
+<img src=https://pek3b.qingstor.com/kubesphere-community/images/eb8b5e67d842488da5797147dedd5fa9.png alt>
+<img src=https://pek3b.qingstor.com/kubesphere-community/images/563f3c23cb60499a8d8807dee515a980.png alt></p><h2 id=总结>总结</h2><p>私有化交付下因业务场景不同，对云原生的应用选型也不相同。本文仅对我们自身业务场景做了介绍，如有问题欢迎指正，另外其他场景下的云原生应用也随时欢迎大家来和我交流探讨。</p></div></div><div class=share-2><div class=share><a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fcloudnative-paas%2f&text=%e5%9f%ba%e4%ba%8e%e4%ba%91%e5%8e%9f%e7%94%9f%e7%9a%84%e7%a7%81%e6%9c%89%e5%8c%96%20PaaS%20%e5%b9%b3%e5%8f%b0%e4%ba%a4%e4%bb%98%e5%ae%9e%e8%b7%b5" target=_blank rel="noopener noreferrer"><img src=/images/share/Twitter.svg alt="twitter icon">
+</a><a href="https://reddit.com/submit?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fcloudnative-paas%2f&title=%e5%9f%ba%e4%ba%8e%e4%ba%91%e5%8e%9f%e7%94%9f%e7%9a%84%e7%a7%81%e6%9c%89%e5%8c%96%20PaaS%20%e5%b9%b3%e5%8f%b0%e4%ba%a4%e4%bb%98%e5%ae%9e%e8%b7%b5" target=_blank rel="noopener noreferrer"><img src=/images/share/Reddit.svg alt="reddit icon">
+</a><a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fcloudnative-paas%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Facebook.svg alt="facebook icon">
+</a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fcloudnative-paas%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Linkedin.svg alt="linkedin icon">
+</a><a href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fcloudnative-paas%2f&t=%e5%9f%ba%e4%ba%8e%e4%ba%91%e5%8e%9f%e7%94%9f%e7%9a%84%e7%a7%81%e6%9c%89%e5%8c%96%20PaaS%20%e5%b9%b3%e5%8f%b0%e4%ba%a4%e4%bb%98%e5%ae%9e%e8%b7%b5" target=_blank rel="noopener noreferrer"><img src=/images/share/HackerNews.svg alt="hackernews icon"></a></div></div></div><div class=aside><div class=inner-div><div class=title>目录</div><div class=tabs><nav id=TableOfContents><ul><li><a href=#传统交付痛点>传统交付痛点</a></li><li><a href=#架构方案>架构方案</a></li><li><a href=#服务编排kubesphere>服务编排：KubeSphere</a><ul><li><a href=#基于制品的方式定制自己的私有化交付方案>基于制品的方式定制自己的私有化交付方案</a></li><li><a href=#可视化界面极大简化操作流程>可视化界面极大简化操作流程</a></li><li><a href=#基于-kubesphere-的业务部署经验分享>基于 KubeSphere 的业务部署经验分享</a></li></ul></li><li><a href=#devops基于-syncd-构建服务自动化交付>DevOps：基于 Syncd 构建服务自动化交付</a><ul><li><a href=#构建本地工具链>构建本地工具链</a></li><li><a href=#基于-syncd-进行服务打包构建>基于 Syncd 进行服务打包构建</a></li></ul></li><li><a href=#服务监控基于-nightingale-构建企业级监控>服务监控：基于 Nightingale 构建企业级监控</a><ul><li><a href=#选型理由>选型理由</a></li><li><a href=#实际规则配置演示>实际规则配置演示</a></li></ul></li><li><a href=#总结>总结</a></li></ul></nav></div></div></div></div></section><div class=SubscribeForm><div class=innerBox><img class=close src=/images/home/close.svg alt=close><p class=description>通过邮件接收 KubeSphere 最新的技术博客与产品更新的通知</p><div id=blog_formAddress data-actionaddress="https://www.sendcloud.net/v3/api/subInvite/subscription?invitecode=1dc5a4fb-894c-4470-b01d-ca7fa9d47a46" data-usesendcloud=true data-lang=zh><input name=EMAIL id=email-input-blog type=text placeholder>
+<button id=email-submit-blog>订阅</button>
+<span id=message_blog data-message1=请提供您的邮箱 data-message2=请输入有效的邮箱地址! data-message3=邮箱地址已经存在 style=color:red></span><span id=message1_blog style=color:#00a971 data-success=订阅成功啦，我们保证不会给你发垃圾邮件的啦></span></div></div></div><footer><div class=footer><div class="footer-main common-layout"><div class=up-main><div class=left-div><img src=/images/logo.svg alt class=foot-logo><p>通过邮件接收 KubeSphere 最新的技术博客与产品更新的通知</p><div id=formAddress data-actionaddress="https://www.sendcloud.net/v3/api/subInvite/subscription?invitecode=1dc5a4fb-894c-4470-b01d-ca7fa9d47a46" data-usesendcloud=true data-lang=zh><input name=EMAIL id=email-input type=text placeholder=请输入您的邮箱地址>
+<button id=email-submit>订阅</button></div><span id=message data-message1=请提供您的邮箱 data-message2=请输入有效的邮箱地址! data-message3=邮箱地址已经存在></span><span id=message1 style=color:#00a971 data-success=订阅成功啦，我们保证不会给你发垃圾邮件的啦></span><script>var bindSubmit=function(){var e=$("#email-input");$("#email-submit").click(function(t){t.stopPropagation();var s,o,n=e.val(),i=$("#message").data("message1"),a=$("#message").data("message2"),r=$("#message").data("message3"),c=$("#message1").data("success");if(n)if(validateEmail(n)){if(s=$("#formAddress").data("usesendcloud"),!s)return;o=$("#formAddress").data("actionaddress"),$.post({type:"post",url:o,data:{email:$("#email-input").val().toString()},success:function(){showSuccessMessage(c),setTimeout(function(){$("#email-input").val("")},1e3)},error:function(){showMessage(r)}})}else t.preventDefault(),showMessage(a);else t.preventDefault(),showMessage(i)})},validateEmail=function(e){var t=/^[A-Za-z0-9]+([_.][A-Za-z0-9]+)*@([A-Za-z0-9-]+\.)+[A-Za-z]{2,6}$/;return t.test(e)},showMessage=function(e){$("#message").html(e).show()},showSuccessMessage=function(e){$("#message1").html(e).show()},bindHideMessage=function(){$(window).click(function(){$("#message").hide(),$("#message1").hide()})},bindClose=function(){$(".formBox .close").click(function(e){e.stopPropagation(),$(".formBox").fadeOut()})};bindSubmit(),bindClose(),bindHideMessage()</script><span id=message data-message1=请提供您的邮箱 data-message2=请输入有效的邮箱地址!></span></div><div class=right-div><ul class=common-flex-layout><li class=nowrap-li><div class=h3>应用场景</div><a href=/zh/devops/>拥抱一站式 DevOps</a>
+<a href=/zh/service-mesh/>在 K8s 运行微服务</a>
+<a href=/zh/observability/>构建云原生可观测性</a>
+<a href=https://github.com/kubesphere/kubekey target=_blank rel="noopener noreferrer">K8s 一键部署与运维</a>
+<a href=https://github.com/OpenFunction/OpenFunction target=_blank rel="noopener noreferrer">构建 FaaS 平台与 Serverless 架构</a>
+<a href=https://github.com/openpitrix/openpitrix target=_blank rel="noopener noreferrer">多云应用管理平台</a></li><li class=nowrap-li><div class=h3>资源</div><a href=/zh/projects/>开源项目</a>
+<a href=/zh/blogs/>技术博客</a>
+<a href=/zh/conferences/>开源峰会</a>
+<a href=/zh/videos/>视频资源</a>
+<a href=/zh/learn/>云原生实战</a></li><li class=nowrap-li><div class=h3>文档中心</div><a href=/zh/docs/v4.1/01-intro/01-introduction/>产品介绍</a>
+<a href=/zh/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere/>如何安装</a>
+<a href=/zh/docs/v4.1/02-quickstart/>快速入门</a>
+<a href=/zh/docs/v3.4/reference/api-docs/>API 文档</a></li><li class=nowrap-li><div class=h3>开源社区</div><a href=/zh/contribution/>参与贡献</a>
+<a href=/zh/live/>社区活动</a>
+<a href=/zh/case/>案例学习</a>
+<a href=/zh/partner/>合作伙伴</a>
+<a href=/zh/user-group/>用户委员会</a>
+<a href=https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md target=_blank rel="noopener noreferrer">版本计划</a>
+<a href=https://kubesphere.com.cn/ target=_blank rel="noopener noreferrer">中国站</a>
+<a href=https://ask.kubesphere.io/forum target=_blank rel="noopener noreferrer">中文论坛</a>
+<a href=https://kubesphere.io target=_blank rel="noopener noreferrer">全球站</a></li><li class=nowrap-li><div class=h3>产品与服务</div><a href=https://aws.amazon.com/cn/quickstart/architecture/qingcloud-kubesphere/ target=_blank rel="noopener noreferrer">KubeSphere on AWS</a>
+<a href=https://market.azure.cn/marketplace/apps/qingcloud.kubesphere target=_blank rel="noopener noreferrer">KubeSphere on Azure</a>
+<a href=https://marketplace.digitalocean.com/apps/kubesphere target=_blank rel="noopener noreferrer">KubeSphere on DigitalOcean</a>
+<a href=https://www.qingcloud.com/products/kubesphereqke target=_blank rel="noopener noreferrer">KubeSphere on QingCloud(QKE)</a>
+<a href=https://kubesphere.com.cn/kse/ target=_blank rel="noopener noreferrer">KubeSphere 企业版</a>
+<a href=https://kubesphere.cloud/ksv/ target=_blank rel="noopener noreferrer">KubeSphere 虚拟化平台</a>
+<a href=https://kubesphere.com.cn/marketplace/ target=_blank rel="noopener noreferrer">云原生扩展组件市场</a>
+<a href=https://kubesphere.cloud target=_blank rel="noopener noreferrer">云原生应用服务平台</a>
+<a href=https://m.qingcloud.com/p/aec50 target=_blank rel="noopener noreferrer">了解商业产品与咨询合作</a></li></ul></div></div><div class=down-main><div class=img-div><a class=wechat href=javascript:void(0); aria-label=wechat><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28"><defs><path id="a" d="M0 0h15.673v12.156H0z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="13" cy="13" r="13" stroke="#B6C2CD"/><g transform="translate(5 7)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="currentColor" d="M15.673 7.898c0-2.061-2.173-3.74-4.619-3.74-2.59.0-4.625 1.679-4.625 3.74.0 2.066 2.035 3.738 4.625 3.738.542.0 1.09-.13 1.632-.256l1.493.776-.408-1.29c1.09-.776 1.902-1.81 1.902-2.968zm-6.119-.645c-.27.0-.541-.257-.541-.514.0-.256.27-.514.541-.514.41.0.681.258.681.514.0.257-.271.514-.681.514zm2.994.0c-.27.0-.541-.257-.541-.514.0-.256.27-.514.54-.514.41.0.681.258.681.514.0.257-.277.514-.68.514z" mask="url(#b)"/><path fill="currentColor" d="M10.602 3.674c.177.0.356.011.533.029C10.657 1.576 8.27.0 5.543.0 2.498.0.0 1.974.0 4.485c0 1.45.829 2.64 2.216 3.564l-.552 1.588 1.94-.929c.693.129 1.251.263 1.94.263.17.0.343-.005.515-.022a3.68 3.68.0 01-.172-1.104c0-2.302 2.081-4.171 4.715-4.171zM7.618 2.243c.417.0.693.263.693.66s-.276.66-.693.66c-.418.0-.835-.263-.835-.66.006-.398.423-.66.835-.66zm-3.88 1.319c-.417.0-.834-.263-.834-.66s.417-.66.834-.66c.418.0.695.263.695.66.0.392-.277.66-.695.66z" mask="url(#b)"/></g></g></svg><div class=hide-div><img src=/images/home/wechat.svg alt></div></a><a class=facebook-a href=https://www.facebook.com/kubesphere target=_blank aria-label=facebook></a><a class=twitter-a href=https://x.com/KubeSphere target=_blank aria-label=twitter rel="noopener noreferrer"></a><a class=linkedin-a href=https://www.linkedin.com/company/kubesphere/ target=_blank aria-label=linkedin rel="noopener noreferrer"></a><a class=bilibili-a href=https://space.bilibili.com/438908638 target=_blank aria-label=bilibili rel="noopener noreferrer"></a><a class=slack-a href=https://join.slack.com/t/kubesphere/shared_invite/zt-2b4t6rdb4-ico_4UJzCln_S2c1pcrIpQ target=_blank aria-label=slack rel="noopener noreferrer"></a><a class=github-a href=https://github.com/kubesphere/kubesphere target=_blank aria-label=github rel="noopener noreferrer"></a><a class=medium-a href=https://itnext.io/@kubesphere target=_blank aria-label=medium rel="noopener noreferrer"></a></div><p class=p1></p><p class=case><a href=http://www.beian.miit.gov.cn/ target=_blank rel="noopener noreferrer"><span>京ICP备13019086号</span>
+</a><a target=_blank rel="noopener noreferrer" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502041003"><img src=/images/footer/case-icon.png alt=备案图标>
+<span>京公网安备 11010502041003号</span></a></p></div></div></div><div class=cookie><div class=common-layout><p>您的隐私对我们很重要。我们使用Cookie来记住订阅详细信息，优化网站功能并交付根据您的兴趣量身定制的内容。要了解更多信息，请参阅我们的<a href=/zh/privacy>隐私政策</a>.</p><button>
+接受并继续</button></div></div></footer><script>var lazyLoad=function(e,t){for(var n,o,i,s=0;s<t;s++){if(n=e.eq(s),o=n.attr("data-loaded"),o)continue;n.offset().top<parseInt($(window).height())+parseInt($(window).scrollTop())&&(i=n.attr("src"),n.attr("src",i),n.attr("data-loaded",!0))}},bindLayLoad=function(){var e=$("img"),t=e.length;lazyLoad(e,t),$(window).scroll(function(){lazyLoad(e,t)})},bindAddPadding=function(){var e=$("#close-join");e.length>0&&$(".main-section").addClass("padding")},docCookies={getItem:function(e){return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*"+encodeURIComponent(e).replace(/[-.+*]/g,"\\$&")+"\\s*\\=\\s*([^;]*).*$)|^.*$"),"$1"))||null},setItem:function(e,t){return!!e&&!/^(?:expires|max-age|path|domain|secure)$/i.test(e)&&(document.cookie=encodeURIComponent(e)+"="+encodeURIComponent(t),!0)}},bindHideCookie=function(){var t=docCookies.getItem("hasAuth"),e=$(".cookie");t?e.hide():e.show(),e.find("button").on("click",function(){docCookies.setItem("hasAuth","1"),e.hide()})};bindAddPadding(),bindHideCookie()</script><script type=text/javascript src=/js/aside.2d6977c0f16aef4ed3e886dd66675ce74bd0efcd467c2b2bcdb30b92d5e7c7c0e5c6e0c9d8f09a883c22f58df9e6b0b6347fcdd3c9a920b7faba6d7f91a201c3.js integrity="sha512-LWl3wPFq707T6IbdZmdc50vQ781GfCsrzbMLktXnx8DlxuDJ2PCaiDwi9Y355rC2NH/N08mpILf6um1/kaIBww=="></script><script type=text/javascript src=/js/markdown-tab.17f9f46b021adebc7250ce1b07134a577b307e7a436daa4aaf388f218e8463966f53770b26a64817c06c168738a887672d47fb4c29615adfc446e11d09a344cf.js integrity="sha512-F/n0awIa3rxyUM4bBxNKV3swfnpDbapKrziPIY6EY5ZvU3cLJqZIF8BsFoc4qIdnLUf7TClhWt/ERuEdCaNEzw=="></script><script>let forbidForm=!1;var viewer=new Viewer(document.querySelector(".md-body"),{url:"src"}),blogBindSubmit=function(){var e=$("#email-input-blog");$("#email-submit-blog").click(function(t){t.stopPropagation();var s,o,n=e.val(),i=$("#message_blog").data("message1"),a=$("#message_blog").data("message2"),r=$("#message_blog").data("message3"),c=$("#message1_blog").data("success");if(n)if(validateEmail(n)){if(s=$("#blog_formAddress").data("usesendcloud"),!s)return;o=$("#blog_formAddress").data("actionaddress"),$.post({type:"post",url:o,data:{email:n.toString()},success:function(){showSuccessMessage_blog(c),setTimeout(function(){window.onscroll="",$(".SubscribeForm").hide(),$("#email-input-blog").val("")},5e3)},error:function(){showMessage_blog(r)}})}else t.preventDefault(),$("#message_blog").html(a).show();else t.preventDefault(),$("#message_blog").html(i).show()})},validateEmail=function(e){var t=/^[A-Za-z0-9]+([_.][A-Za-z0-9]+)*@([A-Za-z0-9-]+\.)+[A-Za-z]{2,6}$/;return t.test(e)},bindHideMessageBlog=function(){$(window).click(function(){$("#message_blog").hide()})},bindCloseBlog=function(){$(".SubscribeForm .close").click(function(e){e.stopPropagation(),$(".SubscribeForm").fadeOut(),window.onscroll=""})},showMessage_blog=function(e){$("#message_blog").html(e).show()},showSuccessMessage_blog=function(e){$("#message1_blog").html(e).show()};window.onscroll=()=>{var e=document.documentElement.scrollTop||document.body.scrollTop,t=document.documentElement.clientHeight||document.body.clientHeight,n=document.documentElement.scrollHeight||document.body.scrollHeight;forbidForm&&(window.onscroll=""),e+t>n-710?$(".SubscribeForm").hide():$(".SubscribeForm").show()},blogBindSubmit(),bindCloseBlog(),bindHideMessageBlog()</script><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script></body></html>

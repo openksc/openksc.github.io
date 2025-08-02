@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Access Control and Account Management FAQ on</title><link>https://openksc.github.io/docs/v3.3/faq/access-control/</link><description>Recent content in Access Control and Account Management FAQ on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v3.3/faq/access-control/index.xml" rel="self" type="application/rss+xml"/><item><title>Reset the Account Password</title><link>https://openksc.github.io/docs/v3.3/faq/access-control/forgot-password/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/faq/access-control/forgot-password/</guid><description>&lt;h2 id="reset-the-password-of-a-regular-user">Reset the Password of a Regular User&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Log in to the KubeSphere web console using the administrator who has the permission to manage users.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Platform&lt;/strong> on the upper-left corner and select &lt;strong>Access Control&lt;/strong>. Click &lt;strong>Users&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Users&lt;/strong> page, click the user of which you need to change the password to visit its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the details page, click &lt;strong>More&lt;/strong>, and then select &lt;strong>Change Password&lt;/strong> from the drop-down list.&lt;/p></description></item><item><title>Session Timeout</title><link>https://openksc.github.io/docs/v3.3/faq/access-control/session-timeout/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/faq/access-control/session-timeout/</guid><description>&lt;p>A session starts as a user logs in to the console of KubeSphere. You may see a message of &amp;quot;&lt;strong>Session timeout or this account is logged in elsewhere, please login again&lt;/strong>&amp;quot; when the session expires.&lt;/p>
+&lt;h2 id="session-timeout">Session Timeout&lt;/h2>
+&lt;p>You can control when a session expires. The default session timeout is two hours of inactivity. It means once the session timeout is reached, the user will be automatically logged out of the console. You can &lt;a href="../../../access-control-and-account-management/external-authentication/set-up-external-authentication/">configure accessTokenMaxAge and accessTokenInactivityTimeout&lt;/a> for the session timeout.&lt;/p></description></item><item><title>Add Existing Kubernetes Namespaces to a KubeSphere Workspace</title><link>https://openksc.github.io/docs/v3.3/faq/access-control/add-kubernetes-namespace-to-kubesphere-workspace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/faq/access-control/add-kubernetes-namespace-to-kubesphere-workspace/</guid><description>&lt;p>A Kubernetes namespace is a KubeSphere project. If you create a namespace object not from the KubeSphere console, the namespace does not appear directly in a certain workspace. But cluster administrators can still see the namespace on the &lt;strong>Cluster Management&lt;/strong> page. At the same time, you can also place the namespace into a workspace.&lt;/p>
+&lt;p>This tutorial demonstrates how to add an existing Kubernetes namespace to a KubeSphere workspace.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>You need a user granted a role including the permission of &lt;strong>Cluster Management&lt;/strong>. For example, you can log in to the console as &lt;code>admin&lt;/code> directly or create a new role with the permission and assign it to a user.&lt;/p></description></item><item><title>User Login Failure</title><link>https://openksc.github.io/docs/v3.3/faq/access-control/cannot-login/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.3/faq/access-control/cannot-login/</guid><description>&lt;p>KubeSphere automatically creates a default user (&lt;code>admin/P@88w0rd&lt;/code>) when it is installed. A user cannot be used for login if the status is not &lt;strong>Active&lt;/strong> or you use an incorrect password.&lt;/p>
+&lt;p>Here are some of the frequently asked questions about user login failure.&lt;/p>
+&lt;h2 id="user-not-active">User Not Active&lt;/h2>
+&lt;p>You may see an image below when the login fails. To find out the reason and solve the issue, perform the following steps:&lt;/p>
+&lt;p>&lt;img src="https://openksc.github.io/images/docs/v3.x/faq/access-control-and-account-management/cannot-login/account-not-active.png" alt="account-not-active">&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Execute the following command to check the status of the user.&lt;/p></description></item></channel></rss>

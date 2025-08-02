@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>启用可插拔组件 on</title><link>https://openksc.github.io/zh/docs/v3.3/pluggable-components/</link><description>Recent content in 启用可插拔组件 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v3.3/pluggable-components/index.xml" rel="self" type="application/rss+xml"/><item><title>概述</title><link>https://openksc.github.io/zh/docs/v3.3/pluggable-components/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/pluggable-components/overview/</guid><description>&lt;p>从 2.1.0 版本开始，KubeSphere 解耦了一些核心功能组件。这些组件设计成了可插拔式，您可以在安装之前或之后启用它们。如果您不启用它们，KubeSphere 会默认以最小化进行安装部署。&lt;/p>
+&lt;p>不同的可插拔组件部署在不同的命名空间中。您可以根据需求启用任意组件。强烈建议您安装这些可插拔组件来深度体验 KubeSphere 提供的全栈特性和功能。&lt;/p>
+&lt;p>有关如何启用每个组件的更多信息，请参见本章的各个教程。&lt;/p>
+&lt;h2 id="资源要求">资源要求&lt;/h2>
+&lt;p>在您启用可插拔组件之前，请确保您的环境中有足够的资源，具体参见下表。否则，可能会因为缺乏资源导致组件崩溃。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>CPU 和内存的资源请求和限制均指单个副本的要求。&lt;/div>
+&lt;/div>
+&lt;h3 id="kubesphere-应用商店">KubeSphere 应用商店&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>命名空间&lt;/th>
+ &lt;th>openpitrix-system&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>CPU 请求&lt;/td>
+ &lt;td>0.3 核&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>CPU 限制&lt;/td>
+ &lt;td>无&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>内存请求&lt;/td>
+ &lt;td>300 MiB&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>内存限制&lt;/td>
+ &lt;td>无&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>安装&lt;/td>
+ &lt;td>可选&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>备注&lt;/td>
+ &lt;td>该组件可用于管理应用生命周期。建议安装。&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="kubesphere-devops-系统">KubeSphere DevOps 系统&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>命名空间&lt;/th>
+ &lt;th>kubesphere-devops-system&lt;/th>
+ &lt;th>kubesphere-devops-system&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>安装模式&lt;/td>
+ &lt;td>All-in-One 安装&lt;/td>
+ &lt;td>多节点安装&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>CPU 请求&lt;/td>
+ &lt;td>34 m&lt;/td>
+ &lt;td>0.47 核&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>CPU 限制&lt;/td>
+ &lt;td>无&lt;/td>
+ &lt;td>无&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>内存请求&lt;/td>
+ &lt;td>2.69 G&lt;/td>
+ &lt;td>8.6 G&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>内存限制&lt;/td>
+ &lt;td>无&lt;/td>
+ &lt;td>无&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>安装&lt;/td>
+ &lt;td>可选&lt;/td>
+ &lt;td>可选&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>备注&lt;/td>
+ &lt;td>提供一站式 DevOps 解决方案，包括 Jenkins 流水线、B2I 和 S2I。&lt;/td>
+ &lt;td>其中一个节点的内存必须大于 8 G。&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;h3 id="kubesphere-监控系统">KubeSphere 监控系统&lt;/h3>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>命名空间&lt;/th>
+ &lt;th>kubesphere-monitoring-system&lt;/th>
+ &lt;th>kubesphere-monitoring-system&lt;/th>
+ &lt;th>kubesphere-monitoring-system&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>子组件&lt;/td>
+ &lt;td>2 x Prometheus&lt;/td>
+ &lt;td>3 x Alertmanager&lt;/td>
+ &lt;td>Notification Manager&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>CPU 请求&lt;/td>
+ &lt;td>100 m&lt;/td>
+ &lt;td>10 m&lt;/td>
+ &lt;td>100 m&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>CPU 限制&lt;/td>
+ &lt;td>4 core&lt;/td>
+ &lt;td>无&lt;/td>
+ &lt;td>500 m&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>内存请求&lt;/td>
+ &lt;td>400 MiB&lt;/td>
+ &lt;td>30 MiB&lt;/td>
+ &lt;td>20 MiB&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>内存限制&lt;/td>
+ &lt;td>8 GiB&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>1 GiB&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>安装&lt;/td>
+ &lt;td>必需&lt;/td>
+ &lt;td>必需&lt;/td>
+ &lt;td>必需&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>备注&lt;/td>
+ &lt;td>Prometheus 的内存消耗取决于集群大小。8 GiB 可满足 200 个节点/16,000 个容器组的集群规模。&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p></description></item><item><title>KubeSphere 应用商店</title><link>https://openksc.github.io/zh/docs/v3.3/pluggable-components/app-store/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/pluggable-components/app-store/</guid><description>&lt;p>作为一个开源的、以应用为中心的容器平台，KubeSphere 在 &lt;a href="https://github.com/openpitrix/openpitrix" target="_blank" rel="noopener noreferrer">OpenPitrix&lt;/a> 的基础上，为用户提供了一个基于 Helm 的应用商店，用于应用生命周期管理。OpenPitrix 是一个开源的 Web 平台，用于打包、部署和管理不同类型的应用。KubeSphere 应用商店让 ISV、开发者和用户能够在一站式服务中只需点击几下就可以上传、测试、安装和发布应用。&lt;/p>
+&lt;p>对内，KubeSphere 应用商店可以作为不同团队共享数据、中间件和办公应用的场所。对外，有利于设立构建和交付的行业标准。启用该功能后，您可以通过应用模板添加更多应用。&lt;/p>
+&lt;p>有关更多信息，请参阅&lt;a href="../../application-store/">应用商店&lt;/a>。&lt;/p>
+&lt;h2 id="在安装前启用应用商店">在安装前启用应用商店&lt;/h2>
+&lt;h3 id="在-linux-上安装">在 Linux 上安装&lt;/h3>
+&lt;p>当您在 Linux 上安装多节点 KubeSphere 时，首先需要创建一个配置文件，该文件列出了所有 KubeSphere 组件。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;a href="../../installing-on-linux/introduction/multioverview/">在 Linux 上安装 KubeSphere&lt;/a> 时，您需要创建一个默认文件 &lt;code>config-sample.yaml&lt;/code>，通过执行以下命令修改该文件：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vi config-sample.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>如果您采用 &lt;a href="../../quick-start/all-in-one-on-linux/">All-in-One 安装&lt;/a>，则不需要创建 &lt;code>config-sample.yaml&lt;/code> 文件，因为可以直接创建集群。一般来说，All-in-One 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的。如果您想在这个模式下启用应用商店（比如用于测试），请参考&lt;a href="#%e5%9c%a8%e5%ae%89%e8%a3%85%e5%90%8e%e5%90%af%e7%94%a8%e5%ba%94%e7%94%a8%e5%95%86%e5%ba%97">下面的部分&lt;/a>，查看如何在安装后启用应用商店。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在该文件中，搜索 &lt;code>openpitrix&lt;/code>，并将 &lt;code>enabled&lt;/code> 的 &lt;code>false&lt;/code> 改为 &lt;code>true&lt;/code>，完成后保存文件。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">openpitrix&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">store&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span> &lt;span style="color:#75715e"># 将“false”更改为“true”。&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>执行以下命令使用该配置文件创建集群：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./kk create cluster -f config-sample.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h3 id="在-kubernetes-上安装">在 Kubernetes 上安装&lt;/h3>
+&lt;p>当您&lt;a href="../../installing-on-kubernetes/introduction/overview/">在 Kubernetes 上安装 KubeSphere&lt;/a> 时，需要先在 &lt;a href="https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml" target="_blank" rel="noopener noreferrer">cluster-configuration.yaml&lt;/a> 文件中启用应用商店。&lt;/p></description></item><item><title>KubeSphere DevOps 系统</title><link>https://openksc.github.io/zh/docs/v3.3/pluggable-components/devops/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/pluggable-components/devops/</guid><description>&lt;p>基于 &lt;a href="https://jenkins.io/" target="_blank" rel="noopener noreferrer">Jenkins&lt;/a> 的 KubeSphere DevOps 系统是专为 Kubernetes 中的 CI/CD 工作流设计的，它提供了一站式的解决方案，帮助开发和运维团队用非常简单的方式构建、测试和发布应用到 Kubernetes。它还具有插件管理、&lt;a href="../../project-user-guide/image-builder/binary-to-image/">Binary-to-Image (B2I)&lt;/a>、&lt;a href="../../project-user-guide/image-builder/source-to-image/">Source-to-Image (S2I)&lt;/a>、代码依赖缓存、代码质量分析、流水线日志等功能。&lt;/p>
+&lt;p>DevOps 系统为用户提供了一个自动化的环境，应用可以自动发布到同一个平台。它还兼容第三方私有镜像仓库（如 Harbor）和代码库（如 GitLab/GitHub/SVN/BitBucket）。它为用户提供了全面的、可视化的 CI/CD 流水线，打造了极佳的用户体验，而且这种兼容性强的流水线能力在离线环境中非常有用。&lt;/p>
+&lt;p>有关更多信息，请参见 &lt;a href="../../devops-user-guide/">DevOps 用户指南&lt;/a>。&lt;/p>
+&lt;h2 id="在安装前启用-devops">在安装前启用 DevOps&lt;/h2>
+&lt;h3 id="在-linux-上安装">在 Linux 上安装&lt;/h3>
+&lt;p>当您在 Linux 上安装多节点 KubeSphere 时，首先需要创建一个配置文件，该文件列出了所有 KubeSphere 组件。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;a href="../../installing-on-linux/introduction/multioverview/">在 Linux 上安装 KubeSphere&lt;/a> 时，您需要创建一个默认文件 &lt;code>config-sample.yaml&lt;/code>，通过执行以下命令修改该文件：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vi config-sample.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>如果您采用 &lt;a href="../../quick-start/all-in-one-on-linux/">All-in-one 安装&lt;/a>，则不需要创建 &lt;code>config-sample.yaml&lt;/code> 文件，因为可以直接创建集群。一般来说，All-in-one 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的，如果您想在这个模式下启用 DevOps（比如用于测试），请参考&lt;a href="#%e5%9c%a8%e5%ae%89%e8%a3%85%e5%90%8e%e5%90%af%e7%94%a8-devops">下面的部分&lt;/a>，查看如何在安装后启用 DevOps。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在该文件中，搜索 &lt;code>devops&lt;/code>，并将 &lt;code>enabled&lt;/code> 的 &lt;code>false &lt;/code>改为 &lt;code>true&lt;/code>，完成后保存文件。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">devops&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span> &lt;span style="color:#75715e"># 将“false”更改为“true”。&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>执行以下命令使用该配置文件创建集群：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./kk create cluster -f config-sample.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h3 id="在-kubernetes-上安装">在 Kubernetes 上安装&lt;/h3>
+&lt;p>当您&lt;a href="../../installing-on-kubernetes/introduction/overview/">在 Kubernetes 上安装 KubeSphere&lt;/a> 时，需要先在 &lt;a href="https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml" target="_blank" rel="noopener noreferrer">cluster-configuration.yaml&lt;/a> 文件中启用 DevOps。&lt;/p></description></item><item><title>KubeSphere 日志系统</title><link>https://openksc.github.io/zh/docs/v3.3/pluggable-components/logging/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/pluggable-components/logging/</guid><description>&lt;p>KubeSphere 为日志收集、查询和管理提供了一个强大的、全面的、易于使用的日志系统。它涵盖了不同层级的日志，包括租户、基础设施资源和应用。用户可以从项目、工作负载、容器组和关键字等不同维度对日志进行搜索。与 Kibana 相比，KubeSphere 基于租户的日志系统中，每个租户只能查看自己的日志，从而可以在租户之间提供更好的隔离性和安全性。除了 KubeSphere 自身的日志系统，该容器平台还允许用户添加第三方日志收集器，如 Elasticsearch、Kafka 和 Fluentd。&lt;/p>
+&lt;p>有关更多信息，请参见&lt;a href="../../toolbox/log-query/">日志查询&lt;/a>。&lt;/p>
+&lt;h2 id="在安装前启用日志系统">在安装前启用日志系统&lt;/h2>
+&lt;h3 id="在-linux-上安装">在 Linux 上安装&lt;/h3>
+&lt;p>当您在 Linux 上安装 KubeSphere 时，首先需要创建一个配置文件，该文件列出了所有 KubeSphere 组件。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;a href="../../installing-on-linux/introduction/multioverview/">在 Linux 上安装 KubeSphere&lt;/a> 时，您需要创建一个默认文件 &lt;code>config-sample.yaml&lt;/code>。通过执行以下命令修改该文件：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vi config-sample.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>&lt;ul>
+&lt;li>
+&lt;p>如果您采用 &lt;a href="../../quick-start/all-in-one-on-linux/">All-in-one 安装&lt;/a>，则不需要创建 &lt;code>config-sample.yaml&lt;/code> 文件，因为可以直接创建集群。一般来说，All-in-one 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的。如果您想在这个模式下启用日志系统（比如用于测试），请参考&lt;a href="#%e5%9c%a8%e5%ae%89%e8%a3%85%e5%90%8e%e5%90%af%e7%94%a8%e6%97%a5%e5%bf%97%e7%b3%bb%e7%bb%9f">下面的部分&lt;/a>，查看如何在安装后启用日志系统。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如果您采用&lt;a href="../../installing-on-linux/introduction/multioverview/">多节点安装&lt;/a>，并且使用符号链接作为 Docker 根目录，请确保所有节点遵循完全相同的符号链接。日志代理在守护进程集中部署到节点上。容器日志路径的任何差异都可能导致该节点的收集失败。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在该文件中，搜寻到 &lt;code>logging&lt;/code>，并将 &lt;code>enabled&lt;/code> 的 &lt;code>false&lt;/code> 改为 &lt;code>true&lt;/code>。完成后保存文件。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">logging&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span> &lt;span style="color:#75715e"># 将“false”更改为“true”。&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">containerruntime&lt;/span>: &lt;span style="color:#ae81ff">docker&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="notices info">
+ 
+ &lt;p>信息&lt;/p>
+ &lt;div>若使用 containerd 作为容器运行时，请将 &lt;code>containerruntime&lt;/code> 字段的值更改为 &lt;code>containerd&lt;/code>。如果您从低版本升级至 KubeSphere 3.3，则启用 KubeSphere 日志系统时必须在 &lt;code>logging&lt;/code> 字段下手动添加 &lt;code>containerruntime&lt;/code> 字段。&lt;/div>
+&lt;/div>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p></description></item><item><title>KubeSphere 事件系统</title><link>https://openksc.github.io/zh/docs/v3.3/pluggable-components/events/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/pluggable-components/events/</guid><description>&lt;p>KubeSphere 事件系统使用户能够跟踪集群内部发生的事件，例如节点调度状态和镜像拉取结果。这些事件会被准确记录下来，并在 Web 控制台中显示具体的原因、状态和信息。要查询事件，用户可以快速启动 Web 工具箱，在搜索栏中输入相关信息，并有不同的过滤器（如关键字和项目）可供选择。事件也可以归档到第三方工具，例如 Elasticsearch、Kafka 或 Fluentd。&lt;/p>
+&lt;p>有关更多信息，请参见&lt;a href="../../toolbox/events-query/">事件查询&lt;/a>。&lt;/p>
+&lt;h2 id="在安装前启用事件系统">在安装前启用事件系统&lt;/h2>
+&lt;h3 id="在-linux-上安装">在 Linux 上安装&lt;/h3>
+&lt;p>当您在 Linux 上安装多节点 KubeSphere 时，需要创建一个配置文件，该文件列出了所有 KubeSphere 组件。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;a href="../../installing-on-linux/introduction/multioverview/">在 Linux 上安装 KubeSphere&lt;/a> 时，您需要创建一个默认文件 &lt;code>config-sample.yaml&lt;/code>。执行以下命令修改该文件：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vi config-sample.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>如果您采用 &lt;a href="../../quick-start/all-in-one-on-linux/">All-in-One 安装&lt;/a>，则不需要创建 &lt;code>config-sample.yaml&lt;/code> 文件，因为可以直接创建集群。一般来说，All-in-One 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的。如果您想在该模式下启用事件系统（例如用于测试），请参考&lt;a href="#%e5%9c%a8%e5%ae%89%e8%a3%85%e5%90%8e%e5%90%af%e7%94%a8%e4%ba%8b%e4%bb%b6%e7%b3%bb%e7%bb%9f">下面的部分&lt;/a>，查看&lt;a href="#%e5%9c%a8%e5%ae%89%e8%a3%85%e5%90%8e%e5%90%af%e7%94%a8%e4%ba%8b%e4%bb%b6%e7%b3%bb%e7%bb%9f">如何在安装后启用&lt;/a>事件系统。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在该文件中，搜寻到 &lt;code>events&lt;/code>，并将 &lt;code>enabled&lt;/code> 的 &lt;code>false&lt;/code> 改为 &lt;code>true&lt;/code>。完成后保存文件。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">events&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span> &lt;span style="color:#75715e"># 将“false”更改为“true”。&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>默认情况下，如果启用了事件系统，KubeKey 将安装内置 Elasticsearch。对于生产环境，如果您想启用事件系统，强烈建议在 &lt;code>config-sample.yaml&lt;/code> 中设置以下值，尤其是 &lt;code>externalElasticsearchHost&lt;/code> 和 &lt;code>externalElasticsearchPort&lt;/code>。在安装前提供以下信息后，KubeKey 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">es&lt;/span>: &lt;span style="color:#75715e"># Storage backend for logging, tracing, events and auditing.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">elasticsearchMasterReplicas&lt;/span>: &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#75715e"># The total number of master nodes. Even numbers are not allowed.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">elasticsearchDataReplicas&lt;/span>: &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#75715e"># The total number of data nodes.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">elasticsearchMasterVolumeSize&lt;/span>: &lt;span style="color:#ae81ff">4Gi &lt;/span> &lt;span style="color:#75715e"># The volume size of Elasticsearch master nodes.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">elasticsearchDataVolumeSize&lt;/span>: &lt;span style="color:#ae81ff">20Gi &lt;/span> &lt;span style="color:#75715e"># The volume size of Elasticsearch data nodes.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">logMaxAge&lt;/span>: &lt;span style="color:#ae81ff">7&lt;/span> &lt;span style="color:#75715e"># Log retention day in built-in Elasticsearch. It is 7 days by default.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">elkPrefix&lt;/span>: &lt;span style="color:#ae81ff">logstash &lt;/span> &lt;span style="color:#75715e"># The string making up index names. The index name will be formatted as ks-&amp;lt;elk_prefix&amp;gt;-log.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">externalElasticsearchHost&lt;/span>: &lt;span style="color:#75715e"># The Host of external Elasticsearch.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">externalElasticsearchPort&lt;/span>: &lt;span style="color:#75715e"># The port of external Elasticsearch.&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>使用该配置文件创建集群：&lt;/p></description></item><item><title>KubeSphere 告警系统</title><link>https://openksc.github.io/zh/docs/v3.3/pluggable-components/alerting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/pluggable-components/alerting/</guid><description>&lt;p>告警是可观测性的重要组成部分，与监控和日志密切相关。KubeSphere 中的告警系统与其主动式故障通知 (Proactive Failure Notification) 系统相结合，使用户可以基于告警策略了解感兴趣的活动。当达到某个指标的预定义阈值时，会向预先配置的收件人发出告警。因此，您需要预先配置通知方式，包括邮件、Slack、钉钉、企业微信和 Webhook。有了功能强大的告警和通知系统，您就可以迅速发现并提前解决潜在问题，避免您的业务受影响。&lt;/p>
+&lt;h2 id="在安装前启用告警系统">在安装前启用告警系统&lt;/h2>
+&lt;h3 id="在-linux-上安装">在 Linux 上安装&lt;/h3>
+&lt;p>当您在 Linux 上安装多节点 KubeSphere 时，需要创建一个配置文件，该文件列出了所有 KubeSphere 组件。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;a href="../../installing-on-linux/introduction/multioverview/">在 Linux 上安装 KubeSphere&lt;/a> 时，您需要创建一个默认文件 &lt;code>config-sample.yaml&lt;/code>。通过执行以下命令修改该文件：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vi config-sample.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>如果您采用 &lt;a href="../../quick-start/all-in-one-on-linux/">All-in-One 安装&lt;/a>，则不需要创建 &lt;code>config-sample.yaml&lt;/code> 文件，因为可以直接创建集群。一般来说，All-in-One 模式针对那些刚接触 KubeSphere 并希望熟悉系统的用户。如果您想在该模式下启用告警系统（例如用于测试），请参考&lt;a href="#%e5%9c%a8%e5%ae%89%e8%a3%85%e5%90%8e%e5%90%af%e7%94%a8%e5%91%8a%e8%ad%a6%e7%b3%bb%e7%bb%9f">下面的部分&lt;/a>，查看如何在安装后启用告警系统。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在该文件中，搜索 &lt;code>alerting&lt;/code> 并将 &lt;code>enabled&lt;/code> 的 &lt;code>false&lt;/code> 更改为 &lt;code>true&lt;/code>。完成后保存文件。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">alerting&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span> &lt;span style="color:#75715e"># 将“false”更改为“true”。&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>执行以下命令使用该配置文件创建集群：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./kk create cluster -f config-sample.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h3 id="在-kubernetes-上安装">在 Kubernetes 上安装&lt;/h3>
+&lt;p>当您&lt;a href="../../installing-on-kubernetes/introduction/overview/">在 Kubernetes 上安装 KubeSphere&lt;/a> 时，需要先在 &lt;a href="https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml" target="_blank" rel="noopener noreferrer">cluster-configuration.yaml&lt;/a> 文件中启用告警系统。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>下载 &lt;a href="https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml" target="_blank" rel="noopener noreferrer">cluster-configuration.yaml&lt;/a> 文件并进行编辑。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vi cluster-configuration.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>在 &lt;code>cluster-configuration.yaml&lt;/code> 文件中，搜索 &lt;code>alerting&lt;/code>，将 &lt;code>enabled&lt;/code> 的 &lt;code>false&lt;/code> 更改为 &lt;code>true&lt;/code> 以启用告警系统。完成后保存文件。&lt;/p></description></item><item><title>KubeSphere 审计日志</title><link>https://openksc.github.io/zh/docs/v3.3/pluggable-components/auditing-logs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/pluggable-components/auditing-logs/</guid><description>&lt;p>KubeSphere 审计日志系统提供了一套与安全相关并按时间顺序排列的记录，按顺序记录了与单个用户、管理人员或系统其他组件相关的活动。对 KubeSphere 的每个请求都会生成一个事件，然后写入 Webhook，并根据一定的规则进行处理。&lt;/p>
+&lt;p>有关更多信息，请参见&lt;a href="../../toolbox/auditing/auditing-query/">审计日志查询&lt;/a>。&lt;/p>
+&lt;h2 id="在安装前启用审计日志">在安装前启用审计日志&lt;/h2>
+&lt;h3 id="在-linux-上安装">在 Linux 上安装&lt;/h3>
+&lt;p>当您在 Linux 上安装多节点 KubeSphere 时，需要创建一个配置文件，该文件列出了所有 KubeSphere 组件。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;a href="../../installing-on-linux/introduction/multioverview/">在 Linux 上安装 KubeSphere&lt;/a> 时，您需要创建一个默认文件 &lt;code>config-sample.yaml&lt;/code>。执行以下命令修改该文件：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vi config-sample.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>如果您采用 &lt;a href="../../quick-start/all-in-one-on-linux/">All-in-One 安装&lt;/a>，则不需要创建 &lt;code>config-sample.yaml&lt;/code> 文件，因为可以直接创建集群。一般来说，All-in-One 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的，如果您想在该模式下启用审计日志（例如用于测试），请参考&lt;a href="#%e5%9c%a8%e5%ae%89%e8%a3%85%e5%90%8e%e5%90%af%e7%94%a8%e5%ae%a1%e8%ae%a1%e6%97%a5%e5%bf%97">下面的部分&lt;/a>，查看如何在安装后启用审计功能。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在该文件中，搜索 &lt;code>auditing&lt;/code>，并将 &lt;code>enabled&lt;/code> 的 &lt;code>false&lt;/code> 改为 &lt;code>true&lt;/code>。完成后保存文件。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">auditing&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span> &lt;span style="color:#75715e"># 将“false”更改为“true”。&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>默认情况下，如果启用了审计功能，KubeKey 将安装内置 Elasticsearch。对于生产环境，如果您想启用审计功能，强烈建议在 &lt;code>config-sample.yaml&lt;/code> 中设置以下值，尤其是 &lt;code>externalElasticsearchHost&lt;/code> 和 &lt;code>externalElasticsearchPort&lt;/code>。在安装前提供以下信息后，KubeKey 将直接对接您的外部 Elasticsearch，不再安装内置 Elasticsearch。&lt;/div>
+&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">es&lt;/span>: &lt;span style="color:#75715e"># Storage backend for logging, tracing, events and auditing.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">elasticsearchMasterReplicas&lt;/span>: &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#75715e"># The total number of master nodes. Even numbers are not allowed.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">elasticsearchDataReplicas&lt;/span>: &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#75715e"># The total number of data nodes.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">elasticsearchMasterVolumeSize&lt;/span>: &lt;span style="color:#ae81ff">4Gi &lt;/span> &lt;span style="color:#75715e"># The volume size of Elasticsearch master nodes.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">elasticsearchDataVolumeSize&lt;/span>: &lt;span style="color:#ae81ff">20Gi &lt;/span> &lt;span style="color:#75715e"># The volume size of Elasticsearch data nodes.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">logMaxAge&lt;/span>: &lt;span style="color:#ae81ff">7&lt;/span> &lt;span style="color:#75715e"># Log retention day in built-in Elasticsearch. It is 7 days by default.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">elkPrefix&lt;/span>: &lt;span style="color:#ae81ff">logstash &lt;/span> &lt;span style="color:#75715e"># The string making up index names. The index name will be formatted as ks-&amp;lt;elk_prefix&amp;gt;-log.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">externalElasticsearchHost&lt;/span>: &lt;span style="color:#75715e"># The Host of external Elasticsearch.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">externalElasticsearchPort&lt;/span>: &lt;span style="color:#75715e"># The port of external Elasticsearch.&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>执行以下命令使用该配置文件创建集群：&lt;/p></description></item><item><title>KubeSphere 服务网格</title><link>https://openksc.github.io/zh/docs/v3.3/pluggable-components/service-mesh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/pluggable-components/service-mesh/</guid><description>&lt;p>KubeSphere 服务网格基于 &lt;a href="https://istio.io/" target="_blank" rel="noopener noreferrer">Istio&lt;/a>，将微服务治理和流量管理可视化。它拥有强大的工具包，包括&lt;strong>熔断机制、蓝绿部署、金丝雀发布、流量镜像、链路追踪、可观测性和流量控制&lt;/strong>等。KubeSphere 服务网格支持代码无侵入的微服务治理，帮助开发者快速上手，Istio 的学习曲线也极大降低。KubeSphere 服务网格的所有功能都旨在满足用户的业务需求。&lt;/p>
+&lt;p>有关更多信息，请参见&lt;a href="../../project-user-guide/grayscale-release/overview/">灰度发布&lt;/a>。&lt;/p>
+&lt;h2 id="在安装前启用服务网格">在安装前启用服务网格&lt;/h2>
+&lt;h3 id="在-linux-上安装">在 Linux 上安装&lt;/h3>
+&lt;p>当您在 Linux 上安装多节点 KubeSphere 时，需要创建一个配置文件，该文件列出了所有 KubeSphere 组件。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;a href="../../installing-on-linux/introduction/multioverview/">在 Linux 上安装 KubeSphere&lt;/a> 时，您需要创建一个默认文件 &lt;code>config-sample.yaml&lt;/code>。执行以下命令修改该文件：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vi config-sample.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>如果您采用 &lt;a href="../../quick-start/all-in-one-on-linux/">All-in-One 安装&lt;/a>，则不需要创建 &lt;code>config-sample.yaml&lt;/code> 文件，因为可以直接创建集群。一般来说，All-in-One 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的。如果您想在该模式下启用服务网格（例如用于测试），请参考&lt;a href="#%e5%9c%a8%e5%ae%89%e8%a3%85%e5%90%8e%e5%90%af%e7%94%a8%e6%9c%8d%e5%8a%a1%e7%bd%91%e6%a0%bc">下面的部分&lt;/a>，查看如何在安装后启用服务网格。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在该文件中，搜索 &lt;code>servicemesh&lt;/code>，并将 &lt;code>enabled&lt;/code> 的 &lt;code>false&lt;/code> 改为 &lt;code>true&lt;/code>。完成后保存文件。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">servicemesh&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span> &lt;span style="color:#75715e"># 将“false”更改为“true”。&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">istio&lt;/span>: &lt;span style="color:#75715e"># Customizing the istio installation configuration, refer to https://istio.io/latest/docs/setup/additional-setup/customize-installation/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">components&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">ingressGateways&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">istio-ingressgateway&lt;/span> &lt;span style="color:#75715e"># 将服务暴露至服务网格之外。默认不开启。&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">cni&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">false&lt;/span> &lt;span style="color:#75715e"># 启用后，会在 Kubernetes pod 生命周期的网络设置阶段完成 Istio 网格的 pod 流量转发设置工作。&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p></description></item><item><title>网络策略</title><link>https://openksc.github.io/zh/docs/v3.3/pluggable-components/network-policy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/pluggable-components/network-policy/</guid><description>&lt;p>从 3.0.0 版本开始，用户可以在 KubeSphere 中配置原生 Kubernetes 的网络策略。网络策略是一种以应用为中心的结构，使您能够指定如何允许容器组通过网络与各种网络实体进行通信。通过网络策略，用户可以在同一集群内实现网络隔离，这意味着可以在某些实例（容器组）之间设置防火墙。&lt;/p>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>&lt;ul>
+&lt;li>在启用之前，请确保集群使用的 CNI 网络插件支持网络策略。支持网络策略的 CNI 网络插件有很多，包括 Calico、Cilium、Kube-router、Romana 和 Weave Net 等。&lt;/li>
+&lt;li>建议您在启用网络策略之前，使用 &lt;a href="https://www.projectcalico.org/" target="_blank" rel="noopener noreferrer">Calico&lt;/a> 作为 CNI 插件。&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;p>有关更多信息，请参见&lt;a href="https://kubernetes.io/zh/docs/concepts/services-networking/network-policies/" target="_blank" rel="noopener noreferrer">网络策略&lt;/a>。&lt;/p>
+&lt;h2 id="在安装前启用网络策略">在安装前启用网络策略&lt;/h2>
+&lt;h3 id="在-linux-上安装">在 Linux 上安装&lt;/h3>
+&lt;p>当您在 Linux 上安装多节点 KubeSphere 时，需要创建一个配置文件，该文件列出了所有 KubeSphere 组件。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>在&lt;a href="../../installing-on-linux/introduction/multioverview/">在 Linux 上安装 KubeSphere&lt;/a> 时，您需要创建一个默认文件 &lt;code>config-sample.yaml&lt;/code>。执行以下命令修改该文件：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vi config-sample.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>如果您采用 &lt;a href="../../quick-start/all-in-one-on-linux/">All-in-One 安装&lt;/a>，则不需要创建 &lt;code>config-sample.yaml&lt;/code> 文件，因为可以直接创建集群。一般来说，All-in-One 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的。如果您想在该模式下启用网络策略（例如用于测试），可以参考&lt;a href="#%e5%9c%a8%e5%ae%89%e8%a3%85%e5%90%8e%e5%90%af%e7%94%a8%e7%bd%91%e7%bb%9c%e7%ad%96%e7%95%a5">下面的部分&lt;/a>，查看如何在安装后启用网络策略。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在该文件中，搜索 &lt;code>network.networkpolicy&lt;/code>，并将 &lt;code>enabled&lt;/code> 的 &lt;code>false&lt;/code> 改为 &lt;code>true&lt;/code>。完成后保存文件。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">network&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">networkpolicy&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span> &lt;span style="color:#75715e"># 将“false”更改为“true”。&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>使用配置文件创建一个集群：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./kk create cluster -f config-sample.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h3 id="在-kubernetes-上安装">在 Kubernetes 上安装&lt;/h3>
+&lt;p>当您&lt;a href="../../installing-on-kubernetes/introduction/overview/">在 Kubernetes 上安装 KubeSphere&lt;/a> 时，需要先在 &lt;a href="https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml" target="_blank" rel="noopener noreferrer">cluster-configuration.yaml&lt;/a> 文件中启用网络策略。&lt;/p></description></item><item><title>Metrics Server</title><link>https://openksc.github.io/zh/docs/v3.3/pluggable-components/metrics-server/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/pluggable-components/metrics-server/</guid><description>&lt;p>KubeSphere 支持用于&lt;a href="../../project-user-guide/application-workloads/deployments/">部署&lt;/a>的容器组（Pod）弹性伸缩程序 (HPA)。在 KubeSphere 中，Metrics Server 控制着 HPA 是否启用。您可以根据不同类型的指标（例如 CPU 和内存使用率，以及最小和最大副本数），使用 HPA 对象对部署 (Deployment) 自动伸缩。通过这种方式，HPA 可以帮助确保您的应用程序在不同情况下都能平稳、一致地运行。&lt;/p>
+&lt;h2 id="在安装前启用-metrics-server">在安装前启用 Metrics Server&lt;/h2>
+&lt;h3 id="在-linux-上安装">在 Linux 上安装&lt;/h3>
+&lt;p>当您在 Linux 上安装多节点 KubeSphere 时，首先需要创建一个配置文件，该文件列出了所有 KubeSphere 组件。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;a href="../../installing-on-linux/introduction/multioverview/">在 Linux 上安装 KubeSphere&lt;/a> 时，您需要创建一个默认文件 &lt;code>config-sample.yaml&lt;/code>，通过执行以下命令修改该文件：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vi config-sample.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>如果您采用 &lt;a href="../../quick-start/all-in-one-on-linux/">All-in-One 安装&lt;/a>，则不需要创建 &lt;code>config-sample.yaml&lt;/code> 文件，因为可以直接创建集群。一般来说，All-in-One 模式是为那些刚接触 KubeSphere 并希望熟悉系统的用户而准备的。如果您想在这个模式下启用 Metrics Server（比如用于测试），请参考&lt;a href="#%e5%9c%a8%e5%ae%89%e8%a3%85%e5%90%8e%e5%90%af%e7%94%a8%e5%ba%94%e7%94%a8%e5%95%86%e5%ba%97">下面的部分&lt;/a>，查看如何在安装后启用 Metrics Server。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在该文件中，搜寻到 &lt;code>metrics_server&lt;/code>，并将 &lt;code>enabled&lt;/code> 的 &lt;code>false&lt;/code> 改为 &lt;code>true&lt;/code>。完成后保存文件。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">metrics_server&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span> &lt;span style="color:#75715e"># 将“false”更改为“true”。&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>使用该配置文件创建集群：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./kk create cluster -f config-sample.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h3 id="在-kubernetes-上安装">在 Kubernetes 上安装&lt;/h3>
+&lt;p>当您&lt;a href="../../installing-on-kubernetes/introduction/overview/">在 Kubernetes 上安装 KubeSphere&lt;/a> 时，需要先在 &lt;a href="https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml" target="_blank" rel="noopener noreferrer">cluster-configuration.yaml&lt;/a> 文件中先启用 Metrics Server组件。&lt;/p></description></item><item><title>服务拓扑图</title><link>https://openksc.github.io/zh/docs/v3.3/pluggable-components/service-topology/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/pluggable-components/service-topology/</guid><description>&lt;p>您可以启用服务拓扑图以集成 &lt;a href="https://www.weave.works/oss/scope/" target="_blank" rel="noopener noreferrer">Weave Scope&lt;/a>（Docker 和 Kubernetes 的可视化和监控工具）。Weave Scope 使用既定的 API 收集信息，为应用和容器构建拓扑图。服务拓扑图显示在您的项目中，将服务之间的连接关系可视化。&lt;/p>
+&lt;h2 id="安装前启用服务拓扑图">安装前启用服务拓扑图&lt;/h2>
+&lt;h3 id="在-linux-上安装">在 Linux 上安装&lt;/h3>
+&lt;p>在 Linux 上多节点安装 KubeSphere 时，您需要创建一个配置文件，该文件会列出所有 KubeSphere 组件。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;a href="../../installing-on-linux/introduction/multioverview/">在 Linux 上安装 KubeSphere&lt;/a> 时，您需要创建一个默认文件 &lt;code>config-sample.yaml&lt;/code>。执行以下命令修改该文件：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vi config-sample.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>如果您采用 &lt;a href="../../quick-start/all-in-one-on-linux/">All-in-one 安装&lt;/a>，则不需要创建 &lt;code>config-sample.yaml&lt;/code> 文件，因为可以直接创建集群。一般来说，All-in-one 模式针对那些刚接触 KubeSphere 并希望熟悉系统的用户。如果您想在该模式下启用服务拓扑图（比如用于测试），请参考&lt;a href="#%e5%9c%a8%e5%ae%89%e8%a3%85%e5%90%8e%e5%90%af%e7%94%a8%e6%9c%8d%e5%8a%a1%e6%8b%93%e6%89%91%e5%9b%be">下面的部分&lt;/a>，查看如何在安装后启用服务拓扑图。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在该文件中，搜索 &lt;code>network.topology.type&lt;/code>，并将 &lt;code>none&lt;/code> 改为 &lt;code>weave-scope&lt;/code>。完成后保存文件。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">network&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">topology&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">type&lt;/span>: &lt;span style="color:#ae81ff">weave-scope&lt;/span> &lt;span style="color:#75715e"># 将“none”更改为“weave-scope”。&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>执行以下命令使用该配置文件创建集群：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./kk create cluster -f config-sample.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h3 id="在-kubernetes-上安装">在 Kubernetes 上安装&lt;/h3>
+&lt;p>当您&lt;a href="../../installing-on-kubernetes/introduction/overview/">在 Kubernetes 上安装 KubeSphere&lt;/a> 时，需要先在&lt;a href="https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml" target="_blank" rel="noopener noreferrer">cluster-configuration.yaml&lt;/a> 文件中启用服务拓扑图。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>下载 &lt;a href="https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml" target="_blank" rel="noopener noreferrer">cluster-configuration.yaml&lt;/a> 文件并进行编辑。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vi cluster-configuration.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>在 &lt;code>cluster-configuration.yaml&lt;/code> 文件中，搜索 &lt;code>network.topology.type&lt;/code>，将 &lt;code>none&lt;/code> 更改为 &lt;code>weave-scope&lt;/code> 以启用服务拓扑图。完成后保存文件。&lt;/p></description></item><item><title>容器组 IP 池</title><link>https://openksc.github.io/zh/docs/v3.3/pluggable-components/pod-ip-pools/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/pluggable-components/pod-ip-pools/</guid><description>&lt;p>容器组 IP 池用于规划容器组网络地址空间，每个容器组 IP 池之间的地址空间不能重叠。创建工作负载时，可选择特定的容器组 IP 池，这样创建出的容器组将从该容器组 IP 池中分配 IP 地址。&lt;/p>
+&lt;h2 id="安装前启用容器组-ip-池">安装前启用容器组 IP 池&lt;/h2>
+&lt;h3 id="在-linux-上安装">在 Linux 上安装&lt;/h3>
+&lt;p>在 Linux 上多节点安装 KubeSphere 时，您需要创建一个配置文件，该文件会列出所有 KubeSphere 组件。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;a href="../../installing-on-linux/introduction/multioverview/">在 Linux 上安装 KubeSphere&lt;/a> 时，您需要创建一个默认文件 &lt;code>config-sample.yaml&lt;/code>。执行以下命令修改该文件：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vi config-sample.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>如果您采用 &lt;a href="../../quick-start/all-in-one-on-linux/">All-in-one 安装&lt;/a>，则不需要创建 &lt;code>config-sample.yaml&lt;/code> 文件，因为可以直接创建集群。一般来说，All-in-one 模式针对那些刚接触 KubeSphere 并希望熟悉系统的用户。如果您想在该模式下启用容器组 IP 池（比如用于测试），请参考&lt;a href="#%e5%9c%a8%e5%ae%89%e8%a3%85%e5%90%8e%e5%90%af%e7%94%a8%e5%ae%b9%e5%99%a8%e7%bb%84-ip-%e6%b1%a0">下面的部分&lt;/a>，查看如何在安装后启用容器组 IP 池。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在该文件中，搜索 &lt;code>network.ippool.type&lt;/code>，然后将 &lt;code>none&lt;/code> 更改为 &lt;code>calico&lt;/code>。完成后保存文件。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">network&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">ippool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">type&lt;/span>: &lt;span style="color:#ae81ff">calico&lt;/span> &lt;span style="color:#75715e"># 将“none”更改为“calico”。&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>使用该配置文件创建一个集群：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>./kk create cluster -f config-sample.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h3 id="在-kubernetes-上安装">在 Kubernetes 上安装&lt;/h3>
+&lt;p>当您&lt;a href="../../installing-on-kubernetes/introduction/overview/">在 Kubernetes 上安装 KubeSphere&lt;/a> 时，需要现在 &lt;a href="https://github.com/kubesphere/ks-installer/releases/download/v3.3.2/cluster-configuration.yaml" target="_blank" rel="noopener noreferrer">cluster-configuration.yaml&lt;/a> 文件中启用容器组 IP 池。&lt;/p></description></item><item><title>KubeEdge</title><link>https://openksc.github.io/zh/docs/v3.3/pluggable-components/kubeedge/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/pluggable-components/kubeedge/</guid><description>&lt;p>&lt;a href="https://kubeedge.io/zh/" target="_blank" rel="noopener noreferrer">KubeEdge&lt;/a> 是一个开源系统，用于将容器化应用程序编排功能扩展到边缘的主机。KubeEdge 支持多个边缘协议，旨在对部署于云端和边端的应用程序与资源等进行统一管理。&lt;/p>
+&lt;p>KubeEdge 的组件在两个单独的位置运行——云上和边缘节点上。在云上运行的组件统称为 CloudCore，包括 Controller 和 Cloud Hub。Cloud Hub 作为接收边缘节点发送请求的网关，Controller 则作为编排器。在边缘节点上运行的组件统称为 EdgeCore，包括 EdgeHub，EdgeMesh，MetadataManager 和 DeviceTwin。有关更多信息，请参见 &lt;a href="https://kubeedge.io/zh/" target="_blank" rel="noopener noreferrer">KubeEdge 网站&lt;/a>。&lt;/p>
+&lt;p>启用 KubeEdge 后，您可以&lt;a href="../../installing-on-linux/cluster-operation/add-edge-nodes/">为集群添加边缘节点&lt;/a>并在这些节点上部署工作负载。&lt;/p>
+&lt;p>&lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/enable-pluggable-components/kubeedge/kubeedge_arch.png" alt="kubeedge_arch">&lt;/p>
+&lt;h2 id="安装前启用-kubeedge">安装前启用 KubeEdge&lt;/h2>
+&lt;h3 id="在-linux-上安装">在 Linux 上安装&lt;/h3>
+&lt;p>在 Linux 上多节点安装 KubeSphere 时，您需要创建一个配置文件，该文件会列出所有 KubeSphere 组件。&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;a href="../../installing-on-linux/introduction/multioverview/">在 Linux 上安装 KubeSphere&lt;/a> 时，您需要创建一个默认文件 &lt;code>config-sample.yaml&lt;/code>。执行以下命令修改该文件：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vi config-sample.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>如果您采用 &lt;a href="../../quick-start/all-in-one-on-linux/">All-in-one 安装&lt;/a>，则不需要创建 &lt;code>config-sample.yaml&lt;/code> 文件，因为可以直接创建集群。一般来说，All-in-one 模式针对那些刚接触 KubeSphere 并希望熟悉系统的用户。如果您想在该模式下启用 KubeEdge（比如用于测试），请参考&lt;a href="#%e5%9c%a8%e5%ae%89%e8%a3%85%e5%90%8e%e5%90%af%e7%94%a8-kubeedge">下面的部分&lt;/a>，查看如何在安装后启用 KubeEdge。&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>在该文件中，搜索 &lt;code>edgeruntime&lt;/code> 和 &lt;code>kubeedge&lt;/code>，然后将它们 &lt;code>enabled&lt;/code> 值从 &lt;code>false&lt;/code> 更改为 &lt;code>true&lt;/code> 以便开启所有 KubeEdge 组件。完成后保存文件。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">edgeruntime&lt;/span>: &lt;span style="color:#75715e"># Add edge nodes to your cluster and deploy workloads on edge nodes.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">kubeedge&lt;/span>: &lt;span style="color:#75715e"># kubeedge configurations&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enabled&lt;/span>: &lt;span style="color:#66d9ef">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">cloudCore&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">cloudHub&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">advertiseAddress&lt;/span>: &lt;span style="color:#75715e"># At least a public IP address or an IP address which can be accessed by edge nodes must be provided.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span> &lt;span style="color:#75715e"># Note that once KubeEdge is enabled, CloudCore will malfunction if the address is not provided.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">service&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">cloudhubNodePort&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;30000&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">cloudhubQuicNodePort&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;30001&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">cloudhubHttpsNodePort&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;30002&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">cloudstreamNodePort&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;30003&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">tunnelNodePort&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;30004&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># resources: {}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># hostNetWork: false&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>将 &lt;code>kubeedge.cloudCore.cloudHub.advertiseAddress&lt;/code> 的值设置为集群的公共 IP 地址或边缘节点可以访问的 IP 地址。编辑完成后保存文件。&lt;/p></description></item><item><title>卸载可插拔组件</title><link>https://openksc.github.io/zh/docs/v3.3/pluggable-components/uninstall-pluggable-components/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.3/pluggable-components/uninstall-pluggable-components/</guid><description>&lt;p>&lt;a href="../../pluggable-components/">启用 KubeSphere 可插拔组件之后&lt;/a>，还可以根据以下步骤卸载他们。请在卸载这些组件之前，备份所有重要数据。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;p>在卸载除服务拓扑图和容器组 IP 池之外的可插拔组件之前，必须将 CRD 配置文件 &lt;code>ClusterConfiguration&lt;/code> 中的 &lt;code>ks-installer&lt;/code> 中的 &lt;code>enabled&lt;/code> 字段的值从 &lt;code>true&lt;/code> 改为 &lt;code>false&lt;/code>。&lt;/p>
+&lt;p>使用下列任一方法更改 &lt;code>enabled&lt;/code> 字段的值：&lt;/p>
+&lt;ul>
+&lt;li>运行以下命令编辑 &lt;code>ks-installer&lt;/code>：&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl -n kubesphere-system edit clusterconfiguration ks-installer
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>使用 &lt;code>admin&lt;/code> 身份登录 KubeSphere Web 控制台，左上角点击&lt;strong>平台管理&lt;/strong>，选择&lt;strong>集群管理&lt;/strong>，在&lt;strong>定制资源定义&lt;/strong>中搜索 &lt;code>ClusterConfiguration&lt;/code>。有关更多信息，请参见&lt;a href="../../pluggable-components/">启用可插拔组件&lt;/a>。&lt;/li>
+&lt;/ul>
+&lt;div class="notices note">
+ 
+ &lt;p>备注&lt;/p>
+ &lt;div>更改值之后，需要等待配置更新完成，然后继续进行后续操作。&lt;/div>
+&lt;/div>
+&lt;h2 id="卸载-kubesphere-应用商店">卸载 KubeSphere 应用商店&lt;/h2>
+&lt;p>将 CRD &lt;code>ClusterConfiguration&lt;/code> 配置文件中 &lt;code>ks-installer&lt;/code> 参数的 &lt;code>openpitrix.store.enabled&lt;/code> 字段的值从 &lt;code>true&lt;/code> 改为 &lt;code>false&lt;/code>。&lt;/p>
+&lt;h2 id="卸载-kubesphere-devops">卸载 KubeSphere DevOps&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>卸载 DevOps：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>helm uninstall -n kubesphere-devops-system devops
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl patch -n kubesphere-system cc ks-installer --type&lt;span style="color:#f92672">=&lt;/span>json -p&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;[{&amp;#34;op&amp;#34;: &amp;#34;remove&amp;#34;, &amp;#34;path&amp;#34;: &amp;#34;/status/devops&amp;#34;}]&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl patch -n kubesphere-system cc ks-installer --type&lt;span style="color:#f92672">=&lt;/span>json -p&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;[{&amp;#34;op&amp;#34;: &amp;#34;replace&amp;#34;, &amp;#34;path&amp;#34;: &amp;#34;/spec/devops/enabled&amp;#34;, &amp;#34;value&amp;#34;: false}]&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>删除 DevOps 资源：&lt;/p></description></item></channel></rss>

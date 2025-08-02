@@ -1,0 +1,530 @@
+<!doctype html><html lang=en-US><head><meta charset=utf-8><title>在 KubeSphere 部署 Wiki 系统 wiki.js 并启用中文全文检索</title><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content=" Wiki 写作、分享、权限管理功能还是有的，胜在 UI 设计很漂亮，能满足小团队的基本知识管理需求。以下工作是在 KubeSphere 3.2.1 + Helm 3 已经部署好的情况下进行的。"><meta name=keywords content="KubeSphere,wiki,wiki.js,Kubernetes,云原生"><meta property="og:type" content="article"><meta property="og:title" content="在 KubeSphere 部署 Wiki 系统 wiki.js 并启用中文全文检索"><meta property="og:description" content=" Wiki 写作、分享、权限管理功能还是有的，胜在 UI 设计很漂亮，能满足小团队的基本知识管理需求。以下工作是在 KubeSphere 3.2.1 + Helm 3 已经部署好的情况下进行的。"><meta property="og:image" content="https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-wiki-cover.png"><meta property="og:url" content="https://openksc.github.io/zh/blogs/kubesphere-wiki/"><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@KubeSphere"><meta property="twitter:image" content="https://pek3b.qingstor.com/kubesphere-community/images/kubesphere-wiki-cover.png"><meta name=docsearch:language content="zh-CN"><meta name=docsearch:version content><link rel=canonical href=https://kubesphere.io/zh/blogs/kubesphere-wiki/><link rel="shortcut icon" href=/images/favicons/favicon.ico><link rel=apple-touch-icon href=/images/favicons/apple-touch-icon.png sizes=180x180><link rel=icon type=image/png href=/images/favicons/favicon-16x16.png sizes=16x16><link rel=icon type=image/png href=/images/favicons/favicon-32x32.png sizes=32x32><link rel=icon type=image/svg+xml href=/images/favicons/favicon.svg><link rel=icon type=image/png href=/images/favicons/favicon.png><link rel=manifest href=/images/favicons/site.webmanifest><link rel=mask-icon href=/images/favicons/safari-pinned-tab.svg color=#00ad6e><meta name=msapplication-config content='/images/favicons/browserconfig.xml'><meta name=msapplication-TileColor content="#ffffff"><meta name=theme-color content="#ffffff"><link rel=stylesheet href=/fonts/Roboto/stylesheet.css><link rel=stylesheet href=/fonts/ProximaNova/stylesheet.css><link rel=stylesheet href=/css/jquery.modal.min.css><link rel=stylesheet href=/css/viewer.min.css><link rel=stylesheet href=/swiper/swiper-bundle.min.css><link rel=stylesheet href=/scss/common.min.0c3fdcc05ec210321169846714f74b11c4a1baf09a1833fa9273b2347c81e636.css><script src=/js/jquery-3.7.1.min.js></script><script src=/js/viewer.min.js></script><script src=/js/jquery.modal.min.js></script><script src=/swiper/swiper-bundle.min.js></script><script>var _hmt=_hmt||[];(function(){var e,t=document.createElement("script");t.src="https://hm.baidu.com/hm.js?0888981f1fa45d241b1fb6962da2963e",e=document.getElementsByTagName("script")[0],e.parentNode.insertBefore(t,e)})()</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-YYCVN36HT5"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-YYCVN36HT5")</script><script type=text/javascript>!function(e,t,n,s,o){e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},n=t.createElement("script"),tag=t.getElementsByTagName("script")[0],n.async=1,n.src=("https:"==document.location.protocol?"https://":"http://")+s,tag.parentNode.insertBefore(n,tag)}(window,document,"script","assets.giocdn.com/2.1/gio.js","gio"),gio("init","8a24ae300cbf8b8c",{}),gio("send")</script><link rel=stylesheet href=/scss/content.min.f73b326fbf8c5bd331900b0de21c7dde608a4926f482f6465f9ae1d9049b83ad.css><link rel=stylesheet href=/scss/markdown.min.db47186481122431dffae72d17dbbd51f90b66f022cc163458645709924e4eac.css></head><body><header class=navigation><div class=join-div><div class=content>🚀 KubeSphere v4.1.3 发布，多项优化与改进，欢迎体验！<a href=/zh/docs/v4.1/20-release-notes/release-v413/ target=_blank rel="noopener noreferrer">请查看 Release notes →</a>
+<img id=close-join src=/images/header/close.svg alt=close></div></div><div class=common-layout><div class=header-container><a href=/zh/ aria-label=logo><img src=/images/header/logo.svg alt class=logo></a><ul class=nav><li class=menu-li><span class=menu-span>应用场景</span><ul class="dropdown-menu menu-2"><li><a href=/zh/devops/>拥抱一站式 DevOps 工作流</a></li><li><a href=/zh/service-mesh/>在 Kubernetes 运行微服务</a></li><li><a href=/zh/observability/>构建丰富的云原生可观测性</a></li></ul></li><li class=menu-li><span class=menu-span>资源</span><ul class="dropdown-menu menu-3"><li><a href=/zh/projects/>开源项目</a></li><li><a href=/zh/conferences/>开源峰会</a></li><li><a href=/zh/blogs/>技术博客</a></li><li><a href=/zh/videos/>视频资源</a></li><li><a href=/zh/learn/>云原生实战</a></li></ul></li><li class=menu-li><span class=menu-span>文档中心</span><ul class="dropdown-menu menu-4"><li><a href=/zh/docs/v4.1>v4.1 <img src=/images/header/star.svg alt=star></a></li><li><a href=/zh/docs/v3.4>v3.4</a></li><li><a href=/zh/docs/v3.3>v3.3</a></li><li><a href=https://dev-guide.kubesphere.io/extension-dev-guide/zh/ target=_blank rel="noopener noreferrer">扩展组件开发</a></li><li><a href=https://kube.design/ target=_blank rel="noopener noreferrer">Kube Design</a></li></ul></li><li class=menu-li><span class=menu-span>开源社区</span><ul class="dropdown-menu menu-5"><li><a href=/zh/contribution/>参与贡献</a></li><li><a href=/zh/live/>社区活动</a></li><li><a href=/zh/case/>案例学习</a></li><li><a href=/zh/partner/>合作伙伴</a></li><li><a href=/zh/user-group/>用户委员会</a></li><li><a href=/zh/news/>动态</a></li><li><a href=https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md target=_blank rel="noopener noreferrer">版本计划</a></li><li><a href=https://www.kubesphere.io/zh/ target=_blank rel="noopener noreferrer">中国站</a></li><li><a href=https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2025 target=_blank rel="noopener noreferrer">开源之夏 2025</a></li></ul></li><li><a data-docs=用户论坛 href=https://ask.kubesphere.io/forum target=_blank rel="noopener noreferrer">用户论坛</a></li><li><a data-docs=认证 href=https://kubesphere.cloud/certification/ target=_blank rel="noopener noreferrer">认证</a></li></ul><div class=right-menu><ul><li class=language-menu><div><img src=/images/header/black.svg alt>
+<span>简体中文</span></div><ul class=dropdown-menu><li onclick='handleLangClick("zh","/zh/blogs/kubesphere-wiki/")'>简体中文</li></ul></li><li class=github-li><div class=github-star><a class=star-btn href=https://github.com/kubesphere/kubesphere rel="noopener noreferrer" target=_blank><span class=star-img></span>&nbsp;<span>Star</span>
+</a><a class=social-count href=https://github.com/kubesphere/kubesphere/stargazers rel="noopener noreferrer" target=_blank></a></div></li><li class=menu-icon><img src=/images/header/menu.svg alt></li></ul></div></div></div><div id=modal-for-menu class=modal><ul class=nav><li data-check=0 class=menu-li><span class=menu-span>应用场景</span><ul class=dropdown-menu><li><a href=/zh/devops/>拥抱一站式 DevOps 工作流</a></li><li><a href=/zh/service-mesh/>在 Kubernetes 运行微服务</a></li><li><a href=/zh/observability/>构建丰富的云原生可观测性</a></li></ul></li><li data-check=0 class=menu-li><span class=menu-span>资源</span><ul class=dropdown-menu><li><a href=/zh/projects/>开源项目</a></li><li><a href=/zh/conferences/>开源峰会</a></li><li><a href=/zh/blogs/>技术博客</a></li><li><a href=/zh/videos/>视频资源</a></li><li><a href=/zh/learn/>云原生实战</a></li></ul></li><li data-check=0 class=menu-li><span class=menu-span>文档中心</span><ul class=dropdown-menu><li><a href=/zh/docs/v4.1>v4.1 <img src=/images/header/star.svg alt=star></a></li><li><a href=/zh/docs/v3.4>v3.4</a></li><li><a href=/zh/docs/v3.3>v3.3</a></li><li><a href=https://dev-guide.kubesphere.io/extension-dev-guide/zh/>扩展组件开发</a></li><li><a href=https://kube.design/>Kube Design</a></li></ul></li><li data-check=0 class=menu-li><span class=menu-span>开源社区</span><ul class=dropdown-menu><li><a href=/zh/contribution/>参与贡献</a></li><li><a href=/zh/live/>社区活动</a></li><li><a href=/zh/case/>案例学习</a></li><li><a href=/zh/partner/>合作伙伴</a></li><li><a href=/zh/user-group/>用户委员会</a></li><li><a href=/zh/news/>动态</a></li><li><a href=https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md>版本计划</a></li><li><a href=https://www.kubesphere.io/zh/>中国站</a></li><li><a href=https://github.com/kubesphere/community/tree/master/sig-advocacy-and-outreach/ospp-2025>开源之夏 2025</a></li></ul></li><li><a data-docs=用户论坛 href=https://ask.kubesphere.io/forum>用户论坛</a></li><li><a data-docs=认证 href=https://kubesphere.cloud/certification/>认证</a></li></ul><div class=link-div><a href=https://join.slack.com/t/kubesphere/shared_invite/zt-2b4t6rdb4-ico_4UJzCln_S2c1pcrIpQ target=_blank rel="noopener noreferrer" aria-label=slack><img src=/images/header/slack-hover.svg alt>
+</a><a href=https://x.com/KubeSphere target=_blank rel="noopener noreferrer" aria-label=twitter><img src=/images/header/twitter-hover.svg alt>
+</a><a href=https://github.com/kubesphere/kubesphere target=_blank rel="noopener noreferrer" aria-label=github><img src=/images/header/github-hover.svg alt></a></div></div></header><script>var bindNavMouseEvent,bindScrollChangeHeader,bindClickShowMenu,bindClickModalLi,bindClickClose,language,handleLangClick,githubApiLink="https://api.github.com/repos/kubesphere/kubesphere",getStar=function(){$(".social-count").hide(),$.getJSON(githubApiLink,function(e){$(".social-count").show().html(e.stargazers_count)})};getStar(),bindNavMouseEvent=function(e,t){t||(t=$(e));var n=!1;t.mouseenter(function(){if(n)return!1;n=!0,$(this).find(".dropdown-menu").fadeIn(200,function(){n=!1})}),t.mouseleave(function(){$(this).find(".dropdown-menu").fadeOut(200)})},bindScrollChangeHeader=function(){var t=100,e=$("header");window.addEventListener("scroll",function(){var t=window.scrollY;t>0?e.addClass("navigationScroll"):e.removeClass("navigationScroll")})},bindClickShowMenu=function(){$(".menu-icon").click(function(){$("#modal-for-menu").modal()})},bindClickModalLi=function(){$(".modal .menu-li").click(function(){var e=$(this).data("check");e===0?($(this).data("check",1),$(this).find(".dropdown-menu").slideDown(200)):($(this).data("check",0),$(this).find(".dropdown-menu").slideUp(200)),$(this).find(".menu-span").toggleClass("up")})},bindClickClose=function(){$("#close-join").click(function(){$(".navigation .join-div").hide(),$(".main-section").removeClass("padding")})},language="zh",bindClickClose(),bindScrollChangeHeader(),$(".header-container .menu-li").each(function(){bindNavMouseEvent("",$(this))}),bindNavMouseEvent(".header-container .language-menu"),bindNavMouseEvent(".header-container .btn-li"),bindClickShowMenu(),bindClickModalLi(),handleLangClick=function(e,t){try{localStorage.setItem("lang",e)}catch{}location.href=t}</script><section class=main-section><div class=common-layout><div class=breadcrumb><span><a href=/zh/blogs/>技术博客</a> > </span><span>在 KubeSphere 部署 Wiki 系统 wiki.js 并启用中文全文检索</span></div><div class='main-div middle-div'><div class=author>scwang18</div><span class=date>发布于：2022-06-24</span>&nbsp;&nbsp;&nbsp;
+<span style=font-size:14px;color:#919aa3 id=busuanzi_container_page_pv>本文总阅读量：<span id=busuanzi_value_page_pv></span></span><h1>在 KubeSphere 部署 Wiki 系统 wiki.js 并启用中文全文检索</h1><div class=share-1><div class=share><a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fkubesphere-wiki%2f&text=%e5%9c%a8%20KubeSphere%20%e9%83%a8%e7%bd%b2%20Wiki%20%e7%b3%bb%e7%bb%9f%20wiki.js%20%e5%b9%b6%e5%90%af%e7%94%a8%e4%b8%ad%e6%96%87%e5%85%a8%e6%96%87%e6%a3%80%e7%b4%a2" target=_blank rel="noopener noreferrer"><img src=/images/share/Twitter.svg alt="twitter icon">
+</a><a href="https://reddit.com/submit?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fkubesphere-wiki%2f&title=%e5%9c%a8%20KubeSphere%20%e9%83%a8%e7%bd%b2%20Wiki%20%e7%b3%bb%e7%bb%9f%20wiki.js%20%e5%b9%b6%e5%90%af%e7%94%a8%e4%b8%ad%e6%96%87%e5%85%a8%e6%96%87%e6%a3%80%e7%b4%a2" target=_blank rel="noopener noreferrer"><img src=/images/share/Reddit.svg alt="reddit icon">
+</a><a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fkubesphere-wiki%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Facebook.svg alt="facebook icon">
+</a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fkubesphere-wiki%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Linkedin.svg alt="linkedin icon">
+</a><a href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fkubesphere-wiki%2f&t=%e5%9c%a8%20KubeSphere%20%e9%83%a8%e7%bd%b2%20Wiki%20%e7%b3%bb%e7%bb%9f%20wiki.js%20%e5%b9%b6%e5%90%af%e7%94%a8%e4%b8%ad%e6%96%87%e5%85%a8%e6%96%87%e6%a3%80%e7%b4%a2" target=_blank rel="noopener noreferrer"><img src=/images/share/HackerNews.svg alt="hackernews icon"></a></div></div><div class=content><div class=md-body><h2 id=背景>背景</h2><p>wiki.js 是优秀的开源 Wiki 系统，相较于 xwiki ，功能目前性上比 xwiki 不够完善，但也在不断进步。 Wiki 写作、分享、权限管理功能还是有的，胜在 UI 设计很漂亮，能满足小团队的基本知识管理需求。</p><p>以下工作是在 KubeSphere 3.2.1 + Helm 3 已经部署好的情况下进行的。</p><p>部署 KubeSphere 的方法官网有很详细的文档介绍，这里不再赘叙。
+<a href=https://kubesphere.com.cn/docs/installing-on-linux/introduction/multioverview/ target=_blank rel="noopener noreferrer">https://kubesphere.com.cn/docs/installing-on-linux/introduction/multioverview/</a></p><h2 id=准备-storageclass>准备 storageclass</h2><p>我们使用 OpenEBS 作为存储，OpenEBS 默认安装的 Local StorageSlass 在 Pod 销毁后自动删除，不适合用于我的 MySQL 存储，我们在 Local StorageClass 基础上稍作修改，创建新的 StorageClass，允许 Pod 销毁后，PV 内容继续保留，手动决定怎么处理。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>items</span>:
+</span></span><span style=display:flex><span>- <span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>storage.k8s.io/v1</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>kind</span>: <span style=color:#ae81ff>StorageClass</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>annotations</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>cas.openebs.io/config</span>: |<span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        - name: StorageType
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          value: &#34;hostpath&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        - name: BasePath
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          value: &#34;/var/openebs/localretain/&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>openebs.io/cas-type</span>: <span style=color:#ae81ff>local</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>storageclass.beta.kubernetes.io/is-default-class</span>: <span style=color:#e6db74>&#34;false&#34;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>storageclass.kubesphere.io/supported-access-modes</span>: <span style=color:#e6db74>&#39;[&#34;ReadWriteOnce&#34;]&#39;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>name</span>: <span style=color:#ae81ff>localretain</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>provisioner</span>: <span style=color:#ae81ff>openebs.io/local</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>reclaimPolicy</span>: <span style=color:#ae81ff>Retain</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>volumeBindingMode</span>: <span style=color:#ae81ff>WaitForFirstConsumer</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>List</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>resourceVersion</span>: <span style=color:#e6db74>&#34;&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>selfLink</span>: <span style=color:#e6db74>&#34;&#34;</span>
+</span></span></code></pre></div><h2 id=部署-postgresql-数据库>部署 PostgreSQL 数据库</h2><p>我们团队其他项目中也需要使用 PostgreSQL, 为了提高 PostgreSQL 数据库的利用率和统一管理，我们独立部署 PostgreSQL，并在安装 wiki.js 时，配置为使用外部数据库。</p><h3 id=准备用户名密码配置>准备用户名密码配置</h3><p>我们使用 Secret 保存 PostgreSQL 用户密码等敏感信息。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Secret</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>postgres-prod</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>data</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>POSTGRES_PASSWORD</span>: <span style=color:#ae81ff>xxxx</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>type</span>: <span style=color:#ae81ff>Opaque</span>
+</span></span></code></pre></div><p>以上 POSTGRES_PASSWORD 自行准备，为 base64 编码的数据。</p><h3 id=准备数据库初始化脚本>准备数据库初始化脚本</h3><p>使用 ConfigMap 保存数据库初始化脚本，在 数据库创建时，将 ConfigMap 中的数据库初始化脚本挂载到 /docker-entrypoint-initdb.d, 容器初始化时会自动执行该脚本。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ConfigMap</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>wikijs-postgres-init</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>data</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>init.sql</span>: |-<span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    CREATE DATABASE wikijs;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    CREATE USER wikijs with password &#39;xxxx&#39;;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    GRANT CONNECT ON DATABASE wikijs to wikijs;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    GRANT USAGE ON SCHEMA public TO wikijs;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    GRANT SELECT,update,INSERT,delete ON ALL TABLES IN SCHEMA public TO wikijs;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO wikijs;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    </span>
+</span></span></code></pre></div><p>以上 wikijs 用户的密码自行准备，明文保存。</p><h3 id=准备存储>准备存储</h3><p>我们使用 KubeSphere 默认安装的 OpenEBS 来提供存储服务。可以通过创建 PVC 来提供持久化存储。</p><p>这里声明一个 10G 的 PVC。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>PersistentVolumeClaim</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>postgres-prod-data</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>finalizers</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#ae81ff>kubernetes.io/pvc-protection</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>accessModes</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#ae81ff>ReadWriteOnce</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>resources</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>requests</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>storage</span>: <span style=color:#ae81ff>10Gi</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>storageClassName</span>: <span style=color:#ae81ff>localretain</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>volumeMode</span>: <span style=color:#ae81ff>Filesystem</span>
+</span></span></code></pre></div><h3 id=部署-postgresql-数据库-1>部署 PostgreSQL 数据库</h3><p>在前面的步骤准备好各种配置信息和存储后，就可以开始部署 PostgreSQL 服务了。</p><p>我们的 Kubernetes 没有配置存储阵列，使用的是 OpenEBS 作为存储，采用 Deployment 方式部署 PostgreSQL。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>apps/v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Deployment</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app</span>: <span style=color:#ae81ff>postgres-prod</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>postgres-prod</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>selector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>app</span>: <span style=color:#ae81ff>postgres-prod</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>template</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>app</span>: <span style=color:#ae81ff>postgres-prod</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>containers</span>:
+</span></span><span style=display:flex><span>        - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>db</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>imagePullPolicy</span>: <span style=color:#ae81ff>IfNotPresent</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>image</span>: <span style=color:#e6db74>&#39;abcfy2/zhparser:12-alpine&#39;</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>ports</span>:
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>tcp-5432</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>protocol</span>: <span style=color:#ae81ff>TCP</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>containerPort</span>: <span style=color:#ae81ff>5432</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>envFrom</span>:
+</span></span><span style=display:flex><span>          - <span style=color:#f92672>secretRef</span>:
+</span></span><span style=display:flex><span>              <span style=color:#f92672>name</span>: <span style=color:#ae81ff>postgres-prod</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>volumeMounts</span>:
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>postgres-prod-data</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>readOnly</span>: <span style=color:#66d9ef>false</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>mountPath</span>: <span style=color:#ae81ff>/var/lib/postgresql/data</span>
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>wikijs-postgres-init</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>readOnly</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>mountPath</span>: <span style=color:#ae81ff>/docker-entrypoint-initdb.d</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>volumes</span>:
+</span></span><span style=display:flex><span>        - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>postgres-prod-data</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>persistentVolumeClaim</span>:
+</span></span><span style=display:flex><span>            <span style=color:#f92672>claimName</span>: <span style=color:#ae81ff>postgres-prod-data</span>
+</span></span><span style=display:flex><span>        - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>wikijs-postgres-init</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>configMap</span>:
+</span></span><span style=display:flex><span>            <span style=color:#f92672>name</span>: <span style=color:#ae81ff>wikijs-postgres-init</span>
+</span></span></code></pre></div><h3 id=创建供其他-pod-访问的-service>创建供其他 Pod 访问的 Service</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Service</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>postgres-prod</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>selector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app</span>: <span style=color:#ae81ff>postgres-prod</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>ports</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>protocol</span>: <span style=color:#ae81ff>TCP</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>port</span>: <span style=color:#ae81ff>5432</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>targetPort</span>: <span style=color:#ae81ff>tcp-5432</span>
+</span></span></code></pre></div><h3 id=完成-postgresql-部署>完成 PostgreSQL 部署</h3><p>测试略</p><h2 id=部署-wikijs>部署 wiki.js</h2><h3 id=准备用户名密码配置-1>准备用户名密码配置</h3><p>我们使用 Secret 保存 wiki.js 用于连接数据库的用户名密码等敏感信息。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Secret</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>wikijs</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>data</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>DB_USER</span>: <span style=color:#ae81ff>d2lraWpz</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>DB_PASS</span>: <span style=color:#ae81ff>xxxx</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>type</span>: <span style=color:#ae81ff>Opaque</span>
+</span></span></code></pre></div><p>以上 DB_PASS 自行准备，为 base64 编码的数据。</p><h3 id=准备数据库连接配置>准备数据库连接配置</h3><p>我们使用 ConfigMap 保存 wiki.js 的数据库连接信息。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ConfigMap</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>wikijs</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>data</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>DB_TYPE</span>: <span style=color:#ae81ff>postgres</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>DB_HOST</span>: <span style=color:#ae81ff>postgres-prod.infra</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>DB_PORT</span>: <span style=color:#e6db74>&#34;5432&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>DB_NAME</span>: <span style=color:#ae81ff>wikijs</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>HA_ACTIVE</span>: <span style=color:#e6db74>&#34;true&#34;</span>
+</span></span></code></pre></div><h3 id=创建数据库用户和数据库>创建数据库用户和数据库</h3><p>如果 PostgreSQL 数据库里没有创建 wikijs 用户和数据 ，需要手工完成一下工作：</p><p>通过『数据库工具』连接 PostgreSQL 数据库，执行一下 SQL 语句，完成数据库和用户的创建、授权。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#ae81ff>CREATE DATABASE wikijs;</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>CREATE USER wikijs with password &#39;xxxx&#39;;</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>GRANT CONNECT ON DATABASE wikijs to wikijs;</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>GRANT USAGE ON SCHEMA public TO wikijs;</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>GRANT SELECT,update,INSERT,delete ON ALL TABLES IN SCHEMA public TO wikijs;</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO wikijs;</span>
+</span></span></code></pre></div><p>以上 wikijs 的密码自行修改。</p><h3 id=准备-wikijs-的-yaml-部署文件>准备 wiki.js 的 yaml 部署文件</h3><p>采用 Deployment 方式 部署 wiki.js 的 yaml 文件如下：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#75715e># wikijs-deploy.yaml</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>apps/v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Deployment</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app</span>: <span style=color:#ae81ff>wikijs</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>wikijs</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>selector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>app</span>: <span style=color:#ae81ff>wikijs</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>template</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>app</span>: <span style=color:#ae81ff>wikijs</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>containers</span>:
+</span></span><span style=display:flex><span>        - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>wikijs</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>image</span>: <span style=color:#e6db74>&#39;requarks/wiki:2&#39;</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>ports</span>:
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>http-3000</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>protocol</span>: <span style=color:#ae81ff>TCP</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>containerPort</span>: <span style=color:#ae81ff>3000</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>envFrom</span>:
+</span></span><span style=display:flex><span>          - <span style=color:#f92672>secretRef</span>:
+</span></span><span style=display:flex><span>              <span style=color:#f92672>name</span>: <span style=color:#ae81ff>wikijs</span>
+</span></span><span style=display:flex><span>          - <span style=color:#f92672>configMapRef</span>:
+</span></span><span style=display:flex><span>              <span style=color:#f92672>name</span>: <span style=color:#ae81ff>wikijs</span>
+</span></span></code></pre></div><h3 id=创建集群内访问-wikijs-的-service>创建集群内访问 wiki.js 的 Service</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#75715e># wikijs-svc.yaml</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Service</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>wikijs</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>selector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app</span>: <span style=color:#ae81ff>wikijs</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>ports</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>protocol</span>: <span style=color:#ae81ff>TCP</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>port</span>: <span style=color:#ae81ff>3000</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>targetPort</span>: <span style=color:#ae81ff>http-3000</span>
+</span></span></code></pre></div><h3 id=创建集群外访问的-ingress>创建集群外访问的 Ingress</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#75715e># wikijs-ing.yaml</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Ingress</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>networking.k8s.io/v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>wikijs</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>ingressClassName</span>: <span style=color:#ae81ff>nginx</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>rules</span>:
+</span></span><span style=display:flex><span>    - <span style=color:#f92672>host</span>: <span style=color:#ae81ff>wiki.xxxx.cn</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>http</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>paths</span>:
+</span></span><span style=display:flex><span>          - <span style=color:#f92672>path</span>: <span style=color:#ae81ff>/</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>pathType</span>: <span style=color:#ae81ff>ImplementationSpecific</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>backend</span>:
+</span></span><span style=display:flex><span>              <span style=color:#f92672>service</span>:
+</span></span><span style=display:flex><span>                <span style=color:#f92672>name</span>: <span style=color:#ae81ff>wikijs</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>port</span>:
+</span></span><span style=display:flex><span>                  <span style=color:#f92672>number</span>: <span style=color:#ae81ff>3000</span>
+</span></span></code></pre></div><p>以上 host 域名需要自行配置。</p><h3 id=执行部署>执行部署</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ kubectl apply -f wikijs-deploy.yaml
+</span></span><span style=display:flex><span>$ kubectl apply -f wikijs-svc.yaml
+</span></span><span style=display:flex><span>$ kubectl apply -f wikijs-ing.yaml
+</span></span></code></pre></div><h2 id=配置-wikijs-支持中文全文检索>配置 wiki.js 支持中文全文检索</h2><p>wiki.js 的全文检索支持基于 PostgreSQL 的检索，也支持 Elasticsearch 等，相对来说, PostgreSQL 比较轻量级，本项目中，我们使用 PostgreSQL 的全文检索。</p><p>但是，因为 PostgreSQL 不支持中文分词，需要额外安装插件并配置启用中文分词，下面描述了为 wiki.js 启动基于 PostgreSQL 数据库中文分词的全文检索。</p><h3 id=授予-wikijs-用户临时超管权限>授予 wikijs 用户临时超管权限</h3><p>通过数据库管理工具登录有超管权限的 PostgreSQL 用户，临时授予 wiki.js 用户临时超管权限，便于启动中文分词功能。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>ALTER</span> <span style=color:#66d9ef>USER</span> wikijs <span style=color:#66d9ef>WITH</span> SUPERUSER;
+</span></span></code></pre></div><h3 id=启用数据库的中文分词能力>启用数据库的中文分词能力</h3><p>使用数据库管理工具登录 PostgreSQL 数据库的 wikijs 用户，执行以下命令，启动数据库的中文分词功能。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>CREATE</span> EXTENSION pg_trgm;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>CREATE</span> EXTENSION zhparser;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>CREATE</span> TEXT <span style=color:#66d9ef>SEARCH</span> CONFIGURATION pg_catalog.chinese_zh (PARSER <span style=color:#f92672>=</span> zhparser);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>ALTER</span> TEXT <span style=color:#66d9ef>SEARCH</span> CONFIGURATION chinese_zh <span style=color:#66d9ef>ADD</span> MAPPING <span style=color:#66d9ef>FOR</span> n,v,a,i,e,l <span style=color:#66d9ef>WITH</span> <span style=color:#66d9ef>simple</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>-- 忽略标点影响
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>ALTER</span> <span style=color:#66d9ef>ROLE</span> wikijs <span style=color:#66d9ef>SET</span> zhparser.punctuation_ignore <span style=color:#f92672>=</span> <span style=color:#66d9ef>ON</span>;
+</span></span><span style=display:flex><span><span style=color:#75715e>-- 短词复合
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>ALTER</span> <span style=color:#66d9ef>ROLE</span> wikijs <span style=color:#66d9ef>SET</span> zhparser.multi_short <span style=color:#f92672>=</span> <span style=color:#66d9ef>ON</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>-- 测试一下
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>select</span> ts_debug(<span style=color:#e6db74>&#39;chinese_zh&#39;</span>, <span style=color:#e6db74>&#39;青春是最美好的年岁，青春是最灿烂的日子。每一个人的青春都无比宝贵，宝贵的青春只有与奋斗为伴才最闪光、最出彩。&#39;</span>);
+</span></span></code></pre></div><h3 id=取消-wikijs-用户的临时超管权限>取消 wikijs 用户的临时超管权限</h3><p>登录 PostgreSQL 数据库 wikijs 用户，取消 wikijs 用户的超管权限。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>ALTER</span> <span style=color:#66d9ef>USER</span> wikijs <span style=color:#66d9ef>WITH</span> NOSUPERUSER;
+</span></span></code></pre></div><h3 id=创建支持中文分词的配置-configmap>创建支持中文分词的配置 ConfigMap</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#75715e># zh-parse.yaml</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>ConfigMap</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>wikijs-zhparser</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>data</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>definition.yml</span>: |-<span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    key: postgres
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    title: Database - PostgreSQL
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    description: Advanced PostgreSQL-based search engine.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    author: requarks.io
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    logo: https://static.requarks.io/logo/postgresql.svg
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    website: https://www.requarks.io/
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    isAvailable: true
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    props:
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      dictLanguage:
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        type: String
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        title: Dictionary Language
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        hint: Language to use when creating and querying text search vectors.
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        default: english
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        enum:
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          - simple
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          - danish
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          - dutch
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          - english
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          - finnish
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          - french
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          - german
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          - hungarian
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          - italian
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          - norwegian
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          - portuguese
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          - romanian
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          - russian
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          - spanish
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          - swedish
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          - turkish
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          - chinese_zh
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        order: 1</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>engine.js</span>: |-<span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    const tsquery = require(&#39;pg-tsquery&#39;)()
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    const stream = require(&#39;stream&#39;)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    const Promise = require(&#39;bluebird&#39;)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    const pipeline = Promise.promisify(stream.pipeline)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    /* global WIKI */
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    module.exports = {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      async activate() {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        if (WIKI.config.db.type !== &#39;postgres&#39;) {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          throw new WIKI.Error.SearchActivationFailed(&#39;Must use PostgreSQL database to activate this engine!&#39;)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      },
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      async deactivate() {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        WIKI.logger.info(`(SEARCH/POSTGRES) Dropping index tables...`)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        await WIKI.models.knex.schema.dropTable(&#39;pagesWords&#39;)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        await WIKI.models.knex.schema.dropTable(&#39;pagesVector&#39;)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        WIKI.logger.info(`(SEARCH/POSTGRES) Index tables have been dropped.`)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      },
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      /**
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       * INIT
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       */
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      async init() {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        WIKI.logger.info(`(SEARCH/POSTGRES) Initializing...`)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        // -&gt; Create Search Index
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        const indexExists = await WIKI.models.knex.schema.hasTable(&#39;pagesVector&#39;)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        if (!indexExists) {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          WIKI.logger.info(`(SEARCH/POSTGRES) Creating Pages Vector table...`)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          await WIKI.models.knex.schema.createTable(&#39;pagesVector&#39;, table =&gt; {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            table.increments()
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            table.string(&#39;path&#39;)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            table.string(&#39;locale&#39;)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            table.string(&#39;title&#39;)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            table.string(&#39;description&#39;)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            table.specificType(&#39;tokens&#39;, &#39;TSVECTOR&#39;)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            table.text(&#39;content&#39;)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          })
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        // -&gt; Create Words Index
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        const wordsExists = await WIKI.models.knex.schema.hasTable(&#39;pagesWords&#39;)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        if (!wordsExists) {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          WIKI.logger.info(`(SEARCH/POSTGRES) Creating Words Suggestion Index...`)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          await WIKI.models.knex.raw(`
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            CREATE TABLE &#34;pagesWords&#34; AS SELECT word FROM ts_stat(
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>              &#39;SELECT to_tsvector(&#39;&#39;simple&#39;&#39;, &#34;title&#34;) || to_tsvector(&#39;&#39;simple&#39;&#39;, &#34;description&#34;) || to_tsvector(&#39;&#39;simple&#39;&#39;, &#34;content&#34;) FROM &#34;pagesVector&#34;&#39;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            )`)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          await WIKI.models.knex.raw(&#39;CREATE EXTENSION IF NOT EXISTS pg_trgm&#39;)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          await WIKI.models.knex.raw(`CREATE INDEX &#34;pageWords_idx&#34; ON &#34;pagesWords&#34; USING GIN (word gin_trgm_ops)`)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        WIKI.logger.info(`(SEARCH/POSTGRES) Initialization completed.`)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      },
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      /**
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       * QUERY
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       *
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       * @param {String} q Query
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       * @param {Object} opts Additional options
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       */
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      async query(q, opts) {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        try {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          let suggestions = []
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          let qry = `
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            SELECT id, path, locale, title, description
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            FROM &#34;pagesVector&#34;, to_tsquery(?,?) query
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            WHERE (query @@ &#34;tokens&#34; OR path ILIKE ?)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          `
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          let qryEnd = `ORDER BY ts_rank(tokens, query) DESC`
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          let qryParams = [this.config.dictLanguage, tsquery(q), `%${q.toLowerCase()}%`]
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          if (opts.locale) {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            qry = `${qry} AND locale = ?`
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            qryParams.push(opts.locale)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          if (opts.path) {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            qry = `${qry} AND path ILIKE ?`
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            qryParams.push(`%${opts.path}`)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          const results = await WIKI.models.knex.raw(`
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            ${qry}
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            ${qryEnd}
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          `, qryParams)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          if (results.rows.length &lt; 5) {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            const suggestResults = await WIKI.models.knex.raw(`SELECT word, word &lt;-&gt; ? AS rank FROM &#34;pagesWords&#34; WHERE similarity(word, ?) &gt; 0.2 ORDER BY rank LIMIT 5;`, [q, q])
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            suggestions = suggestResults.rows.map(r =&gt; r.word)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          return {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            results: results.rows,
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            suggestions,
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            totalHits: results.rows.length
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        } catch (err) {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          WIKI.logger.warn(&#39;Search Engine Error:&#39;)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          WIKI.logger.warn(err)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      },
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      /**
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       * CREATE
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       *
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       * @param {Object} page Page to create
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       */
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      async created(page) {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        await WIKI.models.knex.raw(`
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          INSERT INTO &#34;pagesVector&#34; (path, locale, title, description, &#34;tokens&#34;) VALUES (
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            ?, ?, ?, ?, (setweight(to_tsvector(&#39;${this.config.dictLanguage}&#39;, ?), &#39;A&#39;) || setweight(to_tsvector(&#39;${this.config.dictLanguage}&#39;, ?), &#39;B&#39;) || setweight(to_tsvector(&#39;${this.config.dictLanguage}&#39;, ?), &#39;C&#39;))
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          )
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        `, [page.path, page.localeCode, page.title, page.description, page.title, page.description, page.safeContent])
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      },
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      /**
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       * UPDATE
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       *
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       * @param {Object} page Page to update
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       */
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      async updated(page) {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        await WIKI.models.knex.raw(`
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          UPDATE &#34;pagesVector&#34; SET
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            title = ?,
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            description = ?,
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            tokens = (setweight(to_tsvector(&#39;${this.config.dictLanguage}&#39;, ?), &#39;A&#39;) ||
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            setweight(to_tsvector(&#39;${this.config.dictLanguage}&#39;, ?), &#39;B&#39;) ||
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            setweight(to_tsvector(&#39;${this.config.dictLanguage}&#39;, ?), &#39;C&#39;))
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          WHERE path = ? AND locale = ?
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        `, [page.title, page.description, page.title, page.description, page.safeContent, page.path, page.localeCode])
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      },
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      /**
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       * DELETE
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       *
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       * @param {Object} page Page to delete
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       */
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      async deleted(page) {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        await WIKI.models.knex(&#39;pagesVector&#39;).where({
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          locale: page.localeCode,
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          path: page.path
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        }).del().limit(1)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      },
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      /**
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       * RENAME
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       *
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       * @param {Object} page Page to rename
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       */
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      async renamed(page) {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        await WIKI.models.knex(&#39;pagesVector&#39;).where({
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          locale: page.localeCode,
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          path: page.path
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        }).update({
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          locale: page.destinationLocaleCode,
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          path: page.destinationPath
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        })
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      },
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      /**
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       * REBUILD INDEX
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>       */
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      async rebuild() {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        WIKI.logger.info(`(SEARCH/POSTGRES) Rebuilding Index...`)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        await WIKI.models.knex(&#39;pagesVector&#39;).truncate()
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        await WIKI.models.knex(&#39;pagesWords&#39;).truncate()
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        await pipeline(
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          WIKI.models.knex.column(&#39;path&#39;, &#39;localeCode&#39;, &#39;title&#39;, &#39;description&#39;, &#39;render&#39;).select().from(&#39;pages&#39;).where({
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            isPublished: true,
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            isPrivate: false
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          }).stream(),
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          new stream.Transform({
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            objectMode: true,
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            transform: async (page, enc, cb) =&gt; {
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>              const content = WIKI.models.pages.cleanHTML(page.render)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>              await WIKI.models.knex.raw(`
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                INSERT INTO &#34;pagesVector&#34; (path, locale, title, description, &#34;tokens&#34;, content) VALUES (
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                  ?, ?, ?, ?, (setweight(to_tsvector(&#39;${this.config.dictLanguage}&#39;, ?), &#39;A&#39;) || setweight(to_tsvector(&#39;${this.config.dictLanguage}&#39;, ?), &#39;B&#39;) || setweight(to_tsvector(&#39;${this.config.dictLanguage}&#39;, ?), &#39;C&#39;)), ?
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>                )
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>              `, [page.path, page.localeCode, page.title, page.description, page.title, page.description, content,content])
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>              cb()
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          })
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        )
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        await WIKI.models.knex.raw(`
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          INSERT INTO &#34;pagesWords&#34; (word)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            SELECT word FROM ts_stat(
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>              &#39;SELECT to_tsvector(&#39;&#39;simple&#39;&#39;, &#34;title&#34;) || to_tsvector(&#39;&#39;simple&#39;&#39;, &#34;description&#34;) || to_tsvector(&#39;&#39;simple&#39;&#39;, &#34;content&#34;) FROM &#34;pagesVector&#34;&#39;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            )
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>          `)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        WIKI.logger.info(`(SEARCH/POSTGRES) Index rebuilt successfully.`)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>      }
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    }</span>
+</span></span></code></pre></div><h3 id=更新-wikijs-的-deployment>更新 wikijs 的 Deployment</h3><p>wiki.js 的基于 PostgreSQL 的全文检索引擎配置位于 /wiki/server/modules/search/postgres ，我们将前面配置的 ConfigMap 加载到这个目录。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#75715e># wikijs-zh.yaml</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>kind</span>: <span style=color:#ae81ff>Deployment</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>apiVersion</span>: <span style=color:#ae81ff>apps/v1</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>name</span>: <span style=color:#ae81ff>wikijs</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>app</span>: <span style=color:#ae81ff>wikijs</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>replicas</span>: <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>selector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>matchLabels</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>app</span>: <span style=color:#ae81ff>wikijs</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>template</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>labels</span>:
+</span></span><span style=display:flex><span>        <span style=color:#f92672>app</span>: <span style=color:#ae81ff>wikijs</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>spec</span>:
+</span></span><span style=display:flex><span>      <span style=color:#f92672>volumes</span>:
+</span></span><span style=display:flex><span>        - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>volume-dysh4f</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>configMap</span>:
+</span></span><span style=display:flex><span>            <span style=color:#f92672>name</span>: <span style=color:#ae81ff>wikijs-zhparser</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>defaultMode</span>: <span style=color:#ae81ff>420</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>containers</span>:
+</span></span><span style=display:flex><span>        - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>wikijs</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>image</span>: <span style=color:#e6db74>&#39;requarks/wiki:2&#39;</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>ports</span>:
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>http-3000</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>containerPort</span>: <span style=color:#ae81ff>3000</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>protocol</span>: <span style=color:#ae81ff>TCP</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>envFrom</span>:
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>secretRef</span>:
+</span></span><span style=display:flex><span>                <span style=color:#f92672>name</span>: <span style=color:#ae81ff>wikijs</span>
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>configMapRef</span>:
+</span></span><span style=display:flex><span>                <span style=color:#f92672>name</span>: <span style=color:#ae81ff>wikijs</span>
+</span></span><span style=display:flex><span>          <span style=color:#f92672>volumeMounts</span>:
+</span></span><span style=display:flex><span>            - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>volume-dysh4f</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>readOnly</span>: <span style=color:#66d9ef>true</span>
+</span></span><span style=display:flex><span>              <span style=color:#f92672>mountPath</span>: <span style=color:#ae81ff>/wiki/server/modules/search/postgres</span>
+</span></span></code></pre></div><h3 id=配置-wikijs-启用基于-postgresql-的全文检索>配置 wiki.js ，启用基于 PostgreSQL 的全文检索</h3><ol><li>重新 apply 新的 Delployment 文件后</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ kubectl apply -f zh-parse.yaml
+</span></span><span style=display:flex><span>$ kubectl apply -f wikijs-zh.yaml
+</span></span></code></pre></div><ol start=2><li>打开 wiki.js 管理</li><li>点击搜索引擎</li><li>选择 Database - PostgreSQL</li><li>在 Dictionary Language 的下拉菜单里选择 chinese_zh。</li><li>点击应用，并重建索引。</li><li>完成配置。</li></ol><h2 id=总结>总结</h2><p>本文介绍的 wiki.js 部署方式支持中文全文检索的支持，集成了 PostgreSQL 和 zhparser 中文分词插件。</p><p>相对于标准的 wiki.js 安装部署过程，主要做了以下配置：</p><ol><li>PostgreSQL 镜像采用了 abcfy2/zhparser:12-alpine ，这个镜像自带 zhparser 中文分词插件。</li><li>wiki.js 镜像外挂了 ConfigMap ，用于修改原 Docker 镜像里关于 PostgreSQL 搜索引擎配置的信息，以支持 chinese_zh 选项。</li></ol></div></div><div class=share-2><div class=share><a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fkubesphere-wiki%2f&text=%e5%9c%a8%20KubeSphere%20%e9%83%a8%e7%bd%b2%20Wiki%20%e7%b3%bb%e7%bb%9f%20wiki.js%20%e5%b9%b6%e5%90%af%e7%94%a8%e4%b8%ad%e6%96%87%e5%85%a8%e6%96%87%e6%a3%80%e7%b4%a2" target=_blank rel="noopener noreferrer"><img src=/images/share/Twitter.svg alt="twitter icon">
+</a><a href="https://reddit.com/submit?url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fkubesphere-wiki%2f&title=%e5%9c%a8%20KubeSphere%20%e9%83%a8%e7%bd%b2%20Wiki%20%e7%b3%bb%e7%bb%9f%20wiki.js%20%e5%b9%b6%e5%90%af%e7%94%a8%e4%b8%ad%e6%96%87%e5%85%a8%e6%96%87%e6%a3%80%e7%b4%a2" target=_blank rel="noopener noreferrer"><img src=/images/share/Reddit.svg alt="reddit icon">
+</a><a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fkubesphere-wiki%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Facebook.svg alt="facebook icon">
+</a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fkubesphere-wiki%2f" target=_blank rel="noopener noreferrer"><img src=/images/share/Linkedin.svg alt="linkedin icon">
+</a><a href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fopenksc.github.io%2fzh%2fblogs%2fkubesphere-wiki%2f&t=%e5%9c%a8%20KubeSphere%20%e9%83%a8%e7%bd%b2%20Wiki%20%e7%b3%bb%e7%bb%9f%20wiki.js%20%e5%b9%b6%e5%90%af%e7%94%a8%e4%b8%ad%e6%96%87%e5%85%a8%e6%96%87%e6%a3%80%e7%b4%a2" target=_blank rel="noopener noreferrer"><img src=/images/share/HackerNews.svg alt="hackernews icon"></a></div></div></div><div class=aside><div class=inner-div><div class=title>目录</div><div class=tabs><nav id=TableOfContents><ul><li><a href=#背景>背景</a></li><li><a href=#准备-storageclass>准备 storageclass</a></li><li><a href=#部署-postgresql-数据库>部署 PostgreSQL 数据库</a><ul><li><a href=#准备用户名密码配置>准备用户名密码配置</a></li><li><a href=#准备数据库初始化脚本>准备数据库初始化脚本</a></li><li><a href=#准备存储>准备存储</a></li><li><a href=#部署-postgresql-数据库-1>部署 PostgreSQL 数据库</a></li><li><a href=#创建供其他-pod-访问的-service>创建供其他 Pod 访问的 Service</a></li><li><a href=#完成-postgresql-部署>完成 PostgreSQL 部署</a></li></ul></li><li><a href=#部署-wikijs>部署 wiki.js</a><ul><li><a href=#准备用户名密码配置-1>准备用户名密码配置</a></li><li><a href=#准备数据库连接配置>准备数据库连接配置</a></li><li><a href=#创建数据库用户和数据库>创建数据库用户和数据库</a></li><li><a href=#准备-wikijs-的-yaml-部署文件>准备 wiki.js 的 yaml 部署文件</a></li><li><a href=#创建集群内访问-wikijs-的-service>创建集群内访问 wiki.js 的 Service</a></li><li><a href=#创建集群外访问的-ingress>创建集群外访问的 Ingress</a></li><li><a href=#执行部署>执行部署</a></li></ul></li><li><a href=#配置-wikijs-支持中文全文检索>配置 wiki.js 支持中文全文检索</a><ul><li><a href=#授予-wikijs-用户临时超管权限>授予 wikijs 用户临时超管权限</a></li><li><a href=#启用数据库的中文分词能力>启用数据库的中文分词能力</a></li><li><a href=#取消-wikijs-用户的临时超管权限>取消 wikijs 用户的临时超管权限</a></li><li><a href=#创建支持中文分词的配置-configmap>创建支持中文分词的配置 ConfigMap</a></li><li><a href=#更新-wikijs-的-deployment>更新 wikijs 的 Deployment</a></li><li><a href=#配置-wikijs-启用基于-postgresql-的全文检索>配置 wiki.js ，启用基于 PostgreSQL 的全文检索</a></li></ul></li><li><a href=#总结>总结</a></li></ul></nav></div></div></div></div></section><div class=SubscribeForm><div class=innerBox><img class=close src=/images/home/close.svg alt=close><p class=description>通过邮件接收 KubeSphere 最新的技术博客与产品更新的通知</p><div id=blog_formAddress data-actionaddress="https://www.sendcloud.net/v3/api/subInvite/subscription?invitecode=1dc5a4fb-894c-4470-b01d-ca7fa9d47a46" data-usesendcloud=true data-lang=zh><input name=EMAIL id=email-input-blog type=text placeholder>
+<button id=email-submit-blog>订阅</button>
+<span id=message_blog data-message1=请提供您的邮箱 data-message2=请输入有效的邮箱地址! data-message3=邮箱地址已经存在 style=color:red></span><span id=message1_blog style=color:#00a971 data-success=订阅成功啦，我们保证不会给你发垃圾邮件的啦></span></div></div></div><footer><div class=footer><div class="footer-main common-layout"><div class=up-main><div class=left-div><img src=/images/logo.svg alt class=foot-logo><p>通过邮件接收 KubeSphere 最新的技术博客与产品更新的通知</p><div id=formAddress data-actionaddress="https://www.sendcloud.net/v3/api/subInvite/subscription?invitecode=1dc5a4fb-894c-4470-b01d-ca7fa9d47a46" data-usesendcloud=true data-lang=zh><input name=EMAIL id=email-input type=text placeholder=请输入您的邮箱地址>
+<button id=email-submit>订阅</button></div><span id=message data-message1=请提供您的邮箱 data-message2=请输入有效的邮箱地址! data-message3=邮箱地址已经存在></span><span id=message1 style=color:#00a971 data-success=订阅成功啦，我们保证不会给你发垃圾邮件的啦></span><script>var bindSubmit=function(){var e=$("#email-input");$("#email-submit").click(function(t){t.stopPropagation();var s,o,n=e.val(),i=$("#message").data("message1"),a=$("#message").data("message2"),r=$("#message").data("message3"),c=$("#message1").data("success");if(n)if(validateEmail(n)){if(s=$("#formAddress").data("usesendcloud"),!s)return;o=$("#formAddress").data("actionaddress"),$.post({type:"post",url:o,data:{email:$("#email-input").val().toString()},success:function(){showSuccessMessage(c),setTimeout(function(){$("#email-input").val("")},1e3)},error:function(){showMessage(r)}})}else t.preventDefault(),showMessage(a);else t.preventDefault(),showMessage(i)})},validateEmail=function(e){var t=/^[A-Za-z0-9]+([_.][A-Za-z0-9]+)*@([A-Za-z0-9-]+\.)+[A-Za-z]{2,6}$/;return t.test(e)},showMessage=function(e){$("#message").html(e).show()},showSuccessMessage=function(e){$("#message1").html(e).show()},bindHideMessage=function(){$(window).click(function(){$("#message").hide(),$("#message1").hide()})},bindClose=function(){$(".formBox .close").click(function(e){e.stopPropagation(),$(".formBox").fadeOut()})};bindSubmit(),bindClose(),bindHideMessage()</script><span id=message data-message1=请提供您的邮箱 data-message2=请输入有效的邮箱地址!></span></div><div class=right-div><ul class=common-flex-layout><li class=nowrap-li><div class=h3>应用场景</div><a href=/zh/devops/>拥抱一站式 DevOps</a>
+<a href=/zh/service-mesh/>在 K8s 运行微服务</a>
+<a href=/zh/observability/>构建云原生可观测性</a>
+<a href=https://github.com/kubesphere/kubekey target=_blank rel="noopener noreferrer">K8s 一键部署与运维</a>
+<a href=https://github.com/OpenFunction/OpenFunction target=_blank rel="noopener noreferrer">构建 FaaS 平台与 Serverless 架构</a>
+<a href=https://github.com/openpitrix/openpitrix target=_blank rel="noopener noreferrer">多云应用管理平台</a></li><li class=nowrap-li><div class=h3>资源</div><a href=/zh/projects/>开源项目</a>
+<a href=/zh/blogs/>技术博客</a>
+<a href=/zh/conferences/>开源峰会</a>
+<a href=/zh/videos/>视频资源</a>
+<a href=/zh/learn/>云原生实战</a></li><li class=nowrap-li><div class=h3>文档中心</div><a href=/zh/docs/v4.1/01-intro/01-introduction/>产品介绍</a>
+<a href=/zh/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere/>如何安装</a>
+<a href=/zh/docs/v4.1/02-quickstart/>快速入门</a>
+<a href=/zh/docs/v3.4/reference/api-docs/>API 文档</a></li><li class=nowrap-li><div class=h3>开源社区</div><a href=/zh/contribution/>参与贡献</a>
+<a href=/zh/live/>社区活动</a>
+<a href=/zh/case/>案例学习</a>
+<a href=/zh/partner/>合作伙伴</a>
+<a href=/zh/user-group/>用户委员会</a>
+<a href=https://github.com/kubesphere/kubesphere/blob/master/docs/roadmap.md target=_blank rel="noopener noreferrer">版本计划</a>
+<a href=https://kubesphere.com.cn/ target=_blank rel="noopener noreferrer">中国站</a>
+<a href=https://ask.kubesphere.io/forum target=_blank rel="noopener noreferrer">中文论坛</a>
+<a href=https://kubesphere.io target=_blank rel="noopener noreferrer">全球站</a></li><li class=nowrap-li><div class=h3>产品与服务</div><a href=https://aws.amazon.com/cn/quickstart/architecture/qingcloud-kubesphere/ target=_blank rel="noopener noreferrer">KubeSphere on AWS</a>
+<a href=https://market.azure.cn/marketplace/apps/qingcloud.kubesphere target=_blank rel="noopener noreferrer">KubeSphere on Azure</a>
+<a href=https://marketplace.digitalocean.com/apps/kubesphere target=_blank rel="noopener noreferrer">KubeSphere on DigitalOcean</a>
+<a href=https://www.qingcloud.com/products/kubesphereqke target=_blank rel="noopener noreferrer">KubeSphere on QingCloud(QKE)</a>
+<a href=https://kubesphere.com.cn/kse/ target=_blank rel="noopener noreferrer">KubeSphere 企业版</a>
+<a href=https://kubesphere.cloud/ksv/ target=_blank rel="noopener noreferrer">KubeSphere 虚拟化平台</a>
+<a href=https://kubesphere.com.cn/marketplace/ target=_blank rel="noopener noreferrer">云原生扩展组件市场</a>
+<a href=https://kubesphere.cloud target=_blank rel="noopener noreferrer">云原生应用服务平台</a>
+<a href=https://m.qingcloud.com/p/aec50 target=_blank rel="noopener noreferrer">了解商业产品与咨询合作</a></li></ul></div></div><div class=down-main><div class=img-div><a class=wechat href=javascript:void(0); aria-label=wechat><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28"><defs><path id="a" d="M0 0h15.673v12.156H0z"/></defs><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="13" cy="13" r="13" stroke="#B6C2CD"/><g transform="translate(5 7)"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="currentColor" d="M15.673 7.898c0-2.061-2.173-3.74-4.619-3.74-2.59.0-4.625 1.679-4.625 3.74.0 2.066 2.035 3.738 4.625 3.738.542.0 1.09-.13 1.632-.256l1.493.776-.408-1.29c1.09-.776 1.902-1.81 1.902-2.968zm-6.119-.645c-.27.0-.541-.257-.541-.514.0-.256.27-.514.541-.514.41.0.681.258.681.514.0.257-.271.514-.681.514zm2.994.0c-.27.0-.541-.257-.541-.514.0-.256.27-.514.54-.514.41.0.681.258.681.514.0.257-.277.514-.68.514z" mask="url(#b)"/><path fill="currentColor" d="M10.602 3.674c.177.0.356.011.533.029C10.657 1.576 8.27.0 5.543.0 2.498.0.0 1.974.0 4.485c0 1.45.829 2.64 2.216 3.564l-.552 1.588 1.94-.929c.693.129 1.251.263 1.94.263.17.0.343-.005.515-.022a3.68 3.68.0 01-.172-1.104c0-2.302 2.081-4.171 4.715-4.171zM7.618 2.243c.417.0.693.263.693.66s-.276.66-.693.66c-.418.0-.835-.263-.835-.66.006-.398.423-.66.835-.66zm-3.88 1.319c-.417.0-.834-.263-.834-.66s.417-.66.834-.66c.418.0.695.263.695.66.0.392-.277.66-.695.66z" mask="url(#b)"/></g></g></svg><div class=hide-div><img src=/images/home/wechat.svg alt></div></a><a class=facebook-a href=https://www.facebook.com/kubesphere target=_blank aria-label=facebook></a><a class=twitter-a href=https://x.com/KubeSphere target=_blank aria-label=twitter rel="noopener noreferrer"></a><a class=linkedin-a href=https://www.linkedin.com/company/kubesphere/ target=_blank aria-label=linkedin rel="noopener noreferrer"></a><a class=bilibili-a href=https://space.bilibili.com/438908638 target=_blank aria-label=bilibili rel="noopener noreferrer"></a><a class=slack-a href=https://join.slack.com/t/kubesphere/shared_invite/zt-2b4t6rdb4-ico_4UJzCln_S2c1pcrIpQ target=_blank aria-label=slack rel="noopener noreferrer"></a><a class=github-a href=https://github.com/kubesphere/kubesphere target=_blank aria-label=github rel="noopener noreferrer"></a><a class=medium-a href=https://itnext.io/@kubesphere target=_blank aria-label=medium rel="noopener noreferrer"></a></div><p class=p1></p><p class=case><a href=http://www.beian.miit.gov.cn/ target=_blank rel="noopener noreferrer"><span>京ICP备13019086号</span>
+</a><a target=_blank rel="noopener noreferrer" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502041003"><img src=/images/footer/case-icon.png alt=备案图标>
+<span>京公网安备 11010502041003号</span></a></p></div></div></div><div class=cookie><div class=common-layout><p>您的隐私对我们很重要。我们使用Cookie来记住订阅详细信息，优化网站功能并交付根据您的兴趣量身定制的内容。要了解更多信息，请参阅我们的<a href=/zh/privacy>隐私政策</a>.</p><button>
+接受并继续</button></div></div></footer><script>var lazyLoad=function(e,t){for(var n,o,i,s=0;s<t;s++){if(n=e.eq(s),o=n.attr("data-loaded"),o)continue;n.offset().top<parseInt($(window).height())+parseInt($(window).scrollTop())&&(i=n.attr("src"),n.attr("src",i),n.attr("data-loaded",!0))}},bindLayLoad=function(){var e=$("img"),t=e.length;lazyLoad(e,t),$(window).scroll(function(){lazyLoad(e,t)})},bindAddPadding=function(){var e=$("#close-join");e.length>0&&$(".main-section").addClass("padding")},docCookies={getItem:function(e){return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*"+encodeURIComponent(e).replace(/[-.+*]/g,"\\$&")+"\\s*\\=\\s*([^;]*).*$)|^.*$"),"$1"))||null},setItem:function(e,t){return!!e&&!/^(?:expires|max-age|path|domain|secure)$/i.test(e)&&(document.cookie=encodeURIComponent(e)+"="+encodeURIComponent(t),!0)}},bindHideCookie=function(){var t=docCookies.getItem("hasAuth"),e=$(".cookie");t?e.hide():e.show(),e.find("button").on("click",function(){docCookies.setItem("hasAuth","1"),e.hide()})};bindAddPadding(),bindHideCookie()</script><script type=text/javascript src=/js/aside.2d6977c0f16aef4ed3e886dd66675ce74bd0efcd467c2b2bcdb30b92d5e7c7c0e5c6e0c9d8f09a883c22f58df9e6b0b6347fcdd3c9a920b7faba6d7f91a201c3.js integrity="sha512-LWl3wPFq707T6IbdZmdc50vQ781GfCsrzbMLktXnx8DlxuDJ2PCaiDwi9Y355rC2NH/N08mpILf6um1/kaIBww=="></script><script type=text/javascript src=/js/markdown-tab.17f9f46b021adebc7250ce1b07134a577b307e7a436daa4aaf388f218e8463966f53770b26a64817c06c168738a887672d47fb4c29615adfc446e11d09a344cf.js integrity="sha512-F/n0awIa3rxyUM4bBxNKV3swfnpDbapKrziPIY6EY5ZvU3cLJqZIF8BsFoc4qIdnLUf7TClhWt/ERuEdCaNEzw=="></script><script>let forbidForm=!1;var viewer=new Viewer(document.querySelector(".md-body"),{url:"src"}),blogBindSubmit=function(){var e=$("#email-input-blog");$("#email-submit-blog").click(function(t){t.stopPropagation();var s,o,n=e.val(),i=$("#message_blog").data("message1"),a=$("#message_blog").data("message2"),r=$("#message_blog").data("message3"),c=$("#message1_blog").data("success");if(n)if(validateEmail(n)){if(s=$("#blog_formAddress").data("usesendcloud"),!s)return;o=$("#blog_formAddress").data("actionaddress"),$.post({type:"post",url:o,data:{email:n.toString()},success:function(){showSuccessMessage_blog(c),setTimeout(function(){window.onscroll="",$(".SubscribeForm").hide(),$("#email-input-blog").val("")},5e3)},error:function(){showMessage_blog(r)}})}else t.preventDefault(),$("#message_blog").html(a).show();else t.preventDefault(),$("#message_blog").html(i).show()})},validateEmail=function(e){var t=/^[A-Za-z0-9]+([_.][A-Za-z0-9]+)*@([A-Za-z0-9-]+\.)+[A-Za-z]{2,6}$/;return t.test(e)},bindHideMessageBlog=function(){$(window).click(function(){$("#message_blog").hide()})},bindCloseBlog=function(){$(".SubscribeForm .close").click(function(e){e.stopPropagation(),$(".SubscribeForm").fadeOut(),window.onscroll=""})},showMessage_blog=function(e){$("#message_blog").html(e).show()},showSuccessMessage_blog=function(e){$("#message1_blog").html(e).show()};window.onscroll=()=>{var e=document.documentElement.scrollTop||document.body.scrollTop,t=document.documentElement.clientHeight||document.body.clientHeight,n=document.documentElement.scrollHeight||document.body.scrollHeight;forbidForm&&(window.onscroll=""),e+t>n-710?$(".SubscribeForm").hide():$(".SubscribeForm").show()},blogBindSubmit(),bindCloseBlog(),bindHideMessageBlog()</script><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script></body></html>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>产品简介 on</title><link>https://openksc.github.io/zh/docs/v4.1/01-intro/</link><description>Recent content in 产品简介 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/01-intro/index.xml" rel="self" type="application/rss+xml"/><item><title>KubeSphere LuBan</title><link>https://openksc.github.io/zh/docs/v4.1/01-intro/01-introduction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/01-intro/01-introduction/</guid><description>&lt;div class="paragraph">
+&lt;p>KubeSphere，是基于 Kubernetes 内核的分布式多租户商用云原生操作系统。在开源能力的基础上，在多云集群管理、微服务治理、应用管理等多个核心业务场景进行功能延伸。商用扩展中心实现高度模块化，满足不同场景业务需求。以强大的企业级云原生底座，完善的专家级解决方案和服务支持，赋能企业数字化转型和规模化运营。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>自 KubeSphere v4.0 起，引入扩展机制，推出了全新的 KubeSphere 架构：&lt;strong>KubeSphere LuBan&lt;/strong>，它构建在 &lt;a href="https://kubernetes.io/zh-cn/docs/concepts/extend-kubernetes/">Kubernetes&lt;/a> 之上，支持高度可配置和可扩展。KubeSphere LuBan，是一个分布式的云原生可扩展开放架构，为扩展组件提供一个可热插拔的微内核。自此，KubeSphere 所有功能组件及第三方组件都会基于 KubeSphere LuBan，以扩展组件的方式无缝融入到 KubeSphere 控制台中，并独立维护版本，真正实现即插即用的应用级云原生操作系统。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_为什么推出_kubesphere_luban">为什么推出 KubeSphere LuBan&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>自 2018 年以来，KubeSphere 混合多云容器管理平台已发布过十几个版本，其中包括三个重大版本。为了满足用户需求，KubeSphere 集成了众多企业级功能，如多租户管理，多集群管理，DevOps，GitOps，服务网格，微服务，可观测（包括监控、告警、日志、审计、事件、通知等），应用商店，边缘计算，网络与存储管理等。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>虽然 KubeSphere 的一站式容器解决方案极大地提升了用户的容器使用体验，但也带来了如下挑战：&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;strong>发版周期长&lt;/strong>&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>在发布新版本时，需要等待所有组件完成开发、测试并通过集成测试。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;strong>响应用户不及时&lt;/strong>&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>由于各组件无法单独迭代，KubeSphere 发布后，对社区和用户组件反馈处理需要等待 KubeSphere 发布新版本后才能一并交付给用户，导致响应不够及时。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;strong>代码耦合&lt;/strong>&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>尽管目前已能实现单独启用/禁用特定组件，但这些组件的前后端代码仍然耦合在一起，容易互相影响，架构上不够优雅。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;strong>系统资源占用过多&lt;/strong>&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>部分组件默认启用，对于没有相关需求的用户来说，可能会占用过多的系统资源。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_kubesphere_luban_优势">KubeSphere LuBan 优势&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>&lt;strong>插件式的核心框架&lt;/strong>&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>支持独立开发和部署组件以扩展系统的功能。组件可以根据需求进行添加、升级或移除，而不需要修改核心框架的代码。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;strong>全开放的基础 UI 组件库&lt;/strong>&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>组件对所有人开放，任何人都可以自由地访问、使用和扩展这些组件。用户根据自己的需求进行定制和扩展，以满足不同的设计和功能要求。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;strong>前后端热更新、热修复&lt;/strong>&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>开发者可以在系统运行时对前端和后端进行实时更新和修复，提高了开发和运维的效率，同时保证了应用程序的可用性和用户体验。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;strong>开放性扩展中心，生态共建&lt;/strong>&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>我们提供一个开放的平台，鼓励第三方开发者通过组件向系统添加新的功能或增强现有功能，在系统的框架内进行开发和集成，并将他们的组件与系统进行无缝连接，共同构建一个健康、繁荣的生态系统。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_kubesphere_luban_如何帮助到您">KubeSphere LuBan 如何帮助到您&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>KubeSphere LuBan 架构可以使以下人员受益：&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;strong>KubeSphere 用户&lt;/strong>&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>KubeSphere 用户可以自由选择启用哪些 KubeSphere 扩展组件。同时还能将自己的应用无缝融入到 KubeSphere 控制台。此外，随着 KubeSphere 扩展组件生态的丰富，用户可以在 KubeSphere 扩展市场中自由选择更丰富的产品和服务，最终实现容器管理平台的千人千面的效果。&lt;/p>
+&lt;/div></description></item><item><title>KubeSphere LuBan 架构</title><link>https://openksc.github.io/zh/docs/v4.1/01-intro/02-architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/01-intro/02-architecture/</guid><description>&lt;div class="paragraph">
+&lt;p>为了使 KubeSphere 灵活可扩展，我们设计了微内核 + 扩展组件的架构（代号 LuBan）。其中内核部分（KubeSphere Core）仅包含系统运行的必备基础功能，而将独立的业务模块分别封装在各个扩展组件（Extensions）中。用户可在系统运行时动态地安装、卸载、启用、禁用扩展组件。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_kubesphere_luban_架构">KubeSphere LuBan 架构&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>KubeSphere LuBan 架构设计如下图所示。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;span class="image">&lt;img src="https://openksc.github.io/images/ks-qkcp/zh/v4.0/4.0-architecture.png" alt="architecture" width="80%"/>&lt;/span>&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_什么是_kubesphere_扩展组件">什么是 KubeSphere 扩展组件？&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>KubeSphere 扩展组件是一个可以对 KubeSphere 功能进行扩展并借助 Helm 进行编排的，遵循 KubeSphere 扩展组件开发规范的 Helm Chart。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>作为云原生领域的开发者，您不必再花大量的时间去学习一个私有的应用编排方式。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>请前往 &lt;a href="https://kubesphere.com.cn/extensions/marketplace/">KubeSphere Marketplace&lt;/a> 查看、安装已发布的扩展组件。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_kubesphere_扩展组件可以做什么">KubeSphere 扩展组件可以做什么？&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>从前端 UI 到后端 API，KubeSphere 的几乎每个部分都可以通过扩展 API 进行定制和增强。KubeSphere 的许多核心功能也都是作为扩展构建的，并使用相同的扩展 API。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>以下是使用扩展 API 可以实现的一些示例：&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>在项目的侧边导航栏，注入新的菜单与功能页面，支持管理更多类型的资源。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在平台层级菜单中注入功能入口，对平台的管理能力进行增强。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>直接嵌入已有的第三方功能组件页面到 KubeSphere，对各分散的系统进行聚合。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>覆盖 KubeSphere 已有的页面路由，实现您独有的业务逻辑。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>对 KubeSphere 的 API 进行扩展。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>如果您想更全面地了解扩展 API，请参阅&lt;a href="https://dev-guide.kubesphere.io/extension-dev-guide/zh/feature-customization/">扩展能力&lt;/a>。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_如何构建扩展组件">如何构建扩展组件？&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>请参阅&lt;a href="https://dev-guide.kubesphere.io/extension-dev-guide/zh/best-practice/develop-example/">开发案例&lt;/a>章节来熟悉如何构建扩展组件。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>如果您在扩展组件的开发过程中有疑问，请尝试在 &lt;a href="https://github.com/kubesphere/kubesphere/issues/new/choose">GitHub Issue&lt;/a> 获得帮助。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_如何发布扩展组件">如何发布扩展组件？&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>请参阅&lt;a href="https://dev-guide.kubesphere.io/extension-dev-guide/zh/packaging-and-release/release/">发布扩展组件&lt;/a>，了解如何提交扩展组件到 KubeSphere Marketplace。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>应用场景</title><link>https://openksc.github.io/zh/docs/v4.1/01-intro/03-scenarios/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/01-intro/03-scenarios/</guid><description>&lt;div class="paragraph">
+&lt;p>KubeSphere 适用于以下场景。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_资源量化运营">资源量化运营&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>多部门资源管理往往会给运维带来巨大的资源管理压力，运维部门统计各业务线的资源利用率，评估各业务资源利用率的合理性，都需要巨大的工作时间成本。KubeSphere 提供多维度、多角度的资源量化统计方式，资源数据一目了然。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_多级权限管控">多级权限管控&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>公司各业务线如何高效协同一直是个亘古难题，基础设施运维、应用运维以及业务开发人员如何能通过平台紧密合作，实现权限隔离成为了组织架构的核心需求。KubeSphere 提供 “三权分立” 的用户权限体系，平台管理员、集群运维和应用运维三大权限视角合理分配，促进部门协作。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_智能弹性运维">智能弹性运维&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>基础资源过度浪费会给企业带来额外的运营成本，如何有效分析资源使用的合理性、在不同的场景下进行高效资源弹性管理也成为运维人员的难题。KubeSphere 提供业务资源的智能推荐方案，定时分析，一键应用，同时支持自定义指标弹性伸缩，赋能智能运维。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_云原生一栈式转型">云原生一栈式转型&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>不少企业转型云原生都会遇到技术选型难题，如何实现 DevOps 运维一体化，云原生微服务治理，云边协同，AI 人工智能以及云原生下的可观测性。各种技术方案的选型以及运维给各企业带来了极大的困扰。KubeSphere 集成业界最佳实践，提供高度图形化，一致性的使用体验，助力企业低成本走向云原生。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

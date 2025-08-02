@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Uninstall KubeSphere on</title><link>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/04-uninstall-kubesphere/</link><description>Recent content in Uninstall KubeSphere on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/04-uninstall-kubesphere/index.xml" rel="self" type="application/rss+xml"/><item><title>Uninstall KubeSphere Only</title><link>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/04-uninstall-kubesphere/01-uninstall-kubesphere-only/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/04-uninstall-kubesphere/01-uninstall-kubesphere-only/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to uninstall KubeSphere. The Kubernetes running in the current cluster will not be uninstalled.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Warning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Although Kubernetes will not be uninstalled, the uninstallation may still cause service interruption if the business running in the current cluster relies on the functionalities provided by KubeSphere.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The uninstallation is irreversible. Please proceed with caution.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>To avoid data loss, please back up all important data in advance.&lt;/p>
+&lt;/div></description></item><item><title>Uninstall Kubernetes and KubeSphere</title><link>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/04-uninstall-kubesphere/02-uninstall-kubernetes-and-kubesphere/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/04-uninstall-kubesphere/02-uninstall-kubernetes-and-kubesphere/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to uninstall Kubernetes and KubeSphere.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>The uninstallation method for Kubernetes described in this section only applies to Kubernetes installed using KubeKey. If your Kubernetes is not installed through KubeKey, please refer to the &lt;a href="https://kubernetes.io/zh/docs/reference/setup-tools/kubeadm/kubeadm-reset/">Kubernetes Documentation&lt;/a> for uninstallation instructions.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Warning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>The uninstallation will cause business interruption to the KubeSphere cluster and cannot be undone. Please proceed with caution.&lt;/p>
+&lt;/div></description></item></channel></rss>

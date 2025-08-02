@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>App Templates on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/</link><description>Recent content in App Templates on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/index.xml" rel="self" type="application/rss+xml"/><item><title>Create Application Templates</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/01-create-an-app-template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/01-create-an-app-template/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to create an application template.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a workspace and have the &lt;strong>Application/Application Version/Application Instance Create&lt;/strong> permission within the workspace. For more information, refer to &amp;#34;Workspace Members&amp;#34; and &amp;#34;Workspace Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere App Store Management&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Already have a Helm Chart package in .tar.gz or .tgz format, or an application’s yaml file. You can &lt;a href="https://kubesphere.io/files/application-templates/nginx-0.1.0.tgz">download the Nginx Helm Chart&lt;/a> for testing. For more information, see &lt;a href="https://helm.sh/docs/topics/charts/">Helm Documentation&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>View Application Template List</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/02-view-an-app-template-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/02-view-an-app-template-list/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to view the application template list.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a workspace and have the &lt;strong>Application/Application Version/Application Instance View&lt;/strong> permission within the workspace. For more information, refer to &amp;#34;Workspace Members&amp;#34; and &amp;#34;Workspace Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere App Store Management&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Application/Application Version/Application Instance View&lt;/strong> permission, and access your workspace.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>App Management &amp;gt; App Templates&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The application template list provides the following information:&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Name&lt;/p>
+&lt;/div></description></item><item><title>View Application Template Details</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/03-view-app-template-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/03-view-app-template-details/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to view the application template details.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a workspace and have the &lt;strong>Application/Application Version/Application Instance View&lt;/strong> permission within the workspace. For more information, refer to &amp;#34;Workspace Members&amp;#34; and &amp;#34;Workspace Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere App Store Management&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Application/Application Version/Application Instance View&lt;/strong> permission, and access your workspace.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>App Management &amp;gt; App Templates&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the name of an application template in the list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Attributes&lt;/strong> area on the left side of the details page, view the resource attributes of the application template.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>App ID&lt;/p>
+&lt;/div></description></item><item><title>Edit Application Template Information</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/04-edit-app-template-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/04-edit-app-template-information/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to edit application template information.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a workspace and have the &lt;strong>Application/Application Version/Application Instance Management&lt;/strong> permission within the workspace. For more information, refer to &amp;#34;Workspace Members&amp;#34; and &amp;#34;Workspace Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere App Store Management&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Application/Application Version/Application Instance Management&lt;/strong> permission, and access your workspace.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>App Management &amp;gt; App Templates&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the name of an application template in the list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Edit&lt;/strong> in the top-left corner of the details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Set the parameters for the application template in the &lt;strong>Edit Information&lt;/strong> dialog, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Alias&lt;/p>
+&lt;/div></description></item><item><title>Install Applications Using Application Templates</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/05-install-an-app-by-using-an-app-template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/05-install-an-app-by-using-an-app-template/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to install an application using an application template in a workspace.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a workspace and have the &lt;strong>Application/Application Version/Application Instance Management&lt;/strong> permission within the workspace. For more information, refer to &amp;#34;Workspace Members&amp;#34; and &amp;#34;Workspace Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere App Store Management&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Application/Application Version/Application Instance Management&lt;/strong> permission, and access your workspace.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>App Management &amp;gt; App Templates&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the name of an application template in the list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Versions&lt;/strong> tab on the right side of the details page, click the desired application version, then click &lt;strong>Deployment&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the pop-up &lt;strong>Location&lt;/strong> dialog, select the installation location for the application, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Basic Information&lt;/strong> tab, set the basic information for the application, then click &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Name&lt;/p>
+&lt;/div></description></item><item><title>Upload an Application Version</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/06-upload-an-app-version/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/06-upload-an-app-version/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to upload an application version after creating an application template.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a workspace and have the &lt;strong>Application/Application Version/Application Instance Management&lt;/strong> permission within the workspace. For more information, refer to &amp;#34;Workspace Members&amp;#34; and &amp;#34;Workspace Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere App Store Management&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Already have a Helm Chart package in .tar.gz or .tgz format. For more information, see &lt;a href="https://helm.sh/docs/topics/charts/">Helm Documentation&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Application/Application Version/Application Instance Management&lt;/strong> permission, and access your workspace.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>App Management &amp;gt; App Templates&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the name of an application template in the list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Versions&lt;/strong> tab on the right side of the details page, click &lt;strong>Upload Version&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the pop-up dialog, click &lt;strong>Upload Helm Chart&lt;/strong>, select the Helm Chart package in .tar.gz or .tgz format stored locally, then click &lt;strong>OK&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>The new version will be displayed in the &lt;strong>Versions&lt;/strong> tab of the details page after uploading.&lt;/p>
+&lt;/div></description></item><item><title>Delete Application Versions</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/08-delete-an-app-version/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/08-delete-an-app-version/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to delete an application version in an application template.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Warning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>The application version cannot be recovered after deletion, so please proceed with caution.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a workspace and have the &lt;strong>Application/Application Version/Application Instance Deletion&lt;/strong> permission within the workspace. For more information, refer to &amp;#34;Workspace Members&amp;#34; and &amp;#34;Workspace Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere App Store Management&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If the application version you want to delete has been listed in the App Store, you need to contact the App Store administrator to delist the application version.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Download the Helm Chart package</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/09-download-a-helm-chart-package/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/09-download-a-helm-chart-package/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to download the Helm Chart package of an application version.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a workspace and have the &lt;strong>Application/Application Version/Application Instance View&lt;/strong> permission within the workspace. For more information, refer to &amp;#34;Workspace Members&amp;#34; and &amp;#34;Workspace Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere App Store Management&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Application/Application Version/Application Instance View&lt;/strong> permission, and access your workspace.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>App Management &amp;gt; App Templates&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the name of an application template in the list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Versions&lt;/strong> tab on the right side of the details page, click the desired application version, then click &lt;strong>Download&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;div class="paragraph">
+&lt;p>The Helm Chart package of the application version will be downloaded to your local machine via the browser.&lt;/p>
+&lt;/div></description></item><item><title>Release an Application Version to App Store</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/10-release-an-app-version-to-the-app-store/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/10-release-an-app-version-to-the-app-store/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to release an application version to the App Store.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a workspace and have the &lt;strong>Application/Application Version/Application Instance Management&lt;/strong> permission within the workspace. For more information, refer to &amp;#34;Workspace Members&amp;#34; and &amp;#34;Workspace Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere App Store Management&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Application/Application Version/Application Instance Management&lt;/strong> permission, and access your workspace.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>App Management &amp;gt; App Templates&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the name of an application template in the list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Versions&lt;/strong> tab on the right side of the details page, click the application version you want to release, then click &lt;strong>Submit for Review&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>After the App Store administrator approves and lists it, click &lt;strong>App Store&lt;/strong> in the top-left corner of the page, and you can view the listed application version in the App Store.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>After approval, the status of the application version will change to &lt;strong>Published&lt;/strong>, indicating that it can be listed by the App Store administrator. After listing, all project members can install the application version into their projects from the App Store.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>For more information on application review and listing, see &lt;a href="../../../03-app-store-management/">App Store Management&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Delete Application Templates</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/11-delete-an-app-template/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/02-app-store/02-app-management/01-app-templates/11-delete-an-app-template/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to delete an application template.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Warning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>The application template cannot be recovered after deletion, so please proceed with caution.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>
+You should join a workspace and have the &lt;strong>Application/Application Version/Application Instance Deletion&lt;/strong> permission within the workspace. For more information, refer to &amp;#34;Workspace Members&amp;#34; and &amp;#34;Workspace Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere App Store Management&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

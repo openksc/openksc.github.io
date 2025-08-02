@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Security on</title><link>https://openksc.github.io/docs/v4.1/21-security/</link><description>Recent content in Security on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/21-security/index.xml" rel="self" type="application/rss+xml"/><item><title>Security Policy</title><link>https://openksc.github.io/docs/v4.1/21-security/01-security-policy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/21-security/01-security-policy/</guid><description>&lt;div class="sect1">
+&lt;h2 id="_supported_versions">Supported Versions&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>We follow an &lt;strong>End-of-Life (EOL)&lt;/strong> policy to provide security and bug fix support for KubeSphere versions.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>We regularly release patch versions to address security vulnerabilities and critical bugs for supported KubeSphere
+releases. The support period for each version is determined by its &lt;strong>EOL date&lt;/strong>, rather than by a fixed number of minor
+versions.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>The current support plan is as follows:&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 50%;"/>
+&lt;col style="width: 50%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">KubeSphere Version&lt;/th>
+&lt;th class="tableblock halign-left valign-top">End of Life (EOL) Date&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>&lt;strong>KubeSphere v4.2&lt;/strong>&lt;/p>
+&lt;/div></description></item><item><title>KubeSphere Gateway (Ingress-Nginx) Security Vulnerability Advisory</title><link>https://openksc.github.io/docs/v4.1/21-security/02-vulnerability-advisory/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/21-security/02-vulnerability-advisory/</guid><description>&lt;div class="sect1">
+&lt;h2 id="_vulnerability_overview">Vulnerability Overview&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>&lt;strong>Affected Versions&lt;/strong>&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere &amp;amp; KubeSphere Enterprise v3.x versions&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>KubeSphere &amp;amp; KubeSphere Enterprise v4.1.x versions&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;strong>Severity Level&lt;/strong>: Critical&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;strong>Vulnerability Types&lt;/strong>: Privilege Escalation, Information Disclosure, Security Bypass, Directory Traversal&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;strong>Vulnerability List:&lt;/strong>&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 14.2857%;"/>
+&lt;col style="width: 14.2857%;"/>
+&lt;col style="width: 14.2857%;"/>
+&lt;col style="width: 42.8571%;"/>
+&lt;col style="width: 14.2858%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">CVE ID&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Type&lt;/th>
+&lt;th class="tableblock halign-left valign-top">CVSS Score&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Details&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>CVE-2025-1097&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Configuration Injection&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>8.8 (High)&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Malicious configuration injection via &lt;code>auth-tls-match-cn&lt;/code> annotation leading to arbitrary code execution and information disclosure.&lt;/p>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>KubeSphere Web 控制台 on</title><link>https://openksc.github.io/zh/docs/v3.4/faq/console/</link><description>Recent content in KubeSphere Web 控制台 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v3.4/faq/console/index.xml" rel="self" type="application/rss+xml"/><item><title>支持的浏览器</title><link>https://openksc.github.io/zh/docs/v3.4/faq/console/console-web-browser/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/faq/console/console-web-browser/</guid><description>&lt;p>KubeSphere Web 控制台支持多种主流浏览器，包括 Chrome、Firefox、Safari 浏览器、Opera 和 Microsoft Edge。您需要使用以下表格内绿色框中的浏览器版本以访问 KubeSphere Web 控制台。&lt;/p>
+&lt;p>&lt;img src="https://openksc.github.io/images/docs/v3.x/faq/kubesphere-web-console/supported-browsers/console-browser.png" alt="console-browser">&lt;/p></description></item><item><title>在控制台上编辑系统资源</title><link>https://openksc.github.io/zh/docs/v3.4/faq/console/edit-resources-in-system-workspace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/faq/console/edit-resources-in-system-workspace/</guid><description>&lt;p>当您安装 KubeSphere 时，企业空间 &lt;code>system-workspace&lt;/code> 将被创建，用于运行所有 KubeSphere 系统项目和 Kubernetes 系统项目。为了避免对这两个系统的误操作，您不能直接在控制台上编辑该企业空间中的资源。但是，您仍然可以使用 &lt;code>kubectl&lt;/code> 来修改资源。&lt;/p>
+&lt;p>本教程演示如何启用 &lt;code>system-workspace&lt;/code> 资源的编辑功能。&lt;/p>
+&lt;div class="notices warning">
+ 
+ &lt;p>警告&lt;/p>
+ &lt;div>编辑 &lt;code>system-workspace&lt;/code> 中的资源可能会导致意外结果，例如 KubeSphere 系统和节点故障，并且可能对您的业务造成影响。执行此操作时请高度谨慎。&lt;/div>
+&lt;/div>
+&lt;h2 id="编辑控制台配置">编辑控制台配置&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>以 &lt;code>admin&lt;/code> 用户登录 KubeSphere，点击右下角的 &lt;img src="https://openksc.github.io/images/docs/v3.x/common-icons/hammer.png" height="25" width="25" />，然后选择 &lt;strong>Kubectl&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>执行如下命令：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl -n kubesphere-system edit cm ks-console-config
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>在 &lt;code>client&lt;/code> 下添加 &lt;code>systemWorkspace&lt;/code> 字段并保存文件。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">client&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">version&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">kubesphere&lt;/span>: &lt;span style="color:#ae81ff">v3.4.1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">kubernetes&lt;/span>: &lt;span style="color:#ae81ff">v1.22.12&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">openpitrix&lt;/span>: &lt;span style="color:#ae81ff">v3.4.0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">enableKubeConfig&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">systemWorkspace&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;$&amp;#34;&lt;/span> &lt;span style="color:#75715e"># 请手动添加此行。&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>执行如下命令重新部署 &lt;code>ks-console&lt;/code>，并等待容器组重建。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>kubectl -n kubesphere-system rollout restart deployment ks-console
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>刷新 KubeSphere 控制台。&lt;code>system-workspace&lt;/code> 中的项目将出现编辑按钮。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如需关闭控制台的编辑功能，请采用相同方法删除 &lt;code>systemWorkspace&lt;/code> 字段。&lt;/p>
+&lt;/li>
+&lt;/ol></description></item><item><title>更改控制台语言</title><link>https://openksc.github.io/zh/docs/v3.4/faq/console/change-console-language/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v3.4/faq/console/change-console-language/</guid><description>&lt;p>KubeSphere Web 控制台目前支持四种语言：简体中文、繁体中文、英文和西班牙文。&lt;/p>
+&lt;p>本教程演示如何更改控制台语言。&lt;/p>
+&lt;h2 id="准备工作">准备工作&lt;/h2>
+&lt;p>您需要先安装 KubeSphere。&lt;/p>
+&lt;h2 id="更改控制台语言">更改控制台语言&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>登录 KubeSphere，点击右上角的用户名。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在下拉菜单中，选择&lt;strong>个人设置&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>基本信息&lt;/strong>页面，从&lt;strong>语言&lt;/strong>下拉列表中选择所需的语言。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点击 &lt;img src="https://openksc.github.io/images/docs/v3.x/zh-cn/faq/kubesphere-web-console/change-console-language/check-mark.png" width='25' /> 保存设置。&lt;/p>
+&lt;/li>
+&lt;/ol></description></item></channel></rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FAQ on</title><link>https://openksc.github.io/docs/v4.1/24-faq/</link><description>Recent content in FAQ on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/24-faq/index.xml" rel="self" type="application/rss+xml"/><item><title>Improvement Plan</title><link>https://openksc.github.io/docs/v4.1/24-faq/01-info-collection/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/24-faq/01-info-collection/</guid><description>&lt;div class="sect1">
+&lt;h2 id="_what_is_the_improvement_plan">What is the Improvement Plan?&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>The Improvement Plan collects information about KubeSphere installation and feature usage. This information is used solely by KubeSphere to enhance the product and is not shared with any third parties.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_what_does_the_improvement_plan_report">What does the Improvement Plan report?&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>The Improvement Plan does not collect any specific identifying information such as usernames, passwords, resource names, or addresses.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>The main collected information includes:&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Extension installation information: Extension name, extension version, and installation time.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Cluster information: Cluster name, cluster role, cluster version, cluster UID (UID of the kube-system namespace), KubeSphere version, KubeSphere UID (UID of the kubesphere-system namespace).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Cluster node information: Node name, node UID, node role, node architecture, node operating system version, node operating system image name, kernel version, container runtime version, kube-proxy version, kubelet version.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Resource statistics: Number of users, number of namespaces, number of workspaces.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item></channel></rss>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Reference on</title><link>https://openksc.github.io/docs/v3.4/reference/</link><description>Recent content in Reference on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v3.4/reference/index.xml" rel="self" type="application/rss+xml"/><item><title>Glossary</title><link>https://openksc.github.io/docs/v3.4/reference/glossary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.4/reference/glossary/</guid><description>&lt;p>This glossary includes general terms and technical terms that are specific to KubeSphere.&lt;/p>
+&lt;h2 id="general">General&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Workspace&lt;/strong> &lt;br>
+A logical unit to organize a tenant's workload projects (i.e. Kubernetes namespaces) and DevOps projects. It also features access control of different resources and allows team members to share information.&lt;/li>
+&lt;li>&lt;strong>System workspace&lt;/strong> &lt;br>A special place to organize system projects of KubeSphere, Kubernetes and optional components such as App Store, service mesh and DevOps.&lt;/li>
+&lt;li>&lt;strong>Workspace member&lt;/strong> &lt;br>The users that are invited to a workspace who have certain permissions to work in the workspace.&lt;/li>
+&lt;li>&lt;strong>Project&lt;/strong> &lt;br>
+A project in KubeSphere is a Kubernetes namespace.&lt;/li>
+&lt;li>&lt;strong>Multi-cluster project&lt;/strong> &lt;br>
+A project whose workloads are deployed across multiple clusters.&lt;/li>
+&lt;li>&lt;strong>Project member&lt;/strong> &lt;br>
+The users that are invited to a project who have certain permissions to work in the project.&lt;/li>
+&lt;li>&lt;strong>Workbench&lt;/strong> &lt;br>The landing page for a tenant. It displays authorized resources that the tenant can access such as workspaces and projects.&lt;/li>
+&lt;li>&lt;strong>Volume&lt;/strong> &lt;br>
+A KubeSphere Volume is a Kubernetes PersistentVolumeClaim (PVC).&lt;/li>
+&lt;li>&lt;strong>Public cluster&lt;/strong> &lt;br>
+Cluster administrators can set cluster visibility so that a cluster is available to certain workspaces. A public cluster means all platform users can access the cluster, in which they are able to create and schedule resources.&lt;/li>
+&lt;li>&lt;strong>KubeKey&lt;/strong> &lt;br>
+A brand-new installation tool developed in Go. It is able to install KubeSphere and Kubernetes together or install Kubernetes only. It supports the deployment of cloud-native add-ons (YAML or Chart) as it creates a cluster. It can also be used to scale and upgrade a cluster.&lt;/li>
+&lt;li>&lt;strong>ks-installer&lt;/strong> &lt;br>
+The package to deploy KubeSphere on existing Kubernetes clusters.&lt;/li>
+&lt;/ul>
+&lt;h2 id="applications-and-workloads">Applications and Workloads&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>OpenPitrix&lt;/strong> &lt;br>
+An open-source system to package, deploy and manage different types of apps.&lt;/p></description></item><item><title>KubeSphere API</title><link>https://openksc.github.io/docs/v3.4/reference/api-docs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.4/reference/api-docs/</guid><description>&lt;h2 id="architecture">Architecture&lt;/h2>
+&lt;p>The KubeSphere API server validates and configures data for API objects. The API Server services REST operations and provides the frontend to the cluster's shared state through which all other components interact.&lt;/p>
+&lt;p>&lt;img src="https://openksc.github.io/images/docs/v3.x/reference/kubesphere-api/ks-apiserver.png" alt="ks-apiserver">&lt;/p>
+&lt;h2 id="use-the-kubesphere-api">Use the KubeSphere API&lt;/h2>
+&lt;p>KubeSphere v3.0 moves the functionalities of &lt;strong>ks-apigateway&lt;/strong> and &lt;strong>ks-account&lt;/strong> into &lt;strong>ks-apiserver&lt;/strong> to make the architecture more compact and clear. In order to use the KubeSphere API, you need to expose &lt;strong>ks-apiserver&lt;/strong> to your client.&lt;/p></description></item><item><title>Environment Requirements</title><link>https://openksc.github.io/docs/v3.4/reference/environment-requirements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v3.4/reference/environment-requirements/</guid><description>&lt;p>This page summarizes the some requirements for installing and using KubeSphere.&lt;/p>
+&lt;h2 id="system-requirements">System Requirements&lt;/h2>
+
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>System&lt;/th>
+ &lt;th>Minimum Requirements (Each node)&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;strong>Ubuntu&lt;/strong> &lt;em>16.04, 18.04&lt;/em>&lt;/td>
+ &lt;td>CPU: 2 Cores, Memory: 4 GB, Disk Space: 40 GB&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Debian&lt;/strong> &lt;em>Buster, Stretch&lt;/em>&lt;/td>
+ &lt;td>CPU: 2 Cores, Memory: 4 GB, Disk Space: 40 GB&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>CentOS&lt;/strong> &lt;em>7&lt;/em>.x&lt;/td>
+ &lt;td>CPU: 2 Cores, Memory: 4 GB, Disk Space: 40 GB&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Red Hat Enterprise Linux&lt;/strong> &lt;em>7&lt;/em>&lt;/td>
+ &lt;td>CPU: 2 Cores, Memory: 4 GB, Disk Space: 40 GB&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>SUSE Linux Enterprise Server&lt;/strong> &lt;em>15&lt;/em> &lt;strong>/openSUSE Leap&lt;/strong> &lt;em>15.2&lt;/em>&lt;/td>
+ &lt;td>CPU: 2 Cores, Memory: 4 GB, Disk Space: 40 GB&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+
+&lt;h2 id="dependency-requirements">Dependency Requirements&lt;/h2>
+
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Dependency&lt;/th>
+ &lt;th>Kubernetes Version ≥ 1.18&lt;/th>
+ &lt;th>Kubernetes Version &amp;lt; 1.18&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;code>socat&lt;/code>&lt;/td>
+ &lt;td>Required&lt;/td>
+ &lt;td>Optional but recommended&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>conntrack&lt;/code>&lt;/td>
+ &lt;td>Required&lt;/td>
+ &lt;td>Optional but recommended&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>ebtables&lt;/code>&lt;/td>
+ &lt;td>Optional but recommended&lt;/td>
+ &lt;td>Optional but recommended&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;code>ipset&lt;/code>&lt;/td>
+ &lt;td>Optional but recommended&lt;/td>
+ &lt;td>Optional but recommended&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+
+&lt;h2 id="container-runtime-requirements">Container Runtime Requirements&lt;/h2>
+
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Supported Container Runtime&lt;/th>
+ &lt;th>Version&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Docker&lt;/td>
+ &lt;td>19.3.8+&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>containerd&lt;/td>
+ &lt;td>Latest&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>CRI-O (experimental, not fully tested)&lt;/td>
+ &lt;td>Latest&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>iSula (experimental, not fully tested)&lt;/td>
+ &lt;td>Latest&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+
+&lt;h2 id="network-requirements">Network Requirements&lt;/h2>
+
+&lt;ul>
+&lt;li>Make sure the DNS address in &lt;code>/etc/resolv.conf&lt;/code> is available. Otherwise, it may cause some issues of DNS in the cluster.&lt;/li>
+&lt;li>If your network configuration uses firewall rules or security groups, you must ensure infrastructure components can communicate with each other through specific ports. It is recommended that you turn off the firewall. For more information, see &lt;a href="https://openksc.github.io/docs/v3.3/installing-on-linux/introduction/port-firewall/">Port Requirements&lt;/a>.&lt;/li>
+&lt;li>Supported CNI plugins: Calico and Flannel. Others (such as Cilium and Kube-OVN) may also work but note that they have not been fully tested.&lt;/li>
+&lt;/ul>
+
+&lt;h2 id="supported-kubernetes-versions">Supported Kubernetes Versions&lt;/h2>
+
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Installation Tool&lt;/th>
+ &lt;th>KubeSphere version&lt;/th>
+ &lt;th>Supported Kubernetes versions&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>KubeKey&lt;/td>
+ &lt;td>3.3.2&lt;/td>
+ &lt;td>v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, * v1.24.x&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>ks-installer&lt;/td>
+ &lt;td>3.3.2&lt;/td>
+ &lt;td>v1.20.x, v1.21.x, * v1.22.x, * v1.23.x, * v1.24.x&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;div class="notices note">
+ &lt;p>Note&lt;/p></description></item></channel></rss>

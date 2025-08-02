@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Quick Start on</title><link>https://openksc.github.io/docs/v4.1/02-quickstart/</link><description>Recent content in Quick Start on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/02-quickstart/index.xml" rel="self" type="application/rss+xml"/><item><title>Install KubeSphere on Kubernetes</title><link>https://openksc.github.io/docs/v4.1/02-quickstart/01-install-kubesphere/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/02-quickstart/01-install-kubesphere/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to quickly deploy Kubernetes and KubeSphere on a single node. This installation method is only suitable for testing. For installing KubeSphere in a production environment, please refer to &lt;a href="../../03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere/">Install Kubernetes and KubeSphere&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Your linux machine meets the minimum hardware requirements: CPU &amp;gt; 2 cores, memory &amp;gt; 2 GB, disk space &amp;gt; 40 GB.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Helm should have been installed in advance. For specific instructions, please refer to &lt;a href="https://helm.sh/docs/intro/">Helm Installation&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Access KubeSphere Console via Domain Name</title><link>https://openksc.github.io/docs/v4.1/02-quickstart/02-access-kubesphere-via-https/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/02-quickstart/02-access-kubesphere-via-https/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to access the KubeSphere web console using a custom domain name. To achieve this, you need to configure TLS access using cert-manager.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Kubernetes is installed.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://helm.sh/docs/intro/install/">Helm&lt;/a> is installed (for installing cert-manager and ingress-nginx).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>KubeSphere is installed or ready to be installed.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_step_1_install_nginx_ingress_controller">Step 1: Install NGINX Ingress Controller&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>If you haven’t installed &lt;a href="https://kubernetes.github.io/ingress-nginx/">NGINX Ingress Controller&lt;/a>, follow these steps.&lt;/p>
+&lt;/div>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-bash" data-lang="bash"># Add ingress-nginx repository
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+
+# Update repository
+helm repo update
+
+# Install ingress-nginx
+helm install ingress-nginx ingress-nginx/ingress-nginx \
+ --namespace ingress-nginx \
+ --create-namespace \
+ --version 4.2.5
+
+# Verify installation
+kubectl -n ingress-nginx get svc ingress-nginx-controller
+
+# Check IngressClass
+kubectl get ingressclass&lt;/code>&lt;/pre>
+&lt;/div></description></item><item><title>Install and Use Extensions</title><link>https://openksc.github.io/docs/v4.1/02-quickstart/03-install-an-extension/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/02-quickstart/03-install-an-extension/</guid><description>&lt;div class="paragraph">
+&lt;p>Starting from v4.1, KubeSphere decouples some functional components, which are seamlessly integrated into the KubeSphere web console as extensions and maintained independently, truly achieving a plug-and-play cloud-native operating system.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>The original functional modules, such as DevOps, service mesh, observability (including monitoring, alerting, logging, events, notification), App Store, edge computing, network and storage management, are now provided by extensions. Therefore, to fully utilize these features, it is recommended that you select and install the extensions based on your actual needs, customizing your exclusive KubeSphere container management platform.&lt;/p>
+&lt;/div></description></item><item><title>Control User Permissions</title><link>https://openksc.github.io/docs/v4.1/02-quickstart/04-control-user-permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/02-quickstart/04-control-user-permissions/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to create users and control their permissions by roles in workspaces and projects.
+For more information on permission control, please refer to &lt;a href="../../05-users-and-roles/">Users and Roles&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>As a multi-tenant system, KubeSphere supports controlling user permissions based on roles at the platform, cluster, workspace, and project levels, achieving logical resource isolation.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>KubeSphere has been installed.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_create_users">Create Users&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console using the default user &lt;strong>admin&lt;/strong> and password &lt;strong>P@88w0rd&lt;/strong>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>For security, you will be asked to change your password on your first login, please change it and use the new password for subsequent logins.&lt;/p>
+&lt;/div></description></item><item><title>Compose and Deploy WordPress</title><link>https://openksc.github.io/docs/v4.1/02-quickstart/05-deploy-wordpress/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/02-quickstart/05-deploy-wordpress/</guid><description>&lt;div class="paragraph">
+&lt;p>This section takes installing WordPress as an example to demonstrate how to deploy applications on the KubeSphere web console and access them outside the cluster. For more information about application resource management, please refer to &lt;a href="../../09-project-management/">Project Management&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_wordpress_introduction">WordPress Introduction&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>WordPress is a free, open-source content management system based on PHP. You can use WordPress to build your own website. The complete WordPress application includes the following Kubernetes objects, with MySQL as the backend database.&lt;/p>
+&lt;/div></description></item><item><title>Deploy and Access Bookinfo</title><link>https://openksc.github.io/docs/v4.1/02-quickstart/06-deploy-bookinfo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/02-quickstart/06-deploy-bookinfo/</guid><description>&lt;div class="paragraph">
+&lt;p>As an open-source service mesh solution, &lt;a href="https://istio.io/">Istio&lt;/a> provides powerful traffic management capabilities for microservices. The &lt;strong>KubeSphere Service Mesh&lt;/strong> extension integrates Istio, providing users with a consistent microservice management experience.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This section demonstrates how to deploy the sample application &lt;code>Bookinfo&lt;/code>, which consists of four independent microservices, and how to access the application via NodePort.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_bookinfo_introduction">Bookinfo Introduction&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>The application displays information about a book, similar to a single catalog entry of an online book store. Displayed on the page is a description of the book, book details (ISBN, number of pages, and so on), and a few book reviews.&lt;/p>
+&lt;/div></description></item><item><title>Canary Release</title><link>https://openksc.github.io/docs/v4.1/02-quickstart/07-canary-release-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/02-quickstart/07-canary-release-example/</guid><description>&lt;div class="paragraph">
+&lt;p>In a canary release, you can introduce a new version of your application and send a small portion of traffic to it for testing. Meanwhile, the old version handles the remaining traffic. If everything goes well, you can gradually increase the traffic sent to the new version while phasing out the old version. If any issues arise, you can change the traffic ratio and roll back to the old version.&lt;/p>
+&lt;/div></description></item><item><title>Access Services from Outside the Cluster</title><link>https://openksc.github.io/docs/v4.1/02-quickstart/08-access-a-service/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/02-quickstart/08-access-a-service/</guid><description>&lt;div class="paragraph">
+&lt;p>&lt;strong>Services&lt;/strong> expose applications running on Pods as network services by providing stable endpoints (domain names or IP addresses) for client access. Accessing a Service means accessing applications deployed in the cluster.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>KubeSphere supports accessing services from outside the cluster through NodePort, LoadBalancer, Ingress, or port forwarding.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>This section uses the Bookinfo application as an example to demonstrate external service access. Before proceeding, please ensure you have deployed &lt;a href="../06-deploy-bookinfo/">Bookinfo&lt;/a> or other applications in your project.&lt;/p>
+&lt;/div></description></item><item><title>Change Display Language</title><link>https://openksc.github.io/docs/v4.1/02-quickstart/10-change-display-language/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/02-quickstart/10-change-display-language/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to change the display language of the KubeSphere web console.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should have the username and password for the KubeSphere web console.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click on the current username in the upper right corner of the page, then choose &lt;strong>User Settings&lt;/strong> from the dropdown list.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>On the &lt;strong>Basic Information&lt;/strong> tab, set the email address and language for the user.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Email&lt;/p>
+&lt;/div></description></item></channel></rss>

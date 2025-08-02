@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>WhizardTelemetry 平台服务 on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/01-platform-services/</link><description>Recent content in WhizardTelemetry 平台服务 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/01-platform-services/index.xml" rel="self" type="application/rss+xml"/><item><title>配置 WhizardTelemetry 平台服务</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/01-platform-services/01-intro/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/05-observability-platform/01-platform-services/01-intro/</guid><description>&lt;div class="paragraph">
+&lt;p>WhizardTelemetry 平台服务是 WhizardTelemetry 可观测平台中各扩展组件的公共服务。它是各个可观测性扩展组件通用的 APIServer，为所有可观测性扩展组件提供公共的后端平台服务。&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>&lt;strong>配置说明：&lt;/strong>&lt;/p>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>为 WhizardTelemetry 日志、WhizardTelemetry 审计、WhizardTelemetry 事件、以及通知历史配置 OpenSearch 日志接收器时，如果需要使用多个 OpenSearch 数据库，可以按如下配置。&lt;/p>
+&lt;div class="listingblock">
+&lt;div class="content">
+&lt;pre class="highlight">&lt;code class="language-yaml" data-lang="yaml">whizard-telemetry:
+ config:
+ monitoring:
+ enabled: true
+ kind: 0
+ endpoint: http://prometheus-k8s.kubesphere-monitoring-system.svc:9090
+ observability:
+ enabled: false
+ endpoint: &amp;#34;http://query-frontend-whizard-operated.kubesphere-monitoring-system.svc:10902&amp;#34;
+ notification:
+ endpoint: http://notification-manager-svc.kubesphere-monitoring-system.svc:19093
+ history:
+ enable: true
+ server:
+ elasticsearch:
+ endpoints:
+ - https://&amp;lt;the opensearch cluster url&amp;gt;:&amp;lt;port&amp;gt;
+ version: opensearchv2
+ indexPrefix: notification-history
+ basicAuth: true
+ username: admin
+ password: admin
+ auditing:
+ enable: true
+ servers:
+ - elasticsearch:
+ cluster:
+ - cluster1
+ - cluster2
+ endpoints:
+ - https://&amp;lt;the opensearch cluster url&amp;gt;:&amp;lt;port&amp;gt;
+ version: opensearchv2
+ indexPrefix: auditing
+ basicAuth: true
+ username: admin
+ password: admin
+ - elasticsearch:
+ cluster:
+ - cluster3
+ - cluster4
+ endpoints:
+ - https://&amp;lt;the opensearch cluster url&amp;gt;:&amp;lt;port&amp;gt;
+ version: opensearchv2
+ indexPrefix: auditing
+ basicAuth: true
+ username: admin
+ password: admin
+ events:
+ enable: true
+ servers:
+ - elasticsearch:
+ cluster:
+ - cluster1
+ - cluster2
+ endpoints:
+ - https://opensearch-cluster-data.kubesphere-logging-system:9200
+ version: opensearchv2
+ indexPrefix: events
+ basicAuth: true
+ username: admin
+ password: admin
+ - elasticsearch:
+ cluster:
+ - cluster3
+ - cluster4
+ endpoints:
+ - https://opensearch-cluster-data.kubesphere-logging-system:9200
+ version: opensearchv2
+ indexPrefix: events
+ basicAuth: true
+ username: admin
+ password: admin
+ logging:
+ enable: true
+ servers:
+ - elasticsearch:
+ cluster:
+ - cluster1
+ - cluster2
+ endpoints:
+ - https://&amp;lt;the opensearch cluster url&amp;gt;:&amp;lt;port&amp;gt;
+ version: opensearchv2
+ indexPrefix: logs
+ basicAuth: true
+ username: admin
+ password: admin
+ - elasticsearch:
+ cluster:
+ - cluster3
+ - cluster4
+ endpoints:
+ - https://&amp;lt;the opensearch cluster url&amp;gt;:&amp;lt;port&amp;gt;
+ version: opensearchv2
+ indexPrefix: logs
+ basicAuth: true
+ username: admin
+ password: admin&lt;/code>&lt;/pre>
+&lt;/div></description></item></channel></rss>

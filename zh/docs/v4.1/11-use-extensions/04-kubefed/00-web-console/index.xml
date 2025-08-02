@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web 控制台 on</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/04-kubefed/00-web-console/</link><description>Recent content in Web 控制台 on</description><generator>Hugo</generator><language>zh-CN</language><atom:link href="https://openksc.github.io/zh/docs/v4.1/11-use-extensions/04-kubefed/00-web-console/index.xml" rel="self" type="application/rss+xml"/><item><title>登录并进入联邦项目</title><link>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/04-kubefed/00-web-console/01-log-in-and-go-to-a-project/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/zh/docs/v4.1/11-use-extensions/04-kubefed/00-web-console/01-log-in-and-go-to-a-project/</guid><description>&lt;div class="paragraph">
+&lt;p>本节介绍如何登录 KubeSphere Web 控制台并进入联邦项目。&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_前提条件">前提条件&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>KubeSphere 平台需要安装并启用&lt;strong>联邦集群应用管理&lt;/strong>扩展组件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>您需要获取联邦项目成员用户名和密码。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>您需要联系 KubeSphere 平台管理员获取 Web 控制台的 IP 地址和端口号。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>取决于您的网络环境，您可能需要配置防火墙策略和流量转发策略。有关具体操作，请联系您的网络环境管理员。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_操作步骤">操作步骤&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>打开 Web 浏览器，在地址栏中输入 KubeSphere Web 控制台的 IP 地址和端口号。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在 KubeSphere 登录页面，输入用户信息然后点击&lt;strong>登录&lt;/strong>。&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>初次登录时系统将提示修改用户密码。&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/li>
+&lt;li>
+&lt;p>点击&lt;strong>企业空间管理&lt;/strong>，然后点击一个企业空间的名称进入企业空间。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在左侧导航栏选择&lt;strong>项目&lt;/strong>，然后点击&lt;strong>联邦项目&lt;/strong>进入联邦项目列表页面。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在&lt;strong>联邦项目&lt;/strong>页面，点击一个联邦项目的名称进入联邦项目。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

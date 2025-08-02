@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Overview on</title><link>https://openksc.github.io/docs/v4.1/08-workspace-management/03-overview/</link><description>Recent content in Overview on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/08-workspace-management/03-overview/index.xml" rel="self" type="application/rss+xml"/><item><title>View Resource Usage</title><link>https://openksc.github.io/docs/v4.1/08-workspace-management/03-overview/01-view-workspace-resource-usage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/08-workspace-management/03-overview/01-view-workspace-resource-usage/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to view workspace resource usage.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a workspace and have the &lt;strong>Workspace Settings Viewing&lt;/strong> permission within the workspace. For more information, refer to &amp;#34;Workspace Members&amp;#34; and &amp;#34;Workspace Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Workspace Settings Viewing&lt;/strong> permission, and access your workspace.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Overview&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;div class="paragraph">
+&lt;p>The &lt;strong>Resource Usage&lt;/strong> tab on the &lt;strong>Overview&lt;/strong> page provides information on the number of projects, roles, and members in the workspace.&lt;/p>
+&lt;/div></description></item><item><title>View Cluster Information</title><link>https://openksc.github.io/docs/v4.1/08-workspace-management/03-overview/03-view-cluster-resource-usage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/08-workspace-management/03-overview/03-view-cluster-resource-usage/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to view basic information about the clusters authorized for the workspace.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>You should join a workspace and have the &lt;strong>Workspace Settings Viewing&lt;/strong> permission within the workspace. For more information, refer to &amp;#34;Workspace Members&amp;#34; and &amp;#34;Workspace Roles&amp;#34;.&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Workspace Settings Viewing&lt;/strong> permission, and access your workspace.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Overview&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the &lt;strong>Cluster Information&lt;/strong> tab on the &lt;strong>Overview&lt;/strong> page to view basic information about the clusters authorized for the workspace.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item></channel></rss>

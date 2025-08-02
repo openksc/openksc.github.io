@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Install KubeSphere on</title><link>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/</link><description>Recent content in Install KubeSphere on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/index.xml" rel="self" type="application/rss+xml"/><item><title>Install Kubernetes and KubeSphere on Linux</title><link>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/02-install-kubernetes-and-kubesphere/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to install Kubernetes and KubeSphere.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>The installation process will use the open-source tool KubeKey. For more information about KubeKey, please visit the &lt;a href="https://github.com/kubesphere/kubekey">GitHub KubeKey repository&lt;/a>.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>You can also run the command in the &lt;a href="#_install_kubesphere">Install KubeSphere&lt;/a> section to directly upgrade KubeSphere from v4.1.1 to v4.1.2.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Prepare at least 1 Linux server as a cluster node. In a production environment, to ensure high availability of the cluster, it is recommended to prepare at least 5 Linux servers, with 3 servers as control plane nodes and 2 servers as worker nodes. If you are installing KubeSphere on multiple Linux servers, make sure all servers belong to the same subnet.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The operating system and version of the cluster nodes must be Ubuntu 16.04, Ubuntu 18.04, Ubuntu 20.04, Ubuntu 22.04, Debian 9, Debian 10, CentOS 7, CentOS Stream, RHEL 7, RHEL 8, SLES 15, or openSUSE Leap 15. The operating systems of multiple servers can be different. For support of other operating systems and versions, please contact KubeSphere technical support.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In a production environment, to ensure the cluster has sufficient computing and storage resources, it is recommended that each cluster node be configured with at least 8 CPU cores, 16 GB of memory, and 200 GB of disk space. In addition, it is recommended to mount an additional 200 GB of disk space in the &lt;strong>/var/lib/docker&lt;/strong> (for Docker) or &lt;strong>/var/lib/containerd&lt;/strong> (for containerd) directory of each cluster node for storing container runtime data.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In a production environment, it is recommended to configure high availability for the KubeSphere cluster in advance to avoid service interruption in the event of a single control plane node failure. For more information, please refer to the &lt;a href="../../../03-installation-and-upgrade/01-preparations/02-configure-high-availability/02-configure-k8s-high-availability/">Configure High Availability&lt;/a>.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>If you plan to have multiple control plane nodes, be sure to configure high availability for the cluster in advance.&lt;/p>
+&lt;/div></description></item><item><title>Air-gapped Installation</title><link>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/03-offline-installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/03-offline-installation/</guid><description>&lt;div class="paragraph">
+&lt;p>This section explains how to use KubeKey to create an image package in a connected environment and deploy Kubernetes and KubeSphere in an air-gapped environment.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>Prepare at least three hosts as shown below.&lt;/p>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 16.6666%;"/>
+&lt;col style="width: 16.6666%;"/>
+&lt;col style="width: 66.6668%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Host IP&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Host Name&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Role&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>192.168.0.2&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>node1&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Internet-connected host, used to create image packages&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>192.168.0.3&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>master&lt;/p>
+&lt;/div></description></item><item><title>Configure KubeSphere High Availability</title><link>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/04-configure-ks-high-availability/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/04-configure-ks-high-availability/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to configure high availability (HA) for KubeSphere.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon attention">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Attention&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>KubeSphere high availability depends on Kubernetes high availability of control plane nodes. Ensure Kubernetes is deployed in high availability mode first.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_1_high_availability_architecture_overview">1. High Availability Architecture Overview&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="paragraph">
+&lt;p>KubeSphere supports high availability deployment through &lt;code>ha.enabled&lt;/code> configuration.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>In HA mode, Redis supports two deployment modes:&lt;/p>
+&lt;/div>
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Redis standalone mode&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Redis high availability mode (Redis HA)&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>Appendix: Advanced Configuration of KubeSphere Core</title><link>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/05-appendix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/03-installation-and-upgrade/02-install-kubesphere/05-appendix/</guid><description>&lt;div class="sect1">
+&lt;h2 id="_helm_chart_options">Helm Chart Options&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="sect2">
+&lt;h3 id="_common_options">Common Options&lt;/h3>
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 60%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Option&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Default Value&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">adminPassword&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&amp;#34;&amp;#34;&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>string - Set a bootstrap password for the first admin user. Admins will need to reset the password upon login. If not set, the built-in default password &lt;strong>P@88w0rd&lt;/strong> will be used.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">hostname&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;p class="tableblock">&amp;#34;example.com&amp;#34;&lt;/p>&lt;/td>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>string - Fully qualified domain name for the KubeSphere Server.&lt;/p>
+&lt;/div></description></item></channel></rss>

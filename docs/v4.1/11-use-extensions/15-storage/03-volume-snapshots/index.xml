@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Volume Snapshots on</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/</link><description>Recent content in Volume Snapshots on</description><generator>Hugo</generator><language>en-US</language><atom:link href="https://openksc.github.io/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/index.xml" rel="self" type="application/rss+xml"/><item><title>Create Volume Snapshots</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/01-create-a-volume-snapshot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/01-create-a-volume-snapshot/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to create a volume snapshot.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>A volume snapshot saves the current data of a storage volume, which can be used to create a persistent volume claim and the corresponding persistent volume.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Storage&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a cluster or a project and have the &lt;strong>Volume Snapshots Management&lt;/strong> permission within the cluster or the project. For more information, refer to &amp;#34;Cluster Roles&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>View Volume Snapshot List</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/02-view-a-volume-snapshot-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/02-view-a-volume-snapshot-list/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to view the volume snapshot list.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Storage&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a cluster or a project and have the &lt;strong>Volume Snapshots Viewing&lt;/strong> permission within the cluster or the project. For more information, refer to &amp;#34;Cluster Roles&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Volume Snapshots Viewing&lt;/strong> permission, and enter your cluster or project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Storage &amp;gt; Volume Snapshots&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The volume snapshot list provides the following information:&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Name&lt;/p>
+&lt;/div></description></item><item><title>View Volume Snapshot Details</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/03-view-volume-snapshot-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/03-view-volume-snapshot-details/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to view the details of a volume snapshot.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Storage&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a cluster or a project and have the &lt;strong>Volume Snapshots Viewing&lt;/strong> permission within the cluster or the project. For more information, refer to &amp;#34;Cluster Roles&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Volume Snapshots Viewing&lt;/strong> permission, and enter your cluster or project.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Storage &amp;gt; Volume Snapshots&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the name of a volume snapshot in the volume snapshot list to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>View the resource attributes of the volume snapshot in the &lt;strong>Attributes&lt;/strong> area on the left side of the details page.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Project&lt;/p>
+&lt;/div></description></item><item><title>Create Persistent Volume Using Volume Snapshot</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/04-create-a-persistent-volume-from-a-volume-snapshot/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/04-create-a-persistent-volume-from-a-volume-snapshot/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to create a persistent volume using a volume snapshot.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>After a volume snapshot is created, you can use it to create a persistent volume claim and a persistent volume.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Storage&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a cluster or a project and have the &lt;strong>Volume Snapshots Management&lt;/strong> permission within the cluster or the project. For more information, refer to &amp;#34;Cluster Roles&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Delete Volume Snapshots</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/05-delete-volume-snapshots/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/05-delete-volume-snapshots/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to delete a volume snapshot.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon warning">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Warning&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Volume snapshots cannot be recovered after deletion. Please proceed with caution to avoid data loss.&lt;/p>
+&lt;/div>&lt;/div>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Storage&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a cluster or a project and have the &lt;strong>Volume Snapshots Management&lt;/strong> permission within the cluster or the project. For more information, refer to &amp;#34;Cluster Roles&amp;#34; and &amp;#34;Project Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>View Volume Snapshot Content List</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/06-view-a-volume-snapshot-content-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/06-view-a-volume-snapshot-content-list/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to view the volume snapshot content list.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Storage&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a cluster and have the &lt;strong>Volume Snapshot Contents Viewing&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Volume Snapshot Contents Viewing&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Storage &amp;gt; Volume Snapshots&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Volume Snapshot Content&lt;/strong> on the &lt;strong>Volume Snapshots&lt;/strong> page to open the volume snapshot content list.&lt;/p>
+&lt;div class="exampleblock">
+&lt;div class="content">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>The volume snapshot content list provides the following information:&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Name&lt;/p>
+&lt;/div></description></item><item><title>View Volume Snapshot Content Details</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/07-view-volume-snapshot-content-details/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/07-view-volume-snapshot-content-details/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to view the details of a volume snapshot content.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Storage&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a cluster and have the &lt;strong>Volume Snapshot Contents Viewing&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_steps">Steps&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="olist arabic">
+&lt;ol class="arabic">
+&lt;li>
+&lt;p>Log in to the KubeSphere web console with a user who has the &lt;strong>Volume Snapshot Contents Viewing&lt;/strong> permission, and access your cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Storage &amp;gt; Volume Snapshots&lt;/strong> in the left navigation pane.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Volume Snapshot Content&lt;/strong> on the &lt;strong>Volume Snapshots&lt;/strong> page, then click the name of a volume snapshot content to open its details page.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>View the resource attributes of the volume snapshot content in the &lt;strong>Attributes&lt;/strong> area on the left side of the details page.&lt;/p>
+&lt;div class="openblock">
+&lt;div class="content">
+&lt;table class="tableblock frame-all grid-all stretch">
+&lt;colgroup>
+&lt;col style="width: 20%;"/>
+&lt;col style="width: 80%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Parameter&lt;/th>
+&lt;th class="tableblock halign-left valign-top">Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>Status&lt;/p>
+&lt;/div></description></item><item><title>Edit Volume Snapshot Content Information</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/08-edit-volume-snapshot-content-information/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/08-edit-volume-snapshot-content-information/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to edit the information of a volume snapshot content.&lt;/p>
+&lt;/div>
+&lt;div class="paragraph">
+&lt;p>You can edit the alias and description of a volume snapshot content. KubeSphere does not support editing the name of a volume snapshot content.&lt;/p>
+&lt;/div>
+&lt;div class="sect1">
+&lt;h2 id="_prerequisites">Prerequisites&lt;/h2>
+&lt;div class="sectionbody">
+&lt;div class="ulist">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>KubeSphere Storage&lt;/strong> should have been installed and enabled.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>
+You should join a cluster and have the &lt;strong>Volume Snapshot Contents Management&lt;/strong> permission within the cluster. For more information, refer to &amp;#34;Cluster Members&amp;#34; and &amp;#34;Cluster Roles&amp;#34;.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div></description></item><item><title>Delete Volume Snapshot Content</title><link>https://openksc.github.io/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/09-delete-a-volume-snapshot-content/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://openksc.github.io/docs/v4.1/11-use-extensions/15-storage/03-volume-snapshots/09-delete-a-volume-snapshot-content/</guid><description>&lt;div class="paragraph">
+&lt;p>This section describes how to delete a volume snapshot content.&lt;/p>
+&lt;/div>
+&lt;table class="tableblock frame-all grid-all stretch admon note">
+&lt;colgroup>
+&lt;col style="width: 100%;"/>
+&lt;/colgroup>
+&lt;thead>
+&lt;tr>
+&lt;th class="tableblock halign-left valign-top">Note&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="tableblock halign-left valign-top">&lt;div class="content">&lt;div class="paragraph">
+&lt;p>When a volume snapshot is bound to a volume snapshot content, the volume snapshot content cannot be deleted. To delete the volume snapshot content, you must first delete the volume snapshot. After the volume snapshot is deleted, the system will decide whether to automatically delete the volume snapshot content based on the deletion policy of the volume snapshot content.&lt;/p>
+&lt;/div></description></item></channel></rss>
